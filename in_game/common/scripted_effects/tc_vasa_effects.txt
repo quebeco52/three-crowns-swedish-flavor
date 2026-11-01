@@ -32,7 +32,6 @@ swe_select_or_create_gustav_vasa = {
 			dynasty:swe_vasa_dynasty = { save_scope_as = swe_vasa_house }
 		}
 
-		# Stats total 175-215, in line with vanilla's Magnus De la Gardie (flavor_swe.11)
 		create_character = {
 			first_name = name_gustav
 			dynasty = scope:swe_vasa_house
@@ -41,9 +40,9 @@ swe_select_or_create_gustav_vasa = {
 			culture = culture:swedish
 			religion = root.religion
 			estate = estate_type:nobles_estate
-			adm = { 70 80 }
-			dip = { 50 65 }
-			mil = { 55 70 }
+			adm = { 80 90 }
+			dip = { 60 70 }
+			mil = { 80 90 }
 			add_trait = trait:industrious
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
