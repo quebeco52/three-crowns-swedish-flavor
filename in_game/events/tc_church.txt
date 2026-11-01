@@ -1,0 +1,132 @@
+﻿namespace = swe_church
+
+# The Uppsala Synod of 1593 adopts the Augsburg Confession and grants swe_uppsala_mote.
+# Fires under any Lutheran ruler: vanilla's Västerås event (flavor_swe.4) converts the ruler with
+# the country, so a Catholic king like Sigismund almost never happens. When the ruler or heir is
+# not Lutheran, only the description changes.
+# Declining keeps the privilege unlocked for later.
+swe_church.1 = {
+	type = country_event
+	title = swe_church.1.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					ruler ?= { religion != religion:lutheran }
+				}
+				desc = swe_church.1.desc_ruler
+			}
+			triggered_desc = {
+				trigger = {
+					heir ?= { religion != religion:lutheran }
+				}
+				desc = swe_church.1.desc_heir
+			}
+			triggered_desc = {
+				desc = swe_church.1.desc
+			}
+		}
+	}
+	outcome = neutral
+	historical_info = swe_church.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1591.6.1
+		to = 1650.1.1
+		monthly_chance = 3 # Median spring 1593, ~98% by 1602
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:lutheran
+		owns = location:uppsala
+		NOT = { has_estate_privilege = estate_privilege:swe_uppsala_mote }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = swe_church.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		unlock_estate_privilege_effect = { type = swe_uppsala_mote }
+		grant_estate_privilege = estate_privilege:swe_uppsala_mote
+	}
+
+	option = {
+		name = swe_church.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		unlock_estate_privilege_effect = { type = swe_uppsala_mote }
+		custom_tooltip = swe_church.1.b_tt
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+	}
+}
+
+# Kyrkolagen: the Church Law of 1686 and its yearly household examinations. Sets swe_kyrkolagen,
+# which turns on the literacy bonus inside swe_uppsala_mote.
+swe_church.2 = {
+	type = country_event
+	title = swe_church.2.title
+	desc = swe_church.2.desc
+	outcome = neutral
+	historical_info = swe_church.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1685.1.1
+		to = 1720.1.1
+		monthly_chance = 3 # Median late 1686, ~98% by 1696
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_estate_privilege = estate_privilege:swe_uppsala_mote
+		NOT = { has_variable = swe_kyrkolagen }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_church.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		set_variable = swe_kyrkolagen
+		custom_tooltip = swe_church.2.a_tt
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_church.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}
