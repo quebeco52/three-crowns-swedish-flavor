@@ -22,7 +22,7 @@ tc_historical_characters_accessories = {
 				mode = replace
 				gene = hair_styles
 				template = german_hair
-				accessory = male_german_hair_crown_short
+				accessory = male_hair_short_straight_pomp
 			}
 			# NOT WORKING YET: the beard comes out as a short full beard. With weight base = 500
 			# every character got that same short beard, both with this setup (vanilla's Magellan)
