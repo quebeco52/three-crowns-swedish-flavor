@@ -1,0 +1,10 @@
+﻿l_english:
+ swe_norrland.1.title: "The Bothnian Trade"
+ swe_norrland.1.entry: "$swe_norrland.1.title$"
+ swe_norrland.1.desc: "The merchants of [ShowLocationName('stockholm')] have petitioned the Crown. For centuries the Birkarlar have held the trade with the Sámi of the north, collecting furs and tax and selling where they please. The burghers ask that all trade of the Bothnian coast pass through [ShowLocationName('stockholm')], where the Crown can tax it, and that the Sámi tax return to the Crown's own bailiffs. The peasants of the north call it robbery."
+ swe_norrland.1.historical_info: "The Birkarlar, peasant traders of the Torne, Lule and Pite valleys, controlled the trade with the Sámi and collected their tax from the Middle Ages. Gustav Vasa took the tax into royal hands in 1553, and the Crown gradually took over their trade. The trade ordinances of 1614 and 1617 then bound the towns of East and West Bothnia to Stockholm: they could not trade directly with foreign ports. This Bothnian trade compulsion lasted until 1765."
+ swe_norrland.1.a: "The trade of the north belongs to the Crown."
+ swe_norrland.1.a.entry: "The Bothnian trade goes through Stockholm."
+ swe_norrland.1.b: "Leave the north to the Birkarlar."
+ swe_norrland.1.b.entry: "The Birkarlar keep their trade."
+ swe_norrland.1.b_tt: "We can still change our minds later by revoking $swe_birkarl_rights$ and granting $swe_bottniska_handelstvanget$."

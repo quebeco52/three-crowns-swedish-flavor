@@ -1,0 +1,66 @@
+﻿# Bottniska handelstvånget: from the trade ordinances of 1614 and 1617 the East and West
+# Bothnian towns could trade abroad only through Stockholm. Abolished in 1765.
+# Replaces swe_birkarl_rights through swe_norrland.1: the Sámi trade goes on at half strength,
+# but the crown takes the tax back from the Birkarlar.
+# Balanced against swe_birkarl_rights: its -0.1 crown power in the north becomes +0.1.
+swe_bottniska_handelstvanget = {
+	estate = burghers_estate
+
+	potential = {
+		has_or_had_tag = SWE
+	}
+
+	allow = {
+		has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget }
+		NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
+	}
+
+	can_revoke = {
+		"estate_power(estate_type:crown_estate)" >= 0.5
+	}
+
+	# The old birkarl lands (same provinces as swe_birkarl_rights)
+	location_modifier = {
+		potential_trigger = {
+			OR = {
+				province_definition = province_definition:vasterbotten_province
+				province_definition = province_definition:pite_lappmark_province
+				province_definition = province_definition:lule_lappmark_province
+				province_definition = province_definition:torne_lappmark_province
+				province_definition = province_definition:kemi_lappmark_province
+			}
+		}
+		local_fur_output_modifier = 0.1
+		local_wild_game_output_modifier = 0.1
+		local_market_access = 0.1
+	}
+
+	# The East and West Bothnian coast cannot trade abroad, and the crown taxes what it sells
+	location_modifier = {
+		potential_trigger = {
+			OR = {
+				province_definition = province_definition:halsingland_province
+				province_definition = province_definition:angermanland_province
+				province_definition = province_definition:vasterbotten_province
+				province_definition = province_definition:norra_osterbotten_province
+				province_definition = province_definition:sodra_osterbotten_province
+			}
+		}
+		local_crown_estate_power = 0.1
+		local_trades_per_burgher = -0.25
+	}
+
+	# The staple. Kept small: Stockholm is already the main market of the north
+	location_modifier = {
+		potential_trigger = {
+			this = location:stockholm
+		}
+		local_merchant_capacity_modifier = 0.1
+		local_trades_per_burgher = 0.25
+	}
+
+	country_modifier = {
+		burghers_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_burghers_estate_power = 0.1
+	}
+}

@@ -12,6 +12,8 @@ swe_birkarl_rights = {
 	}
 
 	allow = {
+		# Once swe_norrland.1 unlocks Bottniska handelstvånget, the Birkarlar cannot come back
+		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
 		any_owned_location = {
 			OR = {
 				province_definition = province_definition:vasterbotten_province
