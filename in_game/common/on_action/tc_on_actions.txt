@@ -18,5 +18,12 @@ tc_on_game_start = {
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
+		# Belongs to the location, not to Sweden: Torneå starts as Kven land in 1337
+		location:tornea ?= {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_torne_salmon_fishery } }
+				add_location_modifier = { modifier = swe_torne_salmon_fishery months = -1 }
+			}
+		}
 	}
 }

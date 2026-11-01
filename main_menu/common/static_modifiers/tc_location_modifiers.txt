@@ -1,0 +1,10 @@
+﻿# Added at game start by tc_on_game_start, like vanilla's location_historical_base_values.txt.
+
+# The salmon fisheries of the Torne river. Same size as freiberg_base (0.5), far below
+# skane_herring_market (5), which supplied fish to half of Europe.
+swe_torne_salmon_fishery = {
+	game_data = {
+		category = location
+	}
+	local_fish_output_modifier = 0.5
+}

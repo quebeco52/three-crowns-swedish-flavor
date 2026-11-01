@@ -1,4 +1,7 @@
 ﻿l_english:
+ STATIC_MODIFIER_NAME_swe_torne_salmon_fishery: "The Torne Salmon Fisheries"
+ STATIC_MODIFIER_DESC_swe_torne_salmon_fishery: "Every summer the salmon run up the rapids of the Torne river, where the fishermen catch them in great weirs. Salted Torne salmon is among the most valuable goods of the north."
+
  swe_norrland.1.title: "The Bothnian Trade"
  swe_norrland.1.entry: "$swe_norrland.1.title$"
  swe_norrland.1.desc: "The merchants of [ShowLocationName('stockholm')] have petitioned the Crown. For centuries the Birkarlar have held the trade with the Sámi of the north, collecting furs and tax and selling where they please. The burghers ask that all trade of the Bothnian coast pass through [ShowLocationName('stockholm')], where the Crown can tax it, and that the Sámi tax return to the Crown's own bailiffs. The peasants of the north call it robbery."
