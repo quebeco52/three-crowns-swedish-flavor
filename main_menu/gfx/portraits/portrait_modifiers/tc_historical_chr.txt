@@ -1,0 +1,47 @@
+﻿# Hair and beards for the mod's historical characters. Same setup as vanilla's
+# historical_characters_accessories (01_historical_chr.txt), but in its own group so the
+# vanilla file is not overridden. Vanilla's beard_suppression_absolute (priority 100)
+# still removes beards under 18.
+tc_historical_characters_accessories = {
+	usage = game
+	selection_behavior = max
+	priority = 99
+
+	# His portraits show a long full beard and short hair. Same beard as vanilla's Magellan.
+	swe_gustav_vasa = {
+		dna_modifiers = {
+			# Light brown with a hint of red: the red edge of the Brown range (x 0.3-0.6,
+			# y 0.2-0.5) in vanilla's Nordic ethnicity, where higher y is darker
+			color = {
+				gene = hair_color
+				mode = replace
+				x = 0.58
+				y = 0.27
+			}
+			accessory = {
+				mode = replace
+				gene = hair_styles
+				template = german_hair
+				accessory = male_german_hair_crown_short
+			}
+			# NOT WORKING YET: the beard comes out as a short full beard. With weight base = 500
+			# every character got that same short beard, both with this setup (vanilla's Magellan)
+			# and with Edward III's (mode = add, template = all_beards), while hair_color applied.
+			accessory = {
+				mode = replace
+				gene = beards
+				template = european_beards
+				accessory = beard_german_long_02
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 500
+				exists = this
+				exists = character:swe_gustav_vasa
+				this = character:swe_gustav_vasa
+			}
+		}
+	}
+}
