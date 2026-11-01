@@ -43,7 +43,11 @@ swe_select_or_create_gustav_vasa = {
 			adm = { 80 90 }
 			dip = { 60 70 }
 			mil = { 80 90 }
+			# Two ruler traits, like 227 of vanilla's 1337 characters. Lawgiver needs ADM >= 66,
+			# which the roll above always meets. Architectural Visionary was skipped: its
+			# legislative_efficiency -0.2 clashes with Lawgiver.
 			add_trait = trait:industrious
+			add_trait = trait:lawgiver
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
 		}
