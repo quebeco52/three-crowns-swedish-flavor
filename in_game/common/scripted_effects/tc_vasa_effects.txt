@@ -1,0 +1,67 @@
+﻿# Saves Gustav Eriksson Vasa as scope:swe_gustav_vasa, creating him if he has never existed.
+# Same pattern as vanilla select_or_create_braganca_ruler.
+swe_select_or_create_gustav_vasa = {
+	if = {
+		limit = { exists = character:swe_gustav_vasa }
+		character:swe_gustav_vasa = { save_scope_as = swe_gustav_vasa }
+	}
+	else = {
+		# A random noble family named Vasa can exist in old saves or with other mods.
+		# Gustav joins that family instead of founding a second house with the same name.
+		if = {
+			limit = {
+				any_character = { dynasty ?= { dynasty_name = Vasa } }
+			}
+			random_character = {
+				limit = { dynasty ?= { dynasty_name = Vasa } }
+				dynasty = { save_scope_as = swe_vasa_house }
+			}
+			every_character = {
+				limit = {
+					dynasty ?= { dynasty_name = Vasa }
+					NOT = { dynasty = scope:swe_vasa_house }
+				}
+				change_dynasty = scope:swe_vasa_house
+			}
+		}
+		else = {
+			if = {
+				limit = { NOT = { exists = dynasty:swe_vasa_dynasty } }
+				create_named_dynasty = swe_vasa_dynasty
+			}
+			dynasty:swe_vasa_dynasty = { save_scope_as = swe_vasa_house }
+		}
+
+		# Stats total 175-215, in line with vanilla's Magnus De la Gardie (flavor_swe.11)
+		create_character = {
+			first_name = name_gustav
+			dynasty = scope:swe_vasa_house
+			birth_date = 1496.5.12
+			birth_location = location:stockholm
+			culture = culture:swedish
+			religion = root.religion
+			estate = estate_type:nobles_estate
+			adm = { 70 80 }
+			dip = { 50 65 }
+			mil = { 55 70 }
+			add_trait = trait:industrious
+			script = swe_gustav_vasa
+			save_scope_as = swe_gustav_vasa
+		}
+
+		# Cannot die before swe_vasa.2 (window ends 1545). Removed by swe_vasa.2; the
+		# timer is a fallback so he never stays immortal if that event can't fire.
+		scope:swe_gustav_vasa = {
+			add_character_modifier = { modifier = swe_destined_for_the_crown years = 35 }
+		}
+	}
+}
+
+swe_remove_gustav_vasa_immortality = {
+	scope:swe_gustav_vasa = {
+		if = {
+			limit = { has_character_modifier = swe_destined_for_the_crown }
+			remove_character_modifier = swe_destined_for_the_crown
+		}
+	}
+}

@@ -1,0 +1,175 @@
+﻿namespace = swe_vasa
+
+# Gustav Eriksson of the House of Vasa comes to court
+swe_vasa.1 = {
+	type = country_event
+	title = swe_vasa.1.title
+	desc = swe_vasa.1.desc
+	outcome = neutral
+	historical_info = swe_vasa.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1513.1.1
+		to = 1515.1.1
+		monthly_chance = 15 # Median spawn mid-1513, ~98% by 1515
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		NOT = { exists = character:swe_gustav_vasa }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		swe_select_or_create_gustav_vasa = yes
+	}
+
+	option = {
+		name = swe_vasa.1.a
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# The estates offer Gustav Vasa the crown.
+# Balanced against vanilla flavor_swe.47 (ruler replaced by a pretender)
+swe_vasa.2 = {
+	type = country_event
+	title = swe_vasa.2.title
+	desc = swe_vasa.2.desc
+	outcome = neutral
+	historical_info = swe_vasa.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1521.6.1
+		to = 1545.1.1
+		monthly_chance = 3
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		OR = {
+			# Created here if swe_vasa.1 never fired; if he has died, history has moved on
+			NOT = { exists = character:swe_gustav_vasa }
+			character:swe_gustav_vasa ?= {
+				is_alive = yes
+				is_ruler = no
+				owner = root
+				age_in_years >= 25
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		swe_select_or_create_gustav_vasa = yes
+		ruler ?= { save_scope_as = swe_old_ruler }
+	}
+
+	option = {
+		name = swe_vasa.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		swe_remove_gustav_vasa_immortality = yes
+		set_new_ruler_with_union_if_senior = { character = scope:swe_gustav_vasa }
+		add_stability = stability_mild_penalty
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+		# Under Konungabalken the election is lawful; without it Gustav is a usurper
+		if = {
+			limit = { has_estate_privilege = estate_privilege:swe_konungabalken }
+			custom_tooltip = swe_vasa.2.a.lawful_tt
+		}
+		else = {
+			add_legitimacy = legitimacy_mild_penalty
+		}
+	}
+
+	option = {
+		name = swe_vasa.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		swe_remove_gustav_vasa_immortality = yes
+		add_legitimacy = legitimacy_mild_bonus
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_severe_penalty }
+	}
+}
+
+# The Hereditary Union of Västerås ends the elective crown (Konungabalken).
+# Not tied to the Vasa: any Swedish monarch in good standing can ask for it.
+# Balanced against vanilla flavor_swe.13 and flavor_swe.18 (noble privilege revoked)
+swe_vasa.3 = {
+	type = country_event
+	title = swe_vasa.3.title
+	desc = swe_vasa.3.desc
+	outcome = neutral
+	historical_info = swe_vasa.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1510.1.1
+		to = 1550.1.1
+		monthly_chance = 3
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		has_regent = no
+		has_estate_privilege = estate_privilege:swe_konungabalken
+		legitimacy >= 50
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_vasa.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		revoke_estate_privilege = estate_privilege:swe_konungabalken
+		add_legitimacy = legitimacy_mild_bonus
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_left }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }
+	}
+
+	option = {
+		name = swe_vasa.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+	}
+}

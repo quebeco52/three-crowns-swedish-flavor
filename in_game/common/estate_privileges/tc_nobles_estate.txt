@@ -1,0 +1,23 @@
+﻿swe_konungabalken = {
+	estate = nobles_estate
+
+	potential = {
+		has_or_had_tag = SWE
+	}
+
+	can_revoke = {
+		"estate_power(estate_type:crown_estate)" >= 0.5
+	}
+
+	# Balanced against nieszawa_privileges (POL) and cas_fuero_viejo (CAS).
+	# Power is below their 0.5 / 0.4 because Sweden holds this from game start.
+	# Removed by swe_vasa.3 (Västerås 1544) or the normal revoke.
+	country_modifier = {
+		monthly_towards_decentralization = societal_value_minor_monthly_move
+		global_nobles_estate_power = 0.3
+		nobles_estate_target_satisfaction = medium_privilege_target_satisfaction
+		nobles_estate_agenda_impact = 0.2
+		monthly_legitimacy = 0.05
+		nobles_estate_max_tax = -0.1
+	}
+}

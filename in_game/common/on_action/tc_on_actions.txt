@@ -1,0 +1,17 @@
+﻿# Hooks into vanilla on_actions without replacing them (same pattern as ai_personalities_setup.txt)
+on_game_start = {
+	on_actions = { tc_on_game_start }
+}
+
+tc_on_game_start = {
+	effect = {
+		# Sweden starts with Konungabalken. Granted here rather than in setup/1337
+		# so the mod never redefines vanilla's SWE country block.
+		c:SWE ?= {
+			if = {
+				limit = { NOT = { has_estate_privilege = estate_privilege:swe_konungabalken } }
+				grant_estate_privilege = estate_privilege:swe_konungabalken
+			}
+		}
+	}
+}
