@@ -1,0 +1,367 @@
+﻿namespace = swe_towns
+
+# Town foundings that renamed a location. Balanced against flavor_dan.43 (Christianstad) and
+# flavor_swe.41 (Göteborg), but none of them change the location rank: that stays the player's
+# decision. Each one is optional and only needs Sweden to own the location at the time.
+
+# Gustav Vasa founds Helsingfors at the mouth of the Vanda (12 June 1550) to take the Gulf of
+# Finland trade from Reval, and orders the burghers of Ekenäs, Borgå, Raumo and Ulvsby to move.
+swe_towns.1 = {
+	type = country_event
+	title = swe_towns.1.title
+	desc = swe_towns.1.desc
+	outcome = neutral
+	historical_info = swe_towns.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1548.1.1
+		to = 1600.1.1
+		monthly_chance = 3 # Median late 1549
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:helsinge
+		# The town was founded to take the trade from Reval
+		NOT = { owns = location:tallinn }
+		OR = {
+			owns = location:ekenas
+			owns = location:porvoo
+			owns = location:raumo
+			owns = location:bjorneborg
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_towns.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -4 }
+		location:helsinge = {
+			rename_location = helsingfors
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (Satakunta)
+		add_migration = {
+			owner = this
+			from = province_definition:nyland_province
+			to_location = location:helsinge
+			type = pop_type:burghers
+			amount = 0.05
+			months = 24
+		}
+		add_migration = {
+			owner = this
+			from = province_definition:satakunta_province
+			to_location = location:helsinge
+			type = pop_type:burghers
+			amount = 0.05
+			months = 24
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_towns.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# Duke Karl, the later Karl IX, charters the market at Tingvalla as Karlstad (March 1584),
+# the first town of Värmland.
+swe_towns.2 = {
+	type = country_event
+	title = swe_towns.2.title
+	desc = swe_towns.2.desc
+	outcome = neutral
+	historical_info = swe_towns.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1582.1.1
+		to = 1640.1.1
+		monthly_chance = 3 # Median late 1583
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:tingvalla
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+	}
+
+	option = {
+		name = swe_towns.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:tingvalla = {
+			rename_location = karlstad
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+	}
+
+	option = {
+		name = swe_towns.2.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# Karl IX founds a town by Korsholm castle (2 October 1606). It was first called Mussor and
+# renamed Vasa after the royal house a few years later, so the name follows the ruling house.
+swe_towns.3 = {
+	type = country_event
+	title = swe_towns.3.title
+	desc = swe_towns.3.desc
+	outcome = neutral
+	historical_info = swe_towns.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1604.1.1
+		to = 1660.1.1
+		monthly_chance = 3 # Median late 1605
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:korsholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+	}
+
+	option = {
+		name = swe_towns.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		if = {
+			limit = {
+				exists = global_var:swe_vasa_house
+				ruler ?= { dynasty ?= global_var:swe_vasa_house }
+			}
+			location:korsholm = { rename_location = vasa }
+		}
+		else = {
+			location:korsholm = { rename_location = mussor }
+		}
+		location:korsholm = {
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+	}
+
+	option = {
+		name = swe_towns.3.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# Gustav II Adolf charters Sundsvall on the land of Selånger parish (August 1621), one of the
+# Norrland towns of the 1620s. The neighbouring parishes opposed it.
+swe_towns.4 = {
+	type = country_event
+	title = swe_towns.4.title
+	desc = swe_towns.4.desc
+	outcome = neutral
+	historical_info = swe_towns.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1619.1.1
+		to = 1660.1.1
+		monthly_chance = 3 # Median late 1620
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:selanger
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_towns.4.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:selanger = {
+			rename_location = sundsvall
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_towns.4.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# Bogesund renames itself Ulricehamn (1741) in honour of Queen Ulrika Eleonora, hoping to win
+# back the cattle trade rights it had lost. A rename only, so no development or gold.
+swe_towns.5 = {
+	type = country_event
+	title = swe_towns.5.title
+	desc = swe_towns.5.desc
+	outcome = neutral
+	historical_info = swe_towns.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1739.1.1
+		to = 1760.1.1
+		monthly_chance = 3 # Median late 1740
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:bogesund
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_towns.5.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:bogesund = {
+			rename_location = ulricehamn
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_towns.5.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+# Gustav III founds Östersund across the sound from Frösön (23 October 1786) to take control of
+# Jämtland's trade with Norway. The town was free of taxes, trade rules and guilds for 20 years.
+swe_towns.6 = {
+	type = country_event
+	title = swe_towns.6.title
+	desc = swe_towns.6.desc
+	outcome = neutral
+	historical_info = swe_towns.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1784.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median late 1785
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:froso
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+	}
+
+	option = {
+		name = swe_towns.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:froso = {
+			rename_location = ostersund
+			change_development = development_mild_bonus
+			add_location_modifier = { modifier = swe_ostersund_freedoms years = 20 }
+		}
+	}
+
+	option = {
+		name = swe_towns.6.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}

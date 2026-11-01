@@ -8,3 +8,11 @@ swe_torne_salmon_fishery = {
 	}
 	local_fish_output_modifier = 0.5
 }
+
+# Added by swe_towns.6 for 20 years. Same migration pull as scandinavian_thing_rights (0.3).
+swe_ostersund_freedoms = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.3
+}
