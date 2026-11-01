@@ -57,3 +57,65 @@ swe_norrland.1 = {
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Tjärkompaniet: in 1648 the Tar Company got the sole right to buy and export the tar of
+# Österbotten. Sets swe_tar_company, which turns on the tar bonus inside swe_bottniska_handelstvanget.
+swe_norrland.2 = {
+	type = country_event
+	title = swe_norrland.2.title
+	desc = swe_norrland.2.desc
+	outcome = neutral
+	historical_info = swe_norrland.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1647.1.1
+		to = 1680.1.1
+		monthly_chance = 3 # Median late 1648, ~98% by 1658
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
+		NOT = { has_variable = swe_tar_company }
+		owns = location:stockholm
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:norra_osterbotten_province
+				province_definition = province_definition:sodra_osterbotten_province
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_norrland.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		set_variable = swe_tar_company
+		custom_tooltip = swe_norrland.2.a_tt
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_norrland.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}

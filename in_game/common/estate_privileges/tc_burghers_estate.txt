@@ -50,6 +50,26 @@ swe_bottniska_handelstvanget = {
 		local_trades_per_burgher = -0.25
 	}
 
+	# Tjärkompaniet (swe_norrland.2): from 1648 the Tar Company bought all the tar of Österbotten
+	# for export through Stockholm. Kept inside this privilege rather than as a privilege of its own.
+	# Above the single-town scandinavian_tar_privileges (+0.2 tar, with an efficiency penalty)
+	# because Österbotten is thinly settled subpolar forest, and it only pays where tar kilns are built.
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = swe_tar_company_location_bonus
+				owner = { has_variable = swe_tar_company }
+				OR = {
+					province_definition = province_definition:norra_osterbotten_province
+					province_definition = province_definition:sodra_osterbotten_province
+				}
+			}
+		}
+		local_tar_output_modifier = 0.25
+		local_tar_establishment_speed = 0.25
+		local_lumber_output_modifier = 0.1
+	}
+
 	# The staple. Kept small: Stockholm is already the main market of the north
 	location_modifier = {
 		potential_trigger = {
