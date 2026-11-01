@@ -38,7 +38,8 @@ swe_vasa.1 = {
 	}
 }
 
-# The estates offer Gustav Vasa the crown.
+# The estates offer the crown to the House of Vasa: Gustav if he can take it, otherwise
+# another Vasa (swe_select_vasa_candidate). Nothing keeps Gustav alive until then.
 # Balanced against vanilla flavor_swe.47 (ruler replaced by a pretender)
 swe_vasa.2 = {
 	type = country_event
@@ -59,14 +60,11 @@ swe_vasa.2 = {
 		has_or_had_tag = SWE
 		government_type = government_type:monarchy
 		has_ruler = yes
-		OR = {
-			# Created here if swe_vasa.1 never fired; if he has died, history has moved on
-			NOT = { exists = character:swe_gustav_vasa }
-			character:swe_gustav_vasa ?= {
-				is_alive = yes
-				is_ruler = no
-				owner = root
-				age_in_years >= 25
+		# Not if a Vasa already holds the crown
+		trigger_if = {
+			limit = { exists = global_var:swe_vasa_house }
+			ruler = {
+				NOT = { dynasty ?= global_var:swe_vasa_house }
 			}
 		}
 	}
@@ -78,7 +76,7 @@ swe_vasa.2 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-		swe_select_or_create_gustav_vasa = yes
+		swe_select_vasa_candidate = yes
 		ruler ?= { save_scope_as = swe_old_ruler }
 	}
 
@@ -89,11 +87,10 @@ swe_vasa.2 = {
 			base = 75
 		}
 
-		swe_remove_gustav_vasa_immortality = yes
-		set_new_ruler_with_union_if_senior = { character = scope:swe_gustav_vasa }
+		set_new_ruler_with_union_if_senior = { character = scope:swe_vasa_candidate }
 		add_stability = stability_mild_penalty
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
-		# Under Konungabalken the election is lawful; without it Gustav is a usurper
+		# Under Konungabalken the election is lawful; without it the new king is a usurper
 		if = {
 			limit = { has_estate_privilege = estate_privilege:swe_konungabalken }
 			custom_tooltip = swe_vasa.2.a.lawful_tt
@@ -109,7 +106,6 @@ swe_vasa.2 = {
 			base = 25
 		}
 
-		swe_remove_gustav_vasa_immortality = yes
 		add_legitimacy = legitimacy_mild_bonus
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_severe_penalty }
 	}

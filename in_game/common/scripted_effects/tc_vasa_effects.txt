@@ -1,13 +1,13 @@
-﻿# Saves Gustav Eriksson Vasa as scope:swe_gustav_vasa, creating him if he has never existed.
-# Same pattern as vanilla select_or_create_braganca_ruler.
-swe_select_or_create_gustav_vasa = {
+﻿# Saves the House of Vasa as scope:swe_vasa_house, creating it if it has never existed.
+# Kept in global_var:swe_vasa_house so later events find the house after Gustav is dead.
+swe_select_or_create_vasa_house = {
 	if = {
-		limit = { exists = character:swe_gustav_vasa }
-		character:swe_gustav_vasa = { save_scope_as = swe_gustav_vasa }
+		limit = { exists = global_var:swe_vasa_house }
+		global_var:swe_vasa_house = { save_scope_as = swe_vasa_house }
 	}
 	else = {
 		# A random noble family named Vasa can exist in old saves or with other mods.
-		# Gustav joins that family instead of founding a second house with the same name.
+		# The house uses that family instead of founding a second one with the same name.
 		if = {
 			limit = {
 				any_character = { dynasty ?= { dynasty_name = Vasa } }
@@ -19,7 +19,7 @@ swe_select_or_create_gustav_vasa = {
 			every_character = {
 				limit = {
 					dynasty ?= { dynasty_name = Vasa }
-					NOT = { dynasty = scope:swe_vasa_house }
+					NOT = { dynasty ?= scope:swe_vasa_house }
 				}
 				change_dynasty = scope:swe_vasa_house
 			}
@@ -31,7 +31,19 @@ swe_select_or_create_gustav_vasa = {
 			}
 			dynasty:swe_vasa_dynasty = { save_scope_as = swe_vasa_house }
 		}
+		set_global_variable = { name = swe_vasa_house value = scope:swe_vasa_house }
+	}
+}
 
+# Saves Gustav Eriksson Vasa as scope:swe_gustav_vasa, creating him if he has never existed.
+# Same pattern as vanilla select_or_create_braganca_ruler.
+swe_select_or_create_gustav_vasa = {
+	if = {
+		limit = { exists = character:swe_gustav_vasa }
+		character:swe_gustav_vasa = { save_scope_as = swe_gustav_vasa }
+	}
+	else = {
+		swe_select_or_create_vasa_house = yes
 		create_character = {
 			first_name = name_gustav
 			dynasty = scope:swe_vasa_house
@@ -40,31 +52,78 @@ swe_select_or_create_gustav_vasa = {
 			culture = culture:swedish
 			religion = root.religion
 			estate = estate_type:nobles_estate
+			# 220-250 total, like vanilla's Birger Jarl (242) and Stefan Dušan (235)
 			adm = { 80 90 }
 			dip = { 60 70 }
 			mil = { 80 90 }
 			# Two ruler traits, like 227 of vanilla's 1337 characters. Lawgiver needs ADM >= 66,
-			# which the roll above always meets. Architectural Visionary was skipped: its
-			# legislative_efficiency -0.2 clashes with Lawgiver.
 			add_trait = trait:industrious
 			add_trait = trait:lawgiver
+			# Fertility 100 like the historical figures vanilla creates
+			fertility = 100
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
-		}
-
-		# Cannot die before swe_vasa.2 (window ends 1545). Removed by swe_vasa.2; the
-		# timer is a fallback so he never stays immortal if that event can't fire.
-		scope:swe_gustav_vasa = {
-			add_character_modifier = { modifier = swe_destined_for_the_crown years = 35 }
 		}
 	}
 }
 
-swe_remove_gustav_vasa_immortality = {
-	scope:swe_gustav_vasa = {
+# Saves the man the estates put forward for the crown (swe_vasa.2) as scope:swe_vasa_candidate.
+# The crown goes to the House of Vasa, not to Gustav in person: Gustav if he can take it,
+# otherwise the eldest grown man of the house in the country, otherwise a new lord of the
+# house with ordinary stats. Only Gustav has fixed stats and traits.
+swe_select_vasa_candidate = {
+	if = {
+		# swe_vasa.1 never fired, so Gustav enters here
+		limit = { NOT = { exists = character:swe_gustav_vasa } }
+		swe_select_or_create_gustav_vasa = yes
+		scope:swe_gustav_vasa = { save_scope_as = swe_vasa_candidate }
+	}
+	else_if = {
+		limit = {
+			character:swe_gustav_vasa = {
+				is_alive = yes
+				is_ruler = no
+				owner = root
+				age_in_years >= 25
+			}
+		}
+		character:swe_gustav_vasa = { save_scope_as = swe_vasa_candidate }
+	}
+	else = {
+		swe_select_or_create_vasa_house = yes
 		if = {
-			limit = { has_character_modifier = swe_destined_for_the_crown }
-			remove_character_modifier = swe_destined_for_the_crown
+			limit = {
+				any_character = {
+					is_alive = yes
+					dynasty ?= scope:swe_vasa_house
+					is_female = no
+					is_ruler = no
+					age_in_years >= 25
+				}
+			}
+			ordered_character = {
+				limit = {
+					is_alive = yes
+					dynasty ?= scope:swe_vasa_house
+					is_female = no
+					is_ruler = no
+					age_in_years >= 25
+				}
+				order_by = age_in_days
+				save_scope_as = swe_vasa_candidate
+			}
+		}
+		else = {
+			create_character = {
+				dynasty = scope:swe_vasa_house
+				birth_location = location:stockholm
+				culture = culture:swedish
+				religion = root.religion
+				estate = estate_type:nobles_estate
+				min_age = 25
+				max_age = 40
+				save_scope_as = swe_vasa_candidate
+			}
 		}
 	}
 }

@@ -1,7 +1,5 @@
 ﻿l_english:
  swe_vasa_dynasty: "Vasa"
- STATIC_MODIFIER_NAME_swe_destined_for_the_crown: "Destined for the Crown"
- STATIC_MODIFIER_DESC_swe_destined_for_the_crown: "Whatever fate has in store for this young lord, it will not take him before the estates have had their say."
 
  swe_vasa.1.title: "The Young Lord of Rydboholm"
  swe_vasa.1.entry: "$swe_vasa.1.title$"
@@ -9,12 +7,12 @@
  swe_vasa.1.historical_info: "Gustav Eriksson was born in 1496 into the Vasa family, one of the great houses of the Swedish council aristocracy. His father, Erik Johansson, sat on the Council of the Realm. In 1518 the young Gustav carried the Swedish banner at Brännkyrka against the Danish king Christian II, and soon afterwards he was carried off to Denmark as a hostage. He escaped in 1519 and made his way home, only to see his father executed in the Stockholm Bloodbath of November 1520."
  swe_vasa.1.a: "Keep him close."
 
- swe_vasa.2.title: "A Crown for Gustav Vasa"
+ swe_vasa.2.title: "A Crown for the House of Vasa"
  swe_vasa.2.entry: "$swe_vasa.2.title$"
- swe_vasa.2.desc: "The estates have gathered, and many among them want a new beginning. They have put forward a man of their own: [swe_gustav_vasa.GetName], who has won the loyalty of the peasants of the north and the respect of the great houses of the realm. They ask us to set the crown on his head in place of [swe_old_ruler.GetName]. If we refuse, the lords who backed him will not forget it."
+ swe_vasa.2.desc: "The estates have gathered, and many among them want a new beginning. They have put forward a man of the House of Vasa: [swe_vasa_candidate.GetName], who has won the loyalty of the peasants of the north and the respect of the great houses of the realm. They ask us to set the crown on his head in place of [swe_old_ruler.GetName]. If we refuse, the lords who backed him will not forget it."
  swe_vasa.2.historical_info: "After the Stockholm Bloodbath, Gustav Eriksson Vasa raised the men of Dalarna against Christian II. Within two years his rebellion had driven the Danes from most of Sweden, and on 6 June 1523 the Riksdag at Strängnäs elected him king, ending the Kalmar Union for good. Gustav ruled for 37 years. He broke the power of the Church, made the crown hereditary at Västerås in 1544, and founded a dynasty that ruled Sweden until 1654."
- swe_vasa.2.a: "Long live King Gustav!"
- swe_vasa.2.a.entry: "Long live King Gustav!"
+ swe_vasa.2.a: "Long live King [swe_vasa_candidate.GetName]!"
+ swe_vasa.2.a.entry: "A Vasa takes the crown."
  swe_vasa.2.a.lawful_tt: "The estates have elected him under Konungabalken, so his reign begins without any loss of legitimacy."
  swe_vasa.2.b: "[swe_old_ruler.GetName] remains our [ROOT.GetCountry.GetGovernment.GetRulerTitle]."
  swe_vasa.2.b.entry: "The old ruler remains."

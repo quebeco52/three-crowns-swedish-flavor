@@ -1,8 +1,0 @@
-﻿# Keeps Gustav Vasa alive until swe_vasa.2 offers him the crown.
-# Removed by both options of swe_vasa.2, and expires on its own (see swe_select_or_create_gustav_vasa).
-swe_destined_for_the_crown = {
-	game_data = {
-		category = character
-	}
-	is_immortal = yes
-}
