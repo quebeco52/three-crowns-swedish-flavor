@@ -1,0 +1,52 @@
+﻿# Birkarlarätt: the Birkarlar, peasant traders of the Torne, Lule and Pite valleys, held the
+# trade with the Sámi and collected their tax. First recorded in 1328 (Telgebrevet); the
+# monopoly was more custom than law. Gustav Vasa took the tax in 1553, and the town charters
+# of 1621 ended the Birkarlar.
+# Balanced against justicia_de_aragon (area-limited crown power) and pomor_outpost (peasant traders).
+# Sweden holds this from game start, so the country-wide cost is small.
+swe_birkarl_rights = {
+	estate = peasants_estate
+
+	potential = {
+		has_or_had_tag = SWE
+	}
+
+	allow = {
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:vasterbotten_province
+				province_definition = province_definition:pite_lappmark_province
+				province_definition = province_definition:lule_lappmark_province
+				province_definition = province_definition:torne_lappmark_province
+				province_definition = province_definition:kemi_lappmark_province
+			}
+		}
+	}
+
+	can_revoke = {
+		"estate_power(estate_type:crown_estate)" >= 0.5
+	}
+
+	# Only the valleys and lappmarks the Birkarlar traded in. Kemi Lappmark was part of
+	# Torne Lappmark until 1633 and came under birkarl influence in the 16th century.
+	location_modifier = {
+		potential_trigger = {
+			OR = {
+				province_definition = province_definition:vasterbotten_province
+				province_definition = province_definition:pite_lappmark_province
+				province_definition = province_definition:lule_lappmark_province
+				province_definition = province_definition:torne_lappmark_province
+				province_definition = province_definition:kemi_lappmark_province
+			}
+		}
+		local_fur_output_modifier = 0.2
+		local_wild_game_output_modifier = 0.2
+		local_market_access = 0.1
+		local_crown_estate_power = -0.1
+	}
+
+	country_modifier = {
+		peasants_estate_target_satisfaction = small_privilege_target_satisfaction
+		global_peasants_estate_power = 0.1
+	}
+}

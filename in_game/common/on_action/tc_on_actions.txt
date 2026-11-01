@@ -12,6 +12,11 @@ tc_on_game_start = {
 				limit = { NOT = { has_estate_privilege = estate_privilege:swe_konungabalken } }
 				grant_estate_privilege = estate_privilege:swe_konungabalken
 			}
+			# The Birkarlar already trade with the Sámi in 1337
+			if = {
+				limit = { NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights } }
+				grant_estate_privilege = estate_privilege:swe_birkarl_rights
+			}
 		}
 	}
 }
