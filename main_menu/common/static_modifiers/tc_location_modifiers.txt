@@ -1,20 +1,29 @@
 ﻿# Added at game start by tc_on_game_start, like vanilla's location_historical_base_values.txt.
 
-# The salmon fisheries of the Torne river. Same size as freiberg_base (0.5), far below
-# skane_herring_market (5), which supplied fish to half of Europe.
-swe_torne_salmon_fishery = {
+# The great salmon rivers of the Bothnian Bay: the Torne, the Kemi and the Oulu. Same size as
+# freiberg_base (0.5), far below skane_herring_market (5), which supplied fish to half of Europe.
+swe_northern_salmon_fishery = {
 	game_data = {
 		category = location
 	}
 	local_fish_output_modifier = 0.5
 }
 
-# Added by swe_towns.6 for 20 years. Same migration pull as scandinavian_thing_rights (0.3).
+# The salmon fishery below the Älvkarleby falls of the Dalälven, in tierp. Half of
+# swe_northern_salmon_fishery: one fishery at the river mouth, not a whole river.
+swe_alvkarleby_salmon_fishery = {
+	game_data = {
+		category = location
+	}
+	local_fish_output_modifier = 0.25
+}
+
+# Added by swe_towns.6 for 20 years.
 swe_ostersund_freedoms = {
 	game_data = {
 		category = location
 	}
-	local_migration_attraction = 0.3
+	local_migration_attraction = 0.1
 }
 
 # Added by swe_lappmarksplakatet_decision to the lappmarks for 15 years. Same migration pull as
@@ -26,14 +35,12 @@ swe_lappmark_settlers = {
 	local_migration_attraction = 0.3
 }
 
-# Added by swe_scania.1 for 20 years to the Danish-culture locations of Skåneland. Same assimilation
-# as cracked_down_on_minorities_modifier (0.05) with half its unrest, and crown power instead of
-# the local_max_control in Denmark's dan_integrating_scania.
+# Added by swe_scania.1 for 20 years to the Danish-culture locations of Skåneland.
 swe_forsvenskning = {
 	game_data = {
 		category = location
 	}
-	local_pop_assimilation_speed_modifier = 0.05
+	local_pop_assimilation_speed_modifier = 0.10
 	local_unrest = 0.1
 	local_crown_estate_power = 0.1
 }

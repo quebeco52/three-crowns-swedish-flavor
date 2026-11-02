@@ -1,6 +1,8 @@
 ﻿l_english:
- STATIC_MODIFIER_NAME_swe_torne_salmon_fishery: "The Torne Salmon Fisheries"
- STATIC_MODIFIER_DESC_swe_torne_salmon_fishery: "Every summer the salmon swim up the Torne river, and the fishermen catch them in weirs built across the rapids. Salted Torne salmon is one of the most valuable exports of the north."
+ STATIC_MODIFIER_NAME_swe_northern_salmon_fishery: "Northern Salmon Fisheries"
+ STATIC_MODIFIER_DESC_swe_northern_salmon_fishery: "Every summer the salmon swim up the great rivers of the north, and the fishermen catch them in weirs built across the rapids. Salted salmon from the Torne, the Kemi and the Oulu is one of the most valuable exports of the Bothnian coast."
+ STATIC_MODIFIER_NAME_swe_alvkarleby_salmon_fishery: "The Älvkarleby Salmon Fishery"
+ STATIC_MODIFIER_DESC_swe_alvkarleby_salmon_fishery: "Where the Dalälven falls into the sea at Älvkarleby, the salmon gather below the rapids every summer. The fishery there is one of the richest in the realm."
  STATIC_MODIFIER_NAME_swe_lappmark_settlers: "Lappmark Settlers"
  STATIC_MODIFIER_DESC_swe_lappmark_settlers: "Under the Lappmark Edict, settlers who clear new farms here pay no taxes and are free from military service for fifteen years."
 

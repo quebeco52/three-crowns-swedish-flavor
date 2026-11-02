@@ -19,11 +19,72 @@ tc_on_game_start = {
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
-		# Belongs to the location, not to Sweden: Torneå starts as Kven land in 1337
+		# The salmon fisheries belong to the location, not to Sweden: Torneå starts as Kven land in 1337
 		location:tornea ?= {
 			if = {
-				limit = { NOT = { has_location_modifier = swe_torne_salmon_fishery } }
-				add_location_modifier = { modifier = swe_torne_salmon_fishery months = -1 }
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
+		# Kemi and Oulu lived on salmon until the timber trade of the 19th century, so they produce
+		# fish instead of vanilla's lumber. Only changed while they still have vanilla's lumber.
+		location:kiemi ?= {
+			if = {
+				limit = { raw_material = goods:lumber }
+				change_raw_material = goods:fish
+			}
+			if = {
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
+		location:uleaborg ?= {
+			if = {
+				limit = { raw_material = goods:lumber }
+				change_raw_material = goods:fish
+			}
+			if = {
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
+		# Västerås lies on the Västmanland plain, the farmland on Lake Mälaren that fed the mines of
+		# Bergslagen. Millet like neighbouring Enköping, vanilla's grain for most Swedish farmland;
+		# the mining locations keep no food, as Bergslagen bought its grain.
+		location:vasteras ?= {
+			if = {
+				limit = { raw_material = goods:lumber }
+				change_raw_material = goods:millet
+			}
+		}
+		# Färnebo härad was Filipstads bergslag, "Jernberghet i Wærmelande" in 1413: the iron mines of
+		# Persberg, Nordmark and Långban, and Filipstad's town privileges in 1611
+		location:farnebo ?= {
+			if = {
+				limit = { raw_material = goods:lumber }
+				change_raw_material = goods:iron
+			}
+		}
+		# The Garpenberg copper mine east of Hedemora, worked since the 1200s (charter of 1354)
+		location:hedemora ?= {
+			if = {
+				limit = { raw_material = goods:horses }
+				change_raw_material = goods:copper
+			}
+		}
+		# Göksholm's meadows on the Hjälmaren shore suit livestock; the lake was only lowered for
+		# farmland in 1878-87
+		location:goksholm ?= {
+			if = {
+				limit = { raw_material = goods:medicaments }
+				change_raw_material = goods:livestock
+			}
+		}
+		# Älvkarleby, at the mouth of the Dalälven, lies in tierp, which already produces fish
+		location:tierp ?= {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_alvkarleby_salmon_fishery } }
+				add_location_modifier = { modifier = swe_alvkarleby_salmon_fishery months = -1 }
 			}
 		}
 	}
