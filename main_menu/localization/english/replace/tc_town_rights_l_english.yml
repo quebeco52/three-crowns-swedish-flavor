@@ -1,0 +1,3 @@
+﻿l_english:
+ # Vanilla's text promised "a more orderly and loyal population", which was its local_max_control (see tc_town_rights.txt)
+ scandinavian_thing_rights_desc: "The ting of the surrounding hundred meets at this [location|e]. Its freeholding [ShowEstateTypeName('peasants_estate')] sit in judgement beside a noble judge, settle their disputes and trade on the ting days, and they answer more readily to their own assembly than to the Crown's bailiffs."
