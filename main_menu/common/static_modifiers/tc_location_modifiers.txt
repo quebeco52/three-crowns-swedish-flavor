@@ -70,3 +70,55 @@ swe_tyska_radet = {
 	local_burghers_estate_power = 0.25
 	local_crown_estate_power = -0.25
 }
+
+# Added to oland by swe_oland_djurgard_decision, ended by swe_oland.1 or swe_oland_end_djurgard_decision.
+# The Crown kept the island's game and forests, and the fallow deer grazed the peasants' fields and
+# pastures. Built on vanilla's fontainebleau_hunting_lodge: the same crown power, but the migration
+# reversed, since peasants left the island rather than courtiers coming to it. The horses are the royal
+# stud at Ottenby, behind Karl X Gustav's wall; they only count if a horse breeder is built here.
+swe_olands_djurgard = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_livestock_output_modifier = -0.1
+	local_monthly_food_modifier = monthly_food_productivity_weak_penalty
+	local_migration_attraction = -0.1
+	local_horses_output_modifier = 0.25
+}
+
+# Added by swe_jamtland.1 or swe_jamtland.2 to the Norwegian-culture locations of Jämtland, removed by
+# swe_jamtland.2. The old tings, and the promise of 1688 that the Jämtlanders need only defend their own
+# province: they hold their valleys well but send few men to the Crown's wars. The defence of
+# fortress_town (0.25).
+swe_jamtland_tings = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasants_estate_power = 0.1
+	local_defensive = 0.25
+	local_manpower_modifier = -0.25
+}
+
+# Added to froso along with swe_jamtland_tings: the yearly market on Frösön, where Jämtland traded with
+# Norway and the Bothnian coast. The market access of market_charter (0.1).
+swe_jamtmarknaden = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+}
+
+# Added by swe_pomerania.1 to Sweden's locations in Pomerania. Gustav IV Adolf set aside the estates'
+# constitution and abolished serfdom (1806). Twice the enfranchisement of scandinavian_thing_rights
+# (0.05); the estate shifts of fortress_town (0.25), here from the nobles to the peasants and the Crown.
+swe_pomeranian_emancipation = {
+	game_data = {
+		category = location
+	}
+	local_peasant_enfranchisment = 0.1
+	local_peasants_estate_power = 0.25
+	local_nobles_estate_power = -0.25
+	local_crown_estate_power = 0.25
+}

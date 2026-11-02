@@ -1,0 +1,71 @@
+﻿namespace = swe_pomerania
+
+# In 1806 the Pomeranian estates refused Gustav IV Adolf a militia. On 26 June he set aside their
+# constitution and took Swedish Pomerania out of the Empire, then announced Swedish law and the end of
+# serfdom; the French occupation of 1807 delayed it, and it was carried out in part from 1810.
+# Fires on owning Vorpommern while the realm leans toward free subjects (vanilla's usual threshold, 25).
+# The Empire is left out on purpose: it is the realm's values that decide, not the date.
+swe_pomerania.1 = {
+	type = country_event
+	title = swe_pomerania.1.title
+	desc = swe_pomerania.1.desc
+	outcome = neutral
+	historical_info = swe_pomerania.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years once the trigger holds
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		societal_value:serfdom_vs_free_subjects > 25
+		province_definition:vorpommern_province = {
+			any_location_in_province_definition = { owner = root }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_pomerania.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_pomerania.1.a_tt
+			area:pomerania_area = {
+				every_location_in_area = {
+					limit = {
+						owner = root
+						NOT = { has_location_modifier = swe_pomeranian_emancipation }
+					}
+					add_location_modifier = { modifier = swe_pomeranian_emancipation months = -1 }
+				}
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_pomerania.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+}

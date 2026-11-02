@@ -1,0 +1,218 @@
+﻿namespace = swe_jamtland
+
+# Jämtland was Norwegian until Brömsebro (1645) and changed sides 13 times between 1563 and 1677.
+# Both events fire on ownership while Norwegian culture still dominates there, never by date, and
+# neither changes anyone's culture: swe_forsvenskning only speeds up assimilation.
+
+# Sweden takes over Jämtland. Sweden founded the diocese of Härnösand (1647) and schools to draw the
+# Jämtlanders away from Trondheim. Same shape as swe_scania.1.
+swe_jamtland.1 = {
+	type = country_event
+	title = swe_jamtland.1.title
+	desc = swe_jamtland.1.desc
+	outcome = neutral
+	historical_info = swe_jamtland.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Frösön
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:froso
+		province_definition:jamtland_province = {
+			any_location_in_province_definition = {
+				owner = root
+				dominant_culture = culture:norwegian
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+		# swe_jamtland.2 waits for this event, so their modifiers never pile up on each other
+		set_variable = swe_jamtland_integrated
+	}
+
+	option = {
+		name = swe_jamtland.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_jamtland.1.a_tt
+			province_definition:jamtland_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner = root
+						dominant_culture = culture:norwegian
+						NOT = { has_location_modifier = swe_forsvenskning }
+					}
+					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+				}
+			}
+		}
+		# Härnösand, the new diocese for Jämtland and the Bothnian coast
+		location:harnosand ?= {
+			if = {
+				limit = { owner = root }
+				change_development = development_mild_bonus
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_jamtland.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_jamtland.1.b_tt
+			province_definition:jamtland_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner = root
+						dominant_culture = culture:norwegian
+						NOT = { has_location_modifier = swe_jamtland_tings }
+					}
+					add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
+				}
+			}
+		}
+		location:froso = {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_jamtmarknaden } }
+				add_location_modifier = { modifier = swe_jamtmarknaden months = -1 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# The Jämtlanders hail the enemy as liberators, as they did the Norwegians in 1657 and 1677. Fires
+# after swe_jamtland.1, while Sweden is at war with whoever holds Trondheim, Jämtland's old diocese and
+# the way the Norwegian armies came. Punishing them ends the tings and Swedifies; the concession matches
+# the agreement of 1688. The modifiers come off wherever Sweden owns them, whatever the culture there.
+swe_jamtland.2 = {
+	type = country_event
+	title = swe_jamtland.2.title
+	desc = swe_jamtland.2.desc
+	outcome = neutral
+	historical_info = swe_jamtland.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 5 # About a year into such a war
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_variable = swe_jamtland_integrated
+		location:nidaros ?= {
+			owner ?= { is_at_war_with = root }
+		}
+		province_definition:jamtland_province = {
+			any_location_in_province_definition = {
+				owner = root
+				dominant_culture = culture:norwegian
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_jamtland.2.a
+		ai_chance = {
+			base = 50
+		}
+
+		custom_tooltip = {
+			text = swe_jamtland.2.a_tt
+			province_definition:jamtland_province = {
+				every_location_in_province_definition = {
+					limit = { owner = root }
+					if = {
+						limit = { has_location_modifier = swe_jamtland_tings }
+						remove_location_modifier = swe_jamtland_tings
+					}
+					if = {
+						limit = {
+							dominant_culture = culture:norwegian
+							NOT = { has_location_modifier = swe_forsvenskning }
+						}
+						add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+					}
+				}
+			}
+		}
+		location:froso = {
+			if = {
+				limit = { has_location_modifier = swe_jamtmarknaden }
+				remove_location_modifier = swe_jamtmarknaden
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_jamtland.2.b
+		historical_option = yes
+		ai_chance = {
+			base = 50
+		}
+
+		custom_tooltip = {
+			text = swe_jamtland.2.b_tt
+			province_definition:jamtland_province = {
+				every_location_in_province_definition = {
+					limit = { owner = root }
+					if = {
+						limit = { has_location_modifier = swe_forsvenskning }
+						remove_location_modifier = swe_forsvenskning
+					}
+					if = {
+						limit = {
+							dominant_culture = culture:norwegian
+							NOT = { has_location_modifier = swe_jamtland_tings }
+						}
+						add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
+					}
+				}
+			}
+		}
+		location:froso = {
+			if = {
+				limit = {
+					owner = root
+					NOT = { has_location_modifier = swe_jamtmarknaden }
+				}
+				add_location_modifier = { modifier = swe_jamtmarknaden months = -1 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+}
