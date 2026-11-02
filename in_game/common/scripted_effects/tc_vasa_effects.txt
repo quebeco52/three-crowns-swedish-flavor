@@ -6,7 +6,7 @@ swe_select_or_create_vasa_house = {
 		global_var:swe_vasa_house = { save_scope_as = swe_vasa_house }
 	}
 	else = {
-		# A random noble family named Vasa can exist in old saves or with other mods.
+		# Vasa is in vanilla's Swedish dynasty name pool, so the family may already exist as nobles.
 		# The house uses that family instead of founding a second one with the same name.
 		if = {
 			limit = {
@@ -25,11 +25,12 @@ swe_select_or_create_vasa_house = {
 			}
 		}
 		else = {
+			# Same key as the name pool, so vanilla's Vasa arms apply (like vanilla's dynasty:Rodriguez)
 			if = {
-				limit = { NOT = { exists = dynasty:swe_vasa_dynasty } }
-				create_named_dynasty = swe_vasa_dynasty
+				limit = { NOT = { exists = dynasty:Vasa } }
+				create_named_dynasty = Vasa
 			}
-			dynasty:swe_vasa_dynasty = { save_scope_as = swe_vasa_house }
+			dynasty:Vasa = { save_scope_as = swe_vasa_house }
 		}
 		set_global_variable = { name = swe_vasa_house value = scope:swe_vasa_house }
 	}

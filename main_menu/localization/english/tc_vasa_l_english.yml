@@ -1,6 +1,4 @@
 ﻿l_english:
- swe_vasa_dynasty: "Vasa"
-
  swe_vasa.1.title: "The Young Lord of Rydboholm"
  swe_vasa.1.entry: "$swe_vasa.1.title$"
  swe_vasa.1.desc: "[swe_gustav_vasa.GetName], a young lord of the Vasa family from Uppland, has come to court. He is quick to anger but a gifted speaker, and he never seems to tire. The older lords have begun to take notice of him, and a few of them already say that [ROOT.GetCountry.GetName] would be better off with him in charge."
