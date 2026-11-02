@@ -15,13 +15,7 @@ swe_birkarl_rights = {
 		# Once swe_bottniska_handelstvanget_decision unlocks Bottniska handelstvånget, the Birkarlar cannot come back
 		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
 		any_owned_location = {
-			OR = {
-				province_definition = province_definition:vasterbotten_province
-				province_definition = province_definition:pite_lappmark_province
-				province_definition = province_definition:lule_lappmark_province
-				province_definition = province_definition:torne_lappmark_province
-				province_definition = province_definition:kemi_lappmark_province
-			}
+			swe_birkarl_lands_trigger = yes
 		}
 	}
 
@@ -33,13 +27,7 @@ swe_birkarl_rights = {
 	# Torne Lappmark until 1633 and came under birkarl influence in the 16th century.
 	location_modifier = {
 		potential_trigger = {
-			OR = {
-				province_definition = province_definition:vasterbotten_province
-				province_definition = province_definition:pite_lappmark_province
-				province_definition = province_definition:lule_lappmark_province
-				province_definition = province_definition:torne_lappmark_province
-				province_definition = province_definition:kemi_lappmark_province
-			}
+			swe_birkarl_lands_trigger = yes
 		}
 		local_fur_output_modifier = 0.2
 		local_wild_game_output_modifier = 0.2

@@ -1,0 +1,4 @@
+# Editor, tool and sandbox files at the repo root; the mod itself has no dotfiles except .metadata
+/.*
+!/.gitignore
+!/.metadata/

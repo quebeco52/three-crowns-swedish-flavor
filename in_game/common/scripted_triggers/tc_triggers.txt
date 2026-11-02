@@ -1,0 +1,52 @@
+﻿# Province groups used in more than one place, kept here so every copy stays the same.
+# All are location scope. No vanilla area matches them (norrland_area mixes them all).
+
+# The valleys and lappmarks of the Birkarl trade (swe_birkarl_rights, swe_bottniska_handelstvanget)
+swe_birkarl_lands_trigger = {
+	OR = {
+		province_definition = province_definition:vasterbotten_province
+		province_definition = province_definition:pite_lappmark_province
+		province_definition = province_definition:lule_lappmark_province
+		province_definition = province_definition:torne_lappmark_province
+		province_definition = province_definition:kemi_lappmark_province
+	}
+}
+
+# The East and West Bothnian coast that the trade ordinances of 1614 and 1617 bound to Stockholm
+swe_bothnian_coast_trigger = {
+	OR = {
+		province_definition = province_definition:halsingland_province
+		province_definition = province_definition:angermanland_province
+		province_definition = province_definition:vasterbotten_province
+		province_definition = province_definition:norra_osterbotten_province
+		province_definition = province_definition:sodra_osterbotten_province
+	}
+}
+
+# The five lappmarks of the Lappmark Edict (swe_lappmarksplakatet_decision)
+swe_lappmarks_trigger = {
+	OR = {
+		province_definition = province_definition:ume_lappmark_province
+		province_definition = province_definition:pite_lappmark_province
+		province_definition = province_definition:lule_lappmark_province
+		province_definition = province_definition:torne_lappmark_province
+		province_definition = province_definition:kemi_lappmark_province
+	}
+}
+
+# Österbotten, the tar country of the Tar Company (swe_tar_company_decision)
+swe_osterbotten_trigger = {
+	OR = {
+		province_definition = province_definition:norra_osterbotten_province
+		province_definition = province_definition:sodra_osterbotten_province
+	}
+}
+
+# Kexholm county and Ingria, ceded by Russia at Stolbovo (swe_ingria.1)
+swe_kexholm_ingria_trigger = {
+	OR = {
+		province_definition = province_definition:korela_province
+		province_definition = province_definition:lopskaya_province
+		province_definition = province_definition:vodskaya_province
+	}
+}

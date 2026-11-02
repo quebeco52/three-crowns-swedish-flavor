@@ -1,4 +1,5 @@
-﻿# Added at game start by tc_on_game_start, like vanilla's location_historical_base_values.txt.
+﻿# The salmon fisheries are added at game start by tc_on_game_start, like vanilla's
+# location_historical_base_values.txt; the others by the event or decision named above each one.
 
 # The great salmon rivers of the Bothnian Bay: the Torne, the Kemi and the Oulu. Same size as
 # freiberg_base (0.5), far below skane_herring_market (5), which supplied fish to half of Europe.
@@ -27,7 +28,7 @@ swe_ostersund_freedoms = {
 }
 
 # Added by swe_lappmarksplakatet_decision to the lappmarks for 15 years. Same migration pull as
-# swe_ostersund_freedoms, spread over a near-empty region.
+# scandinavian_thing_rights (0.3), spread over a near-empty region.
 swe_lappmark_settlers = {
 	game_data = {
 		category = location

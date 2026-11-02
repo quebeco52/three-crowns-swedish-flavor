@@ -2,7 +2,8 @@
 # Bothnian towns could trade abroad only through Stockholm. Abolished in 1765.
 # Replaces swe_birkarl_rights through swe_bottniska_handelstvanget_decision: the Sámi trade goes on at half strength,
 # but the crown takes the tax back from the Birkarlar.
-# Balanced against swe_birkarl_rights: its -0.1 crown power in the north becomes +0.1.
+# Balanced against swe_birkarl_rights: its -0.1 crown power goes away in the lappmarks and becomes
+# +0.1 along the Bothnian coast (Västerbotten is in both).
 swe_bottniska_handelstvanget = {
 	estate = burghers_estate
 
@@ -15,20 +16,16 @@ swe_bottniska_handelstvanget = {
 		NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
 	}
 
+	# Lower than the other Swedish privileges (0.5): the Riksdag abolished the staple in 1765, when the
+	# crown was weak, and revoking a privilege already costs stability
 	can_revoke = {
-		"estate_power(estate_type:crown_estate)" >= 0.5
+		"estate_power(estate_type:crown_estate)" >= 0.3
 	}
 
 	# The old birkarl lands (same provinces as swe_birkarl_rights)
 	location_modifier = {
 		potential_trigger = {
-			OR = {
-				province_definition = province_definition:vasterbotten_province
-				province_definition = province_definition:pite_lappmark_province
-				province_definition = province_definition:lule_lappmark_province
-				province_definition = province_definition:torne_lappmark_province
-				province_definition = province_definition:kemi_lappmark_province
-			}
+			swe_birkarl_lands_trigger = yes
 		}
 		local_fur_output_modifier = 0.1
 		local_wild_game_output_modifier = 0.1
@@ -38,13 +35,7 @@ swe_bottniska_handelstvanget = {
 	# The East and West Bothnian coast cannot trade abroad, and the crown taxes what it sells
 	location_modifier = {
 		potential_trigger = {
-			OR = {
-				province_definition = province_definition:halsingland_province
-				province_definition = province_definition:angermanland_province
-				province_definition = province_definition:vasterbotten_province
-				province_definition = province_definition:norra_osterbotten_province
-				province_definition = province_definition:sodra_osterbotten_province
-			}
+			swe_bothnian_coast_trigger = yes
 		}
 		local_crown_estate_power = 0.1
 		local_trades_per_burgher = -0.25
@@ -59,10 +50,7 @@ swe_bottniska_handelstvanget = {
 			custom_tooltip = {
 				text = swe_tar_company_location_bonus
 				owner = { has_variable = swe_tar_company }
-				OR = {
-					province_definition = province_definition:norra_osterbotten_province
-					province_definition = province_definition:sodra_osterbotten_province
-				}
+				swe_osterbotten_trigger = yes
 			}
 		}
 		local_tar_output_modifier = 0.25

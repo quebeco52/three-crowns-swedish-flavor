@@ -18,13 +18,7 @@ swe_bottniska_handelstvanget_decision = {
 	allow = {
 		owns = location:stockholm
 		any_owned_location = {
-			OR = {
-				province_definition = province_definition:halsingland_province
-				province_definition = province_definition:angermanland_province
-				province_definition = province_definition:vasterbotten_province
-				province_definition = province_definition:norra_osterbotten_province
-				province_definition = province_definition:sodra_osterbotten_province
-			}
+			swe_bothnian_coast_trigger = yes
 			OR = {
 				location_rank = location_rank:town
 				location_rank = location_rank:city
@@ -79,10 +73,7 @@ swe_tar_company_decision = {
 	allow = {
 		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
 		any_owned_location = {
-			OR = {
-				province_definition = province_definition:norra_osterbotten_province
-				province_definition = province_definition:sodra_osterbotten_province
-			}
+			swe_osterbotten_trigger = yes
 			has_building = building_type:tar_kiln
 		}
 	}
@@ -124,13 +115,7 @@ swe_lappmarksplakatet_decision = {
 			age = age_5_absolutism
 		}
 		any_owned_location = {
-			OR = {
-				province_definition = province_definition:ume_lappmark_province
-				province_definition = province_definition:pite_lappmark_province
-				province_definition = province_definition:lule_lappmark_province
-				province_definition = province_definition:torne_lappmark_province
-				province_definition = province_definition:kemi_lappmark_province
-			}
+			swe_lappmarks_trigger = yes
 		}
 	}
 
@@ -155,13 +140,7 @@ swe_lappmarksplakatet_decision = {
 		effect = {
 			every_owned_location = {
 				limit = {
-					OR = {
-						province_definition = province_definition:ume_lappmark_province
-						province_definition = province_definition:pite_lappmark_province
-						province_definition = province_definition:lule_lappmark_province
-						province_definition = province_definition:torne_lappmark_province
-						province_definition = province_definition:kemi_lappmark_province
-					}
+					swe_lappmarks_trigger = yes
 				}
 				add_location_modifier = {
 					modifier = swe_lappmark_settlers
@@ -170,6 +149,8 @@ swe_lappmarksplakatet_decision = {
 				}
 			}
 			change_gold_effect = { scale = -2 }
+			# Fifteen years free of taxes and military service; softens what Bottniska and the Tar Company cost them
+			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 		}
 	}
 }
@@ -264,6 +245,7 @@ swe_bergskollegium_decision = {
 # Landslagen: Magnus Eriksson's national law code of about 1350 replaced the provincial laws.
 # Unlocks and adopts swe_landslag in the legal code law, like swe_bergskollegium_decision.
 # Needs legalism and the seats of the three great provincial laws: Uppsala, Linköping and Skara.
+# Not before age_2_renaissance (1342): Swedish land starts with legalism, so it would be free on day one.
 swe_landslag_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_landslag_decision.historical_info
@@ -271,6 +253,9 @@ swe_landslag_decision = {
 
 	potential = {
 		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_2_renaissance
+		}
 		NOT = { has_unlocked_policy_trigger = { type = swe_landslag } }
 	}
 

@@ -25,11 +25,7 @@ swe_ingria.1 = {
 		religion = religion:lutheran
 		any_owned_location = {
 			count >= 3
-			OR = {
-				province_definition = province_definition:korela_province
-				province_definition = province_definition:lopskaya_province
-				province_definition = province_definition:vodskaya_province
-			}
+			swe_kexholm_ingria_trigger = yes
 			dominant_religion = religion:orthodox
 		}
 	}
@@ -54,11 +50,7 @@ swe_ingria.1 = {
 			text = swe_ingria.1.a_tt
 			every_owned_location = {
 				limit = {
-					OR = {
-						province_definition = province_definition:korela_province
-						province_definition = province_definition:lopskaya_province
-						province_definition = province_definition:vodskaya_province
-					}
+					swe_kexholm_ingria_trigger = yes
 					dominant_religion = religion:orthodox
 				}
 				add_location_modifier = { modifier = swe_lutheran_parishes years = 20 }

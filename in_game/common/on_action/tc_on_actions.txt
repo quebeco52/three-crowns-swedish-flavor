@@ -8,14 +8,21 @@ tc_on_game_start = {
 		# Sweden starts with Konungabalken. Granted here rather than in setup/1337
 		# so the mod never redefines vanilla's SWE country block.
 		c:SWE ?= {
-			unlock_estate_privilege_effect = { type = swe_konungabalken }
+			# Only for a start before the Hereditary Union of 1544 (swe_vasa.3), which ended it
 			if = {
-				limit = { NOT = { has_estate_privilege = estate_privilege:swe_konungabalken } }
-				grant_estate_privilege = estate_privilege:swe_konungabalken
+				limit = { current_date < 1544.1.1 }
+				unlock_estate_privilege_effect = { type = swe_konungabalken }
+				if = {
+					limit = { NOT = { has_estate_privilege = estate_privilege:swe_konungabalken } }
+					grant_estate_privilege = estate_privilege:swe_konungabalken
+				}
 			}
-			# The Birkarlar already trade with the Sámi in 1337
+			# The Birkarlar already trade with the Sámi in 1337; the town charters of 1621 ended them
 			if = {
-				limit = { NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights } }
+				limit = {
+					current_date < 1621.1.1
+					NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
+				}
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
