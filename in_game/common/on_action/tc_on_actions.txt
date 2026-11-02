@@ -94,5 +94,48 @@ tc_on_game_start = {
 				add_location_modifier = { modifier = swe_alvkarleby_salmon_fishery months = -1 }
 			}
 		}
+		# Half the mayors and councillors of a Swedish town had to be Germans, a rule written into
+		# Magnus Eriksson's town law around 1350 and struck out in 1471 (swe_svenska_radman_decision).
+		# Vanilla gives Kalmar only Swedish burghers, so it gets its German community here;
+		# Stockholm already starts with more German burghers than Swedish ones.
+		location:kalmar ?= {
+			if = {
+				limit = {
+					NOT = {
+						any_pop = {
+							pop_type = pop_type:burghers
+							culture = { has_culture_group = culture_group:german_group }
+						}
+					}
+				}
+				add_pop = {
+					culture = culture:lower_saxon
+					religion = religion:catholic
+					type = pop_type:burghers
+					size = 0.6
+				}
+			}
+		}
+		if = {
+			limit = { current_date < 1471.1.1 }
+			location:stockholm ?= {
+				if = {
+					limit = {
+						owner ?= c:SWE
+						NOT = { has_location_modifier = swe_tyska_radet }
+					}
+					add_location_modifier = { modifier = swe_tyska_radet months = -1 }
+				}
+			}
+			location:kalmar ?= {
+				if = {
+					limit = {
+						owner ?= c:SWE
+						NOT = { has_location_modifier = swe_tyska_radet }
+					}
+					add_location_modifier = { modifier = swe_tyska_radet months = -1 }
+				}
+			}
+		}
 	}
 }

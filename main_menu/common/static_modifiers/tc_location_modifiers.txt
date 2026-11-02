@@ -57,3 +57,16 @@ swe_lutheran_parishes = {
 	local_unrest = 0.1
 	local_migration_attraction = 0.2
 }
+
+# Added at game start by tc_on_game_start to Stockholm and Kalmar, removed by
+# swe_svenska_radman_decision. Same estate shift as fortress_town (0.25), and below the merchant
+# capacity of swedish_city_rights (0.25): the Hansa's trade came through the German councillors,
+# and so did its say in the town.
+swe_tyska_radet = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity_modifier = 0.1
+	local_burghers_estate_power = 0.25
+	local_crown_estate_power = -0.25
+}

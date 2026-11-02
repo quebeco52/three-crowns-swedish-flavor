@@ -420,3 +420,62 @@ swe_tryckfrihet_decision = {
 		}
 	}
 }
+
+# Svenska rådmän: in 1471, after Brunkeberg, the town law's rule that half the councillors be Germans
+# was struck out. Opens once the Swedish burghers of Stockholm outnumber the Germans, so assimilation
+# and migration set the date. Ends swe_tyska_radet in every town at once, as it was one law. The Hansa
+# takes vanilla's swe_denies_hsa, as in flavor_swe.55.
+swe_svenska_radman_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_svenska_radman_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		OR = {
+			location:stockholm = { has_location_modifier = swe_tyska_radet }
+			location:kalmar = { has_location_modifier = swe_tyska_radet }
+		}
+	}
+
+	allow = {
+		owns = location:stockholm
+		location:stockholm = {
+			custom_tooltip = {
+				text = swe_svenska_radman_decision.majority_tt
+				swe_german_burgher_lead < 0
+			}
+		}
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_svenska_radman_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			location:stockholm = {
+				if = {
+					limit = { has_location_modifier = swe_tyska_radet }
+					remove_location_modifier = swe_tyska_radet
+				}
+			}
+			location:kalmar = {
+				if = {
+					limit = { has_location_modifier = swe_tyska_radet }
+					remove_location_modifier = swe_tyska_radet
+				}
+			}
+			c:HSA ?= { add_opinion = { target = root modifier = swe_denies_hsa } }
+		}
+	}
+}

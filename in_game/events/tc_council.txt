@@ -1,0 +1,77 @@
+﻿namespace = swe_council
+
+# The German half of the town councils (swe_tyska_radet), from game start to swe_svenska_radman_decision.
+
+# The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
+# Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
+# Needs a German king at war while the Germans still outnumber the Swedes on the council: Albrecht,
+# and later Erik of Pomerania and Christian I, all qualify. Punishing them cuts the German burghers
+# of Stockholm by a quarter, enough at game start to open swe_svenska_radman_decision.
+swe_council.1 = {
+	type = country_event
+	title = swe_council.1.title
+	desc = swe_council.1.desc
+	outcome = neutral
+	historical_info = swe_council.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1471.1.1
+		monthly_chance = 3 # About two years once the trigger holds
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		at_war = yes
+		ruler ?= { culture = { has_culture_group = culture_group:german_group } }
+		owns = location:stockholm
+		location:stockholm = {
+			has_location_modifier = swe_tyska_radet
+			swe_german_burgher_lead > 0
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_council.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 50
+		}
+
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_council.1.b
+		ai_chance = {
+			base = 50
+		}
+
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+		location:stockholm = {
+			every_pop = {
+				limit = {
+					pop_type = pop_type:burghers
+					culture = { has_culture_group = culture_group:german_group }
+				}
+				add_pop_size = {
+					value = pop_size
+					multiply = -0.25
+				}
+			}
+		}
+	}
+}
