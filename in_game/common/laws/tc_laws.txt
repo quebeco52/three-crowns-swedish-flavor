@@ -1,0 +1,188 @@
+﻿# Adds Swedish policies to vanilla laws without replacing them (same pattern as D009's INJECT:legal_code_law)
+
+INJECT:mining_law = {
+
+	# Bergskollegium (swe_bergskollegium_decision): the Board of Mines ran every mine and ironworks
+	# of the realm for the Crown, so the Crown gains power in the mines rather than output, which
+	# falun_base, mulltimmer_masugn and polhem_machina_nova already cover.
+	# Balanced against burghers_mining_law (same mine expansion cost) and nobles_mining_law
+	# (-0.1 rgo build time everywhere): no estate satisfaction or societal drift, and the rest
+	# only in mining locations.
+	swe_bergskollegium = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_bergskollegium }
+		}
+		country_modifier = {
+			expand_rgo_mining_cost_modifier = -0.1
+		}
+		# Every good vanilla mines (method = mining in 00_raw_materials.txt)
+		location_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = swe_bergskollegium_mines_tt
+					OR = {
+						raw_material = goods:iron
+						raw_material = goods:copper
+						raw_material = goods:silver
+						raw_material = goods:goods_gold
+						raw_material = goods:lead
+						raw_material = goods:tin
+						raw_material = goods:coal
+						raw_material = goods:alum
+						raw_material = goods:saltpeter
+						raw_material = goods:mercury
+						raw_material = goods:gems
+						raw_material = goods:stone
+						raw_material = goods:marble
+					}
+				}
+			}
+			local_crown_estate_power = 0.1
+			local_rgo_build_time = -0.1
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:legal_code_law = {
+
+	# Landslagen (swe_landslag_decision): Magnus Eriksson's national law code of about 1350 replaced
+	# the provincial laws. Its King's Chapter is the swe_konungabalken privilege Sweden holds from 1337.
+	# Balanced against dan_regional_law (three minor value moves, small satisfaction) and vanilla
+	# flavor_swe.53, which only moves centralization once and needs Magnus Eriksson himself.
+	swe_landslag = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_landslag }
+		}
+		country_modifier = {
+			monthly_towards_centralization = societal_value_minor_monthly_move
+			monthly_towards_free_subjects = societal_value_minor_monthly_move
+			global_estate_target_satisfaction = small_permanent_target_satisfaction
+		}
+		# Sveriges rikes lag (swe_rikes_lag_decision): the code of 1734 for town and countryside alike.
+		# Kept inside this policy rather than as a policy of its own. civil_law_policy's legislative
+		# efficiency and half of dan_danske_lov's distance propagation (0.2), on top of the base.
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = swe_rikes_lag_country_bonus
+					has_variable = swe_rikes_lag
+				}
+			}
+			legislative_efficiency = 0.1
+			global_distance_from_capital_speed_propagation = 0.1
+		}
+		estate_preferences = {
+			crown_estate
+			peasants_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:nobles_rights_laws = {
+
+	# Riddarhusordningen (swe_riddarhusordningen_decision): the House of Nobility ordinance of 1626
+	# gave the nobles their own house at the Riksdag and tied their rank to the service of the Crown.
+	# Balanced against rural_nobles_authority_policy (small satisfaction, +0.05 power, +0.4 fort
+	# maintenance) and leyes_de_toro_policy (medium satisfaction, +0.15 power): the Crown gets
+	# officials out of it instead of forts.
+	swe_riddarhuset = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_riddarhuset }
+		}
+		country_modifier = {
+			monthly_towards_aristocracy = societal_value_minor_monthly_move
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_nobles_estate_power = 0.1
+			country_cabinet_efficiency = 0.05
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:distribution_of_power_law = {
+
+	# Riksdagsordningen: the Riksdag ordinance of 1617 fixed the four estates of the realm, with the
+	# peasants as the fourth. No decision: gated by vanilla's kung_och_riksdag and the peasants'
+	# seat (peasants_represented_in_parliament), the way dop_law_estates_general is gated by its advance.
+	# Balanced against dop_law_english_parliament (-0.33 crown power, +0.05 legitimacy, +0.1 estate
+	# max tax, +0.1 nobles and burghers agenda impact, -0.15 political influence): a smaller crown
+	# penalty and no legitimacy, with the agenda weight on the peasants.
+	swe_riksdagsordningen = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_advance = kung_och_riksdag
+		}
+		allow = {
+			current_age_or_later = {
+				age = age_4_reformation
+			}
+			has_estate_privilege = estate_privilege:peasants_represented_in_parliament
+		}
+		country_modifier = {
+			global_crown_estate_power = -0.2
+			global_estate_max_tax = 0.1
+			peasants_estate_agenda_impact = 0.2
+			burghers_estate_agenda_impact = 0.1
+			monthly_political_influence_gain_modifier = -0.1
+		}
+		# The Age of Liberty (vanilla swe_age_of_freedom): the Secret Committee of the nobles, clergy
+		# and burghers ran foreign affairs, finance and defence, and kept the peasants out
+		country_modifier = {
+			potential_trigger = {
+				custom_tooltip = {
+					text = swe_riksdagsordningen_liberty_bonus
+					has_reform = government_reform:swe_age_of_freedom
+				}
+			}
+			nobles_estate_agenda_impact = 0.25
+			peasants_estate_agenda_impact = -0.2
+		}
+		estate_preferences = {
+			peasants_estate
+			burghers_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:press_law = {
+
+	# Tryckfrihetsförordningen (swe_tryckfrihet_decision): the Freedom of the Press Act of 1766
+	# ended censorship of all but theology and opened official records to the public.
+	# Balanced against free_press: the same, except that public access to official records
+	# (legislative efficiency) replaces the move towards individualism.
+	swe_tryckfrihet = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_tryckfrihet }
+		}
+		country_modifier = {
+			global_crown_estate_power = -0.1
+			global_max_literacy = 10
+			monthly_towards_liberalism = societal_value_monthly_move
+			monthly_towards_free_subjects = societal_value_monthly_move
+			legislative_efficiency = 0.05
+			monthly_political_influence_gain_modifier = -0.1
+		}
+		estate_preferences = {
+			burghers_estate
+		}
+		years = 2
+	}
+}

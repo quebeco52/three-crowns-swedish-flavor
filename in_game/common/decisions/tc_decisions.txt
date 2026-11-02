@@ -217,3 +217,220 @@ swe_kyrkolagen_decision = {
 		}
 	}
 }
+
+# Bergskollegium: the Bergsamt of 1637, the Board of Mines from 1649. Unlocks and adopts
+# swe_bergskollegium in the mining law, like vanilla's ser_novo_brdo_mine_decision.
+# Needs Falun, the greatest mine of the realm.
+swe_bergskollegium_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_bergskollegium_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		NOT = { has_unlocked_policy_trigger = { type = swe_bergskollegium } }
+	}
+
+	allow = {
+		owns = location:falun
+		has_advance = mining_law_advance
+		has_advance = mulltimmer_masugn
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_bergskollegium_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			unlock_policy_effect = { type = swe_bergskollegium }
+			add_policy = policy:swe_bergskollegium
+		}
+	}
+}
+
+# Landslagen: Magnus Eriksson's national law code of about 1350 replaced the provincial laws.
+# Unlocks and adopts swe_landslag in the legal code law, like swe_bergskollegium_decision.
+# Needs legalism and the seats of the three great provincial laws: Uppsala, Linköping and Skara.
+swe_landslag_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_landslag_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		NOT = { has_unlocked_policy_trigger = { type = swe_landslag } }
+	}
+
+	allow = {
+		has_embraced_institution = institution:legalism
+		owns = location:uppsala
+		owns = location:linkoping
+		owns = location:skara
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_landslag_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			unlock_policy_effect = { type = swe_landslag }
+			add_policy = policy:swe_landslag
+		}
+	}
+}
+
+# Sveriges rikes lag: the law code of 1734 replaced both the national law and the town law.
+# Sets swe_rikes_lag, which turns on the bonus inside swe_landslag.
+# Needs a supreme court in the capital, like vanilla's Svea hovrätt (flavor_swe.15).
+swe_rikes_lag_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_rikes_lag_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		has_unlocked_policy_trigger = { type = swe_landslag }
+		NOT = { has_variable = swe_rikes_lag }
+	}
+
+	allow = {
+		has_policy = policy:swe_landslag
+		capital = { has_building = building_type:supreme_court }
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_rikes_lag_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			set_variable = swe_rikes_lag
+			custom_tooltip = swe_rikes_lag_decision.a_tt
+			add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		}
+	}
+}
+
+# Riddarhusordningen: the House of Nobility ordinance of 1626. Unlocks and adopts swe_riddarhuset
+# in the nobles' rights law.
+# Needs the nobles to have lost Konungabalken: a house at the Riksdag in place of electing the king.
+swe_riddarhusordningen_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_riddarhusordningen_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_4_reformation
+		}
+		NOT = { has_unlocked_policy_trigger = { type = swe_riddarhuset } }
+	}
+
+	allow = {
+		owns = location:stockholm
+		has_advance = nobles_rights_laws_advance
+		modifier:has_a_parliamentary_system = yes
+		NOT = { has_estate_privilege = estate_privilege:swe_konungabalken }
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_riddarhusordningen_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			unlock_policy_effect = { type = swe_riddarhuset }
+			add_policy = policy:swe_riddarhuset
+		}
+	}
+}
+
+# Tryckfrihetsförordningen: the Freedom of the Press Act of 1766, passed by the Riksdag over the
+# objections of the clergy. Unlocks and adopts swe_tryckfrihet in the press law.
+# Needs a Riksdag that can pass it without the Crown: a parliament and crown power below 0.5,
+# which always holds under vanilla's swe_age_of_freedom.
+swe_tryckfrihet_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_tryckfrihet_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_6_revolutions
+		}
+		NOT = { has_unlocked_policy_trigger = { type = swe_tryckfrihet } }
+	}
+
+	allow = {
+		has_advance = newspapers_advance
+		modifier:has_a_parliamentary_system = yes
+		"estate_power(estate_type:crown_estate)" < 0.5
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = swe_tryckfrihet_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			unlock_policy_effect = { type = swe_tryckfrihet }
+			add_policy = policy:swe_tryckfrihet
+			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+		}
+	}
+}

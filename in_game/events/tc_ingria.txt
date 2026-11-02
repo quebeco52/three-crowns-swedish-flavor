@@ -1,0 +1,81 @@
+﻿namespace = swe_ingria
+
+# Kexholms län and Ingermanland: Russia ceded Kexholm and Ingria at Stolbovo (1617). Under pressure
+# to turn Lutheran, many Orthodox Karelians and Ingrians left for Russia, and Lutheran Finns from
+# Savolax and Äyräpää took over their farms.
+# Fires whenever a Lutheran Sweden holds Orthodox land in Kexholm or Ingria, not from 1617.
+# It speeds up conversion and draws settlers rather than converting or moving anyone at once.
+swe_ingria.1 = {
+	type = country_event
+	title = swe_ingria.1.title
+	desc = swe_ingria.1.desc
+	outcome = neutral
+	historical_info = swe_ingria.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden holds the land
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:lutheran
+		any_owned_location = {
+			count >= 3
+			OR = {
+				province_definition = province_definition:korela_province
+				province_definition = province_definition:lopskaya_province
+				province_definition = province_definition:vodskaya_province
+			}
+			dominant_religion = religion:orthodox
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_ingria.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_ingria.1.a_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						province_definition = province_definition:korela_province
+						province_definition = province_definition:lopskaya_province
+						province_definition = province_definition:vodskaya_province
+					}
+					dominant_religion = religion:orthodox
+				}
+				add_location_modifier = { modifier = swe_lutheran_parishes years = 20 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+		# The lords who held estates in Ingria lost the peasants who left
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_ingria.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}

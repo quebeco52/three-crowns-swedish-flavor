@@ -1,0 +1,39 @@
+﻿l_english:
+ swe_landslag: "Landslagen"
+ swe_landslag_desc: "The old laws of the provinces have given way to one law for the whole realm, read out at every thing from [ShowLocationName('uppsala')] to the Finnish coast. Its chapters cover everything from the election of the king to the upkeep of bridges, and lords and [ShowEstateTypeName('peasants_estate')] alike are judged by it."
+ swe_rikes_lag_country_bonus: "The following bonus comes from Sveriges rikes lag:"
+
+ swe_landslag_decision.title: "The Law of the Land"
+ swe_landslag_decision.desc: "Every province of the realm keeps its own law. A man of Uppland and a man of Västergötland may be judged differently for the same crime, and the lawmen of each province guard their old customs closely. If the provincial laws were gathered into one code, the Crown's judges could apply it everywhere, and the [ROOT.GetCountry.GetGovernment.GetEstateName('peasants_estate')] would know their rights wherever they went."
+ swe_landslag_decision.desc.entry: "One law code could replace the laws of the provinces."
+ swe_landslag_decision.historical_info: "Around 1350 King Magnus Eriksson issued a law code for the whole kingdom, built mainly on the provincial laws of Uppland and Östergötland. Magnus Erikssons landslag set out the election of the king, the rights of the peasants and the duties of the Crown in a single code, though some provinces went on using their old laws for decades. A revised version, Kristoffers landslag, followed in 1442 and stayed in force until the new law code of 1734 took effect in 1736."
+ swe_landslag_decision.a: "Gather the laws into one code."
+
+ swe_rikes_lag_decision.title: "The Law of the Realm"
+ swe_rikes_lag_decision.desc: "The old law of the land was written for a realm of farmers. It says nothing of mines, ships or bills of exchange, and the towns still follow a separate law of their own. Our law commission has worked for years on a new code for town and countryside alike, and the judges of the high court are ready to apply it. The [ROOT.GetCountry.GetGovernment.GetEstateName('burghers_estate')] are eager to see it passed."
+ swe_rikes_lag_decision.desc.entry: "A new law code could replace the old law of the land and the town law."
+ swe_rikes_lag_decision.historical_info: "From 1686 a series of law commissions worked on a new code to replace the medieval national law and town law. The result, Sveriges rikes lag (the Law of the Realm of Sweden), was adopted by the Riksdag in 1734 and came into force in 1736. Its chapters on marriage, inheritance, land, building, trade, crime and procedure applied to town and countryside alike, and its structure survives in Swedish and Finnish law today."
+ swe_rikes_lag_decision.a: "Pass the new code."
+ swe_rikes_lag_decision.a_tt: "$swe_landslag$ gains a bonus to [legislative_efficiency|e] and [proximity|e]."
+
+ swe_riddarhuset: "Riddarhusordningen"
+ swe_riddarhuset_desc: "The nobility meet in their own house in [ShowLocationName('stockholm')], divided into three classes: the counts and barons, the knights whose forefathers sat on the Council of the Realm, and the rest. Each noble family has one seat, held by its head, and every family is entered in the House's register. In return the Crown expects the nobility to serve it as officers and officials."
+
+ swe_riddarhusordningen_decision.title: "The House of Nobility"
+ swe_riddarhusordningen_decision.desc: "The [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] no longer elect the king, and many of the old families resent it. An ordinance for the nobility could give them something in return: a house of their own at the Riksdag, a fixed order of rank, and a register of every noble family. In exchange, the nobility would be bound more closely to the service of the Crown."
+ swe_riddarhusordningen_decision.desc.entry: "An ordinance could give the nobility a house of its own."
+ swe_riddarhusordningen_decision.historical_info: "In 1626 Gustavus Adolphus issued Riddarhusordningen, the House of Nobility Ordinance, largely the work of his chancellor Axel Oxenstierna. It organised the Swedish nobility as a body with its own assembly, the Riddarhuset, which formed the first estate of the Riksdag. Noble families were registered and divided into three classes: counts and barons, the descendants of members of the Council of the Realm, and all other nobles. Each family was represented by its head. The ordinance bound the nobility closely to service in the army and the administration, and the House of Nobility still exists today."
+ swe_riddarhusordningen_decision.a: "Give the nobility its house."
+
+ swe_riksdagsordningen: "Riksdagsordningen"
+ swe_riksdagsordningen_desc: "The Riksdag meets in four estates: the nobles, the clergy, the burghers and the [ShowEstateTypeName('peasants_estate')]. Each estate debates and votes in its own chamber, and the Crown cannot raise new taxes without their consent. The freeholding peasants sit among the estates of the realm in their own right, as few peasants elsewhere do."
+ swe_riksdagsordningen_liberty_bonus: "Under $swe_age_of_freedom$, the Secret Committee of the nobles, clergy and burghers decides what matters most:"
+
+ swe_tryckfrihet: "Tryckfrihetsförordningen"
+ swe_tryckfrihet_desc: "Anyone may print what they like, except on matters of theology, and no censor reads it first. The records of the courts and the government are open to all, so that every subject can see how the realm is governed, and pamphlets on every question of the day pour from the presses of [ShowLocationName('stockholm')]."
+
+ swe_tryckfrihet_decision.title: "Freedom of the Press"
+ swe_tryckfrihet_decision.desc: "The censor still reads every book and pamphlet before it is printed. In the Riksdag a growing party argues that the estates cannot govern well if no one may write about what they do. They propose to abolish the censor and to open the records of the government to everyone. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')], who would lose their say over what is printed, are strongly against it."
+ swe_tryckfrihet_decision.desc.entry: "The Riksdag could abolish the censor."
+ swe_tryckfrihet_decision.historical_info: "In 1766 the Riksdag, led by the Caps party, passed Tryckfrihetsförordningen, the Freedom of the Press Act. It abolished censorship of everything except theological works and gave the public the right to read official documents, the principle of public access that Swedish law still follows. One of its main authors was Anders Chydenius, a priest from Ostrobothnia who sat in the Riksdag for the clergy. Gustav III restricted the act after his coup in 1772, but it is regarded as the world's first law protecting the freedom of the press."
+ swe_tryckfrihet_decision.a: "Abolish the censor."

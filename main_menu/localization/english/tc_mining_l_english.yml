@@ -1,0 +1,10 @@
+﻿l_english:
+ swe_bergskollegium: "Bergskollegium"
+ swe_bergskollegium_desc: "The Crown's Board of Mines and its mining masters oversee every mine in the realm. They inspect the workings, settle mining disputes and decide where a new forge may be built and how much iron it may make."
+ swe_bergskollegium_mines_tt: "Every mining [location|e] we own gains:"
+
+ swe_bergskollegium_decision.title: "The Board of Mines"
+ swe_bergskollegium_decision.desc: "The copper of [ShowLocationName('falun')] and the iron of the Bergslagen pay for our armies, but every mine follows its own customs, and much of the Crown's share is lost on the way. A board of mines, with a mining master in every district, could inspect the mines, settle their disputes and decide who may build a new forge. The ironmasters fear the Crown's officials more than they fear poor ore."
+ swe_bergskollegium_decision.desc.entry: "A board of mines could put every mine in the realm under the Crown."
+ swe_bergskollegium_decision.historical_info: "In 1637 the Swedish government set up the Bergsamt to oversee the mines and ironworks of the realm, and in 1649 it became the Bergskollegium, the Board of Mines. Through mining masters (bergmästare) in each mining district it inspected the mines, judged mining disputes and granted the privileges every new ironworks needed, which set where forges could be built and how much bar iron each could make. Copper from Falun and iron from the Bergslagen were among Sweden's most important exports, and the board lasted until 1857."
+ swe_bergskollegium_decision.a: "Found the Board of Mines."

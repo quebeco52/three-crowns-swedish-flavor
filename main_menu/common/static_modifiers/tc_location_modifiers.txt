@@ -25,3 +25,27 @@ swe_lappmark_settlers = {
 	}
 	local_migration_attraction = 0.3
 }
+
+# Added by swe_scania.1 for 20 years to the Danish-culture locations of Skåneland. Same assimilation
+# as cracked_down_on_minorities_modifier (0.05) with half its unrest, and crown power instead of
+# the local_max_control in Denmark's dan_integrating_scania.
+swe_forsvenskning = {
+	game_data = {
+		category = location
+	}
+	local_pop_assimilation_speed_modifier = 0.05
+	local_unrest = 0.1
+	local_crown_estate_power = 0.1
+}
+
+# Added by swe_ingria.1 for 20 years to the Orthodox locations of Kexholm and Ingria. Same
+# conversion as dev_nasibi (0.1) with half its unrest. The migration pull, below swe_lappmark_settlers
+# (0.3), stands for the Finnish settlers who took over the farms of those who left.
+swe_lutheran_parishes = {
+	game_data = {
+		category = location
+	}
+	local_pop_conversion_speed_modifier = 0.1
+	local_unrest = 0.1
+	local_migration_attraction = 0.2
+}
