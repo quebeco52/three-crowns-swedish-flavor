@@ -5,13 +5,18 @@
 		has_or_had_tag = SWE
 	}
 
+	# Unlocked by tc_on_game_start and locked again by swe_vasa.3, like vanilla's justicia_de_aragon
+	allow = {
+		has_unlocked_estate_privilege_trigger = { type = swe_konungabalken }
+	}
+
 	can_revoke = {
 		"estate_power(estate_type:crown_estate)" >= 0.5
 	}
 
 	# Balanced against nieszawa_privileges (POL) and cas_fuero_viejo (CAS).
 	# Power is below their 0.5 / 0.4 because Sweden holds this from game start.
-	# Removed by swe_vasa.3 (Västerås 1544) or the normal revoke.
+	# Removed for good by swe_vasa.3 (Västerås 1544); after a normal revoke it can be granted again.
 	country_modifier = {
 		monthly_towards_decentralization = societal_value_minor_monthly_move
 		global_nobles_estate_power = 0.3

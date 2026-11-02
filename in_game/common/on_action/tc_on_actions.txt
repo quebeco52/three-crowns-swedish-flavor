@@ -8,6 +8,7 @@ tc_on_game_start = {
 		# Sweden starts with Konungabalken. Granted here rather than in setup/1337
 		# so the mod never redefines vanilla's SWE country block.
 		c:SWE ?= {
+			unlock_estate_privilege_effect = { type = swe_konungabalken }
 			if = {
 				limit = { NOT = { has_estate_privilege = estate_privilege:swe_konungabalken } }
 				grant_estate_privilege = estate_privilege:swe_konungabalken

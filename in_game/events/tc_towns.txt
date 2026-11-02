@@ -114,7 +114,7 @@ swe_towns.2 = {
 	}
 
 	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
 	}
 
 	option = {
@@ -168,7 +168,7 @@ swe_towns.3 = {
 	}
 
 	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
 	}
 
 	option = {
@@ -340,7 +340,7 @@ swe_towns.6 = {
 	}
 
 	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:crown_estate }
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
 	}
 
 	option = {
