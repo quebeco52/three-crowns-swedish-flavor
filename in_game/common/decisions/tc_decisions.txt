@@ -320,7 +320,8 @@ swe_rikes_lag_decision = {
 	}
 
 	allow = {
-		has_policy = policy:swe_landslag
+		# Bare key, as in vanilla decisions: decisions load before laws, so policy:swe_landslag is not valid here
+		has_policy = swe_landslag
 		capital = { has_building = building_type:supreme_court }
 	}
 

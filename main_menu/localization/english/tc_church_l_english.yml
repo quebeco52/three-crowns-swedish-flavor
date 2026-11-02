@@ -16,5 +16,5 @@
  swe_kyrkolagen_decision.desc.entry: "A new church law could teach every Swede to read."
  swe_kyrkolagen_decision.historical_info: "The Church Law of 1686, issued under Charles XI, set out the order of the Swedish church in detail. It required everyone to learn to read, so that they could study the Bible and the catechism themselves, and parish priests checked their progress at yearly household examinations recorded in the parish registers. By the end of the 18th century most Swedes could read, though far fewer could write."
  swe_kyrkolagen_decision.a: "Every Swede shall learn to read."
- swe_kyrkolagen_decision.a_tt: "$swe_uppsala_mote$ gains a bonus to [literacy|e]."
+ swe_kyrkolagen_decision.a_tt: "$swe_uppsala_mote$ raises the maximum [literacy|e] of [ShowPopTypeName('peasants')]."
  swe_kyrkolagen_country_bonus: "The following bonus comes from the Church Law:"

@@ -25,8 +25,9 @@ swe_uppsala_mote = {
 	}
 
 	# Kyrkolagen (swe_kyrkolagen_decision): the Church Law of 1686 made every Swede learn to read.
-	# The smallest vanilla monthly literacy bonus (ira_shiite_immigration), half the usual 0.01,
-	# since it adds up over centuries. Anything smaller may show as +0.00% in the tooltip.
+	# Raises how far peasant literacy can go rather than how fast literacy grows: the household
+	# examinations reached every farm. Same as one estate's share of education_of_the_people (+5 each
+	# for four estates). Not global_monthly_literacy: it shows two decimals, so 0.005 reads +0.00%.
 	country_modifier = {
 		potential_trigger = {
 			custom_tooltip = {
@@ -34,6 +35,6 @@ swe_uppsala_mote = {
 				has_variable = swe_kyrkolagen
 			}
 		}
-		global_monthly_literacy = 0.005
+		global_peasants_max_literacy = 5
 	}
 }
