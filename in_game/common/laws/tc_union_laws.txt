@@ -1,0 +1,79 @@
+﻿# A common law for any union that joins Sweden and Norway (Magnus Eriksson's, Kalmar, or 1814), following
+# D009's iberian_union_common_laws.txt. Gated on the members rather than a union variable, so union.txt stays vanilla.
+
+swe_nor_realms_law = {
+	type = international_organization
+	law_category = common_laws
+	potential = {
+		international_organization_type = international_organization_type:union
+		any_international_organization_member = { tag = SWE }
+		any_international_organization_member = { tag = NOR }
+	}
+	allow = {
+	}
+	custom_tags = { forbids_no_policy }
+
+	# Each realm governed by its own lords: Magnus Eriksson's minority (1319-32), the Kalmar union letter (1397)
+	# and the Act of Union (1815). Same opinion and trust as iu_respect_fueros_policy; the lords keep the offices
+	# and the Crown gives up a little power to them.
+	swe_nor_own_council_policy = {
+		opinion_bonus = 20
+		trust_bonus = 5
+		country_modifier = {
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_crown_estate_power = -0.05
+		}
+		on_activate = {
+			on_union_policy_change_effect = yes
+		}
+		wants_this_policy_bias = {
+			add = union_member_opinion_on_maintain
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+
+	# Erik of Pomerania's Danish bailiffs in Sweden, a cause of the Engelbrekt rising (1434).
+	# Needs a senior throne to send them. Like iu_centralized_administration_policy it has no opinion or trust bonus;
+	# the junior realms gain crown power but their lords lose the offices.
+	swe_nor_royal_bailiffs_policy = {
+		allow = {
+			international_organization_has_policy = policy:union_establish_seniority_policy
+		}
+		country_modifier = {
+			potential_trigger = {
+				has_special_status_in_international_organization = {
+					type = special_status:senior_partner
+					international_organization = union
+				}
+			}
+			global_crown_estate_power = 0.1
+		}
+		country_modifier = {
+			potential_trigger = {
+				has_special_status_in_international_organization = {
+					type = special_status:junior_partner
+					international_organization = union
+				}
+			}
+			global_crown_estate_power = 0.05
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction_penalty
+		}
+		on_activate = {
+			on_union_policy_change_effect = yes
+		}
+		wants_this_policy_bias = {
+			add = union_member_opinion_on_centralization
+		}
+		wants_keep_policy = {
+			add = {
+				desc = "VOTE_CONSERVATIVE_CLIMATE"
+				value = 50
+			}
+		}
+	}
+}
