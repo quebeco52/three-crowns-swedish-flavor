@@ -16,3 +16,12 @@ swe_ostersund_freedoms = {
 	}
 	local_migration_attraction = 0.3
 }
+
+# Added by swe_lappmarksplakatet_decision to the lappmarks for 15 years. Same migration pull as
+# swe_ostersund_freedoms, spread over a near-empty region.
+swe_lappmark_settlers = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.3
+}

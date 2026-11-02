@@ -1,6 +1,6 @@
 ﻿# Bottniska handelstvånget: from the trade ordinances of 1614 and 1617 the East and West
 # Bothnian towns could trade abroad only through Stockholm. Abolished in 1765.
-# Replaces swe_birkarl_rights through swe_norrland.1: the Sámi trade goes on at half strength,
+# Replaces swe_birkarl_rights through swe_bottniska_handelstvanget_decision: the Sámi trade goes on at half strength,
 # but the crown takes the tax back from the Birkarlar.
 # Balanced against swe_birkarl_rights: its -0.1 crown power in the north becomes +0.1.
 swe_bottniska_handelstvanget = {
@@ -50,7 +50,7 @@ swe_bottniska_handelstvanget = {
 		local_trades_per_burgher = -0.25
 	}
 
-	# Tjärkompaniet (swe_norrland.2): from 1648 the Tar Company bought all the tar of Österbotten
+	# Tjärkompaniet (swe_tar_company_decision): from 1648 the Tar Company bought all the tar of Österbotten
 	# for export through Stockholm. Kept inside this privilege rather than as a privilege of its own.
 	# Above the single-town scandinavian_tar_privileges (+0.2 tar, with an efficiency penalty)
 	# because Österbotten is thinly settled subpolar forest, and it only pays where tar kilns are built.

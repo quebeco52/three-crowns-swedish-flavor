@@ -1,0 +1,219 @@
+﻿# Bottniska handelstvånget: the trade ordinances of 1614 and 1617 bind the Bothnian towns to
+# Stockholm, and the crown takes the Sámi trade from the Birkarlar (swe_birkarl_rights -> swe_bottniska_handelstvanget).
+# Needs a town on the Bothnian coast, since a staple needs towns to bind. None start as towns,
+# so one has to be built first.
+swe_bottniska_handelstvanget_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_bottniska_handelstvanget_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_4_reformation
+		}
+		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
+	}
+
+	allow = {
+		owns = location:stockholm
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:halsingland_province
+				province_definition = province_definition:angermanland_province
+				province_definition = province_definition:vasterbotten_province
+				province_definition = province_definition:norra_osterbotten_province
+				province_definition = province_definition:sodra_osterbotten_province
+			}
+			OR = {
+				location_rank = location_rank:town
+				location_rank = location_rank:city
+				location_rank = location_rank:megalopolis
+			}
+		}
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_bottniska_handelstvanget_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			unlock_estate_privilege_effect = { type = swe_bottniska_handelstvanget }
+			if = {
+				limit = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
+				revoke_estate_privilege = estate_privilege:swe_birkarl_rights
+			}
+			grant_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
+			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		}
+	}
+}
+
+# Tjärkompaniet: in 1648 the Tar Company got the sole right to buy and export the tar of
+# Österbotten. Sets swe_tar_company, which turns on the tar bonus inside swe_bottniska_handelstvanget.
+# Needs a tar kiln in Österbotten: no tar industry, no company.
+swe_tar_company_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_tar_company_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget }
+		NOT = { has_variable = swe_tar_company }
+	}
+
+	allow = {
+		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:norra_osterbotten_province
+				province_definition = province_definition:sodra_osterbotten_province
+			}
+			has_building = building_type:tar_kiln
+		}
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_tar_company_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			set_variable = swe_tar_company
+			custom_tooltip = swe_tar_company_decision.a_tt
+			add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		}
+	}
+}
+
+# Lappmarksplakatet: the edict of 1673 freed settlers in the lappmarks from taxes and military
+# service for 15 years. All five lappmark provinces, for the same 15 years.
+# Needs Bottniska handelstvånget: the Crown has to hold the north before it can settle it.
+swe_lappmarksplakatet_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_lappmarksplakatet_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		any_owned_location = {
+			OR = {
+				province_definition = province_definition:ume_lappmark_province
+				province_definition = province_definition:pite_lappmark_province
+				province_definition = province_definition:lule_lappmark_province
+				province_definition = province_definition:torne_lappmark_province
+				province_definition = province_definition:kemi_lappmark_province
+			}
+		}
+	}
+
+	allow = {
+		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_lappmarksplakatet_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			every_owned_location = {
+				limit = {
+					OR = {
+						province_definition = province_definition:ume_lappmark_province
+						province_definition = province_definition:pite_lappmark_province
+						province_definition = province_definition:lule_lappmark_province
+						province_definition = province_definition:torne_lappmark_province
+						province_definition = province_definition:kemi_lappmark_province
+					}
+				}
+				add_location_modifier = {
+					modifier = swe_lappmark_settlers
+					years = 15
+					mode = add_and_extend
+				}
+			}
+			change_gold_effect = { scale = -2 }
+		}
+	}
+}
+
+# Kyrkolagen: the Church Law of 1686 and its yearly household examinations. Sets swe_kyrkolagen,
+# which turns on the literacy bonus inside swe_uppsala_mote.
+# Needs swedish_absolutism: the law came with Charles XI's absolute monarchy.
+swe_kyrkolagen_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_kyrkolagen_decision.historical_info
+	only_once = yes
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		has_unlocked_estate_privilege_trigger = { type = swe_uppsala_mote }
+		NOT = { has_variable = swe_kyrkolagen }
+	}
+
+	allow = {
+		has_estate_privilege = estate_privilege:swe_uppsala_mote
+		has_advance = swedish_absolutism
+	}
+
+	ai_will_do = { value = 100 }
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_kyrkolagen_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			set_variable = swe_kyrkolagen
+			custom_tooltip = swe_kyrkolagen_decision.a_tt
+			add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+		}
+	}
+}
