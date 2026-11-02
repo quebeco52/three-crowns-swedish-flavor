@@ -88,6 +88,16 @@ swe_vasa.2 = {
 		}
 
 		set_new_ruler_with_union_if_senior = { character = scope:swe_vasa_candidate }
+		# Unions start federal, so without an established seniority the effect breaks the union
+		# and every partner gets cb_claim_throne (vanilla unionevents.100), which its own tooltip leaves out
+		if = {
+			limit = {
+				union ?= {
+					NOT = { country_has_special_status = { type = special_status:senior_partner country = root } }
+				}
+			}
+			custom_tooltip = swe_vasa.2.a.union_tt
+		}
 		add_stability = stability_mild_penalty
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
 		# Under Konungabalken the election is lawful; without it the new king is a usurper

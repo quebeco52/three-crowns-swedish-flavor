@@ -12,6 +12,7 @@
  swe_vasa.2.historical_info: "After the Stockholm Bloodbath, Gustav Eriksson Vasa raised the men of Dalarna against Christian II. Within two years the rebels had driven the Danes from most of Sweden, and on 6 June 1523 the Riksdag at Strängnäs elected Gustav king, ending the Kalmar Union for good. He reigned until his death in 1560. In that time he broke the power of the Church and made the crown hereditary at Västerås in 1544, and his house held the throne until Queen Christina abdicated in 1654."
  swe_vasa.2.a: "Long live King [swe_vasa_candidate.GetName]!"
  swe_vasa.2.a.entry: "A Vasa takes the crown."
+ swe_vasa.2.a.union_tt: "[ROOT.GetCountry.GetName] leaves the [union|e], since its partners no longer share its ruler. Each of them gains the [ShowCasusBelliName('cb_claim_throne')] [casus_belli|e] against [ROOT.GetCountry.GetName]."
  swe_vasa.2.a.lawful_tt: "He is lawfully elected under $swe_konungabalken$, so his reign begins without any loss of [legitimacy|e]."
  swe_vasa.2.b: "[swe_old_ruler.GetName] remains our [ROOT.GetCountry.GetGovernment.GetRulerTitle]."
  swe_vasa.2.b.entry: "The old ruler remains."
