@@ -1,0 +1,129 @@
+﻿# Event-only buildings in Stockholm, built like vanilla's kronborg and el_escorial_palace:
+# never buildable by hand, only placed by the mod's on_actions, events and decisions.
+
+# Tre Kronor, the royal castle of Stockholm, as the king's residence and seat of government. Its walls
+# are vanilla's castle in Stockholm, which vanilla already draws as Tre Kronor, so this adds no defence.
+# Placed at game start by tc_on_game_start; burns in swe_stockholm.1 or makes way for
+# swe_stockholm_palace. A smaller sco_palace_of_holyroodhouse: half its crown power, few enough noble
+# jobs for Stockholm's nobles in 1337, and castle-sized upkeep instead of capital_building_maintenance.
+swe_tre_kronor = {
+	audio_tier = 4
+	is_special = yes
+	is_foreign = no
+	pop_type = nobles
+	max_levels = 1
+
+	employment_size = minor_noble_employment
+
+	category = government_category
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	megalopolis = yes
+
+	country_potential = { always = no }
+	allow = { always = no }
+
+	expensive = yes
+	build_time = large_capital_build_time
+
+	location_potential = {
+		this = location:stockholm
+	}
+
+	modifier = {
+		local_crown_estate_power = 0.25
+	}
+
+	unique_production_methods = {
+		swe_tre_kronor_maintenance = {
+			icon_type = building_type
+			icon = swe_tre_kronor
+			stone = 0.05
+			tools = 0.05
+			cloth = 0.05
+			category = building_maintenance
+		}
+	}
+	construction_demand = castle_construction
+}
+
+# Stockholms slott, Tessin's palace on the site of Tre Kronor. Built by swe_stockholm.1 or
+# swe_stockholm_palace_decision. Same modifiers and tags as vanilla's berlin_palace, so it only
+# works while Stockholm is the capital and it counts as the capital's great palace.
+swe_stockholm_palace = {
+	audio_tier = 5
+	is_special = yes
+	is_foreign = no
+	pop_type = nobles
+	max_levels = 1
+
+	employment_size = noble_cultural_employment
+
+	category = cultural_category
+
+	town = yes
+	city = yes
+	megalopolis = yes
+
+	expensive = yes
+	build_time = large_cultural_building_time
+
+	country_potential = {
+		always = no
+	}
+	allow = {
+		always = no
+	}
+	location_potential = {
+		this = location:stockholm
+	}
+
+	capital_modifier = {
+		local_cultural_tradition = 0.25
+		local_cultural_influence = 0.25
+		local_crown_estate_power = 0.5
+	}
+
+	possible_production_methods = {
+		capital_building_maintenance
+	}
+	custom_tags = { unique_palace }
+	graphical_tags = { palace }
+	construction_demand = capital_building_construction
+}
+
+# The royal burial church on Riddarholmen. Started by the first royal burial there (swe_stockholm.2).
+# Vanilla's delhi_tomb without its local_max_control.
+swe_riddarholmskyrkan = {
+	audio_tier = 4
+	is_special = yes
+	is_foreign = no
+	pop_type = clergy
+	max_levels = 1
+	category = cultural_category
+	employment_size = 1
+	build_time = religious_building_time
+
+	rural_settlement = yes
+	town = yes
+	city = yes
+	megalopolis = yes
+
+	country_potential = { always = no }
+	allow = { always = no }
+
+	location_potential = {
+		this = location:stockholm
+	}
+
+	modifier = {
+		local_cultural_tradition = 0.2
+		local_unrest = -0.02
+	}
+	possible_production_methods = {
+		temple_maintenance
+	}
+	construction_demand = library_construction
+}

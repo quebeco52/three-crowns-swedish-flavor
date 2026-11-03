@@ -1,0 +1,11 @@
+﻿# Norway's opinion of Sweden after swe_union.1. Same values as vanilla opinion_liberated_us
+# and opinion_restrict_nobles.
+swe_nor_own_king_granted = {
+	value = 50
+	yearly_decay = 1
+}
+
+swe_nor_own_king_refused = {
+	value = -25
+	yearly_decay = 2
+}

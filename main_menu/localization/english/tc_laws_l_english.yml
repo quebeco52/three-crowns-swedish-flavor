@@ -37,10 +37,3 @@
  swe_tryckfrihet_decision.desc.entry: "The Riksdag could abolish the censor."
  swe_tryckfrihet_decision.historical_info: "In 1766 the Riksdag, led by the Caps party, passed Tryckfrihetsförordningen, the Freedom of the Press Act. It abolished censorship of everything except theological works and gave the public the right to read official documents, the principle of public access that Swedish law still follows. One of its main authors was Anders Chydenius, a priest from Ostrobothnia who sat in the Riksdag for the clergy. Gustav III restricted the act after his coup in 1772, but it is regarded as the world's first law protecting the freedom of the press."
  swe_tryckfrihet_decision.a: "Abolish the censor."
-
- swe_nor_realms_law: "Rule of the Realms"
- swe_nor_realms_law_desc: "Sweden and Norway share a king, but each kingdom has its own council and its own law. While Magnus Eriksson was a child, the lords of each realm governed it for him, and once he came of age the Norwegian lords twice rose against a king who ruled from Sweden. We must decide whether each realm keeps its own officials, or the [ShowSpecialStatusName('senior_partner')] sends its own men to govern the others."
- swe_nor_own_council_policy: "Each Realm Its Own Council"
- swe_nor_own_council_policy_desc: "Each kingdom of the union is governed by its own council and its own officials, under its own law. The lords of every realm keep the offices they hold by right, but the Crown must work through councils that do not always share its aims."
- swe_nor_royal_bailiffs_policy: "Royal Bailiffs"
- swe_nor_royal_bailiffs_policy_desc: "The [ShowSpecialStatusName('senior_partner')] sends its own bailiffs to hold the castles and collect the taxes of the other realms. The king's will is done across the union, but the lords of the lesser realms see foreigners in offices that should be theirs, as the Swedes did under Erik of Pomerania's Danish bailiffs before the Engelbrekt rising of 1434."

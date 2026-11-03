@@ -1,0 +1,165 @@
+﻿namespace = swe_stockholm
+
+# The fire of Tre Kronor. On 7 May 1697 the castle burned while the body of Karl XI lay in state there.
+# Fired by tc_on_ruler_death_delayed, with a 25% chance at each royal death from the age of absolutism,
+# while Stockholm is the capital and Tre Kronor still stands. The fire destroys the residence, not
+# vanilla's castle: Stockholm keeps its fort, and rebuilding it is the player's call. Rebuilding at once
+# starts swe_stockholm_palace; otherwise swe_stockholm_palace_decision stays open.
+swe_stockholm.1 = {
+	type = country_event
+	title = swe_stockholm.1.title
+	desc = swe_stockholm.1.desc
+	outcome = negative
+	historical_info = swe_stockholm.1.historical_info
+
+	fire_only_once = yes
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		current_age_or_later = { age = age_5_absolutism }
+		exists = previous_ruler
+		owns = location:stockholm
+		location:stockholm = {
+			is_capital = yes
+			has_building = building_type:swe_tre_kronor
+		}
+		# A union king lies in state in the senior partner's capital
+		NOT = {
+			union ?= { country_has_special_status = { type = special_status:junior_partner country = root } }
+		}
+	}
+
+	illustration_tags = {
+		10 = exterior
+		10 = regular
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+		previous_ruler = {
+			save_scope_as = swe_dead_ruler
+		}
+	}
+
+	option = {
+		name = swe_stockholm.1.a
+		historical_option = yes
+		# Not if the capital already has a great palace
+		trigger = {
+			location:stockholm = { has_great_or_unique_palace = no }
+		}
+		ai_chance = {
+			base = 50
+		}
+
+		location:stockholm = {
+			destroy_all_buildings_of_type = building_type:swe_tre_kronor
+			construct_building = {
+				building_type = building_type:swe_stockholm_palace
+			}
+		}
+		# The Royal Library and the chancery archive burned with the castle
+		add_research_progress = research_progress_mild_penalty
+	}
+
+	option = {
+		name = swe_stockholm.1.b
+		ai_chance = {
+			base = 50
+		}
+
+		location:stockholm = {
+			destroy_all_buildings_of_type = building_type:swe_tre_kronor
+		}
+		add_research_progress = research_progress_mild_penalty
+		custom_tooltip = swe_stockholm.1.b_tt
+	}
+}
+
+# Where the King Rests. Fired by tc_on_ruler_death_delayed one to two months after every royal death,
+# so it follows swe_stockholm.1 when the castle burns. Kings were buried in several churches: Magnus
+# Ladulås and Karl Knutsson in the Greyfriars' church on Riddarholmen, Gustav Vasa and Johan III in
+# Uppsala Cathedral, Karl IX in Strängnäs. From Gustav II Adolf in 1634 nearly every monarch was buried
+# on Riddarholmen. The first burial there starts swe_riddarholmskyrkan.
+swe_stockholm.2 = {
+	type = country_event
+	title = swe_stockholm.2.title
+	desc = swe_stockholm.2.desc
+	outcome = neutral
+	historical_info = swe_stockholm.2.historical_info
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		religion.group = religion_group:christian
+		exists = previous_ruler
+		# A union king is buried by the senior partner
+		NOT = {
+			union ?= { country_has_special_status = { type = special_status:junior_partner country = root } }
+		}
+	}
+
+	illustration_tags = {
+		10 = interior
+		10 = regular
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:nobles_estate }
+		previous_ruler = {
+			save_scope_as = swe_dead_ruler
+		}
+	}
+
+	# Riddarholmen
+	option = {
+		name = swe_stockholm.2.a
+		trigger = {
+			owns = location:stockholm
+		}
+		ai_chance = {
+			base = 50
+		}
+
+		change_gold_effect = { scale = -1 }
+		add_legitimacy = legitimacy_mild_bonus
+		if = {
+			limit = {
+				total_building_levels_including_construction:swe_riddarholmskyrkan < 1
+				location:stockholm = {
+					NOT = { has_building = building_type:swe_riddarholmskyrkan }
+				}
+			}
+			location:stockholm = {
+				construct_building = {
+					building_type = building_type:swe_riddarholmskyrkan
+				}
+			}
+		}
+	}
+
+	# Uppsala Cathedral
+	option = {
+		name = swe_stockholm.2.b
+		trigger = {
+			owns = location:uppsala
+		}
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -0.5 }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	# A plain burial: vanilla's usual price for declining (flavor_dlh.17)
+	option = {
+		name = swe_stockholm.2.c
+		ai_chance = {
+			base = 10
+		}
+
+		add_prestige = prestige_mild_penalty
+	}
+}

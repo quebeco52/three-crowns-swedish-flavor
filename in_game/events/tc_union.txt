@@ -1,0 +1,110 @@
+﻿namespace = swe_union
+
+# The Norwegian lords ask for a king of their own, as at Varberg in 1343, when Magnus Eriksson's younger son
+# Haakon was given Norway. Fires on the state of the union, not the date: Sweden shares its ruler with Norway,
+# that ruler has a son who is nobody's heir, and the Norwegian lords are unhappy. Norway gets its new ruler
+# through set_new_ruler, not set_new_ruler_with_union_if_senior, so the union splits without unionevents.100
+# and nobody gains cb_claim_throne.
+# Balanced against vanilla unionevents.1 (opinion_restrict_nobles and a noble penalty)
+swe_union.1 = {
+	type = country_event
+	title = swe_union.1.title
+	desc = swe_union.1.desc
+	outcome = neutral
+	historical_info = swe_union.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years once the trigger holds
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		# Not while another member's throne rules Sweden
+		union ?= {
+			NOT = { country_has_special_status = { type = special_status:junior_partner country = root } }
+		}
+		c:NOR ?= {
+			in_union_with = root
+			# Same noble threshold as vanilla free_cities.txt
+			OR = {
+				estate_satisfaction = { estate_type = estate_type:nobles_estate value < 0.45 }
+				opinion = { target = root value < 0 }
+			}
+		}
+		# Any age: Haakon was about three
+		ruler = {
+			any_child = {
+				is_alive = yes
+				is_female = no
+				is_heir = no
+				is_ruler = no
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		c:NOR = { save_scope_as = swe_norway }
+		# The eldest son who is nobody's heir, as in the trigger
+		ruler = {
+			ordered_child = {
+				limit = {
+					is_alive = yes
+					is_female = no
+					is_heir = no
+					is_ruler = no
+				}
+				order_by = age_in_years
+				max = 1
+				check_range_bounds = no
+				save_scope_as = swe_nor_prince
+			}
+		}
+	}
+
+	option = {
+		name = swe_union.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		scope:swe_norway = {
+			set_new_ruler = scope:swe_nor_prince
+		}
+		custom_tooltip = swe_union.1.a_tt
+		create_relation = {
+			first = root
+			second = scope:swe_norway
+			type = relation_type:alliance
+		}
+		scope:swe_norway = {
+			add_opinion = { target = root modifier = swe_nor_own_king_granted }
+		}
+		# The king stays at home
+		add_stability = stability_mild_bonus
+	}
+
+	option = {
+		name = swe_union.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		scope:swe_norway = {
+			add_opinion = { target = root modifier = swe_nor_own_king_refused }
+			add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		}
+	}
+}

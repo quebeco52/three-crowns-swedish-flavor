@@ -564,3 +564,56 @@ swe_oland_end_djurgard_decision = {
 		}
 	}
 }
+
+# Stockholms slott: Tessin's palace on the site of Tre Kronor. Opens with the age of absolutism, burned
+# or not, as Tessin was already rebuilding the castle's north wing when it burned (swe_stockholm.1).
+# The capital may not already have a great palace, as in vanilla's construct_a_grand_palace_decision.
+swe_stockholm_palace_decision = {
+	decision_category = country_specific_decisions
+	historical_info = swe_stockholm_palace_decision.historical_info
+
+	potential = {
+		has_or_had_tag = SWE
+		owns = location:stockholm
+		current_age_or_later = { age = age_5_absolutism }
+		total_building_levels_including_construction:swe_stockholm_palace < 1
+		location:stockholm = {
+			NOT = { has_building = building_type:swe_stockholm_palace }
+		}
+	}
+
+	allow = {
+		government_type = government_type:monarchy
+		location:stockholm = {
+			is_capital = yes
+			has_great_or_unique_palace = no
+		}
+	}
+
+	ai_will_do = { value = 50 }
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	illustration_scope = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_stockholm_palace_decision.a
+		ai_chance = { value = 100 }
+		effect = {
+			location:stockholm = {
+				if = {
+					limit = { has_building = building_type:swe_tre_kronor }
+					destroy_all_buildings_of_type = building_type:swe_tre_kronor
+				}
+				construct_building = {
+					building_type = building_type:swe_stockholm_palace
+				}
+			}
+		}
+	}
+}
