@@ -11,6 +11,7 @@ swe_vasa.1 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1513.1.1
 		to = 1515.1.1
 		monthly_chance = 15 # Median spawn mid-1513, ~98% by 1515
@@ -51,6 +52,7 @@ swe_vasa.2 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1521.6.1
 		to = 1545.1.1
 		monthly_chance = 3
@@ -134,6 +136,7 @@ swe_vasa.3 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1542.1.1
 		to = 1600.1.1
 		monthly_chance = 3 # Median late 1543
@@ -166,6 +169,11 @@ swe_vasa.3 = {
 
 		revoke_estate_privilege = estate_privilege:swe_konungabalken
 		lock_estate_privilege_effect = { type = swe_konungabalken }
+		# swe_konungabalken's on_deactivate should already have cleared this
+		if = {
+			limit = { has_variable = swe_eriksgata_pending }
+			remove_variable = swe_eriksgata_pending
+		}
 		add_legitimacy = legitimacy_mild_bonus
 		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_left }
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }

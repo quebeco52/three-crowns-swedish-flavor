@@ -163,3 +163,69 @@ swe_stockholm.2 = {
 		add_prestige = prestige_mild_penalty
 	}
 }
+
+# Serafimerorden. Fredrik I founded the Order of the Seraphim in 1748; the arms of its knights hang in
+# Riddarholmskyrkan, and its bells ring when one of them is buried. Fires once the church stands
+# (swe_stockholm.2), at any date. Founding it makes swe_order_of_the_seraphim the national order.
+# Balanced against vanilla flavor_plc.6 (White Eagle: the cost and prestige of founding) and
+# flavor_brapru.26 (Black Eagle: the nobles' displeasure when the order is refused).
+swe_stockholm.3 = {
+	type = country_event
+	title = swe_stockholm.3.title
+	desc = swe_stockholm.3.desc
+	outcome = neutral
+	historical_info = swe_stockholm.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after the church stands
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		religion.group = religion_group:christian
+		has_ruler = yes
+		has_regent = no
+		owns = location:stockholm
+		location:stockholm = {
+			has_building = building_type:swe_riddarholmskyrkan
+		}
+		NOT = { country_has_order = chivalric_order:swe_order_of_the_seraphim }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = swe_stockholm.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		set_active_chivalric_order = chivalric_order:swe_order_of_the_seraphim
+		ruler ?= { join_chivalric_order = chivalric_order:swe_order_of_the_seraphim }
+		change_gold_effect = { scale = -12 }
+		add_prestige = prestige_mild_bonus
+	}
+
+	option = {
+		name = swe_stockholm.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
+	}
+}

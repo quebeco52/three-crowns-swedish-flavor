@@ -33,6 +33,7 @@ swe_church.1 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1591.6.1
 		to = 1700.1.1 # Late enough for a late Reformation
 		monthly_chance = 3 # Median spring 1593, ~98% by 1602

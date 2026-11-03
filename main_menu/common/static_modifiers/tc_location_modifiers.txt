@@ -36,7 +36,8 @@ swe_lappmark_settlers = {
 	local_migration_attraction = 0.3
 }
 
-# Added by swe_scania.1 for 20 years to the Danish-culture locations of Skåneland.
+# Added for 20 years by swe_scania.1 to the Danish-culture locations of Skåneland, by swe_jamtland.1
+# and swe_jamtland.2 to Jämtland, and by swe_baltic.1–3 (Swedish law) to Estonia, Livonia and Rotalia.
 swe_forsvenskning = {
 	game_data = {
 		category = location
@@ -121,4 +122,66 @@ swe_pomeranian_emancipation = {
 	local_peasants_estate_power = 0.25
 	local_nobles_estate_power = -0.25
 	local_crown_estate_power = 0.25
+}
+
+# Added for 50 years by swe_baltic.1–3 (confirming the privileges) to Sweden's locations in Estonia, Livonia
+# (not the towns Reval, Narva and Riga, which get swe_baltic_town_privileges) and Rotalia. The knighthoods
+# kept their diets, courts and German law. Location modifiers stay when the owner changes, as the
+# privileges did: Peter the Great confirmed them in 1710. A Livonian Reduction can remove it sooner. The nobles' share of fortress_town (0.25), the crown loss of kulm_town_rights
+# (-0.25), and the assimilation and integration of lat_compromise (-0.25, +0.10).
+swe_baltic_privileges = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.25
+	local_crown_estate_power = -0.25
+	local_pop_assimilation_speed_modifier = -0.25
+	local_integration_speed = 0.10
+}
+
+# Added for 50 years to Reval and Narva by swe_baltic.1 and to Riga by swe_baltic.2 (confirming the
+# privileges). The estate shift and merchant capacity of swe_tyska_radet: a self-governing Hanseatic
+# town. The culture terms are those of swe_baltic_privileges, since the towns kept their German law too.
+swe_baltic_town_privileges = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity_modifier = 0.1
+	local_burghers_estate_power = 0.25
+	local_crown_estate_power = -0.25
+	local_pop_assimilation_speed_modifier = -0.25
+	local_integration_speed = 0.10
+}
+
+# Added to riga for 50 years by swe_baltic.2 (Swedish law). The Licent, the Crown's toll on the trade of
+# the Baltic ports from the 1620s. swe_tyska_radet reversed: the Crown's gain is the merchants' loss.
+swe_riga_licent = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.25
+	local_burghers_estate_power = -0.25
+	local_merchant_capacity_modifier = -0.1
+}
+
+# Added for 50 years by swe_baltic.4 to whichever of Narva, Nyen and Reval Sweden holds: after Stolbovo (1617)
+# Russia had no Baltic port, and Sweden meant its trade with the West to pass through them. The flat merchant
+# capacity of favoring_own_interests (0.5) and the market access of market_charter (0.1).
+swe_russian_transit = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity = 0.5
+	local_market_access = 0.1
+}
+
+# Added for 50 years by swe_baltic.4 to the town chosen as the staple of the Russian trade. The same as the
+# Stockholm staple in swe_bottniska_handelstvanget. No local_trade_center_power: it only counts in a market
+# center, and none of the three towns is one at the start.
+swe_russian_staple = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity_modifier = 0.1
+	local_trades_per_burgher = 0.25
 }

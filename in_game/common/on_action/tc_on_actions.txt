@@ -7,6 +7,39 @@ on_ruler_death_delayed = {
 	on_actions = { tc_on_ruler_death_delayed }
 }
 
+on_new_ruler = {
+	on_actions = { tc_on_new_ruler }
+}
+
+# A new Swedish monarch under Konungabalken must ride the Eriksgata (swe_eriksgata_decision);
+# the penalty inside swe_konungabalken lapses after 10 years even if the ride never happens.
+# The first such election while Sweden holds Åbo asks whether Finland votes at Mora (swe_finland.1).
+tc_on_new_ruler = {
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_estate_privilege = estate_privilege:swe_konungabalken
+		# Not the wave of rulers set at game start (vanilla's guard in succession.100)
+		game_is_initialized = yes
+		# Not when the same monarch is set again, e.g. under joint rule (vanilla culture_religion_events)
+		trigger_if = {
+			limit = {
+				exists = scope:old_ruler
+				exists = scope:new_ruler
+			}
+			NOT = { scope:old_ruler = scope:new_ruler }
+		}
+	}
+
+	effect = {
+		set_variable = {
+			name = swe_eriksgata_pending
+			years = 10
+		}
+		trigger_event_non_silently = { id = swe_finland.1 days = { 60 120 } }
+	}
+}
+
 # A Swedish monarch dies: Tre Kronor may burn while the body lies in state there, as it did in 1697
 # (swe_stockholm.1), and the funeral follows a month or two later, after any fire (swe_stockholm.2)
 tc_on_ruler_death_delayed = {

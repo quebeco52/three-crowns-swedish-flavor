@@ -1,0 +1,76 @@
+﻿# Baltic provinces and the Russian transit trade (tc_baltic.txt).
+# All are location scope except swe_russia_shut_out_trigger, which works from any scope.
+
+# Swedish Livonia, won from Poland in the 1620s: Riga, Pernau, Fellin, Wenden and Dorpat (swe_baltic.2)
+swe_livonia_trigger = {
+	OR = {
+		province_definition = province_definition:south_livonia_province
+		province_definition = province_definition:north_livonia_province
+		province_definition = province_definition:tartu_province
+		province_definition = province_definition:inner_livonia_province
+	}
+}
+
+# Narva, Nyen and Reval, the ports Sweden meant the Russian trade to pass through
+swe_russian_transit_port_trigger = {
+	OR = {
+		this = location:narva
+		this = location:neva
+		this = location:tallinn
+	}
+}
+
+# Sweden or one of its subjects (country scope)
+swe_is_swedish_realm_trigger = {
+	OR = {
+		has_or_had_tag = SWE
+		top_overlord ?= { has_or_had_tag = SWE }
+	}
+}
+
+# "Russia", for the transit trade: whoever owns Novgorod, the old gateway of the Russian trade, unless
+# that is Sweden or a Swedish subject (after Stolbovo, or a Novgorod march from swe_novgorod.1); then
+# whoever owns Moscow. A port held by that country or one of its subjects.
+swe_russian_port_trigger = {
+	owner ?= {
+		trigger_if = {
+			limit = {
+				location:novgorod.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			}
+			OR = {
+				this = location:novgorod.owner
+				top_overlord ?= location:novgorod.owner
+			}
+		}
+		trigger_else = {
+			location:moscow.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			OR = {
+				this = location:moscow.owner
+				top_overlord ?= location:moscow.owner
+			}
+		}
+	}
+}
+
+# Russia (as above) exists outside the Swedish realm and has no port on the Baltic, as after
+# Stolbovo (1617). The Gulf of Finland and the Gulf of Riga are part of eastern_baltic_sea; Lake
+# Ladoga is not. Same check as flavor_dan.68 (Dominium Maris Baltici), with the four sea areas of
+# flavor_plc's is_port_on_the_baltic.
+swe_russia_shut_out_trigger = {
+	OR = {
+		location:novgorod.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+		location:moscow.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+	}
+	area:eastern_baltic_sea = {
+		NOT = { any_adjacent_ports_to_area = { swe_russian_port_trigger = yes } }
+	}
+	area:inner_baltic_sea_area = {
+		NOT = { any_adjacent_ports_to_area = { swe_russian_port_trigger = yes } }
+	}
+	area:south_baltic_sea_area = {
+		NOT = { any_adjacent_ports_to_area = { swe_russian_port_trigger = yes } }
+	}
+	area:western_baltic_sea = {
+		NOT = { any_adjacent_ports_to_area = { swe_russian_port_trigger = yes } }
+	}
+}

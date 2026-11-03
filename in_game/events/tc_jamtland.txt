@@ -16,6 +16,7 @@ swe_jamtland.1 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
 		monthly_chance = 3 # Median about two years after Sweden takes Frösön
@@ -26,8 +27,8 @@ swe_jamtland.1 = {
 		owns = location:froso
 		province_definition:jamtland_province = {
 			any_location_in_province_definition = {
-				owner = root
-				dominant_culture = culture:norwegian
+				owner ?= root
+				dominant_culture ?= culture:norwegian
 			}
 		}
 	}
@@ -55,8 +56,8 @@ swe_jamtland.1 = {
 			province_definition:jamtland_province = {
 				every_location_in_province_definition = {
 					limit = {
-						owner = root
-						dominant_culture = culture:norwegian
+						owner ?= root
+						dominant_culture ?= culture:norwegian
 						NOT = { has_location_modifier = swe_forsvenskning }
 					}
 					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
@@ -84,8 +85,8 @@ swe_jamtland.1 = {
 			province_definition:jamtland_province = {
 				every_location_in_province_definition = {
 					limit = {
-						owner = root
-						dominant_culture = culture:norwegian
+						owner ?= root
+						dominant_culture ?= culture:norwegian
 						NOT = { has_location_modifier = swe_jamtland_tings }
 					}
 					add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
@@ -116,6 +117,7 @@ swe_jamtland.2 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
 		monthly_chance = 5 # About a year into such a war
@@ -129,8 +131,8 @@ swe_jamtland.2 = {
 		}
 		province_definition:jamtland_province = {
 			any_location_in_province_definition = {
-				owner = root
-				dominant_culture = culture:norwegian
+				owner ?= root
+				dominant_culture ?= culture:norwegian
 			}
 		}
 	}
@@ -154,14 +156,14 @@ swe_jamtland.2 = {
 			text = swe_jamtland.2.a_tt
 			province_definition:jamtland_province = {
 				every_location_in_province_definition = {
-					limit = { owner = root }
+					limit = { owner ?= root }
 					if = {
 						limit = { has_location_modifier = swe_jamtland_tings }
 						remove_location_modifier = swe_jamtland_tings
 					}
 					if = {
 						limit = {
-							dominant_culture = culture:norwegian
+							dominant_culture ?= culture:norwegian
 							NOT = { has_location_modifier = swe_forsvenskning }
 						}
 						add_location_modifier = { modifier = swe_forsvenskning years = 20 }
@@ -189,14 +191,14 @@ swe_jamtland.2 = {
 			text = swe_jamtland.2.b_tt
 			province_definition:jamtland_province = {
 				every_location_in_province_definition = {
-					limit = { owner = root }
+					limit = { owner ?= root }
 					if = {
 						limit = { has_location_modifier = swe_forsvenskning }
 						remove_location_modifier = swe_forsvenskning
 					}
 					if = {
 						limit = {
-							dominant_culture = culture:norwegian
+							dominant_culture ?= culture:norwegian
 							NOT = { has_location_modifier = swe_jamtland_tings }
 						}
 						add_location_modifier = { modifier = swe_jamtland_tings months = -1 }

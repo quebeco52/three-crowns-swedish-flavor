@@ -2,6 +2,7 @@
  swe_landslag: "Landslagen"
  swe_landslag_desc: "The old laws of the provinces have given way to one law for the whole realm, read out at every ting from [ShowLocationName('uppsala')] to the Finnish coast. Its chapters cover everything from the election of the king to the upkeep of bridges, and lords and [ShowEstateTypeName('peasants_estate')] alike are judged by it."
  swe_rikes_lag_country_bonus: "Once we pass Sveriges rikes lag ($swe_rikes_lag_decision.title$):"
+ swe_wismar_tribunal_location_bonus: "Once the Wismar Tribunal sits, every [location|e] we own inside the [hre|e], or in [ShowRegionName('north_german_region')] once the Empire is no more, gains:"
 
  swe_landslag_decision.title: "The Law of the Land"
  swe_landslag_decision.desc: "Every province of the realm keeps its own law. A man of Uppland and a man of Västergötland may be judged differently for the same crime, and the lawmen of each province guard their old customs closely. If the provincial laws were gathered into one code, the Crown's judges could apply it everywhere, and the [ROOT.GetCountry.GetGovernment.GetEstateName('peasants_estate')] would know their rights wherever they went."
@@ -15,6 +16,15 @@
  swe_rikes_lag_decision.historical_info: "From 1686 a series of law commissions worked on a new code to replace the medieval national law and town law. The result, Sveriges rikes lag (the Law of the Realm of Sweden), was adopted by the Riksdag in 1734 and came into force in 1736. Its chapters on marriage, inheritance, land, building, trade, crime and procedure applied to town and countryside alike, and its structure survives in Swedish and Finnish law today."
  swe_rikes_lag_decision.a: "Pass the new code."
  swe_rikes_lag_decision.a_tt: "$swe_landslag$ gains a bonus to [legislative_efficiency|e]."
+
+ swe_wismar_tribunal_decision.title: "The Wismar Tribunal"
+ swe_wismar_tribunal_decision.desc: "Our German lands are fiefs of the Empire, and their lords and towns can still carry their lawsuits past our judges to the imperial courts, where our rivals have friends. A high court of our own, seated in one of our German towns and judging by the law of the land, would end their cases at home. Its judges would be Swedes and Germans alike, and the German [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] would look to [ROOT.GetCountry.GetName] for justice rather than to the Emperor."
+ swe_wismar_tribunal_decision.desc.entry: "A high court of our own could judge our German lands."
+ swe_wismar_tribunal_decision.historical_info: "At the Peace of Westphalia in 1648 Sweden gained Western Pomerania, the town of Wismar and the duchies of Bremen and Verden as fiefs of the Holy Roman Empire, with seats at the Imperial Diet. The treaty also freed these lands from appeal to the imperial courts, on condition that Sweden set up a high court of its own for them. The Royal Swedish High Tribunal opened at Wismar in 1653 and became the last court of appeal for all of Sweden's German possessions. It judged by the common law of the Empire and the customs of each province rather than by Swedish law. When Wismar was pledged to Mecklenburg in 1803, the tribunal moved into Swedish Pomerania."
+ swe_wismar_tribunal_decision.a: "Seat the tribunal."
+ swe_wismar_tribunal_decision.a_tt: "In every [location|e] we own inside the [hre|e], or in [ShowRegionName('north_german_region')] once the Empire is no more, $swe_landslag$ speeds up [integration|e], raises [crown_power|e] and slows [assimilation|e]."
+ swe_wismar_tribunal_decision.lands_tt: "We own at least 3 [locations|e] inside the [hre|e], or in [ShowRegionName('north_german_region')] if the Empire is no more"
+ swe_wismar_tribunal_decision.town_tt: "At least one of them is a town or larger"
 
  swe_riddarhuset: "Riddarhusordningen"
  swe_riddarhuset_desc: "The nobility meet in their own house in [ShowLocationName('stockholm')], divided into three classes: the counts and barons, the knights whose forefathers sat on the Council of the Realm, and the rest. Each noble family has one seat, held by its head, and every family is entered in the House's register. In return the Crown expects the nobility to serve it as officers and officials."
@@ -37,3 +47,16 @@
  swe_tryckfrihet_decision.desc.entry: "The Riksdag could abolish the censor."
  swe_tryckfrihet_decision.historical_info: "In 1766 the Riksdag, led by the Caps party, passed Tryckfrihetsförordningen, the Freedom of the Press Act. It abolished censorship of everything except theological works and gave the public the right to read official documents, the principle of public access that Swedish law still follows. One of its main authors was Anders Chydenius, a priest from Ostrobothnia who sat in the Riksdag for the clergy. Gustav III restricted the act after his coup in 1772, but it is regarded as the world's first law protecting the freedom of the press."
  swe_tryckfrihet_decision.a: "Abolish the censor."
+
+ swe_kammarkollegium: "Kammarkollegium"
+ swe_kammarkollegium_desc: "The Chamber College in [ShowLocationName('stockholm')] keeps the accounts of every crown revenue, from the tithes of the parishes to the tolls of the ports. Its clerks audit the bailiffs of every county, and the treasurer answers to the Council for every coin that goes missing."
+ swe_amiralitetskollegium: "Amiralitetskollegium"
+ swe_amiralitetskollegium_desc: "The Admiralty College builds, mans and supplies the fleet from the Crown's yards and storehouses. In time of war it carries our regiments across the Baltic and keeps the sea lanes open behind them."
+ swe_kommerskollegium: "Kommerskollegium"
+ swe_kommerskollegium_desc: "The Board of Trade decides which towns may trade abroad, sets the tolls on goods coming in and going out, and charters the companies that sell our copper, iron and tar. Every merchant of the realm has business before it."
+
+ swe_regeringsform_decision.title: "The Instrument of Government"
+ swe_regeringsform_decision.desc: "The realm has outgrown a government that follows the king from castle to camp. The chancellor proposes to set down in writing how it shall be ruled: five colleges sitting permanently in [ShowLocationName('stockholm')], for justice, war, the fleet, the chancery and the treasury, each led by one of the great officers of the realm. The high [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] would fill the colleges, and in return the Crown would have officials who keep records and answer for their work."
+ swe_regeringsform_decision.desc.entry: "Five colleges could govern the realm from the capital."
+ swe_regeringsform_decision.historical_info: "The Instrument of Government (regeringsform) of 1634, largely the work of Chancellor Axel Oxenstierna, was adopted by the Riksdag two years after Gustav II Adolf fell at Lützen, while his daughter Kristina was still a child. It organised the central government into five colleges, each headed by one of the great officers of state: Svea hovrätt under the High Steward, the War College under the Marshal, the Admiralty under the Admiral, the Chancery under the Chancellor and the Chamber College under the Treasurer. The colleges sat permanently in Stockholm, which became the fixed seat of government, and the provinces were divided into counties under governors. A Board of Trade (Kommerskollegium) followed in 1651. Kammarkollegiet and Kommerskollegium still exist as Swedish government agencies today."
+ swe_regeringsform_decision.a: "Set the colleges to work."

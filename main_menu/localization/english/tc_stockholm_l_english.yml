@@ -6,6 +6,8 @@
  swe_stockholm_palace_desc: "Nicodemus Tessin the Younger's palace stands on the site of Tre Kronor, a great square block in the Roman manner around an open courtyard. It houses the royal family, the court and the offices of state, and shows Europe that the Swedish Crown can build as grandly as any."
  swe_riddarholmskyrkan: "Riddarholmskyrkan"
  swe_riddarholmskyrkan_desc: "The old church of the Greyfriars on Riddarholmen in Stockholm has become the burial church of Sweden's monarchs. Their tombs and grave chapels fill the church around the high altar."
+ swe_order_of_the_seraphim: "Serafimerorden"
+ swe_order_of_the_seraphim_desc: "Serafimerorden, the Royal Order of the Seraphim, is the highest honour the Crown can give. Its knights wear a light blue riband with the cross of the seraphim, the highest of the angels, and are chosen by the monarch alone. Each knight's arms are painted on a shield and hung in $swe_riddarholmskyrkan$, and on the day a knight is buried its bells ring for an hour."
 
  swe_stockholm_palace_decision.title: "$swe_stockholm_palace$"
  swe_stockholm_palace_decision.desc: "[ShowLocationName('stockholm')] needs a royal palace worthy of the realm. Whether Tre Kronor still stands or lies in ruins, our architects would build a palace in the new style on its site, fit for the court and the offices of state. The work would take years and cost a fortune, and what is left of the old castle would have to come down."
@@ -33,3 +35,12 @@
  swe_stockholm.2.b.entry: "The monarch was buried in Uppsala Cathedral."
  swe_stockholm.2.c: "A simple burial will do."
  swe_stockholm.2.c.entry: "The monarch was given a simple burial."
+
+ swe_stockholm.3.title: "[ShowChivalricOrderNameWithNoTooltip('swe_order_of_the_seraphim')]"
+ swe_stockholm.3.entry: "$swe_order_of_the_seraphim$"
+ swe_stockholm.3.desc: "Our monarchs are now laid to rest in $swe_riddarholmskyrkan$, and the heralds of the court have a proposal: an order of knighthood with the church as its home. Its knights would be the first men of the realm, chosen by the monarch alone. Their arms would hang in the church, and when one of them was buried its bells would ring for him. They would call it Serafimerorden, the Order of the Seraphim, after the highest of the angels. The [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] are eager for the honour, though they know the riband will go to those who serve the Crown best, not to those of the oldest blood."
+ swe_stockholm.3.historical_info: "Fredrik I founded the Royal Order of the Seraphim (Kungliga Serafimerorden) on 23 February 1748, together with the Order of the Sword and the Order of the North Star. The Seraphim was kept for the royal family, the highest officers of state and foreign princes, and its knights wore a light blue riband. Riddarholmskyrkan became the order's church: the coat of arms of every knight is painted on a shield and hung on its walls, and on the day of a knight's funeral its bells ring from noon until one, the Seraphim ringing. The order also gave its name to Stockholm's first general hospital, the Serafimerlasarettet, opened in 1752."
+ swe_stockholm.3.a: "Found the order."
+ swe_stockholm.3.a.entry: "Serafimerorden was founded."
+ swe_stockholm.3.b: "The realm has no need of ribands."
+ swe_stockholm.3.b.entry: "The Crown declined to found an order of knighthood."

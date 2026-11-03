@@ -1,0 +1,55 @@
+﻿# Effects for the Novgorod protectorate (swe_novgorod).
+
+# Country scope: Sweden, as root. Gives Sweden cb_conquer_province on every part of Kexholm and Ingria
+# held by anyone but Sweden and its subjects (swe_novgorod.1: Novgorod kept as a pledge for them, as
+# Sweden held it until Stolbovo in 1617). Provinces listed one by one, like vanilla flavor_plc.2004.
+swe_claim_kexholm_ingria_effect = {
+	province_definition:korela_province = {
+		every_province_in_province_definition = {
+			limit = {
+				exists = owner
+				NOT = { is_owned_by_target_or_subject = { owner = root } }
+			}
+			save_temporary_scope_as = swe_claim_province
+			root = {
+				add_casus_belli = {
+					target = scope:swe_claim_province.owner
+					type = casus_belli:cb_conquer_province
+					province = scope:swe_claim_province
+				}
+			}
+		}
+	}
+	province_definition:lopskaya_province = {
+		every_province_in_province_definition = {
+			limit = {
+				exists = owner
+				NOT = { is_owned_by_target_or_subject = { owner = root } }
+			}
+			save_temporary_scope_as = swe_claim_province
+			root = {
+				add_casus_belli = {
+					target = scope:swe_claim_province.owner
+					type = casus_belli:cb_conquer_province
+					province = scope:swe_claim_province
+				}
+			}
+		}
+	}
+	province_definition:vodskaya_province = {
+		every_province_in_province_definition = {
+			limit = {
+				exists = owner
+				NOT = { is_owned_by_target_or_subject = { owner = root } }
+			}
+			save_temporary_scope_as = swe_claim_province
+			root = {
+				add_casus_belli = {
+					target = scope:swe_claim_province.owner
+					type = casus_belli:cb_conquer_province
+					province = scope:swe_claim_province
+				}
+			}
+		}
+	}
+}

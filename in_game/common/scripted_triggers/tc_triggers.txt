@@ -50,3 +50,18 @@ swe_kexholm_ingria_trigger = {
 		province_definition = province_definition:vodskaya_province
 	}
 }
+
+# The German lands the Wismar Tribunal judged as the Crown's imperial fiefs (swe_wismar_tribunal_decision):
+# north Germany without the Low Countries (Pomerania, Mecklenburg, Bremen-Verden and their neighbours), and
+# only imperial land while the Empire exists. Same HRE guard as vanilla's hre_buildings.txt.
+swe_german_provinces_trigger = {
+	region = region:north_german_region
+	NOT = { area = area:holland_area }
+	NOT = { area = area:brabant_area }
+	NOT = { area = area:flanders_area }
+	NOT = { area = area:wallonia_area }
+	trigger_if = {
+		limit = { exists = international_organization:hre }
+		is_owned_by_international_organization = international_organization:hre
+	}
+}

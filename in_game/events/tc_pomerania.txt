@@ -15,6 +15,7 @@ swe_pomerania.1 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
 		monthly_chance = 3 # Median about two years once the trigger holds
@@ -49,7 +50,7 @@ swe_pomerania.1 = {
 			area:pomerania_area = {
 				every_location_in_area = {
 					limit = {
-						owner = root
+						owner ?= root
 						NOT = { has_location_modifier = swe_pomeranian_emancipation }
 					}
 					add_location_modifier = { modifier = swe_pomeranian_emancipation months = -1 }

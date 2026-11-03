@@ -16,6 +16,7 @@ swe_union.1 = {
 	fire_only_once = yes
 	dynamic_historical_event = {
 		tag = SWE
+		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
 		monthly_chance = 3 # Median about two years once the trigger holds

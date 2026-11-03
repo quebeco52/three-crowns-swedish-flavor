@@ -1,0 +1,393 @@
+﻿namespace = swe_baltic
+
+# The Baltic capitulations. As the Livonian Confederation broke up, its German knighthoods and towns
+# submitted to Sweden on terms: Estonia and Reval in 1561, Riga in 1621, Livonia in the 1620s, Ösel in
+# 1645. Each event fires whenever Sweden owns the chief town while Baltic Germans still live there, not
+# by date. Confirming the privileges speeds integration and slows assimilation, as vanilla's
+# lat_compromise does for the Greeks; Swedish law speeds assimilation through swe_forsvenskning.
+# Nobody's culture changes at once. The variables mark the choice for later content.
+
+# Estonia: the knighthoods of Harrien, Wierland and Jerwen and the town of Reval submitted to Erik XIV
+# in 1561, and he confirmed their privileges.
+swe_baltic.1 = {
+	type = country_event
+	title = swe_baltic.1.title
+	desc = swe_baltic.1.desc
+	outcome = neutral
+	historical_info = swe_baltic.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Reval
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:tallinn
+		location:tallinn = {
+			any_pop = { culture = culture:german_baltic }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_baltic.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.1.a_tt
+			province_definition:estonia_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner ?= root
+						NOT = { this = location:tallinn }
+						NOT = { this = location:narva }
+						NOT = { has_location_modifier = swe_baltic_privileges }
+					}
+					add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
+				}
+			}
+		}
+		# Reval and Narva were Hanseatic towns under Lübeck law: their councils, not the knighthood, kept the privileges
+		every_owned_location = {
+			limit = {
+				OR = {
+					this = location:tallinn
+					this = location:narva
+				}
+				NOT = { has_location_modifier = swe_baltic_town_privileges }
+			}
+			add_location_modifier = { modifier = swe_baltic_town_privileges years = modifier_duration_years_very_long }
+		}
+		set_variable = swe_baltic_privileges_confirmed
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_baltic.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.1.b_tt
+			province_definition:estonia_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner ?= root
+						NOT = { dominant_culture = culture:swedish }
+						NOT = { has_location_modifier = swe_forsvenskning }
+					}
+					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+				}
+			}
+		}
+		set_variable = swe_baltic_swedish_law
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+	}
+}
+
+# Livonia and Riga: Gustav II Adolf took Riga in 1621 and the rest of Livonia in the 1620s, and
+# confirmed the privileges of the city and the Livonian knighthood. From the 1620s the Crown also
+# took the Licent, a toll on the trade of the Baltic ports. Riga, a burghers' town, gets the town's
+# modifier instead of the knighthood's, so that the two crown losses never stack there.
+swe_baltic.2 = {
+	type = country_event
+	title = swe_baltic.2.title
+	desc = swe_baltic.2.desc
+	outcome = neutral
+	historical_info = swe_baltic.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Riga
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:riga
+		location:riga = {
+			any_pop = { culture = culture:german_baltic }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_baltic.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.2.a_tt
+			every_owned_location = {
+				limit = {
+					swe_livonia_trigger = yes
+					NOT = { this = location:riga }
+					NOT = { has_location_modifier = swe_baltic_privileges }
+				}
+				add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
+			}
+		}
+		location:riga = {
+			add_location_modifier = { modifier = swe_baltic_town_privileges years = modifier_duration_years_very_long }
+		}
+		set_variable = swe_baltic_privileges_confirmed
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_baltic.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.2.b_tt
+			every_owned_location = {
+				limit = {
+					swe_livonia_trigger = yes
+					NOT = { dominant_culture = culture:swedish }
+					NOT = { has_location_modifier = swe_forsvenskning }
+				}
+				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+			}
+		}
+		location:riga = {
+			add_location_modifier = { modifier = swe_riga_licent years = modifier_duration_years_very_long }
+		}
+		set_variable = swe_baltic_swedish_law
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# Ösel and Wiek (Rotalia): mainland Wiek was Swedish from the 1580s; the island of Ösel was Danish from
+# 1559 until Brömsebro (1645), and its knighthood kept the privileges it had held under Denmark.
+# Same shape as swe_baltic.1.
+swe_baltic.3 = {
+	type = country_event
+	title = swe_baltic.3.title
+	desc = swe_baltic.3.desc
+	outcome = neutral
+	historical_info = swe_baltic.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Arensburg
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kuressaare
+		location:kuressaare = {
+			any_pop = { culture = culture:german_baltic }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_baltic.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.3.a_tt
+			province_definition:rotalia_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner ?= root
+						NOT = { has_location_modifier = swe_baltic_privileges }
+					}
+					add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
+				}
+			}
+		}
+		set_variable = swe_baltic_privileges_confirmed
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_baltic.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.3.b_tt
+			province_definition:rotalia_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner ?= root
+						NOT = { dominant_culture = culture:swedish }
+						NOT = { has_location_modifier = swe_forsvenskning }
+					}
+					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+				}
+			}
+		}
+		set_variable = swe_baltic_swedish_law
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+	}
+}
+
+# The Russian staple. Stolbovo (1617) cut Russia off from the Baltic, and Sweden tried to draw Russia's
+# trade with the West through Narva, Nyen and Reval; Narva became the main one. Fires from the age of
+# the Reformation, while Sweden holds one of the three and whoever owns Novgorod has no Baltic port.
+# Whichever of them Sweden holds then get swe_russian_transit, and the chosen staple also gets swe_russian_staple.
+# Both run for 50 years even if Russia returns to the Baltic: a location modifier can't check that later.
+# The prosperity of flavor_tre.5 (the trade port of Kerasous left to prosper).
+swe_baltic.4 = {
+	type = country_event
+	title = swe_baltic.4.title
+	desc = swe_baltic.4.desc
+	outcome = positive
+	historical_info = swe_baltic.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Russia loses its last Baltic port
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_4_reformation
+		}
+		OR = {
+			owns = location:narva
+			owns = location:neva
+			owns = location:tallinn
+		}
+		swe_russia_shut_out_trigger = yes
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		# The same "Russia" as swe_russian_port_trigger
+		if = {
+			limit = {
+				location:novgorod.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			}
+			location:novgorod.owner = { save_scope_as = swe_russian_hinterland }
+		}
+		else = {
+			location:moscow.owner ?= { save_scope_as = swe_russian_hinterland }
+		}
+		# The same whichever town becomes the staple
+		every_owned_location = {
+			limit = {
+				swe_russian_transit_port_trigger = yes
+				NOT = { has_location_modifier = swe_russian_transit }
+			}
+			add_location_modifier = { modifier = swe_russian_transit years = modifier_duration_years_very_long }
+		}
+	}
+
+	# Narva
+	option = {
+		name = swe_baltic.4.a
+		historical_option = yes
+		trigger = {
+			owns = location:narva
+		}
+		ai_chance = {
+			base = 50
+		}
+
+		custom_tooltip = swe_baltic.4.transit_tt
+		location:narva = {
+			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
+			change_prosperity = prosperity_mild_bonus
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	# Nyen
+	option = {
+		name = swe_baltic.4.b
+		trigger = {
+			owns = location:neva
+		}
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = swe_baltic.4.transit_tt
+		location:neva = {
+			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
+			change_prosperity = prosperity_mild_bonus
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	# Reval
+	option = {
+		name = swe_baltic.4.c
+		trigger = {
+			owns = location:tallinn
+		}
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = swe_baltic.4.transit_tt
+		location:tallinn = {
+			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
+			change_prosperity = prosperity_mild_bonus
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}
