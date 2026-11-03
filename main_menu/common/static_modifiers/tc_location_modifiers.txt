@@ -111,7 +111,7 @@ swe_jamtmarknaden = {
 }
 
 # Added by swe_pomerania.1 to Sweden's locations in Pomerania. Gustav IV Adolf set aside the estates'
-# constitution and abolished serfdom (1806). Twice the enfranchisement of scandinavian_thing_rights
+# constitution and abolished serfdom (1806). Twice the enfranchisement of scandinavian_bergslag_privileges
 # (0.05); the estate shifts of fortress_town (0.25), here from the nobles to the peasants and the Crown.
 swe_pomeranian_emancipation = {
 	game_data = {
