@@ -533,3 +533,163 @@ swe_kajana_border_trade = {
 	}
 	local_market_access = 0.1
 }
+
+# Added for 85 years by swe_scania.2 to Skåneland locations held by Sweden or a subject, when private castles are
+# banned. The crown power of swe_norrland_bailiff.
+swe_castle_ban = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added for 50 years by swe_scania.2 to the same locations when the lords may build. The noble power of
+# swe_osterbotten_fiefs and the defence of swe_jamtland_tings.
+swe_fasta_hus = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.1
+	local_defensive = 0.25
+}
+
+# Added to varberg for 50 years by swe_scania.4, whichever way the work is paid for. The defence of swe_jamtland_tings.
+swe_varberg_fortress = {
+	game_data = {
+		category = location
+	}
+	local_defensive = 0.25
+}
+
+# Added for 25 years by swe_scania.4 to Halland locations held by Sweden or a subject, when the farmers are called up.
+# The unrest of swe_norrland_bailiff.
+swe_varberg_labour = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+}
+
+# Added to lund for 50 years by swe_scania.5 when the old churches are kept. The clergy power of swe_abo_diocese_north.
+swe_lund_old_churches = {
+	game_data = {
+		category = location
+	}
+	local_clergy_estate_power = 0.1
+}
+
+# Added to malmo for 25 years by swe_scania.6 after executions. The same as swe_norrland_bailiff.
+swe_malmo_plot_crushed = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to malmo for 25 years by swe_scania.6 after a pardon. The unrest of swe_finland_at_mora and the crown power of
+# swe_faxeholm_ruins.
+swe_malmo_mercy = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_crown_estate_power = -0.1
+}
+
+# Added for 25 years by swe_gotaland.1 to Sweden's locations in Tioharad when the border peace stands. The market
+# access of market_charter (0.1), the unrest of swe_finland_at_mora and the manpower of swe_jamtland_tings.
+swe_varend_border_peace = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_unrest = -0.1
+	local_manpower_modifier = -0.25
+}
+
+# Added for 25 years by swe_gotaland.1 to the same locations when it's forbidden. The same as swe_norrland_bailiff.
+swe_border_peace_forbidden = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to ljungby for 25 years by swe_gotaland.2 when the new judge stays. The same as swe_norrland_bailiff.
+swe_sunnerbo_judge = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to ljungby for 25 years by swe_gotaland.2 when the district picks its judge. The same as swe_malmo_mercy.
+swe_sunnerbo_local_judge = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_crown_estate_power = -0.1
+}
+
+# Added for 10 years by swe_gotaland.3 to Sweden's locations in Tioharad when the oxen ban is enforced, in place of
+# rebels. The unrest of vanilla's cruel_overlord (0.5) and the crown power of swe_norrland_bailiff.
+swe_oxen_ban = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.5
+	local_crown_estate_power = 0.1
+}
+
+# Added for 25 years by swe_gotaland.3 to the same locations when the trade goes on. The crown power of
+# swe_faxeholm_ruins and the market access of market_charter (0.1).
+swe_oxen_trade = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = -0.1
+	local_market_access = 0.1
+}
+
+# Added to skene and bogesund for 100 years by swe_gotaland.4 when the peddlers may trade. The market access of
+# market_charter (0.1).
+swe_knallar = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+}
+
+# Added to the same locations for 25 years by swe_gotaland.4 when the monopoly is enforced. The unrest of
+# swe_norrland_bailiff.
+swe_town_monopoly_enforced = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+}
+
+# Added for 25 years by swe_gotaland.5 to Sweden's locations on Gotland when the old law goes. The same as
+# swe_norrland_bailiff.
+swe_gotland_royal_courts = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added for 50 years by swe_gotaland.5 to the same locations when the old law stays. The same as swe_finland_at_mora,
+# Finland's voice in the royal election.
+swe_gutalagen = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasant_enfranchisment = 0.05
+	local_crown_estate_power = -0.1
+}
