@@ -28,7 +28,7 @@ swe_finland_east.1 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = armed
 		10 = exterior
 	}
 
@@ -85,7 +85,7 @@ swe_finland_east.2 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = armed
 		10 = exterior
 	}
 
@@ -121,7 +121,7 @@ swe_finland_east.2 = {
 			text = swe_finland_east.2.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:vyborg_province }
-				add_location_modifier = { modifier = swe_viborg_gates_forced years = 25 }
+				add_location_modifier = { modifier = swe_viborg_gates_forced years = 20 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
@@ -365,7 +365,7 @@ swe_finland_east.6 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 

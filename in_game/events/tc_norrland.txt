@@ -1,6 +1,6 @@
 ﻿namespace = swe_norrland
 
-# Province and territory events for Gästrikland, Hälsingland, Ångermanland, Jämtland and northern Dalarna.
+# Province and territory events for Gästrikland, Hälsingland, Ångermanland and Jämtland.
 # Each is one self-contained event. Their effects stay on the locations named, and none changes a town rank.
 
 # The castle at Faxeholm burns. The Vitalian Brothers built it in 1395/96, the Crown held it by the end of
@@ -30,7 +30,7 @@ swe_norrland.1 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -76,7 +76,7 @@ swe_norrland.1 = {
 						province_definition = province_definition:angermanland_province
 					}
 				}
-				add_location_modifier = { modifier = swe_norrland_bailiff years = 50 }
+				add_location_modifier = { modifier = swe_norrland_bailiff years = 20 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
@@ -235,63 +235,6 @@ swe_norrland.3 = {
 	}
 }
 
-# Idre and Särna: annex parishes of Elverum, taken in a bloodless march in 1644 and confirmed as Swedish only
-# in 1751. idre sits in dalarna_province, so swe_jamtland.1's loop misses it. Same shape as swe_jamtland.1:
-# fires on ownership while Norwegian culture dominates, and changes no one's culture.
-swe_norrland.5 = {
-	type = country_event
-	title = swe_norrland.5.title
-	desc = swe_norrland.5.desc
-	outcome = neutral
-	historical_info = swe_norrland.5.historical_info
-
-	fire_only_once = yes
-	dynamic_historical_event = {
-		tag = SWE
-		tag = SCA
-		from = 1337.1.1
-		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Idre
-	}
-
-	trigger = {
-		has_or_had_tag = SWE
-		owns = location:idre
-		location:idre = { dominant_culture ?= culture:norwegian }
-	}
-
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
-	}
-
-	option = {
-		name = swe_norrland.5.a
-		historical_option = yes
-		ai_chance = {
-			base = 75
-		}
-
-		location:idre = {
-			add_location_modifier = { modifier = swe_forsvenskning years = 20 }
-		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
-	}
-
-	option = {
-		name = swe_norrland.5.b
-		ai_chance = {
-			base = 25
-		}
-
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
-	}
-}
-
 # Hälsingland flax: Olof Johan Broman, vicar of Hudiksvall, proposed water-powered scutching around 1700, and
 # about 1,000 flax barns and mills followed. Flor, in Mo just outside Söderhamn, made damask for Europe's
 # courts. Vanilla has no fiber crops here. Söderala stands in for Flor. Raw material changes follow vanilla's
@@ -320,7 +263,7 @@ swe_norrland.6 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 

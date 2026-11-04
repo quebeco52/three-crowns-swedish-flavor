@@ -49,7 +49,7 @@
  swe_norrland.1.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains $STATIC_MODIFIER_NAME_swe_faxeholm_ruins$ for 50 years."
  swe_norrland.1.b: "Rebuild it, and send a new bailiff."
  swe_norrland.1.b.entry: "Faxeholm was rebuilt."
- swe_norrland.1.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains $STATIC_MODIFIER_NAME_swe_norrland_bailiff$ for 50 years."
+ swe_norrland.1.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains $STATIC_MODIFIER_NAME_swe_norrland_bailiff$ for 20 years."
 
  swe_norrland.2.title: "The Gävle Fishermen"
  swe_norrland.2.entry: "$swe_norrland.2.title$"
@@ -68,15 +68,6 @@
  swe_norrland.3.a.entry: "The diggers kept the lakebed."
  swe_norrland.3.b: "The lakebed goes to the Crown, and the Crown pays the valley."
  swe_norrland.3.b.entry: "The Crown took the lakebed and paid for the flood."
-
- swe_norrland.5.title: "Idre and Särna"
- swe_norrland.5.entry: "$swe_norrland.5.title$"
- swe_norrland.5.desc: "The parishes of [ShowLocationName('idre')] and Särna have always been Norwegian, and their church answers to Elverum across the mountains. Now our men hold them, and nobody has told the farmers which kingdom they live in. Our chaplains want to bring them under Swedish priests. Others say these people pay their taxes to whoever comes to collect them, so why stir up trouble?"
- swe_norrland.5.historical_info: "Idre and Särna were annex parishes of Elverum in Norway. In 1644, during the Hannibal War, Daniel Buskovius, the chaplain of Älvdalen, led about 200 men from Mora and Älvdalen north and took them in a bloodless march. The Peace of Brömsebro in 1645 did not give them back. A commission met in 1649 to decide whether they belonged to Härjedalen, which Denmark-Norway had ceded, or to Østerdalen, which it had not, but Sweden simply stayed. The border treaty of 1751 finally confirmed it."
- swe_norrland.5.a: "Send them Swedish priests."
- swe_norrland.5.a.entry: "Idre and Särna were given Swedish priests."
- swe_norrland.5.b: "Leave their parish ties alone."
- swe_norrland.5.b.entry: "Idre and Särna kept their old parish ties."
 
  swe_norrland.6.title: "The Flax of Hälsingland"
  swe_norrland.6.entry: "$swe_norrland.6.title$"

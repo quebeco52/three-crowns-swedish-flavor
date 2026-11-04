@@ -1,6 +1,14 @@
 ﻿# Baltic provinces and the Russian transit trade (tc_baltic.txt).
 # All are location scope except swe_russia_shut_out_trigger, which works from any scope.
 
+# Estonia, plus Ösel and Wiek (swe_baltic.1)
+swe_estonia_trigger = {
+	OR = {
+		province_definition = province_definition:estonia_province
+		province_definition = province_definition:rotalia_province
+	}
+}
+
 # Swedish Livonia, won from Poland in the 1620s: Riga, Pernau, Fellin, Wenden and Dorpat (swe_baltic.2)
 swe_livonia_trigger = {
 	OR = {

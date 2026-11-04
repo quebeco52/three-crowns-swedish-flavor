@@ -1,6 +1,6 @@
 ﻿l_english:
  STATIC_MODIFIER_NAME_swe_finland_at_mora: "Finland at Mora"
- STATIC_MODIFIER_DESC_swe_finland_at_mora: "Finland's men have a voice at the Stones of Mora like those of any other land of the realm. Its peasants keep more of what the land earns, and the country sits easier under the Crown, though it holds the Crown to its law."
+ STATIC_MODIFIER_DESC_swe_finland_at_mora: "Finland's men have a voice at the Stones of Mora like those of any other land of the realm. The country feels itself part of the kingdom and sits easier under the Crown, though it holds the Crown to its law."
  swe_finland.1.title: "Finland at Mora"
  swe_finland.1.entry: "$swe_finland.1.title$"
  swe_finland.1.desc: "The lawmen and the men of the lands of the realm choose our monarchs at the Stones of Mora. Across the sea, [ShowLocationName('abo')] and the country around it pay their taxes and send their men to our wars like any other land, yet they have no voice in the choice. Their bishop and their lawman ask that Finland be counted as a land of the realm, with the right to send its own men to every election. The [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] of the council would rather keep the election among the old lands, where their votes count for more."

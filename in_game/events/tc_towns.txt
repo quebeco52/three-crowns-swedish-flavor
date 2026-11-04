@@ -140,7 +140,7 @@ swe_towns.2 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 
@@ -195,7 +195,7 @@ swe_towns.3 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 
@@ -259,7 +259,7 @@ swe_towns.4 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 
@@ -370,7 +370,7 @@ swe_towns.6 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 
@@ -425,7 +425,7 @@ swe_towns.7 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 

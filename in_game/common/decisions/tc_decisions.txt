@@ -481,7 +481,7 @@ swe_svenska_radman_decision = {
 }
 
 # Ölands djurgård: on 7 April 1569 Johan III made all of Öland a royal deer park. Needs a strong Crown.
-# Only swe_oland.1 can end it at first; after the peasants' complaint, swe_oland_end_djurgard_decision.
+# Only swe_oland.1 can end it.
 swe_oland_djurgard_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_oland_djurgard_decision.historical_info
@@ -520,47 +520,6 @@ swe_oland_djurgard_decision = {
 			# The nobility lost its hunting on the island too
 			add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
 			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
-		}
-	}
-}
-
-# Ölands djurgård upphör: once the peasants have complained and been refused (swe_oland.1), the Crown
-# can end the deer park whenever it likes, as the royal letter of 12 May 1801 did.
-swe_oland_end_djurgard_decision = {
-	decision_category = country_specific_decisions
-	historical_info = swe_oland_end_djurgard_decision.historical_info
-	only_once = yes
-
-	potential = {
-		has_or_had_tag = SWE
-		has_variable = swe_oland_complaint
-		location:oland = { has_location_modifier = swe_olands_djurgard }
-	}
-
-	allow = {
-		owns = location:oland
-	}
-
-	ai_will_do = { value = 100 }
-
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	illustration_scope = {
-		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-	}
-
-	option = {
-		name = swe_oland_end_djurgard_decision.a
-		ai_chance = { value = 100 }
-		effect = {
-			location:oland = {
-				remove_location_modifier = swe_olands_djurgard
-			}
-			remove_variable = swe_oland_complaint
-			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 		}
 	}
 }

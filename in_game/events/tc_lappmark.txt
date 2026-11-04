@@ -48,8 +48,11 @@ swe_lappmark.1 = {
 		custom_tooltip = {
 			text = swe_lappmark.1.a_tt
 			every_owned_location = {
-				limit = { swe_far_north_trigger = yes }
-				add_location_modifier = { modifier = swe_uppsala_mission years = 25 }
+				limit = {
+					swe_far_north_trigger = yes
+					any_pop = { NOT = { religion = root.religion } }
+				}
+				add_location_modifier = { modifier = swe_uppsala_mission years = 20 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
@@ -202,8 +205,8 @@ swe_lappmark.3 = {
 
 # The mountain Sámi turn from hunting to reindeer herding. By the 1600s and 1700s many had switched entirely,
 # and a register of 1602 already counted each taxpayer's reindeer. Vanilla has no reindeer good, so livestock
-# is the closest. The forest locations keep their goods, since the forest Sámi kept a mixed living. The change
-# happens whichever option is chosen, and leaves foreign-held land alone.
+# is the closest (swe_reindeer_herds). The change happens whichever option is chosen, so both options show it.
+# The tax only touches locations with Sámi pops, so Swedish parishes don't get its unrest.
 swe_lappmark.4 = {
 	type = country_event
 	title = swe_lappmark.4.title
@@ -235,94 +238,6 @@ swe_lappmark.4 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-		location:tarna = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:sorsele = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:kvikkjock = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:sarek = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:nikkaluokta = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:kasivarren = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:abisko = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
-		location:raunala = {
-			if = {
-				limit = {
-					OR = {
-						NOT = { exists = owner }
-						owner ?= root
-					}
-				}
-				change_raw_material = goods:livestock
-			}
-		}
 	}
 
 	option = {
@@ -332,12 +247,19 @@ swe_lappmark.4 = {
 			base = 75
 		}
 
+		custom_tooltip = {
+			text = swe_lappmark.4.herds_tt
+			swe_reindeer_herds = yes
+		}
 		change_gold_effect = { scale = 2 }
 		custom_tooltip = {
 			text = swe_lappmark.4.a_tt
 			every_owned_location = {
-				limit = { swe_far_north_trigger = yes }
-				add_location_modifier = { modifier = swe_reindeer_tax years = 25 }
+				limit = {
+					swe_far_north_trigger = yes
+					any_pop = { culture = culture:sapmi }
+				}
+				add_location_modifier = { modifier = swe_reindeer_tax years = 20 }
 			}
 		}
 	}
@@ -346,6 +268,11 @@ swe_lappmark.4 = {
 		name = swe_lappmark.4.b
 		ai_chance = {
 			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_lappmark.4.herds_tt
+			swe_reindeer_herds = yes
 		}
 	}
 }
@@ -428,7 +355,8 @@ swe_lappmark.5 = {
 
 # The silver road: Sámi were forced to haul ore and supplies from Nasafjäll to the coast. Vanilla's flavor_swe.39
 # only runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never
-# did. It waits for Sweden to own the location, so it fires at whatever date the land is settled.
+# did, and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires at whatever
+# date the land is settled.
 swe_lappmark.6 = {
 	type = country_event
 	title = swe_lappmark.6.title
@@ -451,7 +379,7 @@ swe_lappmark.6 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -476,7 +404,7 @@ swe_lappmark.6 = {
 			text = swe_lappmark.6.a_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:pite_lappmark_province }
-				add_location_modifier = { modifier = swe_silver_road years = 25 }
+				add_location_modifier = { modifier = swe_silver_road years = 20 }
 			}
 		}
 	}
@@ -494,6 +422,21 @@ swe_lappmark.6 = {
 				change_raw_material = goods:silver
 			}
 		}
+	}
+
+	# The same refusal as flavor_swe.39.b, hidden once the mine is open
+	option = {
+		name = swe_lappmark.6.c
+		trigger = {
+			location:silbojock = {
+				NOT = { raw_material = goods:silver }
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+
+		add_stability = stability_mild_bonus
 	}
 }
 
@@ -522,7 +465,7 @@ swe_lappmark.7 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 

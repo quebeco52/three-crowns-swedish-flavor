@@ -1,0 +1,93 @@
+﻿# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good, so
+# livestock is the closest. The forest locations keep their goods, since the forest Sámi kept a mixed living.
+# Foreign-held land is left alone.
+swe_reindeer_herds = {
+	location:tarna = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:sorsele = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:kvikkjock = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:sarek = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:nikkaluokta = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:kasivarren = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:abisko = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+	location:raunala = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = owner }
+					owner ?= root
+				}
+			}
+			change_raw_material = goods:livestock
+		}
+	}
+}

@@ -35,6 +35,14 @@ swe_far_north_trigger = {
 	}
 }
 
+# Jämtland, plus Idre, which vanilla puts in dalarna_province though it was Norwegian land too (swe_jamtland)
+swe_jamtland_lands_trigger = {
+	OR = {
+		province_definition = province_definition:jamtland_province
+		this = location:idre
+	}
+}
+
 # The five lappmarks of the Lappmark Edict (swe_lappmarksplakatet_decision)
 swe_lappmarks_trigger = {
 	OR = {

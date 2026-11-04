@@ -100,7 +100,7 @@ swe_scania.6 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -117,7 +117,7 @@ swe_scania.6 = {
 
 		change_gold_effect = { scale = 2 }
 		location:malmo = {
-			add_location_modifier = { modifier = swe_malmo_plot_crushed years = 25 }
+			add_location_modifier = { modifier = swe_malmo_plot_crushed years = 20 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
 	}

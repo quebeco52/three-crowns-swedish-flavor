@@ -28,7 +28,7 @@ swe_finland.1 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 

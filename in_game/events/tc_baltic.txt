@@ -8,7 +8,9 @@
 # Nobody's culture changes at once. The variables mark the choice for later content.
 
 # Estonia: the knighthoods of Harrien, Wierland and Jerwen and the town of Reval submitted to Erik XIV
-# in 1561, and he confirmed their privileges.
+# in 1561, and he confirmed their privileges. Ösel and Wiek (Rotalia) go with it: mainland Wiek was Swedish
+# from the 1580s, and the island of Ösel was Danish from 1559 until Brömsebro (1645), when its knighthood kept
+# the privileges it had held under Denmark.
 swe_baltic.1 = {
 	type = country_event
 	title = swe_baltic.1.title
@@ -51,16 +53,14 @@ swe_baltic.1 = {
 
 		custom_tooltip = {
 			text = swe_baltic.1.a_tt
-			province_definition:estonia_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						NOT = { this = location:tallinn }
-						NOT = { this = location:narva }
-						NOT = { has_location_modifier = swe_baltic_privileges }
-					}
-					add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
+			every_owned_location = {
+				limit = {
+					swe_estonia_trigger = yes
+					NOT = { this = location:tallinn }
+					NOT = { this = location:narva }
+					NOT = { has_location_modifier = swe_baltic_privileges }
 				}
+				add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
 			}
 		}
 		# Reval and Narva were Hanseatic towns under Lübeck law: their councils, not the knighthood, kept the privileges
@@ -86,15 +86,13 @@ swe_baltic.1 = {
 
 		custom_tooltip = {
 			text = swe_baltic.1.b_tt
-			province_definition:estonia_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						NOT = { dominant_culture = culture:swedish }
-						NOT = { has_location_modifier = swe_forsvenskning }
-					}
-					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+			every_owned_location = {
+				limit = {
+					swe_estonia_trigger = yes
+					NOT = { dominant_culture = culture:swedish }
+					NOT = { has_location_modifier = swe_forsvenskning }
 				}
+				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
 			}
 		}
 		set_variable = swe_baltic_swedish_law
@@ -191,89 +189,6 @@ swe_baltic.2 = {
 	}
 }
 
-# Ösel and Wiek (Rotalia): mainland Wiek was Swedish from the 1580s; the island of Ösel was Danish from
-# 1559 until Brömsebro (1645), and its knighthood kept the privileges it had held under Denmark.
-# Same shape as swe_baltic.1.
-swe_baltic.3 = {
-	type = country_event
-	title = swe_baltic.3.title
-	desc = swe_baltic.3.desc
-	outcome = neutral
-	historical_info = swe_baltic.3.historical_info
-
-	fire_only_once = yes
-	dynamic_historical_event = {
-		tag = SWE
-		tag = SCA
-		from = 1337.1.1
-		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Arensburg
-	}
-
-	trigger = {
-		has_or_had_tag = SWE
-		owns = location:kuressaare
-		location:kuressaare = {
-			any_pop = { culture = culture:german_baltic }
-		}
-	}
-
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
-	}
-
-	option = {
-		name = swe_baltic.3.a
-		historical_option = yes
-		ai_chance = {
-			base = 75
-		}
-
-		custom_tooltip = {
-			text = swe_baltic.3.a_tt
-			province_definition:rotalia_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						NOT = { has_location_modifier = swe_baltic_privileges }
-					}
-					add_location_modifier = { modifier = swe_baltic_privileges years = modifier_duration_years_very_long }
-				}
-			}
-		}
-		set_variable = swe_baltic_privileges_confirmed
-		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
-	}
-
-	option = {
-		name = swe_baltic.3.b
-		ai_chance = {
-			base = 25
-		}
-
-		custom_tooltip = {
-			text = swe_baltic.3.b_tt
-			province_definition:rotalia_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						NOT = { dominant_culture = culture:swedish }
-						NOT = { has_location_modifier = swe_forsvenskning }
-					}
-					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
-				}
-			}
-		}
-		set_variable = swe_baltic_swedish_law
-		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
-	}
-}
-
 # The Russian staple. Stolbovo (1617) cut Russia off from the Baltic, and Sweden tried to draw Russia's
 # trade with the West through Narva, Nyen and Reval; Narva became the main one. Fires from the age of
 # the Reformation, while Sweden holds one of the three and whoever owns Novgorod has no Baltic port.
@@ -310,7 +225,7 @@ swe_baltic.4 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = exterior
 	}
 

@@ -4,9 +4,10 @@
 
 # The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
 # Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
-# Needs a German king at war while the Germans still outnumber the Swedes on the council: Albrecht,
-# and later Erik of Pomerania and Christian I, all qualify. Punishing them cuts the German burghers
-# of Stockholm by a quarter, enough at game start to open swe_svenska_radman_decision.
+# Fires around that date, in a war, while the German half of the council still sits. It needs neither a
+# German king, since nothing in the game puts one on the Swedish throne, nor a German majority, since
+# Stockholm's is thin at game start. Punishing them cuts the German burghers of Stockholm by a quarter,
+# enough at game start to open swe_svenska_radman_decision.
 swe_council.1 = {
 	type = country_event
 	title = swe_council.1.title
@@ -18,24 +19,22 @@ swe_council.1 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1337.1.1
-		to = 1471.1.1
-		monthly_chance = 3 # About two years once the trigger holds
+		from = 1387.1.1
+		to = 1420.1.1
+		monthly_chance = 3 # Median early 1389 if Sweden is at war
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		at_war = yes
-		ruler ?= { culture = { has_culture_group = culture_group:german_group } }
 		owns = location:stockholm
 		location:stockholm = {
 			has_location_modifier = swe_tyska_radet
-			swe_german_burgher_lead > 0
 		}
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 

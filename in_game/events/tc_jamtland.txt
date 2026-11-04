@@ -5,7 +5,8 @@
 # neither changes anyone's culture: swe_forsvenskning only speeds up assimilation.
 
 # Sweden takes over Jämtland. Sweden founded the diocese of Härnösand (1647) and schools to draw the
-# Jämtlanders away from Trondheim. Same shape as swe_scania.1.
+# Jämtlanders away from Trondheim. Same shape as swe_scania.1. Idre and Särna, taken in a bloodless
+# march in 1644, go with it through swe_jamtland_lands_trigger.
 swe_jamtland.1 = {
 	type = country_event
 	title = swe_jamtland.1.title
@@ -53,15 +54,13 @@ swe_jamtland.1 = {
 
 		custom_tooltip = {
 			text = swe_jamtland.1.a_tt
-			province_definition:jamtland_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						dominant_culture ?= culture:norwegian
-						NOT = { has_location_modifier = swe_forsvenskning }
-					}
-					add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+			every_owned_location = {
+				limit = {
+					swe_jamtland_lands_trigger = yes
+					dominant_culture ?= culture:norwegian
+					NOT = { has_location_modifier = swe_forsvenskning }
 				}
+				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
 			}
 		}
 		# Härnösand, the new diocese for Jämtland and the Bothnian coast
@@ -82,15 +81,13 @@ swe_jamtland.1 = {
 
 		custom_tooltip = {
 			text = swe_jamtland.1.b_tt
-			province_definition:jamtland_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						dominant_culture ?= culture:norwegian
-						NOT = { has_location_modifier = swe_jamtland_tings }
-					}
-					add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
+			every_owned_location = {
+				limit = {
+					swe_jamtland_lands_trigger = yes
+					dominant_culture ?= culture:norwegian
+					NOT = { has_location_modifier = swe_jamtland_tings }
 				}
+				add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
 			}
 		}
 		location:froso = {
@@ -105,7 +102,8 @@ swe_jamtland.1 = {
 
 # The Jämtlanders hail the enemy as liberators, as they did the Norwegians in 1657 and 1677. Fires
 # after swe_jamtland.1, while Sweden is at war with whoever holds Trondheim, Jämtland's old diocese and
-# the way the Norwegian armies came. Punishing them ends the tings and Swedifies; the concession matches
+# the way the Norwegian armies came. Punishing them ends any tings and restarts the 20 years of
+# swe_forsvenskning, so it does something even after the historical swe_jamtland.1.a. The concession matches
 # the agreement of 1688. The modifiers come off wherever Sweden owns them, whatever the culture there.
 # The third option mirrors Denmark-Norway's räfst of 1613-16, when the Jämtlanders lost their hereditary
 # rights and most of them bought those rights back. Gold now, at the cost of the peasants' goodwill.
@@ -140,7 +138,7 @@ swe_jamtland.2 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = armed
 		10 = exterior
 	}
 
@@ -156,26 +154,24 @@ swe_jamtland.2 = {
 
 		custom_tooltip = {
 			text = swe_jamtland.2.a_tt
-			province_definition:jamtland_province = {
-				every_location_in_province_definition = {
-					limit = { owner ?= root }
-					if = {
-						limit = { has_location_modifier = swe_jamtland_tings }
-						remove_location_modifier = swe_jamtland_tings
-					}
-					if = {
-						limit = {
-							dominant_culture ?= culture:norwegian
-							NOT = { has_location_modifier = swe_forsvenskning }
-						}
-						add_location_modifier = { modifier = swe_forsvenskning years = 20 }
-					}
+			every_owned_location = {
+				limit = { swe_jamtland_lands_trigger = yes }
+				if = {
+					limit = { has_location_modifier = swe_jamtland_tings }
+					remove_location_modifier = swe_jamtland_tings
+				}
+				if = {
+					limit = { dominant_culture ?= culture:norwegian }
+					add_location_modifier = { modifier = swe_forsvenskning years = 20 mode = replace }
 				}
 			}
 		}
 		location:froso = {
 			if = {
-				limit = { has_location_modifier = swe_jamtmarknaden }
+				limit = {
+					owner ?= root
+					has_location_modifier = swe_jamtmarknaden
+				}
 				remove_location_modifier = swe_jamtmarknaden
 			}
 		}
@@ -191,20 +187,18 @@ swe_jamtland.2 = {
 
 		custom_tooltip = {
 			text = swe_jamtland.2.b_tt
-			province_definition:jamtland_province = {
-				every_location_in_province_definition = {
-					limit = { owner ?= root }
-					if = {
-						limit = { has_location_modifier = swe_forsvenskning }
-						remove_location_modifier = swe_forsvenskning
+			every_owned_location = {
+				limit = { swe_jamtland_lands_trigger = yes }
+				if = {
+					limit = { has_location_modifier = swe_forsvenskning }
+					remove_location_modifier = swe_forsvenskning
+				}
+				if = {
+					limit = {
+						dominant_culture ?= culture:norwegian
+						NOT = { has_location_modifier = swe_jamtland_tings }
 					}
-					if = {
-						limit = {
-							dominant_culture ?= culture:norwegian
-							NOT = { has_location_modifier = swe_jamtland_tings }
-						}
-						add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
-					}
+					add_location_modifier = { modifier = swe_jamtland_tings months = -1 }
 				}
 			}
 		}
@@ -228,19 +222,20 @@ swe_jamtland.2 = {
 
 		custom_tooltip = {
 			text = swe_jamtland.2.c_tt
-			province_definition:jamtland_province = {
-				every_location_in_province_definition = {
-					limit = {
-						owner ?= root
-						has_location_modifier = swe_jamtland_tings
-					}
-					remove_location_modifier = swe_jamtland_tings
+			every_owned_location = {
+				limit = {
+					swe_jamtland_lands_trigger = yes
+					has_location_modifier = swe_jamtland_tings
 				}
+				remove_location_modifier = swe_jamtland_tings
 			}
 		}
 		location:froso = {
 			if = {
-				limit = { has_location_modifier = swe_jamtmarknaden }
+				limit = {
+					owner ?= root
+					has_location_modifier = swe_jamtmarknaden
+				}
 				remove_location_modifier = swe_jamtmarknaden
 			}
 		}

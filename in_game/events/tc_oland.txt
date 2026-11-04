@@ -2,7 +2,7 @@
 
 # The peasants of Öland complain about the royal deer park (swe_olands_djurgard), as their deputies did
 # at the Riksdag of 1800. Waits until the park is 20 years old, then needs unhappy peasants or a realm
-# leaning toward free subjects. Refusing opens swe_oland_end_djurgard_decision for later.
+# leaning toward free subjects. Refusing is final: the park then stays for good.
 swe_oland.1 = {
 	type = country_event
 	title = swe_oland.1.title
@@ -31,7 +31,7 @@ swe_oland.1 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -59,7 +59,6 @@ swe_oland.1 = {
 		}
 
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
-		set_variable = swe_oland_complaint
 		custom_tooltip = swe_oland.1.b_tt
 	}
 }

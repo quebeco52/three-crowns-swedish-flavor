@@ -29,7 +29,7 @@ swe_finland_west.1 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -89,7 +89,7 @@ swe_finland_west.2 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = armed
 		10 = exterior
 	}
 
@@ -106,7 +106,7 @@ swe_finland_west.2 = {
 
 		location:korsholm = {
 			change_prosperity = prosperity_mild_penalty
-			add_location_modifier = { modifier = swe_pirate_bailiff years = 25 }
+			add_location_modifier = { modifier = swe_pirate_bailiff years = 20 }
 		}
 	}
 
@@ -151,7 +151,7 @@ swe_finland_west.3 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 
@@ -186,7 +186,7 @@ swe_finland_west.3 = {
 			text = swe_finland_west.3.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:satakunta_province }
-				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 25 }
+				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 20 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
@@ -219,7 +219,7 @@ swe_finland_west.4 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = angry
 		10 = exterior
 	}
 

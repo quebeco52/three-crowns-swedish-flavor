@@ -14,7 +14,7 @@
  STATIC_MODIFIER_NAME_swe_silver_road: "The Silver Road"
  STATIC_MODIFIER_DESC_swe_silver_road: "The Sámi here are made to haul ore and supplies with their reindeer between the mine and the coast. A family that is hauling cannot follow its herd, and many have slipped away over the border."
  STATIC_MODIFIER_NAME_swe_tornea_crown_town: "A Crown Town at Torneå"
- STATIC_MODIFIER_DESC_swe_tornea_crown_town: "The town stands where the Crown ordered it built, and its bailiffs watch the trade of the river closely. The locals have not forgiven it."
+ STATIC_MODIFIER_DESC_swe_tornea_crown_town: "The town stands where the Crown ordered it built, and its bailiffs watch the trade of the river closely. The traders still prefer the old landing place."
  STATIC_MODIFIER_NAME_swe_tornea_trade_district: "The Torneå Trading District"
  STATIC_MODIFIER_DESC_swe_tornea_trade_district: "The merchants of Torneå hold the trade of the Torne valley, Kainuu and the Lapplands of Torne and Kemi, the largest trading district in the realm."
 
@@ -26,7 +26,7 @@
  swe_lappmark.1.historical_info: "In the mid-1340s Archbishop Hemming of Uppsala sailed north to Torneå. He met Bishop Hemming of Åbo at a harbour called Kompanasund to negotiate their boundary, and the bishop admitted that what he had done at Torneå he had done in the archbishop's name. At Torneå the archbishop baptised about 20 people, Sámi and Karelians from Ule, Kemi and Simo, in a great vat carried into the chapel while the crowd stood outside. Torsten Styrbjörnsson, the bailiff of Hälsingland, renewed the boundary mark, a heap of stones on an island in the Ule river. We know this from an inquest of 1374, where the archbishop's skipper, Johan Lång, gave his testimony."
  swe_lappmark.1.a: "Send the archbishop north."
  swe_lappmark.1.a.entry: "The archbishop sailed to Torneå."
- swe_lappmark.1.a_tt: "Every [location|e] we own in Västerbotten and the Lappmarks gains $STATIC_MODIFIER_NAME_swe_uppsala_mission$ for 25 years."
+ swe_lappmark.1.a_tt: "Every [location|e] we own in Västerbotten and the Lappmarks with [pops|e] of another faith gains $STATIC_MODIFIER_NAME_swe_uppsala_mission$ for 20 years."
  swe_lappmark.1.b: "Leave the north to Åbo."
  swe_lappmark.1.b.entry: "The far north was left to the Bishop of Åbo."
 
@@ -55,7 +55,8 @@
  swe_lappmark.4.historical_info: "Sámi in the Lule valley moved gradually toward reindeer herding as their main livelihood, perhaps starting around the 11th century. By the 1600s and 1700s many had switched entirely, though fishing and hunting stayed important. In 1602 the lappfogde Karl Unesson recorded each taxpaying household and its reindeer in Ume Lappmark. State taxes in the 1600s and 1700s are thought to have hit the herding economy hard, especially in winters of poor grazing. Reindeer nomadism reached its peak in the mid to late 1700s."
  swe_lappmark.4.a: "Tax the herds."
  swe_lappmark.4.a.entry: "The bailiffs began to count the reindeer."
- swe_lappmark.4.a_tt: "Every [location|e] we own in Västerbotten and the Lappmarks gains $STATIC_MODIFIER_NAME_swe_reindeer_tax$ for 25 years."
+ swe_lappmark.4.herds_tt: "The high country turns to herding: [ShowLocationName('tarna')], [ShowLocationName('sorsele')], [ShowLocationName('kvikkjock')], [ShowLocationName('sarek')], [ShowLocationName('nikkaluokta')], [ShowLocationName('kasivarren')], [ShowLocationName('abisko')] and [ShowLocationName('raunala')] now produce livestock, unless a foreign realm holds them."
+ swe_lappmark.4.a_tt: "Every [location|e] we own in Västerbotten and the Lappmarks with [ShowCultureName('sapmi')] [pops|e] gains $STATIC_MODIFIER_NAME_swe_reindeer_tax$ for 20 years."
  swe_lappmark.4.b: "Keep the old rates."
  swe_lappmark.4.b.entry: "The old tax rates stayed in force."
 
@@ -76,9 +77,11 @@
  swe_lappmark.6.historical_info: "Mining at Nasafjäll began in 1635, with a smelter at Silbojokk about 40 km away. The Sámi were forced to haul ore and supplies to and from the mine with their reindeer. A decree of 1640 moved the Lais, Gran and Tuorpon lappbyar to Arjeplog to provide more carriers. Since they could not herd at the same time, many grew poor, and many fled to Norway or the coast. From 1635 to 1659 the mines yielded 981 kg of silver and 255,000 kg of lead. In 1659 Norwegian soldiers attacked and burned the churches and most of the buildings. The Lais and Gran Sámi asked to return to Lycksele only in 1777."
  swe_lappmark.6.a: "Draft the lappbyar."
  swe_lappmark.6.a.entry: "The Sámi were drafted to haul the silver."
- swe_lappmark.6.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('pite_lappmark_province')] gains $STATIC_MODIFIER_NAME_swe_silver_road$ for 25 years."
+ swe_lappmark.6.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('pite_lappmark_province')] gains $STATIC_MODIFIER_NAME_swe_silver_road$ for 20 years."
  swe_lappmark.6.b: "Hire carriers."
  swe_lappmark.6.b.entry: "The Crown hired carriers for the silver."
+ swe_lappmark.6.c: "Leave the silver in the mountain."
+ swe_lappmark.6.c.entry: "The silver above Silbojokk stayed in the mountain."
 
  swe_lappmark.7.title: "A Town at Torneå"
  swe_lappmark.7.entry: "$swe_lappmark.7.title$"

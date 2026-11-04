@@ -200,7 +200,7 @@ swe_stockholm.3 = {
 	}
 
 	illustration_tags = {
-		10 = regular
+		10 = happy
 		10 = interior
 	}
 

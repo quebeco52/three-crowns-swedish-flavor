@@ -4,7 +4,7 @@
  STATIC_MODIFIER_NAME_swe_korsholm_coast_watch: "The Watch on the Coast"
  STATIC_MODIFIER_DESC_swe_korsholm_coast_watch: "A royal fortress now stands beside the market here, and its bailiff watches who comes and goes along the Gulf of Bothnia."
  STATIC_MODIFIER_NAME_swe_kumo_castle_burden: "The Burden of the Fortress"
- STATIC_MODIFIER_DESC_swe_kumo_castle_burden: "The fortress stays, and the people of the district go on paying for it. They do not do so gladly."
+ STATIC_MODIFIER_DESC_swe_kumo_castle_burden: "The fortress stays, and the people of the district go on paying for it, year after year."
  STATIC_MODIFIER_NAME_swe_pirate_bailiff: "The Pirate Bailiff"
  STATIC_MODIFIER_DESC_swe_pirate_bailiff: "A former pirate captain now keeps the castle in the Crown's name. He collects the taxes with a practised hand, and not all of them reach us."
  STATIC_MODIFIER_NAME_swe_lempaala_pledge: "The Pledge of Lempäälä"
@@ -49,7 +49,7 @@
  swe_finland_west.3.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('satakunta_province')] gains $STATIC_MODIFIER_NAME_swe_lempaala_pledge$ for 25 years."
  swe_finland_west.3.b: "Hang the ringleaders."
  swe_finland_west.3.b.entry: "The rising in Upper Satakunta was put down by force."
- swe_finland_west.3.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('satakunta_province')] gains $STATIC_MODIFIER_NAME_swe_satakunta_bailiffs$ for 25 years."
+ swe_finland_west.3.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('satakunta_province')] gains $STATIC_MODIFIER_NAME_swe_satakunta_bailiffs$ for 20 years."
 
  swe_finland_west.4.title: "The Last Free Peasants"
  swe_finland_west.4.entry: "$swe_finland_west.4.title$"

@@ -1,6 +1,6 @@
 ﻿l_english:
  STATIC_MODIFIER_NAME_swe_olofsborg_line: "Holding the Line at Olofsborg"
- STATIC_MODIFIER_DESC_swe_olofsborg_line: "The Crown has paid to strengthen the garrison here, and the border posts stay where we put them, whatever the old treaty says."
+ STATIC_MODIFIER_DESC_swe_olofsborg_line: "The Crown has paid to strengthen the garrison here, and among these lakes and waterways no army from the east will find the going easy. The border posts stay where we put them, whatever the old treaty says."
  STATIC_MODIFIER_NAME_swe_olofsborg_quiet_border: "A Quiet Border"
  STATIC_MODIFIER_DESC_swe_olofsborg_quiet_border: "The quarrel over the border posts has been left to sleep, and traders cross the lakes with little trouble."
  STATIC_MODIFIER_NAME_swe_viborg_lady: "The Lady of Viborg's Terms"
@@ -34,7 +34,7 @@
  swe_finland_east.2.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_lady$ for 25 years."
  swe_finland_east.2.b: "Send men to open the gates."
  swe_finland_east.2.b.entry: "The gates of Viborg were forced in the Crown's name."
- swe_finland_east.2.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_gates_forced$ for 25 years."
+ swe_finland_east.2.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_gates_forced$ for 20 years."
 
  swe_finland_east.3.title: "The Last Margrave"
  swe_finland_east.3.entry: "$swe_finland_east.3.title$"
