@@ -4,7 +4,8 @@
 # to turn Lutheran, many Orthodox Karelians and Ingrians left for Russia, and Lutheran Finns from
 # Savolax and Äyräpää took over their farms.
 # Fires whenever a Lutheran Sweden holds Orthodox land in Kexholm or Ingria, not from 1617.
-# It speeds up conversion and draws settlers rather than converting or moving anyone at once.
+# It speeds up conversion, and people move over the years that follow: the Orthodox leave for Russia and,
+# if Sweden holds Savolax, Finns take over their farms (swe_orthodox_exodus).
 swe_ingria.1 = {
 	type = country_event
 	title = swe_ingria.1.title
@@ -57,6 +58,9 @@ swe_ingria.1 = {
 				add_location_modifier = { modifier = swe_lutheran_parishes years = 20 }
 			}
 		}
+		swe_orthodox_exodus = { province = korela_province }
+		swe_orthodox_exodus = { province = lopskaya_province }
+		swe_orthodox_exodus = { province = vodskaya_province }
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
 		# The lords who held estates in Ingria lost the peasants who left
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }

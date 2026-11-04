@@ -161,6 +161,8 @@ swe_towns.2 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
+		# The privilege letter of 15 March 1584 called out all Värmland to help build two bridges
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
 	}
 
 	option = {

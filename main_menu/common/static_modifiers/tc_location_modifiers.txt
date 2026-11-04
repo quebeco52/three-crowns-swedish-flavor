@@ -48,15 +48,14 @@ swe_forsvenskning = {
 }
 
 # Added by swe_ingria.1 for 20 years to the Orthodox locations of Kexholm and Ingria. The conversion of
-# dev_nasibi (0.1) and the unrest of lit_destruction_of_romuva_sites (0.2). The migration pull, below
-# swe_lappmark_settlers (0.3), stands for the Finnish settlers who took over the farms of those who left.
+# dev_nasibi (0.1) and the unrest of lit_destruction_of_romuva_sites (0.2). The settlers who took over the farms of
+# those who left arrive through swe_orthodox_exodus.
 swe_lutheran_parishes = {
 	game_data = {
 		category = location
 	}
 	local_pop_conversion_speed_modifier = 0.1
 	local_unrest = 0.2
-	local_migration_attraction = 0.2
 }
 
 # Added at game start by tc_on_game_start to Stockholm and Kalmar, removed by
@@ -265,7 +264,7 @@ swe_flor_manufactory = {
 }
 
 # Added for 20 years by swe_lappmark.1 to Sweden's far-north locations with pops of another faith. The conversion
-# of swe_lutheran_parishes and the unrest of swe_forsvenskning, without the migration: priests came, not settlers.
+# of swe_lutheran_parishes and the unrest of swe_forsvenskning: priests came, not settlers.
 swe_uppsala_mission = {
 	game_data = {
 		category = location
@@ -283,8 +282,8 @@ swe_abo_diocese_north = {
 	local_clergy_estate_power = 0.25
 }
 
-# Added to gratesk for 50 years by swe_lappmark.3. The migration pull of swe_lutheran_parishes, below
-# swe_lappmark_settlers (0.3): settlers followed the fishermen without any tax freedoms.
+# Added to gratesk for 50 years by swe_lappmark.3. A migration pull below swe_lappmark_settlers (0.3):
+# settlers followed the fishermen without any tax freedoms.
 swe_gratrask_fishing_rights = {
 	game_data = {
 		category = location
@@ -324,7 +323,7 @@ swe_sami_schools = {
 }
 
 # Added for 20 years by swe_lappmark.6 to Sweden's locations in Pite Lappmark. The unrest of vanilla's forced_labor
-# (0.2), and the migration of swe_lutheran_parishes reversed: people fled to Norway and the coast.
+# (0.2), and the migration of swe_gratrask_fishing_rights reversed: people fled to Norway and the coast.
 swe_silver_road = {
 	game_data = {
 		category = location
@@ -530,8 +529,8 @@ swe_viborg_margraves = {
 }
 
 # Added for 50 years by swe_finland_east.4 to Savolax, Kajanaland and Tavastland, unless a foreign country holds
-# the location. The migration of swe_lutheran_parishes, below swe_lappmark_settlers (0.3), as with
-# swe_gratrask_fishing_rights, and the population growth of surplus_food_modifier (0.002).
+# the location. The migration of swe_gratrask_fishing_rights, below swe_lappmark_settlers (0.3), and the
+# population growth of surplus_food_modifier (0.002).
 swe_crown_wilderness = {
 	game_data = {
 		category = location
@@ -688,7 +687,7 @@ swe_sodertalje_cut = {
 }
 
 # Added to strangnas for 50 years by swe_svealand.3 when the smith comes. The output of the Tar Company tier (0.1), the
-# migration of swe_lutheran_parishes (0.2), and the building efficiency of nor_rebuilding_oslo (0.2): skilled men to
+# migration of swe_gratrask_fishing_rights (0.2), and the building efficiency of nor_rebuilding_oslo (0.2): skilled men to
 # build with. The tools bonus only counts once a tools building stands here.
 swe_rademacher_forges = {
 	game_data = {

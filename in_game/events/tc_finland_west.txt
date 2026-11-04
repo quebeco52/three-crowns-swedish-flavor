@@ -108,6 +108,16 @@ swe_finland_west.2 = {
 			change_prosperity = prosperity_mild_penalty
 			add_location_modifier = { modifier = swe_pirate_bailiff years = 20 }
 		}
+		# His ships come with him. Galleys, as in vanilla's Victual Brothers event (flavor_swe_teu).
+		random_owned_location = {
+			limit = {
+				is_port = yes
+				controller = root
+			}
+			create_sub_unit_of_category = sub_unit_category:navy_galley
+			create_sub_unit_of_category = sub_unit_category:navy_galley
+			create_sub_unit_of_category = sub_unit_category:navy_galley
+		}
 	}
 
 	option = {
@@ -392,6 +402,15 @@ swe_finland_west.6 = {
 		change_gold_effect = { scale = -2 }
 		location:sjundea = {
 			change_raw_material = goods:iron
+			# Finnish ore was poor and soon ran short, so the same cap as Sala in flavor_swe.38
+			if = {
+				limit = { rgo_level > 1 }
+				change_max_raw_material_workers = {
+					value = rgo_level
+					subtract = 1
+					multiply = -1
+				}
+			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 	}

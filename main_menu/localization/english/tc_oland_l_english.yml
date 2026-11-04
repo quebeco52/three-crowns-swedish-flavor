@@ -10,8 +10,8 @@
 
  swe_oland.1.title: "The Peasants of Öland"
  swe_oland.1.entry: "$swe_oland.1.title$"
- swe_oland.1.desc: "Deputies from [ShowLocationName('oland')] have brought us a long list of grievances. The king's deer trample their fields and graze their pastures, they may not hunt the animals that eat their crops, and they must beg the Crown's foresters for every load of firewood. They ask that the island's deer park be ended."
- swe_oland.1.historical_info: "The peasants of Öland lived with the royal deer park for more than two hundred years. At the Riksdag of 1800 the island's deputies asked for it to be abolished, and the Crown agreed: a royal letter of 12 May 1801 ended the deer park. The Crown kept the forest at Böda in the north of the island as a crown park."
+ swe_oland.1.desc: "Deputies from [ShowLocationName('oland')] have brought us a long list of grievances. The king's deer trample their fields and graze their pastures, they may not hunt the animals that eat their crops, and they must beg the Crown's foresters for every load of firewood. They ask that the deer park be ended. The foresters answer that its rules are the only reason the island still has a forest, and that the peasants will cut it down for tar and lime."
+ swe_oland.1.historical_info: "The peasants of Öland lived with the royal deer park for more than two hundred years. At the Riksdag of 1800 the island's deputies asked for it to be abolished, and the Crown agreed: a royal letter of 12 May 1801 ended the deer park. The Crown kept the forest at Böda in the north of the island as a crown park. Its peasants went on taking wood there for tar, lime and building, and in April 1850 a force of 110 men was sent to put down the Böda Uprising."
  swe_oland.1.a: "End the deer park."
  swe_oland.1.a.entry: "The deer park on Öland was ended."
  swe_oland.1.b: "The king's deer stay."

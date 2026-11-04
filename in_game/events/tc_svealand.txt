@@ -192,6 +192,16 @@ swe_svealand.3 = {
 		location:strangnas = {
 			add_location_modifier = { modifier = swe_rademacher_forges years = 50 }
 		}
+		# His smiths were immigrants, the same way flavor_swe.41 brings Dutch burghers to Göteborg
+		add_migration = {
+			owner = this
+			from = location:riga.province_definition
+			to_location = location:strangnas
+			culture = culture:german_baltic
+			type = pop_type:burghers
+			amount = 0.05
+			months = 24
+		}
 	}
 
 	option = {

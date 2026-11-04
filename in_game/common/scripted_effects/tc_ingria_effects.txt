@@ -1,0 +1,34 @@
+﻿# The Orthodox leave for Russia and Finns from Savolax take over their farms (swe_ingria.1), in each province where
+# Sweden holds Orthodox land. The amounts are those of flavor_fra.12 (the Huguenots, 0.1 over 3 years) and
+# flavor_swe.57 (Finns to Värmland, 0.025 over 20 years).
+swe_orthodox_exodus = {
+	if = {
+		limit = {
+			any_owned_location = {
+				province_definition = province_definition:$province$
+				dominant_religion = religion:orthodox
+			}
+		}
+		add_migration = {
+			owner = this
+			from = province_definition:$province$
+			to = location:moscow.province_definition
+			religion = religion:orthodox
+			amount = 0.1
+			months = 36
+		}
+		if = {
+			limit = {
+				any_owned_location = { province_definition = province_definition:savolax_province }
+			}
+			add_migration = {
+				owner = this
+				from = province_definition:savolax_province
+				to = province_definition:$province$
+				culture = culture:savonian
+				amount = 0.025
+				months = 240
+			}
+		}
+	}
+}

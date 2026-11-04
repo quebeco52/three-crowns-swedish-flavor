@@ -1,4 +1,23 @@
-﻿# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good, so
+﻿# Opens the Nasafjäll mine if vanilla's flavor_swe.39 never did. From 1635 to 1659 it yielded only 981 kg of silver, so
+# it gets the same cap as Sala in flavor_swe.38.
+swe_open_silbojock = {
+	location:silbojock = {
+		if = {
+			limit = { NOT = { raw_material = goods:silver } }
+			change_raw_material = goods:silver
+			if = {
+				limit = { rgo_level > 1 }
+				change_max_raw_material_workers = {
+					value = rgo_level
+					subtract = 1
+					multiply = -1
+				}
+			}
+		}
+	}
+}
+
+# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good, so
 # livestock is the closest. The forest locations keep their goods, since the forest Sámi kept a mixed living.
 # Foreign-held land is left alone.
 swe_reindeer_herds = {

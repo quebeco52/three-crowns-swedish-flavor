@@ -327,6 +327,14 @@ swe_finland_east.5 = {
 			base = 75
 		}
 
+		# He wrote Scondia Illustrata in prison. No artist, as in flavor_swe.40, so no new character.
+		location:kajana = {
+			create_art = {
+				quality = 70
+				type = work_of_art_type:chronicle
+				key = swe_scondia_illustrata
+			}
+		}
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
 	}
 

@@ -53,6 +53,14 @@ swe_lappmark.1 = {
 					any_pop = { NOT = { religion = root.religion } }
 				}
 				add_location_modifier = { modifier = swe_uppsala_mission years = 20 }
+				# The inquest of 1374 records about 20 baptised, so a small share at once, and the modifier does the rest
+				every_pop = {
+					limit = { NOT = { religion = root.religion } }
+					split_pop = {
+						fraction = 0.05
+						religion = root.religion
+					}
+				}
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
@@ -328,6 +336,13 @@ swe_lappmark.5 = {
 					any_pop = { culture = culture:sapmi }
 				}
 				add_location_modifier = { modifier = swe_sami_schools years = 25 }
+				# Priests for their own people. About the size of the clergy pops already in the north.
+				add_pop = {
+					culture = culture:sapmi
+					religion = root.religion
+					type = pop_type:clergy
+					size = 0.01
+				}
 			}
 		}
 	}
@@ -355,7 +370,7 @@ swe_lappmark.5 = {
 
 # The silver road: Sámi were forced to haul ore and supplies from Nasafjäll to the coast. Vanilla's flavor_swe.39
 # only runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never
-# did, and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires at whatever
+# did (swe_open_silbojock), and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires at whatever
 # date the land is settled.
 swe_lappmark.6 = {
 	type = country_event
@@ -394,17 +409,40 @@ swe_lappmark.6 = {
 			base = 75
 		}
 
-		location:silbojock = {
-			if = {
-				limit = { NOT = { raw_material = goods:silver } }
-				change_raw_material = goods:silver
-			}
-		}
+		swe_open_silbojock = yes
 		custom_tooltip = {
 			text = swe_lappmark.6.a_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:pite_lappmark_province }
 				add_location_modifier = { modifier = swe_silver_road years = 20 }
+			}
+		}
+		# The decree of 1640 moved the Lais and Gran lappbyar from Ume Lappmark and Tuorpon from Lule Lappmark to provide
+		# more carriers. They went to Arjeplog, which may not be ours, so they move to the mine.
+		if = {
+			limit = {
+				any_owned_location = { province_definition = province_definition:ume_lappmark_province }
+			}
+			add_migration = {
+				owner = this
+				from = province_definition:ume_lappmark_province
+				to_location = location:silbojock
+				culture = culture:sapmi
+				amount = 0.05
+				months = 24
+			}
+		}
+		if = {
+			limit = {
+				any_owned_location = { province_definition = province_definition:lule_lappmark_province }
+			}
+			add_migration = {
+				owner = this
+				from = province_definition:lule_lappmark_province
+				to_location = location:silbojock
+				culture = culture:sapmi
+				amount = 0.05
+				months = 24
 			}
 		}
 	}
@@ -416,12 +454,7 @@ swe_lappmark.6 = {
 		}
 
 		change_gold_effect = { scale = -4 }
-		location:silbojock = {
-			if = {
-				limit = { NOT = { raw_material = goods:silver } }
-				change_raw_material = goods:silver
-			}
-		}
+		swe_open_silbojock = yes
 	}
 
 	# The same refusal as flavor_swe.39.b, hidden once the mine is open
