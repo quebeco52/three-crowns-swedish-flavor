@@ -1,6 +1,6 @@
 ﻿namespace = swe_gotaland
 
-# Content for Småland, Gotland and Västergötland. Sweden owns all of this land from 1337, so these should fire in
+# Content for Småland and Västergötland. Sweden owns all of this land from 1337, so these should fire in
 # nearly every game unless it has been lost.
 
 # Bondefred: about ten border peaces between Småland and Blekinge, 1505-25, because war disrupted their trade. The
@@ -259,70 +259,5 @@ swe_gotaland.4 = {
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
-	}
-}
-
-# Gutalagen, abolished by decree in 1595, enforced from 1618, and followed by Swedish law in 1645 (Lerbom pp. 46-51).
-swe_gotaland.5 = {
-	type = country_event
-	title = swe_gotaland.5.title
-	desc = swe_gotaland.5.desc
-	outcome = neutral
-	historical_info = swe_gotaland.5.historical_info
-
-	fire_only_once = yes
-	dynamic_historical_event = {
-		tag = SWE
-		tag = SCA
-		from = 1590.1.1
-		to = 1650.1.1
-		monthly_chance = 3 # Median late 1591
-	}
-
-	trigger = {
-		has_or_had_tag = SWE
-		owns = location:visby
-	}
-
-	illustration_tags = {
-		10 = regular
-		10 = interior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
-	}
-
-	option = {
-		name = swe_gotaland.5.a
-		historical_option = yes
-		ai_chance = {
-			base = 75
-		}
-
-		custom_tooltip = {
-			text = swe_gotaland.5.a_tt
-			every_owned_location = {
-				limit = { province_definition = province_definition:gotland_province }
-				add_location_modifier = { modifier = swe_gotland_royal_courts years = 25 }
-			}
-		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
-	}
-
-	option = {
-		name = swe_gotaland.5.b
-		ai_chance = {
-			base = 25
-		}
-
-		custom_tooltip = {
-			text = swe_gotaland.5.b_tt
-			every_owned_location = {
-				limit = { province_definition = province_definition:gotland_province }
-				add_location_modifier = { modifier = swe_gutalagen years = 50 }
-			}
-		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 	}
 }

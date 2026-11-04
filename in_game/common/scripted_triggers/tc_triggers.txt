@@ -63,17 +63,6 @@ swe_kexholm_ingria_trigger = {
 	}
 }
 
-# Held by the event's country or one of its subjects (swe_scania.2 to .5). Sweden's fiefdom SKE holds Skåneland in
-# 1337, so `owns` would wait for an annexation. Same subject check as vanilla's `owner ?= { is_subject_of = root }`.
-swe_held_by_realm_trigger = {
-	owner ?= {
-		OR = {
-			this = root
-			is_subject_of = root
-		}
-	}
-}
-
 # The German lands the Wismar Tribunal judged as the Crown's imperial fiefs (swe_wismar_tribunal_decision):
 # north Germany without the Low Countries (Pomerania, Mecklenburg, Bremen-Verden and their neighbours), and
 # only imperial land while the Empire exists. Same HRE guard as vanilla's hre_buildings.txt.
