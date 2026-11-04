@@ -197,3 +197,68 @@ swe_russian_staple = {
 	local_merchant_capacity_modifier = 0.1
 	local_trades_per_burgher = 0.25
 }
+
+# Added for 50 years by swe_norrland.1 to Sweden's locations in Hälsingland and Ångermanland when the
+# Crown leaves Faxeholm in ruins. The same values as swe_finland_at_mora: the peasants run their own affairs.
+swe_faxeholm_ruins = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasant_enfranchisment = 0.05
+	local_crown_estate_power = -0.1
+}
+
+# Added for 50 years by swe_norrland.1 to the same locations when the Crown rebuilds. The crown power and
+# unrest of swe_forsvenskning.
+swe_norrland_bailiff = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to gefle for 200 years by swe_norrland.2, from the monopoly of 1557 almost to its end in 1766. The
+# same size as swe_alvkarleby_salmon_fishery.
+swe_gavle_fishermen = {
+	game_data = {
+		category = location
+	}
+	local_fish_output_modifier = 0.25
+}
+
+# Added to hudiksvall and harnosand for 200 years with swe_gavle_fishermen: their herring goes to Gävle's boats.
+swe_gavle_fishing_grounds = {
+	game_data = {
+		category = location
+	}
+	local_fish_output_modifier = -0.1
+}
+
+# Added to the same towns for 200 years by swe_norrland.2 when the Crown refuses Gävle: swe_gavle_fishing_grounds reversed.
+swe_norrland_fishing_towns = {
+	game_data = {
+		category = location
+	}
+	local_fish_output_modifier = 0.1
+}
+
+# Added to ragunda for 50 years by swe_norrland.3 when the Crown takes the drained lakebed. The crown power
+# of swe_forsvenskning.
+swe_ragunda_crown_land = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added to soderala by swe_norrland.6 when the Crown backs the Flor manufactory. The fiber crops output and
+# cloth output are the values vanilla uses for these modifiers (0.25, 0.1).
+swe_flor_manufactory = {
+	game_data = {
+		category = location
+	}
+	local_fiber_crops_output_modifier = 0.25
+	local_cloth_output_modifier = 0.1
+}

@@ -107,6 +107,8 @@ swe_jamtland.1 = {
 # after swe_jamtland.1, while Sweden is at war with whoever holds Trondheim, Jämtland's old diocese and
 # the way the Norwegian armies came. Punishing them ends the tings and Swedifies; the concession matches
 # the agreement of 1688. The modifiers come off wherever Sweden owns them, whatever the culture there.
+# The third option mirrors Denmark-Norway's räfst of 1613-16, when the Jämtlanders lost their hereditary
+# rights and most of them bought those rights back. Gold now, at the cost of the peasants' goodwill.
 swe_jamtland.2 = {
 	type = country_event
 	title = swe_jamtland.2.title
@@ -216,5 +218,33 @@ swe_jamtland.2 = {
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_jamtland.2.c
+		ai_chance = {
+			base = 20
+		}
+
+		custom_tooltip = {
+			text = swe_jamtland.2.c_tt
+			province_definition:jamtland_province = {
+				every_location_in_province_definition = {
+					limit = {
+						owner ?= root
+						has_location_modifier = swe_jamtland_tings
+					}
+					remove_location_modifier = swe_jamtland_tings
+				}
+			}
+		}
+		location:froso = {
+			if = {
+				limit = { has_location_modifier = swe_jamtmarknaden }
+				remove_location_modifier = swe_jamtmarknaden
+			}
+		}
+		change_gold_effect = { scale = 4 }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
 	}
 }

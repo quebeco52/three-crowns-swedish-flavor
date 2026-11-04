@@ -1,0 +1,362 @@
+﻿namespace = swe_norrland
+
+# Province and territory events for Gästrikland, Hälsingland, Ångermanland, Jämtland and northern Dalarna.
+# Each is one self-contained event. Their effects stay on the locations named, and none changes a town rank.
+
+# The castle at Faxeholm burns. The Vitalian Brothers built it in 1395/96, the Crown held it by the end of
+# 1398, and the Hälsingar stormed and burned it in 1434. It isn't tied to vanilla's Engelbrekt event
+# (flavor_swe.2), which rarely fires: it only needs unhappy peasants. No castle is built or destroyed, since
+# forts are the player's to build by hand.
+swe_norrland.1 = {
+	type = country_event
+	title = swe_norrland.1.title
+	desc = swe_norrland.1.desc
+	outcome = neutral
+	historical_info = swe_norrland.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1395.1.1
+		to = 1500.1.1
+		monthly_chance = 3 # Median about two years once the peasants are unhappy
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:soderala
+		estate_satisfaction:peasants_estate < 0.5
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_norrland.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_norrland.1.a_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						province_definition = province_definition:halsingland_province
+						province_definition = province_definition:angermanland_province
+					}
+				}
+				add_location_modifier = { modifier = swe_faxeholm_ruins years = 50 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_norrland.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = -4 }
+		custom_tooltip = {
+			text = swe_norrland.1.b_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						province_definition = province_definition:halsingland_province
+						province_definition = province_definition:angermanland_province
+					}
+				}
+				add_location_modifier = { modifier = swe_norrland_bailiff years = 50 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# Gustav Vasa gives the fishermen of Gävle the Norrland coast (1557) for every tenth barrel of salted herring.
+# The monopoly lasted until 1766. Gävle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
+# so the output modifiers count there.
+swe_norrland.2 = {
+	type = country_event
+	title = swe_norrland.2.title
+	desc = swe_norrland.2.desc
+	outcome = neutral
+	historical_info = swe_norrland.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1555.1.1
+		to = 1620.1.1
+		monthly_chance = 3 # Median late 1556
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:gefle
+		OR = {
+			owns = location:hudiksvall
+			owns = location:harnosand
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_norrland.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:gefle = {
+			add_location_modifier = { modifier = swe_gavle_fishermen years = 200 }
+		}
+		location:hudiksvall = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 200 }
+			}
+		}
+		location:harnosand = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 200 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_norrland.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:hudiksvall = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_norrland_fishing_towns years = 200 }
+			}
+		}
+		location:harnosand = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_norrland_fishing_towns years = 200 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+}
+
+# Döda fallet: on the night of 6-7 June 1796 the Indalsälven broke through a timber channel and Ragundasjön
+# emptied in about four hours. Both options turn the lakebed into farmland: stone to millet, vanilla's grain
+# for most Swedish farmland. Ragunda starts Norwegian, so this needs Sweden to have taken Jämtland.
+swe_norrland.3 = {
+	type = country_event
+	title = swe_norrland.3.title
+	desc = swe_norrland.3.desc
+	outcome = neutral
+	historical_info = swe_norrland.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1794.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median late 1795
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:ragunda
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_norrland.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:ragunda = {
+			change_raw_material = goods:millet
+		}
+		# The Indalsälven reaches the sea here, and the flood destroyed the sawmills and fisheries on its way
+		location:selanger = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_severe_penalty
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_norrland.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = -4 }
+		location:ragunda = {
+			change_raw_material = goods:millet
+			add_location_modifier = { modifier = swe_ragunda_crown_land years = 50 }
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+	}
+}
+
+# Idre and Särna: annex parishes of Elverum, taken in a bloodless march in 1644 and confirmed as Swedish only
+# in 1751. idre sits in dalarna_province, so swe_jamtland.1's loop misses it. Same shape as swe_jamtland.1:
+# fires on ownership while Norwegian culture dominates, and changes no one's culture.
+swe_norrland.5 = {
+	type = country_event
+	title = swe_norrland.5.title
+	desc = swe_norrland.5.desc
+	outcome = neutral
+	historical_info = swe_norrland.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Idre
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:idre
+		location:idre = { dominant_culture ?= culture:norwegian }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_norrland.5.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:idre = {
+			add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_norrland.5.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# Hälsingland flax: Olof Johan Broman, vicar of Hudiksvall, proposed water-powered scutching around 1700, and
+# about 1,000 flax barns and mills followed. Flor, in Mo just outside Söderhamn, made damask for Europe's
+# courts. Vanilla has no fiber crops here. Söderala stands in for Flor. Raw material changes follow vanilla's
+# flavor_swe.38 and flavor_swe.44.
+swe_norrland.6 = {
+	type = country_event
+	title = swe_norrland.6.title
+	desc = swe_norrland.6.desc
+	outcome = neutral
+	historical_info = swe_norrland.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1698.1.1
+		to = 1780.1.1
+		monthly_chance = 3 # Median late 1699
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:hudiksvall
+		owns = location:alfta
+		owns = location:soderala
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_norrland.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:alfta = {
+			change_raw_material = goods:fiber_crops
+		}
+		location:hogdal = {
+			if = {
+				limit = { owner ?= root }
+				change_raw_material = goods:fiber_crops
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_norrland.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:soderala = {
+			change_raw_material = goods:fiber_crops
+			add_location_modifier = { modifier = swe_flor_manufactory months = -1 }
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+	}
+}
