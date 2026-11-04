@@ -169,11 +169,6 @@ swe_vasa.3 = {
 
 		revoke_estate_privilege = estate_privilege:swe_konungabalken
 		lock_estate_privilege_effect = { type = swe_konungabalken }
-		# swe_konungabalken's on_deactivate should already have cleared this
-		if = {
-			limit = { has_variable = swe_eriksgata_pending }
-			remove_variable = swe_eriksgata_pending
-		}
 		add_legitimacy = legitimacy_mild_bonus
 		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_left }
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_extreme_penalty }

@@ -25,43 +25,4 @@
 		monthly_legitimacy = 0.05
 		nobles_estate_max_tax = -0.1
 	}
-
-	# Eriksgatan: a king chosen at Mora was not fully king until he had ridden through the lands
-	# of the realm and sworn to keep each land's law at its thing. tc_on_new_ruler sets the
-	# variable for 10 years at every succession; swe_eriksgata_decision clears it.
-	# Balanced against vanilla's ara_lack_of_coronation (same legitimacy and satisfaction penalty).
-	country_modifier = {
-		potential_trigger = {
-			custom_tooltip = {
-				text = swe_eriksgata_country_penalty
-				has_variable = swe_eriksgata_pending
-			}
-		}
-		monthly_legitimacy = -0.1
-		global_estate_target_satisfaction = small_permanent_target_satisfaction_penalty
-	}
-
-	# Finland at Mora (swe_finland.1): from 1362 Finland voted in the royal election like the other
-	# lands of the realm. Unrest from furs_de_valencia_town_rights, integration from
-	# lat_improved_location_integration, and half the crown power of scandinavian_thing_rights.
-	location_modifier = {
-		potential_trigger = {
-			custom_tooltip = {
-				text = swe_finland_at_mora_location_bonus
-				owner = { has_variable = swe_finland_at_mora }
-				area = area:finland_area
-			}
-		}
-		local_unrest = -0.1
-		local_integration_speed_modifier = 0.25
-		local_crown_estate_power = -0.1
-	}
-
-	# The Eriksgata dies with the elective crown. swe_vasa.3 also clears it after its revoke.
-	on_deactivate = {
-		if = {
-			limit = { has_variable = swe_eriksgata_pending }
-			remove_variable = swe_eriksgata_pending
-		}
-	}
 }

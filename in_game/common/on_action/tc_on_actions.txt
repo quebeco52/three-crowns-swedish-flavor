@@ -11,9 +11,8 @@ on_new_ruler = {
 	on_actions = { tc_on_new_ruler }
 }
 
-# A new Swedish monarch under Konungabalken must ride the Eriksgata (swe_eriksgata_decision);
-# the penalty inside swe_konungabalken lapses after 10 years even if the ride never happens.
-# The first such election while Sweden holds Åbo asks whether Finland votes at Mora (swe_finland.1).
+# A new Swedish monarch under Konungabalken is asked to ride the Eriksgata (swe_eriksgata.1), after any
+# funeral. Delayed like vanilla's culture_religion_events.2, which still reads scope:new_ruler when it fires.
 tc_on_new_ruler = {
 	trigger = {
 		has_or_had_tag = SWE
@@ -31,12 +30,9 @@ tc_on_new_ruler = {
 		}
 	}
 
-	effect = {
-		set_variable = {
-			name = swe_eriksgata_pending
-			years = 10
-		}
-		trigger_event_non_silently = { id = swe_finland.1 days = { 60 120 } }
+	events = {
+		delay = { days = { 60 120 } }
+		swe_eriksgata.1
 	}
 }
 

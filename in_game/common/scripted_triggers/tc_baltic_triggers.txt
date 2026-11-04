@@ -29,8 +29,8 @@ swe_is_swedish_realm_trigger = {
 }
 
 # "Russia", for the transit trade: whoever owns Novgorod, the old gateway of the Russian trade, unless
-# that is Sweden or a Swedish subject (after Stolbovo, or a Novgorod march from swe_novgorod.1); then
-# whoever owns Moscow. A port held by that country or one of its subjects.
+# that is Sweden or a Swedish subject; then whoever owns Moscow. A port held by that country or one of
+# its subjects.
 swe_russian_port_trigger = {
 	owner ?= {
 		trigger_if = {

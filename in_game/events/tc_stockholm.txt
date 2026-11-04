@@ -193,7 +193,8 @@ swe_stockholm.3 = {
 		has_regent = no
 		owns = location:stockholm
 		location:stockholm = {
-			has_building = building_type:swe_riddarholmskyrkan
+			# Not has_building, which is already true while the church is under construction
+			has_building_with_at_least_one_level = swe_riddarholmskyrkan
 		}
 		NOT = { country_has_order = chivalric_order:swe_order_of_the_seraphim }
 	}

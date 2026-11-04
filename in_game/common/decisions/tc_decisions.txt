@@ -74,7 +74,7 @@ swe_tar_company_decision = {
 		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
 		any_owned_location = {
 			swe_osterbotten_trigger = yes
-			has_building = building_type:tar_kiln
+			has_building_with_at_least_one_level = tar_kiln
 		}
 	}
 
@@ -307,7 +307,7 @@ swe_rikes_lag_decision = {
 	allow = {
 		# Bare key, as in vanilla decisions: decisions load before laws, so policy:swe_landslag is not valid here
 		has_policy = swe_landslag
-		capital = { has_building = building_type:supreme_court }
+		capital = { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }
@@ -710,7 +710,7 @@ swe_regeringsform_decision = {
 		owns = location:stockholm
 		has_advance = bureaucracy_law_advance
 		modifier:has_a_parliamentary_system = yes
-		capital = { has_building = building_type:supreme_court }
+		capital = { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }
@@ -734,59 +734,6 @@ swe_regeringsform_decision = {
 			unlock_policy_effect = { type = swe_kommerskollegium }
 			# The great officers of the realm and the high nobility filled the colleges
 			add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
-		}
-	}
-}
-
-# Eriksgatan: by the provincial laws and Magnus Eriksson's national law, a king chosen at Mora rode
-# through the lands of the realm and swore at each land's thing to keep its law. Clears
-# swe_eriksgata_pending, set by tc_on_new_ruler, and with it the penalty inside swe_konungabalken.
-# Repeatable, once per reign, like vanilla's ara_coronate_ruler. Needs control of the seven seats
-# on the route, so an enemy army in the heartland stops the ride; war elsewhere does not.
-swe_eriksgata_decision = {
-	decision_category = country_specific_decisions
-	historical_info = swe_eriksgata_decision.historical_info
-
-	potential = {
-		has_or_had_tag = SWE
-		government_type = government_type:monarchy
-		has_ruler = yes
-		has_estate_privilege = estate_privilege:swe_konungabalken
-		has_variable = swe_eriksgata_pending
-	}
-
-	allow = {
-		controls = location:uppsala
-		controls = location:strangnas
-		controls = location:linkoping
-		controls = location:jonkoping
-		controls = location:skara
-		controls = location:orebro
-		controls = location:vasteras
-	}
-
-	ai_will_do = { value = 100 }
-
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	illustration_scope = {
-		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
-	}
-
-	option = {
-		name = swe_eriksgata_decision.a
-		ai_chance = { value = 100 }
-		effect = {
-			custom_tooltip = {
-				text = swe_eriksgata_decision.a_tt
-				remove_variable = swe_eriksgata_pending
-			}
-			change_gold_effect = { scale = -3 }
-			add_legitimacy = legitimacy_weak_bonus
-			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 		}
 	}
 }

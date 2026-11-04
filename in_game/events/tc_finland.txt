@@ -1,10 +1,9 @@
 ﻿namespace = swe_finland
 
-# Finland at Mora. When Håkan Magnusson was elected beside his father Magnus Eriksson in 1362, men from
-# Finland took part in the royal election at the Stones of Mora for the first time, as one of the
-# lands of the realm. Fired by tc_on_new_ruler two to four months after each succession under
-# Konungabalken, so it comes at the first election while Sweden holds Åbo, not on a date.
-# Granting it sets swe_finland_at_mora, which turns on the Finnish tier inside swe_konungabalken.
+# Finland at Mora. When Håkan Magnusson was elected beside his father Magnus Eriksson in February 1362, men
+# from Finland took part in the royal election at the Stones of Mora for the first time, as one of the
+# lands of the realm. Fires once at that date, or later, as soon as Sweden holds Åbo while it still
+# elects its monarchs. Granting it adds swe_finland_at_mora to Sweden's locations in Finland.
 swe_finland.1 = {
 	type = country_event
 	title = swe_finland.1.title
@@ -13,13 +12,19 @@ swe_finland.1 = {
 	historical_info = swe_finland.1.historical_info
 
 	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1362.2.1
+		to = 1837.1.1
+		monthly_chance = 100
+	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		government_type = government_type:monarchy
 		has_estate_privilege = estate_privilege:swe_konungabalken
 		owns = location:abo
-		NOT = { has_variable = swe_finland_at_mora }
 	}
 
 	illustration_tags = {
@@ -38,8 +43,13 @@ swe_finland.1 = {
 			base = 75
 		}
 
-		set_variable = swe_finland_at_mora
-		custom_tooltip = swe_finland.1.a_tt
+		custom_tooltip = {
+			text = swe_finland.1.a_tt
+			every_owned_location = {
+				limit = { area = area:finland_area }
+				add_location_modifier = { modifier = swe_finland_at_mora years = modifier_duration_years_very_long }
+			}
+		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 

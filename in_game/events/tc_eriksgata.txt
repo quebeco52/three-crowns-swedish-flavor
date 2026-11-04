@@ -1,0 +1,66 @@
+﻿namespace = swe_eriksgata
+
+# Eriksgatan: by the provincial laws and Magnus Eriksson's national law, a king chosen at Mora rode
+# through the lands of the realm and swore at each land's thing to keep its law. Fired by tc_on_new_ruler
+# two to four months after each succession under Konungabalken, after any funeral (swe_stockholm.2).
+# Riding needs control of the seven seats on the route, so an enemy army in the heartland stops the
+# ride; war elsewhere does not.
+swe_eriksgata.1 = {
+	type = country_event
+	title = swe_eriksgata.1.title
+	desc = swe_eriksgata.1.desc
+	outcome = neutral
+	historical_info = swe_eriksgata.1.historical_info
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		has_estate_privilege = estate_privilege:swe_konungabalken
+		# Not if that monarch has already died: the next one has an event of their own (vanilla culture_religion_events.2)
+		trigger_if = {
+			limit = { exists = scope:new_ruler }
+			ruler ?= { this = scope:new_ruler }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_eriksgata.1.a
+		historical_option = yes
+		trigger = {
+			controls = location:uppsala
+			controls = location:strangnas
+			controls = location:linkoping
+			controls = location:jonkoping
+			controls = location:skara
+			controls = location:orebro
+			controls = location:vasteras
+		}
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -3 }
+		add_legitimacy = legitimacy_weak_bonus
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_eriksgata.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_legitimacy = legitimacy_weak_penalty
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+}

@@ -164,6 +164,18 @@ swe_riga_licent = {
 	local_merchant_capacity_modifier = -0.1
 }
 
+# Added for 50 years by swe_finland.1 to Sweden's locations in Finland: from 1362 Finland voted in the royal
+# election like the other lands of the realm. Unrest from furs_de_valencia_town_rights, enfranchisement from
+# scandinavian_bergslag_privileges, and half the crown power of scandinavian_thing_rights.
+swe_finland_at_mora = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasant_enfranchisment = 0.05
+	local_crown_estate_power = -0.1
+}
+
 # Added for 50 years by swe_baltic.4 to whichever of Narva, Nyen and Reval Sweden holds: after Stolbovo (1617)
 # Russia had no Baltic port, and Sweden meant its trade with the West to pass through them. The flat merchant
 # capacity of favoring_own_interests (0.5) and the market access of market_charter (0.1).

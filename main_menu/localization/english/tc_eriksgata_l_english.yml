@@ -1,0 +1,9 @@
+﻿l_english:
+ swe_eriksgata.1.title: "The Eriksgata"
+ swe_eriksgata.1.entry: "$swe_eriksgata.1.title$"
+ swe_eriksgata.1.desc: "[ROOT.GetCountry.GetGovernment.GetRuler.GetName] has been chosen at the Stones of Mora, but by the old law no new monarch is fully accepted until the Eriksgata has been ridden. From [ShowLocationName('uppsala')] the royal train must pass through [ShowLocationName('strangnas')], [ShowLocationName('linkoping')], [ShowLocationName('jonkoping')], [ShowLocationName('skara')], [ShowLocationName('orebro')] and [ShowLocationName('vasteras')]. At the border of each land its men meet the monarch with hostages for a safe journey, and at its thing the monarch swears to keep their law. The ride is long and costly, and the business of the realm will not wait for it, but the lawmen are already asking when it will begin."
+ swe_eriksgata.1.historical_info: "By the provincial laws and Magnus Eriksson's national law of about 1350, a king elected at the Stones of Mora outside Uppsala had to ride the Eriksgata before he was accepted throughout the realm. The route ran from Uppland through Södermanland, Östergötland, Småland, Västergötland, Närke and Västmanland and back. At each border the men of the land met the king, gave him hostages for his safe conduct and escorted him to their thing, where he swore to keep the peace and their law. The Hereditary Union of Västerås ended the elective crown in 1544, though the custom outlived it: Karl IX still rode the Eriksgata in the early 1600s."
+ swe_eriksgata.1.a: "Ride through the lands of the realm."
+ swe_eriksgata.1.a.entry: "Our new monarch rode the Eriksgata through the lands of the realm."
+ swe_eriksgata.1.b: "The business of the realm cannot wait."
+ swe_eriksgata.1.b.entry: "Our new monarch did not ride the Eriksgata."
