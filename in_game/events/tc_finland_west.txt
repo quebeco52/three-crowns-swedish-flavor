@@ -46,7 +46,7 @@ swe_finland_west.1 = {
 
 		change_gold_effect = { scale = -2 }
 		location:bjorneborg = {
-			add_location_modifier = { modifier = swe_satakunta_relieved years = 25 }
+			add_location_modifier = { modifier = swe_satakunta_relieved years = 15 }
 		}
 		location:korsholm = {
 			add_location_modifier = { modifier = swe_korsholm_coast_watch years = 50 }
@@ -106,7 +106,7 @@ swe_finland_west.2 = {
 
 		location:korsholm = {
 			change_prosperity = prosperity_mild_penalty
-			add_location_modifier = { modifier = swe_pirate_bailiff years = 20 }
+			add_location_modifier = { modifier = swe_pirate_bailiff years = 10 }
 		}
 		# His ships come with him. Galleys, as in vanilla's Victual Brothers event (flavor_swe_teu).
 		random_owned_location = {
@@ -118,6 +118,7 @@ swe_finland_west.2 = {
 			create_sub_unit_of_category = sub_unit_category:navy_galley
 			create_sub_unit_of_category = sub_unit_category:navy_galley
 		}
+		add_prestige = prestige_mild_penalty
 	}
 
 	option = {
@@ -180,10 +181,11 @@ swe_finland_west.3 = {
 			text = swe_finland_west.3.a_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:satakunta_province }
-				add_location_modifier = { modifier = swe_lempaala_pledge years = 25 }
+				add_location_modifier = { modifier = swe_lempaala_pledge years = 15 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+		add_stability = stability_mild_bonus
 	}
 
 	option = {
@@ -196,11 +198,15 @@ swe_finland_west.3 = {
 			text = swe_finland_west.3.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:satakunta_province }
-				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 20 }
+				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 10 }
+				# The anger stays in this region, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_severe_penalty
+				}
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
 	}
 }
 
@@ -248,11 +254,12 @@ swe_finland_west.4 = {
 			text = swe_finland_west.4.a_tt
 			every_owned_location = {
 				limit = { swe_osterbotten_trigger = yes }
-				add_location_modifier = { modifier = swe_free_osterbotten years = 50 }
+				add_location_modifier = { modifier = swe_free_osterbotten years = 25 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
+		change_societal_value = { type = serfdom_vs_free_subjects value = societal_value_minor_move_to_right }
 	}
 
 	option = {
@@ -266,10 +273,15 @@ swe_finland_west.4 = {
 			every_owned_location = {
 				limit = { swe_osterbotten_trigger = yes }
 				add_location_modifier = { modifier = swe_osterbotten_fiefs years = 50 }
+				# The anger stays in this region, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_severe_penalty
+				}
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+		change_societal_value = { type = serfdom_vs_free_subjects value = societal_value_minor_move_to_left }
 	}
 }
 
@@ -314,22 +326,23 @@ swe_finland_west.5 = {
 		}
 
 		location:kastelholm = {
-			add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+			add_location_modifier = { modifier = swe_skipper_ban years = 25 }
 		}
 		location:ekenas = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+				add_location_modifier = { modifier = swe_skipper_ban years = 25 }
 			}
 		}
 		location:sjundea = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+				add_location_modifier = { modifier = swe_skipper_ban years = 25 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_left }
 	}
 
 	option = {
@@ -356,6 +369,7 @@ swe_finland_west.5 = {
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_right }
 	}
 }
 
@@ -383,14 +397,7 @@ swe_finland_west.6 = {
 		owns = location:sjundea
 	}
 
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
-	}
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_iron.dds"
 
 	option = {
 		name = swe_finland_west.6.a
@@ -425,7 +432,7 @@ swe_finland_west.6 = {
 			text = swe_finland_west.6.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:nyland_province }
-				add_location_modifier = { modifier = swe_nyland_forests years = 50 }
+				add_location_modifier = { modifier = swe_nyland_forests years = 25 }
 			}
 		}
 	}

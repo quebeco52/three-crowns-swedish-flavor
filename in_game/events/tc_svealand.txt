@@ -43,7 +43,7 @@ swe_svealand.1 = {
 		}
 
 		location:enkoping = {
-			add_location_modifier = { modifier = swe_enkoping_ice_ban years = 25 }
+			add_location_modifier = { modifier = swe_enkoping_ice_ban years = 15 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 	}
@@ -104,9 +104,10 @@ swe_svealand.2 = {
 
 		change_gold_effect = { scale = -4 }
 		location:sodertalje = {
-			add_location_modifier = { modifier = swe_sodertalje_cut years = 50 }
+			add_location_modifier = { modifier = swe_sodertalje_cut years = 25 }
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		add_prestige = prestige_mild_bonus
 	}
 
 	option = {
@@ -172,14 +173,7 @@ swe_svealand.3 = {
 		owns = location:strangnas
 	}
 
-	illustration_tags = {
-		10 = regular
-		10 = interior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
-	}
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_tools.dds"
 
 	option = {
 		name = swe_svealand.3.a
@@ -190,7 +184,7 @@ swe_svealand.3 = {
 
 		change_gold_effect = { scale = -4 }
 		location:strangnas = {
-			add_location_modifier = { modifier = swe_rademacher_forges years = 50 }
+			add_location_modifier = { modifier = swe_rademacher_forges years = 25 }
 		}
 		# His smiths were immigrants, the same way flavor_swe.41 brings Dutch burghers to Göteborg
 		add_migration = {

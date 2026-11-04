@@ -122,7 +122,7 @@ swe_scania.6 = {
 			value = { value = root.monthly_income_trade_and_tax multiply = -2 }
 		}
 		location:malmo = {
-			add_location_modifier = { modifier = swe_malmo_plot_crushed years = 20 }
+			add_location_modifier = { modifier = swe_malmo_plot_crushed years = 10 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
 	}
@@ -134,7 +134,7 @@ swe_scania.6 = {
 		}
 
 		location:malmo = {
-			add_location_modifier = { modifier = swe_malmo_mercy years = 25 }
+			add_location_modifier = { modifier = swe_malmo_mercy years = 10 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}

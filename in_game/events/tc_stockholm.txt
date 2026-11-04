@@ -206,6 +206,7 @@ swe_stockholm.3 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
+		ruler ?= { save_scope_as = target_character }
 	}
 
 	option = {

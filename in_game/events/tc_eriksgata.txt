@@ -31,6 +31,7 @@ swe_eriksgata.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
+		ruler ?= { save_scope_as = target_character }
 	}
 
 	option = {

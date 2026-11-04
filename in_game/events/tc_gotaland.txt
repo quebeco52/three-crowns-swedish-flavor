@@ -47,7 +47,7 @@ swe_gotaland.1 = {
 			text = swe_gotaland.1.a_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:tioharad_province }
-				add_location_modifier = { modifier = swe_varend_border_peace years = 25 }
+				add_location_modifier = { modifier = swe_varend_border_peace years = 20 }
 			}
 		}
 	}
@@ -62,7 +62,7 @@ swe_gotaland.1 = {
 			text = swe_gotaland.1.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:tioharad_province }
-				add_location_modifier = { modifier = swe_border_peace_forbidden years = 25 }
+				add_location_modifier = { modifier = swe_border_peace_forbidden years = 10 }
 			}
 		}
 	}
@@ -108,7 +108,7 @@ swe_gotaland.2 = {
 		}
 
 		location:ljungby = {
-			add_location_modifier = { modifier = swe_sunnerbo_judge years = 20 }
+			add_location_modifier = { modifier = swe_sunnerbo_judge years = 10 }
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
 	}
@@ -120,7 +120,7 @@ swe_gotaland.2 = {
 		}
 
 		location:ljungby = {
-			add_location_modifier = { modifier = swe_sunnerbo_local_judge years = 25 }
+			add_location_modifier = { modifier = swe_sunnerbo_local_judge years = 15 }
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 	}
@@ -171,6 +171,11 @@ swe_gotaland.3 = {
 			every_owned_location = {
 				limit = { province_definition = province_definition:tioharad_province }
 				add_location_modifier = { modifier = swe_oxen_ban years = 10 }
+				# The anger stays in this region, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_severe_penalty
+				}
 			}
 		}
 		custom_tooltip = {
@@ -189,7 +194,6 @@ swe_gotaland.3 = {
 				add_location_modifier = { modifier = swe_oxen_for_the_mines years = 10 }
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
 	}
 
 	option = {
@@ -258,6 +262,7 @@ swe_gotaland.4 = {
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_right }
 	}
 
 	option = {
@@ -267,14 +272,15 @@ swe_gotaland.4 = {
 		}
 
 		location:skene = {
-			add_location_modifier = { modifier = swe_town_monopoly_enforced years = 20 }
+			add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 		}
 		location:bogesund = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 20 }
+				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_left }
 	}
 }

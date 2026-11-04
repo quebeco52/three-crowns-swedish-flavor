@@ -197,7 +197,7 @@ swe_russian_staple = {
 	local_trades_per_burgher = 0.25
 }
 
-# Added for 50 years by swe_norrland.1 to Sweden's locations in Hälsingland and Ångermanland when the
+# Added for 25 years by swe_norrland.1 to Sweden's locations in Hälsingland and Ångermanland when the
 # Crown leaves Faxeholm in ruins. The unrest and crown power of swe_finland_at_mora, and the enfranchisement of
 # scandinavian_bergslag_privileges (0.05): the peasants run their own affairs.
 swe_faxeholm_ruins = {
@@ -209,7 +209,7 @@ swe_faxeholm_ruins = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 20 years by swe_norrland.1 to the same locations when the Crown rebuilds. The crown power and
+# Added for 10 years by swe_norrland.1 to the same locations when the Crown rebuilds. The crown power and
 # unrest of swe_forsvenskning, for as long as vanilla's longest timed unrest modifiers.
 swe_norrland_bailiff = {
 	game_data = {
@@ -291,7 +291,7 @@ swe_gratrask_fishing_rights = {
 	local_migration_attraction = 0.2
 }
 
-# Added to lulea and umea for 25 years by swe_lappmark.3 when the Crown leaves the lake alone. The unrest of
+# Added to lulea and umea for 15 years by swe_lappmark.3 when the Crown leaves the lake alone. The unrest of
 # swe_finland_at_mora.
 swe_sami_fishing_waters = {
 	game_data = {
@@ -352,7 +352,7 @@ swe_tornea_trade_district = {
 	local_merchant_capacity_modifier = 0.1
 }
 
-# Added to bjorneborg for 25 years by swe_finland_west.1 when the fortress is pulled down. The unrest of
+# Added to bjorneborg for 15 years by swe_finland_west.1 when the fortress is pulled down. The unrest of
 # swe_finland_at_mora.
 swe_satakunta_relieved = {
 	game_data = {
@@ -381,7 +381,7 @@ swe_kumo_castle_burden = {
 	local_monthly_prosperity = -0.001
 }
 
-# Added to korsholm for 20 years by swe_finland_west.2 when a pirate is made bailiff. The crown power of
+# Added to korsholm for 10 years by swe_finland_west.2 when a pirate is made bailiff. The crown power of
 # swe_faxeholm_ruins and the unrest of swe_norrland_bailiff: cheap, but he wasn't the Crown's man.
 swe_pirate_bailiff = {
 	game_data = {
@@ -391,7 +391,7 @@ swe_pirate_bailiff = {
 	local_unrest = 0.1
 }
 
-# Added for 25 years by swe_finland_west.3 to Sweden's locations in Satakunta after talks. The enfranchisement and
+# Added for 15 years by swe_finland_west.3 to Sweden's locations in Satakunta after talks. The enfranchisement and
 # crown power of swe_faxeholm_ruins, and the rebel threshold of cas_catalan_crackdown (-0.05): the peasants swore
 # never to rise again.
 swe_lempaala_pledge = {
@@ -403,7 +403,7 @@ swe_lempaala_pledge = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 20 years by swe_finland_west.3 to Sweden's locations in Satakunta when the rising is crushed. The crown
+# Added for 10 years by swe_finland_west.3 to Sweden's locations in Satakunta when the rising is crushed. The crown
 # power of swe_norrland_bailiff and the peasant unrest of fuero_general_town_rights (0.2).
 swe_satakunta_bailiffs = {
 	game_data = {
@@ -413,7 +413,7 @@ swe_satakunta_bailiffs = {
 	local_peasants_estate_unrest = 0.2
 }
 
-# Added for 50 years by swe_finland_west.4 to Sweden's locations in Österbotten when the nobles are kept out. The
+# Added for 25 years by swe_finland_west.4 to Sweden's locations in Österbotten when the nobles are kept out. The
 # unrest and enfranchisement of swe_faxeholm_ruins, with noble power in place of its crown power.
 swe_free_osterbotten = {
 	game_data = {
@@ -435,7 +435,7 @@ swe_osterbotten_fiefs = {
 	local_peasant_enfranchisment = -0.1
 }
 
-# Added to kastelholm, ekenas and sjundea for 50 years by swe_finland_west.5 when the law is enforced. The market
+# Added to kastelholm, ekenas and sjundea for 25 years by swe_finland_west.5 when the law is enforced. The market
 # access of swe_peasant_skippers reversed, the sailors of rot_timur_scare (-0.25) and the burgher power of
 # swe_enkoping_ice_ban: the trade goes through the towns.
 swe_skipper_ban = {
@@ -457,7 +457,7 @@ swe_peasant_skippers = {
 	local_sailors_modifier = 0.1
 }
 
-# Added for 50 years by swe_finland_west.6 to Sweden's locations in Nyland when the forests are kept. The lumber
+# Added for 25 years by swe_finland_west.6 to Sweden's locations in Nyland when the forests are kept. The lumber
 # output of sawmill (0.2) and the tar output of scandinavian_tar_privileges (0.2). Only some locations here start
 # with lumber, so the rest need a building to benefit.
 swe_nyland_forests = {
@@ -468,7 +468,7 @@ swe_nyland_forests = {
 	local_tar_output_modifier = 0.2
 }
 
-# Added to olofsborg for 50 years by swe_finland_east.1 when Sweden holds the line. The hostile attrition of
+# Added to olofsborg for 20 years by swe_finland_east.1 when Sweden holds the line. The hostile attrition of
 # swe_jamtland_tings, since Olofsborg has no fort at setup, and the crown power of swe_norrland_bailiff. Its lakes
 # and waterways were chosen to hinder any offensive.
 swe_olofsborg_line = {
@@ -479,7 +479,7 @@ swe_olofsborg_line = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to olofsborg for 25 years by swe_finland_east.1 when the quarrel is left alone. The unrest of
+# Added to olofsborg for 10 years by swe_finland_east.1 when the quarrel is left alone. The unrest of
 # swe_finland_at_mora and the market access of market_charter (0.1).
 swe_olofsborg_quiet_border = {
 	game_data = {
@@ -489,7 +489,7 @@ swe_olofsborg_quiet_border = {
 	local_market_access = 0.1
 }
 
-# Added for 25 years by swe_finland_east.2 to Sweden's locations in Vyborg province after the widow gets better
+# Added for 15 years by swe_finland_east.2 to Sweden's locations in Vyborg province after the widow gets better
 # terms. The crown power of swe_faxeholm_ruins.
 swe_viborg_lady = {
 	game_data = {
@@ -498,7 +498,7 @@ swe_viborg_lady = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 20 years by swe_finland_east.2 to Sweden's locations in Vyborg province when the gates are forced. The
+# Added for 10 years by swe_finland_east.2 to Sweden's locations in Vyborg province when the gates are forced. The
 # crown power of swe_norrland_bailiff and the unrest of bul_powerful_local_elites (0.2).
 swe_viborg_gates_forced = {
 	game_data = {
@@ -539,7 +539,7 @@ swe_crown_wilderness = {
 	local_population_growth = 0.002
 }
 
-# Added to kajana for 25 years by swe_finland_east.6 when the cloth is returned. The market access of
+# Added to kajana for 10 years by swe_finland_east.6 when the cloth is returned. The market access of
 # market_charter (0.1).
 swe_kajana_border_trade = {
 	game_data = {
@@ -548,7 +548,7 @@ swe_kajana_border_trade = {
 	local_market_access = 0.1
 }
 
-# Added to malmo for 20 years by swe_scania.6 after executions. The unrest of PRU_quitzow_repressed_modifier (0.25),
+# Added to malmo for 10 years by swe_scania.6 after executions. The unrest of PRU_quitzow_repressed_modifier (0.25),
 # and the burgher loss of swe_riga_licent (-0.25): the plotters were the town's own.
 swe_malmo_plot_crushed = {
 	game_data = {
@@ -558,7 +558,7 @@ swe_malmo_plot_crushed = {
 	local_burghers_estate_power = -0.25
 }
 
-# Added to malmo for 25 years by swe_scania.6 after a pardon. The unrest of swe_finland_at_mora and the crown power of
+# Added to malmo for 10 years by swe_scania.6 after a pardon. The unrest of swe_finland_at_mora and the crown power of
 # swe_faxeholm_ruins.
 swe_malmo_mercy = {
 	game_data = {
@@ -568,7 +568,7 @@ swe_malmo_mercy = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 25 years by swe_gotaland.1 to Sweden's locations in Tioharad when the border peace stands. The market
+# Added for 20 years by swe_gotaland.1 to Sweden's locations in Tioharad when the border peace stands. The market
 # access of market_charter (0.1), the unrest of swe_finland_at_mora and the manpower of swe_jamtland_tings.
 swe_varend_border_peace = {
 	game_data = {
@@ -579,7 +579,7 @@ swe_varend_border_peace = {
 	local_manpower_modifier = -0.25
 }
 
-# Added for 25 years by swe_gotaland.1 to the same locations when it's forbidden. The crown power of
+# Added for 10 years by swe_gotaland.1 to the same locations when it's forbidden. The crown power of
 # swe_norrland_bailiff and the market access of swe_skipper_ban: the old trading paths are closed.
 swe_border_peace_forbidden = {
 	game_data = {
@@ -589,7 +589,7 @@ swe_border_peace_forbidden = {
 	local_market_access = -0.1
 }
 
-# Added to ljungby for 20 years by swe_gotaland.2 when the new judge stays. The same as swe_norrland_bailiff.
+# Added to ljungby for 10 years by swe_gotaland.2 when the new judge stays. The same as swe_norrland_bailiff.
 swe_sunnerbo_judge = {
 	game_data = {
 		category = location
@@ -598,7 +598,7 @@ swe_sunnerbo_judge = {
 	local_unrest = 0.1
 }
 
-# Added to ljungby for 25 years by swe_gotaland.2 when the district picks its judge. The same as swe_malmo_mercy.
+# Added to ljungby for 15 years by swe_gotaland.2 when the district picks its judge. The same as swe_malmo_mercy.
 swe_sunnerbo_local_judge = {
 	game_data = {
 		category = location
@@ -608,13 +608,14 @@ swe_sunnerbo_local_judge = {
 }
 
 # Added for 10 years by swe_gotaland.3 to Sweden's locations in Tioharad when the oxen ban is enforced, in place of
-# rebels. The unrest of vanilla's cruel_overlord (0.5), the crown power of swe_norrland_bailiff and the market access
-# of staple_port_commercial_stagnation_modifier (-0.25).
+# rebels. The unrest of vanilla's lit_destruction_of_romuva_sites (0.2), the crown power of swe_norrland_bailiff and the
+# market access of staple_port_commercial_stagnation_modifier (-0.25). Not 0.5, as in cruel_overlord: at that value 30 of
+# Tioharad's 45 pops joined rebels within a month.
 swe_oxen_ban = {
 	game_data = {
 		category = location
 	}
-	local_unrest = 0.5
+	local_unrest = 0.2
 	local_crown_estate_power = 0.1
 	local_market_access = -0.25
 }
@@ -648,7 +649,7 @@ swe_knallar = {
 	local_market_access = 0.1
 }
 
-# Added to the same locations for 20 years by swe_gotaland.4 when the monopoly is enforced. The unrest of
+# Added to the same locations for 10 years by swe_gotaland.4 when the monopoly is enforced. The unrest of
 # swe_norrland_bailiff and the burgher power of swe_enkoping_ice_ban.
 swe_town_monopoly_enforced = {
 	game_data = {
@@ -658,7 +659,7 @@ swe_town_monopoly_enforced = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added to enkoping for 25 years by swe_svealand.1 when the ice trade is banned. Smaller than
+# Added to enkoping for 15 years by swe_svealand.1 when the ice trade is banned. Smaller than
 # swe_baltic_town_privileges (0.25), since this is one town's old rights confirmed.
 swe_enkoping_ice_ban = {
 	game_data = {
@@ -676,7 +677,7 @@ swe_enkoping_ice_market = {
 	local_market_access = 0.1
 }
 
-# Added to sodertalje for 50 years by swe_svealand.2 when the men dig through. The harbour of vanilla's
+# Added to sodertalje for 25 years by swe_svealand.2 when the men dig through. The harbour of vanilla's
 # surveyed_safe_harbour (0.2) and the market access of market_charter (0.1).
 swe_sodertalje_cut = {
 	game_data = {
@@ -686,7 +687,7 @@ swe_sodertalje_cut = {
 	local_market_access = 0.1
 }
 
-# Added to strangnas for 50 years by swe_svealand.3 when the smith comes. The output of the Tar Company tier (0.1), the
+# Added to strangnas for 25 years by swe_svealand.3 when the smith comes. The output of the Tar Company tier (0.1), the
 # migration of swe_gratrask_fishing_rights (0.2), and the building efficiency of nor_rebuilding_oslo (0.2): skilled men to
 # build with. The tools bonus only counts once a tools building stands here.
 swe_rademacher_forges = {

@@ -45,8 +45,9 @@ swe_finland_east.1 = {
 
 		change_gold_effect = { scale = -2 }
 		location:olofsborg = {
-			add_location_modifier = { modifier = swe_olofsborg_line years = 50 }
+			add_location_modifier = { modifier = swe_olofsborg_line years = 20 }
 		}
+		add_prestige = prestige_mild_bonus
 	}
 
 	option = {
@@ -56,7 +57,7 @@ swe_finland_east.1 = {
 		}
 
 		location:olofsborg = {
-			add_location_modifier = { modifier = swe_olofsborg_quiet_border years = 25 }
+			add_location_modifier = { modifier = swe_olofsborg_quiet_border years = 10 }
 		}
 	}
 }
@@ -105,7 +106,7 @@ swe_finland_east.2 = {
 			text = swe_finland_east.2.a_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:vyborg_province }
-				add_location_modifier = { modifier = swe_viborg_lady years = 25 }
+				add_location_modifier = { modifier = swe_viborg_lady years = 15 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
@@ -121,7 +122,7 @@ swe_finland_east.2 = {
 			text = swe_finland_east.2.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:vyborg_province }
-				add_location_modifier = { modifier = swe_viborg_gates_forced years = 20 }
+				add_location_modifier = { modifier = swe_viborg_gates_forced years = 10 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
@@ -175,7 +176,8 @@ swe_finland_east.3 = {
 				add_location_modifier = { modifier = swe_viborg_royal_governor years = 50 }
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_severe_penalty }
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_left }
 	}
 
 	option = {
@@ -192,6 +194,7 @@ swe_finland_east.3 = {
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_right }
 	}
 }
 
@@ -402,7 +405,7 @@ swe_finland_east.6 = {
 		}
 
 		location:kajana = {
-			add_location_modifier = { modifier = swe_kajana_border_trade years = 25 }
+			add_location_modifier = { modifier = swe_kajana_border_trade years = 10 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
 	}

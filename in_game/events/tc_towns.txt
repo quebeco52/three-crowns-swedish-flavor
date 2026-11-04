@@ -103,7 +103,7 @@ swe_towns.1 = {
 				months = 24
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_severe_penalty }
 	}
 
 	option = {
@@ -170,6 +170,7 @@ swe_towns.2 = {
 		ai_chance = {
 			base = 25
 		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 }
 
@@ -234,6 +235,7 @@ swe_towns.3 = {
 		ai_chance = {
 			base = 25
 		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 }
 
@@ -400,6 +402,7 @@ swe_towns.6 = {
 		ai_chance = {
 			base = 25
 		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 }
 
@@ -455,5 +458,6 @@ swe_towns.7 = {
 		ai_chance = {
 			base = 25
 		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }

@@ -74,7 +74,6 @@ swe_baltic.1 = {
 			}
 			add_location_modifier = { modifier = swe_baltic_town_privileges years = modifier_duration_years_very_long }
 		}
-		set_variable = swe_baltic_privileges_confirmed
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
 	}
 
@@ -95,7 +94,6 @@ swe_baltic.1 = {
 				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
 			}
 		}
-		set_variable = swe_baltic_swedish_law
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
 	}
 }
@@ -158,7 +156,6 @@ swe_baltic.2 = {
 		location:riga = {
 			add_location_modifier = { modifier = swe_baltic_town_privileges years = modifier_duration_years_very_long }
 		}
-		set_variable = swe_baltic_privileges_confirmed
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
@@ -183,7 +180,6 @@ swe_baltic.2 = {
 		location:riga = {
 			add_location_modifier = { modifier = swe_riga_licent years = modifier_duration_years_very_long }
 		}
-		set_variable = swe_baltic_swedish_law
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
 	}

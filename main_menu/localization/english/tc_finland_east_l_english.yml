@@ -31,10 +31,10 @@
  swe_finland_east.2.historical_info: "Gunilla Johansdotter (Bese) married the knight Erik Turesson (Bielke) in 1490, and he became lord of Viborg and Sankt Olofsborg in 1499. When he died in 1511 she ran Viborg alone, handling its finances and its diplomacy along the eastern border. The privy council expected her to hand the castle to a new lord, Nils Bosson (Grip), in exchange for another fief. Dissatisfied with the offer, she refused to let him in, and allied herself with the regent Sten Sture the Younger. The council was wary of open conflict with someone who held two castles on an unstable border. After negotiations she was guaranteed a better fief, and her son-in-law Tönne Eriksson (Tott) became lord of Viborg, with her daughter Karin as lady of the castle. Gunilla moved to Stora Benhamra in Uppland, where she lived until about 1553."
  swe_finland_east.2.a: "Give her better terms."
  swe_finland_east.2.a.entry: "The widow of Viborg was given better terms."
- swe_finland_east.2.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_lady$ for 25 years."
+ swe_finland_east.2.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_lady$ for 15 years."
  swe_finland_east.2.b: "Send men to open the gates."
  swe_finland_east.2.b.entry: "The gates of Viborg were forced in the Crown's name."
- swe_finland_east.2.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_gates_forced$ for 20 years."
+ swe_finland_east.2.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('vyborg_province')] gains $STATIC_MODIFIER_NAME_swe_viborg_gates_forced$ for 10 years."
 
  swe_finland_east.3.title: "The Margrave's Fief"
  swe_finland_east.3.entry: "$swe_finland_east.3.title$"

@@ -199,13 +199,13 @@ swe_lappmark.3 = {
 		location:lulea = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_sami_fishing_waters years = 25 }
+				add_location_modifier = { modifier = swe_sami_fishing_waters years = 15 }
 			}
 		}
 		location:umea = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_sami_fishing_waters years = 25 }
+				add_location_modifier = { modifier = swe_sami_fishing_waters years = 15 }
 			}
 		}
 	}
@@ -393,14 +393,7 @@ swe_lappmark.6 = {
 		owns = location:silbojock
 	}
 
-	illustration_tags = {
-		10 = angry
-		10 = exterior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
-	}
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_silver.dds"
 
 	option = {
 		name = swe_lappmark.6.a
