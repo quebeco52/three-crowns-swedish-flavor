@@ -1,0 +1,413 @@
+﻿namespace = swe_finland_west
+
+# Content for western Finland: Satakunta, Nyland, Österbotten and Åland. Sweden owns every location these events
+# need from 1337, so they should fire in nearly every game unless the land has been lost.
+
+# Albrekt's letter of 12 July 1367 ordered a fortress in "Satagundia" taken down as too burdensome, and a new one
+# built in a better place. Some historians read this as Kumo and Korsholm, which is disputed. Modifiers rather than
+# a building, so no free castle.
+swe_finland_west.1 = {
+	type = country_event
+	title = swe_finland_west.1.title
+	desc = swe_finland_west.1.desc
+	outcome = neutral
+	historical_info = swe_finland_west.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1365.1.1
+		to = 1385.1.1
+		monthly_chance = 3 # Median late 1366
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:bjorneborg
+		owns = location:korsholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_finland_west.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:bjorneborg = {
+			add_location_modifier = { modifier = swe_satakunta_relieved years = 25 }
+		}
+		location:korsholm = {
+			add_location_modifier = { modifier = swe_korsholm_coast_watch years = 50 }
+		}
+	}
+
+	option = {
+		name = swe_finland_west.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:bjorneborg = {
+			add_location_modifier = { modifier = swe_kumo_castle_burden years = 25 }
+		}
+	}
+}
+
+# The Victual Brothers held Korsholm from 1396 until they surrendered it by 20 April 1399, and Margareta then made
+# a former pirate captain, Otte Peccatel, its bailiff. Stands alone from vanilla's Gotland event, flavor_swe_teu.1.
+swe_finland_west.2 = {
+	type = country_event
+	title = swe_finland_west.2.title
+	desc = swe_finland_west.2.desc
+	outcome = neutral
+	historical_info = swe_finland_west.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1396.1.1
+		to = 1420.1.1
+		monthly_chance = 3 # Median late 1397
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:korsholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_finland_west.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:korsholm = {
+			change_prosperity = prosperity_mild_penalty
+			add_location_modifier = { modifier = swe_pirate_bailiff years = 25 }
+		}
+	}
+
+	option = {
+		name = swe_finland_west.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = -4 }
+		location:korsholm = {
+			change_prosperity = prosperity_mild_penalty
+		}
+	}
+}
+
+# David of Ania's rising in Upper Satakunta, autumn 1438, settled at Lempäälä with a pledge of 9 January 1439.
+# The story rests on one Wikipedia page citing DF 2279. Its claim that Karl Knutsson paid David is flagged there
+# as unsupported, so it's left out.
+swe_finland_west.3 = {
+	type = country_event
+	title = swe_finland_west.3.title
+	desc = swe_finland_west.3.desc
+	outcome = neutral
+	historical_info = swe_finland_west.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1436.1.1
+		to = 1470.1.1
+		monthly_chance = 3 # Median late 1437
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		OR = {
+			owns = location:birkala
+			owns = location:sastamala
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = swe_finland_west.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_finland_west.3.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:satakunta_province }
+				add_location_modifier = { modifier = swe_lempaala_pledge years = 25 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_finland_west.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_finland_west.3.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:satakunta_province }
+				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 25 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+	}
+}
+
+# The Club War began at Kyrö on 25 November 1596, and Österbotten's joint complaint of 27 December 1599 asked Duke
+# Karl to keep the nobles out (quoted in Ylikangas's review of Lappalainen's Susimessu). One event rather than a
+# full Club War: the disaster version is still in the backlog. Fiefs followed from 1608 and were reclaimed in 1674.
+swe_finland_west.4 = {
+	type = country_event
+	title = swe_finland_west.4.title
+	desc = swe_finland_west.4.desc
+	outcome = neutral
+	historical_info = swe_finland_west.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1596.1.1
+		to = 1650.1.1
+		monthly_chance = 3 # Median late 1597
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:korsholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_finland_west.4.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_finland_west.4.a_tt
+			every_owned_location = {
+				limit = { swe_osterbotten_trigger = yes }
+				add_location_modifier = { modifier = swe_free_osterbotten years = 50 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_finland_west.4.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_finland_west.4.b_tt
+			every_owned_location = {
+				limit = { swe_osterbotten_trigger = yes }
+				add_location_modifier = { modifier = swe_osterbotten_fiefs years = 50 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_severe_penalty }
+	}
+}
+
+# Peasant sailing: limited by the town law of c.1350 and the ordinance of 1614, probably never strictly enforced,
+# and lifted by the decree of 3 December 1765. Locations follow Jutikkala's figures for c.1800: Åland (276 ship
+# part-owners) and the coast from Rimito to Sjundeå (141). Sauvo-Karuna had none, so it's left out. Option B's 150
+# years ends around 1765.
+swe_finland_west.5 = {
+	type = country_event
+	title = swe_finland_west.5.title
+	desc = swe_finland_west.5.desc
+	outcome = neutral
+	historical_info = swe_finland_west.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1614.1.1
+		to = 1700.1.1
+		monthly_chance = 3 # Median late 1615
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kastelholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_finland_west.5.a
+		ai_chance = {
+			base = 25
+		}
+
+		location:kastelholm = {
+			add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+		}
+		location:ekenas = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+			}
+		}
+		location:sjundea = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_skipper_ban years = 50 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_finland_west.5.b
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:kastelholm = {
+			add_location_modifier = { modifier = swe_peasant_skippers years = 150 }
+		}
+		location:ekenas = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_peasant_skippers years = 150 }
+			}
+		}
+		location:sjundea = {
+			if = {
+				limit = { owner ?= root }
+				add_location_modifier = { modifier = swe_peasant_skippers years = 150 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# The ironworks of western Nyland, chartered to spare Sweden's forests: Fiskars 1649, Antskog, Billnäs and Fagervik.
+# Sjundeå stands in for them, so Ekenäs keeps its fish. Iron brings it under swe_bergskollegium's location bonus
+# without a new tier. Same change_raw_material as vanilla's flavor_swe.39.
+swe_finland_west.6 = {
+	type = country_event
+	title = swe_finland_west.6.title
+	desc = swe_finland_west.6.desc
+	outcome = neutral
+	historical_info = swe_finland_west.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1640.1.1
+		to = 1720.1.1
+		monthly_chance = 3 # Median late 1641
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:sjundea
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_finland_west.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:sjundea = {
+			change_raw_material = goods:iron
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_finland_west.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_finland_west.6.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:nyland_province }
+				add_location_modifier = { modifier = swe_nyland_forests years = 50 }
+			}
+		}
+	}
+}

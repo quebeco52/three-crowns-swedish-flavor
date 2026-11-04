@@ -6,6 +6,7 @@
  sundsvall: "Sundsvall"
  ulricehamn: "Ulricehamn"
  ostersund: "Östersund"
+ kristinestad: "Kristinestad"
 
  STATIC_MODIFIER_NAME_swe_ostersund_freedoms: "Östersund's Freedoms"
  STATIC_MODIFIER_DESC_swe_ostersund_freedoms: "For its first twenty years the new town pays no taxes and has no guilds or trade restrictions, and settlers are moving in."
@@ -63,3 +64,12 @@
  swe_towns.6.a.entry: "Östersund is founded."
  swe_towns.6.b: "Jämtland can do without a town."
  swe_towns.6.b.entry: "[ShowLocationNameWithNoTooltip('froso')] stays the heart of Jämtland."
+
+ swe_towns.7.title: "A Town at Koppö"
+ swe_towns.7.entry: "$swe_towns.7.title$"
+ swe_towns.7.desc: "Our governor-general in Finland has a passion for founding towns, and he now wants one on the peninsula of [ShowLocationName('koppo')]. His surveyor would lay it out with a straight grid of streets, in the modern fashion, and he proposes to name it after his wife. All he needs is the Crown's blessing and a little of its money."
+ swe_towns.7.historical_info: "On 5 December 1649, at Åbo castle, Count Per Brahe the Younger, Governor-General of Finland, issued a letter of foundation for a new town on the peninsula of Koppö in Lappfjärd parish. The surveyor Claes Claesson drew its Renaissance grid plan in 1651, and from 1 March 1651 the town was called Christinestad, after Brahe's wife, Christina Catharina Stenbock."
+ swe_towns.7.a: "Found Kristinestad."
+ swe_towns.7.a.entry: "Kristinestad is founded."
+ swe_towns.7.b: "The coast has towns enough."
+ swe_towns.7.b.entry: "[ShowLocationNameWithNoTooltip('koppo')] stays as it is."

@@ -262,3 +262,274 @@ swe_flor_manufactory = {
 	local_fiber_crops_output_modifier = 0.25
 	local_cloth_output_modifier = 0.1
 }
+
+# Added for 25 years by swe_lappmark.1 to Sweden's locations in Västerbotten and the Lappmarks. The conversion
+# and unrest of swe_lutheran_parishes, without its migration: priests came, not settlers.
+swe_uppsala_mission = {
+	game_data = {
+		category = location
+	}
+	local_pop_conversion_speed_modifier = 0.1
+	local_unrest = 0.1
+}
+
+# Added to abo for 25 years by swe_lappmark.1 when the far north is left to the Bishop of Åbo. The same size
+# as the crown power of swe_forsvenskning.
+swe_abo_diocese_north = {
+	game_data = {
+		category = location
+	}
+	local_clergy_estate_power = 0.1
+}
+
+# Added to gratesk for 50 years by swe_lappmark.3. The migration pull of swe_lutheran_parishes, below
+# swe_lappmark_settlers (0.3): settlers followed the fishermen without any tax freedoms.
+swe_gratrask_fishing_rights = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.2
+}
+
+# Added to lulea and umea for 25 years by swe_lappmark.3 when the Crown leaves the lake alone. The unrest of
+# swe_finland_at_mora.
+swe_sami_fishing_waters = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+}
+
+# Added for 25 years by swe_lappmark.4 to Sweden's locations in Västerbotten and the Lappmarks. The unrest of
+# swe_forsvenskning.
+swe_reindeer_tax = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+}
+
+# Added for 25 years by swe_lappmark.5 to Sweden's far-north locations with Sámi pops. The conversion of
+# swe_lutheran_parishes, without its unrest: teaching in their own language met less resistance.
+swe_sami_schools = {
+	game_data = {
+		category = location
+	}
+	local_pop_conversion_speed_modifier = 0.1
+}
+
+# Added for 25 years by swe_lappmark.6 to Sweden's locations in Pite Lappmark. The unrest of swe_forsvenskning,
+# and the migration of swe_lutheran_parishes reversed: people fled to Norway and the coast.
+swe_silver_road = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+	local_migration_attraction = -0.2
+}
+
+# Added to tornea by swe_lappmark.7 when the Crown insists on its site. The crown power and unrest of
+# swe_forsvenskning.
+swe_tornea_crown_town = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to tornea by swe_lappmark.7 when the town goes on Suensaari. The market access of market_charter (0.1)
+# and the merchant capacity of swe_russian_staple (0.1).
+swe_tornea_trade_district = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_merchant_capacity_modifier = 0.1
+}
+
+# Added to bjorneborg for 25 years by swe_finland_west.1 when the fortress is pulled down. The unrest of
+# swe_finland_at_mora.
+swe_satakunta_relieved = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+}
+
+# Added to korsholm for 50 years by swe_finland_west.1, on the new fortress. The crown power of swe_norrland_bailiff
+# and the market access of market_charter (0.1), since it stood by the market and watched the coast trade.
+swe_korsholm_coast_watch = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_market_access = 0.1
+}
+
+# Added to bjorneborg for 25 years by swe_finland_west.1 when the fortress stays. The same as swe_norrland_bailiff.
+swe_kumo_castle_burden = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to korsholm for 25 years by swe_finland_west.2 when a pirate is made bailiff. The crown power of
+# swe_faxeholm_ruins and the unrest of swe_norrland_bailiff: cheap, but he wasn't the Crown's man.
+swe_pirate_bailiff = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = -0.1
+	local_unrest = 0.1
+}
+
+# Added for 25 years by swe_finland_west.3 to Sweden's locations in Satakunta after talks. The same as
+# swe_finland_at_mora.
+swe_lempaala_pledge = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasant_enfranchisment = 0.05
+	local_crown_estate_power = -0.1
+}
+
+# Added for 25 years by swe_finland_west.3 to Sweden's locations in Satakunta when the rising is crushed. The same
+# as swe_norrland_bailiff.
+swe_satakunta_bailiffs = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added for 50 years by swe_finland_west.4 to Sweden's locations in Österbotten when the nobles are kept out. The
+# unrest and enfranchisement of swe_finland_at_mora, with noble power in place of its crown power.
+swe_free_osterbotten = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_peasant_enfranchisment = 0.05
+	local_nobles_estate_power = -0.1
+}
+
+# Added for 50 years by swe_finland_west.4 to Sweden's locations in Österbotten when the fiefs are granted.
+# swe_norrland_bailiff with noble power in place of its crown power.
+swe_osterbotten_fiefs = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added to kastelholm, ekenas and sjundea for 50 years by swe_finland_west.5 when the law is enforced. The market
+# access of swe_peasant_skippers reversed, and the unrest of swe_norrland_bailiff.
+swe_skipper_ban = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+	local_market_access = -0.1
+}
+
+# Added to kastelholm, ekenas and sjundea for 150 years by swe_finland_west.5 when the skippers keep sailing. The
+# market access of market_charter (0.1) and the fish output of swe_norrland_fishing_towns.
+swe_peasant_skippers = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_fish_output_modifier = 0.1
+}
+
+# Added for 50 years by swe_finland_west.6 to Sweden's locations in Nyland when the forests are kept. The lumber
+# output of the Tar Company tier on swe_bottniska_handelstvanget.
+swe_nyland_forests = {
+	game_data = {
+		category = location
+	}
+	local_lumber_output_modifier = 0.1
+}
+
+# Added to olofsborg for 50 years by swe_finland_east.1 when Sweden holds the line. The defence of
+# swe_jamtland_tings and the crown power of swe_norrland_bailiff.
+swe_olofsborg_line = {
+	game_data = {
+		category = location
+	}
+	local_defensive = 0.25
+	local_crown_estate_power = 0.1
+}
+
+# Added to olofsborg for 25 years by swe_finland_east.1 when the quarrel is left alone. The unrest of
+# swe_finland_at_mora and the market access of market_charter (0.1).
+swe_olofsborg_quiet_border = {
+	game_data = {
+		category = location
+	}
+	local_unrest = -0.1
+	local_market_access = 0.1
+}
+
+# Added for 25 years by swe_finland_east.2 to Sweden's locations in Vyborg province after the widow gets better
+# terms. The crown power of swe_faxeholm_ruins.
+swe_viborg_lady = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = -0.1
+}
+
+# Added for 25 years by swe_finland_east.2 to Sweden's locations in Vyborg province when the gates are forced. The
+# same as swe_norrland_bailiff.
+swe_viborg_gates_forced = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_unrest = 0.1
+}
+
+# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief ends. The crown
+# power of swe_norrland_bailiff.
+swe_viborg_royal_governor = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief stays. The crown
+# power of swe_faxeholm_ruins and the defence of swe_jamtland_tings: its holders paid to defend the border.
+swe_viborg_margraves = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = -0.1
+	local_defensive = 0.25
+}
+
+# Added for 50 years by swe_finland_east.4 to Savolax, Kajanaland and Tavastland, unless a foreign country holds
+# the location. The migration of swe_lutheran_parishes, below swe_lappmark_settlers (0.3), as with
+# swe_gratrask_fishing_rights.
+swe_crown_wilderness = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.2
+}
+
+# Added to kajana for 25 years by swe_finland_east.6 when the cloth is returned. The market access of
+# market_charter (0.1).
+swe_kajana_border_trade = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+}

@@ -35,6 +35,21 @@ swe_birkarl_rights = {
 		local_crown_estate_power = -0.1
 	}
 
+	# The Piteå ting of 1424 (swe_lappmark.2) gave each Sámi one birkarl and barred harm or overtaxing. Kept
+	# inside this privilege rather than as one of its own. Half the fur bonus above, and the unrest of
+	# swe_finland_at_mora: fewer furs squeezed out of the Sámi, and less trouble over them.
+	location_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = swe_birkarl_ting_location_bonus
+				owner = { has_variable = swe_birkarl_ting }
+				swe_birkarl_lands_trigger = yes
+			}
+		}
+		local_fur_output_modifier = -0.1
+		local_unrest = -0.1
+	}
+
 	country_modifier = {
 		peasants_estate_target_satisfaction = small_privilege_target_satisfaction
 		global_peasants_estate_power = 0.1

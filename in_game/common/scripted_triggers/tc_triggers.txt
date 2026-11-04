@@ -23,6 +23,18 @@ swe_bothnian_coast_trigger = {
 	}
 }
 
+# Västerbotten and the five lappmarks, where the swe_lappmark events act on Sweden's own locations
+swe_far_north_trigger = {
+	OR = {
+		province_definition = province_definition:vasterbotten_province
+		province_definition = province_definition:ume_lappmark_province
+		province_definition = province_definition:pite_lappmark_province
+		province_definition = province_definition:lule_lappmark_province
+		province_definition = province_definition:torne_lappmark_province
+		province_definition = province_definition:kemi_lappmark_province
+	}
+}
+
 # The five lappmarks of the Lappmark Edict (swe_lappmarksplakatet_decision)
 swe_lappmarks_trigger = {
 	OR = {
