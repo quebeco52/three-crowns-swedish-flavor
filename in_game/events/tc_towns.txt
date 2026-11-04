@@ -58,37 +58,50 @@ swe_towns.1 = {
 			change_prosperity = prosperity_mild_bonus
 		}
 		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta)
-		add_migration = {
-			owner = this
-			from_location = location:ekenas
-			to_location = location:helsinge
-			type = pop_type:burghers
-			amount = 0.05
-			months = 24
+		# The trigger only needs one of the four, so each move checks its own town
+		if = {
+			limit = { owns = location:ekenas }
+			add_migration = {
+				owner = this
+				from_location = location:ekenas
+				to_location = location:helsinge
+				type = pop_type:burghers
+				amount = 0.05
+				months = 24
+			}
 		}
-		add_migration = {
-			owner = this
-			from_location = location:porvoo
-			to_location = location:helsinge
-			type = pop_type:burghers
-			amount = 0.05
-			months = 24
+		if = {
+			limit = { owns = location:porvoo }
+			add_migration = {
+				owner = this
+				from_location = location:porvoo
+				to_location = location:helsinge
+				type = pop_type:burghers
+				amount = 0.05
+				months = 24
+			}
 		}
-		add_migration = {
-			owner = this
-			from_location = location:raumo
-			to_location = location:helsinge
-			type = pop_type:burghers
-			amount = 0.05
-			months = 24
+		if = {
+			limit = { owns = location:raumo }
+			add_migration = {
+				owner = this
+				from_location = location:raumo
+				to_location = location:helsinge
+				type = pop_type:burghers
+				amount = 0.05
+				months = 24
+			}
 		}
-		add_migration = {
-			owner = this
-			from_location = location:bjorneborg
-			to_location = location:helsinge
-			type = pop_type:burghers
-			amount = 0.05
-			months = 24
+		if = {
+			limit = { owns = location:bjorneborg }
+			add_migration = {
+				owner = this
+				from_location = location:bjorneborg
+				to_location = location:helsinge
+				type = pop_type:burghers
+				amount = 0.05
+				months = 24
+			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
 	}
