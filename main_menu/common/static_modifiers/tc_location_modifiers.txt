@@ -19,7 +19,7 @@ swe_alvkarleby_salmon_fishery = {
 	local_fish_output_modifier = 0.25
 }
 
-# Added by swe_towns.6 for 20 years.
+# Added by swe_towns.6 for 20 years. The migration pull of vanilla's available_free_land.
 swe_ostersund_freedoms = {
 	game_data = {
 		category = location
@@ -38,6 +38,8 @@ swe_lappmark_settlers = {
 
 # Added for 20 years by swe_scania.1 to the Danish-culture locations of Skåneland, by swe_jamtland.1
 # and swe_jamtland.2 to Jämtland and Idre, and by swe_baltic.1 and .2 (Swedish law) to Estonia, Rotalia and Livonia.
+# Scaled from vanilla's saints_enforced: the same unrest and under half its assimilation speed (0.25). The crown
+# power of fontainebleau_hunting_lodge.
 swe_forsvenskning = {
 	game_data = {
 		category = location
@@ -274,7 +276,7 @@ swe_uppsala_mission = {
 }
 
 # Added to abo for 25 years by swe_lappmark.1 when the far north is left to the Bishop of Åbo. The clergy power of
-# vanilla's smallest static modifiers (0.25).
+# vanilla's kie_patriarch_controlled_metropolitan, the smallest gain in any static modifier (0.25).
 swe_abo_diocese_north = {
 	game_data = {
 		category = location

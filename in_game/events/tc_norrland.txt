@@ -5,8 +5,9 @@
 
 # The castle at Faxeholm burns. The Vitalian Brothers built it in 1395/96, the Crown held it by the end of
 # 1398, and the Hälsingar stormed and burned it in 1434. It isn't tied to vanilla's Engelbrekt event
-# (flavor_swe.2), which rarely fires: it only needs unhappy peasants. No castle is built or destroyed, since
-# forts are the player's to build by hand.
+# (flavor_swe.2), which rarely fires, or to the realm's peasant satisfaction, which says little about one
+# castle: it was above 0.5 in every save read. Ownership and the date are enough. No castle is built or
+# destroyed, since forts are the player's to build by hand.
 swe_norrland.1 = {
 	type = country_event
 	title = swe_norrland.1.title
@@ -18,15 +19,14 @@ swe_norrland.1 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1395.1.1
+		from = 1432.1.1
 		to = 1500.1.1
-		monthly_chance = 3 # Median about two years once the peasants are unhappy
+		monthly_chance = 3 # Median about two years, so about 1434
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:soderala
-		estate_satisfaction:peasants_estate < 0.5
 	}
 
 	illustration_tags = {

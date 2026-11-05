@@ -166,7 +166,9 @@ swe_stockholm.2 = {
 
 # Serafimerorden. Fredrik I founded the Order of the Seraphim in 1748; the arms of its knights hang in
 # Riddarholmskyrkan, and its bells ring when one of them is buried. Fires once the church stands
-# (swe_stockholm.2), at any date. Founding it makes swe_order_of_the_seraphim the national order.
+# (swe_stockholm.2), from about 1650, when Kristina first proposed a real Swedish order in council (Immanuelsorden,
+# 2 August 1650; one source, a Riksdag report of 1919 citing the council minutes). Vanilla's order foundings all have
+# date windows too. Founding it makes swe_order_of_the_seraphim the national order.
 # Balanced against vanilla flavor_plc.6 (White Eagle: the cost and prestige of founding) and
 # flavor_brapru.26 (Black Eagle: the nobles' displeasure when the order is refused).
 swe_stockholm.3 = {
@@ -180,9 +182,9 @@ swe_stockholm.3 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1337.1.1
+		from = 1648.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after the church stands
+		monthly_chance = 3 # Median about two years, so about 1650 if the church already stands
 	}
 
 	trigger = {

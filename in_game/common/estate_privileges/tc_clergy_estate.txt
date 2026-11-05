@@ -8,9 +8,6 @@ swe_uppsala_mote = {
 	potential = {
 		has_or_had_tag = SWE
 		religion = religion:lutheran
-	}
-
-	allow = {
 		has_unlocked_estate_privilege_trigger = { type = swe_uppsala_mote }
 	}
 

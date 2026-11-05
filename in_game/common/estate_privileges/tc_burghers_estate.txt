@@ -9,10 +9,10 @@ swe_bottniska_handelstvanget = {
 
 	potential = {
 		has_or_had_tag = SWE
+		has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget }
 	}
 
 	allow = {
-		has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget }
 		NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
 	}
 

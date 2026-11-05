@@ -2,7 +2,7 @@
 
 # The Norwegian lords ask for a king of their own, as at Varberg in 1343, when Magnus Eriksson's younger son
 # Haakon was given Norway. Fires on the state of the union, not the date: Sweden shares its ruler with Norway,
-# that ruler has a son who is nobody's heir, and the Norwegian lords are unhappy. Norway gets its new ruler
+# that ruler has a son who is nobody's heir, and the Norwegian lords aren't well content. Norway gets its new ruler
 # through set_new_ruler, not set_new_ruler_with_union_if_senior, so the union splits without unionevents.100
 # and nobody gains cb_claim_throne.
 # Balanced against vanilla unionevents.1 (opinion_restrict_nobles and a noble penalty)
@@ -32,9 +32,10 @@ swe_union.1 = {
 		}
 		c:NOR ?= {
 			in_union_with = root
-			# Same noble threshold as vanilla free_cities.txt
+			# Norway's nobles sit at about 0.5 in saves, so this holds unless they are kept well content, which is the
+			# player's way to avoid it. The 0.45 of vanilla free_cities.txt almost never held: no firing in two AI runs.
 			OR = {
-				estate_satisfaction = { estate_type = estate_type:nobles_estate value < 0.45 }
+				estate_satisfaction = { estate_type = estate_type:nobles_estate value < 0.6 }
 				opinion = { target = root value < 0 }
 			}
 		}

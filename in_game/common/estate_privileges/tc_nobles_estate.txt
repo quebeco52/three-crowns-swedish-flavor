@@ -1,12 +1,9 @@
 ﻿swe_konungabalken = {
 	estate = nobles_estate
 
+	# Unlocked by tc_on_game_start and locked again by swe_vasa.3, which takes it off the list for good
 	potential = {
 		has_or_had_tag = SWE
-	}
-
-	# Unlocked by tc_on_game_start and locked again by swe_vasa.3, like vanilla's justicia_de_aragon
-	allow = {
 		has_unlocked_estate_privilege_trigger = { type = swe_konungabalken }
 	}
 
