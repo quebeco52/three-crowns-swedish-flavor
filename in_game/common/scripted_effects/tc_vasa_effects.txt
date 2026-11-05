@@ -55,13 +55,13 @@ swe_select_or_create_gustav_vasa = {
 			estate = estate_type:nobles_estate
 			female = no
 			# 220-250 total, like vanilla's Birger Jarl (242) and Stefan Dušan (235)
-			adm = { 80 90 }
+			adm = { 85 90 }
 			dip = { 60 70 }
-			mil = { 80 90 }
+			mil = { 85 90 }
 			# Two ruler traits, like 227 of vanilla's 1337 characters. Lawgiver needs ADM >= 66, which adm 80-90 always meets
 			add_trait = trait:industrious
 			add_trait = trait:lawgiver
-			# Fertility 100 like the historical figures vanilla creates
+			# Fertility 100 like the historical figures vanilla creates. It's also the cap: 200 reads as 100 in a save
 			fertility = 100
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
@@ -71,8 +71,8 @@ swe_select_or_create_gustav_vasa = {
 
 # Saves the man the estates put forward for the crown (swe_vasa.2) as scope:swe_vasa_candidate.
 # The crown goes to the House of Vasa, not to Gustav in person: Gustav if he can take it,
-# otherwise the eldest grown man of the house in the country, otherwise a new lord of the
-# house with ordinary stats. Only Gustav has fixed stats and traits.
+# otherwise the eldest grown man of the house in the country, who keeps his own stats, otherwise
+# a new lord of the house with good stats. Only Gustav has fixed traits.
 swe_select_vasa_candidate = {
 	if = {
 		# swe_vasa.1 never fired, so Gustav enters here
@@ -97,6 +97,7 @@ swe_select_vasa_candidate = {
 			limit = {
 				any_character = {
 					is_alive = yes
+					owner = root
 					dynasty ?= scope:swe_vasa_house
 					is_female = no
 					is_ruler = no
@@ -106,6 +107,7 @@ swe_select_vasa_candidate = {
 			ordered_character = {
 				limit = {
 					is_alive = yes
+					owner = root
 					dynasty ?= scope:swe_vasa_house
 					is_female = no
 					is_ruler = no
@@ -125,8 +127,57 @@ swe_select_vasa_candidate = {
 				female = no
 				min_age = 25
 				max_age = 40
+				# 180-210 total, a step below Gustav's 220-250. Rulers in a test run: median 149, top 5% from 212
+				adm = { 60 80 }
+				dip = { 60 80 }
+				mil = { 60 80 }
+				# Same as Gustav, since the line now rests on this man
+				fertility = 100
 				save_scope_as = swe_vasa_candidate
 			}
 		}
+	}
+}
+
+# Gustav's wife conceives through the game's own pregnancy, so the child's sex, stats and name are the game's.
+# Only while he rules and has fewer than two living sons, and only with a living wife under vanilla's
+# MAX_PREGNANCY_AGE: it never makes a wife, and no other Vasa gets it. The one exception to "no scripted
+# heirs", on purpose: in a test run about one ruler in five died with no living son. Run yearly from
+# tc_yearly_country_pulse. Same effect as vanilla flavor_por.2001.a.
+swe_gustav_vasa_sons = {
+	if = {
+		limit = {
+			ruler ?= character:swe_gustav_vasa
+			character:swe_gustav_vasa = {
+				age_in_years >= 30
+				NOT = {
+					any_child = {
+						count >= 2
+						is_alive = yes
+						is_female = no
+					}
+				}
+				any_spouse = {
+					is_alive = yes
+					is_female = yes
+					age_in_years < 40
+					is_pregnant = no
+				}
+			}
+		}
+		character:swe_gustav_vasa = {
+			random_spouse = {
+				limit = {
+					is_alive = yes
+					is_female = yes
+					age_in_years < 40
+					is_pregnant = no
+				}
+				save_scope_as = swe_gustav_vasa_wife
+			}
+			impregnate = scope:swe_gustav_vasa_wife
+		}
+		# Marker only: the child looks like any other, so this is how a save shows it fired
+		set_variable = swe_gustav_vasa_nudged
 	}
 }

@@ -5,9 +5,9 @@ INJECT:mining_law = {
 	# Bergskollegium (swe_bergskollegium_decision): the Board of Mines ran every mine and ironworks
 	# of the realm for the Crown, so the Crown gains power in the mines rather than output, which
 	# falun_base, mulltimmer_masugn and polhem_machina_nova already cover.
-	# Balanced against burghers_mining_law (same mine expansion cost) and nobles_mining_law
-	# (-0.1 rgo build time everywhere): no estate satisfaction or societal drift, and the rest
-	# only in mining locations.
+	# Balanced against zimbabwe_mining_law (same mine expansion cost, without its output) and
+	# nobles_mining_law (-0.1 rgo build time everywhere): no estate satisfaction or societal drift,
+	# and the rest only in mining locations.
 	swe_bergskollegium = {
 		unique = yes
 		potential = {
@@ -15,7 +15,7 @@ INJECT:mining_law = {
 			has_unlocked_policy_trigger = { type = swe_bergskollegium }
 		}
 		country_modifier = {
-			expand_rgo_mining_cost_modifier = -0.1
+			expand_rgo_mining_cost_modifier = -0.2
 		}
 		# Every good vanilla mines (method = mining in 00_raw_materials.txt)
 		location_modifier = {

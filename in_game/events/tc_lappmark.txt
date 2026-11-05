@@ -212,8 +212,9 @@ swe_lappmark.3 = {
 }
 
 # The mountain Sámi turn from hunting to reindeer herding. By the 1600s and 1700s many had switched entirely,
-# and a register of 1602 already counted each taxpayer's reindeer. Vanilla has no reindeer good, so livestock
-# is the closest (swe_reindeer_herds). The change happens whichever option is chosen, so both options show it.
+# and a register of 1602 already counted each taxpayer's reindeer. Vanilla has no reindeer good, so the herds are
+# a location modifier and the goods stay as they are (swe_reindeer_herds). It lands whichever option is chosen, so
+# both options show it.
 # The tax only touches locations with Sámi pops, so Swedish parishes don't get its unrest.
 swe_lappmark.4 = {
 	type = country_event

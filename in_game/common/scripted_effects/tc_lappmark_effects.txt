@@ -17,96 +17,30 @@ swe_open_silbojock = {
 	}
 }
 
-# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good, so
-# livestock is the closest. The forest locations keep their goods, since the forest Sámi kept a mixed living.
-# Foreign-held land is left alone.
+# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good and never
+# forces a change of goods on the player, so these locations keep what they produce and gain a modifier. Silbojock
+# stands for the mountain Sámi of Pite Lappmark and keeps the modifier's food once the mine opens. Tärna is left out:
+# Ume Lappmark's mountain Sámi were counted under Pite or Norway in 1602. The forest locations get nothing, since the
+# forest Sámi kept a mixed living. Foreign-held land is left alone.
+swe_reindeer_herds_location = {
+	if = {
+		limit = {
+			OR = {
+				NOT = { exists = owner }
+				owner ?= root
+			}
+		}
+		add_location_modifier = { modifier = swe_reindeer_herding months = -1 }
+	}
+}
+
 swe_reindeer_herds = {
-	location:tarna = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:sorsele = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:kvikkjock = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:sarek = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:nikkaluokta = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:kasivarren = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:abisko = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
-	location:raunala = {
-		if = {
-			limit = {
-				OR = {
-					NOT = { exists = owner }
-					owner ?= root
-				}
-			}
-			change_raw_material = goods:livestock
-		}
-	}
+	location:sorsele = { swe_reindeer_herds_location = yes }
+	location:silbojock = { swe_reindeer_herds_location = yes }
+	location:kvikkjock = { swe_reindeer_herds_location = yes }
+	location:sarek = { swe_reindeer_herds_location = yes }
+	location:nikkaluokta = { swe_reindeer_herds_location = yes }
+	location:kasivarren = { swe_reindeer_herds_location = yes }
+	location:abisko = { swe_reindeer_herds_location = yes }
+	location:raunala = { swe_reindeer_herds_location = yes }
 }

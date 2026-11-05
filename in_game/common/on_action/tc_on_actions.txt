@@ -11,6 +11,26 @@ on_new_ruler = {
 	on_actions = { tc_on_new_ruler }
 }
 
+yearly_country_pulse = {
+	on_actions = { tc_yearly_country_pulse }
+}
+
+# Gustav Vasa's line: a third a year while he has fewer than two living sons (swe_gustav_vasa_sons).
+# The cheap outer trigger follows vanilla's advice in country_yearly.txt.
+tc_yearly_country_pulse = {
+	trigger = {
+		has_or_had_tag = SWE
+		exists = character:swe_gustav_vasa
+	}
+
+	effect = {
+		random = {
+			chance = 33
+			swe_gustav_vasa_sons = yes
+		}
+	}
+}
+
 # A new Swedish monarch under Konungabalken is asked to ride the Eriksgata (swe_eriksgata.1), after any
 # funeral. Delayed like vanilla's culture_religion_events.2, which still reads scope:new_ruler when it fires.
 tc_on_new_ruler = {

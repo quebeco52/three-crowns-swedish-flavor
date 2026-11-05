@@ -311,6 +311,19 @@ swe_reindeer_tax = {
 	local_monthly_prosperity = -0.001
 }
 
+# Added permanently by swe_lappmark.4 (swe_reindeer_herds) to the eight high-country locations, whichever option is
+# chosen, since herding is a lasting way of life. These locations keep their goods, so each part only counts where it
+# can: the wild game bonus of vanilla's the_book_of_hunting (0.2, there country-wide), vanilla's usual smallest fur
+# bonus (0.1), and vanilla's mild food step, which also reaches the stone and lumber locations.
+swe_reindeer_herding = {
+	game_data = {
+		category = location
+	}
+	local_wild_game_output_modifier = 0.2
+	local_fur_output_modifier = 0.1
+	local_monthly_food_modifier = monthly_food_productivity_mild_bonus
+}
+
 # Added for 25 years by swe_lappmark.5 to Sweden's far-north locations with Sámi pops. The conversion of
 # swe_lutheran_parishes, without its unrest: teaching in their own language met less resistance. The literacy of
 # studium_privileges (0.05).
