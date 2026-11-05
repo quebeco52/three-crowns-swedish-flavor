@@ -1,0 +1,86 @@
+﻿namespace = swe_dalarna
+
+# Province and territory events for Dalarna. Sweden owns all of it from 1337 except Idre, so these should fire in
+# nearly every game unless it has been lost. Each is one self-contained event, and none spawns rebels.
+
+# Klockupproret, the bell revolt of 1531-33, over the bell tax voted at the herredagar of Örebro and Uppsala in 1531
+# (sv.wikipedia Klockupproret, citing Holmquist and Starbäck; en.wikipedia Dalecarlian rebellions, from Nordisk
+# familjebok 1906). Floda stands in for Ål and Gagnef. The anger stays in Dalarna, through its peasant pops and a
+# 10-year location modifier, in place of rebels or a country-wide estate penalty. Vanilla's flavor_swe.4 covers the
+# Reformation side and mentions the earlier bell loan of 1527 only in its history text.
+swe_dalarna.1 = {
+	type = country_event
+	title = swe_dalarna.1.title
+	desc = swe_dalarna.1.desc
+	outcome = neutral
+	historical_info = swe_dalarna.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1529.1.1
+		to = 1545.1.1
+		monthly_chance = 3 # Median early 1531
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_ruler = yes
+		owns = location:falun
+		owns = location:leksand
+		owns = location:stora_tuna
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:clergy_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_dalarna.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_dalarna.1.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:dalarna_province }
+				add_location_modifier = { modifier = swe_klockskatt years = 10 }
+				# The anger stays in Dalarna, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
+			}
+		}
+		change_gold_effect = { scale = 4 }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_dalarna.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = 2 }
+		custom_tooltip = {
+			text = swe_dalarna.1.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:dalarna_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+}

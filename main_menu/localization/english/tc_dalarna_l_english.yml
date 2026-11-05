@@ -1,0 +1,14 @@
+﻿l_english:
+ STATIC_MODIFIER_NAME_swe_klockskatt: "The Bell Tax"
+ STATIC_MODIFIER_DESC_swe_klockskatt: "The parish bells have gone to pay the Crown's debts, and the men who struck the collectors have answered for it at Kopparberget. The Crown's bailiffs are obeyed here, and resented."
+
+ swe_dalarna.1.title: "A Bell from Every Parish"
+ swe_dalarna.1.entry: "$swe_dalarna.1.title$"
+ swe_dalarna.1.desc: "The herredagar at Örebro and Uppsala have granted us a bell from every parish church, to be sold towards what we still owe Lübeck from the war. At the ting at [ShowLocationName('stora_tuna')] the men of Dalarna promised theirs. When our collectors came for them, [ShowLocationName('leksand')] beat them, Ål and Gagnef kept their bells, Tuna took back the one it had given, and the miners at Kopparberget have sided with them all. Now they offer 2,000 marks to keep their bells where they hang. The money would settle Dalarna's share at once, while bells must be taken down, carried to the coast and sold before they pay anything. But the men who struck our collectors would go unpunished."
+ swe_dalarna.1.historical_info: "The bell tax of 1531, voted at herredagar in Örebro and Uppsala, took a bell from every parish church to pay the debt to Lübeck from the war of liberation. Dalarna had promised its bells at the Tuna ting in February 1531 but turned when the collectors came: Leksand beat the king's men, Ål and Gagnef refused, and Tuna took its bell back. Gustav, occupied with Christian II's attempt to regain Denmark, accepted the Dalecarlians' offer of 2,000 marks for their bells. In January 1533 he summoned them to Kopparberget, arrived with armed men, had some of the guiltiest executed before the rest and took the withheld bells and money. Måns Nilsson of Aspeboda, Anders Persson of Rankhyttan and Ingel Hansson were taken to Stockholm and sentenced to death early in 1534."
+ swe_dalarna.1.a: "Take the bells. The ringleaders answer for it at Kopparberget."
+ swe_dalarna.1.a.entry: "The bells of Dalarna were taken, and the ringleaders punished."
+ swe_dalarna.1.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('dalarna_province')] gains $STATIC_MODIFIER_NAME_swe_klockskatt$ for 10 years, and the peasant [pops|e] there lose 10% [pop_satisfaction|e]."
+ swe_dalarna.1.b: "Take their 2,000 marks and let the bells hang."
+ swe_dalarna.1.b.entry: "Dalarna kept its bells for 2,000 marks."
+ swe_dalarna.1.b_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('dalarna_province')] gain 5% [pop_satisfaction|e]."

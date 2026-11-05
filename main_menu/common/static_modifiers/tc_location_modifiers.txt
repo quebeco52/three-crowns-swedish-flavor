@@ -711,3 +711,24 @@ swe_rademacher_forges = {
 	local_migration_attraction = 0.2
 	local_build_buildings_efficiency = 0.2
 }
+
+# Added for 10 years by swe_dalarna.1 to Sweden's locations in Dalarna when the bells are taken, in place of rebels.
+# The unrest of vanilla's lack_of_conciliar_justice (0.1), half of lit_destruction_of_romuva_sites and of swe_oxen_ban,
+# whose 0.2 hasn't been re-tested since the Tioharad rebels; the crown power of fontainebleau_hunting_lodge (0.1).
+swe_klockskatt = {
+	game_data = {
+		category = location
+	}
+	local_unrest = 0.1
+	local_crown_estate_power = 0.1
+}
+
+# Added to vadstena for 20 years by swe_ostergotland.1 when the Crown attends Katarina's shrining. The prosperity of
+# vanilla's christian_holy_site (0.001) and the unrest of sufi_shrine (-0.1), without the holy site's max control.
+swe_katarina_shrine = {
+	game_data = {
+		category = location
+	}
+	local_monthly_prosperity = 0.001
+	local_unrest = -0.1
+}

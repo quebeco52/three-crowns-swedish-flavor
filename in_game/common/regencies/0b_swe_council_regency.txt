@@ -1,0 +1,48 @@
+﻿# Förmyndarregering: when the Swedish crown passes to a child, the council of the realm governs through one of its
+# own, as it did for Magnus Eriksson (1319-32), Kristina (1632-44) and Karl XI (1660-72). Named 0b so that it sorts
+# before 1_nobles_regency.txt and, by file name, 10_consort_regency.txt: regencies have no priority key, and in the
+# 2026-11-05 test this type beat nobles_estate_regency once its allow passed. The cabinet efficiency is twice that of
+# vanilla's cabinet_head_regency (0.05), and the crown power is that of iro_assertive_council_of_fifty (-0.1).
+# Only the cabinet supplies this regent: the head of the cabinet if one has been promoted, otherwise any councillor.
+# Either must pass swe_council_regent_trigger, which bars foreigners, so a foreign head is passed over.
+# With no eligible councillor the allow fails and a vanilla type takes over, as on day one of 1337, before the seats
+# are filled. Vanilla's flavor_swe.16 and .19 need a regency that isn't a consort's, so this type doesn't block them.
+swe_council_regency = {
+	allow = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		any_cabinet_character = {
+			swe_council_regent_trigger = yes
+		}
+	}
+
+	modifier = {
+		country_cabinet_efficiency = 0.1
+		global_crown_estate_power = -0.1
+	}
+
+	start_effect = {
+		if = {
+			limit = {
+				any_cabinet_character = {
+					has_character_modifier = head_of_the_cabinet_modifier
+					swe_council_regent_trigger = yes
+				}
+			}
+			random_cabinet_character = {
+				limit = {
+					has_character_modifier = head_of_the_cabinet_modifier
+					swe_council_regent_trigger = yes
+				}
+				save_scope_as = swe_council_regent
+			}
+		}
+		else = {
+			random_cabinet_character = {
+				limit = { swe_council_regent_trigger = yes }
+				save_scope_as = swe_council_regent
+			}
+		}
+		set_regent = scope:swe_council_regent
+	}
+}

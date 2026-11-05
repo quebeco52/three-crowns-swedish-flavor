@@ -1,0 +1,13 @@
+﻿l_english:
+ STATIC_MODIFIER_NAME_swe_katarina_shrine: "The Shrine of St Katarina"
+ STATIC_MODIFIER_DESC_swe_katarina_shrine: "Pilgrims come to the abbey church to pray at the shrine of Katarina Ulfsdotter, Birgitta's daughter, and the town is the quieter and the richer for it."
+
+ swe_ostergotland.1.title: "A Shrine at Vadstena"
+ swe_ostergotland.1.entry: "$swe_ostergotland.1.title$"
+ swe_ostergotland.1.desc: "Rome has given [ShowLocationName('vadstena')] what it asked for. Our bishops appealed for Katarina Ulfsdotter, Birgitta's daughter, a commission gathered more than two hundred testimonies to her miracles, and a bull has allowed her feast to be kept in our lands. Now Innocent VIII has permitted her bones to be lifted into a shrine, and the abbey has set the day for the first of August. The house stands on land Magnus Eriksson gave it, and her mother's name has made it the foremost in the realm. Rome has still not canonised her, and a feast at Vadstena costs money that could stay in our purse."
+ swe_ostergotland.1.desc_holy_site: "$swe_ostergotland.1.desc$ Pilgrims already come to her mother's shrine here. A second would bring more."
+ swe_ostergotland.1.historical_info: "Katarina Ulfsdotter, born about 1331, followed her mother Birgitta to Rome in 1350, brought her relics home to Vadstena in 1374, became the first abbess when the convent was consecrated in 1380 and died there on 24 March 1381. The Swedish bishops appealed to Rome for her canonisation in 1474, and a commission gathered more than two hundred testimonies the next year. A bull of the 1480s beatified her and allowed her cult in Scandinavia, and in 1488 Innocent VIII extended it to every Birgittine house and permitted her relics to be shrined, which was done with great solemnity at Vadstena on 1 August 1489. No formal canonisation followed, as the Reformation ended the process, though she was entered as a saint in the Roman Martyrology. Rome keeps her feast on 24 March and Sweden on 2 August."
+ swe_ostergotland.1.a: "We attend, and the Crown pays for the feast."
+ swe_ostergotland.1.a.entry: "The Crown attended Katarina's shrining at Vadstena."
+ swe_ostergotland.1.b: "The abbey can bear its own festivities."
+ swe_ostergotland.1.b.entry: "The Crown stayed away from Vadstena."

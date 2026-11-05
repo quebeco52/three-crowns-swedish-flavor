@@ -1,0 +1,80 @@
+﻿namespace = swe_ostergotland
+
+# Province and territory events for Östergötland. Sweden owns all of it from 1337, so these should fire in nearly
+# every game unless it has been lost.
+
+# The shrining of Katarina Ulfsdotter, Birgitta's daughter, at Vadstena on 1 August 1489. Sources: Sr Maria Diana
+# O.SS.S. for katolskakyrkan.se (citing Aron Andersson 1981), sv.wikipedia Katarina av Vadstena, and the Birgitta
+# database of the University of Oslo (citing Gillingstam, SBL). They differ on the first bull (Sixtus IV 1482 or
+# Innocent VIII 1484), so the text says the 1480s. No source puts the regent at the ceremony, so the Crown's
+# attendance in option a is our inference, not history. Vanilla's flavor_swe.46 and .48 cover Birgitta herself and
+# make Vadstena a holy site, which the description reads. The shrine modifier carries no max control. No has_ruler:
+# 1489 fell in Sten Sture's regency, and the text names nobody.
+swe_ostergotland.1 = {
+	type = country_event
+	title = swe_ostergotland.1.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					location:vadstena = { is_location_holy_site_for = religion:catholic }
+				}
+				desc = swe_ostergotland.1.desc_holy_site
+			}
+			triggered_desc = {
+				desc = swe_ostergotland.1.desc
+			}
+		}
+	}
+	outcome = neutral
+	historical_info = swe_ostergotland.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1487.1.1
+		to = 1520.1.1
+		monthly_chance = 3 # Median late 1488
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:catholic
+		owns = location:vadstena
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_ostergotland.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:vadstena = {
+			add_location_modifier = { modifier = swe_katarina_shrine years = 20 }
+		}
+		add_legitimacy = legitimacy_weak_bonus
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_bonus }
+	}
+
+	option = {
+		name = swe_ostergotland.1.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}

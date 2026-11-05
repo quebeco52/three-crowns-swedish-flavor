@@ -1,5 +1,5 @@
 ﻿# Province groups used in more than one place, kept here so every copy stays the same.
-# All are location scope. No vanilla area matches them (norrland_area mixes them all).
+# All are location scope unless noted. No vanilla area matches them (norrland_area mixes them all).
 
 # The valleys and lappmarks of the Birkarl trade (swe_birkarl_rights, swe_bottniska_handelstvanget)
 swe_birkarl_lands_trigger = {
@@ -84,4 +84,14 @@ swe_german_provinces_trigger = {
 		limit = { exists = international_organization:hre }
 		is_owned_by_international_organization = international_organization:hre
 	}
+}
+
+# Character scope. A councillor who can head a Förmyndarregering (swe_council_regency). Foreigners are out, after the
+# council's decision of 1319 barring them from its seats, which Albrekt had to respect in 1371 (one secondary text,
+# Sverige 1266-1397; the assurance itself is DS X nr 75). Accepted cultures count as the realm's own, not only Swedish.
+# Same culture check as vanilla's manpower_buildings.txt, which runs it from a location. From a character, prev is that
+# character: by console on 2026-11-05, Blanche of Namur (Champenois) gave false and Knut Jonsson (Swedish) gave true.
+swe_council_regent_trigger = {
+	can_become_a_regent = yes
+	owner ?= { has_primary_or_accepted_culture = prev.culture }
 }
