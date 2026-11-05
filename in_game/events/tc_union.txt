@@ -38,8 +38,8 @@ swe_union.1 = {
 				opinion = { target = root value < 0 }
 			}
 		}
-		# Any age: Haakon was about three
-		ruler = {
+		# Any age: Haakon was about three. ?= because triggers are evaluated in full, so a regency would log an error
+		ruler ?= {
 			any_child = {
 				is_alive = yes
 				is_female = no

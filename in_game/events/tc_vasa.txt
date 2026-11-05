@@ -65,7 +65,8 @@ swe_vasa.2 = {
 		# Not if a Vasa already holds the crown
 		trigger_if = {
 			limit = { exists = global_var:swe_vasa_house }
-			ruler = {
+			# ?= because triggers are evaluated in full: during a regency a plain ruler scope logs an error
+			ruler ?= {
 				NOT = { dynasty ?= global_var:swe_vasa_house }
 			}
 		}
@@ -85,8 +86,9 @@ swe_vasa.2 = {
 	option = {
 		name = swe_vasa.2.a
 		historical_option = yes
+		# High, as the event fires once: a refusal here ends the Vasa line for the whole game
 		ai_chance = {
-			base = 75
+			base = 90
 		}
 
 		# The candidate can hold an older faith if the realm converted after he was made (swe_vasa.1 before
@@ -139,7 +141,7 @@ swe_vasa.2 = {
 	option = {
 		name = swe_vasa.2.b
 		ai_chance = {
-			base = 25
+			base = 10
 		}
 
 		add_legitimacy = legitimacy_mild_bonus

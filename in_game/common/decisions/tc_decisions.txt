@@ -448,7 +448,17 @@ swe_svenska_radman_decision = {
 		}
 	}
 
-	ai_will_do = { value = 100 }
+	# The AI waits until swe_council.1's window (1387-1420) has closed, since that event needs the
+	# German council still in place. Form from vanilla generic_age_decisions.txt
+	ai_will_do = {
+		value = 0
+		add = {
+			if = {
+				limit = { current_date >= 1420.1.1 }
+				add = 100
+			}
+		}
+	}
 
 	illustration_tags = {
 		10 = regular

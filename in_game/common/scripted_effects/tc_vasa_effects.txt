@@ -127,7 +127,7 @@ swe_select_vasa_candidate = {
 				female = no
 				min_age = 25
 				max_age = 40
-				# 180-210 total, a step below Gustav's 220-250. Rulers in a test run: median 149, top 5% from 212
+				# 180-240 total, against Gustav's 220-250. Rulers in a test run: median 149, top 5% from 212
 				adm = { 60 80 }
 				dip = { 60 80 }
 				mil = { 60 80 }
