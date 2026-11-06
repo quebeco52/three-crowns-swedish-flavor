@@ -230,7 +230,7 @@ swe_gavle_fishermen = {
 	local_fish_output_modifier = 0.25
 }
 
-# Added to hudiksvall and harnosand for 200 years with swe_gavle_fishermen: their herring goes to Gävle's boats.
+# Added to hudiksvall and harnosand for 200 years with swe_gavle_fishermen: their herring goes to Gefle's boats.
 swe_gavle_fishing_grounds = {
 	game_data = {
 		category = location
@@ -238,7 +238,7 @@ swe_gavle_fishing_grounds = {
 	local_fish_output_modifier = -0.1
 }
 
-# Added to the same towns for 200 years by swe_norrland.2 when the Crown refuses Gävle: swe_gavle_fishing_grounds reversed.
+# Added to the same towns for 200 years by swe_norrland.2 when the Crown refuses Gefle: swe_gavle_fishing_grounds reversed.
 swe_norrland_fishing_towns = {
 	game_data = {
 		category = location

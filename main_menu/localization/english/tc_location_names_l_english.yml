@@ -20,7 +20,7 @@
  viljandi.swedish_dialect: "Fellin"
  vonnu.swedish_dialect: "Wendau"
  # Livonia
- aluksne.swedish_dialect: "Marienburg"
+ aluksne.swedish_dialect: "Marienborg" #Stockholm Post-Tijdender 1701-02; malbork keeps Marienburg
  cesis.swedish_dialect: "Wenden"
  gulbene.swedish_dialect: "Schwanenburg"
  koknese.swedish_dialect: "Kokenhusen"
@@ -82,3 +82,126 @@
  ristiina.swedish_dialect: "Kristina"
  salmi.swedish_dialect: "Salmis"
  sauvo.swedish_dialect: "Sagu"
+
+ # Attested names only, nothing invented. A place Swedes never named keeps its base name, since period
+ # Swedish mostly kept local names. Trailing comments give the source:
+ # NF = Nordisk familjebok, runeberg.org/<page>.html. Nystad = the 1721 treaty, histdoc.net/nystad/nystad_sv.html.
+ # OPT = Ordinari Post Tijdender 1645. PT = Stockholm Post-Tijdender from 1700. PoIT = Post- och Inrikes Tidningar 1821-36.
+ # Hermes = Hermes Gothicus 1624. VS = von Schantz, Canton voyage 1746-49. All five on sv.wikisource.org.
+ # Kalm = En resa til Norra America 1753, archive.org/details/enresatilnorraam02kalm. sv.wp = Swedish Wikipedia.
+ # Topelius = Finland framstäldt i teckningar 1845, runeberg.org/ztfinland. SOF = Svenska ortnamn i Finland 1963, runeberg.org/sveortfin.
+ # Fellman = notes printed 1844, runeberg.org/fjlappmark. Laestadius = L. L. Laestadius 1824, runeberg.org/omlappmark.
+ # Dalin = Svea rikes historia 1747, runeberg.org/svearikehi. Rosenberg = gazetteer 1882, runeberg.org/rosenberg.
+ # Prussia, which Sweden fought over and partly held in 1626-35
+ gniew.swedish_dialect: "Mewe" #NF nfbr/0188
+ puck.swedish_dialect: "Putzig" #NF nfcb/0335
+ tczew.swedish_dialect: "Dirschau" #NF nfac/0632
+ chelmno.swedish_dialect: "Kulm" #NF nfbo/0123
+ brodnica.swedish_dialect: "Strasburg" #NF nfcg/0176
+ grudziadz.swedish_dialect: "Graudenz" #NF nfbj/0095
+ lubawa.swedish_dialect: "Löbau" #NF nfbq/0137
+ torun.swedish_dialect: "Thorn" #NF nfch/0618
+ elk.swedish_dialect: "Lyck" #NF nfbq/0035
+ nibork.swedish_dialect: "Neidenburg" #NF nfbs/0414
+ ostroda.swedish_dialect: "Osterode" #NF nfbt/0568
+ szczytno.swedish_dialect: "Ortelsburg" #NF nfbt/0520
+ wegorzewo.swedish_dialect: "Angerburg" #NF nfcn/0323
+ czluchow.swedish_dialect: "Schlochau" #NF nfcd/0577
+ nowe.swedish_dialect: "Neuenburg" #NF nfbs/0458
+ swiecie.swedish_dialect: "Schwetz" #NF nfcd/0683
+ malbork.swedish_dialect: "Marienburg" #NF nfbq/0509
+ elblag.swedish_dialect: "Elbing" #NF nfbg/0095
+ kwidzyn.swedish_dialect: "Marienwerder" #NF nfbq/0510
+ morag.swedish_dialect: "Mohrungen" #NF nfbr/0428
+ lidzbark.swedish_dialect: "Heilsberg" #NF nfbk/0146
+ frombork.swedish_dialect: "Frauenburg" #NF nfbh/0674
+ olsztyn.swedish_dialect: "Allenstein" #NF nfba/0346
+ # More of the crown lands and the Novgorod marches
+ nasisalki.swedish_dialect: "Näsijärvi" #NF nfbt/0191
+ pyhajarvi.swedish_dialect: "Pyhäjärvi" #NF; Finlands statskalender 1840
+ konevets.swedish_dialect: "Konevits" #NF nfbn/0388
+ jekabpils.swedish_dialect: "Jakobstadt" #NF nfbl/0650
+ gestenthorpe.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf
+ opochka.swedish_dialect: "Opotjka" #NF nfbt/0413
+ porkhov.swedish_dialect: "Porchov" #NF nfca/0752
+ velikiye_luki.swedish_dialect: "Velikija-Luki" #NF nfck/0562
+ # Lakes
+ lake_ladoga.swedish_dialect: "Ladogasjön" #NF nfbm/0761 Ladoga sjö
+ lake_onega.swedish_dialect: "Onegasjön" #NF nfbt/0390 Onega
+ lake_ilmen.swedish_dialect: "Ilmensjön" #NF nfbl/0244 Ilmen, insjö
+ lake_peipus.swedish_dialect: "Peipussjön" #NF nfck/0240
+ lake_vorts.swedish_dialect: "Virzjärv" #NF nfbh/0022
+ lake_muritz.swedish_dialect: "Müritzsjön" #NF nfbs/0068
+ # Provinces. Vanilla splits Livonia in three, so the compass words are ours and only Livland is attested.
+ korela_province.swedish_dialect: "Kexholms län" #Nystad; NF nfbm/0762
+ vyborg_province.swedish_dialect: "Viborgs län" #Nystad Wiborgslähn; NF
+ estonia_province.swedish_dialect: "Estland" #Nystad; NF nfbg/0498
+ rotalia_province.swedish_dialect: "Wiek" #NF nfcl/0164
+ courland_province.swedish_dialect: "Kurland" #NF nfbo/0174
+ semigalia_province.swedish_dialect: "Semgallen" #NF nfbo/0174
+ tartu_province.swedish_dialect: "Dorpat" #NF nfbs/0459
+ north_livonia_province.swedish_dialect: "Norra Livland" #Nystad Lifland; NF nfbp/0454 Livland
+ south_livonia_province.swedish_dialect: "Södra Livland" #Nystad Lifland; NF nfbp/0454 Livland
+ inner_livonia_province.swedish_dialect: "Inre Livland" #Nystad Lifland; NF nfbp/0454 Livland
+ # Europe and the Near East
+ the_hague.swedish_dialect: "Haag" #OPT; PoIT
+ bruges.swedish_dialect: "Brygge" #OPT
+ dunkirk.swedish_dialect: "Dunkerque" #PoIT
+ geneve.swedish_dialect: "Genève" #PoIT Geneve; sv.wp
+ milano.swedish_dialect: "Milano" #PoIT
+ warsaw.swedish_dialect: "Warschau" #Agneta Horn 1657; PT
+ kyiv.swedish_dialect: "Kiow" #PT; Treaty of Fredrikshamn 1809
+ tighina.swedish_dialect: "Bender" #PT
+ or_qapi.swedish_dialect: "Perekop" #sv.wp
+ astrakhan.swedish_dialect: "Astrakan" #PoIT; Treaty of Fredrikshamn 1809 Astracan
+ thessaloniki.swedish_dialect: "Saloniki" #Fjellstedt's Bible notes; sv.wp
+ demotica.swedish_dialect: "Demotika" #Östgötars minne
+ rodos.swedish_dialect: "Rhodos" #sv.wp
+ dead_sea.swedish_dialect: "Döda havet" #Swedish Bible, Döda hafwet
+ sea_galilee.swedish_dialect: "Galileiska sjön" #Swedish Bible
+ medina.swedish_dialect: "Medina" #Det förhastade löftet; sv.wp
+ algiers.swedish_dialect: "Algier" #PoIT
+ tangier.swedish_dialect: "Tanger" #PoIT
+ isfahan.swedish_dialect: "Ispahan" #Uppslagsbok för alla
+ bukhara.swedish_dialect: "Buchara" #sv.wp
+ # Asia and Africa, including Swedish East India Company ports
+ panyu.swedish_dialect: "Wampo" #VS, the company's anchorage
+ dadu.swedish_dialect: "Peking" #VS; PoIT
+ beiping.swedish_dialect: "Peking" #as dadu, which flavor_chi renames to this key
+ shangyuan.swedish_dialect: "Nanking" #sv.wp; vanilla already has Nanking on nanjing, this key's name after flavor_chi renames it
+ parangipettai.swedish_dialect: "Porto Novo" #sv.wp, Swedish factory 1733
+ maynila.swedish_dialect: "Manilla" #VS
+ al_mukha.swedish_dialect: "Mocka" #sv.wp
+ sana_yemen.swedish_dialect: "Sanaa" #sv.wp
+ good_hope_cape.swedish_dialect: "Goda Hoppsudden" #PoIT
+ # The Americas
+ carucairi.swedish_dialect: "Guadeloupe" #sv.wp, Swedish 1813-14
+ manhattan.swedish_dialect: "New York" #Kalm; PoIT New-York
+ shawmut.swedish_dialect: "Boston" #PoIT
+ stadacona.swedish_dialect: "Quebec" #sv.wp
+ hochelaga.swedish_dialect: "Montreal" #Kalm; sv.wp
+ habana.swedish_dialect: "Havanna" #PoIT
+ tenochtitlan.swedish_dialect: "Mexico" #Hermes
+ mexico_city.swedish_dialect: "Mexico" #as tenochtitlan, which flavor_CAS renames to this key
+ qusqu.swedish_dialect: "Cuzco" #sv.wp
+ rimaq.swedish_dialect: "Lima" #Hermes; PoIT
+ ciudad_de_los_reyes.swedish_dialect: "Lima" #as rimaq, which flavor_CAS renames to this key
+ # At home and in the north: vanilla's typos and non-Swedish forms, in today's spelling
+ ostergotland_province.swedish_dialect: "Östergötland" #vanilla has the label Östra Götaland
+ vastergotland_province.swedish_dialect: "Västergötland" #vanilla has the label Västra Götaland
+ bohus_province.swedish_dialect: "Bohuslän" #Dalin Bahuslän; Rosenberg; vanilla has the castle, Båhus
+ waestbo.swedish_dialect: "Västbo" #vanilla's Waestbo is garbled
+ hoborg.swedish_dialect: "Hoburg" #Linnaeus 1745, Hoburg and Hoburgen
+ solatunum.swedish_dialect: "Sollefteå" #vanilla has a Latin form
+ gratesk.swedish_dialect: "Gråträsk" #Schefferus 1674 Graotreskby; Rosenberg
+ gellivaara.swedish_dialect: "Gällivare" #Högström 1746 Gelliware; Rosenberg Gellivare
+ torne_trask.swedish_dialect: "Torneträsk" #today's standard compound
+ mourionska.swedish_dialect: "Muonioniska" #Fellman; Topelius
+ enontakis.swedish_dialect: "Enontekis" #Laestadius; SOF
+ juckasjarvi.swedish_dialect: "Jukkasjärvi" #P. Laestadius 1836, runeberg.org/lpjour
+ kemijarvi.swedish_dialect: "Kemiträsk" #Fellman; Topelius
+ oulujarvi.swedish_dialect: "Ule träsk" #SOF
+ paltamo.swedish_dialect: "Paldamo" #Topelius; SOF
+ raunala.swedish_dialect: "Rounala" #Schefferus 1674; Sveriges Radio on the churchyard
+ enare_trask.swedish_dialect: "Enare träsk" #Fellman; Topelius; SOF
+ north_skanderna.swedish_dialect: "Kölen" #Dalin Kiölen

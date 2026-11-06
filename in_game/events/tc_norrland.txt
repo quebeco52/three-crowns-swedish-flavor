@@ -84,8 +84,8 @@ swe_norrland.1 = {
 	}
 }
 
-# Gustav Vasa gives the fishermen of Gävle the Norrland coast (1557) for every tenth barrel of salted herring.
-# The monopoly lasted until 1766. Gävle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
+# Gustav Vasa gives the fishermen of Gefle the Norrland coast (1557) for every tenth barrel of salted herring.
+# The monopoly lasted until 1766. Gefle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
 # so the output modifiers count there.
 swe_norrland.2 = {
 	type = country_event
