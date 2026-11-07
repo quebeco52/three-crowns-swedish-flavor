@@ -5,7 +5,7 @@
 # Savolax and Äyräpää took over their farms.
 # Fires whenever a Lutheran Sweden holds Orthodox land in Kexholm or Ingria, not from 1617.
 # It speeds up conversion, and people move over the years that follow: the Orthodox leave for Russia and,
-# if Sweden holds Savolax, Finns take over their farms (swe_orthodox_exodus).
+# if Sweden holds Savolax, peasants from there take over their farms (swe_orthodox_exodus).
 swe_ingria.1 = {
 	type = country_event
 	title = swe_ingria.1.title

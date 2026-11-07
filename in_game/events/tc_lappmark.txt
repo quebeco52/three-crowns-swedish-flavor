@@ -412,7 +412,8 @@ swe_lappmark.6 = {
 			}
 		}
 		# The decree of 1640 moved the Lais and Gran lappbyar from Ume Lappmark and Tuorpon from Lule Lappmark to provide
-		# more carriers. They went to Arjeplog, which may not be ours, so they move to the mine.
+		# more carriers. They went to Arjeplog, which may not be ours, so they move to the mine. Per month, so 0.24 from each:
+		# a few lappbyar, not everyone, since Ume Lappmark held only 1.13 Sámi in the 1619 AI save and Lule Lappmark none.
 		if = {
 			limit = {
 				any_owned_location = { province_definition = province_definition:ume_lappmark_province }
@@ -422,7 +423,7 @@ swe_lappmark.6 = {
 				from = province_definition:ume_lappmark_province
 				to_location = location:silbojock
 				culture = culture:sapmi
-				amount = 0.05
+				amount = 0.01
 				months = 24
 			}
 		}
@@ -435,7 +436,7 @@ swe_lappmark.6 = {
 				from = province_definition:lule_lappmark_province
 				to_location = location:silbojock
 				culture = culture:sapmi
-				amount = 0.05
+				amount = 0.01
 				months = 24
 			}
 		}
