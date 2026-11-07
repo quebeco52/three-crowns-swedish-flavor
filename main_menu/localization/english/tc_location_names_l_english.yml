@@ -210,7 +210,7 @@
  # Full sources and the held-back names are in .research/names-round2-2026-11-06/ (local only).
  # Denmark, Norway, Iceland, Greenland and the seas
  haderslev.swedish_dialect: "Hadersleben" #OPT; NF nfbj/0526
- aabenraa.swedish_dialect: "Åbenrå" #NF nfcm/0490
+ aabenraa.swedish_dialect: "Apenrade" #Matrikel 1754; Djurberg 1800; Encyklopedi 1803; Pontin 1831
  tonder.swedish_dialect: "Tundern" #OPT; Traventhal 1700
  flensburg.swedish_dialect: "Flensborg" #OPT; NF nfbh/0315
  eckernforde.swedish_dialect: "Eckernförde" #NF nfbf/0702
@@ -756,8 +756,8 @@
  aller_province.swedish_dialect: "Verden" #adapted: town on the province; OPT Ferden; NF nfck/0635
  middle_weser_province.swedish_dialect: "Mellersta Weser" #adapted: Mellersta is ours; Weser is the river
  leine_province.swedish_dialect: "Göttingen" #Gezelius; NF nfbj/0504
- oberlausitz_province.swedish_dialect: "Ober-Lausitz" #Biogr. lexicon; NF nfbt/0221
- niederlausitz_province.swedish_dialect: "Nieder-Lausitz" #NF nfbs/0530
+ oberlausitz_province.swedish_dialect: "Övre Lausitz" #Loskiel 1792 öfra; Strinnholm 1834 öfre; Cronholm 1876
+ niederlausitz_province.swedish_dialect: "Nedre Lausitz" #Djurberg 1800 Nedra; Strinnholm 1834 nedre; Cronholm 1876
  erzgebirge_province.swedish_dialect: "Erzgebirge" #NF nfbg/0450
  leipziger_bucht_province.swedish_dialect: "Leipzig" #OPT; NF nfbp/0066
  thuringer_becken_province.swedish_dialect: "Thüringen" #PT; NF nfch/0646
@@ -1019,3 +1019,407 @@
  vilaka.swedish_dialect: "Marienhausen" #adapted: vanilla German name, as Rositten
  kraslava.swedish_dialect: "Kreslau" #adapted: vanilla German name, as Rositten
  makonkalns.swedish_dialect: "Wolkenburg" #adapted: vanilla German name, as Rositten
+
+ # Fourth round, 2026-11-07. North Germany, Denmark, England, Scotland and the rest of North America. Every name here is printed in a Swedish text, except that
+ # compass words, S:t and Cap follow house style. Two analysts opened the sources and tested each row; details are in .research/names-round4-2026-11-07/ (local only).
+ # Print after 1837, the game's last year, is allowed, and the year in each comment shows it. Sources new in this round, all on archive.org/details/:
+ # Djurberg 1785 = Utförlig geografie, utfrliggeografi02djurgoog. Encyklopedi 1803 = Angelini, Encyklopedi för barn, encyklopedifrba00angegoog. SpanPort 1809 = Spaniens och Portugalls besittningar uti America, spaniensochportu00link.
+ # Sprengel 1810 = Historia om Förenta Amerikas sjelfständighet, historiaomfrenta00spre. Svedenstjerna 1804 = Resa igenom en del af England och Scotland, resaigenomendela00sved. Pontin 1831 = Anteckningar, 8T2118NORD.
+ # Kotzebue 1830 = Resa omkring jorden, cihm_18340. Meares 1797 = Tvänne resor, cihm_36934. Hearne 1798 = Samuel Hearnes Resa, cihm_17711. Bryant 1850 = Californien, en skildring af landet, californienensk00bryagoog.
+ # Courieren 1821-22 = courieren_fran_stockholm1821, stockholmska_courieren1822. Götha Runor 1832 = gotha-runor1832lomberg. Strinnholm 1834 = Svenska folkets historia, svenskafolketsh00strigoog. Matrikel 1754 = bub_gb_YLkDAAAAYAAJ.
+ # Ossian 1794 = bib_fict_4103329. Corpus iuris 1827 = corpusiurissueo01swedgoog. Svea 1818 = sveatidskriftfr00unkngoog. Årsberättelse 1822 = rsberttelseromve1822unse. Zoologi c.1842 = arsberattelseomz00lond.
+ # Bremer 1853 = Hemmen i den Nya verlden, hemmenidennya01brenrich. Unonius 1862 = Minnen, minnenfrnensju01unonuoft. Cronholm 1876 = Trettioåriga kriget, trettiorigakrig01crongoog. Svedelius 1876 = inledningtilleu00svedgoog.
+ # Bovallius 1886 = Resa i Central-Amerika, resaicentralamer00bova. Kinberg 1885 = Svenskafoglarna3Sund. Bonnier 1937 = bonnierskonversa08stocuoft.
+ # North Germany and Denmark
+ roskilde.swedish_dialect: "Roskild" #Roskilde treaty 1658; Djurberg 1785, 1800; PoIT 1836
+ niederrhein_province.swedish_dialect: "Nedre Rhen" #Strinnholm 1834 nedre Rhentrakterna; Cronholm 1876 nedre Rhen
+ bergisches_land_province.swedish_dialect: "Bergiska landet" #Cronholm 1876
+ elbtal_province.swedish_dialect: "Elbedalen" #Pontin 1831
+ # England and Scotland
+ edinburgh.swedish_dialect: "Edinburg" #Matrikel 1754; Ossian 1794; Corpus iuris 1827; Götha Runor 1832
+ north_riding_province.swedish_dialect: "Norra Ridingen" #Djurberg Utförlig geografie 1785
+ east_riding_province.swedish_dialect: "Östra Ridingen" #Djurberg Utförlig geografie 1785
+ west_riding_province.swedish_dialect: "Västra Ridingen" #Djurberg Utförlig geografie 1785 Wästra Ridingen
+ outer_hebrides_province.swedish_dialect: "Yttre Hebriderna" #Årsberättelse 1822 yttersta; Zoologi c.1842; Kinberg 1885
+ inner_hebrides_province.swedish_dialect: "Inre Hebriderna" #Kinberg 1885; Bonnier 1937; Ossian 1794 Hebriderna
+ mann.swedish_dialect: "Man" #Djurberg 1785 Ön Man; Strinnholm 1834; Götha Runor 1832
+ st_albans.swedish_dialect: "S:t Albans" #Kalm 1753 St. Albans; Strinnholm 1834 S:t Albans
+ st_andrews.swedish_dialect: "S:t Andrews" #Svedenstjerna 1804 St. Andrews; Svea 1818 S:t Andrews
+ # Alaska, the American West and the Plains
+ bulbancha.swedish_dialect: "Nya Orleans" #Djurberg 1800 p.400; Sprengel 1810; PoIT 1836
+ bulbancha_province.swedish_dialect: "Louisiana" #Djurberg 1800 p.399; Gosselman 1835; Bremer 1853
+ tamaroa.swedish_dialect: "S:t Louis" #Bremer 1853; Unonius 1862
+ awaswas.swedish_dialect: "S:t Francisco" #Kotzebue 1830 ch. XI
+ mutsun.swedish_dialect: "Monterey" #Kotzebue 1830 ch. XI; Djurberg 1800 p.402
+ aacistak_province.swedish_dialect: "Nya Californien" #Kotzebue 1830; Bryant 1850; pairs with Gamla Californien
+ chochenyo.swedish_dialect: "S:t Clara" #Kotzebue 1830 ch. XI
+ yaanga.swedish_dialect: "Los Angeles" #Bryant, Californien, 1850
+ ineseno.swedish_dialect: "San Luis Obispo" #Bryant, Californien, 1850
+ ventureno.swedish_dialect: "Santa Barbara" #Bryant, Californien, 1850
+ northern_yokut_province.swedish_dialect: "San Joaquin" #Bryant, Californien, 1850
+ yuquot.swedish_dialect: "Nutka" #Meares 1797; Djurberg 1800 p.406; Djurberg 1785
+ northern_vancouver_province.swedish_dialect: "Nutka" #Meares 1797; Djurberg 1800 p.406
+ shee_t_ika.swedish_dialect: "Sitka" #Kotzebue 1830 ch. X
+ central_tlingit_province.swedish_dialect: "Sitka" #Kotzebue 1830 ch. X
+ kaniagmiut_province.swedish_dialect: "Kodiak" #Meares 1797; Kotzebue 1830 Kodiack
+ su_naq.swedish_dialect: "Kodiak" #Meares 1797; Kotzebue 1830 Kodiack
+ unalaska_province.swedish_dialect: "Unalaschka" #Meares 1797; Djurberg 1800 p.406; Kotzebue 1830
+ qawalangin.swedish_dialect: "Unalaschka" #Meares 1797; Djurberg 1800 p.406; Kotzebue 1830
+ coppermine_province.swedish_dialect: "Kopparfloden" #Hearne 1798
+ kashaya.swedish_dialect: "Ross" #Kotzebue 1830 ch. XI
+ # The US east coast and Canada
+ assabet.swedish_dialect: "Concord" #Sprengel 1810; Bremer 1853
+ quinsigamond.swedish_dialect: "Worcester" #Bremer 1853; Sprengel 1810 (the county)
+ squamscott.swedish_dialect: "Portsmouth" #Gosselman 1835; Sprengel 1810; PoIT
+ walloomsac.swedish_dialect: "Bennington" #Sprengel 1810
+ casco.swedish_dialect: "Falmouth" #Sprengel 1810
+ itekiatonhniarikon.swedish_dialect: "Fort S:t Frederic" #Kalm 1761, St. to S:t
+ ticonderoga.swedish_dialect: "Ticonderago" #Sprengel 1810; Hearne 1798
+ teiehonwahkhkwatha.swedish_dialect: "Utica" #Gosselman 1835; Unonius 1862; Bremer 1853
+ tohickon.swedish_dialect: "Bethlehem" #Loskiel 1792; Acrelius 1759; Sprengel 1810
+ tesinigh.swedish_dialect: "Lancaster" #Acrelius 1759; Loskiel 1792; Sprengel 1810
+ scahentowanen.swedish_dialect: "Wajomik" #Loskiel 1792
+ allegheny.swedish_dialect: "Pittsburg" #Loskiel 1792; Unonius 1862
+ nansemond.swedish_dialect: "Norfolk" #Sprengel 1810; PoIT 1835
+ winyah.swedish_dialect: "Georgetown" #Bremer 1853; Sprengel 1810
+ wimbee.swedish_dialect: "Beaufort" #Sprengel 1810
+ talimeco.swedish_dialect: "Camden" #Sprengel 1810
+ kiokee.swedish_dialect: "Augusta" #Sprengel 1810; Djurberg 1800; Bremer 1853
+ kentucky.swedish_dialect: "Lexington" #Djurberg 1800; Årsberättelse 1822
+ assereniet.swedish_dialect: "Cincinnati" #Bremer 1853; Unonius 1862
+ daguwanalahi.swedish_dialect: "Nashville" #PoIT 1835
+ lewekeomi.swedish_dialect: "Louisville" #PoIT 1835; Bremer 1853
+ monasukapanough.swedish_dialect: "Charlotteville" #Bremer 1853
+ des_nedhe.swedish_dialect: "Prins Wallis Fort" #Hearne 1798
+ machichi.swedish_dialect: "Fort York" #Hearne 1798, OCR Nork
+ piscopeek.swedish_dialect: "Princetown" #Gosselman 1835; Sprengel 1810; Kalm 1756
+ wdpesek.swedish_dialect: "Isle aux Noix" #Hearne 1798
+ doeg.swedish_dialect: "Alexandria" #Gosselman 1835
+ casco_province.swedish_dialect: "Maine" #Gosselman 1835; Bremer 1853; Unonius 1862
+ merrimac_province.swedish_dialect: "New Hampshire" #Gosselman 1835; Sprengel 1810; Bremer 1853
+ paxtang_province.swedish_dialect: "Pensylvanien" #Sprengel 1810; Kalm 1756; Acrelius 1759
+ chicora.swedish_dialect: "Wilmington" #Sprengel 1810; Cap Fear river, so this tile, not necoes
+ tsikahiotsisto.swedish_dialect: "Syracusa" #Gosselman 1835; Unonius 1862; Bremer 1853
+ irondequoit.swedish_dialect: "Rochester" #Gosselman 1835; Bremer 1853; Unonius 1862
+ tiotoren.swedish_dialect: "Buffalo" #Gosselman 1835; PoIT; Bremer 1853; Unonius 1862
+ ichisi.swedish_dialect: "Macon" #Bremer 1853
+ # Mexico and Central America
+ yopitzinco.swedish_dialect: "Acapulco" #SpanPort 1809; Djurberg 1800; PoIT 1835
+ yopitzinco_province.swedish_dialect: "Acapulco" #after its town; SpanPort 1809; Djurberg 1800
+ xamapan.swedish_dialect: "Vera Cruz" #SpanPort 1809; Djurberg 1800; PoIT 1835
+ cuetlaxtlan_province.swedish_dialect: "Vera Cruz" #Courieren 1821 (provincen); PoIT 1835 (Staten Veracruz)
+ cholollan.swedish_dialect: "Puebla" #PoIT 1835; Courieren 1821; Djurberg 1800
+ ahuilizapan.swedish_dialect: "Orizava" #Courieren från Stockholm 1821
+ guayangareo.swedish_dialect: "Valladolid" #Courieren från Stockholm 1821
+ tzintzuntzan_province.swedish_dialect: "Mechoacan" #Djurberg 1800; Encyklopedi för barn 1803
+ mo_o_ti.swedish_dialect: "Guanajuato" #PoIT 1835; Courieren från Stockholm 1821
+ pechichitane_province.swedish_dialect: "Guanajuato" #PoIT 1835; Courieren från Stockholm 1821
+ tangamanga.swedish_dialect: "San Luis Potosi" #Svedelius 1876 (late); Courieren 1821
+ zain.swedish_dialect: "Zacatecas" #SpanPort 1809; Courieren från Stockholm 1821
+ zacatecas_province.swedish_dialect: "Zacatecas" #SpanPort 1809; Courieren från Stockholm 1821
+ tonala.swedish_dialect: "Guadalaxara" #SpanPort 1809; Djurberg 1800; Encyklopedi för barn 1803
+ tonala_province.swedish_dialect: "Nya Galicien" #SpanPort 1809; Encyklopedi för barn 1803
+ yucucui.swedish_dialect: "Oaxaca" #Djurberg 1800; SpanPort 1809; Svedelius 1876
+ napinaica.swedish_dialect: "Chiapa" #SpanPort 1809; Djurberg 1800; Encyklopedi för barn 1803
+ zaklohpakab_province.swedish_dialect: "Chiapa" #SpanPort 1809; Djurberg 1800
+ tho.swedish_dialect: "Merida" #Courieren 1822; Svedelius 1876 (late)
+ dzilam_province.swedish_dialect: "Yucatan" #SpanPort 1809; Djurberg 1800; Encyklopedi för barn 1803
+ kaan_peech.swedish_dialect: "Campeche" #SpanPort 1809; Courieren från Stockholm 1822
+ tahejoc_province.swedish_dialect: "Sonora" #Djurberg 1800; Encyklopedi för barn 1803
+ hia_ced_oodham_province.swedish_dialect: "Pimeria" #Djurberg 1800; Encyklopedi för barn 1803
+ yoreme_province.swedish_dialect: "Ostimuri" #Djurberg 1800; Encyklopedi för barn 1803
+ tepehuan_province.swedish_dialect: "Nya Biscaya" #Djurberg 1800; Encyklopedi för barn 1803
+ alazapa_province.swedish_dialect: "Nya Leon" #Djurberg 1800; Encyklopedi för barn 1803
+ chisos_province.swedish_dialect: "Coaguila" #Djurberg 1800; Svedelius 1876 (Coahuila)
+ natahende_province.swedish_dialect: "Apacheria" #Djurberg 1800; Encyklopedi för barn 1803
+ shiewhibak_province.swedish_dialect: "Nya Mexico" #Campanius 1702; Djurberg 1800; Bremer 1853
+ than_u_ge.swedish_dialect: "Santa Fe" #Djurberg 1800; Encyklopedi för barn 1803; Svedelius 1876
+ kumeyaay.swedish_dialect: "S:t Diego" #Kotzebue 1830
+ sentispac.swedish_dialect: "S:t Blas" #adapted S. to S:t; Meares 1797
+ cadegomo_province.swedish_dialect: "Gamla Californien" #Kotzebue 1830
+ yenecamu.swedish_dialect: "Cap S:t Lucas" #Kotzebue 1830; Bryant 1850; SpanPort 1809
+ aranama.swedish_dialect: "La Bahia" #PoIT 1835
+ cuauhtemallan.swedish_dialect: "Guatimala" #SpanPort 1809; Djurberg 1800; Sprengel 1810
+ cuauhtemallan_province.swedish_dialect: "Guatimala" #SpanPort 1809; Djurberg 1800
+ kab_koj_province.swedish_dialect: "Verapaz" #Djurberg 1800; Encyklopedi för barn 1803
+ toquegua.swedish_dialect: "S:t Tomas" #SpanPort 1809
+ kuskatan.swedish_dialect: "San Salvador" #Bovallius 1886; Svedelius 1876 (late)
+ kuskatan_province.swedish_dialect: "San Salvador" #Svedelius 1876; Bovallius 1886 (late)
+ maniani_province.swedish_dialect: "Honduras" #Djurberg 1800; Encyklopedi för barn 1803; SpanPort 1809
+ imabite_province.swedish_dialect: "Nicaragua" #Djurberg 1785; SpanPort 1809; Bovallius 1886
+ sutiapan.swedish_dialect: "Leon" #Djurberg 1800; Bovallius 1886
+ diria.swedish_dialect: "Granada" #Bovallius 1886 (late)
+ cuauhcapolca.swedish_dialect: "Rivas" #Bovallius 1886 (late)
+ tezoatega.swedish_dialect: "Realejo" #Bovallius 1886 (late)
+ kukra.swedish_dialect: "Blewfields" #Bovallius 1886 (late)
+ wayas_province.swedish_dialect: "Mosquito-kusten" #Bovallius 1886 (late); Svedelius 1876
+ ahuya_yari.swedish_dialect: "Cap Gracias a Dios" #Cap as house style; SpanPort 1809; Bovallius 1886
+ nekokiaw.swedish_dialect: "Nicoya" #Bovallius 1886 (late)
+ nekokiaw_province.swedish_dialect: "Nicoya" #after its town; Bovallius 1886 (late)
+ garabito.swedish_dialect: "Esparza" #Bovallius 1886 (late)
+ pacaca.swedish_dialect: "Cartago" #Bovallius 1886 (late)
+ boruca_province.swedish_dialect: "Costa Rica" #Bovallius 1886; Djurberg 1800 (Costarica)
+ tariaca_province.swedish_dialect: "Veragua" #Djurberg 1800; Encyklopedi för barn 1803
+ chuchures.swedish_dialect: "Portobello" #SpanPort 1809; Djurberg 1800; Campanius 1702
+ careta.swedish_dialect: "Darien" #Djurberg 1800; SpanPort 1809; Bovallius 1886
+ otolum_province.swedish_dialect: "Tabasco" #Djurberg 1800; SpanPort 1809; holds the town, on cupilco
+ # Fitted names, pilot, 2026-11-07. Seven areas of North America, to judge style and label length in-game before the rest. These names are chosen, not printed, unless
+ # the comment cites a Swedish text. Dates and meanings in comments are partly from memory and have had no analyst's check yet. Guide and tables: .research/names-round4-2026-11-07/ (local only).
+ # Keewatin
+ minitig_province.swedish_dialect: "Lac la Pluie" #adapted: French; fur-trade department and HBC district
+ atikwa.swedish_dialect: "Lac des Bois" #adapted: French, Lake of the Woods; La Vérendrye 1730s
+ saganaga.swedish_dialect: "Vattendelaren" #translated: Height of Land, the voyageurs' Hauteur des Terres
+ quetico.swedish_dialect: "Knivsjön" #translated: Knife Lake, the voyageurs' Lac des Couteaux
+ namakan.swedish_dialect: "Korssjön" #translated: Lac la Croix, on the voyageur route
+ gojijin.swedish_dialect: "Regnsjön" #translated: Rainy Lake, French Lac la Pluie
+ kakagi.swedish_dialect: "Kråksjön" #translated: Kakagi or Crow Lake
+ wabaseemong.swedish_dialect: "Hundforsen" #translated: Whitedog Falls, Ojibwe Waabasimong
+ winnange.swedish_dialect: "Örnsjön" #translated: Eagle Lake, Eagle River
+ wabigoon.swedish_dialect: "Öronforsen" #translated: Ear Falls on the English River
+ obishikokaang.swedish_dialect: "Lac Seul" #adapted: French; HBC post by the 1790s
+ waaninaawangang.swedish_dialect: "Utkiken" #translated: Sioux Lookout, hill watched from for raiders
+ ogoki_province.swedish_dialect: "Övre Albany" #adapted: HBC upper Albany River, posts from 1770s
+ ogoki.swedish_dialect: "Martinsfors" #adapted: HBC Martin's Falls on the Albany, 1794
+ miniss.swedish_dialect: "Hedvigsvik" #founded: for Hedvig Eleonora, regent; lake, plateau
+ atikokiwam.swedish_dialect: "Brahefors" #founded: for Per Brahe; river, fur country
+ matapesatakun.swedish_dialect: "Osnaburgh" #adapted: HBC Osnaburgh House, 1786
+ petawanga.swedish_dialect: "Nya Luleå" #founded: Norrland town for a northern river
+ pichinamei.swedish_dialect: "Rensund" #founded: caribou crossing on a lake narrows
+ makokibatan.swedish_dialect: "Älgvattnet" #founded: moose on Washi Lake, by HBC Gloucester House
+ kagianagami.swedish_dialect: "Tallnäs" #founded: jack pine on a lake point
+ winisk_province.swedish_dialect: "Nya Wales" #adapted: Button's New Wales, Hudson Bay, 1612
+ winisk.swedish_dialect: "Murmelån" #translated: Cree for groundhog, the Winisk River
+ kinusheo.swedish_dialect: "Gäddån" #founded: pike river on Hudson Bay
+ wabuk.swedish_dialect: "Fort Weenisk" #adapted: HBC post at the Winisk mouth, 1820
+ asheweig.swedish_dialect: "Myggmyren" #founded: mosquito bog, in the line of Myggenborg
+ tabasokwia.swedish_dialect: "Svartkärr" #founded: black peat fen
+ shibogama.swedish_dialect: "Granhult" #founded: spruce stand
+ wapikopa.swedish_dialect: "Utterån" #founded: otter river, fur tile
+ wunnumin.swedish_dialect: "Rödviken" #founded: red ochre, perhaps the meaning of Wunnumin
+ wapitotem.swedish_dialect: "Björkudden" #founded: paper birch on a lake point
+ washeo.swedish_dialect: "Fort Severn" #adapted: HBC post at the Severn mouth, from 1689
+ niskibi.swedish_dialect: "Gåsvattnet" #founded: goose water, Hudson Bay lowland
+ shagamu.swedish_dialect: "Nya Torneå" #founded: far-north trading town; fish, cold sea
+ ministik.swedish_dialect: "Sikholmen" #founded: whitefish; Ministik is Cree for island
+ # The High Plains
+ hehvaitaneo_province.swedish_dialect: "Laramieslätten" #adapted: Laramie Plains, after La Ramée, d. about 1821
+ hehvaitaneo.swedish_dialect: "Laramie" #adapted: Laramie's Fork, for trapper La Ramée, d. about 1821
+ meneeohe.swedish_dialect: "Röda kullarna" #translated: Red Buttes on the North Platte
+ medicine_bow.swedish_dialect: "Hjortåsen" #founded: elk and mule deer on dry hills
+ wotapio_province.swedish_dialect: "Cheyenneland" #adapted: land pattern; Wotapio is a Cheyenne band
+ wotapio.swedish_dialect: "Fräkenån" #translated: La Prele Creek, French for horsetail rush
+ so_taeo_o.swedish_dialect: "Hästbäcken" #translated: Horse Creek, treaty ground of 1851
+ oevemanaho.swedish_dialect: "Fort Laramie" #adapted: Fort William 1834, Fort Laramie by the 1840s
+ ohktouna.swedish_dialect: "Antilopslätten" #founded: pronghorn on dry plateau; Antelope Creek
+ hisse_yoyi_yoe.swedish_dialect: "L'Eau qui Court" #adapted: French name of the Niobrara, by 1800
+ hisiometaneo.swedish_dialect: "Bergsfoten" #founded: foot of the Black Hills
+ paiyo_he.swedish_dialect: "Krutfloden" #translated: Powder River, its black sand like powder
+ niineniiniicie_province.swedish_dialect: "Södra Platte" #adapted: South Platte; Long's expedition, 1820
+ niineniiniicie.swedish_dialect: "Körsbärsån" #translated: Cherry Creek, for its chokecherries
+ neenowuxoote_i.swedish_dialect: "Ryssby" #adapted: Swedish colony, 1869, from Ryssby in Småland
+ ce_eiinox.swedish_dialect: "Krutgömman" #translated: Cache la Poudre, trappers' powder cache
+ nih_iitkotousi_l.swedish_dialect: "Tallklinten" #translated: Pine Bluffs, on the Lodgepole
+ phankeska_wakpa_province.swedish_dialect: "Stora öknen" #translated: Great Desert, on Long's map of 1823
+ phankeska_wakpa.swedish_dialect: "Musselån" #translated: Lakota pankeska, shell, a Platte name
+ ononio_he.swedish_dialect: "Fransmansån" #translated: Frenchman Creek at Imperial
+ wasin_wakpa.swedish_dialect: "Talgån" #translated: Lakota wasin, fat; Bijou Creek
+ veoneohe.swedish_dialect: "Risingsvall" #founded: for Johan Rising, writer on farming; plains
+ mano_iyo_he.swedish_dialect: "Nya Öland" #founded: treeless grass plain, like Öland's Alvaret
+ heeyoteeyo_province.swedish_dialect: "Nya Bergslagen" #founded: Swedish mining region; gold and stone here
+ mutsisooni_yohe.swedish_dialect: "Nya Ädelfors" #founded: Swedish gold mine; gold on this tile
+ heeyoteyoo.swedish_dialect: "Svartskogen" #translated: Black Forest, Colorado, its dark pines
+ ponoeohe.swedish_dialect: "Storsanden" #translated: Big Sandy Creek at Hugo
+ wishkahuunu_province.swedish_dialect: "La Platte" #adapted: French, Mallet brothers named it 1739
+ wishkahuunu.swedish_dialect: "Grenen" #translated: the Forks of the Platte; Long 1820
+ mahohevahoe.swedish_dialect: "Republikanån" #adapted: Republican Fork, Pike 1806, Pawnee Republic
+ beesowuunenno.swedish_dialect: "Buffelvallen" #founded: buffalo range; Hearne prints Buffel-sjön
+ minii_yohe.swedish_dialect: "Skorstenen" #translated: Chimney Rock, trail landmark
+ wiskapella_province.swedish_dialect: "Rökkullarna" #translated: Smoky Hills; Smoky Hill River heads here
+ wiskapella.swedish_dialect: "Hundbyn" #founded: prairie-dog town
+ chitolah.swedish_dialect: "Kritklint" #founded: chalk bluffs of the Smoky Hill
+ nanwacinahaana.swedish_dialect: "Vargslätt" #founded: wolves on the buffalo range
+ # Petén and Belize
+ tah_itza_province.swedish_dialect: "Peten" #adapted: Spanish El Petén, province after 1697
+ noh_peten.swedish_dialect: "Tayasal" #adapted: Spanish; Cortés reached it 1525
+ namaan.swedish_dialect: "Nya Höganäs" #founded: Swedish clay town; clay here
+ yax_mutal.swedish_dialect: "Tikal" #adapted: known to players; first printed 1848
+ pachan.swedish_dialect: "Lacandon" #adapted: Spanish; expeditions of 1559 and 1695
+ wak_kabnal.swedish_dialect: "Cederås" #founded: Spanish cedar on hills
+ ceibal_province.swedish_dialect: "Manche" #adapted: Spanish; Dominican missions from 1603
+ ceibal.swedish_dialect: "Ceibalund" #founded: ceiba trees; Seibal is named for them
+ ixtutz.swedish_dialect: "Löflingslund" #founded: for Pehr Löfling, botanist in Spanish America
+ pusilha.swedish_dialect: "Kajmankilen" #founded: caiman creek; fish, jungle coast
+ campin.swedish_dialect: "Apkilen" #translated: Monkey River, on this coast
+ tzoite.swedish_dialect: "Tuppkammen" #translated: the Cockscomb range, a mariners' mark
+ paliac.swedish_dialect: "Kakaoviken" #founded: cocoa on the bay
+ lamanai_province.swedish_dialect: "Belize" #adapted: Baymen's settlement on the Belize River
+ tzunuun.swedish_dialect: "Bihult" #founded: bees for wax in the forest
+ altun_ha.swedish_dialect: "Belize" #adapted: English Belize, from the Spanish Walis
+ lamanai.swedish_dialect: "Krokodilsjön" #translated: Lamanai, Maya 'submerged crocodile'
+ xunantunich.swedish_dialect: "Stenfrun" #translated: Yucatec Maya for stone woman
+ uxwitza.swedish_dialect: "Nya Kolmården" #founded: Swedish marble quarries; marble here
+ # Valley of Mexico and the south coast
+ tetzcoco_province.swedish_dialect: "Tezcuco" #adapted: Spanish colonial form; follows its location
+ tehotihuacan.swedish_dialect: "Teotihuacan" #adapted: San Juan Teotihuacan, short form
+ tetzcoco.swedish_dialect: "Tezcuco" #adapted: Spanish colonial form; Courieren 1822 as Texeuco
+ tlacopan.swedish_dialect: "Tacuba" #adapted: Spanish colonial form
+ azcapotzalco.swedish_dialect: "Myrstacken" #translated: Nahuatl 'at the anthill'
+ tlalnahuac_province.swedish_dialect: "Marquesado" #adapted: Cortés's Marquesado del Valle, 1529; short form
+ axochiapan.swedish_dialect: "Näckrosån" #translated: Nahuatl 'water of the water flower'
+ cuauhnahuac.swedish_dialect: "Cuernavaca" #adapted: Spanish form of Cuauhnahuac
+ quauhquechollan.swedish_dialect: "Huaquechula" #adapted: Spanish form; Guacachula in Cortés
+ huaxtepec.swedish_dialect: "Oaxtepec" #adapted: Spanish form; Cortés's estate
+ itzocan.swedish_dialect: "Izucar" #adapted: Spanish Izúcar, accent dropped
+ amaticoztitlan.swedish_dialect: "Iguala" #Courieren 1821 as Yguala; Plan of Iguala 1821
+ tlapan_province.swedish_dialect: "Costa Chica" #adapted: Spanish name for this Pacific coast
+ tlapan.swedish_dialect: "Jadeberget" #founded: gems in the mountains; Aztec jade tribute
+ ometepec.swedish_dialect: "Tvåkullen" #translated: Nahuatl 'two hills'
+ oapan.swedish_dialect: "Getdalen" #founded: goat country; Spanish goat herds
+ jicayan.swedish_dialect: "Bomullsviken" #founded: cotton on the Pacific shore
+ zacatepec.swedish_dialect: "Gräskullen" #translated: Nahuatl 'grass hill'
+ yohualtepec_province.swedish_dialect: "Mixteca" #adapted: Spanish Mixteca Baja
+ yohualtepec.swedish_dialect: "Nattberget" #translated: Nahuatl 'night hill'
+ huajuapan.swedish_dialect: "Granatdal" #founded: gems in dry mountain valleys
+ silacayoapam.swedish_dialect: "Pumpaån" #translated: Nahuatl 'water of the squashes'
+ chiautla.swedish_dialect: "Saltåsen" #founded: Chiautla de la Sal, salt works
+ cuauhteopan.swedish_dialect: "Guldkullen" #founded: gold in the hills
+ tlazcozauhtitlan.swedish_dialect: "Gula jorden" #translated: Nahuatl 'among the yellow earth'
+ tixtla.swedish_dialect: "Röda jorden" #translated: Spanish Tierra Colorada, on the Acapulco road
+ chilapa.swedish_dialect: "Nya Kopparberg" #founded: Swedish copper town; copper here
+ tecoanapa.swedish_dialect: "Jaguarån" #translated: Nahuatl 'river of the beasts'
+ cihuatlan_province.swedish_dialect: "Costa Grande" #adapted: Spanish name for this Pacific coast
+ cihuatlan.swedish_dialect: "Kvinnolandet" #translated: Nahuatl 'place of women'; Cortés's Ciguatan
+ tecpan.swedish_dialect: "Pärlviken" #founded: pearls on the Pacific shore
+ ixtapan.swedish_dialect: "Zihuatanejo" #adapted: Spanish port, in use by 1527
+ zacatollan.swedish_dialect: "Zacatula" #adapted: Spanish port; Cortés's shipyard, 1520s
+ tlapacoya_province.swedish_dialect: "Pachuca" #adapted: Spanish silver town, from 1552
+ tlapacoya.swedish_dialect: "Varmkällan" #translated: Nahuatl Atotonilco, 'hot water'
+ pachyohcan.swedish_dialect: "Pachuca" #adapted: Spanish form; silver from 1552
+ atocpan.swedish_dialect: "Actopan" #adapted: Spanish form; Augustinian convent 1546
+ zempoala.swedish_dialect: "Akvedukten" #founded: Tembleque's aqueduct, built 1550s-70s
+ tollantzinco.swedish_dialect: "Tulancingo" #adapted: Spanish form of Tollantzinco
+ axocopan_province.swedish_dialect: "Tula" #adapted: Spanish Tula; follows its location
+ axocopan.swedish_dialect: "Tula" #adapted: Spanish Tula, the Toltec Tollan
+ ixmiquilpan.swedish_dialect: "Majsdalen" #founded: maize in the mountain valleys
+ tecozautla.swedish_dialect: "Gulstenen" #translated: Nahuatl 'place of yellow ochre'
+ # The Northwest Coast
+ southern_vancouver_province.swedish_dialect: "Södra Vancouver" #adapted: Vancouver's Island, 1792; compass word ours
+ saanich.swedish_dialect: "Nya Karlskrona" #founded: Swedish naval port; harbour here
+ stz_uminus.swedish_dialect: "Sälholmen" #founded: seals among the Gulf Islands; fish
+ ditidaht.swedish_dialect: "Fucas sund" #Meares 1797
+ pentlatch.swedish_dialect: "Ostronviken" #founded: oysters in Baynes Sound; fish
+ ucluelet.swedish_dialect: "Bastviken" #founded: bast and bark fibre; sheltered inlet
+ k_omoks.swedish_dialect: "Laxsund" #founded: salmon in Discovery Passage
+ maaqtusiis.swedish_dialect: "Hoppets vik" #translated: Spanish Esperanza Inlet, 1791
+ tlatlasikwala.swedish_dialect: "Torskhamn" #founded: cod and lingcod; harbour 0.30
+ ma_amtagila.swedish_dialect: "Nya Finland" #founded: Finnish colony Sointula on the tile, 1901
+ kwakwala_province.swedish_dialect: "Kwakiutland" #adapted: Kwakiutl people; Swedish land pattern
+ tanakteuk.swedish_dialect: "Långfjärden" #founded: Knight Inlet, longest fjord on this coast
+ quawshelah.swedish_dialect: "Grundudden" #founded: Cape Caution; Vancouver's ships grounded, 1792
+ oweekeno.swedish_dialect: "Laxfjärden" #founded: salmon inlet; Rivers Inlet
+ nuxalc.swedish_dialect: "Mackenzies sten" #adapted: Mackenzie's Rock, where he wrote his name, 1793
+ kitasoo.swedish_dialect: "Bella Coola" #adapted: Bella Coola; Mackenzie reached it 1793
+ heiltsuk.swedish_dialect: "Fort McLoughlin" #adapted: Hudson's Bay post, 1833-43
+ haisla.swedish_dialect: "Snöarmen" #founded: Kitimat Arm; Tsimshian 'people of the snow'
+ tsimshian_province.swedish_dialect: "Tsimshianland" #adapted: Tsimshian people; Swedish land pattern
+ sm_algyax.swedish_dialect: "Nya Marstrand" #founded: Swedish free port; harbour 1.0 here
+ nisga_a.swedish_dialect: "Dimfloden" #translated: Skeena, Gitxsan 'river of the mists'
+ gitxsanimaax.swedish_dialect: "Fort Nass" #adapted: Hudson's Bay post, 1831-34
+ kiis_gwaay.swedish_dialect: "Nordön" #translated: Dixon's North Island, 1787
+ gwaay_haanas.swedish_dialect: "Cap S:t James" #adapted: Dixon 1787
+ south_tlingit_province.swedish_dialect: "Södra Tlingitland" #adapted: Tlingit people; compass word ours
+ saanya.swedish_dialect: "Regnön" #founded: Revillagigedo Island; rainiest on this coast
+ taant_a.swedish_dialect: "Fort Wrangel" #adapted: Russian post 1834; US Fort Wrangel 1868
+ shtax_heen.swedish_dialect: "Fredrikssund" #founded: Frederick Sound as Fredrik I of Sweden
+ s_awdaan.swedish_dialect: "Isviken" #founded: ice-choked bay; Whidbey met it 1794
+ hinyaa.swedish_dialect: "Flundreviken" #founded: halibut off Bucareli Bay
+ keex.swedish_dialect: "Sillviken" #founded: herring at Kake
+ t_aaku.swedish_dialect: "Gåsfloden" #translated: Tlingit T'aaku, geese flood
+ jilkaat.swedish_dialect: "Kopparsund" #founded: copper; Lynn Canal
+ aa_kw.swedish_dialect: "Issundet" #translated: Icy Strait, Vancouver 1794
+ xunaa.swedish_dialect: "Korssundet" #translated: Cross Sound, Cook 1778
+ xutsnoowu.swedish_dialect: "Amiralitetsön" #translated: Admiralty Island, Vancouver 1794
+ north_tlingit_province.swedish_dialect: "Norra Tlingitland" #adapted: Tlingit people; compass word ours
+ gunaaxoo.swedish_dialect: "Port des Français" #adapted: La Pérouse 1786, Lituya Bay
+ yaakwdaat.swedish_dialect: "Yakutat" #adapted: Yakutat Bay; Russian fort 1796
+ laaxaayik.swedish_dialect: "Besvikelseviken" #translated: Disenchantment Bay, Malaspina 1791
+ yakataga.swedish_dialect: "S:t Elias" #adapted: Mount Saint Elias, Bering 1741
+ galyax.swedish_dialect: "Waxellsudden" #founded: Sven Waxell of Stockholm, Bering's mate, 1741
+ sugpiap_province.swedish_dialect: "Prins Wilhelms sund" #Meares 1797
+ daxunhyuu.swedish_dialect: "Getfjället" #founded: mountain goats; game, mountains
+ taatiilaaq.swedish_dialect: "Lävrån" #translated: Snug Corner Cove, Meares's winter of 1786
+ caniqaq.swedish_dialect: "Påskviken" #translated: Resurrection Bay, Baranov 1792
+ nanwalek.swedish_dialect: "Alexandrovsk" #adapted: Russian fort, Shelikhov's men, 1786
+ nuciiq.swedish_dialect: "Fort Konstantin" #adapted: Russian redoubt at Nuchek, 1793
+ # Iowa, Minnesota and the Dakotas
+ hokah_province.swedish_dialect: "Nya Skåne" #founded: Mattson's Skåne party founded Vasa, 1853
+ hokah.swedish_dialect: "Källdalen" #translated: Spring Valley, Minn., 1855
+ wapkawazioju.swedish_dialect: "Svithiod" #Norelius 1890; Swedish parish, Goodhue Co., 1862
+ owatonna.swedish_dialect: "Rakån" #translated: Straight River; Owatonna means straight
+ hahawakpa.swedish_dialect: "La Crosse" #Norelius 1890; French Prairie La Crosse, Pike 1805
+ lahontan.swedish_dialect: "Nya Vasa" #Norelius 1890: Vasa, Goodhue Co., 1853; the mod founds Vasa
+ minnetonka_province.swedish_dialect: "S:t Anthony" #Norelius 1890; follows its location
+ minnetonka.swedish_dialect: "S:t Anthony" #Norelius 1890; Hennepin's falls, 1680
+ wabezi.swedish_dialect: "Nya Upsala" #adapted: Upsala, Minn.; form as Bremer 1853 prints Nya Upsala
+ kagiwigwan.swedish_dialect: "Kråkvingen" #translated: Crow Wing River; the base is its Ojibwe name
+ shingwako.swedish_dialect: "Sandsjön" #translated: Sandy Lake, French Lac de Sable; post 1794
+ winnibigoshish.swedish_dialect: "Smutssjön" #translated: Winnibigoshish, Ojibwe for filthy water
+ bemidji.swedish_dialect: "Igelsjön" #translated: Leech Lake; North West post, Pike 1806
+ mahkato_province.swedish_dialect: "S:t Peter" #Norelius 1890; follows its location
+ mahkato.swedish_dialect: "S:t Peter" #Norelius 1890; Bremer 1853 prints floden S:t Peter
+ watonwan.swedish_dialect: "Sveadahl" #Norelius 1890; Swedish parish, Watonwan Co.
+ shetek.swedish_dialect: "Pelikansjön" #translated: Lake Shetek, Ojibwe zhede, pelican
+ chanshayapi.swedish_dialect: "Lac qui Parle" #adapted: French lake name; Renville's post 1826, mission 1835
+ tipsinah.swedish_dialect: "Pomme de Terre" #adapted: French river name; it translates Tipsinah
+ kandiyohi.swedish_dialect: "Svea" #Norelius 1890; Swedish parish, Kandiyohi Co., church 1871
+ kiyuska_province.swedish_dialect: "Dakotaland" #adapted: land pattern; Dakota people
+ tchan_sansan.swedish_dialect: "Jacquesfloden" #adapted: Rivière à Jacques, James River; Lewis & Clark 1804
+ kiyuska.swedish_dialect: "Hökkullen" #translated: Hawks Nest, summit near Carrington
+ pabaska.swedish_dialect: "Vitstenskullen" #Norelius 1890 as White Stone Hill; Swedish parish
+ chagu_province.swedish_dialect: "Dahlsborg" #Norelius 1890; province named for the Swedish town
+ chagu.swedish_dialect: "Flintån" #translated: Firesteel Creek at Mitchell
+ oyate_shisha.swedish_dialect: "Dahlsborg" #Norelius 1890; Swedish parish, Clay Co., 1871
+ wakmua_oin.swedish_dialect: "Stora kröken" #translated: Grand Detour, Big Bend; Lewis & Clark 1804
+ igmu_province.swedish_dialect: "Coteau des Prairies" #adapted: French name of this ridge
+ igmu.swedish_dialect: "Silversjön" #translated: Silver Lake, De Smet, S.D.
+ kampeska.swedish_dialect: "Musselsjön" #translated: Lake Kampeska, Dakota pankeska, shell
+ mnihaha.swedish_dialect: "Rödstenen" #translated: the red pipestone quarry
+ okobojo_province.swedish_dialect: "Arikaraland" #adapted: land pattern; Lewis and Clark's Arikara
+ okobojo.swedish_dialect: "Linnéslätt" #founded: Linné; flax and fibre crops on this plain
+ pocasse.swedish_dialect: "Höbäcken" #translated: Hay Creek, Lewis & Clark's Pocasse, 1804
+ unkpatina.swedish_dialect: "Almån" #translated: Elm River, Brown Co., S.D.
+ manatara_province.swedish_dialect: "Coteau du Missouri" #adapted: French name of this plateau; follows its location
+ manatara.swedish_dialect: "Coteau du Missouri" #adapted: French name of this plateau
+ maanaagi_iixodagish.swedish_dialect: "Souris" #adapted: French Rivière la Souris, 1790s posts
+ ruhptare.swedish_dialect: "Äppelån" #translated: Apple Creek, N.D.; fruit on this tile
+ moingwena_province.swedish_dialect: "Nya Östergötland" #founded: the Iowa colony came from Östergötland
+ moingwena.swedish_dialect: "Nya Kisa" #founded: Cassel's party from Kisa founded New Sweden
+ coiracoentanon.swedish_dialect: "Cederforsen" #translated: Cedar Rapids, Iowa
+ wapsipinicon.swedish_dialect: "Dubuque" #Bremer 1853; French miner Julien Dubuque, 1788
+ ocheyedan_province.swedish_dialect: "Prairie du Chien" #adapted: chief post of this ground; French
+ ocheyedan.swedish_dialect: "Klarsjön" #translated: Clear Lake, Iowa
+ penaca.swedish_dialect: "Prairie du Chien" #Norelius 1890; French post, Fort Crawford 1816
+ moskwawakwa.swedish_dialect: "Prärieforsen" #translated: Prairie Rapids Crossing, Waterloo, 1845
+ kiosaquay.swedish_dialect: "Des Moines" #Norelius 1890; French Rivière des Moines, 1700s
+ inyanshashawatpa.swedish_dialect: "Boxholm" #adapted: Boxholm, Iowa, 1900, named for Boxholm, Sweden
+ pahotcha.swedish_dialect: "Bergholm" #Norelius 1890; Swedish parish, Wapello Co., 1856
+ nishnabotna_province.swedish_dialect: "Mamrelund" #Norelius 1890; follows its location
+ nishnabotna.swedish_dialect: "Mamrelund" #Norelius 1890; Swedish parish, Stanton, Iowa, 1870
+ monona.swedish_dialect: "Stormsjön" #translated: Storm Lake, Iowa
+ tchankasndata.swedish_dialect: "Andesjön" #translated: Spirit Lake, Iowa
+ # Lake Superior
+ mathoskabde_province.swedish_dialect: "Chisago" #Norelius 1890; follows its location
+ mathoskabde.swedish_dialect: "Chisago" #Norelius 1890; oldest Swedish colony in Minnesota, 1851
+ ginebig.swedish_dialect: "Rusheby" #Norelius 1890; Swedish spelling of Rush City
+ misi_zaaga_igan.swedish_dialect: "Nya Mora" #adapted: Swedish town Mora, Kanabec Co., Minn.
+ minnewawa.swedish_dialect: "Älgsjön" #translated: Moose Lake, Minn.
+ nemadji_province.swedish_dialect: "Fond du Lac" #Norelius 1890; follows its location
+ nemadji.swedish_dialect: "Fond du Lac" #Norelius 1890; Du Luth 1679, fur post 1816
+ wissakode.swedish_dialect: "Grand Portage" #adapted: French, La Vérendrye 1731
+ makoua.swedish_dialect: "Bäverviken" #translated: Beaver Bay, Minn., 1856
+ kitchigumi.swedish_dialect: "Nya Gällivare" #founded: Swedish northern iron town; iron on this tile
+ koochiching_province.swedish_dialect: "Regnfloden" #translated: Rainy River; follows its location
+ koochiching.swedish_dialect: "Regnfloden" #translated: Rainy River, French Rivière à la Pluie
+ miskwaagamiiwi.swedish_dialect: "Rödsjön" #translated: Red Lake, French Lac Rouge; the base means red water
+ neemannee.swedish_dialect: "Tranesjön" #translated: Crane Lake, Minn.
+ kawishiwi.swedish_dialect: "Lindsjön" #translated: Basswood Lake, voyageurs' Lac Bois Blanc
