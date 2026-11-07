@@ -142,8 +142,8 @@ swe_scania.6 = {
 
 # Karlskrona, privileges of 10 August 1680 (Sjöhistoriska museet, rapport 2018:1, citing Hillbom 1979 and Indebetou 1878).
 # Vanilla's Swedish dialect already names bregne Karlskrona, so no rename, and the description avoids that name because
-# the town doesn't exist yet. No forced rank, so the modifier works on a rural location. Laborers move because Ronneby
-# had no burghers in the 1619 AI save. The town's customs freedom on en.wikipedia isn't in the report, so it's left out.
+# the town doesn't exist yet. No forced rank, so the modifier works on a rural location. Laborers move because a rural
+# Ronneby has almost no burghers. The customs freedom given on en.wikipedia isn't in that report, so it's left out.
 swe_scania.7 = {
 	type = country_event
 	title = swe_scania.7.title

@@ -206,8 +206,7 @@
  enare_trask.swedish_dialect: "Enare träsk" #Fellman; Topelius; SOF
  north_skanderna.swedish_dialect: "Kölen" #Dalin Kiölen
 
- # Second round, 2026-11-06. Attested names whose quoted source a script confirmed; analysts spot-checked 60 rows, all the right place and source, and the rest were not individually reviewed.
- # Full sources and the held-back names are in .research/names-round2-2026-11-06/ (local only).
+ # More attested names. Each comment gives the source that prints the name.
  # Denmark, Norway, Iceland, Greenland and the seas
  haderslev.swedish_dialect: "Hadersleben" #OPT; NF nfbj/0526
  aabenraa.swedish_dialect: "Apenrade" #Matrikel 1754; Djurberg 1800; Encyklopedi 1803; Pontin 1831
@@ -595,14 +594,13 @@
  gulf_of_saint_lawrence.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
  saint_lawrence_gulf.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
  bay_of_fundy.swedish_dialect: "Fundy bay" #NF nfbi/0068
- # Further names found while naming provinces
+ # Further names
  boojwiikwedong.swedish_dialect: "Green bay" #NF nfbj/0105
  braslaw.swedish_dialect: "Braslau" #Carlbom 1905
  upyte.swedish_dialect: "Upita" #Carlbom 1905
 
- # Second round, part two, 2026-11-06. Province names and names with no Swedish source, each tested by an analyst.
- # A province name may be a town in it, a period region or a colony on the province holding its capital. Compass words are ours.
- # Sources new in the second round:
+ # Province names, and names with no Swedish source. A province name may be a town in it, a period region or a colony on
+ # the province holding its capital. Compass words are ours. Further sources:
  # Silverstolpe = Geographi och Statistik öfver Sverige och Norrige 1819, runeberg.org/svnogestat. Oedman = Chorographia Bahusiensis 1746, runeberg.org/chorbahus.
  # Holmberg = Bohusläns historia 1867, runeberg.org/aehbhob. Radloff = Beskrifning öfver Åland 1795, runeberg.org/rfwaland.
  # Troil = Bref rörande en resa til Island 1777, archive.org/details/BREFrorandeenres000397249v0TroiReyk.
@@ -928,7 +926,7 @@
  gulf_of_saint_lawrence_sea_zones_province.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
  bay_of_fundy_province.swedish_dialect: "Fundy bay" #NF nfbi/0068
  lake_winnipeg.swedish_dialect: "Winipigon" #Djurberg 1800, 1801
- # Further names found while naming provinces
+ # Further names
  knyazhaya_province.swedish_dialect: "Solonski Pätin" #NF nfcb/0383; Fryxell
  derevskaya_province.swedish_dialect: "Derevski Pätin" #adapted: NF Votski, Solonski Pätin
  bezhetskaya_province.swedish_dialect: "Bjezjezki Pätin" #adapted: NF Bjezjezk + NF Solonski Pätin
@@ -1002,7 +1000,7 @@
  atikaki_province.swedish_dialect: "Winipigon" #Djurberg 1800, 1801
  wabash.swedish_dialect: "Wabach" #Loskiel 1792
 
- # Third round, 2026-11-07. The Swedish Gold Coast and gaps on land Sweden held.
+ # The Swedish Gold Coast and other land Sweden held.
  # Statskalender = Finlands statskalender 1812 and 1840, histdoc.net/stats12. ra.ee = Estonian National Archives map catalogue.
  # The Swedish Gold Coast, 1650-63
  cabo_corso.swedish_dialect: "Carolusborg" #sv.wp Fort Carolusborg; NF nfba/0169 prints Karlsborg
@@ -1020,9 +1018,9 @@
  kraslava.swedish_dialect: "Kreslau" #adapted: vanilla German name, as Rositten
  makonkalns.swedish_dialect: "Wolkenburg" #adapted: vanilla German name, as Rositten
 
- # Fourth round, 2026-11-07. North Germany, Denmark, England, Scotland and the rest of North America. Every name here is printed in a Swedish text, except that
- # compass words, S:t and Cap follow house style. Two analysts opened the sources and tested each row; details are in .research/names-round4-2026-11-07/ (local only).
- # Print after 1837, the game's last year, is allowed, and the year in each comment shows it. Sources new in this round, all on archive.org/details/:
+ # North Germany, Denmark, England, Scotland and the rest of North America. Every name here is printed in a Swedish text,
+ # except that compass words, S:t and Cap follow the mod's spelling. Print after 1837, the game's last year, is allowed,
+ # and the year in each comment shows it. Further sources, all on archive.org/details/:
  # Djurberg 1785 = Utförlig geografie, utfrliggeografi02djurgoog. Encyklopedi 1803 = Angelini, Encyklopedi för barn, encyklopedifrba00angegoog. SpanPort 1809 = Spaniens och Portugalls besittningar uti America, spaniensochportu00link.
  # Sprengel 1810 = Historia om Förenta Amerikas sjelfständighet, historiaomfrenta00spre. Svedenstjerna 1804 = Resa igenom en del af England och Scotland, resaigenomendela00sved. Pontin 1831 = Anteckningar, 8T2118NORD.
  # Kotzebue 1830 = Resa omkring jorden, cihm_18340. Meares 1797 = Tvänne resor, cihm_36934. Hearne 1798 = Samuel Hearnes Resa, cihm_17711. Bryant 1850 = Californien, en skildring af landet, californienensk00bryagoog.
@@ -1163,9 +1161,10 @@
  chuchures.swedish_dialect: "Portobello" #SpanPort 1809; Djurberg 1800; Campanius 1702
  careta.swedish_dialect: "Darien" #Djurberg 1800; SpanPort 1809; Bovallius 1886
  otolum_province.swedish_dialect: "Tabasco" #Djurberg 1800; SpanPort 1809; holds the town, on cupilco
- # Fitted names, 2026-11-07: North America. Where the alternative was a native word no European knew, these names could belong to the place under a Swedish owner (the maintainer's decision).
- # They aren't printed in a Swedish text unless the comment cites one. Most dates and meanings are from the writers' memory: two reviewers tested a sample of 165 rows and read all 2,139 translated, founded, land and kept rows, and
- # 'unconfirmed' marks a gloss they distrust. Guide, tables and verdicts: .research/names-round4-2026-11-07/ (local only). Norelius = De svenska luterska församlingarnas och svenskarnas historia i Amerika, vol. 1 1890, vol. 2 1916.
+ # Fitted names for North America. Where the alternative was a native word no European knew, these are names the place
+ # could have had under a Swedish owner. They aren't printed in a Swedish text unless the comment cites one, and the
+ # dates and meanings in the comments are unsourced unless a source is named; 'unconfirmed' marks a doubtful one.
+ # Norelius = De svenska luterska församlingarnas och svenskarnas historia i Amerika, vol. 1 1890, vol. 2 1916.
  # Keewatin
  minitig_province.swedish_dialect: "Lac la Pluie" #adapted: French; fur-trade department and HBC district
  atikwa.swedish_dialect: "Lac des Bois" #adapted: French, Lake of the Woods; La Vérendrye 1730s
@@ -2934,7 +2933,7 @@
  chatata.swedish_dialect: "Druvhult" #founded: wild grapes; Pontotoc glossed hanging grapes
  ongoulastoga.swedish_dialect: "Skutesdal" #founded: for Sven Skute of New Sweden; river valley
  sacchuma.swedish_dialect: "Opossumbyn" #translated: Possum Town, early Columbus, Miss.; Kalm: Opossum
- quizquiz.swedish_dialect: "Lerbrinken" #founded: clay bluffs; Quizquiz fails the test
+ quizquiz.swedish_dialect: "Lerbrinken" #founded: clay bluffs; Quizquiz, de Soto's town, was too little known to keep
  yazoo_province.swedish_dialect: "Yazooland" #adapted: land pattern; the Yazoo lands of the 1795 sale
  tiou.swedish_dialect: "Grodkilen" #translated: Yalobusha, Choctaw tadpole place
  taposa.swedish_dialect: "Hällån" #translated: Tallahatchie, Choctaw rock river

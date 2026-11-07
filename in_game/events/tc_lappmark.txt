@@ -370,9 +370,9 @@ swe_lappmark.5 = {
 }
 
 # The silver road: Sámi were forced to haul ore and supplies from Nasafjäll to the coast. Vanilla's flavor_swe.39
-# only runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never
-# did (swe_open_silbojock), and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires at whatever
-# date the land is settled.
+# only runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never did
+# (swe_open_silbojock), and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires
+# whenever the land is settled.
 swe_lappmark.6 = {
 	type = country_event
 	title = swe_lappmark.6.title
@@ -413,7 +413,7 @@ swe_lappmark.6 = {
 		}
 		# The decree of 1640 moved the Lais and Gran lappbyar from Ume Lappmark and Tuorpon from Lule Lappmark to provide
 		# more carriers. They went to Arjeplog, which may not be ours, so they move to the mine. Per month, so 0.24 from each:
-		# a few lappbyar, not everyone, since Ume Lappmark held only 1.13 Sámi in the 1619 AI save and Lule Lappmark none.
+		# a few lappbyar, not everyone, since by then the game has usually left only a pop or so of Sámi in these lappmarks.
 		if = {
 			limit = {
 				any_owned_location = { province_definition = province_definition:ume_lappmark_province }
@@ -529,7 +529,7 @@ swe_lappmark.7 = {
 
 # The land rise moves Luleå (1649, Länsstyrelsen Norrbotten) and Piteå (fire of July 1666, moved by 1668, sv.wikipedia).
 # Piteå Museum's study of the Bothnian towns names land rise as the cause for both. One event for the two, around
-# Luleå's date. Needs both, since the text names both, and AI Sweden held both in the 1619 save. The same modifiers as
+# Luleå's date. Needs both, since the text names both. The same modifiers as
 # swe_finland_west.7, which covers Björneborg, 90 years earlier. No rename, since the town moves inside its location.
 swe_lappmark.8 = {
 	type = country_event

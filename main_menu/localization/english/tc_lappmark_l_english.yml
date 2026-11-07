@@ -18,7 +18,7 @@
  STATIC_MODIFIER_NAME_swe_tornea_crown_town: "A Crown Town at Torneå"
  STATIC_MODIFIER_DESC_swe_tornea_crown_town: "The town stands where the Crown ordered it built, and its bailiffs watch the trade of the river closely. The traders still prefer the old landing place."
  STATIC_MODIFIER_NAME_swe_tornea_trade_district: "The Torneå Trading District"
- STATIC_MODIFIER_DESC_swe_tornea_trade_district: "The merchants of Torneå hold the trade of the Torne valley, Kainuu and the Lapplands of Torne and Kemi, the largest trading district in the realm."
+ STATIC_MODIFIER_DESC_swe_tornea_trade_district: "The merchants of Torneå hold the trade of the Torne valley, Kajanaland and the Lapplands of Torne and Kemi, the largest trading district in the realm."
 
  swe_birkarl_ting_location_bonus: "Once we confirm the rules of the Piteå ting, every [location|e] in the Birkarl lands gains:"
 
@@ -53,7 +53,7 @@
 
  swe_lappmark.4.title: "The Herds of the High Country"
  swe_lappmark.4.entry: "$swe_lappmark.4.title$"
- swe_lappmark.4.desc: "Something has changed in the north. In the high country the [ShowCultureName('sapmi')] now follow ever larger herds of reindeer, moving with the grazing, and live less by hunting and fishing than their fathers did. The forest families still keep to the old mixed living. Our bailiffs ask whether the tax should now be counted by the herd. It would bring in far more, but a family that loses its animals in a hard winter would still owe it."
+ swe_lappmark.4.desc: "Something has changed in the north. In the high country the [ShowCultureName('sapmi')] now follow ever larger herds of reindeer, moving with the grazing, and live less by hunting and fishing than their fathers did. The forest families still keep to the old mixed living. The tax could now be counted by the herd. It would bring in far more, but a family that loses its animals in a hard winter would still owe it."
  swe_lappmark.4.historical_info: "Sámi in the Lule valley moved gradually toward reindeer herding as their main livelihood, perhaps starting around the 11th century. By the 1600s and 1700s many had switched entirely, though fishing and hunting stayed important. In 1602 the lappfogde Karl Unesson recorded each taxpaying household and its reindeer in Ume Lappmark. State taxes in the 1600s and 1700s are thought to have hit the herding economy hard, especially in winters of poor grazing. Reindeer nomadism reached its peak in the mid to late 1700s."
  swe_lappmark.4.a: "Tax the herds."
  swe_lappmark.4.a.entry: "The bailiffs began to count the reindeer."
@@ -75,7 +75,7 @@
 
  swe_lappmark.6.title: "The Silver Road"
  swe_lappmark.6.entry: "$swe_lappmark.6.title$"
- swe_lappmark.6.desc: "The silver in the mountains above [ShowLocationName('silbojock')] is worth nothing until it reaches the coast, and there is no road. The bailiffs have an answer: the [ShowCultureName('sapmi')] have reindeer and sledges, and they know the country. Draft them, whole lappbyar if need be, and the silver will cost us next to nothing. But a family hauling ore cannot follow its herd, and many will slip away over the border. The alternative is to hire carriers and pay what they ask."
+ swe_lappmark.6.desc: "The silver in the mountains above [ShowLocationName('silbojock')] is worth nothing until it reaches the coast, and there is no road. The [ShowCultureName('sapmi')] have reindeer and sledges, and they know the country. Draft them, whole lappbyar if need be, and the silver will cost us next to nothing. But a family hauling ore cannot follow its herd, and many will slip away over the border. The alternative is to hire carriers and pay what they ask."
  swe_lappmark.6.historical_info: "Mining at Nasafjäll began in 1635, with a smelter at Silbojokk about 40 km away. The Sámi were forced to haul ore and supplies to and from the mine with their reindeer. A decree of 1640 moved the Lais, Gran and Tuorpon lappbyar to Arjeplog to provide more carriers. Since they could not herd at the same time, many grew poor, and many fled to Norway or the coast. From 1635 to 1659 the mines yielded 981 kg of silver and 255,000 kg of lead. In 1659 Norwegian soldiers attacked and burned the churches and most of the buildings. The Lais and Gran Sámi asked to return to Lycksele only in 1777."
  swe_lappmark.6.a: "Draft the lappbyar."
  swe_lappmark.6.a.entry: "The Sámi were drafted to haul the silver."
@@ -83,7 +83,7 @@
  swe_lappmark.6.b: "Hire carriers."
  swe_lappmark.6.b.entry: "The Crown hired carriers for the silver."
  swe_lappmark.6.c: "Leave the silver in the mountain."
- swe_lappmark.6.c.entry: "The silver above Silbojokk stayed in the mountain."
+ swe_lappmark.6.c.entry: "The silver above Silbojock stayed in the mountain."
 
  swe_lappmark.7.title: "A Town at Torneå"
  swe_lappmark.7.entry: "$swe_lappmark.7.title$"

@@ -715,8 +715,8 @@ swe_rademacher_forges = {
 }
 
 # Added for 10 years by swe_dalarna.1 to Sweden's locations in Dalarna when the bells are taken, in place of rebels.
-# The unrest of vanilla's lack_of_conciliar_justice (0.1), half of lit_destruction_of_romuva_sites and of swe_oxen_ban,
-# whose 0.2 hasn't been re-tested since the Tioharad rebels; the crown power of fontainebleau_hunting_lodge (0.1).
+# The unrest of vanilla's lack_of_conciliar_justice (0.1), half that of lit_destruction_of_romuva_sites and
+# swe_oxen_ban (0.2); the crown power of fontainebleau_hunting_lodge (0.1).
 swe_klockskatt = {
 	game_data = {
 		category = location
@@ -754,9 +754,9 @@ swe_town_moved = {
 	local_market_access = 0.1
 }
 
-# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town stays put. swe_town_moved reversed. Vanilla's
-# only negatives are natural_harbor_suitability values in location templates, but this one works: tested 2026-11-07, it
-# lowered market access at Luleå and Piteå, though not at Björneborg, whose natural harbour is 0.
+# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town stays put. swe_town_moved reversed.
+# Vanilla uses negative harbour values only in location templates, but they work here too: market access falls,
+# except where the natural harbour is already 0, as at Björneborg.
 swe_silted_harbour = {
 	game_data = {
 		category = location

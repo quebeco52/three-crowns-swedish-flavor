@@ -92,10 +92,9 @@ swe_vasa.2 = {
 		}
 
 		# The candidate can hold an older faith if the realm converted after he was made (swe_vasa.1 before
-		# flavor_swe.4), and under vanilla's heir_same_religion his children then can't inherit: a test run lost
-		# the crown to a Latvian noble that way in 1566. Done before the crowning so the heir is valid from the
-		# start. Direct like vanilla french_wars_religion.txt:440. Not change_religion_for_ruler_and_family: with
-		# country = this it does nothing, since this is the ruler inside its owner check (country_effects.txt:2527).
+		# flavor_swe.4), and under vanilla's heir_same_religion his children then can't inherit, so the crown
+		# could leave the house. Converted before the crowning so the heir is valid from the start, directly as in
+		# vanilla french_wars_religion.txt:440: change_religion_for_ruler_and_family needs country = ROOT.
 		if = {
 			limit = {
 				scope:swe_vasa_candidate = { religion != root.religion }

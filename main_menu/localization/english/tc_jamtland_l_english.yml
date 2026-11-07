@@ -1,8 +1,8 @@
 ﻿l_english:
  STATIC_MODIFIER_NAME_swe_jamtland_tings: "The Jämtland Tings"
  STATIC_MODIFIER_DESC_swe_jamtland_tings: "The Jämtlanders keep their old tings, and they have been promised that they need only defend their own province. They guard their valleys well, but few of them go to the Crown's wars."
- STATIC_MODIFIER_NAME_swe_jamtmarknaden: "The Frösön Market"
- STATIC_MODIFIER_DESC_swe_jamtmarknaden: "Every year traders from Norway, the Bothnian coast and the valleys of Jämtland meet at the great market on Frösön."
+ STATIC_MODIFIER_NAME_swe_jamtmarknaden: "The Frösö Market"
+ STATIC_MODIFIER_DESC_swe_jamtmarknaden: "Every year traders from Norway, the Bothnian coast and the valleys of Jämtland meet at the great market on Frösö."
 
  swe_jamtland.1.title: "The Jämtlanders"
  swe_jamtland.1.entry: "$swe_jamtland.1.title$"

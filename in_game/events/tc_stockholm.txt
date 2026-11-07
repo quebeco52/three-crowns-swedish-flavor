@@ -235,9 +235,8 @@ swe_stockholm.3 = {
 }
 
 # Saint George and the dragon in Storkyrkan, consecrated on New Year's Eve 1489 (SBL, Bernt Notke). The text doesn't
-# assume Brunkeberg happened in this game. The statue names no artist so that Notke isn't presented as certain. Every
-# vanilla statue passes one, but this works without (tested 2026-11-07). Vanilla's own Notke is a painter (flavor_hsa),
-# so he wouldn't fit anyway. The cost matches vanilla's statue events.
+# assume Brunkeberg happened in this game. The statue names no artist, since Notke's authorship is only attributed,
+# and create_art works without one. The cost matches vanilla's statue events.
 swe_stockholm.4 = {
 	type = country_event
 	title = swe_stockholm.4.title

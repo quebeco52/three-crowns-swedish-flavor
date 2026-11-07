@@ -32,8 +32,8 @@ swe_union.1 = {
 		}
 		c:NOR ?= {
 			in_union_with = root
-			# Norway's nobles sit at about 0.5 in saves, so this holds unless they are kept well content, which is the
-			# player's way to avoid it. The 0.45 of vanilla free_cities.txt almost never held: no firing in two AI runs.
+			# Norway's nobles usually sit at about 0.5, so this holds unless they are kept well content, which is the
+			# player's way to avoid it. The 0.45 of vanilla free_cities.txt would almost never hold.
 			OR = {
 				estate_satisfaction = { estate_type = estate_type:nobles_estate value < 0.6 }
 				opinion = { target = root value < 0 }

@@ -7,7 +7,7 @@
 # O.SS.S. for katolskakyrkan.se (citing Aron Andersson 1981), sv.wikipedia Katarina av Vadstena, and the Birgitta
 # database of the University of Oslo (citing Gillingstam, SBL). They differ on the first bull (Sixtus IV 1482 or
 # Innocent VIII 1484), so the text says the 1480s. No source puts the regent at the ceremony, so the Crown's
-# attendance in option a is our inference, not history. Vanilla's flavor_swe.46 and .48 cover Birgitta herself and
+# attendance in option a is an inference, not history. Vanilla's flavor_swe.46 and .48 cover Birgitta herself and
 # make Vadstena a holy site, which the description reads. The shrine modifier carries no max control. No has_ruler:
 # 1489 fell in Sten Sture's regency, and the text names nobody.
 swe_ostergotland.1 = {

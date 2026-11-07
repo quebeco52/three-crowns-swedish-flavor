@@ -59,7 +59,7 @@ swe_towns.1 = {
 		}
 		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta)
 		# The trigger only needs one of the four, so each move checks its own town. Per month, so 0.48 from each at most.
-		# A rural source has no burghers to give, and a real town held 1.4-3.9 in the 1619 AI save.
+		# A rural source has no burghers to give, and a town usually holds only one to four.
 		if = {
 			limit = { owns = location:ekenas }
 			add_migration = {

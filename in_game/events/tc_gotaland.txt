@@ -372,11 +372,10 @@ swe_gotaland.6 = {
 
 # Jonas Alströmer's manufactories at Alingsås, privilege of 22 June 1724 (SBL, Jonas Alströmer), refused renewal in
 # 1765-66, so about 40 years. Needs a town: the real Alingsås had town rights from 1619, the cloth bonus needs a building
-# that needs town rank, and rural locations hold almost no burghers (283 of 293 had 0.02 or fewer in the 1619 AI save).
-# Alingsås was rural in that save and no rank is forced, so this only fires where it has been raised, which is why the
-# window stays open until the privileges ran out. Vanilla's flavor_swe.34 is the national version under the Hats and
-# calls him Ahlströmer; this stays local. His workers came from abroad, London among other places (vastsverige.com),
-# hence the guarded migration.
+# that needs town rank, and rural locations hold almost no burghers. No rank is forced, so this fires only where Alingsås
+# has been raised, which is why the window stays open until the privileges ran out. Vanilla's flavor_swe.34 is the
+# national version under the Hats and calls him Ahlströmer; this stays local. His workers came from abroad, London
+# among other places (vastsverige.com), hence the migration.
 swe_gotaland.7 = {
 	type = country_event
 	title = swe_gotaland.7.title
@@ -426,7 +425,7 @@ swe_gotaland.7 = {
 				}
 			}
 			add_migration = {
-				# The source's owner, as in flavor_ven.2. With owner = this, no migration was created
+				# The source's owner, as in flavor_ven.2: owner = this creates nothing from a location we don't own
 				owner = location:london.owner
 				from = location:london.province_definition
 				to_location = location:allingsas
@@ -450,7 +449,7 @@ swe_gotaland.7 = {
 
 # The free port of Marstrand, 15 August 1775 to 15 May 1794, so 19 years (en.wikipedia Marstrand Free Port, citing Olán
 # 1917 and Avenius 2001). Marstrand has no location, so konghalla stands in. Crown power falls because most of the
-# income went into private hands. Needs Bohuslän, which starts Norwegian; AI Sweden held it in the 1619 save.
+# income went into private hands. Needs Bohuslän, which starts Norwegian.
 swe_gotaland.8 = {
 	type = country_event
 	title = swe_gotaland.8.title

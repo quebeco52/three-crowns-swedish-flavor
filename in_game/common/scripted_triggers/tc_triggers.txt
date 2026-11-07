@@ -89,8 +89,7 @@ swe_german_provinces_trigger = {
 # Character scope. A councillor who can head a Förmyndarregering (swe_council_regency). Foreigners are out, after the
 # council's decision of 1319 barring them from its seats, which Albrekt had to respect in 1371 (one secondary text,
 # Sverige 1266-1397; the assurance itself is DS X nr 75). Accepted cultures count as the realm's own, not only Swedish.
-# Same culture check as vanilla's manpower_buildings.txt, which runs it from a location. From a character, prev is that
-# character: by console on 2026-11-05, Blanche of Namur (Champenois) gave false and Knut Jonsson (Swedish) gave true.
+# The culture check is vanilla's from manpower_buildings.txt, which runs it from a location; here prev is the character.
 swe_council_regent_trigger = {
 	can_become_a_regent = yes
 	owner ?= { has_primary_or_accepted_culture = prev.culture }

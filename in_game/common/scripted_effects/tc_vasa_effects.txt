@@ -61,7 +61,7 @@ swe_select_or_create_gustav_vasa = {
 			# Two ruler traits, like 227 of vanilla's 1337 characters. Lawgiver needs ADM >= 66, which adm 80-90 always meets
 			add_trait = trait:industrious
 			add_trait = trait:lawgiver
-			# Fertility 100 like the historical figures vanilla creates. It's also the cap: 200 reads as 100 in a save
+			# Fertility 100 like the historical figures vanilla creates, which is also the cap
 			fertility = 100
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
@@ -127,7 +127,7 @@ swe_select_vasa_candidate = {
 				female = no
 				min_age = 25
 				max_age = 40
-				# 180-240 total, against Gustav's 220-250. Rulers in a test run: median 149, top 5% from 212
+				# 180-240 total: below Gustav's 220-250, well above a typical ruler's 150 or so
 				adm = { 60 80 }
 				dip = { 60 80 }
 				mil = { 60 80 }
@@ -141,9 +141,9 @@ swe_select_vasa_candidate = {
 
 # Gustav's wife conceives through the game's own pregnancy, so the child's sex, stats and name are the game's.
 # Only while he rules and has fewer than two living sons, and only with a living wife under vanilla's
-# MAX_PREGNANCY_AGE: it never makes a wife, and no other Vasa gets it. The one exception to "no scripted
-# heirs", on purpose: in a test run about one ruler in five died with no living son. Run yearly from
-# tc_yearly_country_pulse. Same effect as vanilla flavor_por.2001.a.
+# MAX_PREGNANCY_AGE: it never makes a wife, and no other Vasa gets it. The mod's only nudge towards an heir,
+# since about one ruler in five dies with no living son. Run yearly from tc_yearly_country_pulse.
+# Same effect as vanilla flavor_por.2001.a.
 swe_gustav_vasa_sons = {
 	if = {
 		limit = {
@@ -177,7 +177,5 @@ swe_gustav_vasa_sons = {
 			}
 			impregnate = scope:swe_gustav_vasa_wife
 		}
-		# Marker only: the child looks like any other, so this is how a save shows it fired
-		set_variable = swe_gustav_vasa_nudged
 	}
 }
