@@ -80,3 +80,12 @@
  swe_finland_west.6.b: "Keep the forests for timber and tar."
  swe_finland_west.6.b.entry: "The forests of Nyland were kept for timber and tar."
  swe_finland_west.6.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('nyland_province')] gains $STATIC_MODIFIER_NAME_swe_nyland_forests$ for 25 years."
+
+ swe_finland_west.7.title: "Ulvsby's Harbour"
+ swe_finland_west.7.entry: "$swe_finland_west.7.title$"
+ swe_finland_west.7.desc: "Ships bound for Ulvsby, the old town of [ShowLocationName('bjorneborg')] on the Kumo River, have found the water shallower with every generation, and the larger ones no longer try. The land here rises out of the sea, and nothing we can do will change that. A new town could be laid out nearer the river mouth, with a proper harbour and ground worth fortifying, which Ulvsby has not got. Its burghers would have to be ordered out of their houses and the whole place built again at our cost. They would rather stay, and small boats can still reach the quay."
+ swe_finland_west.7.historical_info: "The land around the Gulf of Bothnia is still rising after the last ice age, and the Kumo River, in Finnish Kokemäenjoki, grew steadily harder to sail from the 14th century. On 8 March 1558 Duke Johan, later Johan III, chartered a new town nearer the sea, saying he could find no place in Ulvsby fit to fortify, and ordered its burghers to move. That town is Björneborg, in Finnish Pori. By one account the burghers were allowed back after a few years, but the town rights stayed at Björneborg. Ulvsby, now Ulvila, regained them in 2000, by which time the sea was some way off."
+ swe_finland_west.7.a: "Build the new town."
+ swe_finland_west.7.a.entry: "A new town was built nearer the sea."
+ swe_finland_west.7.b: "Ulvsby stays."
+ swe_finland_west.7.b.entry: "Ulvsby stayed on its river."

@@ -44,3 +44,15 @@
  swe_stockholm.3.a.entry: "Serafimerorden was founded."
  swe_stockholm.3.b: "The realm has no need of ribands."
  swe_stockholm.3.b.entry: "The Crown declined to found an order of knighthood."
+
+ swe_st_goran: "S:t Göran och draken"
+ swe_st_goran_desc: "A great carved group of Saint George and the dragon in Storkyrkan, Stockholm, with the princess he has rescued at his side."
+
+ swe_stockholm.4.title: "An Altar for Saint George"
+ swe_stockholm.4.entry: "$swe_stockholm.4.title$"
+ swe_stockholm.4.desc: "There is a proposal to give Saint George an altar of his own in the great church of [ShowLocationName('stockholm')], with the saint on horseback above it, the dragon under his lance and the whole group carved larger than life. The carvers would have to come from the German towns, and they know what such work is worth. Every burgher and foreign envoy in [ShowLocationName('stockholm')] would see whose realm this is, and whom its rulers thank for it. The same money would keep a garrison for a season, which a wooden saint will not do."
+ swe_stockholm.4.historical_info: "Sten Sture the Elder placed himself and his army under Saint George's protection at the Battle of Brunkeberg in 1471, and afterwards ordered a group of the saint and the dragon for a Saint George altar in Storkyrkan in Stockholm. A papal nuncio consecrated it on New Year's Eve 1489. It carries the arms of Sture and his wife, and it is usually attributed to the Lübeck master Bernt Notke, although many attributions to him are disputed. A bronze copy from 1912 stands at Köpmantorget, a short walk from the original."
+ swe_stockholm.4.a: "Send for the carvers."
+ swe_stockholm.4.a.entry: "An altar to Saint George was raised in Stockholm."
+ swe_stockholm.4.b: "A wooden saint pays no garrison."
+ swe_stockholm.4.b.entry: "The altar to Saint George was not built."

@@ -186,15 +186,20 @@ swe_svealand.3 = {
 		location:strangnas = {
 			add_location_modifier = { modifier = swe_rademacher_forges years = 25 }
 		}
-		# His smiths were immigrants, the same way flavor_swe.41 brings Dutch burghers to Göteborg
-		add_migration = {
-			owner = this
-			from = location:riga.province_definition
-			to_location = location:strangnas
-			culture = culture:german_baltic
-			type = pop_type:burghers
-			amount = 0.05
-			months = 24
+		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga
+		if = {
+			limit = {
+				location:riga = { has_owner = yes }
+			}
+			add_migration = {
+				owner = location:riga.owner
+				from = location:riga.province_definition
+				to_location = location:strangnas
+				culture = culture:german_baltic
+				type = pop_type:burghers
+				amount = 0.01 # Per month, so 0.24 in all: only 20 forges were ever built
+				months = 24
+			}
 		}
 	}
 

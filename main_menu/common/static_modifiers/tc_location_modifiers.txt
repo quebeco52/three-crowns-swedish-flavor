@@ -734,3 +734,106 @@ swe_katarina_shrine = {
 	local_monthly_prosperity = 0.001
 	local_unrest = -0.1
 }
+
+# Added for 20 years by swe_council.2 to the judges' eight stops of 1453-54. The crown power of vanilla's
+# fontainebleau_hunting_lodge (0.1).
+swe_rafst = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town moves towards the sea. The size of
+# swe_sodertalje_cut: the harbour of vanilla's surveyed_safe_harbour (0.2) and the market access of market_charter (0.1).
+swe_town_moved = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = 0.2
+	local_market_access = 0.1
+}
+
+# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town stays put. swe_town_moved reversed. Vanilla's
+# only negatives are natural_harbor_suitability values in location templates, but this one works: tested 2026-11-07, it
+# lowered market access at Luleå and Piteå, though not at Björneborg, whose natural harbour is 0.
+swe_silted_harbour = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = -0.2
+	local_market_access = -0.1
+}
+
+# Added to visby for 10 years by swe_gotaland.6 when the rural harbours close. The market access of vanilla's
+# market_charter (0.1) and the burgher power of swe_enkoping_ice_ban (0.1).
+swe_visby_staple = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_burghers_estate_power = 0.1
+}
+
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours close. Vanilla's
+# market_charter (0.1) reversed.
+swe_gotland_harbours_closed = {
+	game_data = {
+		category = location
+	}
+	local_market_access = -0.1
+}
+
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours stay open. Half of
+# vanilla's market_charter (0.1), since this only leaves an old right alone.
+swe_gotland_harbours_open = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.05
+}
+
+# Added to allingsas for 40 years by swe_gotaland.7. The cloth output of vanilla's scale (0.1), the migration of
+# swe_rademacher_forges (0.2) and the burgher power of swe_enkoping_ice_ban (0.1). The cloth bonus only counts once a
+# cloth building stands here.
+swe_alingsas_manufaktur = {
+	game_data = {
+		category = location
+	}
+	local_cloth_output_modifier = 0.1
+	local_migration_attraction = 0.2
+	local_burghers_estate_power = 0.1
+}
+
+# Added to konghalla for 19 years by swe_gotaland.8. The market access and merchant capacity of vanilla's
+# italian_culture_rival_wool_trade (0.1, 1), the migration of available_free_land (0.1), and crown power reversed from
+# fontainebleau_hunting_lodge (0.1), since the income stayed in private hands.
+swe_marstrand_porto_franco = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_merchant_capacity = 1
+	local_migration_attraction = 0.1
+	local_crown_estate_power = -0.1
+}
+
+# Added to bregne for 50 years by swe_scania.7. The harbour of vanilla's surveyed_safe_harbour (0.2), the ship building
+# of tempest_engineer (0.25) and half the sailors of muslim_sailor_community (0.5).
+swe_karlskrona_station = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = 0.2
+	local_ship_build_speed = 0.25
+	local_sailors_modifier = 0.25
+}
+
+# Added to ronneby for 10 years by swe_scania.7 when its trade goes to the new naval town. Vanilla's market_charter
+# (0.1) reversed.
+swe_ronneby_privileges_revoked = {
+	game_data = {
+		category = location
+	}
+	local_market_access = -0.1
+}

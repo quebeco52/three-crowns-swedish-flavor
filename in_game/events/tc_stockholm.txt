@@ -233,3 +233,66 @@ swe_stockholm.3 = {
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
 	}
 }
+
+# Saint George and the dragon in Storkyrkan, consecrated on New Year's Eve 1489 (SBL, Bernt Notke). The text doesn't
+# assume Brunkeberg happened in this game. The statue names no artist so that Notke isn't presented as certain. Every
+# vanilla statue passes one, but this works without (tested 2026-11-07). Vanilla's own Notke is a painter (flavor_hsa),
+# so he wouldn't fit anyway. The cost matches vanilla's statue events.
+swe_stockholm.4 = {
+	type = country_event
+	title = swe_stockholm.4.title
+	desc = swe_stockholm.4.desc
+	outcome = neutral
+	historical_info = swe_stockholm.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1487.1.1
+		to = 1520.1.1
+		monthly_chance = 3 # Median late 1488
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:catholic
+		owns = location:stockholm
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_stockholm.4.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -3 }
+		location:stockholm = {
+			create_art = {
+				quality = 80
+				type = work_of_art_type:statue
+				key = swe_st_goran
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+		add_prestige = prestige_weak_bonus
+	}
+
+	option = {
+		name = swe_stockholm.4.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}

@@ -139,3 +139,75 @@ swe_scania.6 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Karlskrona, privileges of 10 August 1680 (Sjöhistoriska museet, rapport 2018:1, citing Hillbom 1979 and Indebetou 1878).
+# Vanilla's Swedish dialect already names bregne Karlskrona, so no rename, and the description avoids that name because
+# the town doesn't exist yet. No forced rank, so the modifier works on a rural location. Laborers move because Ronneby
+# had no burghers in the 1619 AI save. The town's customs freedom on en.wikipedia isn't in the report, so it's left out.
+swe_scania.7 = {
+	type = country_event
+	title = swe_scania.7.title
+	desc = swe_scania.7.desc
+	outcome = neutral
+	historical_info = swe_scania.7.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1678.1.1
+		to = 1720.1.1
+		monthly_chance = 3 # Median late 1679
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:bregne
+		owns = location:ronneby
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_scania.7.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -6 }
+		location:bregne = {
+			add_location_modifier = { modifier = swe_karlskrona_station years = 50 }
+		}
+		location:ronneby = {
+			change_prosperity = prosperity_mild_penalty
+			add_location_modifier = { modifier = swe_ronneby_privileges_revoked years = 10 }
+		}
+		add_migration = {
+			owner = this
+			from_location = location:ronneby
+			to_location = location:bregne
+			type = pop_type:laborers
+			amount = 0.05
+			months = 24
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_scania.7.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}

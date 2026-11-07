@@ -93,3 +93,17 @@
  swe_lappmark.7.a.entry: "Torneå was built on the Crown's chosen site."
  swe_lappmark.7.b: "Suensaari it is, and give them the trade."
  swe_lappmark.7.b.entry: "Torneå was founded on Suensaari."
+
+ STATIC_MODIFIER_NAME_swe_town_moved: "Rebuilt by the Water"
+ STATIC_MODIFIER_DESC_swe_town_moved: "The town has been pulled down and built again nearer the sea. There is deep water at the quay once more, for now."
+ STATIC_MODIFIER_NAME_swe_silted_harbour: "The Retreating Sea"
+ STATIC_MODIFIER_DESC_swe_silted_harbour: "The land rises a little every year, and the quay stands further from the water each time anyone looks. Ships lie out in the bay and send their cargo in by boat."
+
+ swe_lappmark.8.title: "The Receding Shore"
+ swe_lappmark.8.entry: "$swe_lappmark.8.title$"
+ swe_lappmark.8.desc: "[ShowLocationName('lulea')] and [ShowLocationName('pitea')] were built where the people of the coast already met, around the church and the market, and for a while that was good enough. The land here rises out of the sea, a little every year, and the water has been leaving ever since. Ships now lie out in the bay and send their cargo in by boat. We could order both towns pulled down and rebuilt nearer open water, at our cost and to the burghers' displeasure. Or they can stay where they are, with their church, their market and a longer walk to the sea every year."
+ swe_lappmark.8.historical_info: "Gustav II Adolf chartered Luleå and Piteå in 1621, among several towns on the Gulf of Bothnia, and some were placed at an existing church or market rather than where ships could best reach them. The land there is still rising after the last ice age, by about a centimetre a year, and within a few decades sea traffic had become so difficult that Sundsvall, Luleå and Piteå were all moved nearer the sea. Luleå went about ten kilometres in 1649, although some of its people refused to leave, and the old site lives on as the church town of Gammelstad, now a World Heritage Site. At Piteå a great fire in July 1666 settled the matter: building began on Häggholmen in 1667, and the town moved there in 1668. In Hudiksvall the inner part of the town was simply abandoned."
+ swe_lappmark.8.a: "Move the towns."
+ swe_lappmark.8.a.entry: "Luleå and Piteå were moved nearer the sea."
+ swe_lappmark.8.b: "Leave them where they are."
+ swe_lappmark.8.b.entry: "Luleå and Piteå stayed where they were, while the sea did not."

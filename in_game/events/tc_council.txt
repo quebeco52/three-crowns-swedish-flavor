@@ -1,6 +1,7 @@
 ﻿namespace = swe_council
 
-# The German half of the town councils (swe_tyska_radet), from game start to swe_svenska_radman_decision.
+# Government and justice. .1 concerns the German half of the town councils (swe_tyska_radet), from game start to
+# swe_svenska_radman_decision.
 
 # The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
 # Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
@@ -74,5 +75,78 @@ swe_council.1 = {
 				}
 			}
 		}
+	}
+}
+
+# Karl Knutsson's räfst, November 1453 to March 1454 (SBL, Karl Knutsson). The modifier goes on the judges' eight stops
+# rather than the whole realm. No gold, since vanilla's perform_reduction already takes estate money by hand. The clergy
+# penalty rests on the chapters' protest of 15 January 1454. Whether the räfst really pushed back the church's gains is
+# disputed, so the text doesn't say it did. The description names nobody, because any ruler can hold the throne by now.
+swe_council.2 = {
+	type = country_event
+	title = swe_council.2.title
+	desc = swe_council.2.desc
+	outcome = neutral
+	historical_info = swe_council.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1451.1.1
+		to = 1470.1.1
+		monthly_chance = 3 # Median late 1452
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:uppsala
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		custom_tooltip = {
+			text = swe_council.2.a_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						this = location:vaxjo
+						this = location:jonkoping
+						this = location:skara
+						this = location:orebro
+						this = location:vasteras
+						this = location:uppsala
+						this = location:strangnas
+						this = location:linkoping
+					}
+				}
+				add_location_modifier = { modifier = swe_rafst years = 20 }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+	}
+
+	option = {
+		name = swe_council.2.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
 	}
 }
