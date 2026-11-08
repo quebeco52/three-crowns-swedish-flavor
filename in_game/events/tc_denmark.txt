@@ -1,0 +1,84 @@
+﻿namespace = swe_denmark
+
+# Content for Danish land beyond Skåneland, which Sweden held only in war. Fires whenever Sweden owns the land, not by
+# date.
+
+# Zealand. At Gottorp on 7 July 1658 Karl X Gustav resolved to conquer the whole of Denmark and add it to his realm
+# (Odén, Scandia; en.wiki Assault on Copenhagen). His siege camp at Brønshøj grew into a town, Carlstad (da.wiki
+# Københavns belejring), Kronborg fell in September and the Sound toll was taken on Sweden's account (Odén, citing Bang
+# 1906), and occupied Zealand paid brandskat and monthly deliveries: Køge 8,000 daler on 26 August 1658 and about
+# 45,000 more by June 1660 (Nordentoft 1941, krigsvidenskab.dk, from the town's accounts). Englund (2000) writes that
+# Copenhagen was to be razed; no second source was found, so the text leaves it out. The Sound toll is vanilla's own
+# mechanic at Helsingør, so it stays in historical_info. Fires whenever Sweden owns Copenhagen while it is Danish.
+swe_denmark.1 = {
+	type = country_event
+	title = swe_denmark.1.title
+	desc = swe_denmark.1.desc
+	outcome = neutral
+	historical_info = swe_denmark.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Copenhagen
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kobenhavn
+		location:kobenhavn = { dominant_culture = culture:danish }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+	}
+
+	# The Gottorp resolution: Denmark as Swedish provinces
+	option = {
+		name = swe_denmark.1.a
+		ai_chance = {
+			base = 50
+		}
+
+		custom_tooltip = {
+			text = swe_denmark.1.a_tt
+			every_owned_location = {
+				limit = {
+					province_definition = province_definition:zealand_province
+					dominant_culture = culture:danish
+					NOT = { has_location_modifier = swe_forsvenskning }
+				}
+				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+			}
+		}
+	}
+
+	# The occupation of 1658-60
+	option = {
+		name = swe_denmark.1.b
+		historical_option = yes
+		ai_chance = {
+			base = 50
+		}
+
+		change_gold_effect = { scale = 4 }
+		custom_tooltip = {
+			text = swe_denmark.1.b_tt
+			every_owned_location = {
+				limit = {
+					province_definition = province_definition:zealand_province
+					NOT = { has_location_modifier = swe_war_contributions }
+				}
+				add_location_modifier = { modifier = swe_war_contributions years = 10 }
+			}
+		}
+	}
+}

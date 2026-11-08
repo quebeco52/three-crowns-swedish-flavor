@@ -1,0 +1,202 @@
+﻿namespace = swe_spoils
+
+# Spoils of war: what Swedish armies sent home from the towns they took. These fire whenever Sweden owns such a town,
+# not by date, except where the thing taken had to exist first.
+
+# The libraries. Gustav II Adolf's armies sent the Jesuit libraries of Riga (1621), Braunsberg and Frauenburg (1626, with
+# books of Copernicus's) to Uppsala, the Würzburg palace library and books from Mainz followed in 1631, Torstensson's
+# army took Olomouc's libraries (1642-50), and Königsmarck took Prague's treasures in 1648 on Kristina's instructions
+# (Uppsala University Library; WLB Stuttgart; Radio Prague; en.wiki Battle of Prague 1648). Fires whenever a Protestant
+# Sweden that holds Uppsala owns one of those towns while it is Catholic. Books move as in vanilla's war_of_religions.18,
+# and Uppsala gains a library as in flavor_mlo.53, so the event still pays if the town holds no books at that moment.
+swe_spoils.1 = {
+	type = country_event
+	title = swe_spoils.1.title
+	desc = swe_spoils.1.desc
+	outcome = neutral
+	historical_info = swe_spoils.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes such a town
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		is_protestant = yes
+		owns = location:uppsala
+		any_owned_location = {
+			swe_spoils_library_trigger = yes
+			dominant_religion = religion:catholic
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		random_owned_location = {
+			limit = {
+				swe_spoils_library_trigger = yes
+				dominant_religion = religion:catholic
+			}
+			save_scope_as = swe_spoils_library
+		}
+	}
+
+	option = {
+		name = swe_spoils.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		scope:swe_spoils_library = {
+			custom_tooltip = {
+				text = swe_spoils.1.a_books_tt
+				every_work_of_art_in_location = {
+					limit = { swe_written_work_trigger = yes }
+					move_art_and_owner = { location = location:uppsala country = root }
+				}
+			}
+			change_prosperity = prosperity_weak_penalty
+			custom_tooltip = {
+				text = swe_spoils.1.a_clergy_tt
+				every_pop = {
+					limit = {
+						pop_type = pop_type:clergy
+						religion = religion:catholic
+					}
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+		location:uppsala = {
+			add_location_modifier = { modifier = swe_war_booty_library months = -1 }
+		}
+	}
+
+	option = {
+		name = swe_spoils.1.b
+		ai_chance = {
+			base = 40
+		}
+
+		scope:swe_spoils_library = {
+			custom_tooltip = {
+				text = swe_spoils.1.b_tt
+				every_pop = {
+					limit = {
+						pop_type = pop_type:clergy
+						religion = religion:catholic
+					}
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+}
+
+# The bronzes of Adriaen de Vries. Swedish troops took his figures from Wallenstein's palace garden in Prague in 1648,
+# and in 1659 those of Christian IV's Neptune Fountain at Frederiksborg (1622); most stand at Drottningholm today
+# (CODART; Rijksmuseum, Triton; Kungliga slotten, Museum de Vries; lex.dk). Frederiksborg has no location: it falls in
+# the helsingor tile by projecting its coordinates onto locations.png, not checked in game. The garden and the fountain
+# had to exist, so each source has a date, and its own culture must still dominate, standing in for "the Danish
+# king's palace" and "Wallenstein's garden". The statue gets no artist, as in swe_stockholm.4.
+swe_spoils.2 = {
+	type = country_event
+	title = swe_spoils.2.title
+	desc = swe_spoils.2.desc
+	outcome = neutral
+	historical_info = swe_spoils.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes the town
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:stockholm
+		OR = {
+			AND = {
+				current_year >= 1623
+				owns = location:helsingor
+				location:helsingor = { dominant_culture = culture:danish }
+			}
+			AND = {
+				current_year >= 1628
+				owns = location:prague
+				location:prague = { dominant_culture = culture:czech }
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		if = {
+			limit = {
+				current_year >= 1623
+				owns = location:helsingor
+				location:helsingor = { dominant_culture = culture:danish }
+			}
+			location:helsingor = { save_scope_as = swe_spoils_bronzes }
+		}
+		else = {
+			location:prague = { save_scope_as = swe_spoils_bronzes }
+		}
+	}
+
+	option = {
+		name = swe_spoils.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		change_gold_effect = { scale = -1 }
+		location:stockholm = {
+			create_art = {
+				quality = 80
+				type = work_of_art_type:statue
+				key = swe_de_vries_bronzes
+			}
+		}
+		scope:swe_spoils_bronzes = {
+			change_prosperity = prosperity_weak_penalty
+		}
+		add_prestige = prestige_weak_bonus
+	}
+
+	option = {
+		name = swe_spoils.2.b
+		ai_chance = {
+			base = 40
+		}
+
+		scope:swe_spoils_bronzes = {
+			custom_tooltip = {
+				text = swe_spoils.2.b_tt
+				every_pop = {
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+}

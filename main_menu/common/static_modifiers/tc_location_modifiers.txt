@@ -841,9 +841,10 @@ swe_ronneby_privileges_revoked = {
 	local_market_access = -0.1
 }
 
-# Added for 10 years by swe_baltic.5 to Sweden's locations in Courland and Semigallia when the estates pay for the army,
-# as they did under Karl XII after 1701. Half of vanilla's looted (prosperity decay 0.1, development -0.25).
-swe_courland_contributions = {
+# Added for 10 years when occupied land pays for the army: by swe_baltic.5 to Courland and Semigallia (Karl XII after
+# 1701), by swe_denmark.1 to Zealand (the brandskat of 1658-60) and by swe_lithuania.1 to Lithuania (after Kėdainiai,
+# 1655). Half of vanilla's looted (prosperity decay 0.1, development -0.25).
+swe_war_contributions = {
 	game_data = {
 		category = location
 	}
@@ -877,4 +878,38 @@ swe_finnmark_settlers = {
 		category = location
 	}
 	local_migration_attraction = 0.3
+}
+
+# Added permanently to uppsala by swe_spoils.1 when the books of a captured library come there, as those of Riga,
+# Braunsberg, Frauenburg, Würzburg, Olomouc and Prague did. The values of vanilla's MLO_library_research, the Pavia
+# library taken to Milan.
+swe_war_booty_library = {
+	game_data = {
+		category = location
+	}
+	local_institution_growth_modifier = 0.10
+	local_max_literacy = 5
+}
+
+# Added to narva for 30 years by swe_baltic.6 when the Julfa merchants get their hostel and warehouse there (1687).
+# The values of swe_russian_staple: another trade the Crown drew to its own port.
+swe_julfa_factory = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity_modifier = 0.1
+	local_trades_per_burgher = 0.25
+}
+
+# Added for 50 years by swe_lithuania.1 to Sweden's locations in Lithuania when it accepts the terms of Kėdainiai (1655):
+# the lords keep their own law, courts and faith. The values of swe_baltic_privileges, the same bargain with the
+# German knighthoods.
+swe_lithuanian_rights = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.25
+	local_crown_estate_power = -0.25
+	local_pop_assimilation_speed_modifier = -0.25
+	local_integration_speed = 0.10
 }

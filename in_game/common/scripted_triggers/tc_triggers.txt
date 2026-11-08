@@ -94,3 +94,30 @@ swe_council_regent_trigger = {
 	can_become_a_regent = yes
 	owner ?= { has_primary_or_accepted_culture = prev.culture }
 }
+
+# Catholic seats whose libraries Swedish armies sent home: Riga (1621), Frauenburg (1626; Braunsberg has no location),
+# Würzburg and Mainz (1631), Olomouc (1642-50) and Prague (1648) (swe_spoils.1)
+swe_spoils_library_trigger = {
+	OR = {
+		this = location:riga
+		this = location:frombork
+		this = location:wurzburg
+		this = location:mainz
+		this = location:olomouc
+		this = location:prague
+	}
+}
+
+# Work of art scope. Written works, the kind a library holds: vanilla's list in war_of_religions.18, plus scripture and
+# treatises (swe_spoils.1)
+swe_written_work_trigger = {
+	OR = {
+		work_of_art_type = work_of_art_type:chronicle
+		work_of_art_type = work_of_art_type:novel
+		work_of_art_type = work_of_art_type:poem
+		work_of_art_type = work_of_art_type:play
+		work_of_art_type = work_of_art_type:prayer_book
+		work_of_art_type = work_of_art_type:scripture
+		work_of_art_type = work_of_art_type:treatise
+	}
+}

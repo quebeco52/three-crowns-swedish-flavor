@@ -1,0 +1,98 @@
+﻿namespace = swe_lithuania
+
+# Content for Lithuania, which Sweden held for little more than a year. Fires whenever Sweden owns the land, not by date.
+
+# The Union of Kėdainiai. On 17 August 1655 Janusz Radziwiłł put the Grand Duchy under Swedish protection, and on 20
+# October at Kėdainiai he and more than a thousand nobles made Karl X Gustav Grand Duke, with De la Gardie negotiating:
+# the Lithuanians kept their statutes, rights and freedom of religion (Meilus, ldkistorija.lt; en.wiki Union of
+# Kėdainiai). Confiscations and taxes followed, the lesser nobility turned, and by 1657 it was over. The tax figure and
+# the promise to the peasants in en.wiki's Swedish Lithuania rest on one source, so the text leaves them out. Fires
+# whenever Sweden owns three locations in Lithuania or Samogitia and Lithuanian lords still hold land there. The text
+# is era- and religion-neutral, since Lithuania stays pagan until 1387.
+swe_lithuania.1 = {
+	type = country_event
+	title = swe_lithuania.1.title
+	desc = swe_lithuania.1.desc
+	outcome = neutral
+	historical_info = swe_lithuania.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes the land
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		any_owned_location = {
+			count >= 3
+			swe_lithuania_trigger = yes
+		}
+		any_owned_location = {
+			swe_lithuania_trigger = yes
+			any_pop = {
+				pop_type = pop_type:nobles
+				culture = { has_culture_group = culture_group:lithuanian_group }
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+	}
+
+	option = {
+		name = swe_lithuania.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		custom_tooltip = {
+			text = swe_lithuania.1.a_tt
+			every_owned_location = {
+				limit = {
+					swe_lithuania_trigger = yes
+					NOT = { has_location_modifier = swe_lithuanian_rights }
+				}
+				add_location_modifier = { modifier = swe_lithuanian_rights years = modifier_duration_years_very_long }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_lithuania.1.b
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = 4 }
+		custom_tooltip = {
+			text = swe_lithuania.1.b_tt
+			every_owned_location = {
+				limit = { swe_lithuania_trigger = yes }
+				if = {
+					limit = { NOT = { has_location_modifier = swe_war_contributions } }
+					add_location_modifier = { modifier = swe_war_contributions years = 10 }
+				}
+				# The lords' anger stays in Lithuania, in place of a country-wide estate penalty
+				every_pop = {
+					limit = {
+						pop_type = pop_type:nobles
+						culture = { has_culture_group = culture_group:lithuanian_group }
+					}
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+}

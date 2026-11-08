@@ -1,0 +1,11 @@
+﻿l_english:
+ swe_denmark.1.title: "The Fate of Zealand"
+ swe_denmark.1.entry: "$swe_denmark.1.title$"
+ swe_denmark.1.desc: "[ShowLocationName('kobenhavn')] and the towns of [ShowProvinceDefinitionName('zealand_province')] now answer to [ROOT.GetCountry.GetName], and what the island is to become is ours to decide. We could make it a Swedish province like any other, with Swedish law in its courts and Swedish priests in its pulpits, until its people forget they were ever anything else. Or we could treat it as what it is for the moment, an occupied country, and have its towns and farms pay for our armies. Zealand is rich enough to pay, though it will be a good deal poorer by the time it has finished."
+ swe_denmark.1.historical_info: "The Treaty of Roskilde in February 1658 gave Sweden Skåne, Halland, Blekinge, Bohuslän, Bornholm and Trondhjems len, but at a council at Gottorp in July Karl X Gustav resolved to finish the work and conquer the whole of Denmark. He landed at Korsør in August and laid siege to Copenhagen, and his camp at Brønshøj, built from the timber of the villages around it, grew into a town of its own, called Carlstad. Kronborg fell in September, and the Sound toll was taken at Helsingør on Sweden's account. The rest of Zealand paid for the siege. Køge alone was charged a brandskat of 8,000 daler in August 1658, the price of not being burnt, and about 45,000 more in monthly deliveries by the summer of 1660. Frederiksborg was plundered in 1659. Copenhagen held out, and the night assault of February 1659 failed. Karl X Gustav died a year later, and the Treaty of Copenhagen of 1660 returned Bornholm and Trondhjems len to Denmark-Norway, though Skåne stayed Swedish."
+ swe_denmark.1.a: "Zealand will be a Swedish province."
+ swe_denmark.1.a.entry: "Zealand was brought under Swedish law."
+ swe_denmark.1.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('zealand_province')] where [ShowCultureName('danish')] culture dominates gains [ShowModifier('swe_forsvenskning')] for 20 years."
+ swe_denmark.1.b: "Zealand will pay for the war."
+ swe_denmark.1.b.entry: "Zealand paid for our armies."
+ swe_denmark.1.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('zealand_province')] gains [ShowModifier('swe_war_contributions')] for 10 years."

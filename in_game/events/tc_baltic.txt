@@ -356,9 +356,9 @@ swe_baltic.5 = {
 			every_owned_location = {
 				limit = {
 					swe_courland_trigger = yes
-					NOT = { has_location_modifier = swe_courland_contributions }
+					NOT = { has_location_modifier = swe_war_contributions }
 				}
-				add_location_modifier = { modifier = swe_courland_contributions years = 10 }
+				add_location_modifier = { modifier = swe_war_contributions years = 10 }
 			}
 		}
 	}
@@ -412,5 +412,86 @@ swe_baltic.5 = {
 				add_location_modifier = { modifier = swe_courland_low_dues years = modifier_duration_years_very_long }
 			}
 		}
+	}
+}
+
+# Silk from Isfahan. Karl XI sent Ludvig Fabritius to the Shah three times (1679-1700) to draw the Persian silk trade
+# through Russia to Narva. On 27 September 1687 the Crown contracted with the Armenian merchants of New Julfa: two years
+# free of toll, a hostel and warehouse at Narva built with royal support, and transit dues of 2 and 1 per cent
+# (Bakhchinyan, Hokkaido Slavic Research Center; the Armenian foreign ministry's history of Armenian-Swedish ties; en.wiki
+# Ludvig Fabritius, citing Matthee). From the age of absolutism, since New Julfa dates from 1605, while Sweden owns
+# Narva and is at peace with whoever owns Isfahan and Moscow. Can stack with swe_baltic.4's modifiers at Narva.
+swe_baltic.6 = {
+	type = country_event
+	title = swe_baltic.6.title
+	desc = swe_baltic.6.desc
+	outcome = neutral
+	historical_info = swe_baltic.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after the conditions are met
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_5_absolutism
+		}
+		owns = location:narva
+		location:isfahan.owner ?= {
+			NOT = { is_at_war_with = root }
+		}
+		location:moscow.owner ?= {
+			NOT = { is_at_war_with = root }
+		}
+	}
+
+	image = "gfx/interface/icons/trade_goods/illustrations/icon_goods_silk.dds"
+
+	option = {
+		name = swe_baltic.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		change_gold_effect = { scale = -1 }
+		location:narva = {
+			add_location_modifier = { modifier = swe_julfa_factory years = 30 }
+			# Burghers don't stay in a rural settlement: a 2026-11-08 test at a rural Narva kept 0.005 of 0.03 after a
+			# month. So the merchants only settle in a town, as swe_gotaland.7 requires for Alingsås.
+			if = {
+				limit = {
+					OR = {
+						location_rank = location_rank:town
+						location_rank = location_rank:city
+						location_rank = location_rank:megalopolis
+					}
+				}
+				custom_tooltip = {
+					text = swe_baltic.6.a_tt
+					add_pop = {
+						culture = culture:armenian_culture
+						religion = religion:miaphysite
+						type = pop_type:burghers
+						size = 0.03
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = swe_baltic.6.b
+		ai_chance = {
+			base = 40
+		}
+
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }

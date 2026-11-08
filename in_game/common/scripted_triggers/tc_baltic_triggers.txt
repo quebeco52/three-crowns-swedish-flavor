@@ -111,3 +111,11 @@ swe_courland_harbour_trigger = {
 		this = location:grobina
 	}
 }
+
+# Lithuania proper and Samogitia, whose lords made Karl X Gustav their Grand Duke at Kėdainiai in 1655 (swe_lithuania.1)
+swe_lithuania_trigger = {
+	OR = {
+		area = area:lithuania_area
+		area = area:samogitia_area
+	}
+}

@@ -1,0 +1,28 @@
+﻿l_english:
+ STATIC_MODIFIER_NAME_swe_war_booty_library: "The Captured Library"
+ STATIC_MODIFIER_DESC_swe_war_booty_library: "The books our armies sent home fill new shelves here, and scholars come from all over the realm to read them."
+
+ swe_de_vries_bronzes: "The de Vries Bronzes"
+ swe_de_vries_bronzes_desc: "Bronze gods, tritons and horses by Adriaen de Vries, taken from a foreign palace garden as spoils of war and set up in the Crown's own."
+
+ swe_spoils.1.title: "The Library of [swe_spoils_library.GetNameWithNoTooltip]"
+ swe_spoils.1.entry: "$swe_spoils.1.title$"
+ swe_spoils.1.desc: "The cathedral and the religious houses of [swe_spoils_library.GetName] keep a library that their clergy have been filling for generations: chronicles, missals and books of hours, the works of the Fathers and of the astronomers. The town is ours, and the books could be packed and sent to [ShowLocationName('uppsala')], where our own scholars have nothing like them. The town will be the poorer for it, and its Catholic clergy will not forgive it. They beg us to leave the books where they are, and they have a point beyond their own interest: books shipped across the Baltic do not all arrive."
+ swe_spoils.1.historical_info: "In the 1620s the armies of Gustav II Adolf sent the Jesuit libraries of Riga and Braunsberg and the chapter library of Frauenburg to Sweden, among them books that had belonged to Copernicus, a canon of Frauenburg. They went to Uppsala University, which still keeps them. In 1631 the king had the library of the prince-bishops' palace at Würzburg shipped home, and books from Mainz followed, though one cargo of them is said to have sunk in the Baltic. Lennart Torstensson's army held Olomouc from 1642 to 1650 and took its libraries, the Jesuits' among them. In July 1648, in the last weeks of the war, Königsmarck took the Lesser Town and the Castle of Prague, and the treasures of Rudolf II's collection went to Stockholm on Queen Kristina's instructions, among them the Codex Argenteus, the silver Bible of the Goths, which is now at Uppsala. The Swedes were not the only collectors: the great library of Heidelberg had gone to Rome in 1623."
+ swe_spoils.1.a: "Send the books to [ShowLocationNameWithNoTooltip('uppsala')]."
+ swe_spoils.1.a.entry: "A captured library was sent to Uppsala."
+ swe_spoils.1.a_books_tt: "Every written [work_of_art|e] in [swe_spoils_library.GetName] moves to [ShowLocationName('uppsala')]."
+ swe_spoils.1.a_clergy_tt: "The Catholic clergy [pops|e] there lose 5% [pop_satisfaction|e]."
+ swe_spoils.1.b: "Leave the books to the clergy."
+ swe_spoils.1.b.entry: "A captured library was left to its clergy."
+ swe_spoils.1.b_tt: "The Catholic clergy [pops|e] of [swe_spoils_library.GetName] gain 5% [pop_satisfaction|e]."
+
+ swe_spoils.2.title: "The Bronzes of [swe_spoils_bronzes.GetNameWithNoTooltip]"
+ swe_spoils.2.entry: "$swe_spoils.2.title$"
+ swe_spoils.2.desc: "In the palace gardens near [swe_spoils_bronzes.GetName] stand bronzes by Adriaen de Vries, the Dutch sculptor of the imperial court at Prague: gods, tritons and horses around the fountains, as fine as any north of the Alps. Our officers would have them taken down and shipped to [ShowLocationName('stockholm')], where the Crown has gardens of its own. Moving them will cost us something, and the people here will remember who took them. Left where they are, they will belong to whoever holds the town after the peace."
+ swe_spoils.2.historical_info: "Adriaen de Vries, a Dutch sculptor who had worked at the court of Rudolf II in Prague, cast some of the finest bronzes of his age, and in his last years two patrons kept him busy. For Christian IV of Denmark he made the Neptune Fountain at Frederiksborg, finished in 1622, and for Albrecht von Wallenstein the figures of the garden of his new palace below Prague Castle. When Königsmarck's troops took the Lesser Town of Prague in July 1648, the Wallenstein bronzes went to Sweden as booty, and in 1659, during the siege of Copenhagen, Swedish soldiers stripped Frederiksborg and carried off the figures of the fountain. Most of them stand today at Drottningholm, where Sweden keeps some thirty bronzes by de Vries. Copies stand in Wallenstein's garden and at Frederiksborg."
+ swe_spoils.2.a: "Ship them to [ShowLocationNameWithNoTooltip('stockholm')]."
+ swe_spoils.2.a.entry: "Bronzes by Adriaen de Vries were taken to Stockholm."
+ swe_spoils.2.b: "Leave them in their gardens."
+ swe_spoils.2.b.entry: "The bronzes of de Vries were left in their gardens."
+ swe_spoils.2.b_tt: "The [pops|e] of [swe_spoils_bronzes.GetName] gain 5% [pop_satisfaction|e]."

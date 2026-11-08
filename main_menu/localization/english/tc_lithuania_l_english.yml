@@ -1,0 +1,14 @@
+﻿l_english:
+ STATIC_MODIFIER_NAME_swe_lithuanian_rights: "The Lords' Own Law"
+ STATIC_MODIFIER_DESC_swe_lithuanian_rights: "The lords here keep their own law, their courts, their offices and their faith, and govern their estates and the peasants on them under our crown, for as long as they keep faith with it."
+
+ swe_lithuania.1.title: "The Lithuanian Lords"
+ swe_lithuania.1.entry: "$swe_lithuania.1.title$"
+ swe_lithuania.1.desc: "The lords of [ShowAreaName('lithuania_area')] have sent their spokesmen to our camp with an offer under their seals. They will take the crown of [ROOT.GetCountry.GetName] as their own and fight in its wars, if they may keep their own law and courts, their offices, their estates and their faith, and if nothing is changed without their consent. A land governed by its own lords would cost us little to hold, as long as they keep their word. But the land is already ours by conquest, the lords who have not put their seals to the offer have estates worth taking, and our army has to be paid by someone."
+ swe_lithuania.1.historical_info: "In the summer of 1655, as Swedish armies overran Poland and a Russian army took Vilnius, Janusz Radziwiłł, Grand Hetman of Lithuania, turned to Sweden. On 17 August he put the Grand Duchy under Swedish protection, and on 20 October 1655, at his family's town of Kėdainiai, he and more than a thousand Lithuanian nobles signed a union that made Karl X Gustav their Grand Duke, negotiated for Sweden by Magnus Gabriel De la Gardie. The Lithuanians were to keep their statutes, their rights and privileges and freedom of religion, and nothing was to change without the consent of both nations. It did not last. The Swedish administration confiscated the estates of nobles who would not recognise it and demanded money for the army, the lesser nobility turned against the union, and Radziwiłł died, besieged by his enemies at Tykocin, on the last day of 1655. By 1657 the Swedes had lost their last strongholds in Lithuania, and at Oliva in 1660 Sweden gave up its claim."
+ swe_lithuania.1.a: "Accept their terms."
+ swe_lithuania.1.a.entry: "The Lithuanian lords kept their own law under our crown."
+ swe_lithuania.1.a_tt: "Every [location|e] we own in [ShowAreaName('lithuania_area')] and [ShowAreaName('samogitia_area')] gains [ShowModifier('swe_lithuanian_rights')] for 50 years."
+ swe_lithuania.1.b: "Rule it as conquered land."
+ swe_lithuania.1.b.entry: "Lithuania was ruled as conquered land."
+ swe_lithuania.1.b_tt: "Every [location|e] we own in [ShowAreaName('lithuania_area')] and [ShowAreaName('samogitia_area')] gains [ShowModifier('swe_war_contributions')] for 10 years, and the Lithuanian noble [pops|e] there lose 5% [pop_satisfaction|e]."
