@@ -8,6 +8,6 @@
  swe_pomerania.1.historical_info: "Swedish Pomerania kept its own constitution under the Swedish Crown, and with it a harsh serfdom on the noble estates, which Ernst Moritz Arndt attacked in a book of 1803. In 1805, 46,190 of the 79,087 country people were serfs. In 1806 the Pomeranian estates refused Gustav IV Adolf a militia and went to the courts against his statutes. On 26 June he set aside their constitution and took the province out of the Holy Roman Empire, weeks before the Empire was dissolved, and then announced Swedish law and the abolition of serfdom. The French occupation of 1807 held the reforms back, and they were only partly carried out after Sweden regained the province in 1810."
  swe_pomerania.1.a: "Free the peasants."
  swe_pomerania.1.a.entry: "The Pomeranian peasants were freed."
- swe_pomerania.1.a_tt: "Every [location|e] we own in [ShowAreaNameWithNoTooltip('pomerania_area')] gains $STATIC_MODIFIER_NAME_swe_pomeranian_emancipation$."
+ swe_pomerania.1.a_tt: "Every [location|e] we own in [ShowAreaNameWithNoTooltip('pomerania_area')] gains [ShowModifier('swe_pomeranian_emancipation')]."
  swe_pomerania.1.b: "Leave the estates their rights."
  swe_pomerania.1.b.entry: "Pomerania keeps its old constitution."

@@ -31,7 +31,7 @@
  swe_tar_company_decision.desc.entry: "A company could buy up all the tar of Österbotten."
  swe_tar_company_decision.historical_info: "Finland, and above all Ostrobothnia, was Europe's largest source of tar in the 17th and 18th centuries. Production grew quickly during the Thirty Years' War, and by the 1640s tar was one of Finland's main exports. In 1648 a tar company in Stockholm was given the sole right to buy and export tar, and with it control over prices and production. The company was re-founded several times, lost its monopoly between 1682 and 1689, and was abolished for good in 1715. The tar trade itself went on, and in the 18th century it made the towns of Ostrobothnia rich."
  swe_tar_company_decision.a: "Charter the company."
- swe_tar_company_decision.a_tt: "$swe_bottniska_handelstvanget$ gains a bonus to [ShowGoodsName('tar')] production in [ShowProvinceDefinitionName('norra_osterbotten_province')] and [ShowProvinceDefinitionName('sodra_osterbotten_province')]."
+ swe_tar_company_decision.a_tt: "[ShowEstatePrivilegeName('swe_bottniska_handelstvanget')] gains a bonus to [ShowGoodsName('tar')] production in [ShowProvinceDefinitionName('norra_osterbotten_province')] and [ShowProvinceDefinitionName('sodra_osterbotten_province')]."
  swe_tar_company_location_bonus: "Once we charter the Tar Company, every [location|e] in [ShowProvinceDefinitionName('norra_osterbotten_province')] and [ShowProvinceDefinitionName('sodra_osterbotten_province')] gains:"
 
  swe_lappmarksplakatet_decision.title: "The Lappmark Edict"
@@ -46,10 +46,10 @@
  swe_norrland.1.historical_info: "During the war for the Swedish throne in the 1390s, the Victual Brothers held castles along the Bothnian coast. They built Faxeholm in 1395 or 1396, on what was then an island at today's Söderhamn, and by 1398 it was in the Crown's hands. For decades it was the centre of Hälsingland's administration. During Engelbrekt's rising in 1434 the people of Hälsingland stormed and burned it, led according to tradition by Elof Djäkn. A ballad written down in the 1600s still told of the bailiff's cruelty. The castle was never rebuilt."
  swe_norrland.1.a: "Let the ruin lie."
  swe_norrland.1.a.entry: "Faxeholm was left in ruins."
- swe_norrland.1.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains $STATIC_MODIFIER_NAME_swe_faxeholm_ruins$ for 25 years."
+ swe_norrland.1.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains [ShowModifier('swe_faxeholm_ruins')] for 25 years."
  swe_norrland.1.b: "Rebuild it, and send a new bailiff."
  swe_norrland.1.b.entry: "Faxeholm was rebuilt."
- swe_norrland.1.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains $STATIC_MODIFIER_NAME_swe_norrland_bailiff$ for 10 years."
+ swe_norrland.1.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] and [ShowProvinceDefinitionName('angermanland_province')] gains [ShowModifier('swe_norrland_bailiff')] for 10 years."
 
  swe_norrland.2.title: "The Gefle Fishermen"
  swe_norrland.2.entry: "$swe_norrland.2.title$"

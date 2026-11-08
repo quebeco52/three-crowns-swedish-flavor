@@ -15,14 +15,14 @@
  swe_rikes_lag_decision.desc.entry: "A new law code could replace the old law of the land and the town law."
  swe_rikes_lag_decision.historical_info: "From 1686 a series of law commissions worked on a new code to replace the medieval national law and town law. The result, Sveriges rikes lag (the Law of the Realm of Sweden), was adopted by the Riksdag in 1734 and came into force in 1736. Its chapters on marriage, inheritance, land, building, trade, crime and procedure applied to town and countryside alike, and its structure survives in Swedish and Finnish law today."
  swe_rikes_lag_decision.a: "Pass the new code."
- swe_rikes_lag_decision.a_tt: "$swe_landslag$ gains a bonus to [legislative_efficiency|e]."
+ swe_rikes_lag_decision.a_tt: "[ShowPolicyName('swe_landslag')] gains a bonus to [legislative_efficiency|e]."
 
  swe_wismar_tribunal_decision.title: "The Wismar Tribunal"
  swe_wismar_tribunal_decision.desc: "Our German lands are fiefs of the Empire, and their lords and towns can still carry their lawsuits past our judges to the imperial courts, where our rivals have friends. A high court of our own, seated in one of our German towns and judging by the law of the land, would end their cases at home. Its judges would be Swedes and Germans alike, and the German [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] would look to [ROOT.GetCountry.GetName] for justice rather than to the Emperor."
  swe_wismar_tribunal_decision.desc.entry: "A high court of our own could judge our German lands."
  swe_wismar_tribunal_decision.historical_info: "At the Peace of Westphalia in 1648 Sweden gained Western Pomerania, the town of Wismar and the duchies of Bremen and Verden as fiefs of the Holy Roman Empire, with seats at the Imperial Diet. The treaty also freed these lands from appeal to the imperial courts, on condition that Sweden set up a high court of its own for them. The Royal Swedish High Tribunal opened at Wismar in 1653 and became the last court of appeal for all of Sweden's German possessions. It judged by the common law of the Empire and the customs of each province rather than by Swedish law. When Wismar was pledged to Mecklenburg in 1803, the tribunal moved into Swedish Pomerania."
  swe_wismar_tribunal_decision.a: "Seat the tribunal."
- swe_wismar_tribunal_decision.a_tt: "In every [location|e] we own inside the [hre|e], or in [ShowRegionName('north_german_region')] once the Empire is no more, $swe_landslag$ speeds up [integration|e], raises [crown_power|e] and slows [assimilation|e]."
+ swe_wismar_tribunal_decision.a_tt: "In every [location|e] we own inside the [hre|e], or in [ShowRegionName('north_german_region')] once the Empire is no more, [ShowPolicyName('swe_landslag')] speeds up [integration|e], raises [crown_power|e] and slows [assimilation|e]."
  swe_wismar_tribunal_decision.lands_tt: "We own at least 3 [locations|e] inside the [hre|e], or in [ShowRegionName('north_german_region')] if the Empire is no more"
  swe_wismar_tribunal_decision.town_tt: "At least one of them is a town or larger"
 

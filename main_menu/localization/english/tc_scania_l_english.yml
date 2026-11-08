@@ -13,7 +13,7 @@
  swe_scania.1.historical_info: "Sweden won Scania, Halland and Blekinge at the Treaty of Roskilde in 1658 and at first promised to keep their laws and privileges. Lund University was founded in 1666, in part to train priests for the new provinces in Swedish. During the Scanian War of 1675–79 many Scanians sided with Denmark, and afterwards Karl XI's government changed course: Swedish law replaced Scanian law in 1683, and the Swedish church ordinance, catechism and hymnal replaced the Danish ones. Within a few generations the provinces counted themselves Swedish, though the Scanian dialect lives on."
  swe_scania.1.a: "One realm, one law."
  swe_scania.1.a.entry: "Skåneland is to become Swedish."
- swe_scania.1.a_tt: "Every [location|e] in [ShowAreaNameWithNoTooltip('skaneland_area')] where [ShowCultureName('danish')] culture dominates gains $STATIC_MODIFIER_NAME_swe_forsvenskning$ for 20 years."
+ swe_scania.1.a_tt: "Every [location|e] in [ShowAreaNameWithNoTooltip('skaneland_area')] where [ShowCultureName('danish')] culture dominates gains [ShowModifier('swe_forsvenskning')] for 20 years."
  swe_scania.1.b: "Let Skåneland keep its ways."
  swe_scania.1.b.entry: "Skåneland keeps its ways."
 
