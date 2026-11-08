@@ -536,7 +536,8 @@ swe_oland_djurgard_decision = {
 
 # Stockholms slott: Tessin's palace on the site of Tre Kronor. Opens with the age of absolutism, burned
 # or not, as Tessin was already rebuilding the castle's north wing when it burned (swe_stockholm.1).
-# The capital may not already have a great palace, as in vanilla's construct_a_grand_palace_decision.
+# The capital may not already have a great palace, and the rank and political influence are the same as in
+# vanilla's construct_a_grand_palace_decision. Its market goods check is left out. The fire option stays free.
 swe_stockholm_palace_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_stockholm_palace_decision.historical_info
@@ -553,6 +554,8 @@ swe_stockholm_palace_decision = {
 
 	allow = {
 		government_type = government_type:monarchy
+		country_rank_level >= 2
+		political_influence >= 20
 		location:stockholm = {
 			is_capital = yes
 			has_great_or_unique_palace = no
@@ -574,6 +577,7 @@ swe_stockholm_palace_decision = {
 		name = swe_stockholm_palace_decision.a
 		ai_chance = { value = 100 }
 		effect = {
+			add_political_influence = political_influence_severe_penalty
 			location:stockholm = {
 				if = {
 					limit = { has_building = building_type:swe_tre_kronor }

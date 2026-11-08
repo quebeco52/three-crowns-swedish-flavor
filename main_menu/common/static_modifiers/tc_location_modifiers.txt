@@ -1,4 +1,4 @@
-﻿# The salmon fisheries are added at game start by tc_on_game_start, like vanilla's
+﻿# The salmon fisheries and the iron of Bergslagen are added at game start by tc_on_game_start, like vanilla's
 # location_historical_base_values.txt; the others by the event or decision named above each one.
 
 # The great salmon rivers of the Bothnian Bay: the Torne, the Kemi and the Oulu. Same size as
@@ -17,6 +17,17 @@ swe_alvkarleby_salmon_fishery = {
 		category = location
 	}
 	local_fish_output_modifier = 0.25
+}
+
+# The iron mines of Bergslagen: nora, skinskatteberg, grythyttan, avesta (for Norberg, which has no location),
+# grange and farnebo. In the 14th century Swedish iron, forged into osmunds, went mainly to Lübeck and Danzig
+# (Jernkontoret). The size of vanilla's bilbao_iron_base (0.1), spread over a region as gujarat_cotton_base
+# (0.1) is over six locations. Stacks with vanilla's mulltimmer_masugn (age 3, +0.1 to all Swedish iron).
+swe_bergslagen_iron = {
+	game_data = {
+		category = location
+	}
+	local_iron_output_modifier = 0.1
 }
 
 # Added by swe_towns.6 for 20 years. The migration pull of vanilla's available_free_land.
@@ -239,14 +250,6 @@ swe_gavle_fishing_grounds = {
 		category = location
 	}
 	local_fish_output_modifier = -0.1
-}
-
-# Added to the same towns for 200 years by swe_norrland.2 when the Crown refuses Gefle: swe_gavle_fishing_grounds reversed.
-swe_norrland_fishing_towns = {
-	game_data = {
-		category = location
-	}
-	local_fish_output_modifier = 0.1
 }
 
 # Added to ragunda for 50 years by swe_norrland.3 when the Crown takes the drained lakebed. The crown power

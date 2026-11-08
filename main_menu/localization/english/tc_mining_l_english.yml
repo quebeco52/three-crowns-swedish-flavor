@@ -8,3 +8,6 @@
  swe_bergskollegium_decision.desc.entry: "A board of mines could put every mine in the realm under the Crown."
  swe_bergskollegium_decision.historical_info: "In 1637 the Swedish government set up the Bergsamt to oversee the mines and ironworks of the realm, and in 1649 it became the Bergskollegium, the Board of Mines. Through mining masters (bergmästare) in each mining district it inspected the mines, judged mining disputes and granted the privileges every new ironworks needed, which set where forges could be built and how much bar iron each could make. Copper from Falun and iron from the Bergslagen were among Sweden's most important exports, and the board lasted until 1857."
  swe_bergskollegium_decision.a: "Found the Board of Mines."
+
+ STATIC_MODIFIER_NAME_swe_bergslagen_iron: "Iron of Bergslagen"
+ STATIC_MODIFIER_DESC_swe_bergslagen_iron: "The ore of Bergslagen is smelted in the furnaces of the mining districts and forged into iron for markets abroad. Together with copper, it is the foundation of the realm's wealth."

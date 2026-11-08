@@ -307,11 +307,37 @@ swe_baltic.4 = {
 # low to draw trade (Jakovļeva 2012). Douglas seized Mitau and Duke Jakob in 1658, and Karl XII occupied the duchy in
 # 1701, partly to end the maritime powers' protests at the blockade of its harbours (Rystad, Scandia 1961); its
 # estates paid heavy contributions to his army (Jakovļeva 2022). Its knighthood never capitulated to Sweden, unlike
-# Estonia's and Livonia's, so there are no privileges to confirm. Fires whenever Sweden owns Mitau, Windau or Grobin.
+# Estonia's and Livonia's, so there are no privileges to confirm. Fires whenever Sweden owns Mitau, Windau or Grobin,
+# and the description says which of them we hold, since the toll options need a harbour.
 swe_baltic.5 = {
 	type = country_event
 	title = swe_baltic.5.title
-	desc = swe_baltic.5.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					owns = location:jelgava
+					OR = {
+						owns = location:ventspils
+						owns = location:grobina
+					}
+				}
+				desc = swe_baltic.5.desc
+			}
+			triggered_desc = {
+				trigger = {
+					OR = {
+						owns = location:ventspils
+						owns = location:grobina
+					}
+				}
+				desc = swe_baltic.5.desc_harbours_only
+			}
+			triggered_desc = {
+				desc = swe_baltic.5.desc_mitau_only
+			}
+		}
+	}
 	outcome = neutral
 	historical_info = swe_baltic.5.historical_info
 
