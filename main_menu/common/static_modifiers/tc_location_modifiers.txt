@@ -140,9 +140,11 @@ swe_baltic_privileges = {
 	local_integration_speed = 0.10
 }
 
-# Added for 50 years to Reval and Narva by swe_baltic.1 and to Riga by swe_baltic.2 (confirming the
-# privileges). The estate shift and merchant capacity of swe_tyska_radet: a self-governing Hanseatic
-# town. The culture terms are those of swe_baltic_privileges, since the towns kept their German law too.
+# Added for 50 years to Reval and Narva by swe_baltic.1, to Riga by swe_baltic.2 (confirming the
+# privileges) and to the Prussian ports by swe_prussia.1 (leaving them their councils). The estate shift and
+# merchant capacity of swe_tyska_radet: a self-governing Hanseatic town. The culture terms are those of
+# swe_baltic_privileges, since the towns kept their German law too. A Prussian town re-granted Kulm law
+# stacks the crown loss of kulm_town_rights on top; that is the player's own grant.
 swe_baltic_town_privileges = {
 	game_data = {
 		category = location
@@ -154,8 +156,9 @@ swe_baltic_town_privileges = {
 	local_integration_speed = 0.10
 }
 
-# Added to riga for 50 years by swe_baltic.2 (Swedish law). The Licent, the Crown's toll on the trade of
-# the Baltic ports from the 1620s. swe_tyska_radet reversed: the Crown's gain is the merchants' loss.
+# Added for 50 years to riga by swe_baltic.2 (Swedish law), to the Prussian ports by swe_prussia.1 and to Windau and
+# Libau by swe_baltic.5. The Licent, the Crown's toll on the trade of the Baltic ports from the 1620s, taken in
+# Prussia from 1626 and in Courland from 1630. swe_tyska_radet reversed: the Crown's gain is the merchants' loss.
 swe_riga_licent = {
 	game_data = {
 		category = location
@@ -836,4 +839,42 @@ swe_ronneby_privileges_revoked = {
 		category = location
 	}
 	local_market_access = -0.1
+}
+
+# Added for 10 years by swe_baltic.5 to Sweden's locations in Courland and Semigallia when the estates pay for the army,
+# as they did under Karl XII after 1701. Half of vanilla's looted (prosperity decay 0.1, development -0.25).
+swe_courland_contributions = {
+	game_data = {
+		category = location
+	}
+	local_prosperity_decay = 0.05
+	local_monthly_development_modifier = -0.125
+}
+
+# Added for 50 years by swe_baltic.5 to Windau and Libau (grobina) when the Crown keeps the dukes' low dues. The market
+# access of market_charter (0.1) and the merchant capacity of swe_baltic_town_privileges (0.1).
+swe_courland_low_dues = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_merchant_capacity_modifier = 0.1
+}
+
+# Added for 20 years by swe_norway.2 to Sweden's locations in Finnmark when the Crown's bailiffs collect the tax of the
+# coast, as Karl IX claimed it after 1595. The crown power of swe_riga_licent (0.25), for a tax instead of a toll.
+swe_finnmark_bailiffs = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.25
+}
+
+# Added for 20 years by swe_norway.2 to Sweden's coastal locations in Finnmark. The pull of swe_lappmark_settlers (0.3),
+# on another thinly settled frontier.
+swe_finnmark_settlers = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.3
 }

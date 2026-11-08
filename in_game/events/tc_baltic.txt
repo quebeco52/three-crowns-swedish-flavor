@@ -302,3 +302,115 @@ swe_baltic.4 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Courland. Sweden took the licent at Windau and Libau under the Truce of Altmark, against dukes who kept their dues
+# low to draw trade (Jakovļeva 2012). Douglas seized Mitau and Duke Jakob in 1658, and Karl XII occupied the duchy in
+# 1701, partly to end the maritime powers' protests at the blockade of its harbours (Rystad, Scandia 1961); its
+# estates paid heavy contributions to his army (Jakovļeva 2022). Its knighthood never capitulated to Sweden, unlike
+# Estonia's and Livonia's, so there are no privileges to confirm. Fires whenever Sweden owns Mitau, Windau or Grobin.
+swe_baltic.5 = {
+	type = country_event
+	title = swe_baltic.5.title
+	desc = swe_baltic.5.desc
+	outcome = neutral
+	historical_info = swe_baltic.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes Courland
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		OR = {
+			owns = location:jelgava
+			owns = location:ventspils
+			owns = location:grobina
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+	}
+
+	# Contributions, as under Karl XII
+	option = {
+		name = swe_baltic.5.a
+		historical_option = yes
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = 4 }
+		custom_tooltip = {
+			text = swe_baltic.5.a_tt
+			every_owned_location = {
+				limit = {
+					swe_courland_trigger = yes
+					NOT = { has_location_modifier = swe_courland_contributions }
+				}
+				add_location_modifier = { modifier = swe_courland_contributions years = 10 }
+			}
+		}
+	}
+
+	# The licent, as in the 1630s
+	option = {
+		name = swe_baltic.5.b
+		trigger = {
+			OR = {
+				owns = location:ventspils
+				owns = location:grobina
+			}
+		}
+		ai_chance = {
+			base = 35
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.5.b_tt
+			every_owned_location = {
+				limit = {
+					swe_courland_harbour_trigger = yes
+					NOT = { has_location_modifier = swe_riga_licent }
+				}
+				add_location_modifier = { modifier = swe_riga_licent years = modifier_duration_years_very_long }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	# The dukes' low dues
+	option = {
+		name = swe_baltic.5.c
+		trigger = {
+			OR = {
+				owns = location:ventspils
+				owns = location:grobina
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_baltic.5.c_tt
+			every_owned_location = {
+				limit = {
+					swe_courland_harbour_trigger = yes
+					NOT = { has_location_modifier = swe_courland_low_dues }
+				}
+				add_location_modifier = { modifier = swe_courland_low_dues years = modifier_duration_years_very_long }
+			}
+		}
+	}
+}

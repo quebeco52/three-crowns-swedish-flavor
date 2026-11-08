@@ -1,0 +1,85 @@
+﻿namespace = swe_prussia
+
+# Content for Prussia, which Sweden held only briefly. Fires whenever Sweden owns the land, not by date.
+
+# The Prussian licent. Gustav II Adolf landed at Pillau in 1626, and Oxenstierna ran the tolls of Swedish Prussia from
+# Elbing. At Altmark (1629) Sweden kept Elbing, Braunsberg, Pillau and Memel with a share of the shipping tolls of the
+# Prussian ports (Geijer; en.wiki Truce of Altmark, citing Sundberg, who says two thirds), until Stuhmsdorf (1635). At
+# Königsberg (1656) the Elector had to hand over half his port duties, and at Labiau the same year Sweden gave them up
+# (en.wiki Treaty of Labiau, citing Shennan 1995 and Roberts 1988). Fires whenever Sweden owns one of the five ports.
+# The toll is the licent swe_baltic.2 can put on Riga; the freedoms are the Baltic towns' privileges.
+swe_prussia.1 = {
+	type = country_event
+	title = swe_prussia.1.title
+	desc = swe_prussia.1.desc
+	outcome = neutral
+	historical_info = swe_prussia.1.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about two years after Sweden takes a Prussian port
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		OR = {
+			owns = location:fischhausen
+			owns = location:memel
+			owns = location:elblag
+			owns = location:gdansk
+			owns = location:konigsberg
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_prussia.1.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		custom_tooltip = {
+			text = swe_prussia.1.a_tt
+			every_owned_location = {
+				limit = {
+					swe_prussian_port_trigger = yes
+					NOT = { has_location_modifier = swe_riga_licent }
+				}
+				add_location_modifier = { modifier = swe_riga_licent years = modifier_duration_years_very_long }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_prussia.1.b
+		ai_chance = {
+			base = 40
+		}
+
+		custom_tooltip = {
+			text = swe_prussia.1.b_tt
+			every_owned_location = {
+				limit = {
+					swe_prussian_port_trigger = yes
+					NOT = { has_location_modifier = swe_baltic_town_privileges }
+				}
+				add_location_modifier = { modifier = swe_baltic_town_privileges years = modifier_duration_years_very_long }
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}

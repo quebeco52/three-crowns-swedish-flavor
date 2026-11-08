@@ -1,0 +1,16 @@
+﻿l_english:
+ STATIC_MODIFIER_NAME_swe_finnmark_bailiffs: "The Crown's Bailiffs"
+ STATIC_MODIFIER_DESC_swe_finnmark_bailiffs: "Our bailiffs travel the fjords each winter to collect the Crown's tax from the fishermen and the Sámi, and record who has paid and to whom."
+ STATIC_MODIFIER_NAME_swe_finnmark_settlers: "Settlers on the Arctic Coast"
+ STATIC_MODIFIER_DESC_swe_finnmark_settlers: "The Crown offers land and years free of tax to any who will settle and fish on this coast."
+
+ swe_norway.2.title: "The Arctic Coast"
+ swe_norway.2.entry: "$swe_norway.2.title$"
+ swe_norway.2.desc: "Our flag flies over the coast of [ShowProvinceDefinitionName('finnmark_province')], where the fjords open on the Arctic Ocean and the fishing boats go out under the midnight sun. Every crown of the North has sent its men here to tax the Sámi, and the fish and furs of the coast would pay the Crown's bailiffs many times over. A tax-gatherer who comes once a year holds a coast less surely than people who live on it, though, and the Crown could instead offer land and years free of tax to settlers willing to go so far north. Few will go without them."
+ swe_norway.2.historical_info: "From the middle of the 16th century Swedish bailiffs and the birkarlar, the traders of the Bothnian valleys, collected tax from the Sámi as far as the Arctic coast, in rivalry with Danish-Norwegian and Russian collectors. After Russia gave up its rights over the western Sámi at Teusina in 1595, Duke Karl claimed two-thirds of the Sámi tax between Malangen and the Varangerfjord, and a Danish inquiry of 1597 found the Sámi paying tax to Sweden along much of that coast. Christian IV sailed to Vardø in 1599 to show whose coast it was. At his coronation in 1607 Karl IX took the title of king of the Lapps in Nordland, and his claims to the coast helped bring on the Kalmar War. At Knäred in 1613 Sweden gave them up. Karl X Gustav revived the claim in 1658, to command the sea route to Archangel, but dropped it that spring. Inland, the Sámi of Kautokeino and Karasjok went on paying tax to more than one crown until the border treaty of 1751 gave the district to Norway."
+ swe_norway.2.a: "Send the Crown's bailiffs north."
+ swe_norway.2.a.entry: "Our bailiffs collected the tax of the Arctic coast."
+ swe_norway.2.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('finnmark_province')] gains [ShowModifier('swe_finnmark_bailiffs')] for 20 years, and the peasant and tribal [pops|e] there lose 5% [pop_satisfaction|e]."
+ swe_norway.2.b: "Settle the coast with our own people."
+ swe_norway.2.b.entry: "Settlers were sent to the Arctic coast."
+ swe_norway.2.b_tt: "Every coastal [location|e] we own in [ShowProvinceDefinitionName('finnmark_province')] gains [ShowModifier('swe_finnmark_settlers')] for 20 years."
