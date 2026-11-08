@@ -250,7 +250,7 @@ swe_finland_east.4 = {
 							owner ?= root
 						}
 					}
-					add_location_modifier = { modifier = swe_crown_wilderness years = 50 }
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
 				}
 			}
 			province_definition:kajanaland_province = {
@@ -262,19 +262,53 @@ swe_finland_east.4 = {
 							owner ?= root
 						}
 					}
-					add_location_modifier = { modifier = swe_crown_wilderness years = 50 }
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
 				}
 			}
-			province_definition:tavastland_province = {
-				every_location_in_province_definition = {
+			# Only the north of Tavastland, settled from Savo: Laukaa (with Jyväskylä) split from Rautalampi in 1628,
+			# Viitasaari followed in 1635 and Saarijärvi in 1639 (en.wiki). The south is old farmland around Tavastehus.
+			location:jyvaskyla = {
+				if = {
 					limit = {
-						is_ownable = yes
 						OR = {
 							has_owner = no
 							owner ?= root
 						}
 					}
-					add_location_modifier = { modifier = swe_crown_wilderness years = 50 }
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
+				}
+			}
+			location:saarijarvi = {
+				if = {
+					limit = {
+						OR = {
+							has_owner = no
+							owner ?= root
+						}
+					}
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
+				}
+			}
+			location:viitasaari = {
+				if = {
+					limit = {
+						OR = {
+							has_owner = no
+							owner ?= root
+						}
+					}
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
+				}
+			}
+			location:laukas = {
+				if = {
+					limit = {
+						OR = {
+							has_owner = no
+							owner ?= root
+						}
+					}
+					add_location_modifier = { modifier = swe_crown_wilderness years = 25 }
 				}
 			}
 		}
@@ -311,6 +345,8 @@ swe_finland_east.5 = {
 
 	trigger = {
 		has_or_had_tag = SWE
+		# The charge was plotting with the Jesuits, which only a Protestant realm would bring
+		is_protestant = yes
 		owns = location:kajana
 	}
 

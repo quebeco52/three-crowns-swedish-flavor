@@ -106,7 +106,24 @@ swe_svealand.2 = {
 		location:sodertalje = {
 			add_location_modifier = { modifier = swe_sodertalje_cut years = 25 }
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
+		# The diggers come from the lake's own provinces, so the anger stays there, in place of a
+		# country-wide estate penalty
+		custom_tooltip = {
+			text = swe_svealand.2.a_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						province_definition = province_definition:uppland_province
+						province_definition = province_definition:sodermanland_province
+						province_definition = province_definition:vastmanland_province
+					}
+				}
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
+			}
+		}
 		add_prestige = prestige_mild_bonus
 	}
 

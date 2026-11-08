@@ -53,7 +53,7 @@
  swe_finland_east.4.historical_info: "The wilderness of inland Finland served as hunting grounds and fishing waters for families who claimed it by custom. The Åbo land court ruled on the boundary between Häme and Savo in 1415, with further judgments in 1446 and 1452. In 1542 Gustav Vasa declared uninhabited wilderness the property of God, the King and the Crown, though peasants kept a right to use it, and he offered tax freedom to those who cleared new farms. Savo settlers moved north to Ule träsk and into Kainuu from the 1530s or 1550s, on land that the Treaty of Nöteborg of 1323 had given to Russia. Russian raids tried to wipe out their villages, until the Treaty of Teusina made Kainuu Swedish in 1595."
  swe_finland_east.4.a: "Claim it for the Crown."
  swe_finland_east.4.a.entry: "The Crown claimed the wilderness of inland Finland."
- swe_finland_east.4.a_tt: "Every [location|e] in [ShowProvinceDefinitionName('savolax_province')], [ShowProvinceDefinitionName('kajanaland_province')] and [ShowProvinceDefinitionName('tavastland_province')] not held by a foreign country gains [ShowModifier('swe_crown_wilderness')] for 50 years."
+ swe_finland_east.4.a_tt: "Every [location|e] in [ShowProvinceDefinitionName('savolax_province')] and [ShowProvinceDefinitionName('kajanaland_province')], and [ShowLocationName('jyvaskyla')], [ShowLocationName('laukas')], [ShowLocationName('saarijarvi')] and [ShowLocationName('viitasaari')] in the north of [ShowProvinceDefinitionName('tavastland_province')], gains [ShowModifier('swe_crown_wilderness')] for 25 years unless a foreign country holds it."
  swe_finland_east.4.b: "Leave the old rights alone."
  swe_finland_east.4.b.entry: "The old wilderness rights were left alone."
 

@@ -6,10 +6,22 @@
 
 # Gustav Vasa founds Helsingfors at the mouth of the Vanda (12 June 1550) to take the Gulf of
 # Finland trade from Reval, and orders the burghers of Ekenäs, Borgå, Raumo and Ulvsby to move.
+# Sweden often holds Reval by then, so owning it changes the text rather than blocking the event. That variant,
+# a German Reval that trades on its own account, is an inference, not history: Reval became Swedish only in 1561.
 swe_towns.1 = {
 	type = country_event
 	title = swe_towns.1.title
-	desc = swe_towns.1.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { owns = location:tallinn }
+				desc = swe_towns.1.desc_tallinn
+			}
+			triggered_desc = {
+				desc = swe_towns.1.desc
+			}
+		}
+	}
 	outcome = neutral
 	historical_info = swe_towns.1.historical_info
 
@@ -25,8 +37,6 @@ swe_towns.1 = {
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:helsinge
-		# The town was founded to take the trade from Reval
-		NOT = { owns = location:tallinn }
 		OR = {
 			owns = location:ekenas
 			owns = location:porvoo
@@ -45,7 +55,14 @@ swe_towns.1 = {
 	}
 
 	option = {
-		name = swe_towns.1.a
+		name = {
+			text = swe_towns.1.a
+			trigger = { NOT = { owns = location:tallinn } }
+		}
+		name = {
+			text = swe_towns.1.a_tallinn
+			trigger = { owns = location:tallinn }
+		}
 		historical_option = yes
 		ai_chance = {
 			base = 75
@@ -162,8 +179,18 @@ swe_towns.2 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
-		# The privilege letter of 15 March 1584 called out all Värmland to help build two bridges
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+		# The privilege letter of 15 March 1584 called out all Värmland to help build two bridges, so the
+		# anger stays in Värmland, in place of a country-wide estate penalty
+		custom_tooltip = {
+			text = swe_towns.2.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:varmland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
 	}
 
 	option = {
@@ -171,7 +198,16 @@ swe_towns.2 = {
 		ai_chance = {
 			base = 25
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_towns.2.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:varmland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
 	}
 }
 
@@ -285,7 +321,29 @@ swe_towns.4 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+		# The neighbouring parishes lose their trade. Medelpad has no province of its own on the map:
+		# its two locations, selanger and havero, sit in halsingland_province.
+		custom_tooltip = {
+			text = swe_towns.4.a_tt
+			location:selanger = {
+				if = {
+					limit = { owner ?= root }
+					every_pop = {
+						limit = { pop_type = pop_type:peasants }
+						add_pop_satisfaction = pop_satisfaction_weak_penalty
+					}
+				}
+			}
+			location:havero = {
+				if = {
+					limit = { owner ?= root }
+					every_pop = {
+						limit = { pop_type = pop_type:peasants }
+						add_pop_satisfaction = pop_satisfaction_weak_penalty
+					}
+				}
+			}
+		}
 	}
 
 	option = {
@@ -294,7 +352,27 @@ swe_towns.4 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_towns.4.b_tt
+			location:selanger = {
+				if = {
+					limit = { owner ?= root }
+					every_pop = {
+						limit = { pop_type = pop_type:peasants }
+						add_pop_satisfaction = pop_satisfaction_weak_bonus
+					}
+				}
+			}
+			location:havero = {
+				if = {
+					limit = { owner ?= root }
+					every_pop = {
+						limit = { pop_type = pop_type:peasants }
+						add_pop_satisfaction = pop_satisfaction_weak_bonus
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -659,8 +659,9 @@ swe_wismar_tribunal_decision = {
 # of the great officers of the realm. Unlocks and adopts swe_kammarkollegium in the bureaucracy law, like
 # swe_bergskollegium_decision, and unlocks swe_amiralitetskollegium and swe_kommerskollegium, which wait
 # for their vanilla laws in the age of absolutism. No War College: vanilla's army laws cover it.
-# Svea hovrätt, the first of the five, is left to vanilla's court_of_appeals (flavor_swe.15): unlocking it
-# here would make it compete with swe_landslag and switch off the Wismar and Rikes lag tiers.
+# Svea hovrätt, the first of the five, is left to vanilla's court_of_appeals (flavor_swe.15). That event adopts
+# the policy itself, in the same law as swe_landslag, so the Wismar and Rikes lag tiers lapse until the player
+# switches back; accepted as it is.
 # Needs a parliament, the bureaucracy law and a supreme court in the capital.
 swe_regeringsform_decision = {
 	decision_category = country_specific_decisions
