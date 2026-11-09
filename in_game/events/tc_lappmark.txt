@@ -1,8 +1,8 @@
 ﻿namespace = swe_lappmark
 
 # Content for Västerbotten, the Lappmarks and the Sámi. Sweden starts here with only Umeå, Luleå and the colony
-# at Åsele, and SMI and KVE are pop countries that own no land. So .1 to .5 only need Luleå or Umeå and should
-# fire in nearly every game. .6 to .8 wait for Sweden to own the locations.
+# at Åsele, and SMI and KVE are pop countries that own no land. So .1 and .3 to .5 only need Luleå or Umeå and
+# should fire in nearly every game. .6 to .8 wait for Sweden to own the locations. .2, the Piteå ting, was removed.
 
 # Archbishop Hemming sails to Torneå in the mid-1340s. An inquest of 1374 (SDHK 10584) records that he met the
 # Bishop of Åbo at Kompanasund and baptised about 20 Sámi and Karelians in a vat carried into the chapel.
@@ -78,59 +78,6 @@ swe_lappmark.1 = {
 				add_location_modifier = { modifier = swe_abo_diocese_north years = 25 }
 			}
 		}
-	}
-}
-
-# The Piteå ting of 6 July 1424 settled a dispute among the Birkarlar. Confirming the rules sets the variable
-# that switches on a tier of swe_birkarl_rights, which the mod grants at game start.
-swe_lappmark.2 = {
-	type = country_event
-	title = swe_lappmark.2.title
-	desc = swe_lappmark.2.desc
-	outcome = neutral
-	historical_info = swe_lappmark.2.historical_info
-
-	fire_only_once = yes
-	dynamic_historical_event = {
-		tag = SWE
-		tag = SCA
-		from = 1422.1.1
-		to = 1460.1.1
-		monthly_chance = 3 # Median late 1423
-	}
-
-	trigger = {
-		has_or_had_tag = SWE
-		has_estate_privilege = estate_privilege:swe_birkarl_rights
-	}
-
-	illustration_tags = {
-		10 = regular
-		10 = exterior
-	}
-
-	immediate = {
-		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
-	}
-
-	option = {
-		name = swe_lappmark.2.a
-		historical_option = yes
-		ai_chance = {
-			base = 75
-		}
-
-		set_variable = swe_birkarl_ting
-		custom_tooltip = swe_lappmark.2.a_tt
-	}
-
-	option = {
-		name = swe_lappmark.2.b
-		ai_chance = {
-			base = 25
-		}
-
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 	}
 }
 

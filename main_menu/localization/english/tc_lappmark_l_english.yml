@@ -20,8 +20,6 @@
  STATIC_MODIFIER_NAME_swe_tornea_trade_district: "The Torneå Trading District"
  STATIC_MODIFIER_DESC_swe_tornea_trade_district: "The merchants of Torneå hold the trade of the Torne valley, Kajanaland and the Lapplands of Torne and Kemi, the largest trading district in the realm."
 
- swe_birkarl_ting_location_bonus: "Once we confirm the rules of the Piteå ting, every [location|e] in the Birkarl lands gains:"
-
  swe_lappmark.1.title: "The Archbishop Sails North"
  swe_lappmark.1.entry: "$swe_lappmark.1.title$"
  swe_lappmark.1.desc: "The Archbishop of [ShowLocationName('uppsala')] means to sail north to [ShowLocationName('tornea')]. The Bishop of [ShowLocationName('abo')] has been confirming the faithful and blessing churchyards up there, and the archbishop wants it known whose diocese this is. He will meet the bishop, mark the boundary between them and baptise any [ShowCultureName('sapmi')] and Karelians who will come. He asks the Crown to pay for it. The treasury's view is that the bishop is welcome to that cold coast and all its troubles."
@@ -31,16 +29,6 @@
  swe_lappmark.1.a_tt: "Every [location|e] we own in Västerbotten and the Lappmarks with [pops|e] of another faith gains [ShowModifier('swe_uppsala_mission')] for 20 years, and one in twenty of those people is baptised at once."
  swe_lappmark.1.b: "Leave the north to Åbo."
  swe_lappmark.1.b.entry: "The far north was left to the Bishop of Åbo."
-
- swe_lappmark.2.title: "The Ting at Piteå"
- swe_lappmark.2.entry: "$swe_lappmark.2.title$"
- swe_lappmark.2.desc: "The Birkarlar have brought their quarrels before the lawman's ting at [ShowLocationName('pitea')]. Each claims the same [ShowCultureName('sapmi')] as his own customers and taxpayers, and the [ShowCultureName('sapmi')] say they are being robbed from every side. The lawman proposes to confirm the Birkarlar's old rights, but with rules set down: every one of the [ShowCultureName('sapmi')] is to answer to one birkarl, and no birkarl may harm or overtax them. The Birkarlar say their trade has always run on custom, and that it runs well enough."
- swe_lappmark.2.historical_info: "The Birkarlar held a recognised monopoly on trade and tax collection among the Sámi of the Torne, Lule and Pite lappmarks. A letter of 1390 still treats Sámi as something that passes with an estate, like land or fishing waters. On 6 July 1424 the lawman Nils Gustafsson settled a dispute among the Birkarlar at Piteå. He confirmed their old rights and assigned each Sámi to one birkarl. A birkarl who saved a Sámi's life with food or tools won three years' sole trade with that person, and the Birkarlar were forbidden to harm or overtax the poor Sámi."
- swe_lappmark.2.a: "Set the rules down."
- swe_lappmark.2.a.entry: "The Piteå ting set rules for the Birkarlar."
- swe_lappmark.2.a_tt: "[ShowEstatePrivilegeName('swe_birkarl_rights')] now also lowers unrest and fur output in the Birkarl lands."
- swe_lappmark.2.b: "Leave the Birkarlar to their customs."
- swe_lappmark.2.b.entry: "The Birkarlar kept their old customs."
 
  swe_lappmark.3.title: "The Fishing Rights at Gråträsk"
  swe_lappmark.3.entry: "$swe_lappmark.3.title$"

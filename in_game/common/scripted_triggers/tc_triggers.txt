@@ -54,7 +54,7 @@ swe_lappmarks_trigger = {
 	}
 }
 
-# Österbotten, the tar country of the Tar Company (swe_tar_company_decision)
+# Österbotten, the tar country of the Tar Company (swe_tar_company_decision, swe_tjarkompaniet)
 swe_osterbotten_trigger = {
 	OR = {
 		province_definition = province_definition:norra_osterbotten_province

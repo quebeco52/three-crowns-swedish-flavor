@@ -15,14 +15,19 @@ swe_bottniska_handelstvanget_decision = {
 		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
 	}
 
+	# In a custom_tooltip, as in swe_wismar_tribunal_decision: bare, the game printed the rank check
+	# against Stockholm, so it read as if Stockholm had to be a town
 	allow = {
 		owns = location:stockholm
-		any_owned_location = {
-			swe_bothnian_coast_trigger = yes
-			OR = {
-				location_rank = location_rank:town
-				location_rank = location_rank:city
-				location_rank = location_rank:megalopolis
+		custom_tooltip = {
+			text = swe_bottniska_handelstvanget_decision.town_tt
+			any_owned_location = {
+				swe_bothnian_coast_trigger = yes
+				OR = {
+					location_rank = location_rank:town
+					location_rank = location_rank:city
+					location_rank = location_rank:megalopolis
+				}
 			}
 		}
 	}
@@ -54,7 +59,7 @@ swe_bottniska_handelstvanget_decision = {
 }
 
 # Tjärkompaniet: in 1648 the Tar Company got the sole right to buy and export the tar of
-# Österbotten. Sets swe_tar_company, which turns on the tar bonus inside swe_bottniska_handelstvanget.
+# Österbotten. Unlocks and grants the burgher privilege swe_tjarkompaniet.
 # Needs a tar kiln in Österbotten: no tar industry, no company.
 swe_tar_company_decision = {
 	decision_category = country_specific_decisions
@@ -67,14 +72,17 @@ swe_tar_company_decision = {
 			age = age_5_absolutism
 		}
 		has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget }
-		NOT = { has_variable = swe_tar_company }
+		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_tjarkompaniet } }
 	}
 
 	allow = {
 		has_estate_privilege = estate_privilege:swe_bottniska_handelstvanget
-		any_owned_location = {
-			swe_osterbotten_trigger = yes
-			has_building_with_at_least_one_level = tar_kiln
+		custom_tooltip = {
+			text = swe_tar_company_decision.kiln_tt
+			any_owned_location = {
+				swe_osterbotten_trigger = yes
+				has_building_with_at_least_one_level = tar_kiln
+			}
 		}
 	}
 
@@ -93,8 +101,8 @@ swe_tar_company_decision = {
 		name = swe_tar_company_decision.a
 		ai_chance = { value = 100 }
 		effect = {
-			set_variable = swe_tar_company
-			custom_tooltip = swe_tar_company_decision.a_tt
+			unlock_estate_privilege_effect = { type = swe_tjarkompaniet }
+			grant_estate_privilege = estate_privilege:swe_tjarkompaniet
 			add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_penalty }
 		}
