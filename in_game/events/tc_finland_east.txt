@@ -1,8 +1,9 @@
 ﻿namespace = swe_finland_east
 
 # Content for inland and eastern Finland. Sweden starts with Viborg and southern Tavastland, but Savolax and
-# Kajanaland have no landed owner in 1337. So .2, .3 and .4 should fire in nearly every game, while .1, .5 and .6
-# wait for Sweden to own the location and fire at whatever date the land is settled.
+# Kajanaland have no landed owner in 1337. So .2, .3, .4 and .8 should fire in nearly every game, .7 in any game
+# where Sweden turns Protestant, while .1, .5 and .6 wait for Sweden to own the location and fire at whatever date the
+# land is settled.
 
 # Olofsborg stands on the Russian side of the Nöteborg line (1475), and about 1,000 Russians tried to move the
 # border posts in 1499. It doesn't build the castle, since the player can already do that by hand.
@@ -444,5 +445,143 @@ swe_finland_east.6 = {
 			add_location_modifier = { modifier = swe_kajana_border_trade years = 10 }
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# The see of Viborg: in 1554 Gustav Vasa divided the diocese of Åbo, which had covered all of Finland, and Paulus
+# Juusten became the first Bishop of Viborg over 33 parishes (sv.wiki Viborgs stift 1554–1723; en.wiki Paulus Juusten).
+# The purpose, rooting the Reformation in eastern Finland, is from Tilli (VSKS Toimite 14). Waits for a Protestant
+# Sweden, so it can fire later than 1554. Option b's reason is a true fact: Åbo had always served the whole country.
+swe_finland_east.7 = {
+	type = country_event
+	title = swe_finland_east.7.title
+	desc = swe_finland_east.7.desc
+	outcome = neutral
+	historical_info = swe_finland_east.7.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1552.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about 1554, or two years after Sweden turns Protestant
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		is_protestant = yes
+		owns = location:vyborg
+		owns = location:abo
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+	}
+
+	option = {
+		name = swe_finland_east.7.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		custom_tooltip = {
+			text = swe_finland_east.7.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vyborg_province }
+				add_location_modifier = { modifier = swe_viborg_see years = 20 }
+			}
+		}
+	}
+
+	option = {
+		name = swe_finland_east.7.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:abo = {
+			add_location_modifier = { modifier = swe_abo_one_see years = 25 }
+		}
+	}
+}
+
+# Gymnasium Wiburgense: proposed by Per Brahe and inaugurated on 10 August 1641, the second in Finland after Åbo
+# (1630). The German burghers kept a school of their own and often complained about the town school to the governor,
+# and in 1670 a lecturer knifed their schoolmaster (all Tilli, VSKS Toimite 14). Their anger stays in Viborg, as pop
+# satisfaction, in place of a country-wide estate penalty. Vanilla's studium_privileges gives the same literacy
+# growth, but only to a city, and Viborg starts as a town.
+swe_finland_east.8 = {
+	type = country_event
+	title = swe_finland_east.8.title
+	desc = swe_finland_east.8.desc
+	outcome = neutral
+	historical_info = swe_finland_east.8.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1639.1.1
+		to = 1837.1.1
+		monthly_chance = 3 # Median about 1641
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:vyborg
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_finland_east.8.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		location:vyborg = {
+			add_location_modifier = { modifier = swe_gymnasium_wiburgense years = 50 }
+			custom_tooltip = {
+				text = swe_finland_east.8.a_tt
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+
+	option = {
+		name = swe_finland_east.8.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:vyborg = {
+			custom_tooltip = {
+				text = swe_finland_east.8.b_tt
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
 	}
 }

@@ -569,6 +569,35 @@ swe_kajana_border_trade = {
 	local_market_access = 0.1
 }
 
+# Added for 20 years by swe_finland_east.7 to Sweden's locations in Vyborg province when the see is founded. The
+# conversion of swe_lutheran_parishes without its unrest, as in swe_sami_schools: a bishop and priests came, not force.
+swe_viborg_see = {
+	game_data = {
+		category = location
+	}
+	local_pop_conversion_speed_modifier = 0.1
+}
+
+# Added to abo for 25 years by swe_finland_east.7 when Finland keeps one bishop. The clergy power of
+# swe_abo_diocese_north (vanilla's kie_patriarch_controlled_metropolitan, 0.25).
+swe_abo_one_see = {
+	game_data = {
+		category = location
+	}
+	local_clergy_estate_power = 0.25
+}
+
+# Added to vyborg for 50 years by swe_finland_east.8 when the gymnasium is founded; it taught there for 69 years. The
+# literacy growth of vanilla's studium_privileges (0.05), which needs a city, and the literacy cap of
+# MLO_library_research (5).
+swe_gymnasium_wiburgense = {
+	game_data = {
+		category = location
+	}
+	local_monthly_literacy = 0.05
+	local_max_literacy = 5
+}
+
 # Added to malmo for 10 years by swe_scania.6 after executions. The unrest of PRU_quitzow_repressed_modifier (0.25),
 # and the burgher loss of swe_riga_licent (-0.25): the plotters were the town's own.
 swe_malmo_plot_crushed = {
