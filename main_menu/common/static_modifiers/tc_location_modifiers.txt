@@ -853,6 +853,18 @@ swe_marstrand_porto_franco = {
 	local_crown_estate_power = -0.1
 }
 
+# Added to kalmar for good by swe_gotaland.9 when the town moves to Kvarnholmen. The harbour of vanilla's
+# surveyed_safe_harbour (0.2), as in swe_town_moved, and the fort defence of walls_of_vienna and sco_dunbar_castle (0.2),
+# both permanent. Fort defence needs a fort, and Kalmar has a castle from 1337. Permanent because the town never moved
+# back, though its bastions had lost their purpose by the 1820s.
+swe_kvarnholmen = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = 0.2
+	local_defensive = 0.2
+}
+
 # Added to bregne for 50 years by swe_scania.7. The harbour of vanilla's surveyed_safe_harbour (0.2), the ship building
 # of tempest_engineer (0.25) and half the sailors of muslim_sailor_community (0.5).
 swe_karlskrona_station = {

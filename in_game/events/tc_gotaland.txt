@@ -494,3 +494,157 @@ swe_gotaland.8 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Kalmar moves to Kvarnholmen. The council of the realm decided the move in 1640 (sv.wiki Kalmar domkyrka). It was Axel
+# Oxenstierna's idea: the old town was cramped and too close to the castle in a siege, and the island could be fortified
+# better and served shipping better. The burghers held back until the fire of 9 September 1647 burned about three
+# quarters of the town, and the move dragged on until 1657-60 (Arkeologerna, Kalmar Gamla stan, 2022, pp. 118-121). Needs
+# town rank, since a rural Kalmar has no town to move. The burghers' anger stays in Kalmar, in place of a country-wide
+# estate penalty. swe_gotaland.10 follows the move.
+swe_gotaland.9 = {
+	type = country_event
+	title = swe_gotaland.9.title
+	desc = swe_gotaland.9.desc
+	outcome = neutral
+	historical_info = swe_gotaland.9.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1645.9.1
+		to = 1700.1.1
+		monthly_chance = 3 # Median about 1647
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kalmar
+		location:kalmar = {
+			OR = {
+				location_rank = location_rank:town
+				location_rank = location_rank:city
+				location_rank = location_rank:megalopolis
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = angry
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_gotaland.9.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -4 }
+		location:kalmar = {
+			change_prosperity = prosperity_mild_penalty
+			add_location_modifier = { modifier = swe_kvarnholmen months = -1 }
+		}
+		custom_tooltip = {
+			text = swe_gotaland.9.a_tt
+			location:kalmar = {
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+
+	option = {
+		name = swe_gotaland.9.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:kalmar = {
+			change_prosperity = prosperity_mild_penalty
+		}
+		custom_tooltip = {
+			text = swe_gotaland.9.b_tt
+			location:kalmar = {
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+}
+
+# Kalmar's cathedral on Kvarnholmen: begun 1660 to designs by Nicodemus Tessin the Elder, consecrated half-finished in
+# 1682 and finished in 1703 (svenskakyrkan.se Kalmar, sv.wiki Kalmar domkyrka). The old church was blown up in 1678 for
+# fear of a siege (Arkeologerna, p. 121). Karl XI made Kalmar a diocese on 5 April 1678 (sv.wiki Kalmar stift); by the
+# user's choice that stays in historical_info, since Kalmar and Öland are long Protestant by then. Fires only after
+# swe_gotaland.9 moved the town, since otherwise the old church still stands in the middle of it. "Tessin" fits either
+# Tessin over the window. A monument, as vanilla makes its churches, at the gold and quality of vanilla's usual monuments.
+swe_gotaland.10 = {
+	type = country_event
+	title = swe_gotaland.10.title
+	desc = swe_gotaland.10.desc
+	outcome = neutral
+	historical_info = swe_gotaland.10.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1658.1.1
+		to = 1720.1.1
+		monthly_chance = 3 # Median about 1660, or two years after the move
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kalmar
+		location:kalmar = { has_location_modifier = swe_kvarnholmen }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_gotaland.10.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -5 }
+		location:kalmar = {
+			create_art = {
+				quality = 75
+				type = work_of_art_type:monument
+				key = swe_kalmar_domkyrka
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_gotaland.10.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
