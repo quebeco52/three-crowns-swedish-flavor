@@ -229,3 +229,74 @@ swe_svealand.3 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Uppsala Cathedral. Begun in the 1270s and consecrated in June 1435 by Archbishop Olof Larsson, still without its
+# towers (SBL, Olaus Laurentii; Sundquist, Årsboken Uppland 1962; Bengtsson, Upplandsmuseets rapporter 2011:04). The
+# Church consecrated it, not the king: Erik of Pomerania had fought the archbishop's election and was in Denmark. No
+# royal money is attested after Magnus Eriksson's letters of 1331 (DS 2875, a third of the tithe) and 1338 (DS 3384,
+# the masons' privilege), so the cathedral stands either way and paying is the unhistorical option.
+swe_svealand.4 = {
+	type = country_event
+	title = swe_svealand.4.title
+	desc = swe_svealand.4.desc
+	outcome = neutral
+	historical_info = swe_svealand.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1433.6.1
+		to = 1447.1.1
+		monthly_chance = 3 # Median mid-1435
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:uppsala
+		religion = religion:catholic
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_svealand.4.a
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -5 }
+		location:uppsala = {
+			create_art = {
+				quality = 85
+				type = work_of_art_type:monument
+				key = swe_uppsala_domkyrka
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_svealand.4.b
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		location:uppsala = {
+			create_art = {
+				quality = 65
+				type = work_of_art_type:monument
+				key = swe_uppsala_domkyrka
+			}
+		}
+	}
+}

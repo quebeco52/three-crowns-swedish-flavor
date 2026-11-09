@@ -30,3 +30,16 @@
  swe_council.2.a_tt: "[ShowLocationName('vaxjo')], [ShowLocationName('jonkoping')], [ShowLocationName('skara')], [ShowLocationName('orebro')], [ShowLocationName('vasteras')], [ShowLocationName('uppsala')], [ShowLocationName('strangnas')] and [ShowLocationName('linkoping')] gain [ShowModifier('swe_rafst')] for 20 years if we own them."
  swe_council.2.b: "Leave it to the local courts."
  swe_council.2.b.entry: "Land disputes were left to the local courts."
+
+ STATIC_MODIFIER_NAME_swe_avelsgard: "The Avelsgård"
+ STATIC_MODIFIER_DESC_swe_avelsgard: "The best land beside the castle is the Crown's own farm now, with a hundred cows in its byres. The tenants who held it were given land in other parishes, and those who remain owe it their days at ploughing, harvest and haymaking."
+
+ swe_council.3.title: "Feeding the Castles"
+ swe_council.3.entry: "$swe_council.3.title$"
+ swe_council.3.desc: "Our castles live on what the bailiffs collect from the farms around them: rent, tithe and dues, paid in grain, butter and meat. That has always fed a garrison, and it will not feed the cavalry we now mean to keep. The Crown could farm for itself instead. Beside each castle we would take the best village land, give its tenants holdings in other parishes, and stock it with a hundred cows and the oxen to plough for them. The peasants who stay would owe the farm their days at ploughing, harvest and haymaking, in the same weeks that their own fields want them. Three provinces in the north have already offered to pay a third more in rent to be spared, so there is butter to be had without any of this."
+ swe_council.3.historical_info: "From the 1540s Gustav Vasa wanted his royal manors to yield a surplus of grain, butter and cheese instead of eating what they grew. In the autumn of 1555 he ordered crown farms, avelsgårdar, set up across the realm: one in every parish in Finland and one in every second or third pastorate in Sweden, each to keep a hundred cows and feed twenty cavalry horses. Little came of it in Sweden. In Finland about fifty new estates took some 270 farms, and at Esbo fourteen households were moved to other parishes. Hälsingland, Medelpad and Ångermanland offered a third more rent to be left alone, and paid a tax in butter instead. In 1561 the Finnish farms were found to give little profit for their great cost in day-labour, and many were closed or let to tenants within a few years. Horn on Öland stayed in the Crown's hands until 1937."
+ swe_council.3.a: "A farm beside every castle."
+ swe_council.3.a.entry: "The Crown set up its own farms beside the castles."
+ swe_council.3.a_tt: "Every [location|e] with a fort that we own in [ShowAreaName('svealand_area')], [ShowAreaName('gotaland_area')], [ShowAreaName('norrland_area')] and [ShowAreaName('finland_area')] gains [ShowModifier('swe_avelsgard')] for 15 years, and the peasant [pops|e] there lose 10% [pop_satisfaction|e]."
+ swe_council.3.b: "Take the butter."
+ swe_council.3.b.entry: "The peasants paid more in butter and kept their land."

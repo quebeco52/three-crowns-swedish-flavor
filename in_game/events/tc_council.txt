@@ -150,3 +150,70 @@ swe_council.2 = {
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# The crown farms. Gustav Vasa's avelsgårdar: from the 1540s the royal manors were to give a surplus, and the programme
+# itself came in the autumn of 1555 (first letter Sibbo, 12 Nov 1555; Nyström, Scandia 1936, citing Gustav I's
+# registratur). It was carried out mostly in Finland, where about 50 new estates took about 270 farms in 1545-62
+# (Haggrén in Mankby, 2016). Dated by the programme; the farms go to forts in Sweden and Finland owned at that moment.
+swe_council.3 = {
+	type = country_event
+	title = swe_council.3.title
+	desc = swe_council.3.desc
+	outcome = neutral
+	historical_info = swe_council.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1553.11.1
+		to = 1575.1.1
+		monthly_chance = 3 # Median late 1555
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		any_owned_location = { swe_crown_castle_trigger = yes }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		custom_tooltip = {
+			text = swe_council.3.a_tt
+			every_owned_location = {
+				limit = { swe_crown_castle_trigger = yes }
+				add_location_modifier = { modifier = swe_avelsgard years = 15 }
+				# The anger stays at the castles, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
+			}
+		}
+	}
+
+	# Hälsingland, Medelpad and Ångermanland offered a third more rent in 1556 to be spared, and paid a butter tax instead
+	option = {
+		name = swe_council.3.b
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = 1 }
+	}
+}

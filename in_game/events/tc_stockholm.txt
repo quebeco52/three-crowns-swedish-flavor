@@ -359,3 +359,67 @@ swe_stockholm.5 = {
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
 	}
 }
+
+# The regalia. Erik XIV was crowned at Uppsala on 29 June 1561 with a new crown and orb by Cornelis ver Weiden and a
+# key by Peter Holtswijller, all made in Stockholm (Kungliga slotten); the crown was the first Swedish one closed with
+# arches (Klackenberg 2023). Not tied to Erik: fired by tc_on_new_ruler_regalia one to two months after the first
+# succession from 1544, when the crown became hereditary (swe_vasa.3), to 1650, when Kristina re-worked an old crown
+# rather than order a new one.
+swe_stockholm.6 = {
+	type = country_event
+	title = swe_stockholm.6.title
+	desc = swe_stockholm.6.desc
+	outcome = neutral
+	historical_info = swe_stockholm.6.historical_info
+
+	fire_only_once = yes
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		owns = location:stockholm
+		# Not if that monarch has already died: the next one is asked instead (vanilla culture_religion_events.2)
+		trigger_if = {
+			limit = { exists = scope:new_ruler }
+			ruler ?= { this = scope:new_ruler }
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_stockholm.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -6 }
+		location:stockholm = {
+			create_art = {
+				quality = 80
+				type = work_of_art_type:regalia
+				key = swe_riksregalierna
+			}
+		}
+		add_legitimacy = legitimacy_mild_bonus
+	}
+
+	option = {
+		name = swe_stockholm.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = swe_stockholm.6.b_tt
+	}
+}

@@ -68,3 +68,16 @@
  swe_stockholm.5.a.entry: "The panel of the false suns was hung in Stockholm's great church."
  swe_stockholm.5.b: "The sky has cleared. So can the wall."
  swe_stockholm.5.b.entry: "The panel of the false suns was not hung."
+
+ swe_riksregalierna: "Riksregalierna"
+ swe_riksregalierna_desc: "The regalia of the realm: a crown of gold closed with arches and set with pearls, emeralds, diamonds and rubies, with a sceptre, an orb and a key."
+
+ swe_stockholm.6.title: "The Regalia of the Realm"
+ swe_stockholm.6.entry: "$swe_stockholm.6.title$"
+ swe_stockholm.6.desc: "A new reign begins with a coronation, and ours have been plain ones. The crown has always been an open ring of gold. The kings of the greater realms of Europe now wear theirs closed with arches, and a coronation here falls short of what is customary abroad. A Flemish goldsmith in our service at [ShowLocationName('stockholm')] offers to make the whole set new: a crown of gold set with pearls, emeralds, diamonds and rubies, with a sceptre, an orb and a key to go with it. It would cost a great deal, and it would show anyone who saw it that this crown is the equal of any other. The old kings were crowned in plainer ones, and nobody took them for anything but kings."
+ swe_stockholm.6.historical_info: "Erik XIV was crowned in Uppsala Cathedral on 29 June 1561, with great display. The crown and the orb were made in Stockholm for the occasion by the Flemish goldsmith Cornelis ver Weiden, and the key by Peter Holtswijller. The crown, of gold set with pearls, emeralds, diamonds and rubies, was the first Swedish crown closed with arches. At the same coronation Erik created Sweden's first three counts and nine barons. His father Gustav Vasa had been crowned in 1528, and neither the crown, the sceptre nor the orb used that day survives. Erik's crown, sceptre, orb and key are still the regalia of Sweden."
+ swe_stockholm.6.a: "Send for the goldsmith."
+ swe_stockholm.6.a.entry: "New regalia were made for the coronation."
+ swe_stockholm.6.b: "The old crown will do."
+ swe_stockholm.6.b.entry: "The king was crowned with the old regalia."
+ swe_stockholm.6.b_tt: "The coronation is held with the regalia we have."

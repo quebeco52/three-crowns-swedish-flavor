@@ -957,3 +957,16 @@ swe_lithuanian_rights = {
 	local_pop_assimilation_speed_modifier = -0.25
 	local_integration_speed = 0.10
 }
+
+# Added for 15 years by swe_council.3 to every fort we own in Sweden and Finland when the Crown sets up its own farms
+# beside the castles (Gustav Vasa's avelsgårdar, 1555-56). The food of vanilla's cultivators_grange_clearing_modifier
+# (mild), and the crown power of fontainebleau_hunting_lodge (0.10) with its migration reversed, as in
+# swe_olands_djurgard: the tenants of the cleared villages were given land in other parishes.
+swe_avelsgard = {
+	game_data = {
+		category = location
+	}
+	local_monthly_food_modifier = monthly_food_productivity_mild_bonus
+	local_crown_estate_power = 0.1
+	local_migration_attraction = -0.1
+}
