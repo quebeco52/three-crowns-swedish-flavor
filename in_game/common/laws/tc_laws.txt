@@ -78,23 +78,6 @@ INJECT:legal_code_law = {
 			}
 			legislative_efficiency = 0.1
 		}
-		# Wismar Tribunal (swe_wismar_tribunal_decision): from 1653 the Crown's own high court at Wismar
-		# judged its German lands under their own law, so no appeal went to the imperial courts.
-		# Kept inside this policy rather than as a privilege of its own. Integration and the slower
-		# assimilation are those of lat_compromise_with_greek_populace (German law and language kept);
-		# the crown power is that of Bottniska handelstvånget, the reverse of justicia_de_aragon.
-		location_modifier = {
-			potential_trigger = {
-				custom_tooltip = {
-					text = swe_wismar_tribunal_location_bonus
-					owner = { has_variable = swe_wismar_tribunal }
-					swe_german_provinces_trigger = yes
-				}
-			}
-			local_integration_speed = 0.10
-			local_crown_estate_power = 0.1
-			local_pop_assimilation_speed_modifier = -0.25
-		}
 		estate_preferences = {
 			crown_estate
 			peasants_estate

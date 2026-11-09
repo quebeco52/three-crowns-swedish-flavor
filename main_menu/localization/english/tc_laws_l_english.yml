@@ -2,7 +2,6 @@
  swe_landslag: "Landslagen"
  swe_landslag_desc: "The old laws of the provinces have given way to one law for the whole realm, read out at every ting from [ShowLocationName('uppsala')] to the Finnish coast. Its chapters cover everything from the election of the king to the upkeep of bridges, and lords and [ShowEstateTypeName('peasants_estate')] alike are judged by it."
  swe_rikes_lag_country_bonus: "Once we pass Sveriges rikes lag ($swe_rikes_lag_decision.title$):"
- swe_wismar_tribunal_location_bonus: "Once the Wismar Tribunal sits, every [location|e] we own in [ShowRegionName('north_german_region')] outside the Low Countries, and inside the [hre|e] while it lasts, gains:"
 
  swe_landslag_decision.title: "The Law of the Land"
  swe_landslag_decision.desc: "Every province of the realm keeps its own law. A man of Uppland and a man of Västergötland may be judged differently for the same crime, and the lawmen of each province guard their old customs closely. If the provincial laws were gathered into one code, the Crown's judges could apply it everywhere, and the [ROOT.GetCountry.GetGovernment.GetEstateName('peasants_estate')] would know their rights wherever they went."
@@ -16,15 +15,6 @@
  swe_rikes_lag_decision.historical_info: "From 1686 a series of law commissions worked on a new code to replace the medieval national law and town law. The result, Sveriges rikes lag (the Law of the Realm of Sweden), was adopted by the Riksdag in 1734 and came into force in 1736. Its chapters on marriage, inheritance, land, building, trade, crime and procedure applied to town and countryside alike, and its structure survives in Swedish and Finnish law today."
  swe_rikes_lag_decision.a: "Pass the new code."
  swe_rikes_lag_decision.a_tt: "[ShowPolicyName('swe_landslag')] gains a bonus to [legislative_efficiency|e]."
-
- swe_wismar_tribunal_decision.title: "The Wismar Tribunal"
- swe_wismar_tribunal_decision.desc: "Our German lands are fiefs of the Empire, and their lords and towns can still carry their lawsuits past our judges to the imperial courts, where our rivals have friends. A high court of our own, seated in one of our German towns and judging by the law of the land, would end their cases at home. Its judges would be Swedes and Germans alike, and the German [ROOT.GetCountry.GetGovernment.GetEstateName('nobles_estate')] would look to [ROOT.GetCountry.GetName] for justice rather than to the Emperor."
- swe_wismar_tribunal_decision.desc.entry: "A high court of our own could judge our German lands."
- swe_wismar_tribunal_decision.historical_info: "At the Peace of Westphalia in 1648 Sweden gained Western Pomerania, the town of Wismar and the duchies of Bremen and Verden as fiefs of the Holy Roman Empire, with seats at the Imperial Diet. The treaty also freed these lands from appeal to the imperial courts, on condition that Sweden set up a high court of its own for them. The Royal Swedish High Tribunal opened at Wismar in 1653 and became the last court of appeal for all of Sweden's German possessions. It judged by the common law of the Empire and the customs of each province rather than by Swedish law. When Wismar was pledged to Mecklenburg in 1803, the tribunal moved into Swedish Pomerania."
- swe_wismar_tribunal_decision.a: "Seat the tribunal."
- swe_wismar_tribunal_decision.a_tt: "In every [location|e] we own in [ShowRegionName('north_german_region')] outside the Low Countries, and inside the [hre|e] while it lasts, [ShowPolicyName('swe_landslag')] speeds up [integration|e], raises [crown_power|e] and slows [assimilation|e]."
- swe_wismar_tribunal_decision.lands_tt: "We own at least 3 [locations|e] in [ShowRegionName('north_german_region')] outside the Low Countries, and inside the [hre|e] while it lasts"
- swe_wismar_tribunal_decision.town_tt: "At least one of them is a town or larger"
 
  swe_riddarhuset: "Riddarhusordningen"
  swe_riddarhuset_desc: "The nobility meet in their own house in [ShowLocationName('stockholm')], divided into three classes: the counts and barons, the knights whose forefathers sat on the Council of the Realm, and the rest. Each noble family has one seat, held by its head, and every family is entered in the House's register. In return the Crown expects the nobility to serve it as officers and officials."

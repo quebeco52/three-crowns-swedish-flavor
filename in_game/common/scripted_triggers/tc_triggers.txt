@@ -71,21 +71,6 @@ swe_kexholm_ingria_trigger = {
 	}
 }
 
-# The German lands the Wismar Tribunal judged as the Crown's imperial fiefs (swe_wismar_tribunal_decision):
-# north Germany without the Low Countries (Pomerania, Mecklenburg, Bremen-Verden and their neighbours), and
-# only imperial land while the Empire exists. Same HRE guard as vanilla's hre_buildings.txt.
-swe_german_provinces_trigger = {
-	region = region:north_german_region
-	NOT = { area = area:holland_area }
-	NOT = { area = area:brabant_area }
-	NOT = { area = area:flanders_area }
-	NOT = { area = area:wallonia_area }
-	trigger_if = {
-		limit = { exists = international_organization:hre }
-		is_owned_by_international_organization = international_organization:hre
-	}
-}
-
 # Character scope. A councillor who can head a Förmyndarregering (swe_council_regency). Foreigners are out, after the
 # council's decision of 1319 barring them from its seats, which Albrekt had to respect in 1371 (one secondary text,
 # Sverige 1266-1397; the assurance itself is DS X nr 75). Accepted cultures count as the realm's own, not only Swedish.

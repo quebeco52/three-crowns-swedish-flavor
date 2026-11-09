@@ -15,8 +15,8 @@ swe_bottniska_handelstvanget_decision = {
 		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
 	}
 
-	# In a custom_tooltip, as in swe_wismar_tribunal_decision: bare, the game printed the rank check
-	# against Stockholm, so it read as if Stockholm had to be a town
+	# In a custom_tooltip: bare, the game printed the rank check against Stockholm,
+	# so it read as if Stockholm had to be a town
 	allow = {
 		owns = location:stockholm
 		custom_tooltip = {
@@ -599,80 +599,12 @@ swe_stockholm_palace_decision = {
 	}
 }
 
-# Wismarska tribunalet: at Westphalia in 1648 Sweden's German lands were freed from appeal to the imperial
-# courts, on condition that it set up a high court of its own; the tribunal opened at Wismar in 1653.
-# Sets swe_wismar_tribunal, which turns on the German tier inside swe_landslag.
-# Needs three German locations and a town to seat the court in. Wismar itself is not required.
-swe_wismar_tribunal_decision = {
-	decision_category = country_specific_decisions
-	historical_info = swe_wismar_tribunal_decision.historical_info
-	only_once = yes
-
-	potential = {
-		has_or_had_tag = SWE
-		current_age_or_later = {
-			age = age_4_reformation
-		}
-		has_unlocked_policy_trigger = { type = swe_landslag }
-		NOT = { has_variable = swe_wismar_tribunal }
-		any_owned_location = {
-			swe_german_provinces_trigger = yes
-		}
-	}
-
-	allow = {
-		# Bare key, as in swe_rikes_lag_decision
-		has_policy = swe_landslag
-		custom_tooltip = {
-			text = swe_wismar_tribunal_decision.lands_tt
-			any_owned_location = {
-				count >= 3
-				swe_german_provinces_trigger = yes
-			}
-		}
-		custom_tooltip = {
-			text = swe_wismar_tribunal_decision.town_tt
-			any_owned_location = {
-				swe_german_provinces_trigger = yes
-				OR = {
-					location_rank = location_rank:town
-					location_rank = location_rank:city
-					location_rank = location_rank:megalopolis
-				}
-			}
-		}
-	}
-
-	ai_will_do = { value = 100 }
-
-	illustration_tags = {
-		10 = regular
-		10 = interior
-	}
-
-	illustration_scope = {
-		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
-	}
-
-	option = {
-		name = swe_wismar_tribunal_decision.a
-		ai_chance = { value = 100 }
-		effect = {
-			set_variable = swe_wismar_tribunal
-			custom_tooltip = swe_wismar_tribunal_decision.a_tt
-			change_gold_effect = { scale = -1 }
-			# The German nobles kept their own law, and seats on the bench for men of their choosing
-			add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
-		}
-	}
-}
-
 # Regeringsformen: the Instrument of Government of 1634 put the realm under five colleges, each led by one
 # of the great officers of the realm. Unlocks and adopts swe_kammarkollegium in the bureaucracy law, like
 # swe_bergskollegium_decision, and unlocks swe_amiralitetskollegium and swe_kommerskollegium, which wait
 # for their vanilla laws in the age of absolutism. No War College: vanilla's army laws cover it.
 # Svea hovrätt, the first of the five, is left to vanilla's court_of_appeals (flavor_swe.15). That event adopts
-# the policy itself, in the same law as swe_landslag, so the Wismar and Rikes lag tiers lapse until the player
+# the policy itself, in the same law as swe_landslag, so the Rikes lag tier lapses until the player
 # switches back; accepted as it is.
 # Needs a parliament, the bureaucracy law and a supreme court in the capital.
 swe_regeringsform_decision = {
