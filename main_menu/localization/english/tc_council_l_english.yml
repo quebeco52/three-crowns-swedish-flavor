@@ -3,7 +3,7 @@
  STATIC_MODIFIER_DESC_swe_tyska_radet: "By the town law, half the mayors and councillors here must be Germans. The merchants of Lübeck and the other Hanseatic towns trade freely through them, and they answer to their own countrymen as much as to the Crown."
 
  swe_svenska_radman_decision.title: "Swedes on the Council"
- swe_svenska_radman_decision.desc: "The town law still gives half the seats on the councils of [ShowLocationName('stockholm')] and [ShowLocationName('kalmar')] to Germans. In [ShowLocationName('stockholm')] the Swedish [ROOT.GetCountry.GetGovernment.GetEstateName('burghers_estate')] now outnumber them, and they ask why foreigners should hold half the town's offices. If we strike the clause from the law, the councils would be ours alone, but Lübeck would not forget it."
+ swe_svenska_radman_decision.desc: "The town law still gives half the seats on the councils of [ShowLocationName('stockholm')] and [ShowLocationName('kalmar')] to Germans. In [ShowLocationNameWithNoTooltip('stockholm')] the Swedish [ROOT.GetCountry.GetGovernment.GetEstateName('burghers_estate')] now outnumber them, and they ask why foreigners should hold half the town's offices. If we strike the clause from the law, the councils would be ours alone, but Lübeck would not forget it."
  swe_svenska_radman_decision.desc.entry: "The German half of the town councils could be abolished."
  swe_svenska_radman_decision.historical_info: "Magnus Eriksson's town law of around 1350 laid down that half the mayors and councillors of a Swedish town should be Germans, a sign of how many German merchants had settled in Stockholm, Kalmar and other towns since the 13th century. In 1471, after Sten Sture's victory over Christian I at Brunkeberg, the rule was struck out and the town councils were closed to the foreign-born. German merchants went on trading in Stockholm, but they no longer governed it."
  swe_svenska_radman_decision.a: "Only Swedes on the council."
@@ -11,10 +11,10 @@
 
  swe_council.1.title: "The Käpplinge Murders"
  swe_council.1.entry: "$swe_council.1.title$"
- swe_council.1.desc: "The Germans of [ShowLocationName('stockholm')] have taken matters into their own hands. Sure that their Swedish neighbours meant to open the gates to our enemies, the band they call the Hättebröder seized those they suspected, ferried them to Käpplingeholmen, locked them in a house and set it on fire. The German councillors say the dead were traitors. Across the realm, Swedes call it murder, and they are waiting to see whose side the king takes."
+ swe_council.1.desc: "The Germans of [ShowLocationName('stockholm')] have taken matters into their own hands. Sure that their Swedish neighbours meant to open the gates to our enemies, the band they call the Hättebröder seized those they suspected, ferried them to Käpplingeholmen, locked them in a house and set it on fire. The German councillors say the dead were traitors. Across the realm, Swedes call it murder, and they are waiting to see whose side the Crown takes."
  swe_council.1.historical_info: "In February 1389 King Albrekt of Mecklenburg was defeated and captured at Åsle by the forces of Queen Margareta. Stockholm, where German burghers held half the council, stayed loyal to him. That June the Hättebröder, a party of German burghers, arrested Swedish burghers they suspected of siding with Margareta, and on 17 June burned them on Käpplingeholmen, today's Blasieholmen. The number of victims is uncertain, and some historians date the murders to 1392. The murders secured Stockholm for the German party, which held the town with the help of the Victual Brothers until it passed to Margareta in 1398."
- swe_council.1.a: "They were traitors. The council acted for the king."
- swe_council.1.a.entry: "The king stood by the German council."
+ swe_council.1.a: "They were traitors. The council acted for the Crown."
+ swe_council.1.a.entry: "The Crown stood by the German council."
  swe_council.1.b: "Hang the Hättebröder."
  swe_council.1.b.entry: "The Hättebröder were punished."
 

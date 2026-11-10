@@ -6,7 +6,7 @@
  STATIC_MODIFIER_NAME_swe_lappmark_settlers: "Lappmark Settlers"
  STATIC_MODIFIER_DESC_swe_lappmark_settlers: "Under the Lappmark Edict, settlers who clear new farms here pay no taxes and are free from military service for fifteen years."
  STATIC_MODIFIER_NAME_swe_faxeholm_ruins: "The Ruins of Faxeholm"
- STATIC_MODIFIER_DESC_swe_faxeholm_ruins: "No castle watches over this coast any more. The peasants settle their own affairs, and the Crown's officials tread carefully here."
+ STATIC_MODIFIER_DESC_swe_faxeholm_ruins: "No castle watches over this coast any more. The peasants settle their own affairs, and the Crown's officials are seldom seen."
  STATIC_MODIFIER_NAME_swe_norrland_bailiff: "The Crown's Bailiff"
  STATIC_MODIFIER_DESC_swe_norrland_bailiff: "A new castle and a new bailiff hold this coast for the Crown. The taxes come in, and so do the complaints."
  STATIC_MODIFIER_NAME_swe_gavle_fishermen: "The Gefle Fishermen"
@@ -28,7 +28,7 @@
  swe_tar_company_decision.title: "The Tar Company"
  swe_tar_company_decision.desc: "Every summer the [ROOT.GetCountry.GetGovernment.GetEstateName('peasants_estate')] of Österbotten burn pine in their tar pits and float the barrels downriver to the coast. Every navy in Europe needs [ShowGoodsName('tar')] for its ships, and much of it comes from our forests. The merchants of [ShowLocationName('stockholm')] ask for a company with the sole right to buy it and sell it abroad. They promise the Crown a steady income, but the company would also decide what it pays the peasants."
  swe_tar_company_decision.desc.entry: "A company could buy up all the tar of Österbotten."
- swe_tar_company_decision.historical_info: "Finland, and above all Ostrobothnia, was Europe's largest source of tar in the 17th and 18th centuries. Production grew quickly during the Thirty Years' War, and by the 1640s tar was one of Finland's main exports. In 1648 a tar company in Stockholm was given the sole right to buy and export tar, and with it control over prices and production. The company was re-founded several times, lost its monopoly between 1682 and 1689, and was abolished for good in 1715. The tar trade itself went on, and in the 18th century it made the towns of Ostrobothnia rich."
+ swe_tar_company_decision.historical_info: "Finland, and above all Österbotten, was Europe's largest source of tar in the 17th and 18th centuries. Production grew quickly during the Thirty Years' War, and by the 1640s tar was one of Finland's main exports. In 1648 a tar company in Stockholm was given the sole right to buy and export tar, and with it control over prices and production. The company was re-founded several times, lost its monopoly between 1682 and 1689, and was abolished for good in 1715. The tar trade itself went on, and in the 18th century it made the towns of Österbotten rich."
  swe_tar_company_decision.a: "Charter the company."
  swe_tar_company_decision.kiln_tt: "We own a finished [ShowBuildingTypeName('tar_kiln')] in [ShowProvinceDefinitionName('norra_osterbotten_province')] or [ShowProvinceDefinitionName('sodra_osterbotten_province')]"
 

@@ -1,14 +1,14 @@
 ﻿l_english:
  swe_church.1.title: "The Uppsala Synod"
  swe_church.1.entry: "$swe_church.1.title$"
- swe_church.1.desc: "Our church has broken with Rome, but it has never declared what it believes. Each reign has pulled it a different way, and many priests still follow a liturgy full of the old Catholic ceremonies. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] now ask to meet at [ShowLocationName('uppsala')] and settle the matter: one confession for the whole realm, the Confession of Augsburg, which every future ruler must swear to uphold."
+ swe_church.1.desc: "Our church has broken with Rome, but it has never declared what it believes. Each reign has pulled it a different way, and many priests still follow a liturgy full of the old Catholic ceremonies. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] now ask to meet at [ShowLocationName('uppsala')] and settle the matter: one confession for the whole realm, the Confession of Augsburg, which every future ruler must swear to uphold. A church with one confession would also be a stronger church, and a harder one for the Crown to manage."
  swe_church.1.desc_ruler: "Our church has broken with Rome, but it has never declared what it believes, and now [ROOT.GetCountry.GetGovernment.GetRuler.GetName] does not share our faith. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] fear for the church and ask to meet at [ShowLocationName('uppsala')]. They want one confession for the whole realm, the Confession of Augsburg, and they want the [ROOT.GetCountry.GetGovernment.GetRulerTitle] to swear to uphold it."
  swe_church.1.desc_heir: "Our church has broken with Rome, but it has never declared what it believes, and [ROOT.GetCountry.GetGovernment.GetHeir.GetName], the heir to the throne, does not share our faith. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] ask to meet at [ShowLocationName('uppsala')] while there is still time. They want one confession for the whole realm, the Confession of Augsburg, and no coronation until the heir has sworn to uphold it."
  swe_church.1.historical_info: "For decades after the break with Rome, the Swedish church had no formal confession. In 1576 Johan III introduced a new liturgy, the Red Book, which brought back many Catholic ceremonies, and his son and heir Sigismund was a Catholic and already King of Poland. After Johan's death, Duke Karl and the clergy called a church meeting at Uppsala in early 1593. It adopted the Augsburg Confession, rejected the Red Book, and required Sigismund to accept the decision before his coronation. As the meeting closed, its chairman Nicolaus Olai Bothniensis declared: 'Now Sweden has become one man, and we all have one Lord and God.'"
  swe_church.1.a: "One faith for the whole realm."
- swe_church.1.a.entry: "The church adopts the Augsburg Confession."
+ swe_church.1.a.entry: "The church adopted the Augsburg Confession."
  swe_church.1.b: "Leave the church as it is."
- swe_church.1.b.entry: "The church stays without a confession."
+ swe_church.1.b.entry: "The church stayed without a confession."
  swe_church.1.b_tt: "We can still grant [ShowEstatePrivilegeName('swe_uppsala_mote')] later."
 
  swe_kyrkolagen_decision.title: "The Church Law"
