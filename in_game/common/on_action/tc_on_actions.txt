@@ -227,6 +227,14 @@ tc_on_game_start = {
 				add_location_modifier = { modifier = swe_bergslagen_iron months = -1 }
 			}
 		}
+		# Lödöse on the Göta älv, the realm's only port to the west, at its largest about 1250-1350
+		# (Lödöse museum, rapport 2021:1). swe_gotaland.11 removes it when the town moves downstream.
+		location:lodose ?= {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_western_gate } }
+				add_location_modifier = { modifier = swe_western_gate months = -1 }
+			}
+		}
 		# Half the mayors and councillors of a Swedish town had to be Germans, a rule written into
 		# Magnus Eriksson's town law around 1350 and struck out in 1471 (swe_svenska_radman_decision).
 		# Vanilla gives Kalmar only Swedish burghers, so it gets its German community here;

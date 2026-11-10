@@ -970,3 +970,55 @@ swe_avelsgard = {
 	local_crown_estate_power = 0.1
 	local_migration_attraction = -0.1
 }
+
+# Added to lodose at game start (tc_on_game_start) and removed by swe_gotaland.11 when the town moves downstream.
+# Lödöse was the realm's only port to the west, at its largest about 1250-1350 (Lödöse museum, rapport 2021:1). The
+# market access of market_charter (0.1) and the merchant capacity of vanilla's favoring_own_interests (0.5), half of
+# swe_marstrand_porto_franco's. Market access rather than harbour capacity, as lodose has no natural harbour.
+swe_western_gate = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.1
+	local_merchant_capacity = 0.5
+}
+
+# Added permanently to utlandet by swe_gotaland.11 when the town moves to the mouth of the Säveån (1473). The harbour
+# of vanilla's surveyed_safe_harbour (0.2), as in swe_town_moved and swe_kvarnholmen, and the merchant capacity of
+# swe_western_gate, whose trade moved with the burghers. Permanent like swe_kvarnholmen: the town never went back
+# upstream, and Göteborg replaced it on the same tile.
+swe_nya_lodose = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = 0.2
+	local_merchant_capacity = 0.5
+}
+
+# Added to lodose for 20 years by swe_gotaland.11 when the town stays above the toll at Bohus. The market access of
+# swe_western_gate reversed, as swe_silted_harbour reverses swe_town_moved.
+swe_bohus_toll = {
+	game_data = {
+		category = location
+	}
+	local_market_access = -0.1
+}
+
+# Added for 20 years by swe_gotaland.12 to every location we own in Västergötland when the lords of the province are
+# tried and their estates fall to the Crown. The crown power of swe_rafst (0.1).
+swe_forfeited_estates = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added to skene by swe_towns.8 when Borås is founded, in place of swe_knallar there: half its market access (0.05),
+# as in swe_gotland_harbours_open, since this one is permanent, with the migration of swe_marstrand_porto_franco (0.1).
+swe_boras_privileges = {
+	game_data = {
+		category = location
+	}
+	local_market_access = 0.05
+	local_migration_attraction = 0.1
+}

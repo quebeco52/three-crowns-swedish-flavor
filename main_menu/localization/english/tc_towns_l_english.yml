@@ -7,6 +7,7 @@
  ulricehamn: "Ulricehamn"
  ostersund: "Östersund"
  kristinestad: "Kristinestad"
+ boras: "Borås"
 
  STATIC_MODIFIER_NAME_swe_ostersund_freedoms: "Östersund's Freedoms"
  STATIC_MODIFIER_DESC_swe_ostersund_freedoms: "For its first twenty years the new town pays no taxes and has no guilds or trade restrictions, and settlers are moving in."
@@ -80,3 +81,19 @@
  swe_towns.7.a.entry: "Kristinestad is founded."
  swe_towns.7.b: "The coast has towns enough."
  swe_towns.7.b.entry: "[ShowLocationNameWithNoTooltip('koppo')] stays as it is."
+
+ swe_towns.5.desc_alone: "The burghers of [ShowLocationName('bogesund')] have lost their right to drive oxen and sell provisions from farm to farm, and their trade is slipping away. They now hope to win back the Crown's favour by giving their town a royal name: Ulricehamn. The old name has served for centuries, and a new one will not bring back the oxen."
+
+ STATIC_MODIFIER_NAME_swe_boras_privileges: "The Peddlers' Town"
+ STATIC_MODIFIER_DESC_swe_boras_privileges: "The burghers of Borås may trade wherever they wish in the realm, once their goods have paid customs here."
+
+ swe_towns.8.title: "A Town at Torpa"
+ swe_towns.8.entry: "$swe_towns.8.title$"
+ swe_towns.8.desc: "Men from the hundreds around [ShowLocationName('skene')] have come to complain of how the neighbouring towns treat their peddlers. The towns have the law on their side. The farmers here walk the realm every winter selling what their households have made, and none of it has paid customs anywhere. They can be told to give up the trade by midsummer. Or they can be told to build a town of their own by the church at Torpa, where their goods would be taxed before they leave, and the Crown would have a town it did not pay for. The towns that complain would then have one more rival, this time a lawful one."
+ swe_towns.8.historical_info: "In the spring of 1620 the district sent representatives to Gustav II Adolf to complain of how the neighbouring towns treated its peddlers, the knallar. Their goods had paid customs nowhere, which irritated the merchants' guilds and the Crown alike. The king told them to end their trade by midsummer or found a town. They chose the town, which was laid out around the parish church of Torpa. It received provisional privileges on 29 June 1621, and the king signed its charter on 25 May 1622. In 1624 the burghers of Borås were given the right to trade wherever they wished in the realm, provided their goods had paid customs in Borås."
+ swe_towns.8.a: "Let them build their town."
+ swe_towns.8.a.entry: "The peddlers founded the town of Borås."
+ swe_towns.8.a_tt: "The burgher [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('vastergotland_province')] lose 5% [pop_satisfaction|e]."
+ swe_towns.8.b: "The trade ends at midsummer."
+ swe_towns.8.b.entry: "The peddlers were told to stop."
+ swe_towns.8.b_tt: "The burgher [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('vastergotland_province')] gain 5% [pop_satisfaction|e]."
