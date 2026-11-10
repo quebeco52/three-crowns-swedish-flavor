@@ -217,7 +217,7 @@ INJECT:naval_doctrine_law = {
 
 	# Amiralitetskollegium: the Admiralty College ran the fleet and its yards, and carried the
 	# armies across the Baltic to Germany and the eastern provinces.
-	# Balanced against danish_admirality (+0.05 navy tradition): half the tradition, plus part of
+	# Balanced against danish_admirality (+0.05 navy tradition): the same tradition, plus part of
 	# portuguese_marines' disembark speed (0.33). Crown, like fleet_in_being: it was the king's fleet.
 	swe_amiralitetskollegium = {
 		unique = yes
@@ -226,7 +226,7 @@ INJECT:naval_doctrine_law = {
 			has_unlocked_policy_trigger = { type = swe_amiralitetskollegium }
 		}
 		country_modifier = {
-			monthly_navy_tradition = 0.025
+			monthly_navy_tradition = 0.05
 			army_disembark_speed = 0.15
 		}
 		estate_preferences = {

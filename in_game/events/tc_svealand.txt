@@ -4,7 +4,9 @@
 # been lost.
 
 # Enköping's Twentieth-Day Market. Gustav Vasa confirmed the town's privileges in 1521 but banned bargaining on the ice,
-# probably with little effect (Upplandsmuseet report 2006:24, citing Ljung 1963).
+# probably with little effect (Upplandsmuseet report 2006:24, citing Ljung 1963). The ban sends the trade into the town,
+# so option a gives it a market (swe_grant_market), as swe_gotaland.14 does for Jönköping; the burghers' local power
+# is its cost.
 swe_svealand.1 = {
 	type = country_event
 	title = swe_svealand.1.title
@@ -44,6 +46,7 @@ swe_svealand.1 = {
 
 		location:enkoping = {
 			add_location_modifier = { modifier = swe_enkoping_ice_ban years = 15 }
+			swe_grant_market = yes
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 	}

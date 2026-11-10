@@ -25,7 +25,7 @@ swe_pomerania.1 = {
 		has_or_had_tag = SWE
 		societal_value:serfdom_vs_free_subjects > 25
 		province_definition:vorpommern_province = {
-			any_location_in_province_definition = { owner = root }
+			any_location_in_province_definition = { owner ?= root }
 		}
 	}
 

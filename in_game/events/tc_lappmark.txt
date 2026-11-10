@@ -82,7 +82,9 @@ swe_lappmark.1 = {
 }
 
 # In the 14th century coastal farmers paid the Crown for sole fishing rights at Gråträsk, and settlers followed.
-# The migration pull is on gratesk, which starts with no owner, so it's skipped if a foreign realm holds it.
+# The migration pull is on gratesk, which starts with no owner, so it's skipped if a foreign realm holds it. Selling the
+# rights costs the Sámi who fish and sacrifice there. gratesk is usually unowned when this fires (1340-1400), so the
+# anger falls on the Sámi pops of the Västerbotten locations we own, which nearly all have some in 1337.
 swe_lappmark.3 = {
 	type = country_event
 	title = swe_lappmark.3.title
@@ -133,6 +135,16 @@ swe_lappmark.3 = {
 					}
 				}
 				add_location_modifier = { modifier = swe_gratrask_fishing_rights years = 50 }
+			}
+		}
+		custom_tooltip = {
+			text = swe_lappmark.3.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vasterbotten_province }
+				every_pop = {
+					limit = { culture = culture:sapmi }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
 			}
 		}
 	}

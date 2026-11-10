@@ -52,7 +52,7 @@
 
  swe_gotaland.4.title: "The Knallar"
  swe_gotaland.4.entry: "$swe_gotaland.4.title$"
- swe_gotaland.4.desc: "Twice a year the farmers around [ShowLocationName('skene')] and [ShowLocationName('bogesund')] load their packs with whatever their households have made and walk the country, selling it door to door. It is against the law, which keeps such trade for town merchants, and the burghers demand that it stop. The farmers say they could not pay their taxes otherwise. They have even begun to talk among themselves in a language of their own, so that nobody can tell what they are saying."
+ swe_gotaland.4.desc: "Twice a year the farmers around [ShowLocationName('skene')] and [ShowLocationName('bogesund')] load their packs with whatever their households have made and walk the country, selling it door to door. It is against the law, which keeps such trade for town merchants, and none of their goods pay customs anywhere. The burghers demand that it stop. The farmers say they could not pay their taxes otherwise. They have even begun to talk among themselves in a language of their own, so that nobody can tell what they are saying."
  swe_gotaland.4.historical_info: "From the mid-1500s, farmers in Sjuhäradsbygden in Västergötland began selling home-made goods door to door, although the law reserved this trade for town merchants. The region received special laws in the 1680s that allowed trade in the countryside, and from 1776 one person from each farm could travel to trade. At the peak around 1800, between 1,000 and 1,500 farmers a year took trade passes from the county government, usually making two trips a year through Sweden and into Norway. They developed a secret language, månsing, and some of its words entered Swedish slang. Freedom of trade came in 1864, and the peddling ended around 1900."
  swe_gotaland.4.a: "Let them trade."
  swe_gotaland.4.a.entry: "The knallar were left to trade."
@@ -187,7 +187,7 @@
  swe_gotaland.14.a_tt: "The peasant [pops|e] of [ShowLocationName('trollaborg')] lose 5% [pop_satisfaction|e]."
  swe_gotaland.14.b: "Let Värnamo keep its fair."
  swe_gotaland.14.b.entry: "Värnamo kept its fair."
- swe_gotaland.14.b_tt: "The peasant [pops|e] of [ShowLocationName('trollaborg')] gain 5% [pop_satisfaction|e], and the burgher [pops|e] of [ShowLocationName('jonkoping')] lose 5%."
+ swe_gotaland.14.b_tt: "The peasant [pops|e] of [ShowLocationName('trollaborg')] gain 5% [pop_satisfaction|e]."
 
  STATIC_MODIFIER_NAME_swe_kalmar_staple: "Kalmar's Staple"
  STATIC_MODIFIER_DESC_swe_kalmar_staple: "The trade of the coast and the uplands must come to Kalmar's quays, and the small harbours that once took it have been closed."

@@ -214,7 +214,10 @@ swe_finland_west.3 = {
 
 # The Club War began at Kyrö on 25 November 1596, and Österbotten's joint complaint of 27 December 1599 asked Duke
 # Karl to keep the nobles out (quoted in Ylikangas's review of Lappalainen's Susimessu). One event rather than a
-# full Club War: the disaster version is still in the backlog. Fiefs followed from 1608 and were reclaimed in 1674.
+# full Club War: the disaster version is still in the backlog. Fiefs followed from 1608 (Jakob De la Gardie, Pedersöre
+# and Nykarleby), most in 1650-52, and Karl XI reclaimed them on 10 December 1674 (K. V. Åkerblom's chronology in Den
+# österbottniska byn, as printed by the Swedish Finn Historical Society). Single source: the 1674 date, six years
+# before the Great Reduction, was doubted in the 2026-11-10 review, but no other source turned up either way.
 swe_finland_west.4 = {
 	type = country_event
 	title = swe_finland_west.4.title

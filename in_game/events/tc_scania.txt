@@ -26,7 +26,7 @@ swe_scania.1 = {
 		has_or_had_tag = SWE
 		own_entire_area = area:skaneland_area
 		area:skaneland_area = {
-			any_location_in_area = { dominant_culture = culture:danish }
+			any_location_in_area = { dominant_culture ?= culture:danish }
 		}
 	}
 

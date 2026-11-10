@@ -118,3 +118,15 @@ swe_crown_castle_trigger = {
 		area = area:finland_area
 	}
 }
+
+# The wilderness swe_finland_east.4 claims: Savolax, Kajanaland and the four northern Tavastland locations settled from Savo
+swe_crown_wilderness_lands_trigger = {
+	OR = {
+		province_definition = province_definition:savolax_province
+		province_definition = province_definition:kajanaland_province
+		this = location:jyvaskyla
+		this = location:saarijarvi
+		this = location:viitasaari
+		this = location:laukas
+	}
+}

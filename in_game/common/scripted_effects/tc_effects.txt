@@ -2,7 +2,7 @@
 
 # A market for a location: a market village while it's rural, a marketplace level once it's a town or city, since
 # market villages are rural buildings and marketplaces town ones. Set as a level like vanilla's banking.1, not
-# constructed. Location scope. Used by swe_gotaland.13-15 and swe_towns.8.
+# constructed. Location scope. Used by swe_gotaland.13-15, swe_towns.8 and swe_svealand.1.
 swe_grant_market = {
 	if = {
 		limit = { location_rank = location_rank:rural_settlement }

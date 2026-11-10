@@ -36,6 +36,7 @@
  swe_lappmark.3.historical_info: "In the 14th century, farmers from the coast paid the Swedish government for exclusive rights to the fishing grounds at Gråträsk in Piteå's hinterland, and soon saw that the land could be farmed too. A village grew up in the late Middle Ages. In 1897 two farmers on their way to haymaking found more than 1,300 metal objects at Lake Tjautjer just to the south, dated to about 700-1300. It is one of the largest metal finds in Sweden, and the archaeologist Gustav Hallström concluded that the place was an ancient Sámi sacrificial site."
  swe_lappmark.3.a: "Sell them the rights."
  swe_lappmark.3.a.entry: "Coastal farmers bought the fishing rights at Gråträsk."
+ swe_lappmark.3.a_tt: "The [ShowCultureName('sapmi')] [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('vasterbotten_province')] lose 10% [pop_satisfaction|e]."
  swe_lappmark.3.b: "Leave the lake to those who fish it."
  swe_lappmark.3.b.entry: "The Crown left the lake at Gråträsk alone."
 

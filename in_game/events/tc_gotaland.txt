@@ -298,6 +298,8 @@ swe_gotaland.4 = {
 				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 			}
 		}
+		# The customs the peddlers' goods never paid (swe_towns.8's historical_info). Gold as in swe_gotaland.8.b
+		change_gold_effect = { scale = 2 }
 		custom_tooltip = {
 			text = swe_gotaland.4.b_tt
 			every_owned_location = {
@@ -482,7 +484,7 @@ swe_gotaland.7 = {
 
 # The free port of Marstrand, 15 August 1775 to 15 May 1794, so 19 years (en.wikipedia Marstrand Free Port, citing Olán
 # 1917 and Avenius 2001). Marstrand has no location, so konghalla stands in. Crown power falls because most of the
-# income went into private hands. Needs Bohuslän, which starts Norwegian.
+# income went into private hands, by kulm_town_rights' -0.25. Needs Bohuslän, which starts Norwegian.
 swe_gotaland.8 = {
 	type = country_event
 	title = swe_gotaland.8.title
@@ -849,7 +851,7 @@ swe_gotaland.12 = {
 # known there (Hansson, Medeltidens Växjö 2017, pp. 79-81, citing the charter, SDHK 4763, and Larsson 1991). Both
 # options found the town, so the choice is who takes the fines. No town rank: the market follows swe_grant_market.
 # Albo, Konga and Uppvidinge are the rest of Värend; Albo and Uppvidinge have market villages in 1337. Clergy power as
-# vanilla's parish_church (0.25), crown power as swe_rafst (0.1).
+# vanilla's parish_church (0.25), and crown power the same size, as in vanilla's ath_a_permanent_capital.
 swe_gotaland.13 = {
 	type = country_event
 	title = swe_gotaland.13.title
@@ -933,7 +935,7 @@ swe_gotaland.13 = {
 # Jönköping's own burghers traded at a small market there in the 1500s (Hansson, Senmedeltida städer i Småland 2017,
 # p. 142). Värnamo is in trollaborg. The market follows swe_grant_market. The forbidden fair is the unrest of
 # swe_town_monopoly_enforced, the same ban on country trade, for 20 years. Gold as in swe_gotaland.12.b, which keeping
-# the fair gives up.
+# the fair gives up. No penalty for Jönköping's burghers under b: it is rural, so it has almost none.
 swe_gotaland.14 = {
 	type = country_event
 	title = swe_gotaland.14.title
@@ -997,7 +999,6 @@ swe_gotaland.14 = {
 		custom_tooltip = {
 			text = swe_gotaland.14.b_tt
 			swe_pop_satisfaction_in = { location = location:trollaborg type = peasants value = pop_satisfaction_weak_bonus }
-			swe_pop_satisfaction_in = { location = location:jonkoping type = burghers value = pop_satisfaction_weak_penalty }
 		}
 	}
 }

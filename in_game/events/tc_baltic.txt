@@ -190,7 +190,9 @@ swe_baltic.2 = {
 # the Reformation, while Sweden holds one of the three and whoever owns Novgorod has no Baltic port.
 # Whichever of them Sweden holds then get swe_russian_transit, and the chosen staple also gets swe_russian_staple.
 # Both run for 50 years even if Russia returns to the Baltic: a location modifier can't check that later.
-# The prosperity of flavor_tre.5 (the trade port of Kerasous left to prosper).
+# The prosperity of flavor_tre.5 (the trade port of Kerasous left to prosper). The ports passed over lose the weak step
+# of it, since a staple takes their cargo. Holding only one of the three leaves the event free, as the reward for
+# shutting Russia out.
 swe_baltic.4 = {
 	type = country_event
 	title = swe_baltic.4.title
@@ -263,6 +265,19 @@ swe_baltic.4 = {
 			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
 			change_prosperity = prosperity_mild_bonus
 		}
+		# The ports passed over lose the cargo that now goes to the staple
+		location:neva = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
+		}
+		location:tallinn = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
+		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 
@@ -281,6 +296,19 @@ swe_baltic.4 = {
 			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
 			change_prosperity = prosperity_mild_bonus
 		}
+		# The ports passed over lose the cargo that now goes to the staple
+		location:narva = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
+		}
+		location:tallinn = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
+		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 
@@ -298,6 +326,19 @@ swe_baltic.4 = {
 		location:tallinn = {
 			add_location_modifier = { modifier = swe_russian_staple years = modifier_duration_years_very_long }
 			change_prosperity = prosperity_mild_bonus
+		}
+		# The ports passed over lose the cargo that now goes to the staple
+		location:narva = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
+		}
+		location:neva = {
+			if = {
+				limit = { owner ?= root }
+				change_prosperity = prosperity_weak_penalty
+			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
@@ -486,7 +527,8 @@ swe_baltic.6 = {
 			base = 60
 		}
 
-		change_gold_effect = { scale = -1 }
+		# The hostel, and more for the two years free of toll, as the description says
+		change_gold_effect = { scale = -2 }
 		location:narva = {
 			add_location_modifier = { modifier = swe_julfa_factory years = 30 }
 			# Burghers don't stay in a rural settlement: a 2026-11-08 test at a rural Narva kept 0.005 of 0.03 after a

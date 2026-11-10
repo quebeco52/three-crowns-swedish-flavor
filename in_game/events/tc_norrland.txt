@@ -85,7 +85,7 @@ swe_norrland.1 = {
 }
 
 # Gustav Vasa gives the fishermen of Gefle the Norrland coast (1557) for every tenth barrel of salted herring.
-# The monopoly lasted until 1766. Gefle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
+# The monopoly lasted until 1766; the modifiers run 50 years, like swe_peasant_skippers, not to that end. Gefle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
 # so the output modifiers count there. Refusing leaves the coast's fishing as it was, so it changes no output.
 swe_norrland.2 = {
 	type = country_event
@@ -122,18 +122,18 @@ swe_norrland.2 = {
 		}
 
 		location:gefle = {
-			add_location_modifier = { modifier = swe_gavle_fishermen years = 200 }
+			add_location_modifier = { modifier = swe_gavle_fishermen years = 50 }
 		}
 		location:hudiksvall = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 200 }
+				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 50 }
 			}
 		}
 		location:harnosand = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 200 }
+				add_location_modifier = { modifier = swe_gavle_fishing_grounds years = 50 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
@@ -151,7 +151,8 @@ swe_norrland.2 = {
 
 # Döda fallet: on the night of 6-7 June 1796 the Indalsälven broke through a timber channel and Ragundasjön
 # emptied in about four hours. Both options turn the lakebed into farmland: stone to millet, vanilla's grain
-# for most Swedish farmland. Ragunda starts Norwegian, so this needs Sweden to have taken Jämtland.
+# for most Swedish farmland. Ragunda starts Norwegian, so this needs Sweden to have taken Jämtland. Option b pays for
+# the flood, so Selånger keeps its prosperity, and takes the lakebed as crown land.
 swe_norrland.3 = {
 	type = country_event
 	title = swe_norrland.3.title
@@ -213,7 +214,7 @@ swe_norrland.3 = {
 			base = 25
 		}
 
-		change_gold_effect = { scale = -4 }
+		change_gold_effect = { scale = -2 }
 		location:ragunda = {
 			change_raw_material = goods:millet
 			# The old lakebed is new farmland, whoever ends up holding it

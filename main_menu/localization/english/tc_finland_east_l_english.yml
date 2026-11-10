@@ -60,8 +60,10 @@
  swe_finland_east.4.a: "Claim it for the Crown."
  swe_finland_east.4.a.entry: "The Crown claimed the wilderness of inland Finland."
  swe_finland_east.4.a_tt: "Every [location|e] in [ShowProvinceDefinitionName('savolax_province')] and [ShowProvinceDefinitionName('kajanaland_province')], and [ShowLocationName('jyvaskyla')], [ShowLocationName('laukas')], [ShowLocationName('saarijarvi')] and [ShowLocationName('viitasaari')] in the north of [ShowProvinceDefinitionName('tavastland_province')], gains [ShowModifier('swe_crown_wilderness')] for 25 years unless a foreign country holds it."
+ swe_finland_east.4.a_peasants_tt: "The peasant [pops|e] in each of these [locations|e] that we own lose 10% [pop_satisfaction|e]."
  swe_finland_east.4.b: "Leave the old rights alone."
  swe_finland_east.4.b.entry: "The old wilderness rights were left alone."
+ swe_finland_east.4.b_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('savolax_province')] and [ShowProvinceDefinitionName('kajanaland_province')], and in [ShowLocationName('jyvaskyla')], [ShowLocationName('laukas')], [ShowLocationName('saarijarvi')] and [ShowLocationName('viitasaari')] if we own them, gain 5% [pop_satisfaction|e]."
 
  swe_scondia_illustrata: "Scondia Illustrata"
  swe_scondia_illustrata_desc: "Johannes Messenius's history of Sweden, from the Flood to his own day, written in his cell at Kajaneborg."
