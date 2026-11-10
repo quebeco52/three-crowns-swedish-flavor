@@ -121,7 +121,14 @@ swe_towns.1 = {
 				months = 24
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_severe_penalty }
+		# The anger stays with the burghers ordered to move, in place of a country-wide estate penalty
+		custom_tooltip = {
+			text = swe_towns.1.a_tt
+			swe_pop_satisfaction_in = { location = location:ekenas type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:porvoo type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:raumo type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:bjorneborg type = burghers value = pop_satisfaction_severe_penalty }
+		}
 	}
 
 	option = {
@@ -130,7 +137,13 @@ swe_towns.1 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_towns.1.b_tt
+			swe_pop_satisfaction_in = { location = location:ekenas type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:porvoo type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:raumo type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:bjorneborg type = burghers value = pop_satisfaction_weak_bonus }
+		}
 	}
 }
 
@@ -561,9 +574,9 @@ swe_towns.7 = {
 # (sv.wiki Borås, citing Millqvist 1991 and the town's own history page; the Borås chronologies give the same account).
 # Borås lies where skene, allingsas and bogesund meet on the map. skene takes the name, since swe_gotaland.4 already
 # uses it for the peddlers' district. This follows that event but doesn't need it: option a replaces swe_knallar on
-# skene with the permanent swe_boras_privileges, and option b is swe_gotaland.4.b once more. The towns' anger stays
-# with the burghers of Västergötland, in place of a country-wide estate penalty. No gold, since the district built the
-# town itself. swe_boras_founded picks swe_towns.5's text.
+# skene with the permanent swe_boras_privileges, and option b is swe_gotaland.4.b once more, with a market for Skara,
+# where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide estate
+# penalty. No gold, since the district built the town itself. swe_boras_founded picks swe_towns.5's text.
 swe_towns.8 = {
 	type = country_event
 	title = swe_towns.8.title
@@ -655,6 +668,13 @@ swe_towns.8 = {
 					limit = { NOT = { has_location_modifier = swe_town_monopoly_enforced } }
 					add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 				}
+			}
+		}
+		# The peddlers' trade goes to the chartered town, Skara, the only town in the province at the start
+		location:skara = {
+			if = {
+				limit = { owner ?= root }
+				swe_grant_market = yes
 			}
 		}
 		custom_tooltip = {

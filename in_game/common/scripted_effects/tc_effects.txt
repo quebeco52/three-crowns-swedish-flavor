@@ -1,6 +1,8 @@
-﻿# A market for a location: a market village while it's rural, a marketplace level once it's a town or city, since
+﻿# Effects shared by events in several regions. Each comment lists the events that use it.
+
+# A market for a location: a market village while it's rural, a marketplace level once it's a town or city, since
 # market villages are rural buildings and marketplaces town ones. Set as a level like vanilla's banking.1, not
-# constructed. Location scope. Used by swe_gotaland.13 and .14.
+# constructed. Location scope. Used by swe_gotaland.13-15 and swe_towns.8.
 swe_grant_market = {
 	if = {
 		limit = { location_rank = location_rank:rural_settlement }
@@ -37,13 +39,28 @@ swe_craftsmen_move_in = {
 }
 
 # Changes the satisfaction of one pop type in one location, if we own it, so that anger stays where it belongs. Country
-# scope; $location$ is a location, $type$ a pop type key, $value$ a pop satisfaction value. Used by swe_gotaland.13-15.
+# scope; $location$ is a location, $type$ a pop type key, $value$ a pop satisfaction value. Used by swe_gotaland.6, .13-15,
+# swe_towns.1 and swe_finland_west.5.
 swe_pop_satisfaction_in = {
 	$location$ = {
 		if = {
 			limit = { owner ?= root }
 			every_pop = {
 				limit = { pop_type = pop_type:$type$ }
+				add_pop_satisfaction = $value$
+			}
+		}
+	}
+}
+
+# Changes the satisfaction of every pop in one location, if we own it: for a whole town ordered to move, since a rural
+# location holds almost no burghers. Country scope; $location$ is a location, $value$ a pop satisfaction value. Used by
+# swe_finland_west.7, swe_lappmark.8 and swe_scania.7.
+swe_all_pops_satisfaction_in = {
+	$location$ = {
+		if = {
+			limit = { owner ?= root }
+			every_pop = {
 				add_pop_satisfaction = $value$
 			}
 		}

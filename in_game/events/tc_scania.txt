@@ -199,7 +199,11 @@ swe_scania.7 = {
 			amount = 0.05
 			months = 24
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_penalty }
+		# Ronneby's own people, of whatever kind, since a rural location holds almost no burghers
+		custom_tooltip = {
+			text = swe_scania.7.a_tt
+			swe_all_pops_satisfaction_in = { location = location:ronneby value = pop_satisfaction_mild_penalty }
+		}
 	}
 
 	option = {
@@ -208,6 +212,9 @@ swe_scania.7 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_scania.7.b_tt
+			swe_all_pops_satisfaction_in = { location = location:ronneby value = pop_satisfaction_weak_bonus }
+		}
 	}
 }

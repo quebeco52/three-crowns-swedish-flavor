@@ -176,7 +176,7 @@ swe_gotaland.3 = {
 				# The anger stays in this region, in place of a country-wide estate penalty
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
-					add_pop_satisfaction = pop_satisfaction_severe_penalty
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
 				}
 			}
 		}
@@ -208,7 +208,7 @@ swe_gotaland.3 = {
 			text = swe_gotaland.3.b_tt
 			every_owned_location = {
 				limit = { province_definition = province_definition:tioharad_province }
-				add_location_modifier = { modifier = swe_oxen_trade years = 25 }
+				add_location_modifier = { modifier = swe_oxen_trade years = 20 }
 			}
 		}
 	}
@@ -264,8 +264,21 @@ swe_gotaland.4 = {
 				add_location_modifier = { modifier = swe_knallar years = 100 }
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_mild_bonus }
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+		# The quarrel stays in Västergötland, as in swe_towns.8, in place of country-wide estate changes
+		custom_tooltip = {
+			text = swe_gotaland.4.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vastergotland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_bonus
+				}
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
 		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_right }
 	}
 
@@ -284,7 +297,16 @@ swe_gotaland.4 = {
 				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		custom_tooltip = {
+			text = swe_gotaland.4.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vastergotland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_mild_bonus
+				}
+			}
+		}
 		change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_minor_move_to_left }
 	}
 }
@@ -351,7 +373,10 @@ swe_gotaland.6 = {
 				}
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
+		custom_tooltip = {
+			text = swe_gotaland.6.a_visby_tt
+			swe_pop_satisfaction_in = { location = location:visby type = burghers value = pop_satisfaction_mild_bonus }
+		}
 	}
 
 	option = {
@@ -370,7 +395,10 @@ swe_gotaland.6 = {
 				add_location_modifier = { modifier = swe_gotland_harbours_open years = 10 }
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+		custom_tooltip = {
+			text = swe_gotaland.6.b_visby_tt
+			swe_pop_satisfaction_in = { location = location:visby type = burghers value = pop_satisfaction_weak_penalty }
+		}
 	}
 }
 
@@ -495,7 +523,8 @@ swe_gotaland.8 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		# The customs the free port would have given up, as the description says. Gold as in swe_gotaland.12.b.
+		change_gold_effect = { scale = 2 }
 	}
 }
 
@@ -901,8 +930,9 @@ swe_gotaland.13 = {
 # Hultarp, Värnamo and Åsarp, with the goods of anyone trading there seized (Dybelius, Jönköping University blog,
 # 2021). It is the first record of Värnamo's market, at Östbo's ting place, and the market probably lived on, since
 # Jönköping's own burghers traded at a small market there in the 1500s (Hansson, Senmedeltida städer i Småland 2017,
-# p. 142). Värnamo is in trollaborg. The market follows swe_grant_market; peasant power is vanilla's market_village
-# (0.25) reversed, for 20 years. Gold as in swe_gotaland.12.b.
+# p. 142). Värnamo is in trollaborg. The market follows swe_grant_market. The forbidden fair is the unrest of
+# swe_town_monopoly_enforced, the same ban on country trade, for 20 years. Gold as in swe_gotaland.12.b, which keeping
+# the fair gives up.
 swe_gotaland.14 = {
 	type = country_event
 	title = swe_gotaland.14.title
@@ -1039,6 +1069,11 @@ swe_gotaland.15 = {
 			base = 25
 		}
 
+		# Pata goes on trading as a town in all but name, as Värnamo's fair does in swe_gotaland.14.b
+		location:handbord = {
+			swe_grant_market = yes
+		}
+
 		custom_tooltip = {
 			text = swe_gotaland.15.b_tt
 			swe_pop_satisfaction_in = { location = location:kalmar type = burghers value = pop_satisfaction_weak_penalty }
@@ -1054,7 +1089,8 @@ swe_gotaland.15 = {
 # for the Crown's taxes there through his own collectors (SBL, Per Brahe d.ä.). Jönköping town stayed outside it. It
 # went back to the Crown in 1680 (SBL, Per Brahe d.y.), but runs 50 years here, as vanilla's Great Reduction leaves no
 # marker to end it on. Visingsö lies in the unownable vattern tile, so the county sits on jonkoping, with Gränna. The
-# estate powers of swe_lithuanian_rights (0.25).
+# estate powers of swe_lithuanian_rights (0.25). The nobles' bonus is mild, as the county costs the Crown its hold on
+# Jönköping for 50 years.
 swe_gotaland.16 = {
 	type = country_event
 	title = swe_gotaland.16.title
@@ -1098,7 +1134,7 @@ swe_gotaland.16 = {
 		location:jonkoping = {
 			add_location_modifier = { modifier = swe_visingsborg_county years = 50 }
 		}
-		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_bonus }
 	}
 
 	option = {

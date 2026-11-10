@@ -54,7 +54,7 @@ swe_norrland.1 = {
 						province_definition = province_definition:angermanland_province
 					}
 				}
-				add_location_modifier = { modifier = swe_faxeholm_ruins years = 25 }
+				add_location_modifier = { modifier = swe_faxeholm_ruins years = 20 }
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }

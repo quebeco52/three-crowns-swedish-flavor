@@ -525,7 +525,12 @@ swe_lappmark.8 = {
 			change_prosperity = prosperity_mild_penalty
 			add_location_modifier = { modifier = swe_town_moved years = 20 }
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_penalty }
+		# The townsfolk ordered out, of whatever kind, since a rural location holds almost no burghers
+		custom_tooltip = {
+			text = swe_lappmark.8.a_tt
+			swe_all_pops_satisfaction_in = { location = location:lulea value = pop_satisfaction_weak_penalty }
+			swe_all_pops_satisfaction_in = { location = location:pitea value = pop_satisfaction_weak_penalty }
+		}
 	}
 
 	option = {
@@ -540,6 +545,10 @@ swe_lappmark.8 = {
 		location:pitea = {
 			add_location_modifier = { modifier = swe_silted_harbour years = 20 }
 		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_lappmark.8.b_tt
+			swe_all_pops_satisfaction_in = { location = location:lulea value = pop_satisfaction_weak_bonus }
+			swe_all_pops_satisfaction_in = { location = location:pitea value = pop_satisfaction_weak_bonus }
+		}
 	}
 }

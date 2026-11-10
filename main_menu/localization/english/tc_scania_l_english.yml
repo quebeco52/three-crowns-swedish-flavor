@@ -39,3 +39,5 @@
  swe_scania.7.a.entry: "The fleet was moved to a new base in Blekinge."
  swe_scania.7.b: "The fleet stays at Skeppsholmen."
  swe_scania.7.b.entry: "The fleet stayed at Skeppsholmen."
+ swe_scania.7.a_tt: "All [pops|e] in [ShowLocationName('ronneby')] lose 10% [pop_satisfaction|e]."
+ swe_scania.7.b_tt: "All [pops|e] in [ShowLocationName('ronneby')] gain 5% [pop_satisfaction|e]."

@@ -44,11 +44,11 @@
  swe_gotaland.3.historical_info: "Gustav Vasa's ban on exporting cattle to Denmark came with higher taxes, limits on the use of beech and oak forests, and the taking of church silver in 1541. Nils Dacke, a farmer from Vissefjärda who had killed a bailiff six years earlier, led the rising of 1542. His men crushed royal mercenaries with barricades at Kisa, and on 8 November 1542 the king agreed to a settlement. Dacke then ruled most of Småland except Kalmar and Jönköping, restored the old service and reopened the border trade. Royal forces won the decisive battle on the ice near Virserum in 1543, and that August Dacke was shot near the Blekinge border. His head was displayed on a pole, and no amnesty was given."
  swe_gotaland.3.a: "Enforce the ban."
  swe_gotaland.3.a.entry: "The Crown banned the export of oxen from Småland."
- swe_gotaland.3.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('tioharad_province')] gains [ShowModifier('swe_oxen_ban')] for 10 years, and the peasant [pops|e] there lose 15% [pop_satisfaction|e]."
+ swe_gotaland.3.a_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('tioharad_province')] gains [ShowModifier('swe_oxen_ban')] for 10 years, and the peasant [pops|e] there lose 10% [pop_satisfaction|e]."
  swe_gotaland.3.a_mines_tt: "Every iron and copper mine we own in [ShowProvinceDefinitionName('dalarna_province')] and [ShowProvinceDefinitionName('vastmanland_province')] gains [ShowModifier('swe_oxen_for_the_mines')] for 10 years."
  swe_gotaland.3.b: "Let the oxen cross."
  swe_gotaland.3.b.entry: "The oxen kept crossing the border."
- swe_gotaland.3.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('tioharad_province')] gains [ShowModifier('swe_oxen_trade')] for 25 years."
+ swe_gotaland.3.b_tt: "Every [location|e] we own in [ShowProvinceDefinitionName('tioharad_province')] gains [ShowModifier('swe_oxen_trade')] for 20 years."
 
  swe_gotaland.4.title: "The Knallar"
  swe_gotaland.4.entry: "$swe_gotaland.4.title$"
@@ -58,6 +58,8 @@
  swe_gotaland.4.a.entry: "The knallar were left to trade."
  swe_gotaland.4.b: "Enforce the town monopoly."
  swe_gotaland.4.b.entry: "The peddlers were kept off the roads."
+ swe_gotaland.4.a_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('vastergotland_province')] gain 10% [pop_satisfaction|e], and the burgher [pops|e] there lose 5%."
+ swe_gotaland.4.b_tt: "The burgher [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('vastergotland_province')] gain 10% [pop_satisfaction|e]."
 
  STATIC_MODIFIER_NAME_swe_visby_staple: "All Trade Through Visby"
  STATIC_MODIFIER_DESC_swe_visby_staple: "Everything Gotland sells must now pass over Visby's quays, and its burghers take their share of every cargo."
@@ -76,6 +78,8 @@
  swe_gotaland.6.b: "Leave the harbours open."
  swe_gotaland.6.b.entry: "Gotland's rural harbours were left open."
  swe_gotaland.6.b_tt: "Every other [location|e] we own in [ShowProvinceDefinitionName('gotland_province')] gains [ShowModifier('swe_gotland_harbours_open')] for 10 years."
+ swe_gotaland.6.a_visby_tt: "The burgher [pops|e] of [ShowLocationName('visby')] gain 10% [pop_satisfaction|e]."
+ swe_gotaland.6.b_visby_tt: "The burgher [pops|e] of [ShowLocationName('visby')] lose 5% [pop_satisfaction|e]."
 
  STATIC_MODIFIER_NAME_swe_alingsas_manufaktur: "The Alingsås Manufactories"
  STATIC_MODIFIER_DESC_swe_alingsas_manufaktur: "Foreign weavers and the Swedes they train work here under royal privilege and on state money. A good deal of what they make is still in the warehouse."

@@ -95,3 +95,5 @@
  swe_lappmark.8.a.entry: "Luleå and Piteå were moved nearer the sea."
  swe_lappmark.8.b: "Leave them where they are."
  swe_lappmark.8.b.entry: "Luleå and Piteå stayed where they were, while the sea did not."
+ swe_lappmark.8.a_tt: "All [pops|e] in [ShowLocationName('lulea')] and [ShowLocationName('pitea')] lose 5% [pop_satisfaction|e]."
+ swe_lappmark.8.b_tt: "All [pops|e] in [ShowLocationName('lulea')] and [ShowLocationName('pitea')] gain 5% [pop_satisfaction|e]."
