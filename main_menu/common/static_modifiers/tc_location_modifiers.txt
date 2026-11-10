@@ -737,7 +737,7 @@ swe_sodertalje_cut = {
 	local_market_access = 0.1
 }
 
-# Added to strangnas for 25 years by swe_svealand.3 when the smith comes. The output of the Tar Company tier (0.1), the
+# Added to strangnas for 25 years by swe_svealand.3 when the smith comes. The output of swe_tjarkompaniet's lumber (0.1), the
 # migration of swe_gratrask_fishing_rights (0.2), and the building efficiency of nor_rebuilding_oslo (0.2): skilled men to
 # build with. The tools bonus only counts once a tools building stands here.
 swe_rademacher_forges = {

@@ -80,7 +80,7 @@ swe_council.1 = {
 
 # Karl Knutsson's räfst, November 1453 to March 1454 (SBL, Karl Knutsson). The modifier goes on the judges' eight stops
 # rather than the whole realm. No gold, since vanilla's perform_reduction already takes estate money by hand. The clergy
-# penalty rests on the chapters' protest of 15 January 1454. Whether the räfst really pushed back the church's gains is
+# penalty rests on the protest of the archbishop and three bishops in January 1454. Whether the räfst really pushed back the church's gains is
 # disputed, so the text doesn't say it did. The description names nobody, because any ruler can hold the throne by now.
 swe_council.2 = {
 	type = country_event

@@ -117,21 +117,12 @@
  frombork.swedish_dialect: "Frauenburg" #NF nfbh/0674
  olsztyn.swedish_dialect: "Allenstein" #NF nfba/0346
  # More of the crown lands and the Novgorod marches
- nasisalki.swedish_dialect: "Näsijärvi" #NF nfbt/0191
- pyhajarvi.swedish_dialect: "Pyhäjärvi" #NF; Finlands statskalender 1840
  konevets.swedish_dialect: "Konevits" #NF nfbn/0388
  jekabpils.swedish_dialect: "Jakobstadt" #NF nfbl/0650
  gestenthorpe.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf
  opochka.swedish_dialect: "Opotjka" #NF nfbt/0413
  porkhov.swedish_dialect: "Porchov" #NF nfca/0752
  velikiye_luki.swedish_dialect: "Velikija-Luki" #NF nfck/0562
- # Lakes
- lake_ladoga.swedish_dialect: "Ladogasjön" #NF nfbm/0761 Ladoga sjö
- lake_onega.swedish_dialect: "Onegasjön" #NF nfbt/0390 Onega
- lake_ilmen.swedish_dialect: "Ilmensjön" #NF nfbl/0244 Ilmen, insjö
- lake_peipus.swedish_dialect: "Peipussjön" #NF nfck/0240
- lake_vorts.swedish_dialect: "Virzjärv" #NF nfbh/0022
- lake_muritz.swedish_dialect: "Müritzsjön" #NF nfbs/0068
  # Provinces. Vanilla splits Livonia in three, so the compass words are ours and only Livland is attested.
  korela_province.swedish_dialect: "Kexholms län" #Nystad; NF nfbm/0762
  vyborg_province.swedish_dialect: "Viborgs län" #Nystad Wiborgslähn; NF
@@ -157,8 +148,6 @@
  thessaloniki.swedish_dialect: "Saloniki" #Fjellstedt's Bible notes; sv.wp
  demotica.swedish_dialect: "Demotika" #Östgötars minne
  rodos.swedish_dialect: "Rhodos" #sv.wp
- dead_sea.swedish_dialect: "Döda havet" #Swedish Bible, Döda hafwet
- sea_galilee.swedish_dialect: "Galileiska sjön" #Swedish Bible
  medina.swedish_dialect: "Medina" #Det förhastade löftet; sv.wp
  algiers.swedish_dialect: "Algier" #PoIT
  tangier.swedish_dialect: "Tanger" #PoIT
@@ -173,7 +162,6 @@
  maynila.swedish_dialect: "Manilla" #VS
  al_mukha.swedish_dialect: "Mocka" #sv.wp
  sana_yemen.swedish_dialect: "Sanaa" #sv.wp
- good_hope_cape.swedish_dialect: "Goda Hoppsudden" #PoIT
  # The Americas
  carucairi.swedish_dialect: "Guadeloupe" #sv.wp, Swedish 1813-14
  manhattan.swedish_dialect: "New York" #Kalm; PoIT New-York
@@ -195,16 +183,12 @@
  solatunum.swedish_dialect: "Sollefteå" #vanilla has a Latin form
  gratesk.swedish_dialect: "Gråträsk" #Schefferus 1674 Graotreskby; Rosenberg
  gellivaara.swedish_dialect: "Gällivare" #Högström 1746 Gelliware; Rosenberg Gellivare
- torne_trask.swedish_dialect: "Torneträsk" #today's standard compound
  mourionska.swedish_dialect: "Muonioniska" #Fellman; Topelius
  enontakis.swedish_dialect: "Enontekis" #Laestadius; SOF
  juckasjarvi.swedish_dialect: "Jukkasjärvi" #P. Laestadius 1836, runeberg.org/lpjour
  kemijarvi.swedish_dialect: "Kemiträsk" #Fellman; Topelius
- oulujarvi.swedish_dialect: "Ule träsk" #SOF
  paltamo.swedish_dialect: "Paldamo" #Topelius; SOF
  raunala.swedish_dialect: "Rounala" #Schefferus 1674; Sveriges Radio on the churchyard
- enare_trask.swedish_dialect: "Enare träsk" #Fellman; Topelius; SOF
- north_skanderna.swedish_dialect: "Kölen" #Dalin Kiölen
 
  # More attested names. Each comment gives the source that prints the name.
  # Denmark, Norway, Iceland, Greenland and the seas
@@ -213,17 +197,14 @@
  tonder.swedish_dialect: "Tundern" #OPT; Traventhal 1700
  flensburg.swedish_dialect: "Flensborg" #OPT; NF nfbh/0315
  eckernforde.swedish_dialect: "Eckernförde" #NF nfbf/0702
- amrum_island_wasteland.swedish_dialect: "Amrum" #NF nfba/0500
  halden.swedish_dialect: "Fredrikshall" #Silverstolpe 1819 p.121; Holmberg
  borg.swedish_dialect: "Sarpsborg" #Silverstolpe 1819 p.121; Dalin; NF nfcd/0434
  lindesnes.swedish_dialect: "Lindesnäs" #Silverstolpe 1819 p.101; Holmberg
  sondeled.swedish_dialect: "Söndeled" #NF nfch/0132
  bragernes.swedish_dialect: "Bragernäs" #NF nfbc/0761; Silverstolpe 1819 p.121
  eidsvoll.swedish_dialect: "Eidsvold" #Silverstolpe 1819 p.122; NF nfbg/0043
- norway_wasteland_b.swedish_dialect: "Rondane" #NF nfcc/0450
  nidaros.swedish_dialect: "Trondhjem" #Silverstolpe 1819 p.126; PoIT; NF nfcj/0018
  troms.swedish_dialect: "Tromsö" #NF nfcj/0017; PoIT Tromsöe; Silverstolpe 1819 p.127
- s_jamtland_wasteland.swedish_dialect: "Sylarna" #NF nfcg/0746
  birndal.swedish_dialect: "Bindalen" #NF nfbc/0236
  lofotr.swedish_dialect: "Lofoten" #NF nfbp/0520; Silverstolpe 1819 p.125 Loffoden
  ofoti.swedish_dialect: "Ofoten" #NF nfbt/0293; Silverstolpe 1819 p.102 Ofoden
@@ -232,31 +213,12 @@
  holar.swedish_dialect: "Holum" #Troil 1777; NF nfbk/0547
  skalholt.swedish_dialect: "Skalholt" #Troil 1777; Olaus Petri
  reikjavik.swedish_dialect: "Reikavik" #Troil 1777
- vattnajokull.swedish_dialect: "Vatnajökull" #NF nfck/0431
- icelandic_highlands.swedish_dialect: "Inre höglandet" #NF nfbl/0498
- langjokull.swedish_dialect: "Langjökull" #NF nfbo/0607
- eyjafjallajokull.swedish_dialect: "Eyjafjallajökull" #NF nfbg/0647
- bear_island.swedish_dialect: "Björnön" #NF nfbc/0336 Björn-ön
  gardr.swedish_dialect: "Gårdar" #NF nfbj/0440
  brattahlid.swedish_dialect: "Brattelid" #NF nfbg/0422
  orkney.swedish_dialect: "Orkneyöarna" #NF nfce/0165; nfbt/0486
  shetland.swedish_dialect: "Shetlandsöarna" #NF nfce/0165
- central_baltic.swedish_dialect: "Östersjön" #Fredrikshamn 1809; PoIT
- gulf_of_riga.swedish_dialect: "Rigaviken" #NF nfcc/0155
- skagerrack.swedish_dialect: "Skagerak" #NF nfce/0453
- north_cape.swedish_dialect: "Nordkap" #NF nfbs/0729; Silverstolpe 1819 p.100 Nordcap
- trondheim_fjord.swedish_dialect: "Trondhjemsfjorden" #NF nfcj/0023; Silverstolpe 1819 p.126
- hardanger_fjord.swedish_dialect: "Hardangerfjorden" #NF nfbj/0776
- sogne_fjord.swedish_dialect: "Sognefjorden" #NF nfcf/0158
- stettin_lagoon.swedish_dialect: "Stettiner haff" #NF nfcf/0701
- vistula_lagoon.swedish_dialect: "Frisches haff" #NF nfbh/0782
- faroe_islands1.swedish_dialect: "Färöarna" #NF nfbi/0170; Holmberg Färöarne
- heligoland_island.swedish_dialect: "Helgoland" #NF nfbk/0166
- thames.swedish_dialect: "Themsen" #PoIT; Dalin
  # Finland, Russia, the Baltic lands, Lithuania and Ruthenia
- paijanne.swedish_dialect: "Päjäne" #NF nfcb/0372; SOF
  juuka.swedish_dialect: "Juga" #NF nfbm/0141; SOF
- pielinen.swedish_dialect: "Pielisjärvi" #Topelius; NF nfca/0467
  svyatoy_nos.swedish_dialect: "Svjatoj nos" #NF nfcg/0712
  st_petersburg.swedish_dialect: "S:t Petersburg" #PoIT; Gyldén
  moloskovitsa.swedish_dialect: "Moloskowits" #Akiander
@@ -272,14 +234,9 @@
  borovichi.swedish_dialect: "Borovitsji" #NF nfbc/0649
  vyshny_volochyok.swedish_dialect: "Vysjnij-Volotjek" #NF nfcl/0658
  bronnitsa.swedish_dialect: "Bronitz" #Fryxell
- lake_seliger.swedish_dialect: "Seligersjön" #NF nfce/0029
  kholmogory.swedish_dialect: "Cholmogorod" #Dalin 1747; Teusina Colmogorodt
- kanin_peninsula.swedish_dialect: "Kanin" #NF nfbm/0410
- kolguyev.swedish_dialect: "Kolgujev" #NF nfbn/0289
  solovetsky.swedish_dialect: "Solowetski" #Teusina 1595
  beloozero.swedish_dialect: "Belo-Osero" #1809 treaty
- lake_beloye.swedish_dialect: "Vita sjön" #NF nfbc/0303 Hvita sjön
- lake_kubenskoye.swedish_dialect: "Kubinska sjön" #Modeen 1867
  cherepoves.swedish_dialect: "Tjerepovets" #NF nfci/0114
  rzhev.swedish_dialect: "Rzjev" #NF nfcd/0019; Rein Rschev
  torzhok.swedish_dialect: "Torsjok" #NF nfci/0248
@@ -372,9 +329,6 @@
  arnhem.swedish_dialect: "Arnheim" #Gezelius; NF nfbb/0035
  bialobork.swedish_dialect: "Baldenburg" #Carlbom 1905
  dzierzgon.swedish_dialect: "Christburg" #Lewenhaupt 1920
- curonian_lagoon.swedish_dialect: "Kurisches haff" #NF nfbo/0174
- lake_mamry.swedish_dialect: "Mauersjön" #NF nfbq/0673
- lake_sniardwy.swedish_dialect: "Spirdingsjön" #adapted: NF nfcf/0412 Spirdingsee, -sjön as NF Mauersjön
  krakow.swedish_dialect: "Krakau" #Agneta Horn 1657; PoIT; NF nfbn/0628
  poznan.swedish_dialect: "Posen" #PT; PoIT; NF nfca/0802
  gniezno.swedish_dialect: "Gnesen" #PT; NF nfbi/0712
@@ -449,7 +403,6 @@
  guanimar.swedish_dialect: "Matanzas" #NF nfbq/0638; Bremer 1853
  siguanea.swedish_dialect: "Isla de Pinos" #NF nfca/0505
  batanabo.swedish_dialect: "Batabano" #NF nfbb/0565
- kaiman.swedish_dialect: "Cayman-öarna" #NF nfbd/0730
  maynoa.swedish_dialect: "Kingston" #Gosselman 1833 p.38; Djurberg 1800 p.411
  guanima.swedish_dialect: "Cat Island" #Djurberg 1800 p.409; NF nfbd/0711
  lucayoneque.swedish_dialect: "Abaco" #NF nfcn/0217
@@ -464,15 +417,12 @@
  yaqui.swedish_dialect: "Santiago de los Caballeros" #NF nfcd/0406
  magorix.swedish_dialect: "Monte Cristi" #NF nfbf/0364
  bohio.swedish_dialect: "Puerto Plata" #NF nfbf/0364
- vieques_island.swedish_dialect: "Vieques" #NF nfbe/0450
  guaynabo.swedish_dialect: "San Juan" #NF nfcd/0375
  arasibo.swedish_dialect: "Arecibo" #NF nfba/0768
  walichi.swedish_dialect: "S:t Barthelemy" #PoIT 1836
- malliouhana.swedish_dialect: "Anguilla" #Carlsson 1835 pp.27,146
  anegada.swedish_dialect: "Jungfruöarna" #Djurberg 1800 p.413; NF nfbm/0158
  liamuiga.swedish_dialect: "S:t Christopher" #NF nfbb/0557; Carlsson 1835 p.27
  wadadli.swedish_dialect: "Antigua" #Carlsson 1835 p.116
- aburakeiru.swedish_dialect: "S:t Thomas" #Djurberg 1800 p.412; Carlsson 1835 p.97
  iguanacaera.swedish_dialect: "Martinique" #PoIT 1836; Djurberg 1800 p.415
  hewanorra.swedish_dialect: "S:t Lucie" #PoIT 1836 St. Lucie; Carlsson 1835 p.83
  youloumain.swedish_dialect: "S:t Vincent" #Djurberg 1800 p.414; NF nfba/0636
@@ -480,58 +430,6 @@
  alubera.swedish_dialect: "Tabago" #PoIT 1836; Djurberg 1800 p.414
  buriari.swedish_dialect: "Bonaire" #NF nfbc/0573
  arubeira.swedish_dialect: "Aruba" #Djurberg 1800 p.429; NF nfbb/0071
- gulf_mexico10.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico14.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico15.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico17.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico18.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico3.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico1.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico2.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico22.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico11.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico12.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico19.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico4.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico5.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico6.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico7.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico8.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico9.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico20.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico21.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico23.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico16.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- gulf_mexico13.swedish_dialect: "Mexikanska viken" #NF nfbr/0201; Djurberg 1800 p.391
- caribe_sea7.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea8.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea21.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea22.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea23.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea30.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea1.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea27.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea28.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea24.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea25.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea29.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea3.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea6.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea2.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea4.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea5.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea17.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea18.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea19.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea20.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea9.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea10.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea11.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea12.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea13.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea16.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea14.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
- caribe_sea15.swedish_dialect: "Karibiska havet" #NF nfbm/0496 Karibiska hafvet
  # The US east coast
  wawassan.swedish_dialect: "Upland" #Campanius 1702; Acrelius 1759
  assawoman.swedish_dialect: "Paradiset" #Acrelius 1759
@@ -564,8 +462,6 @@
  ahwendoe.swedish_dialect: "Isle d'Orleans" #Kalm III c. p.412
  kikonteku.swedish_dialect: "Chaudière" #NF nfbe/0078
  kemoimenahan.swedish_dialect: "Fort S:t Jean" #Kalm III p.514
- lake_champlain.swedish_dialect: "Champlainsjön" #NF nfcc/0103; Kalm III p.268 Sjön Champlain
- mouth_of_saint_lawrence.swedish_dialect: "Laurentii flod" #Kalm III c. p.222
  askataliank.swedish_dialect: "Louisbourg" #NF nfbd/0619
  pictou.swedish_dialect: "Pictou" #NF nfca/0465
  chignecto.swedish_dialect: "Chignecto" #NF nfak/0522 Chignecto bay
@@ -579,21 +475,6 @@
  tkaronto.swedish_dialect: "Toronto" #NF nfci/0229
  macassa.swedish_dialect: "Burlington" #Gosselman 1835 p.236
  baawitigong.swedish_dialect: "Sault-Sainte-Marie" #NF nfcd/0454
- central_lake_ontario.swedish_dialect: "Ontariosjön" #NF nfci/0229
- central_erie_basin.swedish_dialect: "Eriesjön" #NF nfbg/0411
- northern_lake_huron.swedish_dialect: "Huronsjön" #NF nfcd/0454
- southern_lake_huron.swedish_dialect: "Huronsjön" #NF nfcd/0454
- middle_lake_michigan.swedish_dialect: "Michigansjön" #NF nfbr/0231
- south_lake_michigan.swedish_dialect: "Michigansjön" #NF nfbr/0231
- hudson_bay1.swedish_dialect: "Hudsons vik" #Djurberg 1800 p.405; Kalm III p.284 Hudsons Wik
- hudson_bay2.swedish_dialect: "Hudsons vik" #Djurberg 1800 p.405
- hudson_bay3.swedish_dialect: "Hudsons vik" #Djurberg 1800 p.405
- baffin_bay.swedish_dialect: "Baffins vik" #Djurberg 1800 p.406; NF nfbb/0359
- baffin_island.swedish_dialect: "Baffins land" #NF nfbb/0359
- northwestern_passage.swedish_dialect: "Nordvästpassagen" #NF nfbs/0743
- gulf_of_saint_lawrence.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
- saint_lawrence_gulf.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
- bay_of_fundy.swedish_dialect: "Fundy bay" #NF nfbi/0068
  # Further names
  boojwiikwedong.swedish_dialect: "Green bay" #NF nfbj/0105
  braslaw.swedish_dialect: "Braslau" #Carlbom 1905
@@ -623,14 +504,11 @@
  funen_province.swedish_dialect: "Fyen" #OPT; Dalin
  ars.swedish_dialect: "Års" #adapted: Danish Aars, aa to å as Aabenraa, NF nfcm/0490
  ostfold_province.swedish_dialect: "Smaalenen" #Silverstolpe 1819 p.119; NF nfcf/0017 Smaalenene
- norway_wasteland_c.swedish_dialect: "Hardangerfjällen" #adapted: Silverstolpe 1819 p.104 Hardanger fjäll
  akershus_province.swedish_dialect: "Aggershus" #Oedman 1746; NF nfba/0238; Silverstolpe 1819 p.119 Aggershuus
  oppland_province.swedish_dialect: "Oplandene" #NF nfbt/0411; Holmberg
  hedmark_province.swedish_dialect: "Hedemarken" #Silverstolpe 1819 p.119; NF nfbk/0108
- norway_wasteland_a.swedish_dialect: "Hedemarksfjällen" #adapted: X Mountains to X-fjällen, as Helagsfjällen
  sor_trondelag_province.swedish_dialect: "Södra Trondhjems amt" #Silverstolpe 1819 p.125; PoIT
  nor_trondelag_province.swedish_dialect: "Norra Trondhjems amt" #Silverstolpe 1819 p.125; PoIT
- n_jamtland_wasteland.swedish_dialect: "Skäckerfjällen" #sv.wp
  nordland_province.swedish_dialect: "Nordlanden" #Silverstolpe 1819 p.125
  finnmark_province.swedish_dialect: "Finnmarken" #Silverstolpe 1819 p.125; NF nfbh/0197
  north_farthing.swedish_dialect: "Nordlandsfjärdingen" #NF nfba/0358
@@ -642,35 +520,23 @@
  isafjordur.swedish_dialect: "Isafjord" #adapted: -fjörður to -fjord, as Troil 1777 Borgarfjords
  vopnafjordur.swedish_dialect: "Vopnafjord" #adapted: -fjörður to -fjord, as Troil 1777 Borgarfjords
  vattnajokull_p.swedish_dialect: "Vatnajökull" #NF nfck/0431
- hofsjokull.swedish_dialect: "Hofsjökull" #adapted: ö restored, as NF nfbo/0607 Langjökull
  gardr_province.swedish_dialect: "Gårdar" #NF nfbi/0387
  herjolfnes_province.swedish_dialect: "Herjolfsnäs" #adapted: -nes to -näs, as Lindesnäs
  herjolfsnes.swedish_dialect: "Herjolfsnäs" #adapted: -nes to -näs, as Lindesnäs
  middle_settlement.swedish_dialect: "Mellanbygden" #translated: as NF Öster- and Västerbygden
  vestribygd.swedish_dialect: "Västerbygden" #NF nfcm/0208
  eiriksfjord_p.swedish_dialect: "Eriksfjord" #adapted: Eirik to Erik, as NF nfbg/0422 Erik Röde
- eiriksfjord.swedish_dialect: "Eriksfjord" #adapted: Eirik to Erik, as NF nfbg/0422 Erik Röde
  northern_isles_province.swedish_dialect: "Norderöarna" #translated: Norse Norðreyjar, as NF nfch/0116 Söderöarna
  lubeck_province.swedish_dialect: "Lybeck" #NF nfbq/0030; OPT; Traventhal 1700
  lubeck.swedish_dialect: "Lybeck" #NF nfbq/0030; OPT; Traventhal 1700
  north_baltic_sea.swedish_dialect: "Norra Östersjön" #adapted: compass ours; Fredrikshamn 1809 Östersjön
- north_baltic.swedish_dialect: "Norra Östersjön" #adapted: compass ours; Fredrikshamn 1809 Östersjön
  south_baltic_sea.swedish_dialect: "Södra Östersjön" #adapted: compass ours; Fredrikshamn 1809 Östersjön
  bothnian_sea.swedish_dialect: "Bottniska viken" #Fredrikshamn 1809; NF nfbc/0720
- gulf_of_bothnia.swedish_dialect: "Bottenviken" #NF nfbc/0719
- west_botnia.swedish_dialect: "Västra Bottenhavet" #adapted: compass ours; NF nfbc/0716; Radloff 1795
- east_botnia.swedish_dialect: "Östra Bottenhavet" #adapted: compass ours; NF nfbc/0716; Radloff 1795
- west_gulf_of_finland.swedish_dialect: "Västra Finska viken" #adapted: compass ours; Fredrikshamn 1809; NF nfbh/0210
- east_gulf_of_finland.swedish_dialect: "Östra Finska viken" #adapted: compass ours; Fredrikshamn 1809; NF nfbh/0210
  skagerrak_province.swedish_dialect: "Skagerak" #NF nfce/0453
  barents_sea_province.swedish_dialect: "Ishavet" #Silverstolpe 1819 p.102 Ishafvet; NF nfbs/0793
  white_sea_province.swedish_dialect: "Vita havet" #NF nfbk/0744 Hvita hafvet; Topelius
- lindesnes_cape.swedish_dialect: "Cap Lindesnäs" #adapted: Cape X to Cap X, as Cap Breton in Kalm II
  # Finland, Russia, the Baltic lands, Lithuania and Ruthenia
  satakunta_province.swedish_dialect: "Satakunda" #Topelius; SOF
- hoytiainen.swedish_dialect: "Höytiäinen" #adapted: diaeresis restored, as NF Suojärvi
- viinijarvi.swedish_dialect: "Viinijärvi" #adapted: diaeresis restored, as NF Suojärvi
- yanis_jarvi.swedish_dialect: "Jänisjärvi" #adapted: Finnish name, as NF Suojärvi
  aunus_karelia_province.swedish_dialect: "Olonetska Karelen" #adapted: Topelius Olonetska + Nystad Carelen; phrase ours
  inner_aunus_karelia_province.swedish_dialect: "Inre Olonetska Karelen" #adapted: as aunus_karelia_province; Inre is ours
  white_karelia_province.swedish_dialect: "Vitahavskarelen" #adapted: en.wp Swedish Vitahavskarelen; modern, no period source
@@ -678,7 +544,6 @@
  north_kola_province.swedish_dialect: "Murmanska kusten" #NF nfbr/0728
  south_kola_province.swedish_dialect: "Terska kusten" #NF nfch/0509
  western_kola_province.swedish_dialect: "Västra Kola" #adapted: Modeen Kola; compass ours
- lake_imandra.swedish_dialect: "Imandrasjön" #adapted: NF Imandra, as NF Seligersjön
  lopskaya_province.swedish_dialect: "Nöteborgs län" #Akiander; Ahlén
  vodskaya_province.swedish_dialect: "Koporje län" #Akiander quoting 1654; Ahlén Koporie län
  markovo.swedish_dialect: "Markkowa" #Akiander
@@ -785,7 +650,6 @@
  koscierzyna.swedish_dialect: "Berent" #adapted: German name, as Schlochau, Schwetz
  mirochowo.swedish_dialect: "Mirchau" #adapted: German name, as Schlochau, Schwetz
  ryn_poland.swedish_dialect: "Rhein" #adapted: German name, as Schlochau, Schwetz
- lebsko_lake.swedish_dialect: "Lebasjön" #adapted: NF nfbo/0770 L.-sjön, expanded
  kuyavia_province.swedish_dialect: "Kujavien" #NF nfbo/0112; Carlbom 1905; PT Cujavien
  podlasie_province.swedish_dialect: "Podlachien" #PT; NF nfca/0611
  warsaw_province.swedish_dialect: "Warschau" #Agneta Horn 1657
@@ -840,11 +704,6 @@
  haniguayagua.swedish_dialect: "Aux Cayes" #NF nfbd/0729
  baynoa.swedish_dialect: "Môle S:t Nicolas" #adapted: Saint to S:t; PoIT S:t Domingo
  yaguana.swedish_dialect: "Léogane" #adapted: French name unchanged; NF Jacmel, Gonaives
- cordrilla_central.swedish_dialect: "Cordillera Central" #adapted: spelling fix; NF Cordilleras
- baoruco_mountains.swedish_dialect: "Baorucobergen" #adapted: X Mountains to X-bergen; NF Cumberlandbergen
- neiba_mountains.swedish_dialect: "Neybabergen" #adapted: as NF Neybabukten; NF Cumberlandbergen
- mona_island.swedish_dialect: "Mona" #adapted: English Island dropped; NF Mona-passagen
- ariogana.swedish_dialect: "Montserrat" #Carlsson 1835 p.106; Djurberg 1800 p.413
  ayay.swedish_dialect: "S:t Croix" #Djurberg 1800 p.412; Carlsson 1835 p.7
  waitu_kubuli.swedish_dialect: "Dominica" #Djurberg 1800 p.413
  ichirouganaim.swedish_dialect: "Barbados" #Djurberg 1800 p.414; Carlsson 1835 p.42
@@ -869,7 +728,6 @@
  schuylkill.swedish_dialect: "Skörkilen" #Campanius 1702; Acrelius 1759
  tappahanna.swedish_dialect: "Vargekilen" #Acrelius Warge Kihlen; Campanius Warge-Kjlen
  adirondacks.swedish_dialect: "Adirondacks" #NF nfba/0095
- delaware_bay.swedish_dialect: "Nya Sveriges älv" #Campanius; Acrelius
  # Canada
  stadacona_province.swedish_dialect: "Quebec" #Kalm III p.514; Djurberg 1800 p.404
  hochelaga_province.swedish_dialect: "Montreal" #Kalm III p.307 Montreals Höfdingedöme
@@ -884,8 +742,6 @@
  alsigontekw.swedish_dialect: "S:t François" #Kalm III p.357 St. François
  wigwomadensis.swedish_dialect: "Fort Chamblais" #Kalm III p.514
  loigan_sibo.swedish_dialect: "Sorel" #NF nfcf/0240
- lake_saint_pierre.swedish_dialect: "Lac S:t Pierre" #Kalm III p.306
- lake_of_two_mountains.swedish_dialect: "Lac de deux Montagnes" #Kalm III c. p.489
  unamakik_province.swedish_dialect: "Cap Breton" #Kalm II c. p.218; NF nfbd/0619
  ingonish.swedish_dialect: "Ingonish" #adapted: period name kept; cf. Tadoussac Kalm III p.357
  agg_piktuk_province.swedish_dialect: "Pictou" #NF nfca/0465
@@ -925,7 +781,6 @@
  jamesie_area_sea_zones_province.swedish_dialect: "James bay" #NF nfbk/0633
  gulf_of_saint_lawrence_sea_zones_province.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
  bay_of_fundy_province.swedish_dialect: "Fundy bay" #NF nfbi/0068
- lake_winnipeg.swedish_dialect: "Winipigon" #Djurberg 1800, 1801
  # Further names
  knyazhaya_province.swedish_dialect: "Solonski Pätin" #NF nfcb/0383; Fryxell
  derevskaya_province.swedish_dialect: "Derevski Pätin" #adapted: NF Votski, Solonski Pätin
@@ -983,7 +838,6 @@
  boojwiikwedong_province.swedish_dialect: "Green bay" #NF nfbj/0105
  nistassinan_province.swedish_dialect: "S:t Maurice" #adapted: NF nfcd/0224 + Kalm S:t François
  piekouagami_province.swedish_dialect: "Lac S:t Jean" #adapted: Kalm Lac S:t Pierre pattern
- lake_saint_jean.swedish_dialect: "Lac S:t Jean" #adapted: Kalm Lac S:t Pierre pattern
  gosaoie_province.swedish_dialect: "Exploits" #adapted: NF nfbs/0481 Exploits river
  eimasstukwek_province.swedish_dialect: "S:t George bay" #NF nfbs/0481
  qikiqtaaluk_province.swedish_dialect: "Baffins land" #NF nfbb/0359

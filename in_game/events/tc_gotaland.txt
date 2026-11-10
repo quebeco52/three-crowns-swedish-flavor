@@ -1,7 +1,9 @@
 ﻿namespace = swe_gotaland
 
 # Content for Småland, Västergötland, Gotland and Bohuslän. Sweden owns all of this land from 1337 except Bohuslän, so
-# these should fire in nearly every game unless it has been lost. .8 waits for Bohuslän to be conquered.
+# most of these need only ownership and fire in nearly every game. The exceptions: .7 needs Alingsås raised to a town,
+# .9 and .15 need Kalmar a town, .10 follows .9, .8 waits for Bohuslän, .11 needs Bohus in foreign hands, and .12
+# needs a Protestant monarchy.
 
 # Bondefred: about ten border peaces between Småland and Blekinge, 1505-25, because war disrupted their trade. The
 # treaty of August 1505 was confirmed in 1510, and Svante Nilsson spared Ronneby in 1506 (Cederholm). Manpower as in
@@ -17,9 +19,9 @@ swe_gotaland.1 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1500.1.1
+		from = 1503.6.1
 		to = 1530.1.1
-		monthly_chance = 3 # Median late 1501
+		monthly_chance = 3 # Median spring 1505
 	}
 
 	trigger = {
@@ -127,7 +129,7 @@ swe_gotaland.2 = {
 }
 
 # The ban on exporting oxen, which helped set off the Dacke rising of 1542-43. Vanilla has no Dacke content. No rebels,
-# so the rising is a large unrest modifier in Tioharad, the size of vanilla's cruel_overlord (0.5). The ban was meant
+# so the rising is an unrest modifier in Tioharad (swe_oxen_ban, 0.2, not cruel_overlord's 0.5). The ban was meant
 # to feed the miners and smiths of Bergslagen, so enforcing it also helps the mines there (swe_oxen_for_the_mines).
 swe_gotaland.3 = {
 	type = country_event
@@ -233,6 +235,8 @@ swe_gotaland.4 = {
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:skene
+		# Not once swe_towns.8 has settled the question with Borås (vanilla's form, flavor_CAS.txt)
+		NOT = { dynamic_historical_event_fired = swe_towns.8 }
 	}
 
 	illustration_tags = {
@@ -972,8 +976,10 @@ swe_gotaland.14 = {
 # Det medeltida Sverige 4:2, p. 285). Pata, on the manor of Strömserum, had 23 rent-paying households in 1502, and in
 # the 1520s and 1530s those who lived by trade and crafts were told to move to Kalmar. Gustav Vasa withdrew Vimmerby's
 # town privileges in 1532, and it was a town again only in 1604 (Hansson, Senmedeltida städer i Småland 2017,
-# pp. 140-151). Pata is in handbord, Vimmerby in sevede. Needs Kalmar a town, where burghers trade. Burgher power of
-# swe_visby_staple (0.1), trades per burgher of vanilla's town rights (0.25, 00_traditions.txt), for 20 years.
+# pp. 140-151). No source has Kalmar asking for Vimmerby's privileges: sv.wiki Vimmerby puts it down to Gustav's
+# quarrel with the Hanse and his favour for the seaports, so the text makes it our own idea. Pata is in handbord,
+# Vimmerby in sevede. Needs Kalmar a town, where burghers trade. Burgher power of swe_visby_staple (0.1), trades per
+# burgher of vanilla's town rights (0.25, 00_traditions.txt), for 20 years.
 swe_gotaland.15 = {
 	type = country_event
 	title = swe_gotaland.15.title

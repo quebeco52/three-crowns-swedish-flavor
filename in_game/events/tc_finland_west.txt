@@ -65,8 +65,8 @@ swe_finland_west.1 = {
 	}
 }
 
-# The Victual Brothers held Korsholm from 1396 until they surrendered it by 20 April 1399, and Margareta then made
-# a former pirate captain, Otte Peccatel, its bailiff. Stands alone from vanilla's Gotland event, flavor_swe_teu.1.
+# The Victual Brothers held Korsholm from 1396 until they surrendered it by 20 April 1399. A former pirate captain,
+# Otte Peccatel, was its bailiff, under the pirates or after the peace (KulturÖsterbotten can't say which). Stands alone from vanilla's Gotland event, flavor_swe_teu.1.
 swe_finland_west.2 = {
 	type = country_event
 	title = swe_finland_west.2.title

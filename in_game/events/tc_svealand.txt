@@ -16,9 +16,9 @@ swe_svealand.1 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1515.1.1
+		from = 1519.1.1
 		to = 1560.1.1
-		monthly_chance = 3 # Median late 1516
+		monthly_chance = 3 # Median late 1520
 	}
 
 	trigger = {
@@ -180,9 +180,9 @@ swe_svealand.3 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1650.1.1
+		from = 1652.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1651
+		monthly_chance = 3 # Median late 1653
 	}
 
 	trigger = {

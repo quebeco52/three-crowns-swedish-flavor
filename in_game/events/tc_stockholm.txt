@@ -297,7 +297,8 @@ swe_stockholm.4 = {
 }
 
 # Sun dogs over Stockholm on 20 April 1535. Olaus Petri read them as omens of rebellion and overthrow and hung a panel
-# of them in Storkyrkan (SBL, Olaus Petri). The panel there now is a copy from 1636 or a little before (sv.wiki, citing
+# of them in Storkyrkan (SBL, Olaus Petri). The panel's inscription gives the hours, "så nær i från siv in til nio",
+# about seven until nine (sv.wiki Vädersolstavlan). The panel there now is a copy from 1636 or a little before (sv.wiki, citing
 # the 1999 examination), and Gillgren (2009) doubts the link to Olaus, which historical_info says. Any religion, since
 # the text names no faith. The stability cost is a step below vanilla's comet sighting (random_event.1, mild), since
 # only one town saw this sky. The painting names no artist, as the painter is unknown, like swe_stockholm.4's statue.

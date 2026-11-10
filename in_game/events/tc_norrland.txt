@@ -227,7 +227,8 @@ swe_norrland.3 = {
 	}
 }
 
-# Hälsingland flax: Olof Johan Broman, vicar of Hudiksvall, proposed water-powered scutching around 1700, and
+# Hälsingland flax: Olof Broman (1676-1750), school rector of Hudiksvall from 1719 and vicar from 1728 (sv.wiki), is
+# credited with water-powered scutching by Växbo Lin's history page, the only source found for it, and
 # about 1,000 flax barns and mills followed. Flor, in Mo just outside Söderhamn, made damask for Europe's
 # courts. Vanilla has no fiber crops here. Söderala stands in for Flor. Raw material changes follow vanilla's
 # flavor_swe.38 and flavor_swe.44.
