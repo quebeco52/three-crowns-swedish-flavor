@@ -115,12 +115,13 @@ swe_jamtland_tings = {
 }
 
 # Added to froso along with swe_jamtland_tings: the yearly market on Frösön, where Jämtland traded with
-# Norway and the Bothnian coast. The market access of market_charter (0.1).
+# Norway and the Bothnian coast. The merchant power of vanilla's market_village (0.1): a fair draws traders as a
+# market does. A modifier, not the building, since swe_jamtland.2 can take it away again.
 swe_jamtmarknaden = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_merchant_power = 0.1
 }
 
 # Added by swe_pomerania.1 to Sweden's locations in Pomerania. Gustav IV Adolf set aside the estates'
@@ -457,14 +458,14 @@ swe_osterbotten_fiefs = {
 	local_peasant_enfranchisment = -0.1
 }
 
-# Added to kastelholm, ekenas and sjundea for 20 years by swe_finland_west.5 when the law is enforced. The market
-# access of swe_peasant_skippers reversed, the sailors of rot_timur_scare (-0.25) and the burgher power of
-# swe_enkoping_ice_ban: the trade goes through the towns.
+# Added to kastelholm, ekenas and sjundea for 20 years by swe_finland_west.5 when the law is enforced. The maritime
+# presence of swe_peasant_skippers reversed, the sailors of rot_timur_scare (-0.25) and the burgher power of
+# swe_enkoping_ice_ban: the ships lie idle and the trade goes through the towns.
 swe_skipper_ban = {
 	game_data = {
 		category = location
 	}
-	local_market_access = -0.1
+	local_maritime_presence = -0.1
 	local_sailors_modifier = -0.25
 	local_burghers_estate_power = 0.1
 }
@@ -480,12 +481,12 @@ swe_skipper_staple = {
 }
 
 # Added to kastelholm, ekenas and sjundea for 50 years by swe_finland_west.5 when the skippers keep sailing. The
-# market access of market_charter (0.1) and the sailors of scandinavian_fishing_privileges (0.1).
+# maritime presence and sailors of vanilla's scandinavian_fishing_privileges (0.1 each): the farmers' own ships at sea.
 swe_peasant_skippers = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_maritime_presence = 0.1
 	local_sailors_modifier = 0.1
 }
 
@@ -512,13 +513,14 @@ swe_olofsborg_line = {
 }
 
 # Added to olofsborg for 10 years by swe_finland_east.1 when the quarrel is left alone. The unrest of
-# swe_finland_at_mora and the market access of market_charter (0.1).
+# swe_finland_at_mora and the merchant capacity of swe_kajana_border_trade (vanilla's pomor_outpost, 0.25): traders
+# cross the border.
 swe_olofsborg_quiet_border = {
 	game_data = {
 		category = location
 	}
 	local_unrest = -0.1
-	local_market_access = 0.1
+	local_merchant_capacity = 0.25
 }
 
 # Added for 15 years by swe_finland_east.2 to Sweden's locations in Vyborg province after the widow gets better
@@ -571,13 +573,14 @@ swe_crown_wilderness = {
 	local_population_growth = 0.002
 }
 
-# Added to kajana for 10 years by swe_finland_east.6 when the cloth is returned. The market access of
-# market_charter (0.1).
+# Added to kajana for 10 years by swe_finland_east.6 when the cloth is returned. The flat merchant capacity of
+# vanilla's pomor_outpost (0.25), the post of the traders from the White Sea coast: the same kind of trade, the
+# Karelians bringing their goods across the border.
 swe_kajana_border_trade = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_merchant_capacity = 0.25
 }
 
 # Added for 20 years by swe_finland_east.7 to Sweden's locations in Vyborg province when the see is founded. The
@@ -641,7 +644,7 @@ swe_varend_border_peace = {
 }
 
 # Added for 10 years by swe_gotaland.1 to the same locations when it's forbidden. The crown power of
-# swe_norrland_bailiff and the market access of swe_skipper_ban: the old trading paths are closed.
+# swe_norrland_bailiff and vanilla's market_charter reversed (-0.1): the old trading paths are closed.
 swe_border_peace_forbidden = {
 	game_data = {
 		category = location
@@ -692,22 +695,24 @@ swe_oxen_for_the_mines = {
 }
 
 # Added for 20 years by swe_gotaland.3 to the same locations when the trade goes on. The crown power of
-# swe_faxeholm_ruins and the market access of market_charter (0.1).
+# swe_faxeholm_ruins, and the flat merchant capacity of vanilla's pomor_outpost (0.25) cut to 0.1, since it is spread
+# over a whole province: the peasants drove their own oxen to their buyers. Not livestock output, since no location
+# in Tiohärad produces livestock.
 swe_oxen_trade = {
 	game_data = {
 		category = location
 	}
 	local_crown_estate_power = -0.1
-	local_market_access = 0.1
+	local_merchant_capacity = 0.1
 }
 
-# Added to skene and bogesund for 100 years by swe_gotaland.4 when the peddlers may trade. The market access of
-# market_charter (0.1).
+# Added to skene and bogesund for 50 years by swe_gotaland.4 when the peddlers may trade. The flat merchant capacity
+# of vanilla's pomor_outpost (0.25), a post of peasant traders.
 swe_knallar = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_merchant_capacity = 0.25
 }
 
 # Added to the same locations for 10 years by swe_gotaland.4 when the monopoly is enforced. The unrest of
@@ -729,13 +734,13 @@ swe_enkoping_ice_ban = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added to enkoping for 50 years by swe_svealand.1 when the market stays on the ice. The market access of market_charter
-# (0.1).
+# Added to enkoping for 50 years by swe_svealand.1 when the market stays on the ice. The merchant power of vanilla's
+# market_village (0.1), as in swe_jamtmarknaden: a fair draws traders as a market does.
 swe_enkoping_ice_market = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_merchant_power = 0.1
 }
 
 # Added to sodertalje for 25 years by swe_svealand.2 when the men dig through. The harbour of vanilla's
@@ -811,32 +816,35 @@ swe_silted_harbour = {
 	local_market_access = -0.1
 }
 
-# Added to visby for 10 years by swe_gotaland.6 when the rural harbours close. The market access of vanilla's
-# market_charter (0.1) and the burgher power of swe_enkoping_ice_ban (0.1).
+# Added to visby for 10 years by swe_gotaland.6 when the rural harbours close. The trades per burgher of vanilla's
+# market_charter (0.25), as in swe_kalmar_staple and swe_skipper_staple, and the burgher power of swe_enkoping_ice_ban
+# (0.1). Visby is a town from 1337, so its burghers use it.
 swe_visby_staple = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_trades_per_burgher = 0.25
 	local_burghers_estate_power = 0.1
 }
 
-# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours close. Vanilla's
-# market_charter (0.1) reversed.
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours close. The maritime
+# presence and sailors of swe_skipper_ban, the same ban on peasant sailing.
 swe_gotland_harbours_closed = {
 	game_data = {
 		category = location
 	}
-	local_market_access = -0.1
+	local_maritime_presence = -0.1
+	local_sailors_modifier = -0.25
 }
 
-# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours stay open. Half of
-# vanilla's market_charter (0.1), since this only leaves an old right alone.
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours stay open. The values
+# of swe_peasant_skippers (vanilla's scandinavian_fishing_privileges), the same peasant sailing.
 swe_gotland_harbours_open = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.05
+	local_maritime_presence = 0.1
+	local_sailors_modifier = 0.1
 }
 
 # Added to allingsas for 40 years by swe_gotaland.7. The cloth output of vanilla's scale (0.1), the migration of
@@ -887,13 +895,13 @@ swe_karlskrona_station = {
 	local_sailors_modifier = 0.25
 }
 
-# Added to ronneby for 10 years by swe_scania.7 when its trade goes to the new naval town. Vanilla's market_charter
-# (0.1) reversed.
+# Added to ronneby for 10 years by swe_scania.7 when its trade goes to the new naval town. The migration of
+# swe_silver_road (-0.2): the burghers were ordered to move to Karlskrona.
 swe_ronneby_privileges_revoked = {
 	game_data = {
 		category = location
 	}
-	local_market_access = -0.1
+	local_migration_attraction = -0.2
 }
 
 # Added for 10 years when occupied land pays for the army: by swe_baltic.5 to Courland and Semigallia (Karl XII after
@@ -984,13 +992,13 @@ swe_avelsgard = {
 
 # Added to lodose at game start (tc_on_game_start) and removed by swe_gotaland.11 when the town moves downstream.
 # Lödöse was the realm's only port to the west, at its largest about 1250-1350 (Lödöse museum, rapport 2021:1). The
-# market access of market_charter (0.1) and the merchant capacity of vanilla's favoring_own_interests (0.5), half of
-# swe_marstrand_porto_franco's. Market access rather than harbour capacity, as lodose has no natural harbour.
+# merchant power of vanilla's market_village (0.1) and the merchant capacity of favoring_own_interests (0.5), half of
+# swe_marstrand_porto_franco's. No harbour capacity, as lodose has no natural harbour.
 swe_western_gate = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.1
+	local_merchant_power = 0.1
 	local_merchant_capacity = 0.5
 }
 
@@ -1006,13 +1014,14 @@ swe_nya_lodose = {
 	local_merchant_capacity = 0.5
 }
 
-# Added to lodose for 20 years by swe_gotaland.11 when the town stays above the toll at Bohus. The market access of
-# swe_western_gate reversed, as swe_silted_harbour reverses swe_town_moved.
+# Added to lodose for 20 years by swe_gotaland.11 when the town stays above the toll at Bohus. Half the merchant
+# capacity of swe_western_gate reversed (-0.25): a toll takes a share of the trade rather than closing the river. Flat,
+# since swe_riga_licent's -10% would come to about 0.05 on a rural tile.
 swe_bohus_toll = {
 	game_data = {
 		category = location
 	}
-	local_market_access = -0.1
+	local_merchant_capacity = -0.25
 }
 
 # Added for 20 years by swe_gotaland.12 to every location we own in Västergötland when the lords of the province are
@@ -1024,13 +1033,14 @@ swe_forfeited_estates = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to skene by swe_towns.8 when Borås is founded, in place of swe_knallar there: half its market access (0.05),
-# as in swe_gotland_harbours_open, since this one is permanent, with the migration of swe_marstrand_porto_franco (0.1).
+# Added to skene by swe_towns.8 when Borås is founded, in place of swe_knallar there, along with a market
+# (swe_grant_market). The promotion speed of vanilla's studium_privileges (0.2), so that the new town grows its own
+# burghers, and the migration of swe_marstrand_porto_franco (0.1).
 swe_boras_privileges = {
 	game_data = {
 		category = location
 	}
-	local_market_access = 0.05
+	local_pop_promotion_speed_modifier = 0.2
 	local_migration_attraction = 0.1
 }
 
@@ -1062,7 +1072,7 @@ swe_fair_forbidden = {
 }
 
 # Added to kalmar for 20 years by swe_gotaland.15 when trade at Pata is forbidden (1527). The burgher power of
-# swe_visby_staple (0.1) and the trades per burgher of vanilla's town rights (0.25, 00_traditions.txt). Kalmar is a
+# swe_visby_staple (0.1) and the trades per burgher of vanilla's market_charter (0.25, 00_traditions.txt). Kalmar is a
 # town, so its burghers use it.
 swe_kalmar_staple = {
 	game_data = {

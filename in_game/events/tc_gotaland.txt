@@ -215,7 +215,8 @@ swe_gotaland.3 = {
 }
 
 # The knallar of Sjuhäradsbygden, peddling from the mid-1500s against the town monopoly, with special laws from the
-# 1680s. Skene and Bogesund stand in for the district.
+# 1680s. Skene and Bogesund stand in for the district. 50 years, as for swe_peasant_skippers, not vanilla's longest
+# (100).
 swe_gotaland.4 = {
 	type = country_event
 	title = swe_gotaland.4.title
@@ -256,12 +257,12 @@ swe_gotaland.4 = {
 		}
 
 		location:skene = {
-			add_location_modifier = { modifier = swe_knallar years = 100 }
+			add_location_modifier = { modifier = swe_knallar years = 50 }
 		}
 		location:bogesund = {
 			if = {
 				limit = { owner ?= root }
-				add_location_modifier = { modifier = swe_knallar years = 100 }
+				add_location_modifier = { modifier = swe_knallar years = 50 }
 			}
 		}
 		# The quarrel stays in Västergötland, as in swe_towns.8, in place of country-wide estate changes

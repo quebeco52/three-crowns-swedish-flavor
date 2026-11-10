@@ -574,9 +574,9 @@ swe_towns.7 = {
 # (sv.wiki Borås, citing Millqvist 1991 and the town's own history page; the Borås chronologies give the same account).
 # Borås lies where skene, allingsas and bogesund meet on the map. skene takes the name, since swe_gotaland.4 already
 # uses it for the peddlers' district. This follows that event but doesn't need it: option a replaces swe_knallar on
-# skene with the permanent swe_boras_privileges, and option b is swe_gotaland.4.b once more, with a market for Skara,
-# where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide estate
-# penalty. No gold, since the district built the town itself. swe_boras_founded picks swe_towns.5's text.
+# skene with the permanent swe_boras_privileges and a market, and option b is swe_gotaland.4.b once more, with a market
+# for Skara, where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide
+# estate penalty. No gold, since the district built the town itself. swe_boras_founded picks swe_towns.5's text.
 swe_towns.8 = {
 	type = country_event
 	title = swe_towns.8.title
@@ -625,6 +625,7 @@ swe_towns.8 = {
 				remove_location_modifier = swe_town_monopoly_enforced
 			}
 			add_location_modifier = { modifier = swe_boras_privileges months = -1 }
+			swe_grant_market = yes
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
