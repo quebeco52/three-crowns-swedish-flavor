@@ -1,0 +1,51 @@
+﻿# A market for a location: a market village while it's rural, a marketplace level once it's a town or city, since
+# market villages are rural buildings and marketplaces town ones. Set as a level like vanilla's banking.1, not
+# constructed. Location scope. Used by swe_gotaland.13 and .14.
+swe_grant_market = {
+	if = {
+		limit = { location_rank = location_rank:rural_settlement }
+		change_building_level_in_location = {
+			building = building_type:market_village
+			value = 1
+			owner = owner
+		}
+	}
+	else = {
+		change_building_level_in_location = {
+			building = building_type:marketplace
+			value = 1
+			owner = owner
+		}
+	}
+}
+
+# Craftsmen ordered into a town: laborers move from one of our locations to another, 0.01 a month for 24 months, about
+# a quarter of a pop. Laborers, since rural locations hold almost no burghers. add_migration's owner is the source's
+# owner, so only from a location we own. Country scope; $from$ and $to$ are locations. Used by swe_gotaland.13 and .15.
+swe_craftsmen_move_in = {
+	if = {
+		limit = { owns = $from$ }
+		add_migration = {
+			owner = $from$.owner
+			from_location = $from$
+			to_location = $to$
+			type = pop_type:laborers
+			amount = 0.01
+			months = 24
+		}
+	}
+}
+
+# Changes the satisfaction of one pop type in one location, if we own it, so that anger stays where it belongs. Country
+# scope; $location$ is a location, $type$ a pop type key, $value$ a pop satisfaction value. Used by swe_gotaland.13-15.
+swe_pop_satisfaction_in = {
+	$location$ = {
+		if = {
+			limit = { owner ?= root }
+			every_pop = {
+				limit = { pop_type = pop_type:$type$ }
+				add_pop_satisfaction = $value$
+			}
+		}
+	}
+}

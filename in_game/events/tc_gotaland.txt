@@ -807,3 +807,300 @@ swe_gotaland.12 = {
 		change_gold_effect = { scale = 2 }
 	}
 }
+
+# Växjö's town charter, 1342. The bishop of Växjö was the only Swedish bishop without a town, and Magnus Eriksson made
+# one for him: all trade in the district was to be done there, except what peasants bought and sold for sowing and
+# their farms' needs; craftsmen without land were to move in; and the fines for country trade (40 marks and the goods)
+# went half to the cathedral's building fund and half to the bishop, "not to the king as usual". No royal bailiff is
+# known there (Hansson, Medeltidens Växjö 2017, pp. 79-81, citing the charter, SDHK 4763, and Larsson 1991). Both
+# options found the town, so the choice is who takes the fines. No town rank: the market follows swe_grant_market.
+# Albo, Konga and Uppvidinge are the rest of Värend; Albo and Uppvidinge have market villages in 1337. Clergy power as
+# vanilla's parish_church (0.25), crown power as swe_rafst (0.1).
+swe_gotaland.13 = {
+	type = country_event
+	title = swe_gotaland.13.title
+	desc = swe_gotaland.13.desc
+	outcome = neutral
+	historical_info = swe_gotaland.13.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1340.3.1
+		to = 1450.1.1
+		monthly_chance = 3 # Median early 1342
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:vaxjo
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_gotaland.13.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:vaxjo = {
+			swe_grant_market = yes
+			add_location_modifier = { modifier = swe_vaxjo_bishops_town years = 50 }
+		}
+		swe_craftsmen_move_in = { from = location:albo to = location:vaxjo }
+		swe_craftsmen_move_in = { from = location:konga to = location:vaxjo }
+		swe_craftsmen_move_in = { from = location:uppvidinge to = location:vaxjo }
+		custom_tooltip = {
+			text = swe_gotaland.13.varend_tt
+			swe_pop_satisfaction_in = { location = location:albo type = peasants value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:konga type = peasants value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:uppvidinge type = peasants value = pop_satisfaction_weak_penalty }
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_gotaland.13.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:vaxjo = {
+			swe_grant_market = yes
+			add_location_modifier = { modifier = swe_vaxjo_bailiff years = 50 }
+		}
+		swe_craftsmen_move_in = { from = location:albo to = location:vaxjo }
+		swe_craftsmen_move_in = { from = location:konga to = location:vaxjo }
+		swe_craftsmen_move_in = { from = location:uppvidinge to = location:vaxjo }
+		custom_tooltip = {
+			text = swe_gotaland.13.varend_tt
+			swe_pop_satisfaction_in = { location = location:albo type = peasants value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:konga type = peasants value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:uppvidinge type = peasants value = pop_satisfaction_weak_penalty }
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# Värnamo's fair, 1473. At a council meeting in Jönköping's Greyfriars' convent shortly after Christmas 1473, Sten
+# Sture the Elder rewarded Jönköping's burghers, who paid towards the army, by abolishing the country markets at
+# Hultarp, Värnamo and Åsarp, with the goods of anyone trading there seized (Dybelius, Jönköping University blog,
+# 2021). It is the first record of Värnamo's market, at Östbo's ting place, and the market probably lived on, since
+# Jönköping's own burghers traded at a small market there in the 1500s (Hansson, Senmedeltida städer i Småland 2017,
+# p. 142). Värnamo is in trollaborg. The market follows swe_grant_market; peasant power is vanilla's market_village
+# (0.25) reversed, for 20 years. Gold as in swe_gotaland.12.b.
+swe_gotaland.14 = {
+	type = country_event
+	title = swe_gotaland.14.title
+	desc = swe_gotaland.14.desc
+	outcome = neutral
+	historical_info = swe_gotaland.14.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1471.12.1
+		to = 1560.1.1
+		monthly_chance = 3 # Median late 1473
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:jonkoping
+		owns = location:trollaborg
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_gotaland.14.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = 2 }
+		location:jonkoping = {
+			swe_grant_market = yes
+		}
+		location:trollaborg = {
+			add_location_modifier = { modifier = swe_fair_forbidden years = 20 }
+		}
+		custom_tooltip = {
+			text = swe_gotaland.14.a_tt
+			swe_pop_satisfaction_in = { location = location:trollaborg type = peasants value = pop_satisfaction_weak_penalty }
+		}
+	}
+
+	option = {
+		name = swe_gotaland.14.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:trollaborg = {
+			swe_grant_market = yes
+		}
+		custom_tooltip = {
+			text = swe_gotaland.14.b_tt
+			swe_pop_satisfaction_in = { location = location:trollaborg type = peasants value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:jonkoping type = burghers value = pop_satisfaction_weak_penalty }
+		}
+	}
+}
+
+# Kalmar against Pata and Vimmerby, 1524-32. Kalmar complained of illegal trade at Pata in 1524, and the council of the
+# realm forbade all trade there in 1527 on pain of losing goods and ships, and again in 1532 (sv.wiki Pataholm, from
+# Det medeltida Sverige 4:2, p. 285). Pata, on the manor of Strömserum, had 23 rent-paying households in 1502, and in
+# the 1520s and 1530s those who lived by trade and crafts were told to move to Kalmar. Gustav Vasa withdrew Vimmerby's
+# town privileges in 1532, and it was a town again only in 1604 (Hansson, Senmedeltida städer i Småland 2017,
+# pp. 140-151). Pata is in handbord, Vimmerby in sevede. Needs Kalmar a town, where burghers trade. Burgher power of
+# swe_visby_staple (0.1), trades per burgher of vanilla's town rights (0.25, 00_traditions.txt), for 20 years.
+swe_gotaland.15 = {
+	type = country_event
+	title = swe_gotaland.15.title
+	desc = swe_gotaland.15.desc
+	outcome = neutral
+	historical_info = swe_gotaland.15.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1525.3.1
+		to = 1620.1.1
+		monthly_chance = 3 # Median early 1527
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:kalmar
+		owns = location:handbord
+		location:kalmar = {
+			NOT = { location_rank = location_rank:rural_settlement }
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:peasants_estate }
+	}
+
+	option = {
+		name = swe_gotaland.15.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:kalmar = {
+			add_location_modifier = { modifier = swe_kalmar_staple years = 20 }
+		}
+		swe_craftsmen_move_in = { from = location:handbord to = location:kalmar }
+		swe_craftsmen_move_in = { from = location:sevede to = location:kalmar }
+		custom_tooltip = {
+			text = swe_gotaland.15.a_tt
+			swe_pop_satisfaction_in = { location = location:handbord type = peasants value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:sevede type = peasants value = pop_satisfaction_weak_penalty }
+		}
+	}
+
+	option = {
+		name = swe_gotaland.15.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = {
+			text = swe_gotaland.15.b_tt
+			swe_pop_satisfaction_in = { location = location:kalmar type = burghers value = pop_satisfaction_weak_penalty }
+			swe_pop_satisfaction_in = { location = location:handbord type = peasants value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:sevede type = peasants value = pop_satisfaction_weak_bonus }
+		}
+	}
+}
+
+# Visingsborg, 1561-69. Gustav Vasa had made no counts. Erik XIV made Per Brahe the Elder a count at his coronation on
+# 29 June 1561, and Brahe got Visingsö on 20 March 1562, "after repeated reminders". Johan III enlarged the county on
+# 9 July 1569, from 56 whole and 5 half hemman in 1567 to 388 whole and 116 half, and Brahe alone among the counts could account
+# for the Crown's taxes there through his own collectors (SBL, Per Brahe d.ä.). Jönköping town stayed outside it. It
+# went back to the Crown in 1680 (SBL, Per Brahe d.y.), but runs 50 years here, as vanilla's Great Reduction leaves no
+# marker to end it on. Visingsö lies in the unownable vattern tile, so the county sits on jonkoping, with Gränna. The
+# estate powers of swe_lithuanian_rights (0.25).
+swe_gotaland.16 = {
+	type = country_event
+	title = swe_gotaland.16.title
+	desc = swe_gotaland.16.desc
+	outcome = neutral
+	historical_info = swe_gotaland.16.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1559.6.1
+		to = 1620.1.1
+		monthly_chance = 3 # Median spring 1561
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_ruler = yes
+		government_type = government_type:monarchy
+		owns = location:jonkoping
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_gotaland.16.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:jonkoping = {
+			add_location_modifier = { modifier = swe_visingsborg_county years = 50 }
+		}
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_gotaland.16.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
+	}
+}

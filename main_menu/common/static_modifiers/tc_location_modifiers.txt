@@ -1022,3 +1022,51 @@ swe_boras_privileges = {
 	local_market_access = 0.05
 	local_migration_attraction = 0.1
 }
+
+# Added to vaxjo for 50 years by swe_gotaland.13 when the bishop takes the fines for country trade (1342). The clergy
+# power of vanilla's parish_church (0.25).
+swe_vaxjo_bishops_town = {
+	game_data = {
+		category = location
+	}
+	local_clergy_estate_power = 0.25
+}
+
+# Added to vaxjo for 50 years by swe_gotaland.13 when the Crown keeps the fines and a bailiff. The crown power of
+# swe_rafst (0.1).
+swe_vaxjo_bailiff = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+}
+
+# Added to trollaborg for 20 years by swe_gotaland.14 when Värnamo's fair is forbidden (1473). The peasant power of
+# vanilla's market_village (0.25) reversed.
+swe_fair_forbidden = {
+	game_data = {
+		category = location
+	}
+	local_peasants_estate_power = -0.25
+}
+
+# Added to kalmar for 20 years by swe_gotaland.15 when trade at Pata is forbidden (1527). The burgher power of
+# swe_visby_staple (0.1) and the trades per burgher of vanilla's town rights (0.25, 00_traditions.txt). Kalmar is a
+# town, so its burghers use it.
+swe_kalmar_staple = {
+	game_data = {
+		category = location
+	}
+	local_burghers_estate_power = 0.1
+	local_trades_per_burgher = 0.25
+}
+
+# Added to jonkoping for 50 years by swe_gotaland.16 when Per Brahe is given Visingsborg (1561-69). The estate powers of
+# swe_lithuanian_rights (0.25): a count who collected the Crown's taxes through his own men.
+swe_visingsborg_county = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.25
+	local_crown_estate_power = -0.25
+}
