@@ -9,3 +9,16 @@ swe_nor_own_king_refused = {
 	value = -25
 	yearly_decay = 2
 }
+
+# Antagonism of the Baltic powers after swe_baltic.7. Coalitions form at 50 (ANTAGONISM_FOR_COALITION in vanilla's
+# 00_defines.txt). Closing the sea matches vanilla's antagonism_hre_member_under_infidel_domination, the licences
+# antagonism_maps_stolen.
+swe_closed_baltic = {
+	value = 15
+	yearly_decay = 1
+}
+
+swe_baltic_licences = {
+	value = 10
+	yearly_decay = 1
+}

@@ -563,3 +563,194 @@ swe_baltic.6 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
 	}
 }
+
+# Dominium maris Baltici. A milestone for the player (AGENTS.md, "Events must actually fire"): it fires when our realm
+# holds the mouths of the five great rivers into the Baltic and no Baltic power outside it has a bigger navy. The navy
+# test is vanilla's flavor_dan.68 (navy_size >= 50, no port on the sea held by a bigger navy), widened from
+# eastern_baltic_sea to the whole Baltic and without its navy tradition of 60. The Sound is left to vanilla's Sound
+# toll, which goes to whoever holds Helsingør (default.map).
+# The phrase is first Swedish in the Dutch-Swedish treaty of The Hague, 5 April 1614, art. VIII ("Dominio Maris
+# Balthici", Dumont V, no. CXXXVII), renewed in 1640 (art. IX, Aitzema, book 20); both also promise free navigation.
+# Gustav II Adolf in the riksråd, December 1628, on "den rättighet och tutel, som Sveriges konungar och krona af
+# hedenhös hafver haft" (Ahnlund 1918, pp. 105-106); to Oxenstierna, 4 December 1629, "fienden Östersiöns herre, och
+# fölljachteligen och wår öfwerman" (Styffe pp. 538-539). Licences in Prussia from 1627 and from Riga to the Neva from
+# 1629 (Küng, Hansische Geschichtsblätter 133, 2015, pp. 148-152); "the whole yield of the licences was devoted to the
+# payment of the armies in Germany" and they were "immediately indispensable to the war-chest" (Roberts, The Swedish
+# Imperial Experience, 1979, pp. 35, 39). 814,000 riksdaler in 1634 (Wendt 1933, via Hvidegaard 2000) is single-source,
+# so not in the text. Karl X Gustav to Dureel, 16 December 1656, on the Dutch treaty of 1640: "ett fundament och en
+# rätt, den oss odisputerlig tillhörde" (Carlbom 1901, pp. 181-182). Roskilde 1658, art. 3, against "främmande
+# fientliga flottor" (Gihl 1913, p. 29; Fridericia 1894, p. 424); the Battle of the Sound, 29 October 1658 (lex.dk);
+# the Concert of The Hague, 11 May 1659, art. II, struck it out (Gihl pp. 147-149), and it lapsed at Copenhagen in 1660
+# (Roberts p. 132). After 1648 Sweden held "the estuary of every major river from the Neva to the Weser, with the single
+# exception of the Vistula" (Roberts p. 101). Notes: .research/milestones-2026-11-10/dominium.md.
+swe_baltic.7 = {
+	type = country_event
+	title = swe_baltic.7.title
+	desc = swe_baltic.7.desc
+	outcome = positive
+	historical_info = swe_baltic.7.historical_info
+
+	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		capital ?= {
+			OR = {
+				region = region:scandinavian_region
+				region = region:baltic_region
+				region = region:north_german_region
+				region = region:russian_region
+			}
+		}
+	}
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 10 # Median about seven months after the conditions are met
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		custom_tooltip = {
+			text = swe_baltic.7.neva_tt
+			location:neva.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.narva_tt
+			location:narva.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.riga_tt
+			location:riga.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.gdansk_tt
+			location:gdansk.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.stettin_tt
+			location:stettin.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		navy_size >= 50
+		custom_tooltip = {
+			text = swe_baltic.7.navy_tt
+			area:inner_baltic_sea_area = {
+				any_adjacent_ports_to_area = {
+					count = all
+					swe_baltic_port_no_rival_trigger = yes
+				}
+			}
+			area:south_baltic_sea_area = {
+				any_adjacent_ports_to_area = {
+					count = all
+					swe_baltic_port_no_rival_trigger = yes
+				}
+			}
+			area:eastern_baltic_sea = {
+				any_adjacent_ports_to_area = {
+					count = all
+					swe_baltic_port_no_rival_trigger = yes
+				}
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = exterior
+	}
+
+	immediate = {
+		ruler ?= { save_scope_as = target_character }
+		event_illustration_government_estate_effect = yes
+	}
+
+	# The sea closed to foreign warships, as under Roskilde's third article in 1658
+	option = {
+		name = swe_baltic.7.a
+		ai_chance = {
+			base = 40
+		}
+
+		add_prestige = prestige_severe_bonus
+		add_navy_tradition = navy_tradition_extreme_bonus
+		# Vanilla's own modifier from flavor_dan.68: naval morale +10%, selling efficiency +2%
+		add_country_modifier = {
+			modifier = dan_dominium_maris_baltici
+			years = 10
+			mode = add_and_extend
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.a_tt
+			swe_list_baltic_powers = yes
+			every_in_list = {
+				list = swe_baltic_powers
+				add_antagonism = {
+					target = root
+					modifier = swe_closed_baltic
+				}
+			}
+		}
+	}
+
+	# The licences, as from Prussia to the Neva from the late 1620s
+	option = {
+		name = swe_baltic.7.b
+		historical_option = yes
+		ai_chance = {
+			base = 40
+		}
+
+		add_prestige = prestige_mild_bonus
+		change_gold_effect = { scale = 10 }
+		custom_tooltip = {
+			text = swe_baltic.7.b_tt
+			every_owned_location = {
+				limit = {
+					OR = {
+						this = location:neva
+						this = location:narva
+						this = location:riga
+						this = location:gdansk
+						this = location:stettin
+					}
+					NOT = { has_location_modifier = swe_riga_licent }
+				}
+				add_location_modifier = { modifier = swe_riga_licent years = modifier_duration_years_very_long }
+			}
+		}
+		custom_tooltip = {
+			text = swe_baltic.7.b_antagonism_tt
+			swe_list_baltic_powers = yes
+			every_in_list = {
+				list = swe_baltic_powers
+				add_antagonism = {
+					target = root
+					modifier = swe_baltic_licences
+				}
+			}
+		}
+	}
+
+	# Free navigation, as the treaties of 1614 and 1640 promised
+	option = {
+		name = swe_baltic.7.c
+		ai_chance = {
+			base = 20
+		}
+
+		add_prestige = prestige_mild_bonus
+		custom_tooltip = {
+			text = swe_baltic.7.c_tt
+			swe_list_baltic_powers = yes
+			every_in_list = {
+				list = swe_baltic_powers
+				add_opinion = {
+					target = root
+					modifier = opinion_pleased
+				}
+			}
+		}
+	}
+}
