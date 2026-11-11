@@ -13,5 +13,6 @@
  swe_russia.1.novgorod_tt: "[ShowLocationName('novgorod')] is held by us or one of our subjects."
  swe_russia.1.moscow_tt: "[ShowLocationName('moscow')] is held by us or one of our subjects."
  swe_russia.1.a_tt: "The [ShowReligionAdjective('orthodox')] [pops|e] in every [location|e] we own in [ShowRegionName('russian_region')] lose 5% [pop_satisfaction|e]."
+ swe_russia.1.a_prosperity_tt: "Every [location|e] in [ShowProvinceDefinitionName('moscow_province')] held by us or one of our subjects loses [prosperity|e]."
  swe_russia.1.b_tt: "The burgher [pops|e] of [ShowLocationName('moscow')] lose 10% [pop_satisfaction|e]."
  swe_russia.1.c_tt: "The [ShowReligionAdjective('orthodox')] [pops|e] in every [location|e] we own in [ShowRegionName('russian_region')] gain 5% [pop_satisfaction|e]."

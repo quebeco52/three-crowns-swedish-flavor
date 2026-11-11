@@ -90,9 +90,14 @@ swe_russia.1 = {
 				save_scope_as = swe_novgorod_holder
 			}
 		}
+		# The gold of options a and b follows Moscow's own wealth, as vanilla's conquest_mission_events.4 does
+		location:moscow = {
+			province = { save_scope_as = swe_moscow_province }
+		}
 	}
 
-	# The treasury to Stockholm, as from Prague in 1648
+	# The treasury to Stockholm, as from Prague in 1648. Vanilla's looting of a conquered capital
+	# (conquest_mission_events.4.a): four times the province's tax base, and mild prosperity loss across it.
 	option = {
 		name = swe_russia.1.a
 		ai_chance = {
@@ -100,9 +105,20 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_extreme_bonus
-		change_gold_effect = { scale = 10 }
-		location:moscow = {
-			change_prosperity = prosperity_mild_penalty
+		add_gold = {
+			value = scope:swe_moscow_province.province_tax_base
+			multiply = 4
+		}
+		custom_tooltip = {
+			text = swe_russia.1.a_prosperity_tt
+			scope:swe_moscow_province = {
+				every_location_in_province = {
+					limit = {
+						owner ?= { swe_is_swedish_realm_trigger = yes }
+					}
+					change_prosperity = prosperity_mild_penalty
+				}
+			}
 		}
 		scope:swe_moscow_holder ?= {
 			add_opinion = {
@@ -126,7 +142,7 @@ swe_russia.1 = {
 		}
 	}
 
-	# A ransom, as Munich paid in 1632
+	# A ransom, as Munich paid in 1632. Twice the province's tax base, as conquest_mission_events.4.b.
 	option = {
 		name = swe_russia.1.b
 		ai_chance = {
@@ -134,7 +150,10 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_severe_bonus
-		change_gold_effect = { scale = 5 }
+		add_gold = {
+			value = scope:swe_moscow_province.province_tax_base
+			multiply = 2
+		}
 		custom_tooltip = {
 			text = swe_russia.1.b_tt
 			location:moscow = {

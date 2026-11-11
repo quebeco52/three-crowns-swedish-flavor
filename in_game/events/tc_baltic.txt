@@ -759,7 +759,8 @@ swe_baltic.7 = {
 		}
 
 		add_prestige = prestige_mild_bonus
-		change_gold_effect = { scale = 10 }
+		# The first yield for the war-chest; the Licent below is the lasting revenue, so the mod's usual lump sum
+		change_gold_effect = { scale = 4 }
 		# The trade axis exists only from the Age of Reformation (1537), and this can fire earlier
 		if = {
 			limit = {
