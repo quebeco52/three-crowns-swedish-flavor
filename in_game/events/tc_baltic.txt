@@ -4,7 +4,8 @@
 # submitted to Sweden on terms: Estonia and Reval in 1561, Riga in 1621, Livonia in the 1620s, Ösel in
 # 1645. Each event fires whenever Sweden owns the chief town while Baltic Germans still live there, not
 # by date. Confirming the privileges speeds integration and slows assimilation, as vanilla's
-# lat_compromise does for the Greeks; Swedish law speeds assimilation through swe_forsvenskning.
+# lat_compromise does for the Greeks. Swedish law brings the Crown's judges (swe_swedish_law) and a hearing for the
+# peasants, but no assimilation: Sweden never tried to make Swedes of the Estonians or Latvians.
 # Nobody's culture changes at once. The variables mark the choice for later content.
 
 # Estonia: the knighthoods of Harrien, Wierland and Jerwen and the town of Reval submitted to Erik XIV
@@ -88,10 +89,13 @@ swe_baltic.1 = {
 			every_owned_location = {
 				limit = {
 					swe_estonia_trigger = yes
-					NOT = { dominant_culture = culture:swedish }
-					NOT = { has_location_modifier = swe_forsvenskning }
+					NOT = { has_location_modifier = swe_swedish_law }
 				}
-				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+				add_location_modifier = { modifier = swe_swedish_law years = 20 }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
 			}
 		}
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
@@ -171,10 +175,13 @@ swe_baltic.2 = {
 			every_owned_location = {
 				limit = {
 					swe_livonia_trigger = yes
-					NOT = { dominant_culture = culture:swedish }
-					NOT = { has_location_modifier = swe_forsvenskning }
+					NOT = { has_location_modifier = swe_swedish_law }
 				}
-				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
+				add_location_modifier = { modifier = swe_swedish_law years = 20 }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
 			}
 		}
 		location:riga = {

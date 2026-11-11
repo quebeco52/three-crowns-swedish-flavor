@@ -4,7 +4,7 @@
 # Both events fire on ownership while Norwegian culture still dominates there, never by date, and
 # neither changes anyone's culture: swe_forsvenskning only speeds up assimilation.
 
-# Sweden takes over Jämtland. Sweden founded the diocese of Härnösand (1647) and schools to draw the
+# Sweden takes over Jämtland. Sweden made Härnösand a superintendency (1647, a diocese only from 1772) and founded schools to draw the
 # Jämtlanders away from Trondheim. Same shape as swe_scania.1. Idre and Särna, taken in a bloodless
 # march in 1644, go with it through swe_jamtland_lands_trigger.
 swe_jamtland.1 = {
@@ -63,7 +63,7 @@ swe_jamtland.1 = {
 				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
 			}
 		}
-		# Härnösand, the new diocese for Jämtland and the Bothnian coast
+		# Härnösand, the new superintendency for Jämtland and the Bothnian coast
 		location:harnosand ?= {
 			if = {
 				limit = { owner = root }

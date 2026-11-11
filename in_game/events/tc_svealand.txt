@@ -171,7 +171,8 @@ swe_svealand.2 = {
 
 # Reinhold Rademacher's manufactory at Eskilstuna, from 1654. Vanilla has no location for Eskilstuna, so Strängnäs stands
 # in. It doesn't need Riga. The tools bonus only works if the location already has a tools building, which needs town
-# rank, so the migration and burgher power carry it otherwise.
+# rank, so a rural Strängnäs gets the modifier's migration pull and building efficiency, and the smiths come only once
+# it is a town or city.
 swe_svealand.3 = {
 	type = country_event
 	title = swe_svealand.3.title
@@ -206,10 +207,12 @@ swe_svealand.3 = {
 		location:strangnas = {
 			add_location_modifier = { modifier = swe_rademacher_forges years = 25 }
 		}
-		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga
+		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga.
+		# Only into a town or city: burghers sent to a rural location melt within a month (tested on swe_towns.1, 2026-11-11)
 		if = {
 			limit = {
 				location:riga = { has_owner = yes }
+				location:strangnas = { NOT = { location_rank = location_rank:rural_settlement } }
 			}
 			add_migration = {
 				owner = location:riga.owner

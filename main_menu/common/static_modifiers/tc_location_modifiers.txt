@@ -48,7 +48,7 @@ swe_lappmark_settlers = {
 }
 
 # Added for 20 years by swe_scania.1 to the Danish-culture locations of Skåneland, by swe_jamtland.1
-# and swe_jamtland.2 to Jämtland and Idre, and by swe_baltic.1 and .2 (Swedish law) to Estonia, Rotalia and Livonia.
+# and swe_jamtland.2 to Jämtland and Idre, by swe_lappmark.5 to Sámi locations and by swe_denmark.1 to Zealand.
 # Scaled from vanilla's saints_enforced: the same unrest and under half its assimilation speed (0.25). The crown
 # power of fontainebleau_hunting_lodge.
 swe_forsvenskning = {
@@ -56,6 +56,20 @@ swe_forsvenskning = {
 		category = location
 	}
 	local_pop_assimilation_speed_modifier = 0.10
+	local_unrest = 0.1
+	local_crown_estate_power = 0.1
+}
+
+# Added for 20 years by swe_baltic.1 and .2 (Swedish law) to our locations in Estonia, Rotalia and Livonia. The crown
+# power and unrest of swe_forsvenskning without its assimilation: Sweden brought its law, judges and governors to the
+# Baltic provinces but never tried to make Swedes of the Estonians or Latvians, and after the reduction of 1680 a
+# peasant could sue and even appeal to the king (en.wiki Estonia under Swedish rule). As in swe_forsvenskning, the
+# unrest of saints_enforced and the crown power of fontainebleau_hunting_lodge. The peasants' gain is a weak
+# satisfaction bonus given in the event.
+swe_swedish_law = {
+	game_data = {
+		category = location
+	}
 	local_unrest = 0.1
 	local_crown_estate_power = 0.1
 }
@@ -1036,8 +1050,8 @@ swe_forfeited_estates = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to skene by swe_towns.8 when Borås is founded, in place of swe_knallar there, along with a market
-# (swe_grant_market). The promotion speed of vanilla's studium_privileges (0.2), so that the new town grows its own
+# Added to skene for 20 years by swe_towns.8 when Borås is founded, in place of swe_knallar there, along with a market
+# (swe_grant_market). 20 years like swe_ostersund_freedoms: the start a new town gets, not its charter. The promotion speed of vanilla's studium_privileges (0.2), so that the new town grows its own
 # burghers, and the migration of swe_marstrand_porto_franco (0.1).
 swe_boras_privileges = {
 	game_data = {

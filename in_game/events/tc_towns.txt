@@ -76,49 +76,55 @@ swe_towns.1 = {
 		}
 		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta)
 		# The trigger only needs one of the four, so each move checks its own town. Per month, so 0.48 from each at most.
-		# A rural source has no burghers to give, and a town usually holds only one to four.
+		# A rural source has no burghers to give, and a town usually holds only one to four. They move only once Helsinge
+		# is a town or city: in a test (2026-11-11) burghers sent to it while rural kept only the last month's 0.02 of 0.24.
 		if = {
-			limit = { owns = location:ekenas }
-			add_migration = {
-				owner = this
-				from_location = location:ekenas
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
+			limit = {
+				location:helsinge = { NOT = { location_rank = location_rank:rural_settlement } }
 			}
-		}
-		if = {
-			limit = { owns = location:porvoo }
-			add_migration = {
-				owner = this
-				from_location = location:porvoo
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
+			if = {
+				limit = { owns = location:ekenas }
+				add_migration = {
+					owner = this
+					from_location = location:ekenas
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
 			}
-		}
-		if = {
-			limit = { owns = location:raumo }
-			add_migration = {
-				owner = this
-				from_location = location:raumo
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
+			if = {
+				limit = { owns = location:porvoo }
+				add_migration = {
+					owner = this
+					from_location = location:porvoo
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
 			}
-		}
-		if = {
-			limit = { owns = location:bjorneborg }
-			add_migration = {
-				owner = this
-				from_location = location:bjorneborg
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
+			if = {
+				limit = { owns = location:raumo }
+				add_migration = {
+					owner = this
+					from_location = location:raumo
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
+			}
+			if = {
+				limit = { owns = location:bjorneborg }
+				add_migration = {
+					owner = this
+					from_location = location:bjorneborg
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
 			}
 		}
 		# The anger stays with the burghers ordered to move, in place of a country-wide estate penalty
@@ -574,9 +580,10 @@ swe_towns.7 = {
 # (sv.wiki Borås, citing Millqvist 1991 and the town's own history page; the Borås chronologies give the same account).
 # Borås lies where skene, allingsas and bogesund meet on the map. skene takes the name, since swe_gotaland.4 already
 # uses it for the peddlers' district. This follows that event but doesn't need it: option a replaces swe_knallar on
-# skene with the permanent swe_boras_privileges and a market, and option b is swe_gotaland.4.b once more, with a market
+# skene with swe_boras_privileges for 20 years and a market, and option b is swe_gotaland.4.b once more, with a market
 # for Skara, where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide
-# estate penalty. No gold, since the district built the town itself. swe_boras_founded picks swe_towns.5's text.
+# estate penalty. Option a costs 4 gold, as swe_towns.1 does: the other foundings pay 2 for the name, development and
+# prosperity, and this one brings a market and a modifier besides. swe_boras_founded picks swe_towns.5's text.
 swe_towns.8 = {
 	type = country_event
 	title = swe_towns.8.title
@@ -614,6 +621,7 @@ swe_towns.8 = {
 			base = 75
 		}
 
+		change_gold_effect = { scale = -4 }
 		location:skene = {
 			rename_location = boras
 			if = {
@@ -624,7 +632,7 @@ swe_towns.8 = {
 				limit = { has_location_modifier = swe_town_monopoly_enforced }
 				remove_location_modifier = swe_town_monopoly_enforced
 			}
-			add_location_modifier = { modifier = swe_boras_privileges months = -1 }
+			add_location_modifier = { modifier = swe_boras_privileges years = 20 }
 			swe_grant_market = yes
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus

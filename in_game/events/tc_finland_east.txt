@@ -404,7 +404,8 @@ swe_finland_east.5 = {
 	}
 
 	option = {
-		name = swe_finland_east.5.b
+		# Not .b: that key's hash collides with Oikoumenē's xuzhou_province.silesian_dialect
+		name = swe_finland_east.5.b_pardon
 		ai_chance = {
 			base = 25
 		}

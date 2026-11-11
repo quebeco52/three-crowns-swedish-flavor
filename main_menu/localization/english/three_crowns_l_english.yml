@@ -1,6 +1,6 @@
 ﻿l_english:
  swe_konungabalken: "Konungabalken"
- swe_konungabalken_desc: "'The Swedes have the right to take a king, and to cast him out.' So say the old laws of the provinces. The king's sons have the first right to be chosen, but no one is king until the lawmen and the men of the provinces have elected him at the Stones of Mora. Every new king must swear to uphold the law, and the [ShowEstateTypeName('nobles_estate')] of the council expect to be rewarded for their votes."
+ swe_konungabalken_desc: "'The Swedes have the right to take a king, and to cast him out.' So says the old law of Västergötland. The king's sons have the first right to be chosen, but no one is king until the lawmen and the men of the provinces have elected him at the Stones of Mora. Every new king must swear to uphold the law, and the [ShowEstateTypeName('nobles_estate')] of the council expect to be rewarded for their votes."
  swe_birkarl_rights: "Birkarlarätt"
  swe_birkarl_rights_desc: "The Birkarlar are [ShowPopTypeName('peasants')] of the Torne, Lule and Pite valleys who hold the trade with the [ShowCultureName('sapmi')] of the lappmarks and collect their tax. Each winter they travel inland with grain, salt and iron, and come back with [ShowGoodsName('fur')] and [ShowGoodsName('wild_game')] to sell in the south. The Crown gets its share of the tax, but the trade stays in their hands."
  swe_bottniska_handelstvanget: "Bottniska handelstvånget"

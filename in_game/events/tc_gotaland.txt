@@ -619,7 +619,7 @@ swe_gotaland.9 = {
 	}
 }
 
-# Kalmar's cathedral on Kvarnholmen: begun 1660 to designs by Nicodemus Tessin the Elder, consecrated half-finished in
+# Kalmar's cathedral on Kvarnholmen: begun 1660 under Karl X Gustav to designs by Nicodemus Tessin the Elder, consecrated half-finished in
 # 1682 and finished in 1703 (svenskakyrkan.se Kalmar, sv.wiki Kalmar domkyrka). The old church was blown up in 1678 for
 # fear of a siege (Arkeologerna, p. 121). Karl XI made Kalmar a diocese on 5 April 1678 (sv.wiki Kalmar stift); by the
 # user's choice that stays in historical_info, since Kalmar and Öland are long Protestant by then. Fires only after

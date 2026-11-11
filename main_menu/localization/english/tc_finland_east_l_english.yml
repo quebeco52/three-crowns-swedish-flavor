@@ -73,8 +73,8 @@
  swe_finland_east.5.historical_info: "Johannes Messenius, a miller's son educated at the Jesuit school in Braunsberg, became a historian, dramatist and professor at Uppsala. In 1616 he was accused of conspiring with King Sigismund and the Jesuits, and was found guilty when he could not find twelve men to swear to his innocence. He was sentenced to death in July, but the king changed this to prison, probably for life. In October he was sent to Kajaneborg, a castle begun in 1604 and never finished, where its commander Erik Hara treated him harshly. There he wrote Scondia Illustrata, a history of Sweden from the Flood to his own day. He was moved to Uleåborg in 1635 and died there in 1636. His widow left the kingdom with the manuscripts, and the work was not published until 1700-05."
  swe_finland_east.5.a: "Lock him away in Kajaneborg."
  swe_finland_east.5.a.entry: "The historian was imprisoned at Kajaneborg."
- swe_finland_east.5.b: "Pardon him."
- swe_finland_east.5.b.entry: "The historian was pardoned and went back to his books."
+ swe_finland_east.5.b_pardon: "Pardon him."
+ swe_finland_east.5.b_pardon.entry: "The historian was pardoned and went back to his books."
 
  swe_finland_east.6.title: "The Hidden Cloth"
  swe_finland_east.6.entry: "$swe_finland_east.6.title$"

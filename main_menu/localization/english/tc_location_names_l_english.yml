@@ -1877,7 +1877,7 @@
  stata_ketux.swedish_dialect: "Grande Coulée" #adapted: French, the great dry gorge; traders by the 1830s
  scqescilni.swedish_dialect: "Fort Spokane" #adapted: NWC and Astor posts on the Spokane, 1810-12
  snt_t_ulix.swedish_dialect: "Furuvallen" #founded: open pine parkland north of Spokane
- okanagan_province.swedish_dialect: "Okanaganland" #adapted: land pattern; Ross's Oakinacken, the Okanagan people
+ # okanagan_province: no Swedish name, as its key's hash collides with Oikoumenē's voyampolka.kra_language (was "Okanaganland")
  wenatchi.swedish_dialect: "Lärkdalen" #founded: larch in the Wenatchee Mountains; lumber
  chelan.swedish_dialect: "Stordjupet" #translated: Chelan, given as deep water; a very deep lake
  osoyoos.swedish_dialect: "Fort Okanagan" #adapted: Astor's post, 1811, at the Okanogan's mouth
