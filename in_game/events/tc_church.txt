@@ -53,6 +53,19 @@ swe_church.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		# The same order as the descriptions. The synod alone shows no one.
+		if = {
+			limit = {
+				ruler ?= { religion != religion:lutheran }
+			}
+			ruler = { save_scope_as = target_character }
+		}
+		else_if = {
+			limit = {
+				heir ?= { religion != religion:lutheran }
+			}
+			heir = { save_scope_as = target_character }
+		}
 	}
 
 	option = {
@@ -64,6 +77,7 @@ swe_church.1 = {
 
 		unlock_estate_privilege_effect = { type = swe_uppsala_mote }
 		grant_estate_privilege = estate_privilege:swe_uppsala_mote
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_minor_move_to_left }
 	}
 
 	option = {

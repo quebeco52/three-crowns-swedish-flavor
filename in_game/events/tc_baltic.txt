@@ -196,7 +196,55 @@ swe_baltic.2 = {
 swe_baltic.4 = {
 	type = country_event
 	title = swe_baltic.4.title
-	desc = swe_baltic.4.desc
+	desc = {
+		# Each option needs its port, so the text names only the ports we hold
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					owns = location:narva
+					owns = location:neva
+					owns = location:tallinn
+				}
+				desc = swe_baltic.4.desc
+			}
+			triggered_desc = {
+				trigger = {
+					owns = location:narva
+					owns = location:neva
+				}
+				desc = swe_baltic.4.desc_narva_neva
+			}
+			triggered_desc = {
+				trigger = {
+					owns = location:narva
+					owns = location:tallinn
+				}
+				desc = swe_baltic.4.desc_narva_tallinn
+			}
+			triggered_desc = {
+				trigger = {
+					owns = location:neva
+					owns = location:tallinn
+				}
+				desc = swe_baltic.4.desc_neva_tallinn
+			}
+			triggered_desc = {
+				trigger = {
+					owns = location:narva
+				}
+				desc = swe_baltic.4.desc_narva_only
+			}
+			triggered_desc = {
+				trigger = {
+					owns = location:neva
+				}
+				desc = swe_baltic.4.desc_neva_only
+			}
+			triggered_desc = {
+				desc = swe_baltic.4.desc_tallinn_only
+			}
+		}
+	}
 	outcome = positive
 	historical_info = swe_baltic.4.historical_info
 
@@ -662,7 +710,7 @@ swe_baltic.7 = {
 	}
 
 	immediate = {
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 		event_illustration_government_estate_effect = yes
 	}
 
@@ -681,6 +729,7 @@ swe_baltic.7 = {
 			years = 10
 			mode = add_and_extend
 		}
+		change_societal_value = { type = belligerent_vs_conciliatory value = societal_value_move_to_left }
 		custom_tooltip = {
 			text = swe_baltic.7.a_tt
 			swe_list_baltic_powers = yes
@@ -704,6 +753,13 @@ swe_baltic.7 = {
 
 		add_prestige = prestige_mild_bonus
 		change_gold_effect = { scale = 10 }
+		# The trade axis exists only from the Age of Reformation (1537), and this can fire earlier
+		if = {
+			limit = {
+				current_age_or_later = { age = age_4_reformation }
+			}
+			change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_move_to_left }
+		}
 		custom_tooltip = {
 			text = swe_baltic.7.b_tt
 			every_owned_location = {
@@ -741,6 +797,12 @@ swe_baltic.7 = {
 		}
 
 		add_prestige = prestige_mild_bonus
+		if = {
+			limit = {
+				current_age_or_later = { age = age_4_reformation }
+			}
+			change_societal_value = { type = mercantilism_vs_free_trade value = societal_value_move_to_right }
+		}
 		custom_tooltip = {
 			text = swe_baltic.7.c_tt
 			swe_list_baltic_powers = yes

@@ -73,7 +73,13 @@ swe_stockholm.1 = {
 			destroy_all_buildings_of_type = building_type:swe_tre_kronor
 		}
 		add_research_progress = research_progress_mild_penalty
-		custom_tooltip = swe_stockholm.1.b_tt
+		# The decision needs the same thing as option a
+		if = {
+			limit = {
+				location:stockholm = { has_great_or_unique_palace = no }
+			}
+			custom_tooltip = swe_stockholm.1.b_tt
+		}
 	}
 }
 
@@ -110,6 +116,8 @@ swe_stockholm.2 = {
 		previous_ruler = {
 			save_scope_as = swe_dead_ruler
 		}
+		# A second portrait, after the dead monarch's: the successor decides (vanilla's coup_attempt.100 pairs them too)
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	# Riddarholmen
@@ -208,7 +216,7 @@ swe_stockholm.3 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -266,7 +274,7 @@ swe_stockholm.4 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -330,7 +338,7 @@ swe_stockholm.5 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -394,7 +402,7 @@ swe_stockholm.6 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {

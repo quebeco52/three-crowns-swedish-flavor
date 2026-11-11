@@ -39,6 +39,8 @@ swe_denmark.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
+		# The kingdom's fate is the ruler's to settle
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	# The Gottorp resolution: Denmark as Swedish provinces
@@ -166,7 +168,7 @@ swe_denmark.2 = {
 	}
 
 	immediate = {
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
 		# The trigger leaves any Danish crown inside our realm, so this is our subject or a subject's
 		random_country = {

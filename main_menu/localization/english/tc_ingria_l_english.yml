@@ -1,10 +1,13 @@
 ﻿l_english:
  STATIC_MODIFIER_NAME_swe_lutheran_parishes: "Lutheran Parishes"
- STATIC_MODIFIER_DESC_swe_lutheran_parishes: "Lutheran priests now preach here in Finnish, and Lutheran settlers are taking over the farms of those who left for Russia. Many who stay still keep the old faith in secret."
+ STATIC_MODIFIER_DESC_swe_lutheran_parishes: "Lutheran priests now preach here in Finnish, and many of the Orthodox have left for Russia rather than give up their faith. Those who stay often keep the old faith in secret."
 
  swe_ingria.1.title: "The Orthodox Parishes"
  swe_ingria.1.entry: "$swe_ingria.1.title$"
- swe_ingria.1.desc: "From the shores of Lake Ladoga to the Gulf of Finland, the people of our eastern lands still keep the [ShowReligionAdjective('orthodox')] faith. Their priests are trained in Russia, their prayers are in Church Slavonic, and in every war they look east for help. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] want a Lutheran priest in every parish, preaching in a language the people understand. The lords who hold estates there warn that their peasants will leave for Russia rather than give up their faith, and leave the land empty behind them."
+ swe_ingria.1.desc: "$swe_ingria.1.desc_people$ $swe_ingria.1.desc_lords$, and leave the land empty behind them."
+ swe_ingria.1.desc_savolax: "$swe_ingria.1.desc_people$ $swe_ingria.1.desc_lords$. If they go, [ShowProvinceDefinitionName('savolax_province')] has farmers enough to take over the farms they leave."
+ swe_ingria.1.desc_people: "From the shores of Lake Ladoga to the Gulf of Finland, the people of our eastern lands still keep the [ShowReligionAdjective('orthodox')] faith. Their priests are trained in Russia, their prayers are in Church Slavonic, and in every war they look east for help. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')] want a Lutheran priest in every parish, preaching in a language the people understand."
+ swe_ingria.1.desc_lords: "The lords who hold estates there warn that their peasants will leave for Russia rather than give up their faith"
  swe_ingria.1.historical_info: "At the Treaty of Stolbovo in 1617, Russia ceded Ingria and the county of Kexholm to Sweden. The Orthodox inhabitants were allowed to keep their faith, but the Swedish authorities pressed them to become Lutheran: they were cut off from their church in Russia, given Lutheran services and catechisms in Finnish, and rewarded for converting. Many Orthodox Karelians and Ingrians left for Russia, above all during and after the war of 1656–58, and the Crown gave their empty farms to Lutheran Finns from Savolax and Äyräpää. By the 1690s Lutheran Finns, later known as Ingrian Finns, made up most of Ingria's population."
  swe_ingria.1.a: "A Lutheran priest in every parish."
  swe_ingria.1.a.entry: "Lutheran priests were sent to the eastern parishes."

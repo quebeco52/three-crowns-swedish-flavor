@@ -72,7 +72,7 @@ swe_russia.1 = {
 	}
 
 	immediate = {
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
 		# A subject holding either city, saved once if it holds both
 		location:moscow.owner ?= {

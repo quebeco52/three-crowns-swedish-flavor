@@ -335,7 +335,20 @@ swe_lappmark.5 = {
 swe_lappmark.6 = {
 	type = country_event
 	title = swe_lappmark.6.title
-	desc = swe_lappmark.6.desc
+	desc = {
+		first_valid = {
+			# Vanilla's flavor_swe.39.a may have opened the mine already, which hides option c
+			triggered_desc = {
+				trigger = {
+					location:silbojock = { raw_material = goods:silver }
+				}
+				desc = swe_lappmark.6.desc_open
+			}
+			triggered_desc = {
+				desc = swe_lappmark.6.desc
+			}
+		}
+	}
 	outcome = neutral
 	historical_info = swe_lappmark.6.historical_info
 

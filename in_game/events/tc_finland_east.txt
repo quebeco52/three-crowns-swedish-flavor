@@ -84,6 +84,8 @@ swe_finland_east.2 = {
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:vyborg
+		# Not once .3 has ended the fief, if Viborg is lost and taken back
+		NOT = { dynamic_historical_event_fired = swe_finland_east.3 }
 	}
 
 	illustration_tags = {
@@ -379,6 +381,8 @@ swe_finland_east.5 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		# The sentence is ours to commute
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {

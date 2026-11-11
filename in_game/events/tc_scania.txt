@@ -173,7 +173,7 @@ swe_scania.7 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:burghers_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
