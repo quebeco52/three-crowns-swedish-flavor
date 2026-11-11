@@ -82,3 +82,179 @@ swe_denmark.1 = {
 		}
 	}
 }
+
+# The three crowns. A Swedish mark first (a frieze at Avignon, 1336; Magnus Eriksson and Albrekt), carried by the union
+# kings in the Danish arms, dropped by Frederik I and taken up again by Christian III in 1546, which Gustav Vasa read as
+# proof that the Danes' "torst ... till thette Rijke kan icke blifue läskett eller utschlächt" (Riksarkivet, Lilla
+# riksvapnet; Grinder-Hansen, "Kronborgs tre kroner", Nordic Review of Iconography 2019, pp. 17-18, citing Böttiger
+# 1895). Erik XIV answered by putting Denmark's and Norway's lions in the Swedish arms, before 1563 (Grinder-Hansen
+# pp. 18-20), and had a rhymed Low German libel on Frederik II printed in Stockholm in 1563 under a false Copenhagen
+# imprint, with a satirical distortion of the Danish arms and Frederik renamed "Fredbrech" (Gierow, Svensk Tidskrift
+# 1944, p. 621; the crowns as fool's caps is Grinder-Hansen p. 12 only, citing Bartholdy 2014, so it stays in desc).
+# His triumph through Stockholm in 1564 led Danish prisoners bound two by two and showed captured Danish colours
+# (Livrustkammaren; Grinder-Hansen pp. 15-16); Sweden later kept its Danish colours in Riddarholmskyrkan (Armémuseum,
+# AM.080102 and AM.080245, Helsingborg 1710). The quarrel helped start the war of 1563-70; Stettin (1570) left both
+# kings the crowns for the time being and banned the libels, and Knäred (1613) let both bear them with no claim on the
+# other's realm (Grinder-Hansen pp. 20-21; Lerbom, Freden i Knäred, 2013). Göran Gylta objected to Gustav Vasa's
+# rhymed reply to the Danish chronicle (1558) as serving "only to revive old enmities" (Geijer, History of the Swedes,
+# 1845, p. 139 n., citing Celsius). Denmark dropped the crowns from its royal arms by resolution of 20 December 2024,
+# published 1 January 2025 (kongehuset.dk). Notes: .research/milestones-2026-11-10/three_crowns.md.
+# A milestone for the player (AGENTS.md, "Events must actually fire"): fires once Copenhagen is held by Sweden or a
+# Swedish subject and no Danish crown is left outside the Swedish realm, so Denmark (or a Danish-formed Scandinavia) is
+# gone or our subject.
+swe_denmark.2 = {
+	type = country_event
+	title = swe_denmark.2.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					exists = scope:swe_danish_crown
+				}
+				desc = swe_denmark.2.desc_subject
+			}
+			triggered_desc = {
+				desc = swe_denmark.2.desc
+			}
+		}
+	}
+	outcome = positive
+	historical_info = swe_denmark.2.historical_info
+
+	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		capital ?= {
+			OR = {
+				region = region:scandinavian_region
+				region = region:north_german_region
+				region = region:baltic_region
+			}
+		}
+	}
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 10 # Median about seven months after Denmark falls
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		custom_tooltip = {
+			text = swe_denmark.2.kobenhavn_tt
+			location:kobenhavn.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		# An annexed country stays in the country list, so a dead Denmark must not count (tested 1337 after annex DAN).
+		# The custom_tooltip keeps country_exists from logging a warning for every country when the tooltip is built.
+		custom_tooltip = {
+			text = swe_denmark.2.no_danish_crown_tt
+			NOT = {
+				any_country = {
+					country_exists = this
+					has_or_had_tag = DAN
+					NOT = { swe_is_swedish_realm_trigger = yes }
+				}
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		ruler ?= { save_scope_as = target_character }
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		# The trigger leaves any Danish crown inside our realm, so this is our subject or a subject's
+		random_country = {
+			limit = {
+				country_exists = this
+				has_or_had_tag = DAN
+			}
+			save_scope_as = swe_danish_crown
+		}
+	}
+
+	# Erik XIV's libel of 1563
+	option = {
+		name = swe_denmark.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 40
+		}
+
+		add_prestige = prestige_extreme_bonus
+		scope:swe_danish_crown ?= {
+			add_opinion = { target = root modifier = opinion_insulted }
+			if = {
+				limit = { is_subject_of = root }
+				add_liberty_desire = liberty_desire_mild_plus
+			}
+		}
+		custom_tooltip = {
+			text = swe_denmark.2.danes_angry_tt
+			every_owned_location = {
+				limit = { dominant_culture = culture:danish }
+				every_pop = {
+					limit = { culture = culture:danish }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+
+	# Erik XIV's triumph of 1564
+	option = {
+		name = swe_denmark.2.b
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -2 }
+		add_prestige = prestige_severe_bonus
+		add_army_tradition = army_tradition_mild_bonus
+		scope:swe_danish_crown ?= {
+			add_opinion = { target = root modifier = opinion_insulted }
+		}
+		custom_tooltip = {
+			text = swe_denmark.2.danes_angry_tt
+			every_owned_location = {
+				limit = { dominant_culture = culture:danish }
+				every_pop = {
+					limit = { culture = culture:danish }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+
+	# Stettin 1570 and Knäred 1613
+	option = {
+		name = swe_denmark.2.c
+		ai_chance = {
+			base = 20
+		}
+
+		add_prestige = prestige_weak_bonus
+		scope:swe_danish_crown ?= {
+			add_opinion = { target = root modifier = opinion_pleased }
+			if = {
+				limit = { is_subject_of = root }
+				add_liberty_desire = liberty_desire_mild_minus
+			}
+		}
+		custom_tooltip = {
+			text = swe_denmark.2.c_tt
+			every_owned_location = {
+				limit = { dominant_culture = culture:danish }
+				every_pop = {
+					limit = { culture = culture:danish }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+}
