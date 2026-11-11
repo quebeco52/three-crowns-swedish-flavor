@@ -50,3 +50,12 @@
  swe_regeringsform_decision.desc.entry: "Five colleges could govern the realm from the capital."
  swe_regeringsform_decision.historical_info: "The Instrument of Government (regeringsform) of 1634, largely the work of Chancellor Axel Oxenstierna, was adopted by the Riksdag two years after Gustav II Adolf fell at Lützen, while his daughter Kristina was still a child. It organised the central government into five colleges, each headed by one of the great officers of state: Svea hovrätt under the High Steward, the War College under the Marshal, the Admiralty under the Admiral, the Chancery under the Chancellor and the Chamber College under the Treasurer. The colleges sat permanently in Stockholm, which became the fixed seat of government, and the provinces were divided into counties under governors. A Board of Trade (Kommerskollegium) followed in 1651. Kammarkollegiet and Kommerskollegium still exist as Swedish government agencies today."
  swe_regeringsform_decision.a: "Set the colleges to work."
+
+ swe_kronans_jord_law: "Kronans jord"
+ swe_kronans_jord_law_desc: "Every farm in the realm is crown land, freehold or noble land. Crown farms pay their rent to the Crown, freeholders pay tax on land they own, and noble land pays the Crown little or nothing. How the land passes between them decides how much the Crown has to live on, and how many of our [ShowPopTypeName('peasants')] answer to a lord rather than to the king."
+ swe_donationer: "Donationer"
+ swe_donationer_desc: "The Crown pays its officers, generals and creditors in land, granting them crown farms and the taxes of freeholders. It costs nothing today, and the [ShowEstateTypeName('nobles_estate')] who receive it serve us well. Every grant leaves less for the Crown in the years to come."
+ swe_reduktion: "Reduktion"
+ swe_reduktion_desc: "The Crown takes back the land it once gave away. Commissions go through the deeds of every noble family, and farms granted against the law of the realm return to the Crown. The great houses lose estates they have held for generations, and they remember who took them."
+ swe_skattekop: "Skatteköp"
+ swe_skattekop_desc: "The [ShowPopTypeName('peasants')] on crown farms may buy them and hold them as freehold, paying the Crown a price once and the land tax ever after. The [ShowEstateTypeName('peasants_estate')] welcome every farm that leaves the Crown's books for theirs. The Crown has the money, but no longer the farms."

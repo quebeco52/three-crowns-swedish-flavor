@@ -259,3 +259,79 @@ INJECT:economical_policies_law = {
 		years = 2
 	}
 }
+
+# Kronans jord: who holds the land of the realm. Every Swedish farm was crown, freehold or noble land
+# (krono, skatte, frälse). The Crown granted land and rents away in donations to pay for its wars
+# (1611-54), took them back in the Quarter Reduction of 1655 and the Great Reduction from 1680, and
+# from 1701 sold crown farms to the peasants on them as freehold (skatteköp: royal letter of 20 March
+# 1701, ordinance of 19 September 1723). After the Great Reduction each kind held about a third.
+# Sources: Högman, "The Reduction" (hhogman.se); prop. 1930:246; Carlsson in Scandia.
+# A law of its own, not policies in nobles_rights_laws, since swe_riddarhuset holds that slot and the
+# House of Nobility (1626) stood beside the reductions. Shaped like sco_clan_holdings (a tag-gated
+# law) and teu_amber_monopoly_law (one policy for each estate). Vanilla's dated reduction events
+# (flavor_swe.17, .18, .20) still fire; this is the standing choice beside them.
+# The law starts with no policy: vanilla gives its country laws one in setup or by event.
+swe_kronans_jord_law = {
+	unique = yes
+	law_category = estates
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_4_reformation
+		}
+	}
+
+	# Crown farms and rents granted to officers, generals and creditors. Between
+	# rural_nobles_authority_policy (+0.05 power, small satisfaction) and strengthen_nobles_rights_policy
+	# (+0.1 power, medium satisfaction, levy size 0.2), with half the levy for the service it bought.
+	swe_donationer = {
+		country_modifier = {
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_nobles_estate_power = 0.1
+			global_crown_estate_power = -0.05
+			nobles_estate_levy_size = 0.1
+			monthly_towards_aristocracy = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	# The Crown takes the land back. Vanilla's crown-land reversion is Portugal's por_lei_mental
+	# (-0.25 noble power, medium penalty, +0.005 monthly control); the mod never hands out control,
+	# so this takes half of absolute_rule_policy's +0.2 crown power instead, and less from the nobles.
+	swe_reduktion = {
+		country_modifier = {
+			nobles_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+			global_nobles_estate_power = -0.15
+			global_crown_estate_power = 0.1
+			monthly_towards_centralization = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+
+	# Crown tenants buy their farms as freehold, from the letter of 1701 (age 5). The peasants'
+	# mirror of swe_donationer, as teu_amber_monopoly_law's peasant policy mirrors its burgher one.
+	swe_skattekop = {
+		potential = {
+			current_age_or_later = {
+				age = age_5_absolutism
+			}
+		}
+		country_modifier = {
+			peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_peasants_estate_power = 0.1
+			global_crown_estate_power = -0.05
+			monthly_towards_free_subjects = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			peasants_estate
+		}
+		years = 2
+	}
+}
