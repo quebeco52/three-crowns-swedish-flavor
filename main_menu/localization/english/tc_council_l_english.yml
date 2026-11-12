@@ -51,3 +51,15 @@
  swe_council.4.a.entry: "The Crown appointed a royal antiquary to search out the realm's past."
  swe_council.4.b: "Leave the stones to the scholars."
  swe_council.4.b.entry: "The Crown left the old stones to the scholars."
+
+
+ swe_council.6.title: "The Bands of the Provinces"
+ swe_council.6.entry: "$swe_council.6.title$"
+ swe_council.6.desc: "The war is over, and the bands called out from the provinces are still under arms, waiting to be paid off and sent home. The captains would keep them on the rolls: one man in every ten or twenty taken for standing service, gathered province by province into companies of about five hundred, so that the next war finds them ready. The farms would be a man short every year. Or we can send them home to the harvest and hire companies again when war comes, out of the tax the farms already pay in place of service. Hired men cost more, and they serve whoever pays them."
+ swe_council.6.historical_info: "At the Riksdag of Västerås in 1544 the king was allowed to keep on the rolls the peasant bands raised in the Dacke war, then just ended, and to recruit them from then on. The countryside was divided into groups of ten to twenty men, each of which gave one man as a standing soldier, and the men of each province formed companies, fänikor, of about five hundred. Until then the Crown had relied mostly on hired companies, paid for by a tax in place of service. The men of Uppland's companies fought at Halmstad and Mared in 1563, where one company lost 265 men, at Varberg in 1565 and at Narva in 1581. Under Gustav II Adolf the companies were merged into regiments."
+ swe_council.6.a: "Keep them on the rolls."
+ swe_council.6.a.entry: "The provincial bands were kept on the rolls."
+ swe_council.6.b: "Send them home."
+ swe_council.6.b.entry: "The provincial bands went home."
+ STATIC_MODIFIER_NAME_swe_hired_companies: "Hired Companies"
+ STATIC_MODIFIER_DESC_swe_hired_companies: "The provincial bands have gone home, and the Crown pays for companies of hired foot when it needs them."

@@ -290,3 +290,89 @@ swe_norrland.6 = {
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 	}
 }
+
+# Carved saints. Haaken Gulleson, painter and workshop leader in Enånger parish, Hälsingland, worked across southern
+# Norrland in the early 16th century (Uppsala University research project; Hälsinglands museum, which says he called
+# himself a painter). He signed six sculptures (en.wiki citing Karlsson 2005, so the text says "several"), among them the
+# Anna själv tredje in Enånger's old church, dated to 1520 (Uppsala University); a signed Madonna is at Forsa (en.wiki).
+# Enånger lies on the hudiksvall/soderala border; Forsa and Njutånger lie clearly in hudiksvall. The parishes paid for
+# their church art, not the Crown, so the free option is the historical one; the levy is the Crown's alternative, sized
+# below swe_dalarna.1 (scale 4 for a mild peasant penalty). Catholic only, and the window opens before the usual
+# Reformation so it fires first. The statue sits below flavor_pol.57's altarpiece (70, a named master, -6).
+swe_norrland.7 = {
+	type = country_event
+	title = swe_norrland.7.title
+	desc = swe_norrland.7.desc
+	outcome = neutral
+	historical_info = swe_norrland.7.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1514.1.1
+		to = 1530.1.1
+		monthly_chance = 3 # Median late 1515
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:catholic
+		owns = location:hudiksvall
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_norrland.7.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:hudiksvall = {
+			create_art = {
+				quality = 60
+				type = work_of_art_type:statue
+				key = swe_anna_sjalv_tredje
+			}
+		}
+		custom_tooltip = {
+			text = swe_norrland.7.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:halsingland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
+	}
+
+	option = {
+		name = swe_norrland.7.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = 2 }
+		custom_tooltip = {
+			text = swe_norrland.7.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:halsingland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+	}
+}

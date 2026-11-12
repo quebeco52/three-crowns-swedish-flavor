@@ -8,3 +8,22 @@ swe_regeringsformen = {
 	}
 	global_max_bureaucracy_slots = 1
 }
+
+# Added for 10 years by swe_church.2 when the best pupils of the schools go to the Crown's chancery and
+# counting-house. Vanilla's talented_mufti (0.05, given for 10 years by muslim_school_events.1): a learned man
+# brought into the central government.
+swe_chancery_scholars = {
+	game_data = {
+		category = country
+	}
+	country_cabinet_efficiency = 0.05
+}
+
+# Added for 10 years by swe_council.6 option b, when the provincial bands go home and the Crown hires companies again.
+# Half of vanilla's mercenary_army_policy (0.2), the same as condottieri_contracts_policy and black_army_policy.
+swe_hired_companies = {
+	game_data = {
+		category = country
+	}
+	mercenary_maintenance_efficiency = 0.1
+}

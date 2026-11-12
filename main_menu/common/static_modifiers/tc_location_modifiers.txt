@@ -1109,3 +1109,26 @@ swe_visingsborg_county = {
 	local_nobles_estate_power = 0.25
 	local_crown_estate_power = -0.25
 }
+
+# Added for 20 years by swe_church.2 to our towns and cities in Svealand, Götaland, Norrland and Finland, when the
+# parishes' old dues are turned to the town schools. The literacy growth of vanilla's studium_privileges town right
+# (0.05), as swe_gymnasium_wiburgense, and half the university's cap for burghers (10): the town schools taught
+# burghers' sons. Pops sit at their caps for most of the game, so without the cap the modifier would often show nothing.
+swe_stadsskola = {
+	game_data = {
+		category = location
+	}
+	local_monthly_literacy = 0.05
+	local_burghers_max_literacy = 5
+}
+
+# Added to kalmar for 50 years by swe_gotaland.17 option b: Dominicus Pahr's plans of 1579 and 1584 to fortify the old
+# town in the Italian manner (NDB). The fort defence and length of vanilla's local_fortress (0.1, 50 years), which
+# random_event.74 gives a fort when a fortification expert turns up. Needs a fort; Kalmar has a castle from 1337. Usually
+# ends before swe_kvarnholmen (0.2) arrives with the move to the island.
+swe_kalmar_bastions = {
+	game_data = {
+		category = location
+	}
+	local_defensive = 0.1
+}

@@ -214,3 +214,17 @@
  swe_gotaland.16.a.entry: "The count was given the county of Visingsborg."
  swe_gotaland.16.b: "The title is enough."
  swe_gotaland.16.b.entry: "The count was left without a county."
+
+ swe_gyllene_salen: "Gyllene salen"
+ swe_gyllene_salen_desc: "A hall in Kalmar castle under a coffered ceiling of painted and gilded wood, made by Italian builders for the Swedish crown."
+ STATIC_MODIFIER_NAME_swe_kalmar_bastions: "Kalmar's Bastions"
+ STATIC_MODIFIER_DESC_swe_kalmar_bastions: "Earthworks and bastions in the Italian manner ring the old town below the castle."
+
+ swe_gotaland.17.title: "Masters from Milan"
+ swe_gotaland.17.entry: "$swe_gotaland.17.title$"
+ swe_gotaland.17.desc: "A family of builders of Italian stock, who learned their trade in the service of German dukes, has come north at our invitation. They could turn the old rooms of the castle at [ShowLocationName('kalmar')] into halls fit to receive kings, with painted and gilded ceilings, inlaid panelling and a canopied well in the courtyard. Or they could give the town walls in the new Italian manner, with bastions that guns cannot simply batter down, since Kalmar is where an enemy from the south would strike first. A gilded ceiling has never kept out an army, and a bastion has never impressed an envoy."
+ swe_gotaland.17.historical_info: "Johan III brought the Pahr family to Sweden in 1572-73. They were of North Italian stock, the father from Milan, and had worked in Silesia and Mecklenburg. From 1575 Dominicus Pahr led the work at Borgholm and Kalmar as the king's castle builder, and he is credited with the ceilings and interiors of Kalmar's green and golden halls, the inner portal and the canopy over the well. The Golden Hall still has its coffered ceiling and much of its original paint. He also put forward plans to fortify the town of Kalmar in 1579 and 1584, and the family's Italian bastions were used at Kalmar, Borgholm and Viborg. On Öland, Johan pulled down most of the medieval castle at Borgholm for a Renaissance palace, built from 1572 to 1592, which was never finished and was damaged in the Kalmar War of 1611-13. Dominicus Pahr died of plague at Borgholm in 1602."
+ swe_gotaland.17.a: "Gild the halls."
+ swe_gotaland.17.a.entry: "Kalmar castle was given halls in the Italian manner."
+ swe_gotaland.17.b: "Wall the town."
+ swe_gotaland.17.b.entry: "Kalmar was given new bastions."

@@ -1,7 +1,7 @@
 ﻿namespace = swe_council
 
 # Government and justice. .1 concerns the German half of the town councils (swe_tyska_radet), from game start to
-# swe_svenska_radman_decision.
+# swe_svenska_radman_decision. .5 was removed (the Nobles' Charter), so .6 keeps its ID.
 
 # The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
 # Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
@@ -275,5 +275,70 @@ swe_council.4 = {
 		}
 
 		unlock_policy_effect = { type = swe_goticism }
+	}
+}
+
+# Landskapens fänikor. At the Riksdag of Västerås in 1544 Gustav Vasa was allowed to keep on the rolls the peasant
+# bands raised in the Dacke war and to recruit them from then on; one man in every ten to twenty was taken as a
+# standing knekt, and the men of each province formed fänikor of about 500 (Söderberg, Årsboken Uppland 1944; Högman,
+# citing Ericson 1997, gives the same 1544 decree; the Dacke war link is Söderberg's alone). Before this the Crown hired
+# companies paid by a tax in lieu of service (Neuding Skoog 2018). Fires in the first years of peace after a war from
+# 1542 until vanilla's allotment system arrives in 1637, not at the Riksdag itself, which swe_vasa.3 covers;
+# months_since_war as in flavor_dan.1. Both options unlock the policy, as swe_council.4 does. Option b's companies get
+# half of mercenary_army_policy's upkeep cut for 10 years.
+swe_council.6 = {
+	type = country_event
+	title = swe_council.6.title
+	desc = swe_council.6.desc
+	outcome = neutral
+	historical_info = swe_council.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1542.1.1
+		to = 1637.1.1
+		monthly_chance = 3 # Median about two years into the first peace from 1542
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_law = recruitment_law
+		at_war = no
+		months_since_war <= 36
+	}
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		unlock_policy_effect = { type = swe_landskapsfanikor }
+		add_policy = policy:swe_landskapsfanikor
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_council.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		unlock_policy_effect = { type = swe_landskapsfanikor }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+		add_country_modifier = { modifier = swe_hired_companies years = 10 }
 	}
 }

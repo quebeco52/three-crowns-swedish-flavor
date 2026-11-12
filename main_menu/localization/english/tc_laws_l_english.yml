@@ -75,3 +75,7 @@
  swe_reduktion_desc: "The Crown takes back the land it once gave away. Commissions go through the deeds of every noble family, and farms granted against the law of the realm return to the Crown. The great houses lose estates they have held for generations, and they remember who took them."
  swe_skattekop: "Skatteköp"
  swe_skattekop_desc: "The [ShowPopTypeName('peasants')] on crown farms may buy them and hold them as freehold, paying the Crown a price once and the land tax ever after. The [ShowEstateTypeName('peasants_estate')] welcome every farm that leaves the Crown's books for theirs. The Crown has the money, but no longer the farms."
+ swe_sekreterare: "Sekreterarregementet"
+ swe_sekreterare_desc: "Our chancellor is a great lord, but the Crown's letters are drafted, its envoys briefed and its business prepared by secretaries of humble birth who answer to the Crown alone. The lords of the council complain that they hear of our decisions last."
+ swe_landskapsfanikor: "Landskapens fänikor"
+ swe_landskapsfanikor_desc: "Every ten or twenty men of the countryside give one to standing service, and the men of each province march under their own captain in a company of about five hundred. The next war finds them mustered and drilled, and the farms a man short every year."

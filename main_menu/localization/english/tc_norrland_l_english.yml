@@ -75,3 +75,17 @@
  swe_norrland.6.a.entry: "Flax barns spread across Hälsingland."
  swe_norrland.6.b: "Back the manufactory."
  swe_norrland.6.b.entry: "The Crown backed a linen manufactory at Flor."
+
+ swe_anna_sjalv_tredje: "Anna själv tredje"
+ swe_anna_sjalv_tredje_desc: "A carved group of Saint Anne with the Virgin and the Child in a Hälsingland church, signed by a local master who called himself a painter."
+
+ swe_norrland.7.title: "Carved Saints"
+ swe_norrland.7.entry: "$swe_norrland.7.title$"
+ swe_norrland.7.desc: "The parishes of [ShowProvinceDefinitionName('halsingland_province')] have been filling their churches with carved and painted saints from a workshop of their own, whose master signs his work and calls himself a painter. A group of Saint Anne with the Virgin and the Child is nearly ready for a church south of [ShowLocationName('hudiksvall')], and the farmers are paying for it in silver. A parish that can pay for a gilded saint can pay a heavier tax."
+ swe_norrland.7.historical_info: "Haaken Gulleson lived in Enånger parish in Hälsingland and led a workshop that carved and painted for churches across southern Norrland in the early 16th century. He signed several of his sculptures and called himself a painter, though he was long taken for a sculptor alone. His group of Saint Anne with the Virgin and the Child in Enånger's old church is dated to 1520, and a signed Madonna stands at Forsa. Why some Norrland parishes gathered so much sculpture, and how local workshops like his stood beside the altarpieces imported from Flanders, Lübeck and Tallinn, is still being researched."
+ swe_norrland.7.a: "Let them have their saints."
+ swe_norrland.7.a.entry: "The parishes of Hälsingland kept their silver for their churches."
+ swe_norrland.7.a_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] gain 5% [pop_satisfaction|e]."
+ swe_norrland.7.b: "Tax them instead."
+ swe_norrland.7.b.entry: "The Crown took a heavier tax from the parishes of Hälsingland."
+ swe_norrland.7.b_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('halsingland_province')] lose 5% [pop_satisfaction|e]."

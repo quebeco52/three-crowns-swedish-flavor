@@ -107,6 +107,17 @@ swe_written_work_trigger = {
 	}
 }
 
+# The old realm: Sweden proper and Finland, roughly the dioceses of the Swedish church. Kastelholm on Åland lies in
+# svealand_area; Jämtland, Skåneland and Kexholm are left out (swe_church.2).
+swe_old_realm_trigger = {
+	OR = {
+		area = area:svealand_area
+		area = area:gotaland_area
+		area = area:norrland_area
+		area = area:finland_area
+	}
+}
+
 # A castle of the old realm: a fort in Sweden proper or Finland, where Gustav Vasa set up the Crown's own farms
 # (swe_council.3). Kastelholm on Åland lies in svealand_area; Jämtland, Skåneland and Kexholm are left out.
 swe_crown_castle_trigger = {

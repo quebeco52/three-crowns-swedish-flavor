@@ -214,6 +214,66 @@ INJECT:cultural_traditions_law = {
 	}
 }
 
+INJECT:cabinet_laws = {
+
+	# Sekreterarregementet: Gustav I ran his chancery himself with Swedish and German secretaries, and from the regiment
+	# of 1539-40 (SBL Conrad von Pyhy) his sons kept high-noble chancellors in name but took advice from the chancery's
+	# secretaries of non-noble birth (Asker, Hur riket styrdes, 2007, p. 80; Nilsson, Scandia 1937). Gustav II Adolf's
+	# assurance of 1611 ended it. Open from the Age of Reformation, when the regiment began.
+	# The secular twin of administrative_clergy_policy, the only vanilla cabinet policy with cabinet efficiency: clerks of
+	# low birth do the realm's paperwork instead of priests. Its numbers (cabinet efficiency 0.1, political influence 0.05,
+	# its estate's small satisfaction), with the burghers in the clergy's place, centralization at minor speed in place of
+	# traditionalist, and the lords' grievance as nobles_of_the_robe_policy's small satisfaction turned round.
+	swe_sekreterare = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			government_type = government_type:monarchy
+			current_age_or_later = {
+				age = age_4_reformation
+			}
+		}
+		country_modifier = {
+			country_cabinet_efficiency = 0.1
+			monthly_political_influence_gain_modifier = 0.05
+			burghers_estate_target_satisfaction = small_permanent_target_satisfaction
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction_penalty
+			monthly_towards_centralization = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+			burghers_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:recruitment_law = {
+
+	# Landskapens fänikor (swe_council.6): at the Riksdag of Västerås in 1544 the Crown was allowed to keep the
+	# peasant bands of the Dacke war on the rolls and recruit them from then on; one man in every ten to twenty
+	# was taken as a standing knekt, and the men of each province formed fänikor of about 500 (Söderberg,
+	# Årsboken Uppland 1944). Vanilla bars Swedes and Finns from early_standing_army_policy and gives them
+	# allotment_system_policy from the Age of Absolutism, so this fills the century between; allotment (0.25)
+	# supersedes it in the same law. Shaped like reformed_hussite_armies_policy (event-unlocked, manpower 0.1
+	# and one value move), at minor speed; the crown alone prefers it, as the peasants bore the levy.
+	swe_landskapsfanikor = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_landskapsfanikor }
+		}
+		country_modifier = {
+			global_manpower_modifier = 0.1
+			monthly_towards_quantity = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+}
+
 # The colleges of the Instrument of Government are bureaucracies (tc_bureaucracies.txt), not
 # policies; Bergskollegium stays in the mining law above, as its effect is limited to the mines.
 

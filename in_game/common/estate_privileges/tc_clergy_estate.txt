@@ -1,5 +1,6 @@
 ﻿# Uppsala mötes beslut: the Uppsala Synod of 1593 bound the Swedish church to the Augsburg
-# Confession and every future king to uphold it. Granted through swe_church.1.
+# Confession and every future king to uphold it. Granted through swe_church.1. Tiers below: Kyrkolagen
+# (swe_kyrkolagen_decision) and Uppsala's charter (swe_svealand.5).
 # Balanced against clergy_enforced_unity (+0.25 clergy power, +10% conversion of all faiths):
 # less power, and the conversion bonus only works on heretics (same as Castile's advance).
 swe_uppsala_mote = {
@@ -39,5 +40,19 @@ swe_uppsala_mote = {
 		global_soldiers_max_literacy = 3
 		global_laborers_max_literacy = 3
 		monthly_towards_spiritualist = societal_value_tiny_monthly_move
+	}
+
+	# Uppsala's charter (swe_svealand.5): the privileges of 15 March 1595 had the university examine schoolmasters and
+	# keep every school to the same plan, and Sigismund's confirmation of the clergy's privileges in 1594 had bound the
+	# Crown to keep the university (Annerstedt 1877, 88-90). Half of clerical_institutions' clergy +10, lower for the
+	# same reason as Kyrkolagen's: no policy slot, and it stacks. Clergy only; the burghers' schools are swe_church.2's.
+	country_modifier = {
+		potential_trigger = {
+			custom_tooltip = {
+				text = swe_uppsala_charter_country_bonus
+				has_variable = swe_uppsala_charter
+			}
+		}
+		global_clergy_max_literacy = 5
 	}
 }

@@ -1148,3 +1148,77 @@ swe_gotaland.16 = {
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_penalty }
 	}
 }
+
+# Johan III's Italian builders. The Pahr family was of North Italian origin, the father Jacob from Milan (SBL, Franciscus
+# Pahr, Ångström), and was summoned to Sweden from the Mecklenburg courts in 1572-73 (SBL; NDB, Dominicus Pahr, Baier
+# 2001). Dominicus Pahr led the work at Borgholm and Kalmar on his own as the king's castle builder from 1575 to 1580,
+# designed the ceilings and interiors of the "green" and "golden" halls, the inner portal and the well canopy, and put
+# forward plans to fortify the town of Kalmar in 1579 and 1584 (NDB, the only source for these). The Golden Hall's coffered
+# ceiling keeps much of its original paint (kalmarslott.se), and the family's Italian fortification was applied at Kalmar
+# town, Borgholm and Viborg (SBL). Not tied to Johan: any monarch from 1570. The hall is a palace-type work, as vanilla's
+# vladislav_hall (flavor_BOH.txt); the Hofburg (flavor_hab.47: -8, quality 80, prestige and legitimacy mild) scaled down to
+# a provincial castle. The walls are random_event.74's local_fortress (0.1 for 50 years), paid for.
+swe_gotaland.17 = {
+	type = country_event
+	title = swe_gotaland.17.title
+	desc = swe_gotaland.17.desc
+	outcome = neutral
+	historical_info = swe_gotaland.17.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1570.1.1
+		to = 1600.1.1
+		monthly_chance = 3 # Median late 1571
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		owns = location:kalmar
+		# Fort defence needs a fort; Kalmar has a castle from 1337
+		location:kalmar = { has_fort = yes }
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:burghers_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_gotaland.17.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		change_gold_effect = { scale = -6 }
+		location:kalmar = {
+			create_art = {
+				quality = 75
+				type = work_of_art_type:palace
+				key = swe_gyllene_salen
+			}
+		}
+		add_prestige = prestige_weak_bonus
+	}
+
+	option = {
+		name = swe_gotaland.17.b
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -3 }
+		location:kalmar = {
+			add_location_modifier = { modifier = swe_kalmar_bastions years = 50 }
+		}
+	}
+}
