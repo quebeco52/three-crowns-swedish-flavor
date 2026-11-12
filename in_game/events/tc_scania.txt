@@ -218,3 +218,95 @@ swe_scania.7 = {
 		}
 	}
 }
+
+# The Scanian homage. Magnus Eriksson took Skåne in pawn from the counts of Holstein in 1332 for 34,000 marks of silver
+# (SBL, Kumlien). In November 1339 he granted the Duke of Mecklenburg the revenues of Skanör and Falsterbo as security for
+# money he owed him, and in the summer of 1340 the Scanians swore fealty and had their privileges confirmed (SBL, single
+# source for the oath and the pledge): the letter is dated Helsingborg, 28 June 1340 (Kroman, Den danske rigslovgivning
+# indtil 1400, no. 24). Bengt Algotsson as governor of Skåne is disputed (Nordberg 1995), so option c rests on the
+# letter's "prefectus noster" instead. Fires while the fiefdom SKE is ours, so not after vanilla's flavor_dan_skane_war
+# gives Skåne to the Danish king. Every effect is a country-level one on SKE, which shares our ruler. The numbers follow
+# vanilla's subject levers: a celestial governor's loyalty and tribute (20_middle_kingdom), six months of the subject's
+# income (subject_interaction_events.2) and half of demand_additional_tribute, which vanilla allows only on tributaries.
+swe_scania.8 = {
+	type = country_event
+	title = swe_scania.8.title
+	desc = swe_scania.8.desc
+	outcome = neutral
+	historical_info = swe_scania.8.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1338.1.1
+		to = 1360.12.31
+		monthly_chance = 3 # Median about 1340
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		c:SKE ?= { is_subject_of = root }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+		c:SKE = { save_scope_as = swe_scania }
+	}
+
+	# Confirm the liberties they held under the Danish kings, as at Helsingborg in 1340
+	option = {
+		name = swe_scania.8.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		scope:swe_scania = {
+			add_opinion = { target = root modifier = opinion_granted_country_privileges }
+			add_country_modifier = { modifier = swe_scanian_privileges years = 20 }
+		}
+	}
+
+	# Pledge the dues of Skanör and Falsterbo, as to the Duke of Mecklenburg in 1339
+	option = {
+		name = swe_scania.8.b
+		ai_chance = {
+			base = 25
+		}
+
+		add_gold = {
+			value = scope:swe_scania.monthly_income_trade_and_tax
+			multiply = 6
+		}
+		scope:swe_scania = {
+			add_country_modifier = { modifier = swe_scanian_pledge years = 10 }
+		}
+		c:MKL ?= {
+			if = {
+				limit = { country_exists = this }
+				add_opinion = { target = root modifier = opinion_pleased }
+			}
+		}
+	}
+
+	# Leave the charters unconfirmed and let our governor rule
+	option = {
+		name = swe_scania.8.c
+		ai_chance = {
+			base = 15
+		}
+
+		scope:swe_scania = {
+			add_country_modifier = { modifier = swe_scanian_governor years = 10 }
+			add_liberty_desire = liberty_desire_mild_plus
+			add_opinion = { target = root modifier = swe_scanian_governor_resented }
+		}
+	}
+}

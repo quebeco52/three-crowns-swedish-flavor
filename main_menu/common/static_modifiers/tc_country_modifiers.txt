@@ -27,3 +27,31 @@ swe_hired_companies = {
 	}
 	mercenary_maintenance_efficiency = 0.1
 }
+
+# On SKE for 20 years after swe_scania.8.a, when the Crown confirms the Scanian privileges. Vanilla's pair for a
+# celestial governor (20_middle_kingdom.txt:74-75): loyalty 10, a tenth less tribute.
+swe_scanian_privileges = {
+	game_data = {
+		category = country
+	}
+	loyalty_to_overlord = 10
+	payment_to_overlord_modifier = -0.1
+}
+
+# On SKE for 10 years after swe_scania.8.b, while the dues of Skanör and Falsterbo go to the Crown's creditor.
+# The mirror of vanilla's additional_tribute (+0.25 for 10 years); the gold paid out equals it at a 20% payment rate.
+swe_scanian_pledge = {
+	game_data = {
+		category = country
+	}
+	payment_to_overlord_modifier = -0.25
+}
+
+# On SKE for 10 years after swe_scania.8.c, when the Crown's governor rules without confirming the privileges.
+# Half of vanilla's demand_additional_tribute (+0.25, liberty desire 20, opinion -50); the 0.1 is 20_middle_kingdom.txt:997.
+swe_scanian_governor = {
+	game_data = {
+		category = country
+	}
+	payment_to_overlord_modifier = 0.1
+}
