@@ -600,9 +600,9 @@ swe_stockholm_palace_decision = {
 }
 
 # Regeringsformen: the Instrument of Government of 1634 put the realm under five colleges, each led by one
-# of the great officers of the realm. Unlocks and adopts swe_kammarkollegium in the bureaucracy law, like
-# swe_bergskollegium_decision, and unlocks swe_amiralitetskollegium and swe_kommerskollegium, which wait
-# for their vanilla laws in the age of absolutism. No War College: vanilla's army laws cover it.
+# of the great officers of the realm. Opens the Swedish colleges (tc_bureaucracies.txt) through the
+# swe_regeringsform variable, grants one bureaucracy slot (swe_regeringsformen, like Spain's
+# system_of_councils_reform) and installs Kammarkollegium in it, as the old policy was adopted.
 # Svea hovrätt, the first of the five, is left to vanilla's court_of_appeals (flavor_swe.15). That event adopts
 # the policy itself, in the same law as swe_landslag, so the Rikes lag tier lapses until the player
 # switches back; accepted as it is.
@@ -617,12 +617,17 @@ swe_regeringsform_decision = {
 		current_age_or_later = {
 			age = age_4_reformation
 		}
-		NOT = { has_unlocked_policy_trigger = { type = swe_kammarkollegium } }
+		NOT = { has_variable = swe_regeringsform }
 	}
 
 	allow = {
 		owns = location:stockholm
 		has_advance = bureaucracy_law_advance
+		# The generic gate for any bureaucracy, which the colleges share
+		OR = {
+			has_embraced_institution = institution:confessionalism
+			has_advance = generic_bureaucracy_4_advance
+		}
 		modifier:has_a_parliamentary_system = yes
 		capital = { has_building_with_at_least_one_level = supreme_court }
 	}
@@ -642,10 +647,13 @@ swe_regeringsform_decision = {
 		name = swe_regeringsform_decision.a
 		ai_chance = { value = 100 }
 		effect = {
-			unlock_policy_effect = { type = swe_kammarkollegium }
-			add_policy = policy:swe_kammarkollegium
-			unlock_policy_effect = { type = swe_amiralitetskollegium }
-			unlock_policy_effect = { type = swe_kommerskollegium }
+			set_variable = swe_regeringsform
+			add_country_modifier = {
+				modifier = swe_regeringsformen
+				years = -1
+			}
+			add_bureaucracy = bureaucracy_type:swe_kammarkollegium_bureaucracy
+			custom_tooltip = swe_regeringsform_decision.a_tt
 			# The great officers of the realm and the high nobility filled the colleges
 			add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
 		}

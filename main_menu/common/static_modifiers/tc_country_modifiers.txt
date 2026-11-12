@@ -1,0 +1,10 @@
+﻿# Country modifiers, each commented with where it's used and the vanilla modifier it's scaled from.
+
+# Added for good by swe_regeringsform_decision: room for one more college. The same single slot as
+# D009's system_of_councils_reform gives Spain for its councils, and the generic age-4 and age-6 advances.
+swe_regeringsformen = {
+	game_data = {
+		category = country
+	}
+	global_max_bureaucracy_slots = 1
+}

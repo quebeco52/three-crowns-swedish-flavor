@@ -186,79 +186,8 @@ INJECT:press_law = {
 	}
 }
 
-# The colleges of the Instrument of Government (swe_regeringsform_decision). The decision adopts
-# Kammarkollegium and unlocks the other two, which wait for their vanilla laws.
-
-INJECT:bureaucracy_law = {
-
-	# Kammarkollegium: the Chamber College kept the accounts of every crown revenue, and the
-	# Instrument of Government of 1634 made it one of the five colleges of the realm.
-	# Balanced against rentekammer_policy (Denmark's treasury: full centralization move, medium tax
-	# efficiency): half the centralization, plus central_councils' cabinet efficiency for the college system.
-	swe_kammarkollegium = {
-		unique = yes
-		potential = {
-			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_kammarkollegium }
-		}
-		country_modifier = {
-			tax_income_efficiency = medium_tax_income_efficiency_bonus
-			monthly_towards_centralization = societal_value_minor_monthly_move
-			country_cabinet_efficiency = 0.05
-		}
-		estate_preferences = {
-			crown_estate
-		}
-		years = 2
-	}
-}
-
-INJECT:naval_doctrine_law = {
-
-	# Amiralitetskollegium: the Admiralty College ran the fleet and its yards, and carried the
-	# armies across the Baltic to Germany and the eastern provinces.
-	# Balanced against danish_admirality (+0.05 navy tradition): the same tradition, plus part of
-	# portuguese_marines' disembark speed (0.33). Crown, like fleet_in_being: it was the king's fleet.
-	swe_amiralitetskollegium = {
-		unique = yes
-		potential = {
-			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_amiralitetskollegium }
-		}
-		country_modifier = {
-			monthly_navy_tradition = 0.05
-			army_disembark_speed = 0.15
-		}
-		estate_preferences = {
-			crown_estate
-		}
-		years = 2
-	}
-}
-
-INJECT:economical_policies_law = {
-
-	# Kommerskollegium: the Board of Trade of 1651 granted the towns their staple rights, set the
-	# tolls and oversaw the trading companies.
-	# Balanced against cameralism_policy (the same tariff and subventions, plus legislative efficiency,
-	# migration and two value moves) and act_of_navigation (the move towards mercantilism).
-	swe_kommerskollegium = {
-		unique = yes
-		potential = {
-			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_kommerskollegium }
-		}
-		country_modifier = {
-			max_tariff = 0.1
-			max_trade_subventions = 0.1
-			monthly_towards_mercantilism = societal_value_monthly_move
-		}
-		estate_preferences = {
-			burghers_estate
-		}
-		years = 2
-	}
-}
+# The colleges of the Instrument of Government are bureaucracies (tc_bureaucracies.txt), not
+# policies; Bergskollegium stays in the mining law above, as its effect is limited to the mines.
 
 # Kronans jord: who holds the land of the realm. Every Swedish farm was crown, freehold or noble land
 # (krono, skatte, frälse). The Crown granted land and rents away in donations to pay for its wars
