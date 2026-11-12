@@ -1,0 +1,31 @@
+﻿# Impact modifier types the engine asks for each bureaucracy (<key>_impact_modifier), as vanilla's
+# 02_generic_bureaucracies.txt and D009's 03_d009.txt define for theirs. The colleges are in
+# in_game/common/bureaucracies/tc_bureaucracies.txt.
+
+swe_kammarkollegium_bureaucracy_impact_modifier = {
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+swe_krigskollegium_bureaucracy_impact_modifier = {
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+swe_amiralitetskollegium_bureaucracy_impact_modifier = {
+	percent = yes
+	game_data = {
+		category = country
+	}
+}
+
+swe_kommerskollegium_bureaucracy_impact_modifier = {
+	percent = yes
+	game_data = {
+		category = country
+	}
+}

@@ -76,52 +76,65 @@ swe_towns.1 = {
 		}
 		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta)
 		# The trigger only needs one of the four, so each move checks its own town. Per month, so 0.48 from each at most.
-		# A rural source has no burghers to give, and a town usually holds only one to four.
+		# A rural source has no burghers to give, and a town usually holds only one to four. They move only once Helsinge
+		# is a town or city: in a test (2026-11-11) burghers sent to it while rural kept only the last month's 0.02 of 0.24.
 		if = {
-			limit = { owns = location:ekenas }
-			add_migration = {
-				owner = this
-				from_location = location:ekenas
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
+			limit = {
+				location:helsinge = { NOT = { location_rank = location_rank:rural_settlement } }
+			}
+			if = {
+				limit = { owns = location:ekenas }
+				add_migration = {
+					owner = this
+					from_location = location:ekenas
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
+			}
+			if = {
+				limit = { owns = location:porvoo }
+				add_migration = {
+					owner = this
+					from_location = location:porvoo
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
+			}
+			if = {
+				limit = { owns = location:raumo }
+				add_migration = {
+					owner = this
+					from_location = location:raumo
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
+			}
+			if = {
+				limit = { owns = location:bjorneborg }
+				add_migration = {
+					owner = this
+					from_location = location:bjorneborg
+					to_location = location:helsinge
+					type = pop_type:burghers
+					amount = 0.02
+					months = 24
+				}
 			}
 		}
-		if = {
-			limit = { owns = location:porvoo }
-			add_migration = {
-				owner = this
-				from_location = location:porvoo
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
-			}
+		# The anger stays with the burghers ordered to move, in place of a country-wide estate penalty
+		custom_tooltip = {
+			text = swe_towns.1.a_tt
+			swe_pop_satisfaction_in = { location = location:ekenas type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:porvoo type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:raumo type = burghers value = pop_satisfaction_severe_penalty }
+			swe_pop_satisfaction_in = { location = location:bjorneborg type = burghers value = pop_satisfaction_severe_penalty }
 		}
-		if = {
-			limit = { owns = location:raumo }
-			add_migration = {
-				owner = this
-				from_location = location:raumo
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
-			}
-		}
-		if = {
-			limit = { owns = location:bjorneborg }
-			add_migration = {
-				owner = this
-				from_location = location:bjorneborg
-				to_location = location:helsinge
-				type = pop_type:burghers
-				amount = 0.02
-				months = 24
-			}
-		}
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_severe_penalty }
 	}
 
 	option = {
@@ -130,7 +143,13 @@ swe_towns.1 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_towns.1.b_tt
+			swe_pop_satisfaction_in = { location = location:ekenas type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:porvoo type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:raumo type = burghers value = pop_satisfaction_weak_bonus }
+			swe_pop_satisfaction_in = { location = location:bjorneborg type = burghers value = pop_satisfaction_weak_bonus }
+		}
 	}
 }
 
@@ -377,11 +396,24 @@ swe_towns.4 = {
 }
 
 # Bogesund renames itself Ulricehamn (1741) in honour of Queen Ulrika Eleonora, hoping to win
-# back the cattle trade rights it had lost. A rename only, so no development or gold.
+# back the cattle trade rights it had lost. A rename only, so no development or gold. The description names Borås
+# as the rival only where swe_towns.8 founded it.
 swe_towns.5 = {
 	type = country_event
 	title = swe_towns.5.title
-	desc = swe_towns.5.desc
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_variable = swe_boras_founded
+				}
+				desc = swe_towns.5.desc
+			}
+			triggered_desc = {
+				desc = swe_towns.5.desc_alone
+			}
+		}
+	}
 	outcome = neutral
 	historical_info = swe_towns.5.historical_info
 
@@ -538,5 +570,131 @@ swe_towns.7 = {
 			base = 25
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# Borås, 1620-22. In the spring of 1620 the district sent representatives to Gustav II Adolf to complain of how the
+# neighbouring towns treated its peddlers, whose goods had paid customs nowhere. He told them to stop trading by
+# midsummer or found a town. It was laid out round the parish church of Torpa: provisional privileges 29 June 1621,
+# the king's charter 25 May 1622, and from 1624 the right to trade anywhere once the goods had paid customs in Borås
+# (sv.wiki Borås, citing Millqvist 1991 and the town's own history page; the Borås chronologies give the same account).
+# Borås lies where skene, allingsas and bogesund meet on the map. skene takes the name, since swe_gotaland.4 already
+# uses it for the peddlers' district. This follows that event but doesn't need it: option a replaces swe_knallar on
+# skene with swe_boras_privileges for 20 years and a market, and option b is swe_gotaland.4.b once more, with a market
+# for Skara, where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide
+# estate penalty. Option a costs 4 gold, as swe_towns.1 does: the other foundings pay 2 for the name, development and
+# prosperity, and this one brings a market and a modifier besides. swe_boras_founded picks swe_towns.5's text.
+swe_towns.8 = {
+	type = country_event
+	title = swe_towns.8.title
+	desc = swe_towns.8.desc
+	outcome = neutral
+	historical_info = swe_towns.8.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1619.6.1
+		to = 1700.1.1
+		monthly_chance = 3 # Median spring 1621
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:skene
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:burghers_estate }
+	}
+
+	option = {
+		name = swe_towns.8.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -4 }
+		location:skene = {
+			rename_location = boras
+			if = {
+				limit = { has_location_modifier = swe_knallar }
+				remove_location_modifier = swe_knallar
+			}
+			if = {
+				limit = { has_location_modifier = swe_town_monopoly_enforced }
+				remove_location_modifier = swe_town_monopoly_enforced
+			}
+			add_location_modifier = { modifier = swe_boras_privileges years = 20 }
+			swe_grant_market = yes
+			change_development = development_mild_bonus
+			change_prosperity = prosperity_mild_bonus
+		}
+		custom_tooltip = {
+			text = swe_towns.8.a_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vastergotland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_penalty
+				}
+			}
+		}
+		set_variable = swe_boras_founded
+	}
+
+	option = {
+		name = swe_towns.8.b
+		ai_chance = {
+			base = 25
+		}
+
+		location:skene = {
+			if = {
+				limit = { has_location_modifier = swe_knallar }
+				remove_location_modifier = swe_knallar
+			}
+			if = {
+				limit = { NOT = { has_location_modifier = swe_town_monopoly_enforced } }
+				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
+			}
+		}
+		location:bogesund = {
+			if = {
+				limit = { owner ?= root }
+				if = {
+					limit = { has_location_modifier = swe_knallar }
+					remove_location_modifier = swe_knallar
+				}
+				if = {
+					limit = { NOT = { has_location_modifier = swe_town_monopoly_enforced } }
+					add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
+				}
+			}
+		}
+		# The peddlers' trade goes to the chartered town, Skara, the only town in the province at the start
+		location:skara = {
+			if = {
+				limit = { owner ?= root }
+				swe_grant_market = yes
+			}
+		}
+		custom_tooltip = {
+			text = swe_towns.8.b_tt
+			every_owned_location = {
+				limit = { province_definition = province_definition:vastergotland_province }
+				every_pop = {
+					limit = { pop_type = pop_type:burghers }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
 	}
 }

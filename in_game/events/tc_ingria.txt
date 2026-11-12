@@ -9,7 +9,20 @@
 swe_ingria.1 = {
 	type = country_event
 	title = swe_ingria.1.title
-	desc = swe_ingria.1.desc
+	desc = {
+		first_valid = {
+			# swe_orthodox_exodus sends settlers only from a Savolax we own
+			triggered_desc = {
+				trigger = {
+					any_owned_location = { province_definition = province_definition:savolax_province }
+				}
+				desc = swe_ingria.1.desc_savolax
+			}
+			triggered_desc = {
+				desc = swe_ingria.1.desc
+			}
+		}
+	}
 	outcome = neutral
 	historical_info = swe_ingria.1.historical_info
 
@@ -64,6 +77,8 @@ swe_ingria.1 = {
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
 		# The lords who held estates in Ingria lost the peasants who left
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_mild_penalty }
+		# The size D009's flavor_gra.7 uses for re-converting Córdoba
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_minor_move_to_left }
 	}
 
 	option = {
@@ -74,5 +89,6 @@ swe_ingria.1 = {
 
 		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+		change_societal_value = { type = spiritualist_vs_humanist value = societal_value_minor_move_to_right }
 	}
 }

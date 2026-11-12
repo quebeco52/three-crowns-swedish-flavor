@@ -42,6 +42,7 @@ swe_ostergotland.1 = {
 		has_or_had_tag = SWE
 		religion = religion:catholic
 		owns = location:vadstena
+		NOT = { has_variable = swe_vadstena_kept_by_crown } # swe_ostergotland.2.b: Birgitta's house never came to Vadstena
 	}
 
 	illustration_tags = {
@@ -51,7 +52,7 @@ swe_ostergotland.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -76,5 +77,114 @@ swe_ostergotland.1 = {
 		}
 
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# The Bridgettine order founded at Vadstena, about 1370. Magnus Eriksson and Blanka promised their manor at Vadstena to
+# Birgitta's monastery in their Swedish testament of 1346 (Berglund, Uppsala University Press; SKBL; Magnus also wished
+# to be buried there, Gillingstam in Scandia, citing DS 5 no. 4069). Rebuilding began in the late 1360s, and Urban V's
+# bull of 5 August 1370 (Montefiascone) approved the rule and noted a monastery already rising at the manor (Berglund,
+# citing SDHK 9751; UiO Birgitta database). The founding was Birgitta's and the approval Rome's; the Crown's act was
+# letting the gift stand, which option a does. found_religious_order has no live vanilla use (tested by console
+# 2026-11-12: it makes a working "Order of Vadstena"); the monastic type's founding-location check reads
+# owner ?= scope:actor, so root saves it. A location has no religious_order link, so the new order is found with
+# random_religious_order_in_location. Zeal 50 is the neutral point of vanilla's invite and expel AI; recent_order_service
+# is what vanilla sets after every order action (+6 zeal target for five years). The order loses Vadstena when Sweden
+# leaves the Catholic faith, and lives on only where other realms have invited it. Option b copies vanilla's refusal of
+# a new order holding (religious_orders.2.c), and sets swe_vadstena_kept_by_crown, which blocks swe_ostergotland.1:
+# Katarina's shrine belongs to her mother's house.
+swe_ostergotland.2 = {
+	type = country_event
+	title = swe_ostergotland.2.title
+	desc = swe_ostergotland.2.desc
+	outcome = neutral
+	historical_info = swe_ostergotland.2.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1368.8.1
+		to = 1430.1.1
+		monthly_chance = 3 # Median mid-1370
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:catholic
+		owns = location:vadstena
+		location:vadstena = {
+			has_building_with_at_least_one_level = monastery
+			dominant_religion = religion:catholic
+			location_can_host_order_holding_trigger = yes
+		}
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		save_scope_as = actor # the monastic type's founding check reads owner ?= scope:actor
+		ruler_or_regent ?= { save_scope_as = target_character }
+		# A second portrait while vanilla's Birgitta (flavor_swe.46) lives
+		character:swe_heliga_birgitta ?= {
+			if = {
+				limit = { is_alive = yes }
+				save_scope_as = swe_birgitta
+			}
+		}
+	}
+
+	option = {
+		name = swe_ostergotland.2.a
+		historical_option = yes
+		ai_chance = {
+			base = 80
+		}
+
+		custom_tooltip = {
+			text = swe_ostergotland.2.a_tt
+			location:vadstena = {
+				found_religious_order = {
+					type = religious_order_type:monastic_order_type
+					calling = calling:contemplatives_calling
+					religion = religion:catholic
+				}
+				random_religious_order_in_location = { save_scope_as = swe_bridgettine_order }
+				set_variable = { name = recent_order_service value = yes days = 1825 }
+			}
+			if = {
+				limit = { exists = scope:swe_bridgettine_order }
+				scope:swe_bridgettine_order = { set_religious_order_zeal = 50 }
+				create_character = {
+					female = yes
+					min_age = 30
+					max_age = 50
+					culture = root.culture
+					religion = religion:catholic
+					estate = estate_type:clergy_estate
+					birth_location = location:vadstena
+					religious_order = scope:swe_bridgettine_order
+					save_scope_as = swe_vadstena_abbess
+				}
+				scope:swe_bridgettine_order = { set_head_character = scope:swe_vadstena_abbess }
+			}
+		}
+		add_prestige = prestige_weak_bonus
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_ostergotland.2.b
+		ai_chance = {
+			base = 20
+		}
+
+		add_political_influence = political_influence_extreme_bonus
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+		set_variable = swe_vadstena_kept_by_crown # Blocks swe_ostergotland.1, Katarina's shrine at Birgitta's house
 	}
 }

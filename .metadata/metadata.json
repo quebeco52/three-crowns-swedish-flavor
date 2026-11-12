@@ -1,11 +1,12 @@
 ﻿{
-	"name":	"Three Crowns Swedish Flavor",
-	"id":	"quebeco.Three-Crowns-Swedish-Flavor",
-	"version":	"0.1",
-	"supported_game_version":	"1.4.*",
-	"short_description":	"Balanced historical flavor for Sweden",
-	"tags":	["Historical"],
-	"relationships":	[],
-	"game_custom_data":	{
-}
+	"name": "Three Crowns Swedish Flavor",
+	"id": "quebeco.Three-Crowns-Swedish-Flavor",
+	"version": "0.2",
+	"supported_game_version": "1.4.*",
+	"short_description": "Balanced historical flavor for Sweden",
+	"tags": [
+		"Historical"
+	],
+	"relationships": [],
+	"game_custom_data": {}
 }

@@ -1,0 +1,45 @@
+﻿# The countries outside our realm that hold a port on the Baltic, each added once to the temporary list
+# swe_baltic_powers (swe_baltic.7). The Baltic is the three sea areas east of the Sound: inner_baltic_sea_area,
+# south_baltic_sea_area and eastern_baltic_sea, the last being the one vanilla's flavor_dan.68 checks. Any scope;
+# root is the country checking.
+swe_list_baltic_powers = {
+	area:inner_baltic_sea_area = {
+		every_adjacent_ports_to_area = {
+			limit = {
+				owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			}
+			owner = {
+				if = {
+					limit = { NOT = { is_in_list = swe_baltic_powers } }
+					add_to_temporary_list = swe_baltic_powers
+				}
+			}
+		}
+	}
+	area:south_baltic_sea_area = {
+		every_adjacent_ports_to_area = {
+			limit = {
+				owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			}
+			owner = {
+				if = {
+					limit = { NOT = { is_in_list = swe_baltic_powers } }
+					add_to_temporary_list = swe_baltic_powers
+				}
+			}
+		}
+	}
+	area:eastern_baltic_sea = {
+		every_adjacent_ports_to_area = {
+			limit = {
+				owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }
+			}
+			owner = {
+				if = {
+					limit = { NOT = { is_in_list = swe_baltic_powers } }
+					add_to_temporary_list = swe_baltic_powers
+				}
+			}
+		}
+	}
+}

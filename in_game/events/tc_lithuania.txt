@@ -47,6 +47,8 @@ swe_lithuania.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		# The lords offer our ruler their crown
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {

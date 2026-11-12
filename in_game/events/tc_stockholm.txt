@@ -73,7 +73,13 @@ swe_stockholm.1 = {
 			destroy_all_buildings_of_type = building_type:swe_tre_kronor
 		}
 		add_research_progress = research_progress_mild_penalty
-		custom_tooltip = swe_stockholm.1.b_tt
+		# The decision needs the same thing as option a
+		if = {
+			limit = {
+				location:stockholm = { has_great_or_unique_palace = no }
+			}
+			custom_tooltip = swe_stockholm.1.b_tt
+		}
 	}
 }
 
@@ -110,6 +116,8 @@ swe_stockholm.2 = {
 		previous_ruler = {
 			save_scope_as = swe_dead_ruler
 		}
+		# A second portrait, after the dead monarch's: the successor decides (vanilla's coup_attempt.100 pairs them too)
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	# Riddarholmen
@@ -208,7 +216,7 @@ swe_stockholm.3 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -266,7 +274,7 @@ swe_stockholm.4 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -292,6 +300,217 @@ swe_stockholm.4 = {
 		name = swe_stockholm.4.b
 		ai_chance = {
 			base = 25
+		}
+	}
+}
+
+# Sun dogs over Stockholm on 20 April 1535. Olaus Petri read them as omens of rebellion and overthrow and hung a panel
+# of them in Storkyrkan (SBL, Olaus Petri). The panel's inscription gives the hours, "så nær i från siv in til nio",
+# about seven until nine (sv.wiki Vädersolstavlan). The panel there now is a copy from 1636 or a little before (sv.wiki, citing
+# the 1999 examination), and Gillgren (2009) doubts the link to Olaus, which historical_info says. Any religion, since
+# the text names no faith. The stability cost is a step below vanilla's comet sighting (random_event.1, mild), since
+# only one town saw this sky. The painting names no artist, as the painter is unknown, like swe_stockholm.4's statue.
+swe_stockholm.5 = {
+	type = country_event
+	title = swe_stockholm.5.title
+	desc = swe_stockholm.5.desc
+	outcome = neutral
+	historical_info = swe_stockholm.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1533.4.1
+		to = 1550.1.1
+		monthly_chance = 3 # Median around 1535
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:stockholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:burghers_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_stockholm.5.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		location:stockholm = {
+			create_art = {
+				quality = 60
+				type = work_of_art_type:painting
+				key = swe_vadersolstavlan
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+		add_stability = stability_weak_penalty
+	}
+
+	option = {
+		name = swe_stockholm.5.b
+		ai_chance = {
+			base = 40
+		}
+
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# The regalia. Erik XIV was crowned at Uppsala on 29 June 1561 with a new crown and orb by Cornelis ver Weiden and a
+# key by Peter Holtswijller, all made in Stockholm (Kungliga slotten); the crown was the first Swedish one closed with
+# arches (Klackenberg 2023). Not tied to Erik: fired by tc_on_new_ruler_regalia one to two months after the first
+# succession from 1544, when the crown became hereditary (swe_vasa.3), to 1650, when Kristina re-worked an old crown
+# rather than order a new one.
+swe_stockholm.6 = {
+	type = country_event
+	title = swe_stockholm.6.title
+	desc = swe_stockholm.6.desc
+	outcome = neutral
+	historical_info = swe_stockholm.6.historical_info
+
+	fire_only_once = yes
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		owns = location:stockholm
+		# Not if that monarch has already died: the next one is asked instead (vanilla culture_religion_events.2)
+		trigger_if = {
+			limit = { exists = scope:new_ruler }
+			ruler ?= { this = scope:new_ruler }
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_stockholm.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -6 }
+		location:stockholm = {
+			create_art = {
+				quality = 80
+				type = work_of_art_type:regalia
+				key = swe_riksregalierna
+			}
+		}
+		add_legitimacy = legitimacy_mild_bonus
+	}
+
+	option = {
+		name = swe_stockholm.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		custom_tooltip = swe_stockholm.6.b_tt
+	}
+}
+
+# The realm's chronicle. Olaus Petri's Swedish chronicle survives in a version ending in 1512 and a fuller one running to
+# 1520, and it attacked the king's government. Gustav I condemned the older version in his indictment of Olaus in 1539,
+# sent him written instructions for a chronicle of the reign in 1541 (Olaus revised his own instead), got hold of the
+# revised text in 1554, two years after Olaus died, and had Johan and Erik trace and seize the copies, with house
+# searches. Over a hundred manuscript copies survive; first printed in Uppsala in 1818 (SBL, Olavus Petri, Westin). The
+# king's chronicle was written by Peder Swart, bishop of Västerås from 1557 (d. 1562), from Gustav's birth to Erik's in
+# 1533, close to the king's own account; first printed 1870 (SBL, Peder Andreæ (Svart), Westin). Both SBL articles are
+# Westin's, so 1554 is effectively single-source. Not tied to Gustav or Olaus: any monarch, any faith. Option a is
+# flavor_sco.19's court chronicle (62, legitimacy and prestige mild) without the prestige, plus a weak clergy cost for the
+# searches; option b is flavor_jap.142's hostile chronicle exactly. swe_stockholm.5 also cites Olaus (the sun dogs and
+# the Örebro sentence), so this text leaves those out.
+swe_stockholm.7 = {
+	type = country_event
+	title = swe_stockholm.7.title
+	desc = swe_stockholm.7.desc
+	outcome = neutral
+	historical_info = swe_stockholm.7.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1535.1.1
+		to = 1600.1.1
+		monthly_chance = 3 # Median late 1536
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		has_ruler = yes
+		owns = location:stockholm
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_stockholm.7.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		location:stockholm = {
+			create_art = {
+				quality = 55
+				type = work_of_art_type:chronicle
+				key = swe_konungens_kronika
+			}
+		}
+		add_legitimacy = legitimacy_mild_bonus
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_stockholm.7.b
+		ai_chance = {
+			base = 40
+		}
+
+		location:stockholm = {
+			create_art = {
+				quality = 75
+				type = work_of_art_type:chronicle
+				key = swe_svenska_kronika
+			}
+		}
+		add_legitimacy = legitimacy_mild_penalty
+		culture = {
+			add_cultural_influence = cultural_influence_mild_bonus
 		}
 	}
 }

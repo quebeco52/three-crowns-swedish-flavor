@@ -10,4 +10,4 @@
  swe_pomerania.1.a.entry: "The Pomeranian peasants were freed."
  swe_pomerania.1.a_tt: "Every [location|e] we own in [ShowAreaNameWithNoTooltip('pomerania_area')] gains [ShowModifier('swe_pomeranian_emancipation')]."
  swe_pomerania.1.b: "Leave the estates their rights."
- swe_pomerania.1.b.entry: "Pomerania keeps its old constitution."
+ swe_pomerania.1.b.entry: "Pomerania kept its old constitution."

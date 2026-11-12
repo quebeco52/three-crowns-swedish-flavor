@@ -4,7 +4,9 @@
 # been lost.
 
 # Enköping's Twentieth-Day Market. Gustav Vasa confirmed the town's privileges in 1521 but banned bargaining on the ice,
-# probably with little effect (Upplandsmuseet report 2006:24, citing Ljung 1963).
+# probably with little effect (Upplandsmuseet report 2006:24, citing Ljung 1963). The ban sends the trade into the town,
+# so option a gives it a market (swe_grant_market), as swe_gotaland.14 does for Jönköping; the burghers' local power
+# is its cost.
 swe_svealand.1 = {
 	type = country_event
 	title = swe_svealand.1.title
@@ -16,9 +18,9 @@ swe_svealand.1 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1515.1.1
+		from = 1519.1.1
 		to = 1560.1.1
-		monthly_chance = 3 # Median late 1516
+		monthly_chance = 3 # Median late 1520
 	}
 
 	trigger = {
@@ -44,6 +46,7 @@ swe_svealand.1 = {
 
 		location:enkoping = {
 			add_location_modifier = { modifier = swe_enkoping_ice_ban years = 15 }
+			swe_grant_market = yes
 		}
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_mild_bonus }
 	}
@@ -168,7 +171,8 @@ swe_svealand.2 = {
 
 # Reinhold Rademacher's manufactory at Eskilstuna, from 1654. Vanilla has no location for Eskilstuna, so Strängnäs stands
 # in. It doesn't need Riga. The tools bonus only works if the location already has a tools building, which needs town
-# rank, so the migration and burgher power carry it otherwise.
+# rank, so a rural Strängnäs gets the modifier's migration pull and building efficiency, and the smiths come only once
+# it is a town or city.
 swe_svealand.3 = {
 	type = country_event
 	title = swe_svealand.3.title
@@ -180,9 +184,9 @@ swe_svealand.3 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1650.1.1
+		from = 1652.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1651
+		monthly_chance = 3 # Median late 1653
 	}
 
 	trigger = {
@@ -203,10 +207,12 @@ swe_svealand.3 = {
 		location:strangnas = {
 			add_location_modifier = { modifier = swe_rademacher_forges years = 25 }
 		}
-		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga
+		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga.
+		# Only into a town or city: burghers sent to a rural location melt within a month (tested on swe_towns.1, 2026-11-11)
 		if = {
 			limit = {
 				location:riga = { has_owner = yes }
+				location:strangnas = { NOT = { location_rank = location_rank:rural_settlement } }
 			}
 			add_migration = {
 				owner = location:riga.owner
@@ -227,5 +233,332 @@ swe_svealand.3 = {
 		}
 
 		add_estate_satisfaction = { type = estate_type:burghers_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# Uppsala Cathedral. Begun in the 1270s and consecrated in June 1435 by Archbishop Olof Larsson, still without its
+# towers (SBL, Olaus Laurentii; Sundquist, Årsboken Uppland 1962; Bengtsson, Upplandsmuseets rapporter 2011:04). The
+# Church consecrated it, not the king: Erik of Pomerania had fought the archbishop's election and was in Denmark. No
+# royal money is attested after Magnus Eriksson's letters of 1331 (DS 2875, a third of the tithe) and 1338 (DS 3384,
+# the masons' privilege), so the cathedral stands either way and paying is the unhistorical option.
+swe_svealand.4 = {
+	type = country_event
+	title = swe_svealand.4.title
+	desc = swe_svealand.4.desc
+	outcome = neutral
+	historical_info = swe_svealand.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1433.6.1
+		to = 1447.1.1
+		monthly_chance = 3 # Median mid-1435
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:uppsala
+		religion = religion:catholic
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_svealand.4.a
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -5 }
+		location:uppsala = {
+			create_art = {
+				quality = 85
+				type = work_of_art_type:monument
+				key = swe_uppsala_domkyrka
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_svealand.4.b
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		location:uppsala = {
+			create_art = {
+				quality = 65
+				type = work_of_art_type:monument
+				key = swe_uppsala_domkyrka
+			}
+		}
+	}
+}
+
+# Uppsala's new charter. The university founded in 1477 (vanilla flavor_swe.50) had all but stopped teaching by about
+# 1530; Erik XIV restarted lectures in 1566 and Johan III added professors, but the 1577 arrests and the plague of 1580
+# closed it again (uu.se; Annerstedt, Upsala universitets historia I, 1877, 60-71). After the church meeting of 1593
+# asked for it, Duke Karl and the council named professors on 1 August 1593 and sealed its privileges on 15 March 1595
+# (uu.se; Annerstedt 84-91; "seven", the tithes, the examination of schoolmasters, the table for forty and the 64
+# enrolled are Annerstedt's, from the letters he prints). It doesn't need swe_church.1. Option a builds the university
+# as flavor_swe.50.a does if Uppsala has none (an event's construct_building ignores the town rank, as the 1619 AI save
+# shows), or else pays the chairs, and sets swe_uppsala_charter for the clergy literacy inside swe_uppsala_mote. The gold
+# sits in the else branch: has_building is true from the day construction starts.
+swe_svealand.5 = {
+	type = country_event
+	title = swe_svealand.5.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					location:uppsala = { has_building = building_type:university }
+				}
+				desc = swe_svealand.5.desc
+			}
+			triggered_desc = {
+				desc = swe_svealand.5.desc_found
+			}
+		}
+	}
+	outcome = neutral
+	historical_info = swe_svealand.5.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1593.1.1
+		to = 1640.1.1 # Late enough for a late Reformation
+		monthly_chance = 3 # Median early 1595
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:lutheran
+		owns = location:uppsala
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_svealand.5.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					location:uppsala = { has_building = building_type:university }
+				}
+			}
+			location:uppsala = {
+				construct_building = {
+					building_type = building_type:university
+					cost_multiplier = 0.50
+					cost_multiplier_reason = "academic_cheap_sponsorship"
+				}
+			}
+		}
+		else = {
+			location:uppsala = {
+				change_development = development_severe_bonus
+				change_prosperity = prosperity_severe_bonus
+			}
+			# The tithes of the chairs' parishes no longer reach the treasury
+			change_gold_effect = { scale = -3 }
+		}
+		add_research_progress = research_progress_mild_bonus
+		set_variable = swe_uppsala_charter
+		custom_tooltip = swe_svealand.5.a_tt
+	}
+
+	option = {
+		name = swe_svealand.5.b
+		ai_chance = {
+			base = 25
+		}
+
+		# The tithes stay with the Crown. Vanilla's refusal of the 1477 university (flavor_swe.50.b) pays religious
+		# influence, which a Lutheran crown has no use for, so this pays in gold.
+		change_gold_effect = { scale = 2 }
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+}
+
+# Gripsholm. Bo Jonsson Grip had a stronghold there in the 14th century (Kungliga slotten). Sten Sture the Elder gave the
+# estate to the Carthusians in the 1490s, and their church at Mariefred was consecrated in 1504; the Crown took the
+# charterhouse in 1526 (Sörmlands museum, Pax Mariae 2006, citing Westlund 1948 and Clemedson 1989). Gustav Vasa began the
+# present castle in 1537 under Henrik von Köllen, as part of a new defence of the realm and as a royal residence
+# (Kungliga slotten), and its building material, above all the charterhouse's brick, came from the monastery in the 1530s
+# (Pax Mariae, citing Westlund 1948). Mariefred projects onto the shore between strangnas and sodertalje; strangnas is
+# nearer and is its municipality. Needs a Protestant realm, since a Catholic one would still have monks there. The palace
+# is a step below vanilla's Makalös (flavor_swe.40, 70, also made without an artist); new brick costs vanilla's -6 for a
+# palace (flavor_MOS.txt Catherine Palace, flavor_RUS.txt Gatchina), the monks' brick half that.
+swe_svealand.6 = {
+	type = country_event
+	title = swe_svealand.6.title
+	desc = swe_svealand.6.desc
+	outcome = neutral
+	historical_info = swe_svealand.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1535.1.1
+		to = 1580.1.1
+		monthly_chance = 3 # Median late 1536
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		government_type = government_type:monarchy
+		is_protestant = yes
+		owns = location:strangnas
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_svealand.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 70
+		}
+
+		change_gold_effect = { scale = -3 }
+		location:strangnas = {
+			create_art = {
+				quality = 65
+				type = work_of_art_type:palace
+				key = swe_gripsholm
+			}
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_svealand.6.b
+		ai_chance = {
+			base = 30
+		}
+
+		change_gold_effect = { scale = -6 }
+		location:strangnas = {
+			create_art = {
+				quality = 65
+				type = work_of_art_type:palace
+				key = swe_gripsholm
+			}
+		}
+	}
+}
+
+# Painted vaults. Albertus Pictor, from Immenhausen near Kassel, burgher of Arboga in 1465 and of Stockholm from 1473,
+# painter and pearl embroiderer; his workshop painted more than thirty Mälar valley churches, nine still signed, and he
+# last appears in June 1509 (Annerbäck, Stockholmskällan 2009). The vaults at Härkeberga, attributed to him on stylistic
+# grounds and dated to about the 1480s, were never limewashed (Svenska kyrkan Enköping; Historiska museet). Such work was
+# paid for by a donor, often as penance (Historiska museet), so the unpaid option is the historical one, as in
+# swe_svealand.4. Härkeberga lies in enkoping. Vanilla's Elmelunde frescoes (flavor_dan.67: painting 60, cultural
+# tradition weak, free) exactly; the gift as swe_stockholm.4.a (-3 with a weak clergy bonus).
+swe_svealand.7 = {
+	type = country_event
+	title = swe_svealand.7.title
+	desc = swe_svealand.7.desc
+	outcome = neutral
+	historical_info = swe_svealand.7.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1478.1.1
+		to = 1509.1.1
+		monthly_chance = 3 # Median late 1479
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		religion = religion:catholic
+		owns = location:enkoping
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:peasants_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_svealand.7.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		location:enkoping = {
+			create_art = {
+				quality = 60
+				type = work_of_art_type:painting
+				key = swe_harkeberga_valv
+			}
+		}
+		culture = {
+			add_cultural_tradition = cultural_tradition_weak_bonus
+		}
+	}
+
+	option = {
+		name = swe_svealand.7.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = -3 }
+		location:enkoping = {
+			create_art = {
+				quality = 75
+				type = work_of_art_type:painting
+				key = swe_harkeberga_valv
+			}
+		}
+		culture = {
+			add_cultural_tradition = cultural_tradition_weak_bonus
+		}
+		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
 	}
 }

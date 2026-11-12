@@ -54,7 +54,7 @@ swe_lappmarks_trigger = {
 	}
 }
 
-# Österbotten, the tar country of the Tar Company (swe_tar_company_decision)
+# Österbotten, the tar country of the Tar Company (swe_tar_company_decision, swe_tjarkompaniet)
 swe_osterbotten_trigger = {
 	OR = {
 		province_definition = province_definition:norra_osterbotten_province
@@ -68,21 +68,6 @@ swe_kexholm_ingria_trigger = {
 		province_definition = province_definition:korela_province
 		province_definition = province_definition:lopskaya_province
 		province_definition = province_definition:vodskaya_province
-	}
-}
-
-# The German lands the Wismar Tribunal judged as the Crown's imperial fiefs (swe_wismar_tribunal_decision):
-# north Germany without the Low Countries (Pomerania, Mecklenburg, Bremen-Verden and their neighbours), and
-# only imperial land while the Empire exists. Same HRE guard as vanilla's hre_buildings.txt.
-swe_german_provinces_trigger = {
-	region = region:north_german_region
-	NOT = { area = area:holland_area }
-	NOT = { area = area:brabant_area }
-	NOT = { area = area:flanders_area }
-	NOT = { area = area:wallonia_area }
-	trigger_if = {
-		limit = { exists = international_organization:hre }
-		is_owned_by_international_organization = international_organization:hre
 	}
 }
 
@@ -119,5 +104,59 @@ swe_written_work_trigger = {
 		work_of_art_type = work_of_art_type:prayer_book
 		work_of_art_type = work_of_art_type:scripture
 		work_of_art_type = work_of_art_type:treatise
+	}
+}
+
+# The old realm: Sweden proper and Finland, roughly the dioceses of the Swedish church. Kastelholm on Åland lies in
+# svealand_area; Jämtland, Skåneland and Kexholm are left out (swe_church.2).
+swe_old_realm_trigger = {
+	OR = {
+		area = area:svealand_area
+		area = area:gotaland_area
+		area = area:norrland_area
+		area = area:finland_area
+	}
+}
+
+# A castle of the old realm: a fort in Sweden proper or Finland, where Gustav Vasa set up the Crown's own farms
+# (swe_council.3). Kastelholm on Åland lies in svealand_area; Jämtland, Skåneland and Kexholm are left out.
+swe_crown_castle_trigger = {
+	has_fort = yes
+	OR = {
+		area = area:svealand_area
+		area = area:gotaland_area
+		area = area:norrland_area
+		area = area:finland_area
+	}
+}
+
+# The wilderness swe_finland_east.4 claims: Savolax, Kajanaland and the four northern Tavastland locations settled from Savo
+swe_crown_wilderness_lands_trigger = {
+	OR = {
+		province_definition = province_definition:savolax_province
+		province_definition = province_definition:kajanaland_province
+		this = location:jyvaskyla
+		this = location:saarijarvi
+		this = location:viitasaari
+		this = location:laukas
+	}
+}
+
+# The sees of Würzburg and Bamberg as the map has them in 1337 (WBG and BAM), without Bamberg's Carinthian lands: the
+# Duchy of Franconia that Oxenstierna granted Bernhard of Saxe-Weimar in June 1633 (swe_germany.2)
+swe_franconia_trigger = {
+	OR = {
+		this = location:wurzburg
+		this = location:hassfurt
+		this = location:karlstadt
+		this = location:mellrichstadt
+		this = location:konigshofen
+		this = location:schweinfurt
+		this = location:bruckenau
+		this = location:bamberg
+		this = location:kronach
+		this = location:forchheim
+		this = location:lichtenfels
+		this = location:pegnitz
 	}
 }

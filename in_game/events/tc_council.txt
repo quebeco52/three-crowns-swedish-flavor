@@ -1,7 +1,7 @@
 ﻿namespace = swe_council
 
 # Government and justice. .1 concerns the German half of the town councils (swe_tyska_radet), from game start to
-# swe_svenska_radman_decision.
+# swe_svenska_radman_decision. .5 was removed (the Nobles' Charter), so .6 keeps its ID.
 
 # The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
 # Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
@@ -41,7 +41,7 @@ swe_council.1 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:burghers_estate background = estate_type:nobles_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -80,7 +80,7 @@ swe_council.1 = {
 
 # Karl Knutsson's räfst, November 1453 to March 1454 (SBL, Karl Knutsson). The modifier goes on the judges' eight stops
 # rather than the whole realm. No gold, since vanilla's perform_reduction already takes estate money by hand. The clergy
-# penalty rests on the chapters' protest of 15 January 1454. Whether the räfst really pushed back the church's gains is
+# penalty rests on the protest of the archbishop and three bishops in January 1454. Whether the räfst really pushed back the church's gains is
 # disputed, so the text doesn't say it did. The description names nobody, because any ruler can hold the throne by now.
 swe_council.2 = {
 	type = country_event
@@ -110,7 +110,7 @@ swe_council.2 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:clergy_estate }
-		ruler ?= { save_scope_as = target_character }
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -148,5 +148,197 @@ swe_council.2 = {
 		}
 
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_bonus }
+	}
+}
+
+# The crown farms. Gustav Vasa's avelsgårdar: from the 1540s the royal manors were to give a surplus, and the programme
+# itself came in the autumn of 1555 (first letter Sibbo, 12 Nov 1555; Nyström, Scandia 1936, citing Gustav I's
+# registratur). It was carried out mostly in Finland, where about 50 new estates took about 270 farms in 1545-62
+# (Haggrén in Mankby, 2016). Dated by the programme; the farms go to forts in Sweden and Finland owned at that moment.
+swe_council.3 = {
+	type = country_event
+	title = swe_council.3.title
+	desc = swe_council.3.desc
+	outcome = neutral
+	historical_info = swe_council.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1553.11.1
+		to = 1575.1.1
+		monthly_chance = 3 # Median late 1555
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		any_owned_location = { swe_crown_castle_trigger = yes }
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 60
+		}
+
+		custom_tooltip = {
+			text = swe_council.3.a_tt
+			every_owned_location = {
+				limit = { swe_crown_castle_trigger = yes }
+				add_location_modifier = { modifier = swe_avelsgard years = 15 }
+				# The anger stays at the castles, in place of a country-wide estate penalty
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
+			}
+		}
+	}
+
+	# Hälsingland, Medelpad and Ångermanland offered a third more rent in 1556 to be spared, and paid a butter tax instead
+	option = {
+		name = swe_council.3.b
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = 1 }
+	}
+}
+
+# Göticism. Gustav II Adolf created the office of riksantikvarie on 20 May 1630 and gave it to Johannes
+# Bureus, his old tutor and a rune scholar (Riksantikvarieämbetet, "Our History", raa.se). Unlocks
+# swe_goticism in cultural_traditions_law, as flavor_plc.4 unlocks Sarmatism for Poland, with the same two
+# options. Uppsala holds the mounds the Gothicists pointed to; the Renaissance stands for the learning
+# behind it (AI Sweden has embraced it by 1619). Vanilla's flavor_swe.30, Rudbeck's Atland eller Manheim
+# (1698-1704), is the movement's high point and is left alone, so this ends before it.
+swe_council.4 = {
+	type = country_event
+	title = swe_council.4.title
+	desc = swe_council.4.desc
+	outcome = neutral
+	historical_info = swe_council.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1628.5.1
+		to = 1698.1.1
+		monthly_chance = 3 # Median mid-1630
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:uppsala
+		has_embraced_institution = institution:renaissance
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.4.a
+		historical_option = yes
+		ai_chance = {
+			base = 50
+		}
+
+		unlock_policy_effect = { type = swe_goticism }
+		add_policy = policy:swe_goticism
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_council.4.b
+		ai_chance = {
+			base = 50
+		}
+
+		unlock_policy_effect = { type = swe_goticism }
+	}
+}
+
+# Landskapens fänikor. At the Riksdag of Västerås in 1544 Gustav Vasa was allowed to keep on the rolls the peasant
+# bands raised in the Dacke war and to recruit them from then on; one man in every ten to twenty was taken as a
+# standing knekt, and the men of each province formed fänikor of about 500 (Söderberg, Årsboken Uppland 1944; Högman,
+# citing Ericson 1997, gives the same 1544 decree; the Dacke war link is Söderberg's alone). Before this the Crown hired
+# companies paid by a tax in lieu of service (Neuding Skoog 2018). Fires in the first years of peace after a war from
+# 1542 until vanilla's allotment system arrives in 1637, not at the Riksdag itself, which swe_vasa.3 covers;
+# months_since_war as in flavor_dan.1. Both options unlock the policy, as swe_council.4 does. Option b's companies get
+# half of mercenary_army_policy's upkeep cut for 10 years.
+swe_council.6 = {
+	type = country_event
+	title = swe_council.6.title
+	desc = swe_council.6.desc
+	outcome = neutral
+	historical_info = swe_council.6.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1542.1.1
+		to = 1637.1.1
+		monthly_chance = 3 # Median about two years into the first peace from 1542
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		has_advance = recruitment_law_advance # As flavor_tur.49: has_law is false while no recruitment policy is enacted
+		at_war = no
+		months_since_war <= 36
+	}
+
+	illustration_tags = {
+		10 = armed
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:peasants_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.6.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		unlock_policy_effect = { type = swe_landskapsfanikor }
+		add_policy = policy:swe_landskapsfanikor
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+	}
+
+	option = {
+		name = swe_council.6.b
+		ai_chance = {
+			base = 25
+		}
+
+		unlock_policy_effect = { type = swe_landskapsfanikor }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+		add_country_modifier = { modifier = swe_hired_companies years = 10 }
 	}
 }

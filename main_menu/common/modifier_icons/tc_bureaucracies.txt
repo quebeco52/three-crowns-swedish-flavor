@@ -1,0 +1,18 @@
+﻿# Icons for the colleges' impact modifiers, the same as vanilla's for every bureaucracy
+# (00_modifier_icons.txt, board_of_revenue_bureaucracy_impact_modifier).
+
+swe_kammarkollegium_bureaucracy_impact_modifier = {
+	positive = "gfx/interface/icons/modifier_types/global_max_bureaucracy_slots.dds"
+}
+
+swe_krigskollegium_bureaucracy_impact_modifier = {
+	positive = "gfx/interface/icons/modifier_types/global_max_bureaucracy_slots.dds"
+}
+
+swe_amiralitetskollegium_bureaucracy_impact_modifier = {
+	positive = "gfx/interface/icons/modifier_types/global_max_bureaucracy_slots.dds"
+}
+
+swe_kommerskollegium_bureaucracy_impact_modifier = {
+	positive = "gfx/interface/icons/modifier_types/global_max_bureaucracy_slots.dds"
+}

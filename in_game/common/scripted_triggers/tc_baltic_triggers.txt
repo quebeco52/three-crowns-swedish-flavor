@@ -119,3 +119,13 @@ swe_lithuania_trigger = {
 		area = area:samogitia_area
 	}
 }
+
+# A Baltic port that can't challenge our navy: unowned, held by our realm, or by a country with fewer ships than root,
+# the country checking. Vanilla's test in flavor_dan.68, with the realm in place of root alone (swe_baltic.7).
+swe_baltic_port_no_rival_trigger = {
+	OR = {
+		has_owner = no
+		owner ?= { swe_is_swedish_realm_trigger = yes }
+		owner ?= { navy_size < root.navy_size }
+	}
+}

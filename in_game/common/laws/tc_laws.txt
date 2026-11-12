@@ -78,23 +78,6 @@ INJECT:legal_code_law = {
 			}
 			legislative_efficiency = 0.1
 		}
-		# Wismar Tribunal (swe_wismar_tribunal_decision): from 1653 the Crown's own high court at Wismar
-		# judged its German lands under their own law, so no appeal went to the imperial courts.
-		# Kept inside this policy rather than as a privilege of its own. Integration and the slower
-		# assimilation are those of lat_compromise_with_greek_populace (German law and language kept);
-		# the crown power is that of Bottniska handelstvånget, the reverse of justicia_de_aragon.
-		location_modifier = {
-			potential_trigger = {
-				custom_tooltip = {
-					text = swe_wismar_tribunal_location_bonus
-					owner = { has_variable = swe_wismar_tribunal }
-					swe_german_provinces_trigger = yes
-				}
-			}
-			local_integration_speed = 0.10
-			local_crown_estate_power = 0.1
-			local_pop_assimilation_speed_modifier = -0.25
-		}
 		estate_preferences = {
 			crown_estate
 			peasants_estate
@@ -109,12 +92,15 @@ INJECT:nobles_rights_laws = {
 	# gave the nobles their own house at the Riksdag and tied their rank to the service of the Crown.
 	# Balanced against rural_nobles_authority_policy (small satisfaction, +0.05 power, +0.4 fort
 	# maintenance) and leyes_de_toro_policy (medium satisfaction, +0.15 power): the Crown gets
-	# officials out of it instead of forts.
+	# officials out of it instead of forts. Excludes swe_sekreterare (see there).
 	swe_riddarhuset = {
 		unique = yes
 		potential = {
 			has_or_had_tag = SWE
 			has_unlocked_policy_trigger = { type = swe_riddarhuset }
+		}
+		allow = {
+			NOT = { has_policy = swe_sekreterare } # Bare key, as in vanilla laws
 		}
 		country_modifier = {
 			monthly_towards_aristocracy = societal_value_minor_monthly_move
@@ -203,75 +189,176 @@ INJECT:press_law = {
 	}
 }
 
-# The colleges of the Instrument of Government (swe_regeringsform_decision). The decision adopts
-# Kammarkollegium and unlocks the other two, which wait for their vanilla laws.
+INJECT:cultural_traditions_law = {
 
-INJECT:bureaucracy_law = {
-
-	# Kammarkollegium: the Chamber College kept the accounts of every crown revenue, and the
-	# Instrument of Government of 1634 made it one of the five colleges of the realm.
-	# Balanced against rentekammer_policy (Denmark's treasury: full centralization move, medium tax
-	# efficiency): half the centralization, plus central_councils' cabinet efficiency for the college system.
-	swe_kammarkollegium = {
+	# Göticism (swe_council.4): the belief that the Goths of antiquity came from Sweden, made the Vasa
+	# kings' own by Johannes Magnus's history (1554) and given an office of state in 1630, when Gustav II
+	# Adolf made Johannes Bureus riksantikvarie. Shaped like plc_sarmatism, Poland's origin myth in this
+	# same law, unlocked by an event (flavor_plc.4): one bonus, one value move, the nobles, 5 years.
+	# Taking it gives up martial_society or civil_society, which are about as strong (army tradition
+	# 0.05 or peasants' max tax 0.025, each with one value move).
+	# Prestige 0.1 is vanilla's most common monthly_prestige in laws; the drift to traditionalist is the
+	# reverence for the forefathers, at minor speed (0.05), as the plain move would more than double the cost of
+	# embracing institutions within 50 years, just as the scientific revolution arrives.
+	swe_goticism = {
 		unique = yes
 		potential = {
 			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_kammarkollegium }
+			has_unlocked_policy_trigger = { type = swe_goticism }
 		}
 		country_modifier = {
-			tax_income_efficiency = medium_tax_income_efficiency_bonus
+			monthly_prestige = 0.1
+			monthly_towards_traditionalist = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 5
+	}
+}
+
+INJECT:cabinet_laws = {
+
+	# Sekreterarregementet: Gustav I ran his chancery himself with Swedish and German secretaries, and from the regiment
+	# of 1539-40 (SBL Conrad von Pyhy) his sons kept high-noble chancellors in name but took advice from the chancery's
+	# secretaries of non-noble birth (Asker, Hur riket styrdes, 2007, p. 80; Nilsson, Scandia 1937). Gustav II Adolf's
+	# assurance of 1611 ended it. Open from the Age of Reformation, when the regiment began.
+	# The secular twin of administrative_clergy_policy, the vanilla cabinet policy with cabinet efficiency outside China
+	# (sinicized_cabinet_policy also has 0.1): clerks of low birth do the realm's paperwork instead of priests. Its numbers
+	# (cabinet efficiency 0.1, political influence 0.05, its estate's small satisfaction), with the burghers in the clergy's
+	# place, centralization at minor speed in place of traditionalist, and the lords' grievance as nobles_of_the_robe_policy's
+	# small satisfaction turned round.
+	# Excludes swe_riddarhuset both ways, as vanilla's tribal policies exclude each other in their allow (00_tribes.txt):
+	# the nobles' assurance of 1611 ended the secretaries before the House of Nobility of 1626 made the nobles the Crown's
+	# officials, and the two together would give 0.15 cabinet efficiency for good. swe_riddarhusordningen_decision removes it.
+	swe_sekreterare = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			government_type = government_type:monarchy
+			current_age_or_later = {
+				age = age_4_reformation
+			}
+		}
+		allow = {
+			NOT = { has_policy = swe_riddarhuset } # Bare key, as in vanilla laws
+		}
+		country_modifier = {
+			country_cabinet_efficiency = 0.1
+			monthly_political_influence_gain_modifier = 0.05
+			burghers_estate_target_satisfaction = small_permanent_target_satisfaction
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction_penalty
 			monthly_towards_centralization = societal_value_minor_monthly_move
-			country_cabinet_efficiency = 0.05
 		}
 		estate_preferences = {
 			crown_estate
-		}
-		years = 2
-	}
-}
-
-INJECT:naval_doctrine_law = {
-
-	# Amiralitetskollegium: the Admiralty College ran the fleet and its yards, and carried the
-	# armies across the Baltic to Germany and the eastern provinces.
-	# Balanced against danish_admirality (+0.05 navy tradition): half the tradition, plus part of
-	# portuguese_marines' disembark speed (0.33). Crown, like fleet_in_being: it was the king's fleet.
-	swe_amiralitetskollegium = {
-		unique = yes
-		potential = {
-			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_amiralitetskollegium }
-		}
-		country_modifier = {
-			monthly_navy_tradition = 0.025
-			army_disembark_speed = 0.15
-		}
-		estate_preferences = {
-			crown_estate
-		}
-		years = 2
-	}
-}
-
-INJECT:economical_policies_law = {
-
-	# Kommerskollegium: the Board of Trade of 1651 granted the towns their staple rights, set the
-	# tolls and oversaw the trading companies.
-	# Balanced against cameralism_policy (the same tariff and subventions, plus legislative efficiency,
-	# migration and two value moves) and act_of_navigation (the move towards mercantilism).
-	swe_kommerskollegium = {
-		unique = yes
-		potential = {
-			has_or_had_tag = SWE
-			has_unlocked_policy_trigger = { type = swe_kommerskollegium }
-		}
-		country_modifier = {
-			max_tariff = 0.1
-			max_trade_subventions = 0.1
-			monthly_towards_mercantilism = societal_value_monthly_move
-		}
-		estate_preferences = {
 			burghers_estate
+		}
+		years = 2
+	}
+}
+
+INJECT:recruitment_law = {
+
+	# Landskapens fänikor (swe_council.6): at the Riksdag of Västerås in 1544 the Crown was allowed to keep the
+	# peasant bands of the Dacke war on the rolls and recruit them from then on; one man in every ten to twenty
+	# was taken as a standing knekt, and the men of each province formed fänikor of about 500 (Söderberg,
+	# Årsboken Uppland 1944). Vanilla bars Swedes and Finns from early_standing_army_policy and gives them
+	# allotment_system_policy from the Age of Absolutism, so this fills the century between; allotment (0.25)
+	# supersedes it in the same law. Shaped like reformed_hussite_armies_policy (event-unlocked, manpower 0.1
+	# and one value move at full speed, as every vanilla recruitment policy has); the crown alone prefers it, as the
+	# peasants bore the levy.
+	swe_landskapsfanikor = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_landskapsfanikor }
+		}
+		country_modifier = {
+			global_manpower_modifier = 0.1
+			monthly_towards_quantity = societal_value_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+}
+
+# The colleges of the Instrument of Government are bureaucracies (tc_bureaucracies.txt), not
+# policies; Bergskollegium stays in the mining law above, as its effect is limited to the mines.
+
+# Kronans jord: who holds the land of the realm. Every Swedish farm was crown, freehold or noble land
+# (krono, skatte, frälse). The Crown granted land and rents away in donations to pay for its wars
+# (1611-54), took them back in the Quarter Reduction of 1655 and the Great Reduction from 1680, and
+# from 1701 sold crown farms to the peasants on them as freehold (skatteköp: royal letter of 20 March
+# 1701, ordinance of 19 September 1723). After the Great Reduction each kind held about a third.
+# Sources: Högman, "The Reduction" (hhogman.se); prop. 1930:246; Carlsson in Scandia.
+# A law of its own, not policies in nobles_rights_laws, since swe_riddarhuset holds that slot and the
+# House of Nobility (1626) stood beside the reductions. Shaped like sco_clan_holdings (a tag-gated
+# law) and teu_amber_monopoly_law (one policy for each estate). Vanilla's dated reduction events
+# (flavor_swe.17, .18, .20) still fire; this is the standing choice beside them.
+# The law starts with no policy: vanilla gives its country laws one in setup or by event.
+swe_kronans_jord_law = {
+	unique = yes
+	law_category = estates
+
+	potential = {
+		has_or_had_tag = SWE
+		current_age_or_later = {
+			age = age_4_reformation
+		}
+	}
+
+	# Crown farms and rents granted to officers, generals and creditors. Between
+	# rural_nobles_authority_policy (+0.05 power, small satisfaction) and strengthen_nobles_rights_policy
+	# (+0.1 power, medium satisfaction, levy size 0.2), with half the levy for the service it bought.
+	swe_donationer = {
+		country_modifier = {
+			nobles_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_nobles_estate_power = 0.1
+			global_crown_estate_power = -0.05
+			nobles_estate_levy_size = 0.1
+			monthly_towards_aristocracy = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 2
+	}
+
+	# The Crown takes the land back. Vanilla's crown-land reversion is Portugal's por_lei_mental
+	# (-0.25 noble power, medium penalty, +0.005 monthly control); the mod never hands out control,
+	# so this takes half of absolute_rule_policy's +0.2 crown power instead, and less from the nobles.
+	swe_reduktion = {
+		country_modifier = {
+			nobles_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
+			global_nobles_estate_power = -0.15
+			global_crown_estate_power = 0.1
+			monthly_towards_centralization = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+
+	# Crown tenants buy their farms as freehold, from the letter of 1701 (age 5). The peasants'
+	# mirror of swe_donationer, as teu_amber_monopoly_law's peasant policy mirrors its burgher one.
+	swe_skattekop = {
+		potential = {
+			current_age_or_later = {
+				age = age_5_absolutism
+			}
+		}
+		country_modifier = {
+			peasants_estate_target_satisfaction = small_permanent_target_satisfaction
+			global_peasants_estate_power = 0.1
+			global_crown_estate_power = -0.05
+			monthly_towards_free_subjects = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			peasants_estate
 		}
 		years = 2
 	}

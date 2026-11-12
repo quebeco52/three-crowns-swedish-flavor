@@ -6,8 +6,8 @@
 # The Arctic coast. Swedish bailiffs and birkarlar taxed the Sámi up to the coast from the mid-1500s. After Teusina (1595)
 # Duke Karl claimed two-thirds of the Sámi tax between Malangen and Varanger, and a Danish inquiry of 1597 found the
 # Sámi paying tax to Sweden from Ofoten to the Varangerfjord (Favorin, Scandia). Karl IX took the title of king of the
-# Lapps in Nordland in 1607 and gave the claim up at Knäred (1613); Karl X Gustav revived it in 1658 and dropped it
-# that spring (Odén, Scandia). Vardøhus and its ship tolls were Denmark-Norway's, so nothing here charges ships.
+# Lapps in Nordland in 1607 and gave the claim up at Knäred (1613); Karl X Gustav revived it in 1658, his negotiators
+# gave up Nordland and Vardøhus at Roskilde, and he pressed for them in vain afterwards (Odén, Scandia, pp. 88-90). Vardøhus and its ship tolls were Denmark-Norway's, so nothing here charges ships.
 # Settling the coast is the non-historical option. Fires whenever Sweden owns a coastal location in Finnmark.
 swe_norway.2 = {
 	type = country_event

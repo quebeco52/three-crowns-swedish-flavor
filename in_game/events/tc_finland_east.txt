@@ -84,6 +84,8 @@ swe_finland_east.2 = {
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:vyborg
+		# Not once .3 has ended the fief, if Viborg is lost and taken back
+		NOT = { dynamic_historical_event_fired = swe_finland_east.3 }
 	}
 
 	illustration_tags = {
@@ -201,7 +203,8 @@ swe_finland_east.3 = {
 
 # Gustav Vasa's 1542 claim to uninhabited wilderness, with the Häme-Savo boundary judgments of 1415, 1446 and 1452
 # (Matikainen 2022) as background. A migration modifier rather than add_migration, since Sweden may not own this
-# land yet. Skips lakes and foreign-held locations. Same is_ownable and has_owner checks as vanilla.
+# land yet. Skips lakes and foreign-held locations. Same is_ownable and has_owner checks as vanilla. The tax-free years
+# cost gold, and the hunting families' anger stays with the peasants of the claimed land, not the whole estate.
 swe_finland_east.4 = {
 	type = country_event
 	title = swe_finland_east.4.title
@@ -239,7 +242,8 @@ swe_finland_east.4 = {
 			base = 75
 		}
 
-		change_gold_effect = { scale = -2 }
+		# Some years of tax freedom for every settler who clears a farm
+		change_gold_effect = { scale = -4 }
 		custom_tooltip = {
 			text = swe_finland_east.4.a_tt
 			province_definition:savolax_province = {
@@ -313,7 +317,17 @@ swe_finland_east.4 = {
 				}
 			}
 		}
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_penalty }
+		# The hunting families' anger stays in the land claimed, in place of a country-wide estate penalty
+		custom_tooltip = {
+			text = swe_finland_east.4.a_peasants_tt
+			every_owned_location = {
+				limit = { swe_crown_wilderness_lands_trigger = yes }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_mild_penalty
+				}
+			}
+		}
 	}
 
 	option = {
@@ -322,7 +336,16 @@ swe_finland_east.4 = {
 			base = 25
 		}
 
-		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+		custom_tooltip = {
+			text = swe_finland_east.4.b_tt
+			every_owned_location = {
+				limit = { swe_crown_wilderness_lands_trigger = yes }
+				every_pop = {
+					limit = { pop_type = pop_type:peasants }
+					add_pop_satisfaction = pop_satisfaction_weak_bonus
+				}
+			}
+		}
 	}
 }
 
@@ -339,9 +362,9 @@ swe_finland_east.5 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1610.1.1
+		from = 1614.1.1
 		to = 1660.1.1
-		monthly_chance = 3 # Median about two years once Sweden owns Kajana
+		monthly_chance = 3 # Median late 1615, or about two years after Sweden takes Kajana
 	}
 
 	trigger = {
@@ -358,6 +381,8 @@ swe_finland_east.5 = {
 
 	immediate = {
 		event_illustration_estate_effect = { foreground = estate_type:clergy_estate background = estate_type:clergy_estate }
+		# The sentence is ours to commute
+		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
 	option = {
@@ -379,7 +404,8 @@ swe_finland_east.5 = {
 	}
 
 	option = {
-		name = swe_finland_east.5.b
+		# Not .b: that key's hash collides with Oikoumenē's xuzhou_province.silesian_dialect
+		name = swe_finland_east.5.b_pardon
 		ai_chance = {
 			base = 25
 		}
@@ -402,9 +428,9 @@ swe_finland_east.6 = {
 	dynamic_historical_event = {
 		tag = SWE
 		tag = SCA
-		from = 1700.1.1
+		from = 1709.1.1
 		to = 1740.1.1
-		monthly_chance = 3 # Median late 1701
+		monthly_chance = 3 # Median late 1710
 	}
 
 	trigger = {
