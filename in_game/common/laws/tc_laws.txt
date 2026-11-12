@@ -186,6 +186,34 @@ INJECT:press_law = {
 	}
 }
 
+INJECT:cultural_traditions_law = {
+
+	# Göticism (swe_council.4): the belief that the Goths of antiquity came from Sweden, made the Vasa
+	# kings' own by Johannes Magnus's history (1554) and given an office of state in 1630, when Gustav II
+	# Adolf made Johannes Bureus riksantikvarie. Shaped like plc_sarmatism, Poland's origin myth in this
+	# same law, unlocked by an event (flavor_plc.4): one bonus, one value move, the nobles, 5 years.
+	# Taking it gives up martial_society or civil_society, which are about as strong (army tradition
+	# 0.05 or peasants' max tax 0.025, each with one value move).
+	# Prestige 0.1 is vanilla's most common monthly_prestige in laws; the drift to traditionalist is the
+	# reverence for the forefathers, at minor speed (0.05), as the plain move would more than double the cost of
+	# embracing institutions within 50 years, just as the scientific revolution arrives.
+	swe_goticism = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+			has_unlocked_policy_trigger = { type = swe_goticism }
+		}
+		country_modifier = {
+			monthly_prestige = 0.1
+			monthly_towards_traditionalist = societal_value_minor_monthly_move
+		}
+		estate_preferences = {
+			nobles_estate
+		}
+		years = 5
+	}
+}
+
 # The colleges of the Instrument of Government are bureaucracies (tc_bureaucracies.txt), not
 # policies; Bergskollegium stays in the mining law above, as its effect is limited to the mines.
 

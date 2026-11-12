@@ -32,6 +32,8 @@
  swe_tryckfrihet: "Tryckfrihetsförordningen"
  swe_tryckfrihet_desc: "Anyone may print what they like, except on matters of theology, and no censor reads it first. The records of the courts and the government are open to all, so that every subject can see how the realm is governed, and pamphlets on every question of the day pour from the presses of [ShowLocationName('stockholm')]."
 
+ swe_goticism: "Göticism"
+ swe_goticism_desc: "The Goths who humbled Rome went out from our country, and the kings of the Goths were the forefathers of ours. Our scholars search the runestones, the burial mounds and the old laws for the proof, and we make sure the rest of Europe hears of it. Few foreigners believe it, but none of them can prove otherwise."
  swe_tryckfrihet_decision.title: "Freedom of the Press"
  swe_tryckfrihet_decision.desc: "The censor still reads every book and pamphlet before it is printed. In the Riksdag a growing party argues that the estates cannot govern well if no one may write about what they do. They propose to abolish the censor and to open the records of the government to everyone. The [ROOT.GetCountry.GetGovernment.GetEstateName('clergy_estate')], who would lose their say over what is printed, are strongly against it."
  swe_tryckfrihet_decision.desc.entry: "The Riksdag could abolish the censor."

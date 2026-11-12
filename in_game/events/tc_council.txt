@@ -217,3 +217,63 @@ swe_council.3 = {
 		change_gold_effect = { scale = 1 }
 	}
 }
+
+# Göticism. Gustav II Adolf created the office of riksantikvarie on 20 May 1630 and gave it to Johannes
+# Bureus, his old tutor and a rune scholar (Riksantikvarieämbetet, "Our History", raa.se). Unlocks
+# swe_goticism in cultural_traditions_law, as flavor_plc.4 unlocks Sarmatism for Poland, with the same two
+# options. Uppsala holds the mounds the Gothicists pointed to; the Renaissance stands for the learning
+# behind it (AI Sweden has embraced it by 1619). Vanilla's flavor_swe.30, Rudbeck's Atland eller Manheim
+# (1698-1704), is the movement's high point and is left alone, so this ends before it.
+swe_council.4 = {
+	type = country_event
+	title = swe_council.4.title
+	desc = swe_council.4.desc
+	outcome = neutral
+	historical_info = swe_council.4.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1628.5.1
+		to = 1698.1.1
+		monthly_chance = 3 # Median mid-1630
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		owns = location:uppsala
+		has_embraced_institution = institution:renaissance
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = interior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_council.4.a
+		historical_option = yes
+		ai_chance = {
+			base = 50
+		}
+
+		unlock_policy_effect = { type = swe_goticism }
+		add_policy = policy:swe_goticism
+		add_estate_satisfaction = { type = estate_type:nobles_estate value = estate_satisfaction_weak_bonus }
+	}
+
+	option = {
+		name = swe_council.4.b
+		ai_chance = {
+			base = 50
+		}
+
+		unlock_policy_effect = { type = swe_goticism }
+	}
+}
