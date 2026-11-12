@@ -119,7 +119,7 @@
  # More of the crown lands and the Novgorod marches
  konevets.swedish_dialect: "Konevits" #NF nfbn/0388
  jekabpils.swedish_dialect: "Jakobstadt" #NF nfbl/0650
- gestenthorpe.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf
+ carlsburg.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf; the key swe_germany.3.a founds by renaming gestenthorpe
  opochka.swedish_dialect: "Opotjka" #NF nfbt/0413
  porkhov.swedish_dialect: "Porchov" #NF nfca/0752
  velikiye_luki.swedish_dialect: "Velikija-Luki" #NF nfck/0562

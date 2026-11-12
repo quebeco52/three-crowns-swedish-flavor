@@ -168,7 +168,8 @@ swe_baltic_privileges = {
 }
 
 # Added for 50 years to Reval and Narva by swe_baltic.1, to Riga by swe_baltic.2 (confirming the
-# privileges) and to the Prussian ports by swe_prussia.1 (leaving them their councils). The estate shift and
+# privileges), to the Prussian ports by swe_prussia.1 (leaving them their councils) and to Bremen by swe_germany.1.b
+# (leaving the city its freedoms). The estate shift and
 # merchant capacity of swe_tyska_radet: a self-governing Hanseatic town. The culture terms are those of
 # swe_baltic_privileges, since the towns kept their German law too. A Prussian town re-granted Kulm law
 # stacks the crown loss of kulm_town_rights on top; that is the player's own grant.
@@ -184,7 +185,7 @@ swe_baltic_town_privileges = {
 }
 
 # Added for 50 years to riga by swe_baltic.2 (Swedish law), to the Prussian ports by swe_prussia.1, to Windau and
-# Libau by swe_baltic.5 and to the five river mouths by swe_baltic.7.b. The Licent, the Crown's toll on the trade of the Baltic ports from the 1620s, taken in
+# Libau by swe_baltic.5, to the five river mouths by swe_baltic.7.b and to Arkhangelsk by swe_russia.3.b. The Licent, the Crown's toll on the trade of the Baltic ports from the 1620s, taken in
 # Prussia from 1626 and in Courland from 1630. swe_tyska_radet reversed: the Crown's gain is the merchants' loss.
 swe_riga_licent = {
 	game_data = {
@@ -922,8 +923,8 @@ swe_ronneby_privileges_revoked = {
 }
 
 # Added for 10 years when occupied land pays for the army: by swe_baltic.5 to Courland and Semigallia (Karl XII after
-# 1701), by swe_denmark.1 to Zealand (the brandskat of 1658-60) and by swe_lithuania.1 to Lithuania (after Kėdainiai,
-# 1655). Half of vanilla's looted (prosperity decay 0.1, development -0.25).
+# 1701), by swe_denmark.1 to Zealand (the brandskat of 1658-60), by swe_lithuania.1 to Lithuania (after Kėdainiai,
+# 1655) and by swe_germany.2 to the Franconian sees (the donations of 1633). Half of vanilla's looted (prosperity decay 0.1, development -0.25).
 swe_war_contributions = {
 	game_data = {
 		category = location
@@ -1131,4 +1132,75 @@ swe_kalmar_bastions = {
 		category = location
 	}
 	local_defensive = 0.1
+}
+
+# Added for 20 years to arkhangelsk by swe_russia.3 when we close the mouth of the Northern Dvina to foreign shipping, as
+# Lillienhoff proposed in 1674. Takes away the trade embark efficiency its harbour gives it: vanilla's harbor static
+# modifier adds 1 per point of harbour suitability (location.txt:268), and Arkhangelsk's natural harbour is 0.5
+# (location_templates.txt), which leaves the -0.1 of every location (location.txt:36); a quarter of is_blockaded_by_enemies
+# (-2, location.txt:340). The flat merchant capacity of swe_bohus_toll, pomor_outpost's reversed.
+swe_dvina_closed = {
+	game_data = {
+		category = location
+	}
+	local_trade_embark_disembark_efficiency = -0.5
+	local_merchant_capacity = -0.25
+}
+
+# Added for 20 years by swe_russia.3 to whichever of Narva, Nyen and Reval we own when the Dvina is closed: the cargo
+# that sailed from the White Sea comes to the Baltic instead. The flat merchant capacity of pomor_outpost (0.25), which is
+# what swe_dvina_closed takes from Arkhangelsk. Stacks with swe_russian_transit and swe_russian_staple.
+swe_white_sea_cargo = {
+	game_data = {
+		category = location
+	}
+	local_merchant_capacity = 0.25
+}
+
+# Added to bremen for 50 years by swe_germany.1 when the city swears to us as its lords, as it did to Karl X Gustav as
+# Duke of Bremen on 6 December 1654 and to the archbishops before him. The estate shift of swe_riga_licent (0.25)
+# without its trade loss: the oath took no toll, and the city kept its council and its law.
+swe_bremen_homage = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.25
+	local_burghers_estate_power = -0.25
+}
+
+# Added for 20 years by swe_germany.3 to gestenthorpe, renamed carlsburg in the same option, when Carlsburg is built
+# (1672). 20 years like swe_ostersund_freedoms and swe_boras_privileges: the start a new town gets, not its charter.
+# The harbour of vanilla's staple_port and surveyed_safe_harbour (0.2), as in swe_town_moved; the migration of
+# free_town_charter and birth_of_a_new_city (0.25), since the privileges of 1674 were written to draw settlers of
+# every Christian nation; and the crown loss of kulm_town_rights (-0.25), as in swe_marstrand_porto_franco, since the
+# settlers paid no land tax or toll. No development: the settlers never came.
+swe_carlsburg = {
+	game_data = {
+		category = location
+	}
+	harbor_suitability = 0.2
+	local_migration_attraction = 0.25
+	local_crown_estate_power = -0.25
+}
+
+# Added for 20 years by swe_germany.2 to our locations in the sees of Würzburg and Bamberg, except Königshofen, when they
+# are granted as a duchy held of our crown (Bernhard of Saxe-Weimar, June 1633). The estate shift of
+# swe_visingsborg_county and swe_lithuanian_rights (0.25): a lord who takes the taxes through his own men. 20 years, as
+# the donations of 1633 lasted only as long as the armies that held them.
+swe_franconian_duchy = {
+	game_data = {
+		category = location
+	}
+	local_nobles_estate_power = 0.25
+	local_crown_estate_power = -0.25
+}
+
+# Added for 20 years by swe_germany.2 to the same locations, Königshofen included, when our own officials govern them, as
+# under Gustav II Adolf's mandate of 26 October 1631. The crown power of vanilla's ath_a_permanent_capital (0.25), as in
+# swe_vaxjo_bailiff and swe_viborg_royal_governor, for 20 years instead of 50: an occupation government.
+swe_franconian_government = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.25
 }

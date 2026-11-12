@@ -141,3 +141,22 @@ swe_crown_wilderness_lands_trigger = {
 		this = location:laukas
 	}
 }
+
+# The sees of Würzburg and Bamberg as the map has them in 1337 (WBG and BAM), without Bamberg's Carinthian lands: the
+# Duchy of Franconia that Oxenstierna granted Bernhard of Saxe-Weimar in June 1633 (swe_germany.2)
+swe_franconia_trigger = {
+	OR = {
+		this = location:wurzburg
+		this = location:hassfurt
+		this = location:karlstadt
+		this = location:mellrichstadt
+		this = location:konigshofen
+		this = location:schweinfurt
+		this = location:bruckenau
+		this = location:bamberg
+		this = location:kronach
+		this = location:forchheim
+		this = location:lichtenfels
+		this = location:pegnitz
+	}
+}

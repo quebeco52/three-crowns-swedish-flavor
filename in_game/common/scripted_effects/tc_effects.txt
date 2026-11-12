@@ -40,7 +40,7 @@ swe_craftsmen_move_in = {
 
 # Changes the satisfaction of one pop type in one location, if we own it, so that anger stays where it belongs. Country
 # scope; $location$ is a location, $type$ a pop type key, $value$ a pop satisfaction value. Used by swe_gotaland.6, .13-15,
-# swe_towns.1 and swe_finland_west.5.
+# swe_towns.1, swe_finland_west.5 and swe_germany.1.
 swe_pop_satisfaction_in = {
 	$location$ = {
 		if = {
