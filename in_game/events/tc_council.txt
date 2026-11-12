@@ -304,7 +304,7 @@ swe_council.6 = {
 
 	trigger = {
 		has_or_had_tag = SWE
-		has_law = recruitment_law
+		has_advance = recruitment_law_advance # As flavor_tur.49: has_law is false while no recruitment policy is enacted
 		at_war = no
 		months_since_war <= 36
 	}

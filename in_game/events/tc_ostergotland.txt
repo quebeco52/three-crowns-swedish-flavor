@@ -42,6 +42,7 @@ swe_ostergotland.1 = {
 		has_or_had_tag = SWE
 		religion = religion:catholic
 		owns = location:vadstena
+		NOT = { has_variable = swe_vadstena_kept_by_crown } # swe_ostergotland.2.b: Birgitta's house never came to Vadstena
 	}
 
 	illustration_tags = {
@@ -90,7 +91,8 @@ swe_ostergotland.1 = {
 # random_religious_order_in_location. Zeal 50 is the neutral point of vanilla's invite and expel AI; recent_order_service
 # is what vanilla sets after every order action (+6 zeal target for five years). The order loses Vadstena when Sweden
 # leaves the Catholic faith, and lives on only where other realms have invited it. Option b copies vanilla's refusal of
-# a new order holding (religious_orders.2.c).
+# a new order holding (religious_orders.2.c), and sets swe_vadstena_kept_by_crown, which blocks swe_ostergotland.1:
+# Katarina's shrine belongs to her mother's house.
 swe_ostergotland.2 = {
 	type = country_event
 	title = swe_ostergotland.2.title
@@ -183,5 +185,6 @@ swe_ostergotland.2 = {
 
 		add_political_influence = political_influence_extreme_bonus
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_mild_penalty }
+		set_variable = swe_vadstena_kept_by_crown # Blocks swe_ostergotland.1, Katarina's shrine at Birgitta's house
 	}
 }

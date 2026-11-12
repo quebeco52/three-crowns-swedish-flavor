@@ -56,9 +56,9 @@
  swe_svealand.5.historical_info: "Uppsala University, founded in 1477, had all but stopped teaching by about 1530. Erik XIV restarted lectures in 1566 and Johan III added professors, but the arrests of 1577 over Johan's liturgy and the plague of 1580 closed it again. The church meeting at Uppsala in 1593 asked for it back. On 1 August 1593 Duke Karl and the council named seven professors, paid from the tithes of named parishes, and on 15 March 1595 they gave the university new privileges. In the archdiocese no schoolmaster was to be appointed without examination at Uppsala, the university was to see that every school kept the same plan, and two students from each diocese were to be kept at foreign Protestant universities. A second letter that day set the professors' pay and a common table for forty poor students. Sixty-four young men enrolled that April."
  swe_svealand.5.a: "Endow the chairs."
  swe_svealand.5.a.entry: "The Crown endowed the university at Uppsala."
- swe_svealand.5.a_tt: "[ShowEstatePrivilegeName('swe_uppsala_mote')] raises the maximum [literacy|e] of [ShowPopTypeName('clergy')]."
+ swe_svealand.5.a_tt: "While we hold [ShowEstatePrivilegeName('swe_uppsala_mote')], it also raises the maximum [literacy|e] of [ShowPopTypeName('clergy')]."
  swe_svealand.5.b: "Let them study abroad."
- swe_svealand.5.b.entry: "Uppsala's chairs stayed empty."
+ swe_svealand.5.b.entry: "The tithes stayed with the Crown."
 
  swe_gripsholm: "Gripsholms slott"
  swe_gripsholm_desc: "A royal castle of red brick on the shore of Lake Mälaren, built as a fortress and lived in as a palace."

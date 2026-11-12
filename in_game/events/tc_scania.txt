@@ -220,8 +220,8 @@ swe_scania.7 = {
 }
 
 # The Scanian homage. Magnus Eriksson took Skåne in pawn from the counts of Holstein in 1332 for 34,000 marks of silver
-# (SBL, Kumlien). In November 1339 he granted the Duke of Mecklenburg the revenues of Skanör and Falsterbo as security for
-# money he owed him, and in the summer of 1340 the Scanians swore fealty and had their privileges confirmed (SBL, single
+# (SBL, Kumlien). In November 1339 he granted Albrekt of Mecklenburg the revenues of Skanör and Falsterbo as security for
+# money he owed him (SBL's "hertig" is anachronistic: Mecklenburg became a duchy in 1348), and in the summer of 1340 the Scanians swore fealty and had their privileges confirmed (SBL, single
 # source for the oath and the pledge): the letter is dated Helsingborg, 28 June 1340 (Kroman, Den danske rigslovgivning
 # indtil 1400, no. 24). Bengt Algotsson as governor of Skåne is disputed (Nordberg 1995), so option c rests on the
 # letter's "prefectus noster" instead. Fires while the fiefdom SKE is ours, so not after vanilla's flavor_dan_skane_war
@@ -274,7 +274,7 @@ swe_scania.8 = {
 		}
 	}
 
-	# Pledge the dues of Skanör and Falsterbo, as to the Duke of Mecklenburg in 1339
+	# Pledge the dues of Skanör and Falsterbo, as to Albrekt of Mecklenburg in 1339
 	option = {
 		name = swe_scania.8.b
 		ai_chance = {

@@ -400,6 +400,9 @@ swe_svealand.5 = {
 			base = 25
 		}
 
+		# The tithes stay with the Crown. Vanilla's refusal of the 1477 university (flavor_swe.50.b) pays religious
+		# influence, which a Lutheran crown has no use for, so this pays in gold.
+		change_gold_effect = { scale = 2 }
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
 	}
 }

@@ -341,7 +341,7 @@ swe_rikes_lag_decision = {
 }
 
 # Riddarhusordningen: the House of Nobility ordinance of 1626. Unlocks and adopts swe_riddarhuset
-# in the nobles' rights law.
+# in the nobles' rights law, first dismissing the secretaries (swe_sekreterare), which it excludes.
 # Needs the nobles to have lost Konungabalken: a house at the Riksdag in place of electing the king.
 swe_riddarhusordningen_decision = {
 	decision_category = country_specific_decisions
@@ -378,6 +378,10 @@ swe_riddarhusordningen_decision = {
 		name = swe_riddarhusordningen_decision.a
 		ai_chance = { value = 100 }
 		effect = {
+			if = {
+				limit = { has_policy = swe_sekreterare } # Bare key: decisions load before laws
+				remove_policy = policy:swe_sekreterare
+			}
 			unlock_policy_effect = { type = swe_riddarhuset }
 			add_policy = policy:swe_riddarhuset
 		}
