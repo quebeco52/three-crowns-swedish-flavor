@@ -793,6 +793,29 @@ swe_klockskatt = {
 	local_crown_estate_power = 0.1
 }
 
+# Added to falun for 50 years by swe_dalarna.2 when the miners get their letter, like swe_gratrask_fishing_rights:
+# the privileges still stood in 1736. The migration of vanilla's magdeburg_rights_town_rights (0.2), the
+# enfranchisement of scandinavian_bergslag_privileges (0.05) and the crown power of swe_faxeholm_ruins (-0.1): the
+# miners judge their own disputes. No copper output, which falun_base already covers.
+swe_kopparberg_charter = {
+	game_data = {
+		category = location
+	}
+	local_migration_attraction = 0.2
+	local_peasant_enfranchisment = 0.05
+	local_crown_estate_power = -0.1
+}
+
+# Added to falun for 20 years by swe_dalarna.2 when the Crown keeps the mine under its bailiff alone. The crown power
+# of vanilla's fontainebleau_hunting_lodge (0.1) with its migration reversed, as in swe_olands_djurgard.
+swe_kopparberg_bailiff = {
+	game_data = {
+		category = location
+	}
+	local_crown_estate_power = 0.1
+	local_migration_attraction = -0.1
+}
+
 # Added to vadstena for 20 years by swe_ostergotland.1 when the Crown attends Katarina's shrining. The prosperity of
 # vanilla's christian_holy_site (0.001) and the unrest of sufi_shrine (-0.1), without the holy site's max control.
 swe_katarina_shrine = {

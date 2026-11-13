@@ -12,3 +12,18 @@
  swe_dalarna.1.b: "Take their 2,000 marks and let the bells hang."
  swe_dalarna.1.b.entry: "Dalarna kept its bells for 2,000 marks."
  swe_dalarna.1.b_tt: "The peasant [pops|e] in every [location|e] we own in [ShowProvinceDefinitionName('dalarna_province')] gain 5% [pop_satisfaction|e]."
+
+ STATIC_MODIFIER_NAME_swe_kopparberg_charter: "The Kopparberg Privileges"
+ STATIC_MODIFIER_DESC_swe_kopparberg_charter: "The miners of Kopparberget settle their disputes before a council of their own, and any man who works at the mine may build a house beside it. New hands keep arriving."
+ STATIC_MODIFIER_NAME_swe_kopparberg_bailiff: "The Bailiff of Kopparberget"
+ STATIC_MODIFIER_DESC_swe_kopparberg_bailiff: "Our bailiff alone rules the mine and collects its dues. The miners obey him, and newcomers try their luck at other mines."
+
+ swe_dalarna.2.title: "The Miners of Kopparberget"
+ swe_dalarna.2.entry: "$swe_dalarna.2.title$"
+ swe_dalarna.2.desc: "The copper miners of Kopparberget, at [ShowLocationName('falun')], ask us for a letter of rights. They want a council of their own men to sit beside our bailiff and judge the mine's disputes, and the right of any man who works at the mine to build himself a house there. Such terms would draw new hands to the pits from all over the realm. But this is the richest mine we have, and while our bailiff answers to us alone, its dues reach us without a council of miners to argue over them."
+ swe_dalarna.2.historical_info: "Magnus Eriksson granted the copper miners of Kopparberget a letter of privileges on 17 February 1347. Mine-masters were to be chosen from among fourteen councilmen at the mine to judge its cases, beside the king's bailiff, and the letter also fixed the miners' wages and the price of cloth at the mine. The oldest bailiff of the mine known by name, Gereka Skiptare, appears in 1351. The letter still appeared in a collection of Swedish law in 1736."
+ swe_dalarna.2.a: "Grant them their letter."
+ swe_dalarna.2.a.entry: "The miners of Kopparberget were granted their letter of rights."
+ swe_dalarna.2.b: "Our bailiff will manage the mine."
+ swe_dalarna.2.b.entry: "Kopparberget stayed under the Crown's bailiff alone."
+ swe_dalarna.2.b_tt: "The peasant [pops|e] in [ShowLocationName('falun')] lose 5% [pop_satisfaction|e]."
