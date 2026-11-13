@@ -150,6 +150,39 @@ tc_on_game_start = {
 				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
 			}
 		}
+		# The Kalix reaches the sea between Råneå and Torneå, and Råneå already produces fish. The Kalix
+		# villages each fished their own stretch of the river and sent part of the catch south (Kalix kommun,
+		# Historia); the Crown's salmon fisheries have been studied above all on the Torne, Kalix, Lule and
+		# Indal (Länsstyrelsen, Om laxen och öringens natur)
+		location:ranea ?= {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
+		# The Ii (Ijo) reaches the sea at Kuivaniemi, which already produces fish. The division of 1549 gave
+		# the whole river's salmon to the men of Ii, its four great weirs stood on the lower river, and church
+		# and Crown both taxed the catch (Patopyynti Iijoella, the Finnish Living Heritage wiki)
+		location:kuivaniemi ?= {
+			if = {
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
+		# Uppsala cathedral held a salmon fishery in the Ume by 1316 (Umeå kommun, Älvslandskapet i
+		# kulturhistoriska drag; Olofsson 1962, cited in doi:10.1080/08003831.2018.1456765). Fish instead of vanilla's wild
+		# game, as at Kemi and Oulu, and only while it still has wild game. Umeå gives up the wild game bonus
+		# of swe_birkarl_rights and swe_bottniska_handelstvanget, which cover all of Västerbotten.
+		location:umea ?= {
+			if = {
+				limit = { raw_material = goods:wild_game }
+				change_raw_material = goods:fish
+			}
+			if = {
+				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
+				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
+			}
+		}
 		# Västerås lies on the Västmanland plain, the farmland on Lake Mälaren that fed the mines of
 		# Bergslagen. Millet like neighbouring Enköping, vanilla's grain for most Swedish farmland;
 		# the mining locations keep no food, as Bergslagen bought its grain.
