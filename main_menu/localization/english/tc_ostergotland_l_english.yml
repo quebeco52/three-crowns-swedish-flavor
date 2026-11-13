@@ -21,3 +21,17 @@
  swe_ostergotland.2.a_tt: "Birgitta's order is founded as a [religious_order|e] of contemplatives with [ShowLocationName('vadstena')] as its first [holding|e], at 50 [zeal|e], under its first abbess."
  swe_ostergotland.2.b: "The manor stays with the Crown."
  swe_ostergotland.2.b.entry: "The Crown kept its manor at Vadstena."
+
+ STATIC_MODIFIER_NAME_swe_krigsmanshus: "The Soldiers' House at Vadstena"
+ STATIC_MODIFIER_DESC_swe_krigsmanshus: "Crippled officers and soldiers live out their days with their families in the house at Vadstena, and the regiments know the Crown has not forgotten them."
+
+ swe_ostergotland.3.title: "The Soldiers' House"
+ swe_ostergotland.3.entry: "$swe_ostergotland.3.title$"
+ swe_ostergotland.3.desc: "The convent at [ShowLocationName('vadstena')] has stood empty since the last sisters left, and its ranges want new brick. $swe_ostergotland.3.desc_body$"
+ swe_ostergotland.3.desc_manor: "The Crown's old manor at [ShowLocationName('vadstena')], which we once kept back from Birgitta's order, has little use now, and its ranges want new brick. $swe_ostergotland.3.desc_body$"
+ swe_ostergotland.3.desc_body: "Our wars send home men too maimed to serve or to work a farm. Housed there with their families and a chaplain of their own, they would show every regiment that the Crown keeps those it has crippled. But the ranges would hold a few dozen families at most, and most such men would rather stay in their home parishes, among their kin, on a yearly allowance of grain. Either way, the Crown pays."
+ swe_ostergotland.3.historical_info: "Gustav II Adolf ordered a house for crippled soldiers in the empty convent at Vadstena in 1622 and gave 2,000 daler towards it, but his wars held it back. The regency proclaimed its founding on 3 August 1637, and the first men moved into the nuns' ranges in the winter of 1640–41. In 1644 it housed 11 officers and 15 soldiers with their wives and 27 children. Kristina endowed it with farms in 1646, and from 1661 one per cent of salaries went to it. It was the only such house in Sweden: a Finnish one was proposed for decades and never built. Most crippled men preferred to stay in their parishes on grain from its fund, and since money could help more men than the house could hold, it was decided in 1778 to close it as its residents died, and it was abolished in 1783."
+ swe_ostergotland.3.a: "House them at Vadstena."
+ swe_ostergotland.3.a.entry: "The Crown opened a house for crippled soldiers at Vadstena."
+ swe_ostergotland.3.b: "Let them draw grain at home."
+ swe_ostergotland.3.b.entry: "The Crown gave its crippled soldiers grain in their home parishes."

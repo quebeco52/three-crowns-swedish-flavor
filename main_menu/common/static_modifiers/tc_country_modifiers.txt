@@ -55,3 +55,13 @@ swe_scanian_governor = {
 	}
 	payment_to_overlord_modifier = 0.1
 }
+
+# Added for 50 years by swe_ostergotland.3.a, when the Crown opens the house for crippled soldiers at Vadstena (it
+# ran from 1640-41 to 1783). The army tradition decay of vanilla's parl_standing_regiments_mod (-0.001, given for 10
+# years beside morale and monthly tradition), alone and for longer, as the house served the whole army.
+swe_krigsmanshus = {
+	game_data = {
+		category = country
+	}
+	army_tradition_decay = -0.001
+}

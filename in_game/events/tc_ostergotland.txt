@@ -188,3 +188,79 @@ swe_ostergotland.2 = {
 		set_variable = swe_vadstena_kept_by_crown # Blocks swe_ostergotland.1, Katarina's shrine at Birgitta's house
 	}
 }
+
+# Krigsmanshuset, the house for crippled soldiers at Vadstena. Gustav II Adolf ordered it in the empty convent in 1622
+# and gave 2,000 daler; the regency proclaimed the founding on 3 August 1637, and the first men moved into the nuns'
+# ranges in the winter of 1640-41. Kristina's grant of farms on 12 November 1646, made after she came of age, is what
+# older works give as the founding. Closed 1778-84. Sources: Erik Petersson, Sårade soldater (2016), through Kuvaja's
+# review in Historisk Tidskrift för Finland and soldatreg.se (the residents' figures rest on him alone); the Riksdag's
+# army pension report of 1913 (DBE82b3); Riksarkivet; Värmlands regementes historia; sv.wikipedia Vadstena kloster.
+# Option b is sourced too: most crippled men stayed in their parishes on grain from the fund, and the house closed
+# because a fund could help more men than its rooms held (1913 report). Gold and army tradition copy vanilla's
+# parliaments.38.b, which pays the veterans. The text names nobody, as 1637 fell in Kristina's minority.
+# Leaving the Catholic faith also ends the Bridgettine holding from swe_ostergotland.2. If .2.b kept the manor with
+# the Crown, the convent never stood, so the desc speaks of the manor.
+swe_ostergotland.3 = {
+	type = country_event
+	title = swe_ostergotland.3.title
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_variable = swe_vadstena_kept_by_crown }
+				desc = swe_ostergotland.3.desc_manor
+			}
+			triggered_desc = {
+				desc = swe_ostergotland.3.desc
+			}
+		}
+	}
+	outcome = neutral
+	historical_info = swe_ostergotland.3.historical_info
+
+	fire_only_once = yes
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1635.8.1
+		to = 1700.1.1
+		monthly_chance = 3 # Median mid-1637
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		NOT = { religion = religion:catholic }
+		owns = location:vadstena
+	}
+
+	illustration_tags = {
+		10 = regular
+		10 = exterior
+	}
+
+	immediate = {
+		event_illustration_estate_effect = { foreground = estate_type:peasants_estate background = estate_type:nobles_estate }
+		ruler_or_regent ?= { save_scope_as = target_character }
+	}
+
+	option = {
+		name = swe_ostergotland.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 75
+		}
+
+		change_gold_effect = { scale = -2 }
+		add_army_tradition = army_tradition_weak_bonus
+		add_country_modifier = { modifier = swe_krigsmanshus years = 50 }
+	}
+
+	option = {
+		name = swe_ostergotland.3.b
+		ai_chance = {
+			base = 25
+		}
+
+		change_gold_effect = { scale = -1 }
+		add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
+	}
+}
