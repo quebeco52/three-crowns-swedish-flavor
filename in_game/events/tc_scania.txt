@@ -241,7 +241,9 @@ swe_scania.8 = {
 		tag = SCA
 		from = 1338.1.1
 		to = 1360.12.31
-		monthly_chance = 3 # Median about 1340
+		# Median early 1339, ahead of flavor_dan_skane_war.1 (1339-45, chance 10), whose chain can end the fiefdom.
+		# At 3 it missed in an Observer run (2026-11-14)
+		monthly_chance = 5
 	}
 
 	trigger = {
