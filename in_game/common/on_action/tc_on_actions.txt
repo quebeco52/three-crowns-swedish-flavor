@@ -121,40 +121,12 @@ tc_on_game_start = {
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
-		# The salmon fisheries belong to the location, not to Sweden: Torneå starts as Kven land in 1337
+		# The two great salmon rivers of the Bothnian Bay, at vanilla's size for one famous tile (sikar_copper_mines_base).
+		# Vanilla gives its large base bonuses to one or two tiles, so the Kalix (ranea), Kemi, Oulu and Ume keep
+		# vanilla's goods and no bonus. The fisheries belong to the location, not to Sweden: both are unowned in 1337.
+		# The Torne reaches the sea at Torneå, which already produces fish; the Crown's salmon fisheries have been
+		# studied above all on the Torne, Kalix, Lule and Indal (Länsstyrelsen, Om laxen och öringens natur)
 		location:tornea ?= {
-			if = {
-				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
-				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
-			}
-		}
-		# Kemi and Oulu lived on salmon until the timber trade of the 19th century, so they produce
-		# fish instead of vanilla's lumber. Only changed while they still have vanilla's lumber.
-		location:kiemi ?= {
-			if = {
-				limit = { raw_material = goods:lumber }
-				change_raw_material = goods:fish
-			}
-			if = {
-				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
-				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
-			}
-		}
-		location:uleaborg ?= {
-			if = {
-				limit = { raw_material = goods:lumber }
-				change_raw_material = goods:fish
-			}
-			if = {
-				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
-				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
-			}
-		}
-		# The Kalix reaches the sea between Råneå and Torneå, and Råneå already produces fish. The Kalix
-		# villages each fished their own stretch of the river and sent part of the catch south (Kalix kommun,
-		# Historia); the Crown's salmon fisheries have been studied above all on the Torne, Kalix, Lule and
-		# Indal (Länsstyrelsen, Om laxen och öringens natur)
-		location:ranea ?= {
 			if = {
 				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
 				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
@@ -164,20 +136,6 @@ tc_on_game_start = {
 		# the whole river's salmon to the men of Ii, its four great weirs stood on the lower river, and church
 		# and Crown both taxed the catch (Patopyynti Iijoella, the Finnish Living Heritage wiki)
 		location:kuivaniemi ?= {
-			if = {
-				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
-				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
-			}
-		}
-		# Uppsala cathedral held a salmon fishery in the Ume by 1316 (Umeå kommun, Älvslandskapet i
-		# kulturhistoriska drag; Olofsson 1962, cited in doi:10.1080/08003831.2018.1456765). Fish instead of vanilla's wild
-		# game, as at Kemi and Oulu, and only while it still has wild game. Umeå gives up the wild game bonus
-		# of swe_birkarl_rights and swe_bottniska_handelstvanget, which cover all of Västerbotten.
-		location:umea ?= {
-			if = {
-				limit = { raw_material = goods:wild_game }
-				change_raw_material = goods:fish
-			}
 			if = {
 				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
 				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }

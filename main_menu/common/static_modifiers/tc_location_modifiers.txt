@@ -1,23 +1,23 @@
 ﻿# The salmon fisheries and the iron of Bergslagen are added at game start by tc_on_game_start, like vanilla's
 # location_historical_base_values.txt; the others by the event or decision named above each one.
 
-# The great salmon rivers of the Bothnian coast: the Torne (tornea), Kalix (ranea), Kemi (kiemi),
-# Ii (kuivaniemi), Oulu (uleaborg) and Ume (umea). Same size as
-# freiberg_base (0.5), far below skane_herring_market (5), which supplied fish to half of Europe.
+# The two great salmon rivers of the Bothnian Bay: the Torne (tornea) and the Ii (kuivaniemi). The size of
+# vanilla's one-tile sikar_copper_mines_base and sahara_salt_mines_base (1), half of
+# newfoundland_fishing_grounds_base (2) and far below skane_herring_market (5), which supplied fish to half of Europe.
 swe_northern_salmon_fishery = {
 	game_data = {
 		category = location
 	}
-	local_fish_output_modifier = 0.5
+	local_fish_output_modifier = 1
 }
 
-# The salmon fishery below the Älvkarleby falls of the Dalälven, in tierp. Half of
-# swe_northern_salmon_fishery: one fishery at the river mouth, not a whole river.
+# The salmon fishery below the Älvkarleby falls of the Dalälven, in tierp: one fishery at the river mouth,
+# not a whole river.
 swe_alvkarleby_salmon_fishery = {
 	game_data = {
 		category = location
 	}
-	local_fish_output_modifier = 0.25
+	local_fish_output_modifier = 0.15
 }
 
 # The iron mines of Bergslagen: nora, skinskatteberg, grythyttan, avesta (for Norberg, which has no location),
@@ -255,7 +255,7 @@ swe_norrland_bailiff = {
 }
 
 # Added to gefle for 50 years by swe_norrland.2, like swe_peasant_skippers: the monopoly of 1557 ran to 1766, past
-# vanilla's longest timed modifier (100 years). The same size as swe_alvkarleby_salmon_fishery.
+# vanilla's longest timed modifier (100 years). Above swe_alvkarleby_salmon_fishery (0.15), a single fishery.
 swe_gavle_fishermen = {
 	game_data = {
 		category = location
