@@ -242,7 +242,7 @@ swe_russia.2 = {
 		tag = SCA
 		from = 1478.1.1
 		to = 1631.3.1
-		monthly_chance = 3 # Median about two years after such a neighbour appears
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_russia_2 (tc_event_pulses.txt). Median about two years after such a neighbour appears
 	}
 
 	trigger = {
@@ -338,7 +338,7 @@ swe_russia.3 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after we hold the Dvina mouth and a Baltic gate
+		monthly_chance = 15 # Median about five months after we hold the Dvina mouth and a Baltic gate; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {

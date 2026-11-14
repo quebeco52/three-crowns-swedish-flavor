@@ -21,7 +21,7 @@ swe_dalarna.1 = {
 		tag = SCA
 		from = 1529.1.1
 		to = 1545.1.1
-		monthly_chance = 3 # Median early 1531
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_dalarna_1 (tc_event_pulses.txt). Median early 1531
 	}
 
 	trigger = {
@@ -102,7 +102,7 @@ swe_dalarna.2 = {
 		tag = SCA
 		from = 1345.1.1
 		to = 1400.1.1
-		monthly_chance = 3 # Median early 1347
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_dalarna_2 (tc_event_pulses.txt). Median early 1347
 	}
 
 	trigger = {

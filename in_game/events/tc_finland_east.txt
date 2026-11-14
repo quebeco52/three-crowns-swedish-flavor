@@ -20,7 +20,7 @@ swe_finland_east.1 = {
 		tag = SCA
 		from = 1475.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median about two years once Sweden owns Olofsborg
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_1 (tc_event_pulses.txt). Median about two years once Sweden owns Olofsborg
 	}
 
 	trigger = {
@@ -78,7 +78,7 @@ swe_finland_east.2 = {
 		tag = SCA
 		from = 1509.1.1
 		to = 1540.1.1
-		monthly_chance = 3 # Median late 1510
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_2 (tc_event_pulses.txt). Median late 1510
 	}
 
 	trigger = {
@@ -148,7 +148,7 @@ swe_finland_east.3 = {
 		tag = SCA
 		from = 1532.1.1
 		to = 1570.1.1
-		monthly_chance = 3 # Median late 1533
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_3 (tc_event_pulses.txt). Median late 1533
 	}
 
 	trigger = {
@@ -218,7 +218,7 @@ swe_finland_east.4 = {
 		tag = SCA
 		from = 1540.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1541
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_4 (tc_event_pulses.txt). Median late 1541
 	}
 
 	trigger = {
@@ -364,7 +364,7 @@ swe_finland_east.5 = {
 		tag = SCA
 		from = 1614.1.1
 		to = 1660.1.1
-		monthly_chance = 3 # Median late 1615, or about two years after Sweden takes Kajana
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_5 (tc_event_pulses.txt). Median late 1615, or about two years after Sweden takes Kajana
 	}
 
 	trigger = {
@@ -430,7 +430,7 @@ swe_finland_east.6 = {
 		tag = SCA
 		from = 1709.1.1
 		to = 1740.1.1
-		monthly_chance = 3 # Median late 1710
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_6 (tc_event_pulses.txt). Median late 1710
 	}
 
 	trigger = {
@@ -491,7 +491,7 @@ swe_finland_east.7 = {
 		tag = SCA
 		from = 1552.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about 1554, or two years after Sweden turns Protestant
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_7 (tc_event_pulses.txt). Median about 1554, or two years after Sweden turns Protestant
 	}
 
 	trigger = {
@@ -557,7 +557,7 @@ swe_finland_east.8 = {
 		tag = SCA
 		from = 1639.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about 1641
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_8 (tc_event_pulses.txt). Median about 1641
 	}
 
 	trigger = {

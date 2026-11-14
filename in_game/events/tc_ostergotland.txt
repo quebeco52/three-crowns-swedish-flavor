@@ -35,7 +35,7 @@ swe_ostergotland.1 = {
 		tag = SCA
 		from = 1487.1.1
 		to = 1520.1.1
-		monthly_chance = 3 # Median late 1488
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_1 (tc_event_pulses.txt). Median late 1488
 	}
 
 	trigger = {
@@ -118,7 +118,7 @@ swe_ostergotland.2 = {
 		tag = SCA
 		from = 1368.8.1
 		to = 1430.1.1
-		monthly_chance = 3 # Median mid-1370
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_2 (tc_event_pulses.txt). Median mid-1370
 	}
 
 	trigger = {
@@ -254,7 +254,7 @@ swe_ostergotland.3 = {
 		tag = SCA
 		from = 1635.8.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median mid-1637
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_3 (tc_event_pulses.txt). Median mid-1637
 	}
 
 	trigger = {

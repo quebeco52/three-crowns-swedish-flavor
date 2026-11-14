@@ -20,7 +20,7 @@ swe_svealand.1 = {
 		tag = SCA
 		from = 1519.1.1
 		to = 1560.1.1
-		monthly_chance = 3 # Median late 1520
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_1 (tc_event_pulses.txt). Median late 1520
 	}
 
 	trigger = {
@@ -81,7 +81,7 @@ swe_svealand.2 = {
 		tag = SCA
 		from = 1659.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1660
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_2 (tc_event_pulses.txt). Median late 1660
 	}
 
 	trigger = {
@@ -186,7 +186,7 @@ swe_svealand.3 = {
 		tag = SCA
 		from = 1652.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1653
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_3 (tc_event_pulses.txt). Median late 1653
 	}
 
 	trigger = {
@@ -254,7 +254,7 @@ swe_svealand.4 = {
 		tag = SCA
 		from = 1433.6.1
 		to = 1447.1.1
-		monthly_chance = 3 # Median mid-1435
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_4 (tc_event_pulses.txt). Median mid-1435
 	}
 
 	trigger = {
@@ -341,7 +341,7 @@ swe_svealand.5 = {
 		tag = SCA
 		from = 1593.1.1
 		to = 1640.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median early 1595
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_5 (tc_event_pulses.txt). Median early 1595
 	}
 
 	trigger = {
@@ -429,7 +429,7 @@ swe_svealand.6 = {
 		tag = SCA
 		from = 1535.1.1
 		to = 1580.1.1
-		monthly_chance = 3 # Median late 1536
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_6 (tc_event_pulses.txt). Median late 1536
 	}
 
 	trigger = {
@@ -504,7 +504,7 @@ swe_svealand.7 = {
 		tag = SCA
 		from = 1478.1.1
 		to = 1509.1.1
-		monthly_chance = 3 # Median late 1479
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_7 (tc_event_pulses.txt). Median late 1479
 	}
 
 	trigger = {

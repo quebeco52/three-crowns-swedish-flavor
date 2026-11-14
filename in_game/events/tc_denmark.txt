@@ -23,7 +23,7 @@ swe_denmark.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Copenhagen
+		monthly_chance = 15 # Median about five months after Sweden takes Copenhagen; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {

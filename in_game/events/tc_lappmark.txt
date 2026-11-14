@@ -20,7 +20,7 @@ swe_lappmark.1 = {
 		tag = SCA
 		from = 1344.1.1
 		to = 1365.1.1
-		monthly_chance = 3 # Median late 1345
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_1 (tc_event_pulses.txt). Median late 1345
 	}
 
 	trigger = {
@@ -98,7 +98,7 @@ swe_lappmark.3 = {
 		tag = SCA
 		from = 1340.1.1
 		to = 1400.1.1
-		monthly_chance = 2 # About four years
+		monthly_chance = 1 # Plus 2% a month from tc_pulse_lappmark_3 (tc_event_pulses.txt). About four years
 	}
 
 	trigger = {
@@ -188,7 +188,7 @@ swe_lappmark.4 = {
 		tag = SCA
 		from = 1600.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1601
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_4 (tc_event_pulses.txt). Median late 1601
 	}
 
 	trigger = {
@@ -261,7 +261,7 @@ swe_lappmark.5 = {
 		tag = SCA
 		from = 1615.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1616
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_5 (tc_event_pulses.txt). Median late 1616
 	}
 
 	trigger = {
@@ -358,7 +358,7 @@ swe_lappmark.6 = {
 		tag = SCA
 		from = 1635.1.1
 		to = 1750.1.1
-		monthly_chance = 3 # Median about two years once Sweden owns Silbojock
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_6 (tc_event_pulses.txt). Median about two years once Sweden owns Silbojock
 	}
 
 	trigger = {
@@ -456,7 +456,7 @@ swe_lappmark.7 = {
 		tag = SCA
 		from = 1619.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1620
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_7 (tc_event_pulses.txt). Median late 1620
 	}
 
 	trigger = {
@@ -516,7 +516,7 @@ swe_lappmark.8 = {
 		tag = SCA
 		from = 1647.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1648
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_lappmark_8 (tc_event_pulses.txt). Median late 1648
 	}
 
 	trigger = {

@@ -25,7 +25,7 @@ swe_baltic.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Reval
+		monthly_chance = 15 # Median about five months after Sweden takes Reval; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -119,7 +119,7 @@ swe_baltic.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Riga
+		monthly_chance = 15 # Median about five months after Sweden takes Riga; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -261,7 +261,7 @@ swe_baltic.4 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Russia loses its last Baltic port
+		monthly_chance = 15 # Median about five months after Russia loses its last Baltic port; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -443,7 +443,7 @@ swe_baltic.5 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Courland
+		monthly_chance = 15 # Median about five months after Sweden takes Courland; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -556,7 +556,7 @@ swe_baltic.6 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after the conditions are met
+		monthly_chance = 15 # Median about five months after the conditions are met; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {

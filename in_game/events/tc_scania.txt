@@ -19,7 +19,7 @@ swe_scania.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden holds all of Skåneland
+		monthly_chance = 15 # Median about five months after Sweden holds all of Skåneland; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -90,7 +90,7 @@ swe_scania.6 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden itself owns Malmö
+		monthly_chance = 15 # Median about five months after Sweden itself owns Malmö; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -157,7 +157,7 @@ swe_scania.7 = {
 		tag = SCA
 		from = 1678.1.1
 		to = 1720.1.1
-		monthly_chance = 3 # Median late 1679
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_scania_7 (tc_event_pulses.txt). Median late 1679
 	}
 
 	trigger = {

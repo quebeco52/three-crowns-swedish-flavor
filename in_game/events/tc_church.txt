@@ -36,7 +36,7 @@ swe_church.1 = {
 		tag = SCA
 		from = 1591.6.1
 		to = 1700.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median spring 1593, ~98% by 1602
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_church_1 (tc_event_pulses.txt). Median spring 1593, ~98% by 1602
 	}
 
 	trigger = {
@@ -112,7 +112,7 @@ swe_church.2 = {
 		tag = SCA
 		from = 1531.1.1
 		to = 1570.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median early 1533
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_church_2 (tc_event_pulses.txt). Median early 1533
 	}
 
 	trigger = {

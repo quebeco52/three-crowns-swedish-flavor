@@ -22,7 +22,7 @@ swe_council.1 = {
 		tag = SCA
 		from = 1387.1.1
 		to = 1420.1.1
-		monthly_chance = 3 # Median early 1389 if Sweden is at war
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_1 (tc_event_pulses.txt). Median early 1389 if Sweden is at war
 	}
 
 	trigger = {
@@ -95,7 +95,7 @@ swe_council.2 = {
 		tag = SCA
 		from = 1451.1.1
 		to = 1470.1.1
-		monthly_chance = 3 # Median late 1452
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_2 (tc_event_pulses.txt). Median late 1452
 	}
 
 	trigger = {
@@ -168,7 +168,7 @@ swe_council.3 = {
 		tag = SCA
 		from = 1553.11.1
 		to = 1575.1.1
-		monthly_chance = 3 # Median late 1555
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_3 (tc_event_pulses.txt). Median late 1555
 	}
 
 	trigger = {
@@ -237,7 +237,7 @@ swe_council.4 = {
 		tag = SCA
 		from = 1628.5.1
 		to = 1698.1.1
-		monthly_chance = 3 # Median mid-1630
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_4 (tc_event_pulses.txt). Median mid-1630
 	}
 
 	trigger = {
@@ -299,7 +299,7 @@ swe_council.6 = {
 		tag = SCA
 		from = 1542.1.1
 		to = 1637.1.1
-		monthly_chance = 3 # Median about two years into the first peace from 1542
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_6 (tc_event_pulses.txt). Median about two years into the first peace from 1542
 	}
 
 	trigger = {

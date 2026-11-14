@@ -29,7 +29,7 @@ swe_germany.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Bremen
+		monthly_chance = 15 # Median about five months after Sweden takes Bremen; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -112,7 +112,7 @@ swe_germany.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Würzburg
+		monthly_chance = 15 # Median about five months after Sweden takes Würzburg; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {
@@ -206,7 +206,7 @@ swe_germany.3 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes the mouth of the Geeste
+		monthly_chance = 15 # Median about five months after Sweden takes the mouth of the Geeste; 15% so it doesn't hold up the queue
 	}
 
 	trigger = {

@@ -19,7 +19,7 @@ swe_union.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years once the trigger holds
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_union_1 (tc_event_pulses.txt). Median about two years once the trigger holds
 	}
 
 	trigger = {

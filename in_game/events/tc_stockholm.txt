@@ -192,7 +192,7 @@ swe_stockholm.3 = {
 		tag = SCA
 		from = 1648.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years, so about 1650 if the church already stands
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_stockholm_3 (tc_event_pulses.txt). Median about two years, so about 1650 if the church already stands
 	}
 
 	trigger = {
@@ -258,7 +258,7 @@ swe_stockholm.4 = {
 		tag = SCA
 		from = 1487.1.1
 		to = 1520.1.1
-		monthly_chance = 3 # Median late 1488
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_stockholm_4 (tc_event_pulses.txt). Median late 1488
 	}
 
 	trigger = {
@@ -323,7 +323,7 @@ swe_stockholm.5 = {
 		tag = SCA
 		from = 1533.4.1
 		to = 1550.1.1
-		monthly_chance = 3 # Median around 1535
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_stockholm_5 (tc_event_pulses.txt). Median around 1535
 	}
 
 	trigger = {
@@ -457,7 +457,7 @@ swe_stockholm.7 = {
 		tag = SCA
 		from = 1535.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1536
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_stockholm_7 (tc_event_pulses.txt). Median late 1536
 	}
 
 	trigger = {

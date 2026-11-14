@@ -21,7 +21,7 @@ swe_gotaland.1 = {
 		tag = SCA
 		from = 1503.6.1
 		to = 1530.1.1
-		monthly_chance = 3 # Median spring 1505
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_1 (tc_event_pulses.txt). Median spring 1505
 	}
 
 	trigger = {
@@ -85,7 +85,7 @@ swe_gotaland.2 = {
 		tag = SCA
 		from = 1505.1.1
 		to = 1530.1.1
-		monthly_chance = 3 # Median late 1506
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_2 (tc_event_pulses.txt). Median late 1506
 	}
 
 	trigger = {
@@ -144,7 +144,7 @@ swe_gotaland.3 = {
 		tag = SCA
 		from = 1538.1.1
 		to = 1560.1.1
-		monthly_chance = 3 # Median late 1539
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_3 (tc_event_pulses.txt). Median late 1539
 	}
 
 	trigger = {
@@ -230,7 +230,7 @@ swe_gotaland.4 = {
 		tag = SCA
 		from = 1560.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1561
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_4 (tc_event_pulses.txt). Median late 1561
 	}
 
 	trigger = {
@@ -331,7 +331,7 @@ swe_gotaland.6 = {
 		tag = SCA
 		from = 1644.1.1
 		to = 1680.1.1
-		monthly_chance = 3 # Median late 1645
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_6 (tc_event_pulses.txt). Median late 1645
 	}
 
 	trigger = {
@@ -424,7 +424,7 @@ swe_gotaland.7 = {
 		tag = SCA
 		from = 1722.1.1
 		to = 1765.1.1
-		monthly_chance = 3 # Median late 1723 if it is already a town
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_7 (tc_event_pulses.txt). Median late 1723 if it is already a town
 	}
 
 	trigger = {
@@ -498,7 +498,7 @@ swe_gotaland.8 = {
 		tag = SCA
 		from = 1773.1.1
 		to = 1800.1.1
-		monthly_chance = 3 # Median late 1774
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_8 (tc_event_pulses.txt). Median late 1774
 	}
 
 	trigger = {
@@ -550,7 +550,7 @@ swe_gotaland.9 = {
 		tag = SCA
 		from = 1645.9.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median about 1647
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_9 (tc_event_pulses.txt). Median about 1647
 	}
 
 	trigger = {
@@ -638,7 +638,7 @@ swe_gotaland.10 = {
 		tag = SCA
 		from = 1658.1.1
 		to = 1720.1.1
-		monthly_chance = 3 # Median about 1660, or two years after the move
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_10 (tc_event_pulses.txt). Median about 1660, or two years after the move
 	}
 
 	trigger = {
@@ -709,7 +709,7 @@ swe_gotaland.11 = {
 		tag = SCA
 		from = 1471.9.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median summer 1473
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_11 (tc_event_pulses.txt). Median summer 1473
 	}
 
 	trigger = {
@@ -796,7 +796,7 @@ swe_gotaland.12 = {
 		tag = SCA
 		from = 1527.6.1
 		to = 1610.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median spring 1529
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_12 (tc_event_pulses.txt). Median spring 1529
 	}
 
 	trigger = {
@@ -865,7 +865,7 @@ swe_gotaland.13 = {
 		tag = SCA
 		from = 1340.3.1
 		to = 1450.1.1
-		monthly_chance = 3 # Median early 1342
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_13 (tc_event_pulses.txt). Median early 1342
 	}
 
 	trigger = {
@@ -949,7 +949,7 @@ swe_gotaland.14 = {
 		tag = SCA
 		from = 1471.12.1
 		to = 1560.1.1
-		monthly_chance = 3 # Median late 1473
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_14 (tc_event_pulses.txt). Median late 1473
 	}
 
 	trigger = {
@@ -1025,7 +1025,7 @@ swe_gotaland.15 = {
 		tag = SCA
 		from = 1525.3.1
 		to = 1620.1.1
-		monthly_chance = 3 # Median early 1527
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_15 (tc_event_pulses.txt). Median early 1527
 	}
 
 	trigger = {
@@ -1106,7 +1106,7 @@ swe_gotaland.16 = {
 		tag = SCA
 		from = 1559.6.1
 		to = 1620.1.1
-		monthly_chance = 3 # Median spring 1561
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_16 (tc_event_pulses.txt). Median spring 1561
 	}
 
 	trigger = {
@@ -1171,7 +1171,7 @@ swe_gotaland.17 = {
 		tag = SCA
 		from = 1570.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1571
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_17 (tc_event_pulses.txt). Median late 1571
 	}
 
 	trigger = {

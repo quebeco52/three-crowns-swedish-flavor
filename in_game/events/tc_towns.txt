@@ -31,7 +31,7 @@ swe_towns.1 = {
 		tag = SCA
 		from = 1548.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1549
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_1 (tc_event_pulses.txt). Median late 1549
 	}
 
 	trigger = {
@@ -168,7 +168,7 @@ swe_towns.2 = {
 		tag = SCA
 		from = 1582.1.1
 		to = 1640.1.1
-		monthly_chance = 3 # Median late 1583
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_2 (tc_event_pulses.txt). Median late 1583
 	}
 
 	trigger = {
@@ -245,7 +245,7 @@ swe_towns.3 = {
 		tag = SCA
 		from = 1604.1.1
 		to = 1660.1.1
-		monthly_chance = 3 # Median late 1605
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_3 (tc_event_pulses.txt). Median late 1605
 	}
 
 	trigger = {
@@ -310,7 +310,7 @@ swe_towns.4 = {
 		tag = SCA
 		from = 1619.1.1
 		to = 1660.1.1
-		monthly_chance = 3 # Median late 1620
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_4 (tc_event_pulses.txt). Median late 1620
 	}
 
 	trigger = {
@@ -423,7 +423,7 @@ swe_towns.5 = {
 		tag = SCA
 		from = 1739.1.1
 		to = 1760.1.1
-		monthly_chance = 3 # Median late 1740
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_5 (tc_event_pulses.txt). Median late 1740
 	}
 
 	trigger = {
@@ -476,7 +476,7 @@ swe_towns.6 = {
 		tag = SCA
 		from = 1784.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median late 1785
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_6 (tc_event_pulses.txt). Median late 1785
 	}
 
 	trigger = {
@@ -532,7 +532,7 @@ swe_towns.7 = {
 		tag = SCA
 		from = 1647.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1648
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_7 (tc_event_pulses.txt). Median late 1648
 	}
 
 	trigger = {
@@ -597,7 +597,7 @@ swe_towns.8 = {
 		tag = SCA
 		from = 1619.6.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median spring 1621
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_8 (tc_event_pulses.txt). Median spring 1621
 	}
 
 	trigger = {

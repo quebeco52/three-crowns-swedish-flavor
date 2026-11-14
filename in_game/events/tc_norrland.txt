@@ -21,7 +21,7 @@ swe_norrland.1 = {
 		tag = SCA
 		from = 1432.1.1
 		to = 1500.1.1
-		monthly_chance = 3 # Median about two years, so about 1434
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_norrland_1 (tc_event_pulses.txt). Median about two years, so about 1434
 	}
 
 	trigger = {
@@ -100,7 +100,7 @@ swe_norrland.2 = {
 		tag = SCA
 		from = 1555.1.1
 		to = 1620.1.1
-		monthly_chance = 3 # Median late 1556
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_norrland_2 (tc_event_pulses.txt). Median late 1556
 	}
 
 	trigger = {
@@ -166,7 +166,7 @@ swe_norrland.3 = {
 		tag = SCA
 		from = 1794.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median late 1795
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_norrland_3 (tc_event_pulses.txt). Median late 1795
 	}
 
 	trigger = {
@@ -246,7 +246,7 @@ swe_norrland.6 = {
 		tag = SCA
 		from = 1698.1.1
 		to = 1780.1.1
-		monthly_chance = 3 # Median late 1699
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_norrland_6 (tc_event_pulses.txt). Median late 1699
 	}
 
 	trigger = {
@@ -312,7 +312,7 @@ swe_norrland.7 = {
 		tag = SCA
 		from = 1514.1.1
 		to = 1530.1.1
-		monthly_chance = 3 # Median late 1515
+		monthly_chance = 1 # Plus 3% a month from tc_pulse_norrland_7 (tc_event_pulses.txt). Median late 1515
 	}
 
 	trigger = {

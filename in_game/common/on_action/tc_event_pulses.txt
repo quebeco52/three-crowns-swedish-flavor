@@ -1,0 +1,957 @@
+﻿# Our historical events also fire from here, outside the queue. Each month the game fires at most one queued
+# historical event per country, the first open one in load order (our tc_ files, then vanilla) whose chance beats
+# a single draw, so a queue of 3% events moves at about one firing per 33 months, and any of ours waiting shuts out
+# vanilla's 2% Swedish events (Oxenstierna, Per Brahe, the Vasa sinking, copper plate money). Each event keeps its
+# dynamic_historical_event block at 1% for the Historical Events panel, as vanilla's flavor_ven.24 does from the
+# yearly pulse, and its child here adds its old chance each month. Tested 2026-11-14: both routes share one dated
+# fire-once record, and the panel and dynamic_historical_event_fired see a firing from here. This hook ignores the
+# event's from/to and tag list, so each child repeats the window; random_events fires one event per block, so each
+# event has its own child. Left in the queue: conquest events (15%), milestones (10%), swe_scania.8 and
+# swe_jamtland.2 (5%), swe_finland.1 (100%) and the settled Vasa events. Generated from the events' windows:
+# keep each child's dates equal to its event's from/to.
+
+monthly_country_pulse = {
+	on_actions = { tc_monthly_country_pulse }
+}
+
+tc_monthly_country_pulse = {
+	trigger = { has_or_had_tag = SWE }
+	on_actions = {
+		tc_pulse_church_1
+		tc_pulse_church_2
+		tc_pulse_council_1
+		tc_pulse_council_2
+		tc_pulse_council_3
+		tc_pulse_council_4
+		tc_pulse_council_6
+		tc_pulse_dalarna_1
+		tc_pulse_dalarna_2
+		tc_pulse_finland_east_1
+		tc_pulse_finland_east_2
+		tc_pulse_finland_east_3
+		tc_pulse_finland_east_4
+		tc_pulse_finland_east_5
+		tc_pulse_finland_east_6
+		tc_pulse_finland_east_7
+		tc_pulse_finland_east_8
+		tc_pulse_finland_west_1
+		tc_pulse_finland_west_2
+		tc_pulse_finland_west_3
+		tc_pulse_finland_west_4
+		tc_pulse_finland_west_5
+		tc_pulse_finland_west_6
+		tc_pulse_finland_west_7
+		tc_pulse_gotaland_1
+		tc_pulse_gotaland_2
+		tc_pulse_gotaland_3
+		tc_pulse_gotaland_4
+		tc_pulse_gotaland_6
+		tc_pulse_gotaland_7
+		tc_pulse_gotaland_8
+		tc_pulse_gotaland_9
+		tc_pulse_gotaland_10
+		tc_pulse_gotaland_11
+		tc_pulse_gotaland_12
+		tc_pulse_gotaland_13
+		tc_pulse_gotaland_14
+		tc_pulse_gotaland_15
+		tc_pulse_gotaland_16
+		tc_pulse_gotaland_17
+		tc_pulse_lappmark_1
+		tc_pulse_lappmark_3
+		tc_pulse_lappmark_4
+		tc_pulse_lappmark_5
+		tc_pulse_lappmark_6
+		tc_pulse_lappmark_7
+		tc_pulse_lappmark_8
+		tc_pulse_norrland_1
+		tc_pulse_norrland_2
+		tc_pulse_norrland_3
+		tc_pulse_norrland_6
+		tc_pulse_norrland_7
+		tc_pulse_oland_1
+		tc_pulse_ostergotland_1
+		tc_pulse_ostergotland_2
+		tc_pulse_ostergotland_3
+		tc_pulse_russia_2
+		tc_pulse_scania_7
+		tc_pulse_stockholm_3
+		tc_pulse_stockholm_4
+		tc_pulse_stockholm_5
+		tc_pulse_stockholm_7
+		tc_pulse_svealand_1
+		tc_pulse_svealand_2
+		tc_pulse_svealand_3
+		tc_pulse_svealand_4
+		tc_pulse_svealand_5
+		tc_pulse_svealand_6
+		tc_pulse_svealand_7
+		tc_pulse_towns_1
+		tc_pulse_towns_2
+		tc_pulse_towns_3
+		tc_pulse_towns_4
+		tc_pulse_towns_5
+		tc_pulse_towns_6
+		tc_pulse_towns_7
+		tc_pulse_towns_8
+		tc_pulse_union_1
+	}
+}
+
+tc_pulse_church_1 = {
+	trigger = {
+		current_date >= 1591.6.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_church.1
+	}
+}
+
+tc_pulse_church_2 = {
+	trigger = {
+		current_date >= 1531.1.1
+		current_date < 1570.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_church.2
+	}
+}
+
+tc_pulse_council_1 = {
+	trigger = {
+		current_date >= 1387.1.1
+		current_date < 1420.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_council.1
+	}
+}
+
+tc_pulse_council_2 = {
+	trigger = {
+		current_date >= 1451.1.1
+		current_date < 1470.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_council.2
+	}
+}
+
+tc_pulse_council_3 = {
+	trigger = {
+		current_date >= 1553.11.1
+		current_date < 1575.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_council.3
+	}
+}
+
+tc_pulse_council_4 = {
+	trigger = {
+		current_date >= 1628.5.1
+		current_date < 1698.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_council.4
+	}
+}
+
+tc_pulse_council_6 = {
+	trigger = {
+		current_date >= 1542.1.1
+		current_date < 1637.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_council.6
+	}
+}
+
+tc_pulse_dalarna_1 = {
+	trigger = {
+		current_date >= 1529.1.1
+		current_date < 1545.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_dalarna.1
+	}
+}
+
+tc_pulse_dalarna_2 = {
+	trigger = {
+		current_date >= 1345.1.1
+		current_date < 1400.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_dalarna.2
+	}
+}
+
+tc_pulse_finland_east_1 = {
+	trigger = {
+		current_date >= 1475.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.1
+	}
+}
+
+tc_pulse_finland_east_2 = {
+	trigger = {
+		current_date >= 1509.1.1
+		current_date < 1540.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.2
+	}
+}
+
+tc_pulse_finland_east_3 = {
+	trigger = {
+		current_date >= 1532.1.1
+		current_date < 1570.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.3
+	}
+}
+
+tc_pulse_finland_east_4 = {
+	trigger = {
+		current_date >= 1540.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.4
+	}
+}
+
+tc_pulse_finland_east_5 = {
+	trigger = {
+		current_date >= 1614.1.1
+		current_date < 1660.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.5
+	}
+}
+
+tc_pulse_finland_east_6 = {
+	trigger = {
+		current_date >= 1709.1.1
+		current_date < 1740.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.6
+	}
+}
+
+tc_pulse_finland_east_7 = {
+	trigger = {
+		current_date >= 1552.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.7
+	}
+}
+
+tc_pulse_finland_east_8 = {
+	trigger = {
+		current_date >= 1639.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_east.8
+	}
+}
+
+tc_pulse_finland_west_1 = {
+	trigger = {
+		current_date >= 1365.1.1
+		current_date < 1385.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.1
+	}
+}
+
+tc_pulse_finland_west_2 = {
+	trigger = {
+		current_date >= 1396.1.1
+		current_date < 1420.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.2
+	}
+}
+
+tc_pulse_finland_west_3 = {
+	trigger = {
+		current_date >= 1436.1.1
+		current_date < 1470.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.3
+	}
+}
+
+tc_pulse_finland_west_4 = {
+	trigger = {
+		current_date >= 1596.1.1
+		current_date < 1650.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.4
+	}
+}
+
+tc_pulse_finland_west_5 = {
+	trigger = {
+		current_date >= 1614.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.5
+	}
+}
+
+tc_pulse_finland_west_6 = {
+	trigger = {
+		current_date >= 1640.1.1
+		current_date < 1720.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.6
+	}
+}
+
+tc_pulse_finland_west_7 = {
+	trigger = {
+		current_date >= 1556.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_finland_west.7
+	}
+}
+
+tc_pulse_gotaland_1 = {
+	trigger = {
+		current_date >= 1503.6.1
+		current_date < 1530.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.1
+	}
+}
+
+tc_pulse_gotaland_2 = {
+	trigger = {
+		current_date >= 1505.1.1
+		current_date < 1530.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.2
+	}
+}
+
+tc_pulse_gotaland_3 = {
+	trigger = {
+		current_date >= 1538.1.1
+		current_date < 1560.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.3
+	}
+}
+
+tc_pulse_gotaland_4 = {
+	trigger = {
+		current_date >= 1560.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.4
+	}
+}
+
+tc_pulse_gotaland_6 = {
+	trigger = {
+		current_date >= 1644.1.1
+		current_date < 1680.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.6
+	}
+}
+
+tc_pulse_gotaland_7 = {
+	trigger = {
+		current_date >= 1722.1.1
+		current_date < 1765.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.7
+	}
+}
+
+tc_pulse_gotaland_8 = {
+	trigger = {
+		current_date >= 1773.1.1
+		current_date < 1800.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.8
+	}
+}
+
+tc_pulse_gotaland_9 = {
+	trigger = {
+		current_date >= 1645.9.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.9
+	}
+}
+
+tc_pulse_gotaland_10 = {
+	trigger = {
+		current_date >= 1658.1.1
+		current_date < 1720.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.10
+	}
+}
+
+tc_pulse_gotaland_11 = {
+	trigger = {
+		current_date >= 1471.9.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.11
+	}
+}
+
+tc_pulse_gotaland_12 = {
+	trigger = {
+		current_date >= 1527.6.1
+		current_date < 1610.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.12
+	}
+}
+
+tc_pulse_gotaland_13 = {
+	trigger = {
+		current_date >= 1340.3.1
+		current_date < 1450.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.13
+	}
+}
+
+tc_pulse_gotaland_14 = {
+	trigger = {
+		current_date >= 1471.12.1
+		current_date < 1560.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.14
+	}
+}
+
+tc_pulse_gotaland_15 = {
+	trigger = {
+		current_date >= 1525.3.1
+		current_date < 1620.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.15
+	}
+}
+
+tc_pulse_gotaland_16 = {
+	trigger = {
+		current_date >= 1559.6.1
+		current_date < 1620.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.16
+	}
+}
+
+tc_pulse_gotaland_17 = {
+	trigger = {
+		current_date >= 1570.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_gotaland.17
+	}
+}
+
+tc_pulse_lappmark_1 = {
+	trigger = {
+		current_date >= 1344.1.1
+		current_date < 1365.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.1
+	}
+}
+
+tc_pulse_lappmark_3 = {
+	trigger = {
+		current_date >= 1340.1.1
+		current_date < 1400.1.1
+	}
+	random_events = {
+		chance_to_happen = 2
+		100 = swe_lappmark.3
+	}
+}
+
+tc_pulse_lappmark_4 = {
+	trigger = {
+		current_date >= 1600.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.4
+	}
+}
+
+tc_pulse_lappmark_5 = {
+	trigger = {
+		current_date >= 1615.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.5
+	}
+}
+
+tc_pulse_lappmark_6 = {
+	trigger = {
+		current_date >= 1635.1.1
+		current_date < 1750.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.6
+	}
+}
+
+tc_pulse_lappmark_7 = {
+	trigger = {
+		current_date >= 1619.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.7
+	}
+}
+
+tc_pulse_lappmark_8 = {
+	trigger = {
+		current_date >= 1647.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_lappmark.8
+	}
+}
+
+tc_pulse_norrland_1 = {
+	trigger = {
+		current_date >= 1432.1.1
+		current_date < 1500.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_norrland.1
+	}
+}
+
+tc_pulse_norrland_2 = {
+	trigger = {
+		current_date >= 1555.1.1
+		current_date < 1620.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_norrland.2
+	}
+}
+
+tc_pulse_norrland_3 = {
+	trigger = {
+		current_date >= 1794.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_norrland.3
+	}
+}
+
+tc_pulse_norrland_6 = {
+	trigger = {
+		current_date >= 1698.1.1
+		current_date < 1780.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_norrland.6
+	}
+}
+
+tc_pulse_norrland_7 = {
+	trigger = {
+		current_date >= 1514.1.1
+		current_date < 1530.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_norrland.7
+	}
+}
+
+tc_pulse_oland_1 = {
+	trigger = {
+		current_date >= 1337.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 2
+		100 = swe_oland.1
+	}
+}
+
+tc_pulse_ostergotland_1 = {
+	trigger = {
+		current_date >= 1487.1.1
+		current_date < 1520.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_ostergotland.1
+	}
+}
+
+tc_pulse_ostergotland_2 = {
+	trigger = {
+		current_date >= 1368.8.1
+		current_date < 1430.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_ostergotland.2
+	}
+}
+
+tc_pulse_ostergotland_3 = {
+	trigger = {
+		current_date >= 1635.8.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_ostergotland.3
+	}
+}
+
+tc_pulse_russia_2 = {
+	trigger = {
+		current_date >= 1478.1.1
+		current_date < 1631.3.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_russia.2
+	}
+}
+
+tc_pulse_scania_7 = {
+	trigger = {
+		current_date >= 1678.1.1
+		current_date < 1720.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_scania.7
+	}
+}
+
+tc_pulse_stockholm_3 = {
+	trigger = {
+		current_date >= 1648.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_stockholm.3
+	}
+}
+
+tc_pulse_stockholm_4 = {
+	trigger = {
+		current_date >= 1487.1.1
+		current_date < 1520.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_stockholm.4
+	}
+}
+
+tc_pulse_stockholm_5 = {
+	trigger = {
+		current_date >= 1533.4.1
+		current_date < 1550.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_stockholm.5
+	}
+}
+
+tc_pulse_stockholm_7 = {
+	trigger = {
+		current_date >= 1535.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_stockholm.7
+	}
+}
+
+tc_pulse_svealand_1 = {
+	trigger = {
+		current_date >= 1519.1.1
+		current_date < 1560.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.1
+	}
+}
+
+tc_pulse_svealand_2 = {
+	trigger = {
+		current_date >= 1659.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.2
+	}
+}
+
+tc_pulse_svealand_3 = {
+	trigger = {
+		current_date >= 1652.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.3
+	}
+}
+
+tc_pulse_svealand_4 = {
+	trigger = {
+		current_date >= 1433.6.1
+		current_date < 1447.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.4
+	}
+}
+
+tc_pulse_svealand_5 = {
+	trigger = {
+		current_date >= 1593.1.1
+		current_date < 1640.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.5
+	}
+}
+
+tc_pulse_svealand_6 = {
+	trigger = {
+		current_date >= 1535.1.1
+		current_date < 1580.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.6
+	}
+}
+
+tc_pulse_svealand_7 = {
+	trigger = {
+		current_date >= 1478.1.1
+		current_date < 1509.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_svealand.7
+	}
+}
+
+tc_pulse_towns_1 = {
+	trigger = {
+		current_date >= 1548.1.1
+		current_date < 1600.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.1
+	}
+}
+
+tc_pulse_towns_2 = {
+	trigger = {
+		current_date >= 1582.1.1
+		current_date < 1640.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.2
+	}
+}
+
+tc_pulse_towns_3 = {
+	trigger = {
+		current_date >= 1604.1.1
+		current_date < 1660.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.3
+	}
+}
+
+tc_pulse_towns_4 = {
+	trigger = {
+		current_date >= 1619.1.1
+		current_date < 1660.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.4
+	}
+}
+
+tc_pulse_towns_5 = {
+	trigger = {
+		current_date >= 1739.1.1
+		current_date < 1760.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.5
+	}
+}
+
+tc_pulse_towns_6 = {
+	trigger = {
+		current_date >= 1784.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.6
+	}
+}
+
+tc_pulse_towns_7 = {
+	trigger = {
+		current_date >= 1647.1.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.7
+	}
+}
+
+tc_pulse_towns_8 = {
+	trigger = {
+		current_date >= 1619.6.1
+		current_date < 1700.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_towns.8
+	}
+}
+
+tc_pulse_union_1 = {
+	trigger = {
+		current_date >= 1337.1.1
+		current_date < 1837.1.1
+	}
+	random_events = {
+		chance_to_happen = 3
+		100 = swe_union.1
+	}
+}

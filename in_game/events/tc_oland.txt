@@ -16,7 +16,7 @@ swe_oland.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 2 # About four years once the trigger holds
+		monthly_chance = 1 # Plus 2% a month from tc_pulse_oland_1 (tc_event_pulses.txt). About four years once the trigger holds
 	}
 
 	trigger = {
