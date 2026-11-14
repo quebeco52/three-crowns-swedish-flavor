@@ -106,9 +106,13 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_extreme_bonus
-		add_gold = {
-			value = scope:swe_moscow_province.province_tax_base
-			multiply = 4
+		# Guarded because the Historical Events panel previews options without running immediate
+		if = {
+			limit = { exists = scope:swe_moscow_province }
+			add_gold = {
+				value = scope:swe_moscow_province.province_tax_base
+				multiply = 4
+			}
 		}
 		custom_tooltip = {
 			text = swe_russia.1.a_prosperity_tt
@@ -151,9 +155,12 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_severe_bonus
-		add_gold = {
-			value = scope:swe_moscow_province.province_tax_base
-			multiply = 2
+		if = {
+			limit = { exists = scope:swe_moscow_province }
+			add_gold = {
+				value = scope:swe_moscow_province.province_tax_base
+				multiply = 2
+			}
 		}
 		custom_tooltip = {
 			text = swe_russia.1.b_tt

@@ -283,9 +283,13 @@ swe_scania.8 = {
 			base = 25
 		}
 
-		add_gold = {
-			value = scope:swe_scania.monthly_income_trade_and_tax
-			multiply = 6
+		# Guarded because the Historical Events panel previews options without running immediate
+		if = {
+			limit = { exists = scope:swe_scania }
+			add_gold = {
+				value = scope:swe_scania.monthly_income_trade_and_tax
+				multiply = 6
+			}
 		}
 		scope:swe_scania = {
 			add_country_modifier = { modifier = swe_scanian_pledge years = 10 }
