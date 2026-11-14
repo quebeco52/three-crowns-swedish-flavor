@@ -121,7 +121,7 @@ tc_on_game_start = {
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
-		# The two great salmon rivers of the Bothnian Bay, at vanilla's size for one famous tile (sikar_copper_mines_base).
+		# The two great salmon rivers of the Bothnian Bay, shaped like vanilla's quality_merino_wool (output and trade capacity).
 		# Vanilla gives its large base bonuses to one or two tiles, so the Kalix (ranea), Kemi, Oulu and Ume keep
 		# vanilla's goods and no bonus. The fisheries belong to the location, not to Sweden: both are unowned in 1337.
 		# The Torne reaches the sea at Torneå, which already produces fish; the Crown's salmon fisheries have been

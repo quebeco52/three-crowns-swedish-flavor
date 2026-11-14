@@ -1,14 +1,17 @@
 ﻿# The salmon fisheries and the iron of Bergslagen are added at game start by tc_on_game_start, like vanilla's
 # location_historical_base_values.txt; the others by the event or decision named above each one.
 
-# The two great salmon rivers of the Bothnian Bay: the Torne (tornea) and the Ii (kuivaniemi). The size of
-# vanilla's one-tile sikar_copper_mines_base and sahara_salt_mines_base (1), half of
-# newfoundland_fishing_grounds_base (2) and far below skane_herring_market (5), which supplied fish to half of Europe.
+# The two great salmon rivers of the Bothnian Bay: the Torne (tornea) and the Ii (kuivaniemi). The salmon was
+# an export, not food, so this has the shape of vanilla's prized-export modifier quality_merino_wool (raw output
+# 0.5, trade capacity 0.5), without its trade advantage: we hold nearly all of it in the Stockholm market already.
+# The fish market there is at its price floor with fish left unsold, so trade capacity, not output, carries the trade.
+# fishing_village gives 0.25 trade capacity per level.
 swe_northern_salmon_fishery = {
 	game_data = {
 		category = location
 	}
-	local_fish_output_modifier = 1
+	local_fish_output_modifier = 0.5
+	local_merchant_capacity = 0.5
 }
 
 # The salmon fishery below the Älvkarleby falls of the Dalälven, in tierp: one fishery at the river mouth,
