@@ -1,11 +1,9 @@
 ﻿namespace = swe_union
 
-# The Norwegian lords ask for a king of their own, as at Varberg in 1343, when Magnus Eriksson's younger son
-# Haakon was given Norway. Fires on the state of the union, not the date: Sweden shares its ruler with Norway,
-# that ruler has a son who is nobody's heir, and the Norwegian lords aren't well content. Norway gets its new ruler
-# through set_new_ruler, not set_new_ruler_with_union_if_senior, so the union splits without unionevents.100
-# and nobody gains cb_claim_throne.
-# Balanced against vanilla unionevents.1 (opinion_restrict_nobles and a noble penalty)
+# The Norwegian lords ask for a king of their own, as at Varberg in 1343, when Magnus Eriksson's younger son Haakon
+# was given Norway. Fires on the state of the union, not the date. Norway gets its new ruler through set_new_ruler,
+# not set_new_ruler_with_union_if_senior, so the union splits without unionevents.100 and nobody gains
+# cb_claim_throne.
 swe_union.1 = {
 	type = country_event
 	title = swe_union.1.title
@@ -19,7 +17,7 @@ swe_union.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_union_1 (tc_event_pulses.txt). Median about two years once the trigger holds
+		monthly_chance = 1 # Mostly fired by tc_pulse_union_1
 	}
 
 	trigger = {
@@ -32,14 +30,14 @@ swe_union.1 = {
 		}
 		c:NOR ?= {
 			in_union_with = root
-			# Norway's nobles usually sit at about 0.5, so this holds unless they are kept well content, which is the
-			# player's way to avoid it. The 0.45 of vanilla free_cities.txt would almost never hold.
+			# Norway's nobles usually sit at about 0.5, so this holds unless they are kept well content
 			OR = {
 				estate_satisfaction = { estate_type = estate_type:nobles_estate value < 0.6 }
 				opinion = { target = root value < 0 }
 			}
 		}
-		# Any age: Haakon was about three. ?= because triggers are evaluated in full, so a regency would log an error
+		# Any age, since Haakon was about three. ?= because triggers are evaluated in full and a regency would
+		# log an error
 		ruler ?= {
 			any_child = {
 				is_alive = yes

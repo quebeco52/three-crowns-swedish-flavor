@@ -1,12 +1,11 @@
 ﻿namespace = swe_jamtland
 
-# Jämtland was Norwegian until Brömsebro (1645) and changed sides 13 times between 1563 and 1677.
-# Both events fire on ownership while Norwegian culture still dominates there, never by date, and
-# neither changes anyone's culture: swe_forsvenskning only speeds up assimilation.
+# Jämtland was Norwegian until Brömsebro (1645) and changed sides 13 times between 1563 and 1677. Both events fire on
+# ownership while Norwegian culture still dominates there, never by date.
 
-# Sweden takes over Jämtland. Sweden made Härnösand a superintendency (1647, a diocese only from 1772) and founded schools to draw the
-# Jämtlanders away from Trondheim. Same shape as swe_scania.1. Idre and Särna, taken in a bloodless
-# march in 1644, go with it through swe_jamtland_lands_trigger.
+# Sweden takes over Jämtland. Sweden made Härnösand a superintendency (1647) and founded schools to draw the
+# Jämtlanders away from Trondheim. Idre and Särna, taken in a bloodless march in 1644, go with it through
+# swe_jamtland_lands_trigger.
 swe_jamtland.1 = {
 	type = country_event
 	title = swe_jamtland.1.title
@@ -20,7 +19,7 @@ swe_jamtland.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes Frösön; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -100,13 +99,10 @@ swe_jamtland.1 = {
 	}
 }
 
-# The Jämtlanders hail the enemy as liberators, as they did the Norwegians in 1657 and 1677. Fires
-# after swe_jamtland.1, while Sweden is at war with whoever holds Trondheim, Jämtland's old diocese and
-# the way the Norwegian armies came. Punishing them ends any tings and restarts the 20 years of
-# swe_forsvenskning, so it does something even after the historical swe_jamtland.1.a. The concession matches
-# the agreement of 1688. The modifiers come off wherever Sweden owns them, whatever the culture there.
-# The third option mirrors Denmark-Norway's räfst of 1613-16, when the Jämtlanders lost their hereditary
-# rights and most of them bought those rights back. Gold now, at the cost of the peasants' goodwill.
+# The Jämtlanders hail the enemy as liberators, as they did the Norwegians in 1657 and 1677. Fires after
+# swe_jamtland.1, in a war with whoever holds Trondheim, Jämtland's old diocese. The concession matches the agreement
+# of 1688. The third option mirrors Denmark-Norway's räfst of 1613-16, when the Jämtlanders lost their hereditary
+# rights and most of them bought those rights back.
 swe_jamtland.2 = {
 	type = country_event
 	title = swe_jamtland.2.title

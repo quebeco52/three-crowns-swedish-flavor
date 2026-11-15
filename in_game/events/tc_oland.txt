@@ -1,8 +1,7 @@
 ﻿namespace = swe_oland
 
-# The peasants of Öland complain about the royal deer park (swe_olands_djurgard), as their deputies did
-# at the Riksdag of 1800. Waits until the park is 20 years old, then needs unhappy peasants or a realm
-# leaning toward free subjects. Refusing is final: the park then stays for good.
+# The peasants of Öland complain about the royal deer park (swe_olands_djurgard), as their deputies did at the Riksdag
+# of 1800. Waits until the park is 20 years old. Refusing is final, and the park then stays for good.
 swe_oland.1 = {
 	type = country_event
 	title = swe_oland.1.title
@@ -16,7 +15,7 @@ swe_oland.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 1 # Plus 2% a month from tc_pulse_oland_1 (tc_event_pulses.txt). About four years once the trigger holds
+		monthly_chance = 1 # Mostly fired by tc_pulse_oland_1
 	}
 
 	trigger = {

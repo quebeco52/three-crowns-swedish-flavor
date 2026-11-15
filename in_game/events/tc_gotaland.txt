@@ -1,13 +1,9 @@
 ﻿namespace = swe_gotaland
 
-# Content for Småland, Västergötland, Gotland and Bohuslän. Sweden owns all of this land from 1337 except Bohuslän, so
-# most of these need only ownership and fire in nearly every game. The exceptions: .7 needs Alingsås raised to a town,
-# .9 and .15 need Kalmar a town, .10 follows .9, .8 waits for Bohuslän, .11 needs Bohus in foreign hands, and .12
-# needs a Protestant monarchy.
+# Content for Småland, Västergötland, Gotland and Bohuslän, all Swedish from 1337 except Bohuslän.
 
-# Bondefred: about ten border peaces between Småland and Blekinge, 1505-25, because war disrupted their trade. The
-# treaty of August 1505 was confirmed in 1510, and Svante Nilsson spared Ronneby in 1506 (Cederholm). Manpower as in
-# swe_jamtland_tings, whose peasants also kept out of the kings' wars.
+# Bondefred: peasant border peaces between Småland and Blekinge, 1505-25, made because war disrupted their trade
+# (Cederholm).
 swe_gotaland.1 = {
 	type = country_event
 	title = swe_gotaland.1.title
@@ -21,7 +17,7 @@ swe_gotaland.1 = {
 		tag = SCA
 		from = 1503.6.1
 		to = 1530.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_1 (tc_event_pulses.txt). Median spring 1505
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_1
 	}
 
 	trigger = {
@@ -70,8 +66,8 @@ swe_gotaland.1 = {
 	}
 }
 
-# Sunnerbo's protest of 1507 against its new judge (Cederholm, quoting BSH 5, nr 145). Ljungby stands in for Sunnerbo.
-# Knut Arvidsson stayed judge all the same, so keeping him is the historical option.
+# Sunnerbo protests against its new judge, 1507 (Cederholm). Ljungby stands in for Sunnerbo. Knut Arvidsson stayed
+# judge, so keeping him is the historical option.
 swe_gotaland.2 = {
 	type = country_event
 	title = swe_gotaland.2.title
@@ -85,7 +81,7 @@ swe_gotaland.2 = {
 		tag = SCA
 		from = 1505.1.1
 		to = 1530.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_2 (tc_event_pulses.txt). Median late 1506
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_2
 	}
 
 	trigger = {
@@ -128,9 +124,8 @@ swe_gotaland.2 = {
 	}
 }
 
-# The ban on exporting oxen, which helped set off the Dacke rising of 1542-43. Vanilla has no Dacke content. No rebels,
-# so the rising is an unrest modifier in Tioharad (swe_oxen_ban, 0.2, not cruel_overlord's 0.5). The ban was meant
-# to feed the miners and smiths of Bergslagen, so enforcing it also helps the mines there (swe_oxen_for_the_mines).
+# The ban on exporting oxen, which helped set off the Dacke rising of 1542-43. The ban was meant to feed the miners and
+# smiths of Bergslagen, so enforcing it also helps the mines there.
 swe_gotaland.3 = {
 	type = country_event
 	title = swe_gotaland.3.title
@@ -144,7 +139,7 @@ swe_gotaland.3 = {
 		tag = SCA
 		from = 1538.1.1
 		to = 1560.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_3 (tc_event_pulses.txt). Median late 1539
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_3
 	}
 
 	trigger = {
@@ -173,7 +168,6 @@ swe_gotaland.3 = {
 			every_owned_location = {
 				limit = { province_definition = province_definition:tioharad_province }
 				add_location_modifier = { modifier = swe_oxen_ban years = 10 }
-				# The anger stays in this region, in place of a country-wide estate penalty
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
 					add_pop_satisfaction = pop_satisfaction_mild_penalty
@@ -214,9 +208,8 @@ swe_gotaland.3 = {
 	}
 }
 
-# The knallar of Sjuhäradsbygden, peddling from the mid-1500s against the town monopoly, with special laws from the
-# 1680s. Skene and Bogesund stand in for the district. 50 years, as for swe_peasant_skippers, not vanilla's longest
-# (100).
+# The knallar of Sjuhäradsbygden, peddling against the town monopoly from the mid-1500s, with special laws from the
+# 1680s. Skene and Bogesund stand in for the district.
 swe_gotaland.4 = {
 	type = country_event
 	title = swe_gotaland.4.title
@@ -230,13 +223,13 @@ swe_gotaland.4 = {
 		tag = SCA
 		from = 1560.1.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_4 (tc_event_pulses.txt). Median late 1561
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_4
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		owns = location:skene
-		# Not once swe_towns.8 has settled the question with Borås (vanilla's form, flavor_CAS.txt)
+		# Not once swe_towns.8 has settled the question with Borås
 		NOT = { dynamic_historical_event_fired = swe_towns.8 }
 	}
 
@@ -265,7 +258,6 @@ swe_gotaland.4 = {
 				add_location_modifier = { modifier = swe_knallar years = 50 }
 			}
 		}
-		# The quarrel stays in Västergötland, as in swe_towns.8, in place of country-wide estate changes
 		custom_tooltip = {
 			text = swe_gotaland.4.a_tt
 			every_owned_location = {
@@ -298,7 +290,7 @@ swe_gotaland.4 = {
 				add_location_modifier = { modifier = swe_town_monopoly_enforced years = 10 }
 			}
 		}
-		# The customs the peddlers' goods never paid (swe_towns.8's historical_info). Gold as in swe_gotaland.8.b
+		# The customs the peddlers' goods never paid
 		change_gold_effect = { scale = 2 }
 		custom_tooltip = {
 			text = swe_gotaland.4.b_tt
@@ -314,10 +306,8 @@ swe_gotaland.4 = {
 	}
 }
 
-# Visby against the rural harbours (Lerbom, Mellan två riken). The Swedish crown banned trade at the rural harbours in
-# 1646 to bring it all to Visby, and lifted the ban three years later after widespread complaints. Danish kings had
-# tried the same, as the historical info says, but this event is the Swedish ban. The modifiers last 10 years, vanilla's
-# median for a temporary situation. Anger stays on the island's peasants, in place of a country-wide estate penalty.
+# Visby against the rural harbours. The Swedish crown banned trade at Gotland's rural harbours in 1646 to bring it all
+# to Visby, and lifted the ban three years later after widespread complaints (Lerbom, Mellan två riken).
 swe_gotaland.6 = {
 	type = country_event
 	title = swe_gotaland.6.title
@@ -331,7 +321,7 @@ swe_gotaland.6 = {
 		tag = SCA
 		from = 1644.1.1
 		to = 1680.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_6 (tc_event_pulses.txt). Median late 1645
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_6
 	}
 
 	trigger = {
@@ -405,12 +395,9 @@ swe_gotaland.6 = {
 	}
 }
 
-# Jonas Alströmer's manufactories at Alingsås, privilege of 22 June 1724 (SBL, Jonas Alströmer), refused renewal in
-# 1765-66, so about 40 years. Needs a town: the real Alingsås had town rights from 1619, the cloth bonus needs a building
-# that needs town rank, and rural locations hold almost no burghers. No rank is forced, so this fires only where Alingsås
-# has been raised, which is why the window stays open until the privileges ran out. Vanilla's flavor_swe.34 is the
-# national version under the Hats and calls him Ahlströmer; this stays local. His workers came from abroad, London
-# among other places (vastsverige.com), hence the migration.
+# Jonas Alströmer's manufactories at Alingsås, privileged in 1724 and refused renewal in 1765-66 (SBL). Needs a town,
+# since the cloth bonus needs a town building and rural locations hold almost no burghers. Vanilla's flavor_swe.34 is
+# the national version. His workers came from abroad, London among other places (vastsverige.com), hence the migration.
 swe_gotaland.7 = {
 	type = country_event
 	title = swe_gotaland.7.title
@@ -424,7 +411,7 @@ swe_gotaland.7 = {
 		tag = SCA
 		from = 1722.1.1
 		to = 1765.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_7 (tc_event_pulses.txt). Median late 1723 if it is already a town
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_7
 	}
 
 	trigger = {
@@ -460,13 +447,13 @@ swe_gotaland.7 = {
 				}
 			}
 			add_migration = {
-				# The source's owner, as in flavor_ven.2: owner = this creates nothing from a location we don't own
+				# The source's owner, since owner = this creates nothing from a location we don't own
 				owner = location:london.owner
 				from = location:london.province_definition
 				to_location = location:allingsas
 				culture = culture:english
 				type = pop_type:burghers
-				amount = 0.02 # Per month, so 0.48 in all, against 875 workers in 1746 with the Swedes they trained
+				amount = 0.02 # Per month
 				months = 24
 			}
 		}
@@ -482,9 +469,8 @@ swe_gotaland.7 = {
 	}
 }
 
-# The free port of Marstrand, 15 August 1775 to 15 May 1794, so 19 years (en.wikipedia Marstrand Free Port, citing Olán
-# 1917 and Avenius 2001). Marstrand has no location, so konghalla stands in. Crown power falls because most of the
-# income went into private hands, by kulm_town_rights' -0.25. Needs Bohuslän, which starts Norwegian.
+# The free port of Marstrand, 1775-94 (en.wiki Marstrand Free Port). Konghalla stands in for Marstrand. Crown power
+# falls because most of the income went into private hands. Needs Bohuslän, which starts Norwegian.
 swe_gotaland.8 = {
 	type = country_event
 	title = swe_gotaland.8.title
@@ -498,7 +484,7 @@ swe_gotaland.8 = {
 		tag = SCA
 		from = 1773.1.1
 		to = 1800.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_8 (tc_event_pulses.txt). Median late 1774
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_8
 	}
 
 	trigger = {
@@ -526,17 +512,14 @@ swe_gotaland.8 = {
 			base = 25
 		}
 
-		# The customs the free port would have given up, as the description says. Gold as in swe_gotaland.12.b.
+		# The customs the free port would have given up
 		change_gold_effect = { scale = 2 }
 	}
 }
 
-# Kalmar moves to Kvarnholmen. The council of the realm decided the move in 1640 (sv.wiki Kalmar domkyrka). It was Axel
-# Oxenstierna's idea: the old town was cramped and too close to the castle in a siege, and the island could be fortified
-# better and served shipping better. The burghers held back until the fire of 9 September 1647 burned about three
-# quarters of the town, and the move dragged on until 1657-60 (Arkeologerna, Kalmar Gamla stan, 2022, pp. 118-121). Needs
-# town rank, since a rural Kalmar has no town to move. The burghers' anger stays in Kalmar, in place of a country-wide
-# estate penalty. swe_gotaland.10 follows the move.
+# Kalmar moves to Kvarnholmen, Axel Oxenstierna's idea, decided by the council of the realm in 1640. The burghers held
+# back until the fire of 1647, and the move dragged on until 1657-60 (sv.wiki Kalmar domkyrka; Arkeologerna, Kalmar
+# Gamla stan). Needs town rank, since a rural Kalmar has no town to move. swe_gotaland.10 follows the move.
 swe_gotaland.9 = {
 	type = country_event
 	title = swe_gotaland.9.title
@@ -550,7 +533,7 @@ swe_gotaland.9 = {
 		tag = SCA
 		from = 1645.9.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_9 (tc_event_pulses.txt). Median about 1647
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_9
 	}
 
 	trigger = {
@@ -619,12 +602,9 @@ swe_gotaland.9 = {
 	}
 }
 
-# Kalmar's cathedral on Kvarnholmen: begun 1660 under Karl X Gustav to designs by Nicodemus Tessin the Elder, consecrated half-finished in
-# 1682 and finished in 1703 (svenskakyrkan.se Kalmar, sv.wiki Kalmar domkyrka). The old church was blown up in 1678 for
-# fear of a siege (Arkeologerna, p. 121). Karl XI made Kalmar a diocese on 5 April 1678 (sv.wiki Kalmar stift); by the
-# user's choice that stays in historical_info, since Kalmar and Öland are long Protestant by then. Fires only after
-# swe_gotaland.9 moved the town, since otherwise the old church still stands in the middle of it. "Tessin" fits either
-# Tessin over the window. A monument, as vanilla makes its churches, at the gold and quality of vanilla's usual monuments.
+# Kalmar's cathedral on Kvarnholmen, begun 1660 to designs by Nicodemus Tessin the Elder and finished in 1703
+# (svenskakyrkan.se; sv.wiki Kalmar domkyrka). Fires only after swe_gotaland.9 has moved the town, since otherwise the
+# old church still stands in the middle of it. A monument, as vanilla makes its churches.
 swe_gotaland.10 = {
 	type = country_event
 	title = swe_gotaland.10.title
@@ -638,7 +618,7 @@ swe_gotaland.10 = {
 		tag = SCA
 		from = 1658.1.1
 		to = 1720.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_10 (tc_event_pulses.txt). Median about 1660, or two years after the move
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_10
 	}
 
 	trigger = {
@@ -685,17 +665,10 @@ swe_gotaland.10 = {
 	}
 }
 
-# Nya Lödöse, 1473. Lödöse on the Göta älv was the realm's only port to the west, at its largest about 1250-1350 with
-# some 2,000 inhabitants (Lödöse museum, rapport 2021:1). From the 1450s the Norwegians and Danes took a toll at Bohus
-# and so controlled the river. Sten Sture the Elder decided in 1473 to move the town to the mouth of the Säveån, and
-# privileges followed on 17 August (Göteborgs stadsmuseum, Arkeologisk rapport 2007:13; sv.wiki Nya Lödöse). The toll is
-# a foreign act and only the reason. The event is the Swedish decision, so it needs Bohus (konghalla) in hands that
-# are neither ours nor a subject's. Many burghers stayed and went on trading (Lödöse museum), which is option b.
-# swe_western_gate sits on lodose from game start (tc_on_game_start) and leaves with the town. Option a marks the new
-# town with swe_nya_lodose instead of a rename, since vanilla's flavor_swe.41 renames utlandet to Göteborg from 1620,
-# and its harbour capacity raises market access through the game's own proximity, where lodose has no natural harbour.
-# No town rank: both locations are rural in vanilla, and the rank stays the player's. The window closes before
-# Göteborg is founded. Gold as in swe_finland_west.7.
+# Nya Lödöse, 1473. From the 1450s the Norwegians and Danes took a toll at Bohus, and Sten Sture the Elder moved
+# Lödöse, the realm's only port to the west, to the mouth of the Säveån (Lödöse museum; sv.wiki Nya Lödöse). Needs
+# Bohus (konghalla) held by neither us nor a subject. swe_western_gate sits on lodose from game start and leaves with
+# the town. The new town is a modifier, not a rename, since vanilla's flavor_swe.41 renames utlandet to Göteborg.
 swe_gotaland.11 = {
 	type = country_event
 	title = swe_gotaland.11.title
@@ -709,7 +682,7 @@ swe_gotaland.11 = {
 		tag = SCA
 		from = 1471.9.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_11 (tc_event_pulses.txt). Median summer 1473
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_11
 	}
 
 	trigger = {
@@ -774,15 +747,10 @@ swe_gotaland.11 = {
 	}
 }
 
-# Västgötaherrarnas uppror, 1529. Ture Jönsson (Tre Rosor) and Bishop Magnus Haraldsson of Skara raised Västergötland
-# to depose Gustav Vasa and stop the Reformation: the lords renounced their oath at Larv on 20 April, and the
-# province's peasants refused to follow them at Broddetorp on 25 April. A court of the estates at Strängnäs in June saw
-# the letters they had exchanged and sentenced the councillors to lose life and property; Måns Bryntesson was beheaded
-# on Stortorget on 5 July (SBL, Måns Bryntesson). Ture Eriksson (Bielke) was spared at his mother's plea and fined,
-# and others paid fines too (sv.wiki Västgötaherrarnas uppror, from Starbäck and Grimberg). No rebels: the rising has
-# already failed, and the event is the trial. It needs a Protestant Sweden, which vanilla's flavor_swe.4 brings. The
-# crown power of swe_rafst stands for the forfeited estates and stays in the province. The leaders' flight to Denmark
-# is only in the history text.
+# Västgötaherrarnas uppror, 1529. Ture Jönsson and Bishop Magnus Haraldsson of Skara raised Västergötland to depose
+# Gustav Vasa and stop the Reformation, but the peasants refused to follow, and a court of the estates sentenced the
+# councillors to lose life and property (SBL, Måns Bryntesson; sv.wiki Västgötaherrarnas uppror). The event is the
+# trial, after the rising failed, so it needs a Protestant Sweden, which vanilla's flavor_swe.4 brings.
 swe_gotaland.12 = {
 	type = country_event
 	title = swe_gotaland.12.title
@@ -796,7 +764,7 @@ swe_gotaland.12 = {
 		tag = SCA
 		from = 1527.6.1
 		to = 1610.1.1 # Late enough for a late Reformation
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_12 (tc_event_pulses.txt). Median spring 1529
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_12
 	}
 
 	trigger = {
@@ -844,14 +812,10 @@ swe_gotaland.12 = {
 	}
 }
 
-# Växjö's town charter, 1342. The bishop of Växjö was the only Swedish bishop without a town, and Magnus Eriksson made
-# one for him: all trade in the district was to be done there, except what peasants bought and sold for sowing and
-# their farms' needs; craftsmen without land were to move in; and the fines for country trade (40 marks and the goods)
-# went half to the cathedral's building fund and half to the bishop, "not to the king as usual". No royal bailiff is
-# known there (Hansson, Medeltidens Växjö 2017, pp. 79-81, citing the charter, SDHK 4763, and Larsson 1991). Both
-# options found the town, so the choice is who takes the fines. No town rank: the market follows swe_grant_market.
-# Albo, Konga and Uppvidinge are the rest of Värend; Albo and Uppvidinge have market villages in 1337. Clergy power as
-# vanilla's parish_church (0.25), and crown power the same size, as in vanilla's ath_a_permanent_capital.
+# Växjö's town charter, 1342. Magnus Eriksson made a town for the bishop of Växjö, the only Swedish bishop without one:
+# the district's trade was to be done there, craftsmen without land were to move in, and the fines for country trade
+# went to the bishop and the cathedral, "not to the king as usual" (Hansson, Medeltidens Växjö). Both options found the
+# town, so the choice is who takes the fines. Albo, Konga and Uppvidinge are the rest of Värend.
 swe_gotaland.13 = {
 	type = country_event
 	title = swe_gotaland.13.title
@@ -865,7 +829,7 @@ swe_gotaland.13 = {
 		tag = SCA
 		from = 1340.3.1
 		to = 1450.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_13 (tc_event_pulses.txt). Median early 1342
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_13
 	}
 
 	trigger = {
@@ -928,14 +892,9 @@ swe_gotaland.13 = {
 	}
 }
 
-# Värnamo's fair, 1473. At a council meeting in Jönköping's Greyfriars' convent shortly after Christmas 1473, Sten
-# Sture the Elder rewarded Jönköping's burghers, who paid towards the army, by abolishing the country markets at
-# Hultarp, Värnamo and Åsarp, with the goods of anyone trading there seized (Dybelius, Jönköping University blog,
-# 2021). It is the first record of Värnamo's market, at Östbo's ting place, and the market probably lived on, since
-# Jönköping's own burghers traded at a small market there in the 1500s (Hansson, Senmedeltida städer i Småland 2017,
-# p. 142). Värnamo is in trollaborg. The market follows swe_grant_market. The forbidden fair is the unrest of
-# swe_town_monopoly_enforced, the same ban on country trade, for 20 years. Gold as in swe_gotaland.12.b, which keeping
-# the fair gives up. No penalty for Jönköping's burghers under b: it is rural, so it has almost none.
+# Värnamo's fair, 1473. Sten Sture the Elder rewarded Jönköping's burghers, who paid towards the army, by abolishing
+# the country markets at Hultarp, Värnamo and Åsarp (Dybelius). The market probably lived on (Hansson, Senmedeltida
+# städer i Småland). Värnamo is in trollaborg.
 swe_gotaland.14 = {
 	type = country_event
 	title = swe_gotaland.14.title
@@ -949,7 +908,7 @@ swe_gotaland.14 = {
 		tag = SCA
 		from = 1471.12.1
 		to = 1560.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_14 (tc_event_pulses.txt). Median late 1473
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_14
 	}
 
 	trigger = {
@@ -1003,15 +962,10 @@ swe_gotaland.14 = {
 	}
 }
 
-# Kalmar against Pata and Vimmerby, 1524-32. Kalmar complained of illegal trade at Pata in 1524, and the council of the
-# realm forbade all trade there in 1527 on pain of losing goods and ships, and again in 1532 (sv.wiki Pataholm, from
-# Det medeltida Sverige 4:2, p. 285). Pata, on the manor of Strömserum, had 23 rent-paying households in 1502, and in
-# the 1520s and 1530s those who lived by trade and crafts were told to move to Kalmar. Gustav Vasa withdrew Vimmerby's
-# town privileges in 1532, and it was a town again only in 1604 (Hansson, Senmedeltida städer i Småland 2017,
-# pp. 140-151). No source has Kalmar asking for Vimmerby's privileges: sv.wiki Vimmerby puts it down to Gustav's
-# quarrel with the Hanse and his favour for the seaports, so the text makes it our own idea. Pata is in handbord,
-# Vimmerby in sevede. Needs Kalmar a town, where burghers trade. Burgher power of swe_visby_staple (0.1), trades per
-# burgher of vanilla's town rights (0.25, 00_traditions.txt), for 20 years.
+# Kalmar against Pata and Vimmerby, 1524-32. The council of the realm forbade all trade at Pata in 1527 and 1532,
+# its traders and craftsmen were told to move to Kalmar, and Gustav Vasa withdrew Vimmerby's town privileges in 1532
+# (sv.wiki Pataholm; Hansson, Senmedeltida städer i Småland). No source has Kalmar asking for Vimmerby's privileges,
+# so the text makes it our own idea. Pata is in handbord, Vimmerby in sevede.
 swe_gotaland.15 = {
 	type = country_event
 	title = swe_gotaland.15.title
@@ -1025,7 +979,7 @@ swe_gotaland.15 = {
 		tag = SCA
 		from = 1525.3.1
 		to = 1620.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_15 (tc_event_pulses.txt). Median early 1527
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_15
 	}
 
 	trigger = {
@@ -1071,7 +1025,7 @@ swe_gotaland.15 = {
 			base = 25
 		}
 
-		# Pata goes on trading as a town in all but name, as Värnamo's fair does in swe_gotaland.14.b
+		# Pata goes on trading as a town in all but name
 		location:handbord = {
 			swe_grant_market = yes
 		}
@@ -1085,14 +1039,10 @@ swe_gotaland.15 = {
 	}
 }
 
-# Visingsborg, 1561-69. Gustav Vasa had made no counts. Erik XIV made Per Brahe the Elder a count at his coronation on
-# 29 June 1561, and Brahe got Visingsö on 20 March 1562, "after repeated reminders". Johan III enlarged the county on
-# 9 July 1569, from 56 whole and 5 half hemman in 1567 to 388 whole and 116 half, and Brahe alone among the counts could account
-# for the Crown's taxes there through his own collectors (SBL, Per Brahe d.ä.). Jönköping town stayed outside it. It
-# went back to the Crown in 1680 (SBL, Per Brahe d.y.), but runs 50 years here, as vanilla's Great Reduction leaves no
-# marker to end it on. Visingsö lies in the unownable vattern tile, so the county sits on jonkoping, with Gränna. The
-# estate powers of swe_lithuanian_rights (0.25). The nobles' bonus is mild, as the county costs the Crown its hold on
-# Jönköping for 50 years.
+# Visingsborg, 1561-69. Erik XIV made Per Brahe the Elder a count in 1561, Brahe got Visingsö in 1562, and Johan III
+# enlarged the county in 1569 (SBL, Per Brahe d.ä.). It went back to the Crown in 1680, but runs 50 years here, as
+# vanilla's Great Reduction leaves no marker to end it on. Visingsö lies in the unownable vattern tile, so the county
+# sits on jonkoping.
 swe_gotaland.16 = {
 	type = country_event
 	title = swe_gotaland.16.title
@@ -1106,7 +1056,7 @@ swe_gotaland.16 = {
 		tag = SCA
 		from = 1559.6.1
 		to = 1620.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_16 (tc_event_pulses.txt). Median spring 1561
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_16
 	}
 
 	trigger = {
@@ -1149,15 +1099,10 @@ swe_gotaland.16 = {
 	}
 }
 
-# Johan III's Italian builders. The Pahr family was of North Italian origin, the father Jacob from Milan (SBL, Franciscus
-# Pahr, Ångström), and was summoned to Sweden from the Mecklenburg courts in 1572-73 (SBL; NDB, Dominicus Pahr, Baier
-# 2001). Dominicus Pahr led the work at Borgholm and Kalmar on his own as the king's castle builder from 1575 to 1580,
-# designed the ceilings and interiors of the "green" and "golden" halls, the inner portal and the well canopy, and put
-# forward plans to fortify the town of Kalmar in 1579 and 1584 (NDB, the only source for these). The Golden Hall's coffered
-# ceiling keeps much of its original paint (kalmarslott.se), and the family's Italian fortification was applied at Kalmar
-# town, Borgholm and Viborg (SBL). Not tied to Johan: any monarch from 1570. The hall is a palace-type work, as vanilla's
-# vladislav_hall (flavor_BOH.txt); the Hofburg (flavor_hab.47: -8, quality 80, prestige and legitimacy mild) scaled down to
-# a provincial castle. The walls are random_event.74's local_fortress (0.1 for 50 years), paid for.
+# Johan III's Italian builders. The Pahr family, of North Italian origin, was summoned from Mecklenburg in 1572-73.
+# Dominicus Pahr led the work at Borgholm and Kalmar from 1575 to 1580, designed the interiors of the green and golden
+# halls and put forward plans to fortify Kalmar town (SBL; NDB, the only source for the plans). Any monarch from 1570.
+# The hall is a palace, as vanilla's vladislav_hall; the walls are random_event.74's local_fortress.
 swe_gotaland.17 = {
 	type = country_event
 	title = swe_gotaland.17.title
@@ -1171,7 +1116,7 @@ swe_gotaland.17 = {
 		tag = SCA
 		from = 1570.1.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_gotaland_17 (tc_event_pulses.txt). Median late 1571
+		monthly_chance = 1 # Mostly fired by tc_pulse_gotaland_17
 	}
 
 	trigger = {

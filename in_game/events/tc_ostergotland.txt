@@ -1,15 +1,10 @@
 ﻿namespace = swe_ostergotland
 
-# Province and territory events for Östergötland. Sweden owns all of it from 1337, so these should fire in nearly
-# every game unless it has been lost.
+# Östergötland, which Sweden holds from 1337.
 
-# The shrining of Katarina Ulfsdotter, Birgitta's daughter, at Vadstena on 1 August 1489. Sources: Sr Maria Diana
-# O.SS.S. for katolskakyrkan.se (citing Aron Andersson 1981), sv.wikipedia Katarina av Vadstena, and the Birgitta
-# database of the University of Oslo (citing Gillingstam, SBL). They differ on the first bull (Sixtus IV 1482 or
-# Innocent VIII 1484), so the text says the 1480s. No source puts the regent at the ceremony, so the Crown's
-# attendance in option a is an inference, not history. Vanilla's flavor_swe.46 and .48 cover Birgitta herself and
-# make Vadstena a holy site, which the description reads. The shrine modifier carries no max control. No has_ruler:
-# 1489 fell in Sten Sture's regency, and the text names nobody.
+# The shrining of Katarina Ulfsdotter, Birgitta's daughter, at Vadstena on 1 August 1489 (katolskakyrkan.se; sv.wiki
+# Katarina av Vadstena; UiO Birgitta database). No source puts the regent at the ceremony, so the Crown's part in
+# option a is an inference. No has_ruler check, since 1489 fell in Sten Sture's regency.
 swe_ostergotland.1 = {
 	type = country_event
 	title = swe_ostergotland.1.title
@@ -35,14 +30,14 @@ swe_ostergotland.1 = {
 		tag = SCA
 		from = 1487.1.1
 		to = 1520.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_1 (tc_event_pulses.txt). Median late 1488
+		monthly_chance = 1 # Mostly fired by tc_pulse_ostergotland_1
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		religion = religion:catholic
 		owns = location:vadstena
-		NOT = { has_variable = swe_vadstena_kept_by_crown } # swe_ostergotland.2.b: Birgitta's house never came to Vadstena
+		NOT = { has_variable = swe_vadstena_kept_by_crown } # Set by swe_ostergotland.2.b, where Birgitta's house never came
 	}
 
 	illustration_tags = {
@@ -80,19 +75,13 @@ swe_ostergotland.1 = {
 	}
 }
 
-# The Bridgettine order founded at Vadstena, about 1370. Magnus Eriksson and Blanka promised their manor at Vadstena to
-# Birgitta's monastery in their Swedish testament of 1346 (Berglund, Uppsala University Press; SKBL; Magnus also wished
-# to be buried there, Gillingstam in Scandia, citing DS 5 no. 4069). Rebuilding began in the late 1360s, and Urban V's
-# bull of 5 August 1370 (Montefiascone) approved the rule and noted a monastery already rising at the manor (Berglund,
-# citing SDHK 9751; UiO Birgitta database). The founding was Birgitta's and the approval Rome's; the Crown's act was
-# letting the gift stand, which option a does. found_religious_order has no live vanilla use (tested by console
-# 2026-11-12: it makes a working "Order of Vadstena"); the monastic type's founding-location check reads
-# owner ?= scope:actor, so root saves it. A location has no religious_order link, so the new order is found with
-# random_religious_order_in_location. Zeal 50 is the neutral point of vanilla's invite and expel AI; recent_order_service
-# is what vanilla sets after every order action (+6 zeal target for five years). The order loses Vadstena when Sweden
-# leaves the Catholic faith, and lives on only where other realms have invited it. Option b copies vanilla's refusal of
-# a new order holding (religious_orders.2.c), and sets swe_vadstena_kept_by_crown, which blocks swe_ostergotland.1:
-# Katarina's shrine belongs to her mother's house.
+# The Bridgettine order founded at Vadstena, about 1370. Magnus Eriksson and Blanka promised their manor there to
+# Birgitta's monastery in 1346, and Urban V's bull of 5 August 1370 approved the rule (Berglund; SKBL; SDHK 9751). The
+# Crown's act was letting the gift stand, which option a does. The order loses Vadstena when Sweden leaves the Catholic
+# faith. Option b from vanilla's religious_orders.2.c.
+# found_religious_order has no live vanilla use but works. A location has no religious_order link, so the new order is
+# found with random_religious_order_in_location. Zeal 50 is the neutral point of vanilla's invite and expel AI, and
+# vanilla sets recent_order_service after every order action.
 swe_ostergotland.2 = {
 	type = country_event
 	title = swe_ostergotland.2.title
@@ -118,7 +107,7 @@ swe_ostergotland.2 = {
 		tag = SCA
 		from = 1368.8.1
 		to = 1430.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_2 (tc_event_pulses.txt). Median mid-1370
+		monthly_chance = 1 # Mostly fired by tc_pulse_ostergotland_2
 	}
 
 	trigger = {
@@ -128,10 +117,9 @@ swe_ostergotland.2 = {
 		location:vadstena = {
 			has_building_with_at_least_one_level = monastery
 			dominant_religion = religion:catholic
-			# The half of location_can_host_order_holding_trigger that still applies. An order already holding the
-			# house doesn't block the event: a monastic order needs a monastery, Sweden's only ones in 1337 are
-			# Vadstena, Alvastra and Riseberga, and an Observer run (2026-11-14) gave all three to the Cistercians.
-			# Option a moves that order out, as vanilla's reformation.15.b does.
+			# The half of location_can_host_order_holding_trigger that still applies. An existing order doesn't block
+			# the event, since Sweden's only monasteries in 1337 (Vadstena, Alvastra, Riseberga) can all go to the
+			# Cistercians. Option a moves that order out, as vanilla's reformation.15.b does.
 			NOT = { is_capital = yes }
 		}
 	}
@@ -220,17 +208,11 @@ swe_ostergotland.2 = {
 	}
 }
 
-# Krigsmanshuset, the house for crippled soldiers at Vadstena. Gustav II Adolf ordered it in the empty convent in 1622
-# and gave 2,000 daler; the regency proclaimed the founding on 3 August 1637, and the first men moved into the nuns'
-# ranges in the winter of 1640-41. Kristina's grant of farms on 12 November 1646, made after she came of age, is what
-# older works give as the founding. Closed 1778-84. Sources: Erik Petersson, Sårade soldater (2016), through Kuvaja's
-# review in Historisk Tidskrift för Finland and soldatreg.se (the residents' figures rest on him alone); the Riksdag's
-# army pension report of 1913 (DBE82b3); Riksarkivet; Värmlands regementes historia; sv.wikipedia Vadstena kloster.
-# Option b is sourced too: most crippled men stayed in their parishes on grain from the fund, and the house closed
-# because a fund could help more men than its rooms held (1913 report). Gold and army tradition copy vanilla's
-# parliaments.38.b, which pays the veterans. The text names nobody, as 1637 fell in Kristina's minority.
-# Leaving the Catholic faith also ends the Bridgettine holding from swe_ostergotland.2. If .2.b kept the manor with
-# the Crown, the convent never stood, so the desc speaks of the manor.
+# Krigsmanshuset, the house for crippled soldiers at Vadstena. Gustav II Adolf ordered it in the empty convent in 1622,
+# the regency proclaimed the founding on 3 August 1637 (older works give Kristina's grant of 1646), and the first men
+# moved into the nuns' ranges in the winter of 1640-41 (Petersson, Sårade soldater 2016; Riksdag army pension report
+# 1913; sv.wiki Vadstena kloster). Option b follows the 1913 report: most crippled men stayed in their parishes on grain from the
+# fund. Values from vanilla's parliaments.38.b. If .2.b kept the manor with the Crown, the desc speaks of the manor.
 swe_ostergotland.3 = {
 	type = country_event
 	title = swe_ostergotland.3.title
@@ -254,7 +236,7 @@ swe_ostergotland.3 = {
 		tag = SCA
 		from = 1635.8.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_ostergotland_3 (tc_event_pulses.txt). Median mid-1637
+		monthly_chance = 1 # Mostly fired by tc_pulse_ostergotland_3
 	}
 
 	trigger = {

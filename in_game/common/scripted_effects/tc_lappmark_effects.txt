@@ -17,11 +17,11 @@ swe_open_silbojock = {
 	}
 }
 
-# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good and never
-# forces a change of goods on the player, so these locations keep what they produce and gain a modifier. Silbojock
-# stands for the mountain Sámi of Pite Lappmark and keeps the modifier's food once the mine opens. Tärna is left out:
-# Ume Lappmark's mountain Sámi were counted under Pite or Norway in 1602. The forest locations get nothing, since the
-# forest Sámi kept a mixed living. Foreign-held land is left alone.
+# The mountain Sámi turn from hunting to reindeer herding (swe_lappmark.4). Vanilla has no reindeer good, so these
+# locations keep their goods and gain a modifier. Silbojock stands for the mountain Sámi of Pite Lappmark and keeps
+# the modifier's food once the mine opens. Tärna is left out, as Ume Lappmark's mountain Sámi were counted under
+# Pite or Norway in 1602, and so are the forest locations, whose Sámi kept a mixed living. Foreign-held land is
+# left alone.
 swe_reindeer_herds_location = {
 	if = {
 		limit = {

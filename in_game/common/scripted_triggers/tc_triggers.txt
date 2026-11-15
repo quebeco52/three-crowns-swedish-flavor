@@ -71,10 +71,10 @@ swe_kexholm_ingria_trigger = {
 	}
 }
 
-# Character scope. A councillor who can head a Förmyndarregering (swe_council_regency). Foreigners are out, after the
-# council's decision of 1319 barring them from its seats, which Albrekt had to respect in 1371 (one secondary text,
-# Sverige 1266-1397; the assurance itself is DS X nr 75). Accepted cultures count as the realm's own, not only Swedish.
-# The culture check is vanilla's from manpower_buildings.txt, which runs it from a location; here prev is the character.
+# Character scope. A councillor who can head a Förmyndarregering (swe_council_regency). The council barred
+# foreigners from its seats in 1319, and Albrekt had to respect it in 1371 (Sverige 1266-1397; DS X nr 75).
+# Accepted cultures count as the realm's own. The culture check is vanilla's from manpower_buildings.txt,
+# with prev as the character.
 swe_council_regent_trigger = {
 	can_become_a_regent = yes
 	owner ?= { has_primary_or_accepted_culture = prev.culture }

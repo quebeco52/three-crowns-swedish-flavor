@@ -1,14 +1,11 @@
 ﻿namespace = swe_council
 
-# Government and justice. .1 concerns the German half of the town councils (swe_tyska_radet), from game start to
-# swe_svenska_radman_decision. .5 was removed (the Nobles' Charter), so .6 keeps its ID.
+# Government and justice. .5 was removed, so the numbering skips it.
 
-# The Käpplinge murders (17 June 1389). With King Albrecht captured at Åsle, the German party in
-# Stockholm, the Hättebröder, burned Swedish burghers they took for traitors on Käpplingeholmen.
-# Fires around that date, in a war, while the German half of the council still sits. It needs neither a
-# German king, since nothing in the game puts one on the Swedish throne, nor a German majority, since
-# Stockholm's is thin at game start. Punishing them cuts the German burghers of Stockholm by a quarter,
-# enough at game start to open swe_svenska_radman_decision.
+# The Käpplinge murders, 1389. With King Albrekt captured at Åsle, the Hättebröder, Stockholm's German party,
+# burned Swedish burghers they took for traitors. Fires in a war while the German half of the council still sits.
+# Punishing them cuts Stockholm's German burghers by a quarter, enough at game start to open
+# swe_svenska_radman_decision.
 swe_council.1 = {
 	type = country_event
 	title = swe_council.1.title
@@ -22,7 +19,7 @@ swe_council.1 = {
 		tag = SCA
 		from = 1387.1.1
 		to = 1420.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_1 (tc_event_pulses.txt). Median early 1389 if Sweden is at war
+		monthly_chance = 1 # Mostly fired by tc_pulse_council_1
 	}
 
 	trigger = {
@@ -78,10 +75,8 @@ swe_council.1 = {
 	}
 }
 
-# Karl Knutsson's räfst, November 1453 to March 1454 (SBL, Karl Knutsson). The modifier goes on the judges' eight stops
-# rather than the whole realm. No gold, since vanilla's perform_reduction already takes estate money by hand. The clergy
-# penalty rests on the protest of the archbishop and three bishops in January 1454. Whether the räfst really pushed back the church's gains is
-# disputed, so the text doesn't say it did. The description names nobody, because any ruler can hold the throne by now.
+# Karl Knutsson's räfst, November 1453 to March 1454 (SBL). The modifier goes on the judges' eight stops. The clergy
+# penalty rests on the protest of the archbishop and three bishops in January 1454.
 swe_council.2 = {
 	type = country_event
 	title = swe_council.2.title
@@ -95,7 +90,7 @@ swe_council.2 = {
 		tag = SCA
 		from = 1451.1.1
 		to = 1470.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_2 (tc_event_pulses.txt). Median late 1452
+		monthly_chance = 1 # Mostly fired by tc_pulse_council_2
 	}
 
 	trigger = {
@@ -151,10 +146,9 @@ swe_council.2 = {
 	}
 }
 
-# The crown farms. Gustav Vasa's avelsgårdar: from the 1540s the royal manors were to give a surplus, and the programme
-# itself came in the autumn of 1555 (first letter Sibbo, 12 Nov 1555; Nyström, Scandia 1936, citing Gustav I's
-# registratur). It was carried out mostly in Finland, where about 50 new estates took about 270 farms in 1545-62
-# (Haggrén in Mankby, 2016). Dated by the programme; the farms go to forts in Sweden and Finland owned at that moment.
+# Gustav Vasa's crown farms (avelsgårdar), a programme of autumn 1555 (Nyström, Scandia 1936). It was carried out
+# mostly in Finland, where about 50 new estates took about 270 farms (Haggrén 2016). The farms go to the forts we own
+# when it fires.
 swe_council.3 = {
 	type = country_event
 	title = swe_council.3.title
@@ -168,7 +162,7 @@ swe_council.3 = {
 		tag = SCA
 		from = 1553.11.1
 		to = 1575.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_3 (tc_event_pulses.txt). Median late 1555
+		monthly_chance = 1 # Mostly fired by tc_pulse_council_3
 	}
 
 	trigger = {
@@ -198,7 +192,7 @@ swe_council.3 = {
 			every_owned_location = {
 				limit = { swe_crown_castle_trigger = yes }
 				add_location_modifier = { modifier = swe_avelsgard years = 15 }
-				# The anger stays at the castles, in place of a country-wide estate penalty
+				# The anger stays at the castles
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
 					add_pop_satisfaction = pop_satisfaction_mild_penalty
@@ -207,7 +201,7 @@ swe_council.3 = {
 		}
 	}
 
-	# Hälsingland, Medelpad and Ångermanland offered a third more rent in 1556 to be spared, and paid a butter tax instead
+	# In 1556 Hälsingland, Medelpad and Ångermanland offered more rent to be spared, and paid a butter tax instead
 	option = {
 		name = swe_council.3.b
 		ai_chance = {
@@ -218,12 +212,10 @@ swe_council.3 = {
 	}
 }
 
-# Göticism. Gustav II Adolf created the office of riksantikvarie on 20 May 1630 and gave it to Johannes
-# Bureus, his old tutor and a rune scholar (Riksantikvarieämbetet, "Our History", raa.se). Unlocks
-# swe_goticism in cultural_traditions_law, as flavor_plc.4 unlocks Sarmatism for Poland, with the same two
-# options. Uppsala holds the mounds the Gothicists pointed to; the Renaissance stands for the learning
-# behind it (AI Sweden has embraced it by 1619). Vanilla's flavor_swe.30, Rudbeck's Atland eller Manheim
-# (1698-1704), is the movement's high point and is left alone, so this ends before it.
+# Göticism. Gustav II Adolf created the office of riksantikvarie in 1630 for Johannes Bureus, his old tutor and a
+# rune scholar (raa.se). Unlocks swe_goticism as flavor_plc.4 unlocks Sarmatism. Uppsala holds the mounds the
+# Gothicists pointed to, and the Renaissance stands for the learning behind it. Ends before vanilla's flavor_swe.30,
+# Rudbeck's Atland eller Manheim.
 swe_council.4 = {
 	type = country_event
 	title = swe_council.4.title
@@ -237,7 +229,7 @@ swe_council.4 = {
 		tag = SCA
 		from = 1628.5.1
 		to = 1698.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_4 (tc_event_pulses.txt). Median mid-1630
+		monthly_chance = 1 # Mostly fired by tc_pulse_council_4
 	}
 
 	trigger = {
@@ -278,14 +270,10 @@ swe_council.4 = {
 	}
 }
 
-# Landskapens fänikor. At the Riksdag of Västerås in 1544 Gustav Vasa was allowed to keep on the rolls the peasant
-# bands raised in the Dacke war and to recruit them from then on; one man in every ten to twenty was taken as a
-# standing knekt, and the men of each province formed fänikor of about 500 (Söderberg, Årsboken Uppland 1944; Högman,
-# citing Ericson 1997, gives the same 1544 decree; the Dacke war link is Söderberg's alone). Before this the Crown hired
-# companies paid by a tax in lieu of service (Neuding Skoog 2018). Fires in the first years of peace after a war from
-# 1542 until vanilla's allotment system arrives in 1637, not at the Riksdag itself, which swe_vasa.3 covers;
-# months_since_war as in flavor_dan.1. Both options unlock the policy, as swe_council.4 does. Option b's companies get
-# half of mercenary_army_policy's upkeep cut for 10 years.
+# Landskapens fänikor. At the Riksdag of Västerås in 1544 Gustav Vasa was allowed to keep the peasant bands raised in
+# the Dacke war as standing provincial fänikor of about 500 (Söderberg 1944; Högman). Before this the Crown hired
+# companies paid by a tax in lieu of service (Neuding Skoog 2018). Fires in the first years of peace after a war,
+# until vanilla's allotment system in 1637; swe_vasa.3 covers the Riksdag itself.
 swe_council.6 = {
 	type = country_event
 	title = swe_council.6.title
@@ -299,12 +287,12 @@ swe_council.6 = {
 		tag = SCA
 		from = 1542.1.1
 		to = 1637.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_council_6 (tc_event_pulses.txt). Median about two years into the first peace from 1542
+		monthly_chance = 1 # Mostly fired by tc_pulse_council_6
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
-		has_advance = recruitment_law_advance # As flavor_tur.49: has_law is false while no recruitment policy is enacted
+		has_advance = recruitment_law_advance # Not has_law, which is false while no recruitment policy is enacted
 		at_war = no
 		months_since_war <= 36
 	}

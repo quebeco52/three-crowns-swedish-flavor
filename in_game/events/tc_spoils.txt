@@ -3,12 +3,10 @@
 # Spoils of war: what Swedish armies sent home from the towns they took. These fire whenever Sweden owns such a town,
 # not by date, except where the thing taken had to exist first.
 
-# The libraries. Gustav II Adolf's armies sent the Jesuit libraries of Riga (1621), Braunsberg and Frauenburg (1626, with
-# books of Copernicus's) to Uppsala, the Würzburg palace library and books from Mainz followed in 1631, Torstensson's
-# army took Olomouc's libraries (1642-50), and Königsmarck took Prague's treasures in 1648 on Kristina's instructions
-# (Uppsala University Library; WLB Stuttgart; Radio Prague; en.wiki Battle of Prague 1648). Fires whenever a Protestant
-# Sweden that holds Uppsala owns one of those towns while it is Catholic. Books move as in vanilla's war_of_religions.18,
-# and Uppsala gains a library as in flavor_mlo.53, so the event still pays if the town holds no books at that moment.
+# The libraries. Swedish armies sent the Jesuit libraries of Riga (1621), Braunsberg and Frauenburg (1626) to Uppsala,
+# and Würzburg and Mainz (1631), Olomouc (1642-50) and Prague (1648) followed (Uppsala University Library; WLB
+# Stuttgart; Radio Prague; en.wiki). Books move as in vanilla's war_of_religions.18. Uppsala also gains a library
+# modifier, so the event still pays if the town holds no books.
 swe_spoils.1 = {
 	type = country_event
 	title = swe_spoils.1.title
@@ -22,7 +20,7 @@ swe_spoils.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes such a town; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -105,11 +103,9 @@ swe_spoils.1 = {
 }
 
 # The bronzes of Adriaen de Vries. Swedish troops took his figures from Wallenstein's palace garden in Prague in 1648,
-# and in 1659 those of Christian IV's Neptune Fountain at Frederiksborg (1622); most stand at Drottningholm today
-# (CODART; Rijksmuseum, Triton; Kungliga slotten, Museum de Vries; lex.dk). Frederiksborg has no location: it falls in
-# the helsingor tile by projecting its coordinates onto locations.png, not checked in game. The garden and the fountain
-# had to exist, so each source has a date, and its own culture must still dominate, standing in for "the Danish
-# king's palace" and "Wallenstein's garden". The statue gets no artist, as in swe_stockholm.4.
+# and from Christian IV's Neptune Fountain at Frederiksborg in 1659; most stand at Drottningholm today (CODART;
+# Rijksmuseum; Kungliga slotten; lex.dk). Helsingor stands in for Frederiksborg. The garden and the fountain had to
+# exist, so each has a date, and its own culture must still dominate there.
 swe_spoils.2 = {
 	type = country_event
 	title = swe_spoils.2.title
@@ -123,7 +119,7 @@ swe_spoils.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes the town; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {

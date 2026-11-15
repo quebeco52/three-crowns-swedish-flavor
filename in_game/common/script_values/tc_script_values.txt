@@ -1,6 +1,5 @@
 ﻿# Location scope. German burghers minus all other burghers, by pop size: above 0 while the Germans
-# outnumber the rest. Used by swe_svenska_radman_decision and swe_council.1. Sums pop_size like
-# vanilla's wokou_events.txt, compared in triggers like amazigh_population.
+# outnumber the rest. Used by swe_svenska_radman_decision and swe_council.1.
 swe_german_burgher_lead = {
 	value = 0
 	every_pop = {

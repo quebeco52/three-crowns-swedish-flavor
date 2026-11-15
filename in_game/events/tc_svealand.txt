@@ -1,12 +1,9 @@
 ﻿namespace = swe_svealand
 
-# Content for Svealand. Sweden owns all of this land from 1337, so these should fire in nearly every game unless it has
-# been lost.
+# Svealand, which Sweden holds from 1337.
 
-# Enköping's Twentieth-Day Market. Gustav Vasa confirmed the town's privileges in 1521 but banned bargaining on the ice,
-# probably with little effect (Upplandsmuseet report 2006:24, citing Ljung 1963). The ban sends the trade into the town,
-# so option a gives it a market (swe_grant_market), as swe_gotaland.14 does for Jönköping; the burghers' local power
-# is its cost.
+# Enköping's Twentieth-Day Market. Gustav Vasa confirmed the town's privileges in 1521 but banned bargaining on the ice
+# (Upplandsmuseet report 2006:24, citing Ljung 1963). The ban sends the trade into the town, hence option a's market.
 swe_svealand.1 = {
 	type = country_event
 	title = swe_svealand.1.title
@@ -20,7 +17,7 @@ swe_svealand.1 = {
 		tag = SCA
 		from = 1519.1.1
 		to = 1560.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_1 (tc_event_pulses.txt). Median late 1520
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_1
 	}
 
 	trigger = {
@@ -66,8 +63,7 @@ swe_svealand.1 = {
 }
 
 # The flood of 1661, when about 3,000 men dug through at Södertälje to drain Mälaren (Sjöfartsverket PM 2013). The cut
-# fell into disrepair, so its modifier runs out. A real map canal isn't possible: vanilla's canals need predefined
-# locations, and Mälaren is a lake.
+# fell into disrepair, so its modifier runs out. Vanilla's canals need predefined locations, so there is no map canal.
 swe_svealand.2 = {
 	type = country_event
 	title = swe_svealand.2.title
@@ -81,7 +77,7 @@ swe_svealand.2 = {
 		tag = SCA
 		from = 1659.1.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_2 (tc_event_pulses.txt). Median late 1660
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_2
 	}
 
 	trigger = {
@@ -109,8 +105,7 @@ swe_svealand.2 = {
 		location:sodertalje = {
 			add_location_modifier = { modifier = swe_sodertalje_cut years = 25 }
 		}
-		# The diggers come from the lake's own provinces, so the anger stays there, in place of a
-		# country-wide estate penalty
+		# The diggers come from the lake's own provinces, so the anger stays there
 		custom_tooltip = {
 			text = swe_svealand.2.a_tt
 			every_owned_location = {
@@ -169,10 +164,8 @@ swe_svealand.2 = {
 	}
 }
 
-# Reinhold Rademacher's manufactory at Eskilstuna, from 1654. Vanilla has no location for Eskilstuna, so Strängnäs stands
-# in. It doesn't need Riga. The tools bonus only works if the location already has a tools building, which needs town
-# rank, so a rural Strängnäs gets the modifier's migration pull and building efficiency, and the smiths come only once
-# it is a town or city.
+# Reinhold Rademacher's manufactory at Eskilstuna, from 1654; Strängnäs stands in for Eskilstuna. The tools bonus needs
+# a tools building, which needs town rank, so a rural Strängnäs gets only the migration and building efficiency.
 swe_svealand.3 = {
 	type = country_event
 	title = swe_svealand.3.title
@@ -186,7 +179,7 @@ swe_svealand.3 = {
 		tag = SCA
 		from = 1652.1.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_3 (tc_event_pulses.txt). Median late 1653
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_3
 	}
 
 	trigger = {
@@ -207,8 +200,8 @@ swe_svealand.3 = {
 		location:strangnas = {
 			add_location_modifier = { modifier = swe_rademacher_forges years = 25 }
 		}
-		# His smiths were immigrants. The owner is the source's owner, as in flavor_ven.2, so Sweden needn't hold Riga.
-		# Only into a town or city: burghers sent to a rural location melt within a month (tested on swe_towns.1, 2026-11-11)
+		# His smiths were immigrants. The migration's owner is Riga's owner, so Sweden needn't hold Riga. Only into a
+		# town or city, since burghers sent to a rural location vanish within a month.
 		if = {
 			limit = {
 				location:riga = { has_owner = yes }
@@ -220,7 +213,7 @@ swe_svealand.3 = {
 				to_location = location:strangnas
 				culture = culture:german_baltic
 				type = pop_type:burghers
-				amount = 0.01 # Per month, so 0.24 in all: only 20 forges were ever built
+				amount = 0.01 # Per month. Small, since only 20 forges were ever built
 				months = 24
 			}
 		}
@@ -236,11 +229,9 @@ swe_svealand.3 = {
 	}
 }
 
-# Uppsala Cathedral. Begun in the 1270s and consecrated in June 1435 by Archbishop Olof Larsson, still without its
-# towers (SBL, Olaus Laurentii; Sundquist, Årsboken Uppland 1962; Bengtsson, Upplandsmuseets rapporter 2011:04). The
-# Church consecrated it, not the king: Erik of Pomerania had fought the archbishop's election and was in Denmark. No
-# royal money is attested after Magnus Eriksson's letters of 1331 (DS 2875, a third of the tithe) and 1338 (DS 3384,
-# the masons' privilege), so the cathedral stands either way and paying is the unhistorical option.
+# Uppsala Cathedral, begun in the 1270s and consecrated by Archbishop Olof Larsson in June 1435, still without its
+# towers (SBL; Sundquist 1962; Bengtsson 2011). No royal money is attested after Magnus Eriksson's letters of 1331 and
+# 1338 (DS 2875, 3384), so the cathedral stands either way and paying is the unhistorical option.
 swe_svealand.4 = {
 	type = country_event
 	title = swe_svealand.4.title
@@ -254,7 +245,7 @@ swe_svealand.4 = {
 		tag = SCA
 		from = 1433.6.1
 		to = 1447.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_4 (tc_event_pulses.txt). Median mid-1435
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_4
 	}
 
 	trigger = {
@@ -307,15 +298,11 @@ swe_svealand.4 = {
 	}
 }
 
-# Uppsala's new charter. The university founded in 1477 (vanilla flavor_swe.50) had all but stopped teaching by about
-# 1530; Erik XIV restarted lectures in 1566 and Johan III added professors, but the 1577 arrests and the plague of 1580
-# closed it again (uu.se; Annerstedt, Upsala universitets historia I, 1877, 60-71). After the church meeting of 1593
-# asked for it, Duke Karl and the council named professors on 1 August 1593 and sealed its privileges on 15 March 1595
-# (uu.se; Annerstedt 84-91; "seven", the tithes, the examination of schoolmasters, the table for forty and the 64
-# enrolled are Annerstedt's, from the letters he prints). It doesn't need swe_church.1. Option a builds the university
-# as flavor_swe.50.a does if Uppsala has none (an event's construct_building ignores the town rank, as the 1619 AI save
-# shows), or else pays the chairs, and sets swe_uppsala_charter for the clergy literacy inside swe_uppsala_mote. The gold
-# sits in the else branch: has_building is true from the day construction starts.
+# Uppsala's new charter. After the church meeting of 1593 asked for it, Duke Karl and the council named professors and
+# sealed the university's privileges in 1595 (uu.se; Annerstedt, Upsala universitets historia I). Option a builds the
+# university if Uppsala has none (an event's construct_building ignores town rank), or else pays the chairs, and sets
+# swe_uppsala_charter for the clergy literacy in swe_uppsala_mote. The chairs are paid in an else branch, not a second
+# has_building check, since has_building is true from the day construction starts.
 swe_svealand.5 = {
 	type = country_event
 	title = swe_svealand.5.title
@@ -341,7 +328,7 @@ swe_svealand.5 = {
 		tag = SCA
 		from = 1593.1.1
 		to = 1640.1.1 # Late enough for a late Reformation
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_5 (tc_event_pulses.txt). Median early 1595
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_5
 	}
 
 	trigger = {
@@ -400,22 +387,16 @@ swe_svealand.5 = {
 			base = 25
 		}
 
-		# The tithes stay with the Crown. Vanilla's refusal of the 1477 university (flavor_swe.50.b) pays religious
-		# influence, which a Lutheran crown has no use for, so this pays in gold.
+		# The tithes stay with the Crown
 		change_gold_effect = { scale = 2 }
 		add_estate_satisfaction = { type = estate_type:clergy_estate value = estate_satisfaction_weak_penalty }
 	}
 }
 
-# Gripsholm. Bo Jonsson Grip had a stronghold there in the 14th century (Kungliga slotten). Sten Sture the Elder gave the
-# estate to the Carthusians in the 1490s, and their church at Mariefred was consecrated in 1504; the Crown took the
-# charterhouse in 1526 (Sörmlands museum, Pax Mariae 2006, citing Westlund 1948 and Clemedson 1989). Gustav Vasa began the
-# present castle in 1537 under Henrik von Köllen, as part of a new defence of the realm and as a royal residence
-# (Kungliga slotten), and its building material, above all the charterhouse's brick, came from the monastery in the 1530s
-# (Pax Mariae, citing Westlund 1948). Mariefred projects onto the shore between strangnas and sodertalje; strangnas is
-# nearer and is its municipality. Needs a Protestant realm, since a Catholic one would still have monks there. The palace
-# is a step below vanilla's Makalös (flavor_swe.40, 70, also made without an artist); new brick costs vanilla's -6 for a
-# palace (flavor_MOS.txt Catherine Palace, flavor_RUS.txt Gatchina), the monks' brick half that.
+# Gripsholm, begun by Gustav Vasa in 1537 largely with brick from the Carthusian charterhouse at Mariefred, which the
+# Crown took in 1526 (Kungliga slotten; Sörmlands museum, Pax Mariae 2006). strangnas, the nearer location and
+# Mariefred's municipality, stands in. Needs a Protestant realm, since a Catholic one would still have monks there.
+# Option a reuses the monks' brick, at half the cost of new.
 swe_svealand.6 = {
 	type = country_event
 	title = swe_svealand.6.title
@@ -429,7 +410,7 @@ swe_svealand.6 = {
 		tag = SCA
 		from = 1535.1.1
 		to = 1580.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_6 (tc_event_pulses.txt). Median late 1536
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_6
 	}
 
 	trigger = {
@@ -484,13 +465,10 @@ swe_svealand.6 = {
 	}
 }
 
-# Painted vaults. Albertus Pictor, from Immenhausen near Kassel, burgher of Arboga in 1465 and of Stockholm from 1473,
-# painter and pearl embroiderer; his workshop painted more than thirty Mälar valley churches, nine still signed, and he
-# last appears in June 1509 (Annerbäck, Stockholmskällan 2009). The vaults at Härkeberga, attributed to him on stylistic
-# grounds and dated to about the 1480s, were never limewashed (Svenska kyrkan Enköping; Historiska museet). Such work was
-# paid for by a donor, often as penance (Historiska museet), so the unpaid option is the historical one, as in
-# swe_svealand.4. Härkeberga lies in enkoping. Vanilla's Elmelunde frescoes (flavor_dan.67: painting 60, cultural
-# tradition weak, free) exactly; the gift as swe_stockholm.4.a (-3 with a weak clergy bonus).
+# Painted vaults. The vaults at Härkeberga, attributed to Albertus Pictor and dated to about the 1480s, were never
+# limewashed (Annerbäck, Stockholmskällan 2009; Historiska museet). Such work was paid for by a donor, often as
+# penance, so the unpaid option is the historical one. Härkeberga lies in enkoping. Values from vanilla's Elmelunde
+# frescoes (flavor_dan.67).
 swe_svealand.7 = {
 	type = country_event
 	title = swe_svealand.7.title
@@ -504,7 +482,7 @@ swe_svealand.7 = {
 		tag = SCA
 		from = 1478.1.1
 		to = 1509.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_svealand_7 (tc_event_pulses.txt). Median late 1479
+		monthly_chance = 1 # Mostly fired by tc_pulse_svealand_7
 	}
 
 	trigger = {

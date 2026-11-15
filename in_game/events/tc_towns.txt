@@ -1,13 +1,11 @@
 ﻿namespace = swe_towns
 
-# Town foundings that renamed a location. Balanced against flavor_dan.43 (Christianstad) and
-# flavor_swe.41 (Göteborg), but none of them change the location rank: that stays the player's
-# decision. Each one is optional and only needs Sweden to own the location at the time.
+# Town foundings that rename a location. Values from vanilla's flavor_dan.43 (Christianstad) and flavor_swe.41
+# (Göteborg). None of them change the location rank.
 
-# Gustav Vasa founds Helsingfors at the mouth of the Vanda (12 June 1550) to take the Gulf of
-# Finland trade from Reval, and orders the burghers of Ekenäs, Borgå, Raumo and Ulvsby to move.
-# Sweden often holds Reval by then, so owning it changes the text rather than blocking the event. That variant,
-# a German Reval that trades on its own account, is an inference, not history: Reval became Swedish only in 1561.
+# Gustav Vasa founds Helsingfors at the mouth of the Vanda (12 June 1550) to take the Gulf of Finland trade from Reval,
+# and orders the burghers of Ekenäs, Borgå, Raumo and Ulvsby to move. If Sweden owns Reval the text changes; that
+# variant, a German Reval trading on its own account, is an inference, since Reval became Swedish only in 1561.
 swe_towns.1 = {
 	type = country_event
 	title = swe_towns.1.title
@@ -31,7 +29,7 @@ swe_towns.1 = {
 		tag = SCA
 		from = 1548.1.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_1 (tc_event_pulses.txt). Median late 1549
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_1
 	}
 
 	trigger = {
@@ -74,10 +72,9 @@ swe_towns.1 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
-		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta)
-		# The trigger only needs one of the four, so each move checks its own town. Per month, so 0.48 from each at most.
-		# A rural source has no burghers to give, and a town usually holds only one to four. They move only once Helsinge
-		# is a town or city: in a test (2026-11-11) burghers sent to it while rural kept only the last month's 0.02 of 0.24.
+		# Ekenäs and Borgå (Nyland), Raumo and Ulvsby (in bjorneborg, Satakunta). The trigger needs only one of the
+		# four, so each move checks its own town. Only into a town or city, since burghers sent to a rural location
+		# vanish within a month.
 		if = {
 			limit = {
 				location:helsinge = { NOT = { location_rank = location_rank:rural_settlement } }
@@ -127,7 +124,7 @@ swe_towns.1 = {
 				}
 			}
 		}
-		# The anger stays with the burghers ordered to move, in place of a country-wide estate penalty
+		# The anger stays with the burghers ordered to move
 		custom_tooltip = {
 			text = swe_towns.1.a_tt
 			swe_pop_satisfaction_in = { location = location:ekenas type = burghers value = pop_satisfaction_severe_penalty }
@@ -168,7 +165,7 @@ swe_towns.2 = {
 		tag = SCA
 		from = 1582.1.1
 		to = 1640.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_2 (tc_event_pulses.txt). Median late 1583
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_2
 	}
 
 	trigger = {
@@ -198,8 +195,8 @@ swe_towns.2 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
-		# The privilege letter of 15 March 1584 called out all Värmland to help build two bridges, so the
-		# anger stays in Värmland, in place of a country-wide estate penalty
+		# The privilege letter of 15 March 1584 called out all Värmland to help build two bridges, so the anger
+		# stays in Värmland
 		custom_tooltip = {
 			text = swe_towns.2.a_tt
 			every_owned_location = {
@@ -245,7 +242,7 @@ swe_towns.3 = {
 		tag = SCA
 		from = 1604.1.1
 		to = 1660.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_3 (tc_event_pulses.txt). Median late 1605
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_3
 	}
 
 	trigger = {
@@ -310,7 +307,7 @@ swe_towns.4 = {
 		tag = SCA
 		from = 1619.1.1
 		to = 1660.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_4 (tc_event_pulses.txt). Median late 1620
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_4
 	}
 
 	trigger = {
@@ -340,8 +337,8 @@ swe_towns.4 = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
 		}
-		# The neighbouring parishes lose their trade. Medelpad has no province of its own on the map:
-		# its two locations, selanger and havero, sit in halsingland_province.
+		# The neighbouring parishes lose their trade. Medelpad has no province of its own; its two locations,
+		# selanger and havero, sit in halsingland_province.
 		custom_tooltip = {
 			text = swe_towns.4.a_tt
 			location:selanger = {
@@ -395,9 +392,8 @@ swe_towns.4 = {
 	}
 }
 
-# Bogesund renames itself Ulricehamn (1741) in honour of Queen Ulrika Eleonora, hoping to win
-# back the cattle trade rights it had lost. A rename only, so no development or gold. The description names Borås
-# as the rival only where swe_towns.8 founded it.
+# Bogesund renames itself Ulricehamn (1741) in honour of Queen Ulrika Eleonora, hoping to win back the cattle trade
+# rights it had lost. A rename only. The text names Borås as the rival only if swe_towns.8 founded it.
 swe_towns.5 = {
 	type = country_event
 	title = swe_towns.5.title
@@ -423,7 +419,7 @@ swe_towns.5 = {
 		tag = SCA
 		from = 1739.1.1
 		to = 1760.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_5 (tc_event_pulses.txt). Median late 1740
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_5
 	}
 
 	trigger = {
@@ -476,7 +472,7 @@ swe_towns.6 = {
 		tag = SCA
 		from = 1784.1.1
 		to = 1837.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_6 (tc_event_pulses.txt). Median late 1785
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_6
 	}
 
 	trigger = {
@@ -518,7 +514,7 @@ swe_towns.6 = {
 }
 
 # Per Brahe founds Kristinestad on the peninsula of Koppö (letter of foundation 5 December 1649, named 1 March 1651
-# for his wife). Koppö is Sweden's from 1337, so this should fire in nearly every game.
+# for his wife).
 swe_towns.7 = {
 	type = country_event
 	title = swe_towns.7.title
@@ -532,7 +528,7 @@ swe_towns.7 = {
 		tag = SCA
 		from = 1647.1.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_7 (tc_event_pulses.txt). Median late 1648
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_7
 	}
 
 	trigger = {
@@ -573,17 +569,10 @@ swe_towns.7 = {
 	}
 }
 
-# Borås, 1620-22. In the spring of 1620 the district sent representatives to Gustav II Adolf to complain of how the
-# neighbouring towns treated its peddlers, whose goods had paid customs nowhere. He told them to stop trading by
-# midsummer or found a town. It was laid out round the parish church of Torpa: provisional privileges 29 June 1621,
-# the king's charter 25 May 1622, and from 1624 the right to trade anywhere once the goods had paid customs in Borås
-# (sv.wiki Borås, citing Millqvist 1991 and the town's own history page; the Borås chronologies give the same account).
-# Borås lies where skene, allingsas and bogesund meet on the map. skene takes the name, since swe_gotaland.4 already
-# uses it for the peddlers' district. This follows that event but doesn't need it: option a replaces swe_knallar on
-# skene with swe_boras_privileges for 20 years and a market, and option b is swe_gotaland.4.b once more, with a market
-# for Skara, where the trade goes. The towns' anger stays with the burghers of Västergötland, in place of a country-wide
-# estate penalty. Option a costs 4 gold, as swe_towns.1 does: the other foundings pay 2 for the name, development and
-# prosperity, and this one brings a market and a modifier besides. swe_boras_founded picks swe_towns.5's text.
+# Borås, 1620-22. The district complained to Gustav II Adolf of how the neighbouring towns treated its peddlers, and he
+# told them to stop trading or found a town, chartered in 1621-22 (sv.wiki Borås, citing Millqvist 1991). skene stands
+# in for Borås, as it does for the peddlers' district in swe_gotaland.4, which this follows but doesn't need. Option b
+# repeats swe_gotaland.4.b, with a market for Skara. swe_boras_founded picks swe_towns.5's text.
 swe_towns.8 = {
 	type = country_event
 	title = swe_towns.8.title
@@ -597,7 +586,7 @@ swe_towns.8 = {
 		tag = SCA
 		from = 1619.6.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_towns_8 (tc_event_pulses.txt). Median spring 1621
+		monthly_chance = 1 # Mostly fired by tc_pulse_towns_8
 	}
 
 	trigger = {

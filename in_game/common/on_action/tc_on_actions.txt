@@ -1,4 +1,4 @@
-﻿# Hooks into vanilla on_actions without replacing them (same pattern as ai_personalities_setup.txt)
+﻿# Hooks into vanilla on_actions without replacing them.
 on_game_start = {
 	on_actions = { tc_on_game_start }
 }
@@ -121,20 +121,17 @@ tc_on_game_start = {
 				grant_estate_privilege = estate_privilege:swe_birkarl_rights
 			}
 		}
-		# The two great salmon rivers of the Bothnian Bay, fish output like vanilla's one-tile base bonuses.
-		# Vanilla gives its large base bonuses to one or two tiles, so the Kalix (ranea), Kemi, Oulu and Ume keep
-		# vanilla's goods and no bonus. The fisheries belong to the location, not to Sweden: both are unowned in 1337.
-		# The Torne reaches the sea at Torneå, which already produces fish; the Crown's salmon fisheries have been
-		# studied above all on the Torne, Kalix, Lule and Indal (Länsstyrelsen, Om laxen och öringens natur)
+		# The salmon rivers of the Bothnian Bay (Länsstyrelsen, Om laxen och öringens natur). The fisheries
+		# belong to the location, not to Sweden, as both are unowned in 1337. The Torne reaches the sea at
+		# Torneå, which already produces fish.
 		location:tornea ?= {
 			if = {
 				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
 				add_location_modifier = { modifier = swe_northern_salmon_fishery months = -1 }
 			}
 		}
-		# The Ii (Ijo) reaches the sea at Kuivaniemi, which already produces fish. The division of 1549 gave
-		# the whole river's salmon to the men of Ii, its four great weirs stood on the lower river, and church
-		# and Crown both taxed the catch (Patopyynti Iijoella, the Finnish Living Heritage wiki)
+		# The Ii (Ijo) reaches the sea at Kuivaniemi, which already produces fish. Church and Crown both taxed
+		# its salmon catch (Patopyynti Iijoella, Finnish Living Heritage wiki).
 		location:kuivaniemi ?= {
 			if = {
 				limit = { NOT = { has_location_modifier = swe_northern_salmon_fishery } }
@@ -142,16 +139,14 @@ tc_on_game_start = {
 			}
 		}
 		# Västerås lies on the Västmanland plain, the farmland on Lake Mälaren that fed the mines of
-		# Bergslagen. Millet like neighbouring Enköping, vanilla's grain for most Swedish farmland;
-		# the mining locations keep no food, as Bergslagen bought its grain.
+		# Bergslagen. Millet like neighbouring Enköping, vanilla's grain for most Swedish farmland.
 		location:vasteras ?= {
 			if = {
 				limit = { raw_material = goods:lumber }
 				change_raw_material = goods:millet
 			}
 		}
-		# Färnebo härad was Filipstads bergslag, "Jernberghet i Wærmelande" in 1413: the iron mines of
-		# Persberg, Nordmark and Långban, and Filipstad's town privileges in 1611
+		# Färnebo härad was Filipstads bergslag, with the iron mines of Persberg, Nordmark and Långban.
 		location:farnebo ?= {
 			if = {
 				limit = { raw_material = goods:lumber }
@@ -285,14 +280,11 @@ tc_on_game_start = {
 				}
 			}
 		}
-		# Works of art older than 1337. Vanilla seeds 161 in main_menu/setup/1337/11_art.txt and none is
-		# Swedish (Denmark has Gesta Danorum and Roskilde cathedral), so they are created here rather than
-		# by overriding that file. No artist, as many of vanilla's seeds. Each belongs to its location,
-		# like vanilla's, whoever owns it. Qualities from the vanilla seeds: Gesta Danorum 61, Terrae
-		# Prussiae 40 and the Sachsenspiegel 87 (a law code, seeded as a chronicle); Gravensteen 64,
-		# the Theodosian walls 48 and Roskilde cathedral 79.
+		# Works of art older than 1337. Vanilla seeds none for Sweden (main_menu/setup/1337/11_art.txt), so
+		# they are created here rather than by overriding that file. Each belongs to its location, whoever owns
+		# it, and has no artist, as many vanilla seeds have none.
 		# Erikskrönikan, the rhymed chronicle of 1229-1319, written by an unknown hand about 1320-35
-		# (sv.wiki Erikskrönikan). Where it was written is unknown; Stockholm is our choice.
+		# (sv.wiki Erikskrönikan). Where it was written is unknown; Stockholm stands in.
 		if = {
 			limit = { NOT = { exists = work_of_art:swe_erikskronikan } }
 			location:stockholm ?= {
@@ -330,8 +322,7 @@ tc_on_game_start = {
 				}
 			}
 		}
-		# Åbo cathedral, consecrated by Bishop Magnus on 17 June 1300 (en.wiki Turku Cathedral). Smaller
-		# than the mod's Uppsala domkyrka (swe_svealand.4, 65-85) and far smaller than Roskilde.
+		# Åbo cathedral, consecrated by Bishop Magnus on 17 June 1300 (en.wiki Turku Cathedral).
 		if = {
 			limit = { NOT = { exists = work_of_art:swe_abo_domkyrka } }
 			location:abo ?= {

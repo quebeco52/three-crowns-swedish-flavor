@@ -1,9 +1,8 @@
-﻿# The Orthodox leave for Russia and settlers from Savolax take over their farms (swe_ingria.1), in each province where
-# Sweden holds Orthodox land. Amounts are per month. The Orthodox match flavor_fra.12 (the Huguenots, 0.1 for 3 years).
-# The settlers are 0.005 for 20 years, so 1.2 per province and 3.6 in all, from a Savolax of about 20-30 pops by then.
-# No culture filter: historically these were Finns, but the game usually turns Savolax's Savonians Swedish by the
-# mid-1500s, and a filter would then move nobody. Both moves are peasants only, since it was farmers who left and
-# farmers who took over; without that limit the garrisons would leave too.
+﻿# The Orthodox leave for Russia and settlers from Savolax take over their farms (swe_ingria.1), in each province
+# where Sweden holds Orthodox land. Amounts are per month; the exodus is sized like vanilla's flavor_fra.12 (the
+# Huguenots). No culture filter on the settlers: they were Finns, but the game usually turns Savolax Swedish by
+# the mid-1500s, and a filter would then move nobody. Peasants only, since farmers left and farmers took over;
+# otherwise the garrisons would leave too.
 swe_orthodox_exodus = {
 	if = {
 		limit = {

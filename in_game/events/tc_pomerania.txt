@@ -1,10 +1,8 @@
 ﻿namespace = swe_pomerania
 
-# In 1806 the Pomeranian estates refused Gustav IV Adolf a militia. On 26 June he set aside their
-# constitution and took Swedish Pomerania out of the Empire, then announced Swedish law and the end of
-# serfdom; the French occupation of 1807 delayed it, and it was carried out in part from 1810.
-# Fires on owning Vorpommern while the realm leans toward free subjects (vanilla's usual threshold, 25).
-# The Empire is left out on purpose: it is the realm's values that decide, not the date.
+# In 1806 the Pomeranian estates refused Gustav IV Adolf a militia. He set aside their constitution, took Swedish
+# Pomerania out of the Empire and announced Swedish law and the end of serfdom, carried out in part from 1810. Fires
+# on owning Vorpommern while the realm leans toward free subjects, whatever the date or the Empire.
 swe_pomerania.1 = {
 	type = country_event
 	title = swe_pomerania.1.title
@@ -18,7 +16,7 @@ swe_pomerania.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months once the trigger holds; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {

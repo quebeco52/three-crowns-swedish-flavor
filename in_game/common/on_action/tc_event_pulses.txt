@@ -1,14 +1,9 @@
-﻿# Our historical events also fire from here, outside the queue. Each month the game fires at most one queued
-# historical event per country, the first open one in load order (our tc_ files, then vanilla) whose chance beats
-# a single draw, so a queue of 3% events moves at about one firing per 33 months, and any of ours waiting shuts out
-# vanilla's 2% Swedish events (Oxenstierna, Per Brahe, the Vasa sinking, copper plate money). Each event keeps its
-# dynamic_historical_event block at 1% for the Historical Events panel, as vanilla's flavor_ven.24 does from the
-# yearly pulse, and its child here adds its old chance each month. Tested 2026-11-14: both routes share one dated
-# fire-once record, and the panel and dynamic_historical_event_fired see a firing from here. This hook ignores the
-# event's from/to and tag list, so each child repeats the window; random_events fires one event per block, so each
-# event has its own child. Left in the queue: conquest events (15%), milestones (10%), swe_scania.8 and
-# swe_jamtland.2 (5%), swe_finland.1 (100%) and the settled Vasa events. Generated from the events' windows:
-# keep each child's dates equal to its event's from/to.
+﻿# Our historical events also fire from here, outside the queue. Each month the game makes one draw per country
+# and fires the first open queued event (our tc_ files, then vanilla) whose chance beats it, so a queue of our
+# events would shut out vanilla's. Each event keeps its dynamic_historical_event block at 1% for the Historical
+# Events panel and fires from its own child here; both routes share one fire-once record. This hook ignores the
+# event's from/to and tag list, so each child repeats its event's window and must be kept in step with it.
+# Conquest events, milestones and a few others stay in the queue alone.
 
 monthly_country_pulse = {
 	on_actions = { tc_monthly_country_pulse }

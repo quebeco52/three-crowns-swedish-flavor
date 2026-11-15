@@ -1,11 +1,8 @@
-﻿# The salmon fisheries and the iron of Bergslagen are added at game start by tc_on_game_start, like vanilla's
-# location_historical_base_values.txt; the others by the event or decision named above each one.
+﻿# The salmon fisheries and Bergslagen iron are added at game start by tc_on_game_start; the rest by the event or
+# decision named above each one.
 
-# The two great salmon rivers of the Bothnian Bay: the Torne (tornea) and the Ii (kuivaniemi). Fish output only,
-# sized like vanilla's one-tile base bonuses (sikar_copper_mines_base 1), below its fish ones
-# (newfoundland_fishing_grounds_base 2, skane_herring_market 5): fish is the cheapest good (price 1; copper 3).
-# No trade capacity: the static modifier's icon comes from local_merchant_capacity whenever it is present (it comes
-# first in vanilla's modifier type order), and the maintainer chose the fish icon (2026-11-15).
+# The salmon rivers of the Bothnian Bay: the Torne (tornea) and the Ii (kuivaniemi). Sized like vanilla's one-tile
+# base bonuses (sikar_copper_mines_base).
 swe_northern_salmon_fishery = {
 	game_data = {
 		category = location
@@ -13,8 +10,7 @@ swe_northern_salmon_fishery = {
 	local_fish_output_modifier = 1.0
 }
 
-# The salmon fishery below the Älvkarleby falls of the Dalälven, in tierp: one fishery at the river mouth,
-# not a whole river.
+# The salmon fishery below the Älvkarleby falls of the Dalälven (tierp).
 swe_alvkarleby_salmon_fishery = {
 	game_data = {
 		category = location
@@ -22,10 +18,8 @@ swe_alvkarleby_salmon_fishery = {
 	local_fish_output_modifier = 0.15
 }
 
-# The iron mines of Bergslagen: nora, skinskatteberg, grythyttan, avesta (for Norberg, which has no location),
-# grange and farnebo. In the 14th century Swedish iron, forged into osmunds, went mainly to Lübeck and Danzig
-# (Jernkontoret). The size of vanilla's bilbao_iron_base (0.1), spread over a region as gujarat_cotton_base
-# (0.1) is over six locations. Stacks with vanilla's mulltimmer_masugn (age 3, +0.1 to all Swedish iron).
+# The iron mines of Bergslagen: nora, skinskatteberg, grythyttan, avesta (for Norberg), grange and farnebo.
+# Vanilla's bilbao_iron_base, spread over a region as gujarat_cotton_base is.
 swe_bergslagen_iron = {
 	game_data = {
 		category = location
@@ -33,7 +27,7 @@ swe_bergslagen_iron = {
 	local_iron_output_modifier = 0.1
 }
 
-# Added by swe_towns.6 for 20 years. The migration pull of vanilla's available_free_land.
+# Added by swe_towns.6 for 20 years. Migration from vanilla's available_free_land.
 swe_ostersund_freedoms = {
 	game_data = {
 		category = location
@@ -41,8 +35,7 @@ swe_ostersund_freedoms = {
 	local_migration_attraction = 0.1
 }
 
-# Added by swe_lappmarksplakatet_decision to the lappmarks for 15 years. Same migration pull as
-# scandinavian_thing_rights (0.3), spread over a near-empty region.
+# Added by swe_lappmarksplakatet_decision to the lappmarks for 15 years. Migration from scandinavian_thing_rights.
 swe_lappmark_settlers = {
 	game_data = {
 		category = location
@@ -50,10 +43,9 @@ swe_lappmark_settlers = {
 	local_migration_attraction = 0.3
 }
 
-# Added for 20 years by swe_scania.1 to the Danish-culture locations of Skåneland, by swe_jamtland.1
-# and swe_jamtland.2 to Jämtland and Idre, by swe_lappmark.5 to Sámi locations and by swe_denmark.1 to Zealand.
-# Scaled from vanilla's saints_enforced: the same unrest and under half its assimilation speed (0.25). The crown
-# power of fontainebleau_hunting_lodge.
+# Added for 20 years by swe_scania.1 (Skåneland), swe_jamtland.1 and .2 (Jämtland and Idre), swe_lappmark.5 (Sámi
+# locations) and swe_denmark.1 (Zealand). Scaled down from vanilla's saints_enforced; crown power from
+# fontainebleau_hunting_lodge.
 swe_forsvenskning = {
 	game_data = {
 		category = location
@@ -63,12 +55,9 @@ swe_forsvenskning = {
 	local_crown_estate_power = 0.1
 }
 
-# Added for 20 years by swe_baltic.1 and .2 (Swedish law) to our locations in Estonia, Rotalia and Livonia. The crown
-# power and unrest of swe_forsvenskning without its assimilation: Sweden brought its law, judges and governors to the
-# Baltic provinces but never tried to make Swedes of the Estonians or Latvians, and after the reduction of 1680 a
-# peasant could sue and even appeal to the king (en.wiki Estonia under Swedish rule). As in swe_forsvenskning, the
-# unrest of saints_enforced and the crown power of fontainebleau_hunting_lodge. The peasants' gain is a weak
-# satisfaction bonus given in the event.
+# Added for 20 years by swe_baltic.1 and .2 to our locations in Estonia, Rotalia and Livonia. swe_forsvenskning
+# without the assimilation: Sweden brought its law and governors to the Baltic provinces but never tried to make
+# Swedes of the Estonians or Latvians.
 swe_swedish_law = {
 	game_data = {
 		category = location
@@ -77,9 +66,8 @@ swe_swedish_law = {
 	local_crown_estate_power = 0.1
 }
 
-# Added by swe_ingria.1 for 20 years to the Orthodox locations of Kexholm and Ingria. The conversion of
-# dev_nasibi (0.1) and the unrest of lit_destruction_of_romuva_sites (0.2). The settlers who took over the farms of
-# those who left arrive through swe_orthodox_exodus.
+# Added by swe_ingria.1 for 20 years to the Orthodox locations of Kexholm and Ingria. Conversion from vanilla's
+# dev_nasibi, unrest from lit_destruction_of_romuva_sites.
 swe_lutheran_parishes = {
 	game_data = {
 		category = location
@@ -88,10 +76,8 @@ swe_lutheran_parishes = {
 	local_unrest = 0.2
 }
 
-# Added at game start by tc_on_game_start to Stockholm and Kalmar, removed by
-# swe_svenska_radman_decision. Same estate shift as fortress_town (0.25), and below the merchant
-# capacity of swedish_city_rights (0.25): the Hansa's trade came through the German councillors,
-# and so did its say in the town.
+# The German half of the town council, whose Hansa trade brought the burghers their say. Added at game start to
+# Stockholm and Kalmar, removed by swe_svenska_radman_decision. Estate shift from vanilla's fortress_town.
 swe_tyska_radet = {
 	game_data = {
 		category = location
@@ -101,11 +87,9 @@ swe_tyska_radet = {
 	local_crown_estate_power = -0.25
 }
 
-# Added to oland by swe_oland_djurgard_decision, ended by swe_oland.1.
-# The Crown kept the island's game and forests, and the fallow deer grazed the peasants' fields and
-# pastures. Built on vanilla's fontainebleau_hunting_lodge: the same crown power, but the migration
-# reversed, since peasants left the island rather than courtiers coming to it. The horses are the royal
-# stud at Ottenby, behind Karl X Gustav's wall; they only count if a horse breeder is built here.
+# The royal game park on Öland: the Crown kept the island's game and forests, and the deer grazed the peasants'
+# fields. Added to oland by swe_oland_djurgard_decision, removed by swe_oland.1. Based on vanilla's
+# fontainebleau_hunting_lodge, with the migration reversed. The horses are the royal stud at Ottenby.
 swe_olands_djurgard = {
 	game_data = {
 		category = location
@@ -117,10 +101,9 @@ swe_olands_djurgard = {
 	local_horses_output_modifier = 0.25
 }
 
-# Added by swe_jamtland.1 or swe_jamtland.2 to the Norwegian-culture locations of Jämtland and Idre, removed by
-# swe_jamtland.2. The old tings, and the promise of 1688 that the Jämtlanders need only defend their own
-# province: they hold their valleys well but send few men to the Crown's wars. The hostile attrition of
-# sco_dunbar_castle (1), since local_defensive only counts where there is a fort, and Jämtland has none at setup.
+# The old tings, and the promise of 1688 that the Jämtlanders need only defend their own province. Added permanently
+# by swe_jamtland.1 or .2 to the Norwegian-culture locations of Jämtland and Idre, removed by swe_jamtland.2.
+# Hostile attrition from vanilla's sco_dunbar_castle, as local_defensive needs a fort.
 swe_jamtland_tings = {
 	game_data = {
 		category = location
@@ -131,9 +114,9 @@ swe_jamtland_tings = {
 	local_manpower_modifier = -0.25
 }
 
-# Added to froso along with swe_jamtland_tings: the yearly market on Frösön, where Jämtland traded with
-# Norway and the Bothnian coast. The merchant power of vanilla's market_village (0.1): a fair draws traders as a
-# market does. A modifier, not the building, since swe_jamtland.2 can take it away again.
+# The yearly market on Frösön, where Jämtland traded with Norway and the Bothnian coast. Added permanently to froso
+# along with swe_jamtland_tings. A modifier rather than a market building, so swe_jamtland.2 can remove it. Merchant
+# power from vanilla's market_village.
 swe_jamtmarknaden = {
 	game_data = {
 		category = location
@@ -141,9 +124,9 @@ swe_jamtmarknaden = {
 	local_merchant_power = 0.1
 }
 
-# Added by swe_pomerania.1 to Sweden's locations in Pomerania. Gustav IV Adolf set aside the estates'
-# constitution and abolished serfdom (1806). Twice the enfranchisement of scandinavian_bergslag_privileges
-# (0.05); the estate shifts of fortress_town (0.25), here from the nobles to the peasants and the Crown.
+# Added permanently by swe_pomerania.1 to Sweden's locations in Pomerania: Gustav IV Adolf set aside the estates'
+# constitution and abolished serfdom (1806). Estate shifts from vanilla's fortress_town, here from the nobles to the
+# peasants and the Crown.
 swe_pomeranian_emancipation = {
 	game_data = {
 		category = location
@@ -154,12 +137,10 @@ swe_pomeranian_emancipation = {
 	local_crown_estate_power = 0.25
 }
 
-# Added for 50 years by swe_baltic.1 and .2 (confirming the privileges) to Sweden's locations in Estonia, Livonia (not
-# the towns Reval, Narva and Riga, which get swe_baltic_town_privileges) and Rotalia. The knighthoods kept their diets,
-# courts and German law. Location modifiers stay when the owner changes, as the privileges did: Peter the Great
-# confirmed them in 1710. A Livonian Reduction can remove it sooner. The nobles' share of fortress_town (0.25), the
-# crown loss of kulm_town_rights (-0.25), and the assimilation and integration of lat_compromise_with_greek_populace
-# (-0.25, +0.10).
+# The knighthoods kept their diets, courts and German law. Added for 50 years by swe_baltic.1 and .2 to Sweden's
+# locations in Estonia, Livonia and Rotalia, except Reval, Narva and Riga, which get swe_baltic_town_privileges.
+# Location modifiers outlast a change of owner, as the privileges did: Peter the Great confirmed them in 1710.
+# Assimilation and integration from vanilla's lat_compromise_with_greek_populace.
 swe_baltic_privileges = {
 	game_data = {
 		category = location
@@ -170,12 +151,9 @@ swe_baltic_privileges = {
 	local_integration_speed = 0.10
 }
 
-# Added for 50 years to Reval and Narva by swe_baltic.1, to Riga by swe_baltic.2 (confirming the
-# privileges), to the Prussian ports by swe_prussia.1 (leaving them their councils) and to Bremen by swe_germany.1.b
-# (leaving the city its freedoms). The estate shift and
-# merchant capacity of swe_tyska_radet: a self-governing Hanseatic town. The culture terms are those of
-# swe_baltic_privileges, since the towns kept their German law too. A Prussian town re-granted Kulm law
-# stacks the crown loss of kulm_town_rights on top; that is the player's own grant.
+# A self-governing Hanseatic town. Added for 50 years to Reval and Narva by swe_baltic.1, to Riga by swe_baltic.2,
+# to the Prussian ports by swe_prussia.1 and to Bremen by swe_germany.1.b. The trade and estate shift of
+# swe_tyska_radet, with the culture terms of swe_baltic_privileges, since the towns kept their German law too.
 swe_baltic_town_privileges = {
 	game_data = {
 		category = location
@@ -187,9 +165,9 @@ swe_baltic_town_privileges = {
 	local_integration_speed = 0.10
 }
 
-# Added for 50 years to riga by swe_baltic.2 (Swedish law), to the Prussian ports by swe_prussia.1, to Windau and
-# Libau by swe_baltic.5, to the five river mouths by swe_baltic.7.b and to Arkhangelsk by swe_russia.3.b. The Licent, the Crown's toll on the trade of the Baltic ports from the 1620s, taken in
-# Prussia from 1626 and in Courland from 1630. swe_tyska_radet reversed: the Crown's gain is the merchants' loss.
+# The Licent, the Crown's toll on the trade of the Baltic ports from the 1620s. Added for 50 years to riga by
+# swe_baltic.2, to the Prussian ports by swe_prussia.1, to Windau and Libau by swe_baltic.5, to the five river
+# mouths by swe_baltic.7.b and to Arkhangelsk by swe_russia.3.b. swe_tyska_radet reversed.
 swe_riga_licent = {
 	game_data = {
 		category = location
@@ -200,8 +178,7 @@ swe_riga_licent = {
 }
 
 # Added for 50 years by swe_finland.1 to Sweden's locations in Finland: from 1362 Finland voted in the royal
-# election like the other lands of the realm. Unrest from furs_de_valencia_town_rights, separatism from
-# chi_mongol_rebel_bands_curbed, and half the crown power of scandinavian_thing_rights.
+# election like the other lands of the realm. Unrest from vanilla's furs_de_valencia_town_rights.
 swe_finland_at_mora = {
 	game_data = {
 		category = location
@@ -212,8 +189,8 @@ swe_finland_at_mora = {
 }
 
 # Added for 50 years by swe_baltic.4 to whichever of Narva, Nyen and Reval Sweden holds: after Stolbovo (1617)
-# Russia had no Baltic port, and Sweden meant its trade with the West to pass through them. The flat merchant
-# capacity of favoring_own_interests (0.5) and the market access of market_charter (0.1).
+# Russia had no Baltic port, and Sweden meant its trade with the West to pass through them. Merchant capacity from
+# vanilla's favoring_own_interests.
 swe_russian_transit = {
 	game_data = {
 		category = location
@@ -222,10 +199,9 @@ swe_russian_transit = {
 	local_market_access = 0.1
 }
 
-# Added for 50 years by swe_baltic.4 to the town chosen as the staple of the Russian trade. The merchant capacity
-# of the Stockholm staple in swe_bottniska_handelstvanget and the flat merchant capacity of vanilla's pomor_outpost
-# (0.25), not trades per burgher, since Narva and Nyen hold almost no burghers (Narva 0 in a 1619 save). No
-# local_trade_center_power: it only counts in a market center, and none of the three towns is one at the start.
+# Added for 50 years by swe_baltic.4 to the town chosen as the staple of the Russian trade. Flat merchant capacity,
+# as in vanilla's pomor_outpost, rather than trades per burgher, since Narva and Nyen hold almost no burghers. No
+# local_trade_center_power, which only counts in a market center.
 swe_russian_staple = {
 	game_data = {
 		category = location
@@ -234,9 +210,9 @@ swe_russian_staple = {
 	local_merchant_capacity = 0.25
 }
 
-# Added for 20 years by swe_norrland.1 to Sweden's locations in Hälsingland and Ångermanland when the
-# Crown leaves Faxeholm in ruins. The unrest and crown power of swe_finland_at_mora, and the enfranchisement of
-# scandinavian_bergslag_privileges (0.05): the peasants run their own affairs.
+# Added for 20 years by swe_norrland.1 to Sweden's locations in Hälsingland and Ångermanland when the Crown leaves
+# Faxeholm in ruins: the peasants run their own affairs. Enfranchisement from vanilla's
+# scandinavian_bergslag_privileges.
 swe_faxeholm_ruins = {
 	game_data = {
 		category = location
@@ -246,8 +222,7 @@ swe_faxeholm_ruins = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 10 years by swe_norrland.1 to the same locations when the Crown rebuilds. The crown power and
-# unrest of swe_forsvenskning, for as long as vanilla's longest timed unrest modifiers.
+# Added for 10 years by swe_norrland.1 to the same locations when the Crown rebuilds.
 swe_norrland_bailiff = {
 	game_data = {
 		category = location
@@ -256,8 +231,7 @@ swe_norrland_bailiff = {
 	local_unrest = 0.1
 }
 
-# Added to gefle for 50 years by swe_norrland.2, like swe_peasant_skippers: the monopoly of 1557 ran to 1766, past
-# vanilla's longest timed modifier (100 years). Above swe_alvkarleby_salmon_fishery (0.15), a single fishery.
+# Added to gefle for 50 years by swe_norrland.2. Gefle's monopoly of 1557 ran to 1766.
 swe_gavle_fishermen = {
 	game_data = {
 		category = location
@@ -273,8 +247,8 @@ swe_gavle_fishing_grounds = {
 	local_fish_output_modifier = -0.1
 }
 
-# Added to ragunda for 50 years by swe_norrland.3 when the Crown takes the drained lakebed. The crown power of
-# vanilla's ath_a_permanent_capital (0.25), as in swe_viborg_royal_governor: the whole lakebed is crown land.
+# Added to ragunda for 50 years by swe_norrland.3 when the Crown takes the drained lakebed. Crown power from
+# vanilla's ath_a_permanent_capital.
 swe_ragunda_crown_land = {
 	game_data = {
 		category = location
@@ -282,8 +256,8 @@ swe_ragunda_crown_land = {
 	local_crown_estate_power = 0.25
 }
 
-# Added to soderala by swe_norrland.6 when the Crown backs the Flor manufactory. Lower fiber crops output than
-# nile_delta_fiber_crops_base (0.25), since this is one manufactory's district, and the cloth output vanilla uses (0.1).
+# Added permanently to soderala by swe_norrland.6 when the Crown backs the Flor manufactory. Fiber crops scaled down
+# from vanilla's nile_delta_fiber_crops_base, as this is one manufactory's district.
 swe_flor_manufactory = {
 	game_data = {
 		category = location
@@ -292,8 +266,7 @@ swe_flor_manufactory = {
 	local_cloth_output_modifier = 0.1
 }
 
-# Added for 20 years by swe_lappmark.1 to Sweden's far-north locations with pops of another faith. The conversion
-# of swe_lutheran_parishes and the unrest of swe_forsvenskning: priests came, not settlers.
+# Added for 20 years by swe_lappmark.1 to our far-north locations with other faiths: priests came, not settlers.
 swe_uppsala_mission = {
 	game_data = {
 		category = location
@@ -302,8 +275,8 @@ swe_uppsala_mission = {
 	local_unrest = 0.1
 }
 
-# Added to abo for 25 years by swe_lappmark.1 when the far north is left to the Bishop of Åbo. The clergy power of
-# vanilla's kie_patriarch_controlled_metropolitan, the smallest gain in any static modifier (0.25).
+# Added to abo for 25 years by swe_lappmark.1 when the far north is left to the Bishop of Åbo. Clergy power from
+# vanilla's kie_patriarch_controlled_metropolitan.
 swe_abo_diocese_north = {
 	game_data = {
 		category = location
@@ -311,8 +284,7 @@ swe_abo_diocese_north = {
 	local_clergy_estate_power = 0.25
 }
 
-# Added to gratesk for 50 years by swe_lappmark.3. A migration pull below swe_lappmark_settlers (0.3):
-# settlers followed the fishermen without any tax freedoms.
+# Added to gratesk for 50 years by swe_lappmark.3. Settlers followed the fishermen without any tax freedoms.
 swe_gratrask_fishing_rights = {
 	game_data = {
 		category = location
@@ -320,8 +292,7 @@ swe_gratrask_fishing_rights = {
 	local_migration_attraction = 0.2
 }
 
-# Added to lulea and umea for 15 years by swe_lappmark.3 when the Crown leaves the lake alone. The unrest of
-# swe_finland_at_mora.
+# Added to lulea and umea for 15 years by swe_lappmark.3 when the Crown leaves the lake alone.
 swe_sami_fishing_waters = {
 	game_data = {
 		category = location
@@ -329,9 +300,8 @@ swe_sami_fishing_waters = {
 	local_unrest = -0.1
 }
 
-# Added for 20 years by swe_lappmark.4 to Sweden's far-north locations with Sámi pops. The unrest of
-# swe_forsvenskning, and a slow drain on prosperity, smaller than forced_back_to_work_modifier (-0.0025) because
-# it lasts much longer.
+# Added for 20 years by swe_lappmark.4 to Sweden's far-north locations with Sámi pops. The prosperity drain is
+# smaller than vanilla's forced_back_to_work_modifier because it lasts much longer.
 swe_reindeer_tax = {
 	game_data = {
 		category = location
@@ -341,9 +311,8 @@ swe_reindeer_tax = {
 }
 
 # Added permanently by swe_lappmark.4 (swe_reindeer_herds) to the eight high-country locations, whichever option is
-# chosen, since herding is a lasting way of life. These locations keep their goods, so each part only counts where it
-# can: the wild game bonus of vanilla's the_book_of_hunting (0.2, there country-wide), vanilla's usual smallest fur
-# bonus (0.1), and vanilla's mild food step, which also reaches the stone and lumber locations.
+# chosen. These locations keep their goods, so each output bonus only counts where it can; the food bonus also
+# reaches the stone and lumber locations. Wild game from vanilla's the_book_of_hunting.
 swe_reindeer_herding = {
 	game_data = {
 		category = location
@@ -353,9 +322,8 @@ swe_reindeer_herding = {
 	local_monthly_food_modifier = monthly_food_productivity_mild_bonus
 }
 
-# Added for 25 years by swe_lappmark.5 to Sweden's far-north locations with Sámi pops. The conversion of
-# swe_lutheran_parishes, without its unrest: teaching in their own language met less resistance. The literacy of
-# studium_privileges (0.05).
+# Added for 25 years by swe_lappmark.5 to Sweden's far-north locations with Sámi pops. Conversion without unrest,
+# since teaching in their own language met less resistance. Literacy from vanilla's studium_privileges.
 swe_sami_schools = {
 	game_data = {
 		category = location
@@ -364,8 +332,8 @@ swe_sami_schools = {
 	local_monthly_literacy = 0.05
 }
 
-# Added for 20 years by swe_lappmark.6 to Sweden's locations in Pite Lappmark. The unrest of vanilla's forced_labor
-# (0.2), and the migration of swe_gratrask_fishing_rights reversed: people fled to Norway and the coast.
+# Added for 20 years by swe_lappmark.6 to Sweden's locations in Pite Lappmark: people fled to Norway and the coast.
+# Unrest from vanilla's forced_labor.
 swe_silver_road = {
 	game_data = {
 		category = location
@@ -374,9 +342,8 @@ swe_silver_road = {
 	local_migration_attraction = -0.2
 }
 
-# Added to tornea by swe_lappmark.7 when the Crown insists on its site. The crown power of swe_viborg_royal_governor
-# (0.25), a town under the Crown's own eye, and the merchant capacity of swe_riga_licent (-0.1): the traders stayed
-# away from the Crown's site.
+# Added permanently to tornea by swe_lappmark.7 when the Crown insists on its site: a town under the Crown's own
+# eye, which the traders stayed away from.
 swe_tornea_crown_town = {
 	game_data = {
 		category = location
@@ -385,8 +352,8 @@ swe_tornea_crown_town = {
 	local_merchant_capacity_modifier = -0.1
 }
 
-# Added to tornea by swe_lappmark.7 when the town goes on Suensaari. The market access of market_charter (0.1)
-# and the merchant capacity of swe_russian_staple (0.1).
+# Added permanently to tornea by swe_lappmark.7 when the town goes on Suensaari. Market access from vanilla's
+# market_charter.
 swe_tornea_trade_district = {
 	game_data = {
 		category = location
@@ -395,8 +362,7 @@ swe_tornea_trade_district = {
 	local_merchant_capacity_modifier = 0.1
 }
 
-# Added to bjorneborg for 15 years by swe_finland_west.1 when the fortress is pulled down. The unrest of
-# swe_finland_at_mora.
+# Added to bjorneborg for 15 years by swe_finland_west.1 when the fortress is pulled down.
 swe_satakunta_relieved = {
 	game_data = {
 		category = location
@@ -404,8 +370,8 @@ swe_satakunta_relieved = {
 	local_unrest = -0.1
 }
 
-# Added to korsholm for 50 years by swe_finland_west.1, on the new fortress. The crown power of swe_norrland_bailiff and
-# the flat merchant capacity of favoring_own_interests (0.5), since it stood by the market and watched the coast trade.
+# Added to korsholm for 50 years by swe_finland_west.1 on the new fortress, which stood by the market and watched
+# the coast trade. Merchant capacity from vanilla's favoring_own_interests.
 swe_korsholm_coast_watch = {
 	game_data = {
 		category = location
@@ -414,8 +380,7 @@ swe_korsholm_coast_watch = {
 	local_merchant_capacity = 0.5
 }
 
-# Added to bjorneborg for 20 years by swe_finland_west.1 when the fortress stays. The crown power of
-# swe_norrland_bailiff, and the prosperity drain of swe_reindeer_tax: the district goes on paying for it.
+# Added to bjorneborg for 20 years by swe_finland_west.1 when the fortress stays and the district goes on paying.
 swe_kumo_castle_burden = {
 	game_data = {
 		category = location
@@ -424,8 +389,8 @@ swe_kumo_castle_burden = {
 	local_monthly_prosperity = -0.001
 }
 
-# Added to korsholm for 10 years by swe_finland_west.2 when a pirate is made bailiff. The crown power of
-# swe_faxeholm_ruins and the unrest of swe_norrland_bailiff: cheap, but he wasn't the Crown's man.
+# Added to korsholm for 10 years by swe_finland_west.2 when a pirate is made bailiff. He was cheap, but not the
+# Crown's man.
 swe_pirate_bailiff = {
 	game_data = {
 		category = location
@@ -434,9 +399,8 @@ swe_pirate_bailiff = {
 	local_unrest = 0.1
 }
 
-# Added for 15 years by swe_finland_west.3 to Sweden's locations in Satakunta after talks. The enfranchisement and
-# crown power of swe_faxeholm_ruins, and the rebel threshold of cas_catalan_crackdown (-0.05): the peasants swore
-# never to rise again.
+# Added for 15 years by swe_finland_west.3 to Sweden's locations in Satakunta after talks: the peasants swore never
+# to rise again. Rebel threshold from vanilla's cas_catalan_crackdown.
 swe_lempaala_pledge = {
 	game_data = {
 		category = location
@@ -446,8 +410,8 @@ swe_lempaala_pledge = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 10 years by swe_finland_west.3 to Sweden's locations in Satakunta when the rising is crushed. The crown
-# power of swe_norrland_bailiff and the peasant unrest of fuero_general_town_rights (0.2).
+# Added for 10 years by swe_finland_west.3 to Sweden's locations in Satakunta when the rising is crushed. Peasant
+# unrest from vanilla's fuero_general_town_rights.
 swe_satakunta_bailiffs = {
 	game_data = {
 		category = location
@@ -456,8 +420,7 @@ swe_satakunta_bailiffs = {
 	local_peasants_estate_unrest = 0.2
 }
 
-# Added for 20 years by swe_finland_west.4 to Sweden's locations in Österbotten when the nobles are kept out. The
-# unrest and enfranchisement of swe_faxeholm_ruins, with noble power in place of its crown power.
+# Added for 20 years by swe_finland_west.4 to Sweden's locations in Österbotten when the nobles are kept out.
 swe_free_osterbotten = {
 	game_data = {
 		category = location
@@ -467,9 +430,8 @@ swe_free_osterbotten = {
 	local_nobles_estate_power = -0.1
 }
 
-# Added for 50 years by swe_finland_west.4 to Sweden's locations in Österbotten when the fiefs are granted. The
-# noble power of swe_free_osterbotten reversed, and the enfranchisement of mining_charter (-0.1): free farmers
-# become tenants.
+# Added for 50 years by swe_finland_west.4 to Sweden's locations in Österbotten when the fiefs are granted: free
+# farmers become tenants. Enfranchisement from vanilla's mining_charter.
 swe_osterbotten_fiefs = {
 	game_data = {
 		category = location
@@ -478,9 +440,8 @@ swe_osterbotten_fiefs = {
 	local_peasant_enfranchisment = -0.1
 }
 
-# Added to kastelholm, ekenas and sjundea for 20 years by swe_finland_west.5 when the law is enforced. The maritime
-# presence of swe_peasant_skippers reversed, the sailors of rot_timur_scare (-0.25) and the burgher power of
-# swe_enkoping_ice_ban: the ships lie idle and the trade goes through the towns.
+# Added to kastelholm, ekenas and sjundea for 20 years by swe_finland_west.5 when the law is enforced: the ships lie
+# idle and the trade goes through the towns. Sailors from vanilla's rot_timur_scare.
 swe_skipper_ban = {
 	game_data = {
 		category = location
@@ -491,8 +452,8 @@ swe_skipper_ban = {
 }
 
 # Added to abo for 20 years by swe_finland_west.5 when the law against peasant sailing is enforced: what the farmers
-# of the islands and the coast sell must now come through the staple towns. The trades per burgher of vanilla's
-# market_charter (0.25), as in swe_kalmar_staple. Åbo is a town, so its burghers use it.
+# of the islands and the coast sell must come through the staple towns. Trades per burgher from vanilla's
+# market_charter. Åbo is a town, so its burghers use it.
 swe_skipper_staple = {
 	game_data = {
 		category = location
@@ -500,8 +461,8 @@ swe_skipper_staple = {
 	local_trades_per_burgher = 0.25
 }
 
-# Added to kastelholm, ekenas and sjundea for 50 years by swe_finland_west.5 when the skippers keep sailing. The
-# maritime presence and sailors of vanilla's scandinavian_fishing_privileges (0.1 each): the farmers' own ships at sea.
+# Added to kastelholm, ekenas and sjundea for 50 years by swe_finland_west.5 when the skippers keep sailing. Values
+# from vanilla's scandinavian_fishing_privileges.
 swe_peasant_skippers = {
 	game_data = {
 		category = location
@@ -510,9 +471,8 @@ swe_peasant_skippers = {
 	local_sailors_modifier = 0.1
 }
 
-# Added for 20 years by swe_finland_west.6 to Sweden's locations in Nyland when the forests are kept. The lumber
-# output of sawmill (0.2) and the tar output of scandinavian_tar_privileges (0.2). Only some locations here start
-# with lumber, so the rest need a building to benefit.
+# Added for 20 years by swe_finland_west.6 to Sweden's locations in Nyland when the forests are kept. Tar from
+# vanilla's scandinavian_tar_privileges. Only some of them start with lumber; the rest need a building.
 swe_nyland_forests = {
 	game_data = {
 		category = location
@@ -521,9 +481,8 @@ swe_nyland_forests = {
 	local_tar_output_modifier = 0.2
 }
 
-# Added to olofsborg for 20 years by swe_finland_east.1 when Sweden holds the line. The hostile attrition of
-# swe_jamtland_tings, since Olofsborg has no fort at setup, and the crown power of swe_norrland_bailiff. Its lakes
-# and waterways were chosen to hinder any offensive.
+# Added to olofsborg for 20 years by swe_finland_east.1 when Sweden holds the line. Hostile attrition, since
+# Olofsborg has no fort at setup and its lakes and waterways were chosen to hinder any offensive.
 swe_olofsborg_line = {
 	game_data = {
 		category = location
@@ -532,9 +491,8 @@ swe_olofsborg_line = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to olofsborg for 10 years by swe_finland_east.1 when the quarrel is left alone. The unrest of
-# swe_finland_at_mora and the merchant capacity of swe_kajana_border_trade (vanilla's pomor_outpost, 0.25): traders
-# cross the border.
+# Added to olofsborg for 10 years by swe_finland_east.1 when the quarrel is left alone: traders cross the border.
+# Merchant capacity from vanilla's pomor_outpost.
 swe_olofsborg_quiet_border = {
 	game_data = {
 		category = location
@@ -543,8 +501,7 @@ swe_olofsborg_quiet_border = {
 	local_merchant_capacity = 0.25
 }
 
-# Added for 15 years by swe_finland_east.2 to Sweden's locations in Vyborg province after the widow gets better
-# terms. The crown power of swe_faxeholm_ruins.
+# Added for 15 years by swe_finland_east.2 to our locations in Vyborg province after the widow gets better terms.
 swe_viborg_lady = {
 	game_data = {
 		category = location
@@ -552,8 +509,8 @@ swe_viborg_lady = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 10 years by swe_finland_east.2 to Sweden's locations in Vyborg province when the gates are forced. The
-# crown power of swe_norrland_bailiff and the unrest of bul_powerful_local_elites (0.2).
+# Added for 10 years by swe_finland_east.2 to Sweden's locations in Vyborg province when the gates are forced.
+# Unrest from vanilla's bul_powerful_local_elites.
 swe_viborg_gates_forced = {
 	game_data = {
 		category = location
@@ -562,8 +519,8 @@ swe_viborg_gates_forced = {
 	local_unrest = 0.2
 }
 
-# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief ends. The crown
-# power of ath_a_permanent_capital (0.25).
+# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief ends. Crown power
+# from vanilla's ath_a_permanent_capital.
 swe_viborg_royal_governor = {
 	game_data = {
 		category = location
@@ -571,9 +528,8 @@ swe_viborg_royal_governor = {
 	local_crown_estate_power = 0.25
 }
 
-# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief stays. The crown
-# loss of kulm_town_rights (-0.25) and the manpower of birth_of_a_new_city_mil (0.25): its holders paid to defend
-# the border themselves.
+# Added for 50 years by swe_finland_east.3 to Sweden's locations in Vyborg province when the fief stays: its holders
+# paid to defend the border themselves. Manpower from vanilla's birth_of_a_new_city_mil.
 swe_viborg_margraves = {
 	game_data = {
 		category = location
@@ -582,9 +538,8 @@ swe_viborg_margraves = {
 	local_manpower_modifier = 0.25
 }
 
-# Added for 25 years by swe_finland_east.4 to Savolax, Kajanaland and the four northern Tavastland locations, unless a
-# foreign country holds the location. The migration of swe_gratrask_fishing_rights, below swe_lappmark_settlers (0.3),
-# and the population growth of surplus_food_modifier (0.002).
+# Added for 25 years by swe_finland_east.4 to Savolax, Kajanaland and the four northern Tavastland locations, unless
+# a foreign country holds the location. Population growth from vanilla's surplus_food_modifier.
 swe_crown_wilderness = {
 	game_data = {
 		category = location
@@ -593,9 +548,8 @@ swe_crown_wilderness = {
 	local_population_growth = 0.002
 }
 
-# Added to kajana for 10 years by swe_finland_east.6 when the cloth is returned. The flat merchant capacity of
-# vanilla's pomor_outpost (0.25), the post of the traders from the White Sea coast: the same kind of trade, the
-# Karelians bringing their goods across the border.
+# Added to kajana for 10 years by swe_finland_east.6 when the cloth is returned: the Karelians bring their goods
+# across the border. Merchant capacity from vanilla's pomor_outpost, the post of the White Sea traders.
 swe_kajana_border_trade = {
 	game_data = {
 		category = location
@@ -603,8 +557,8 @@ swe_kajana_border_trade = {
 	local_merchant_capacity = 0.25
 }
 
-# Added for 20 years by swe_finland_east.7 to Sweden's locations in Vyborg province when the see is founded. The
-# conversion of swe_lutheran_parishes without its unrest, as in swe_sami_schools: a bishop and priests came, not force.
+# Added for 20 years by swe_finland_east.7 to Sweden's locations in Vyborg province when the see is founded.
+# Conversion without unrest: a bishop and priests came, not force.
 swe_viborg_see = {
 	game_data = {
 		category = location
@@ -612,8 +566,8 @@ swe_viborg_see = {
 	local_pop_conversion_speed_modifier = 0.1
 }
 
-# Added to abo for 25 years by swe_finland_east.7 when Finland keeps one bishop. The clergy power of
-# swe_abo_diocese_north (vanilla's kie_patriarch_controlled_metropolitan, 0.25).
+# Added to abo for 25 years by swe_finland_east.7 when Finland keeps one bishop. Clergy power from vanilla's
+# kie_patriarch_controlled_metropolitan.
 swe_abo_one_see = {
 	game_data = {
 		category = location
@@ -621,9 +575,8 @@ swe_abo_one_see = {
 	local_clergy_estate_power = 0.25
 }
 
-# Added to vyborg for 50 years by swe_finland_east.8 when the gymnasium is founded; it taught there for 69 years. The
-# literacy growth of vanilla's studium_privileges (0.05), which needs a city, and the literacy cap of
-# MLO_library_research (5).
+# Added to vyborg for 50 years by swe_finland_east.8 when the gymnasium is founded; it taught there for 69 years.
+# Literacy from vanilla's studium_privileges, the cap from MLO_library_research.
 swe_gymnasium_wiburgense = {
 	game_data = {
 		category = location
@@ -632,8 +585,8 @@ swe_gymnasium_wiburgense = {
 	local_max_literacy = 5
 }
 
-# Added to malmo for 10 years by swe_scania.6 after executions. The unrest of PRU_quitzow_repressed_modifier (0.25),
-# and the burgher loss of swe_riga_licent (-0.25): the plotters were the town's own.
+# Added to malmo for 10 years by swe_scania.6 after executions; the plotters were the town's own. Unrest from
+# vanilla's PRU_quitzow_repressed_modifier.
 swe_malmo_plot_crushed = {
 	game_data = {
 		category = location
@@ -642,8 +595,7 @@ swe_malmo_plot_crushed = {
 	local_burghers_estate_power = -0.25
 }
 
-# Added to malmo for 10 years by swe_scania.6 after a pardon. The unrest of swe_finland_at_mora and the crown power of
-# swe_faxeholm_ruins.
+# Added to malmo for 10 years by swe_scania.6 after a pardon.
 swe_malmo_mercy = {
 	game_data = {
 		category = location
@@ -652,8 +604,8 @@ swe_malmo_mercy = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 20 years by swe_gotaland.1 to Sweden's locations in Tioharad when the border peace stands. The market
-# access of market_charter (0.1), the unrest of swe_finland_at_mora and the manpower of swe_jamtland_tings.
+# Added for 20 years by swe_gotaland.1 to Sweden's locations in Tioharad when the border peace stands. Market access
+# from vanilla's market_charter.
 swe_varend_border_peace = {
 	game_data = {
 		category = location
@@ -663,8 +615,7 @@ swe_varend_border_peace = {
 	local_manpower_modifier = -0.25
 }
 
-# Added for 10 years by swe_gotaland.1 to the same locations when it's forbidden. The crown power of
-# swe_norrland_bailiff and vanilla's market_charter reversed (-0.1): the old trading paths are closed.
+# Added for 10 years by swe_gotaland.1 to the same locations when the peace is forbidden and the trade paths close.
 swe_border_peace_forbidden = {
 	game_data = {
 		category = location
@@ -673,7 +624,7 @@ swe_border_peace_forbidden = {
 	local_market_access = -0.1
 }
 
-# Added to ljungby for 10 years by swe_gotaland.2 when the new judge stays. The same as swe_norrland_bailiff.
+# Added to ljungby for 10 years by swe_gotaland.2 when the new judge stays.
 swe_sunnerbo_judge = {
 	game_data = {
 		category = location
@@ -682,7 +633,7 @@ swe_sunnerbo_judge = {
 	local_unrest = 0.1
 }
 
-# Added to ljungby for 15 years by swe_gotaland.2 when the district picks its judge. The same as swe_malmo_mercy.
+# Added to ljungby for 15 years by swe_gotaland.2 when the district picks its judge.
 swe_sunnerbo_local_judge = {
 	game_data = {
 		category = location
@@ -691,10 +642,8 @@ swe_sunnerbo_local_judge = {
 	local_crown_estate_power = -0.1
 }
 
-# Added for 10 years by swe_gotaland.3 to Sweden's locations in Tioharad when the oxen ban is enforced, in place of
-# rebels. The unrest of vanilla's lit_destruction_of_romuva_sites (0.2), the crown power of swe_norrland_bailiff and the
-# market access of staple_port_commercial_stagnation_modifier (-0.25). Not 0.5, as in cruel_overlord: at that value 30
-# of Tioharad's 45 pops joined rebels within a month.
+# Added for 10 years by swe_gotaland.3 to Sweden's locations in Tioharad when the oxen ban is enforced. Unrest from
+# vanilla's lit_destruction_of_romuva_sites. At 0.5, two-thirds of Tioharad's pops join rebels within a month.
 swe_oxen_ban = {
 	game_data = {
 		category = location
@@ -704,8 +653,8 @@ swe_oxen_ban = {
 	local_market_access = -0.25
 }
 
-# Added for 10 years by swe_gotaland.3 to Sweden's iron and copper mines in Dalarna and Västmanland when the oxen ban
-# is enforced: Småland's meat went to the miners and smiths of Bergslagen. The output of local_smelters (0.1).
+# Added for 10 years by swe_gotaland.3 to Sweden's iron and copper mines in Dalarna and Västmanland when the oxen
+# ban is enforced: Småland's meat went to the miners and smiths of Bergslagen. Output from vanilla's local_smelters.
 swe_oxen_for_the_mines = {
 	game_data = {
 		category = location
@@ -714,10 +663,9 @@ swe_oxen_for_the_mines = {
 	local_copper_output_modifier = 0.1
 }
 
-# Added for 20 years by swe_gotaland.3 to the same locations when the trade goes on. The crown power of
-# swe_faxeholm_ruins, and the flat merchant capacity of vanilla's pomor_outpost (0.25) cut to 0.1, since it is spread
-# over a whole province: the peasants drove their own oxen to their buyers. Not livestock output, since no location
-# in Tiohärad produces livestock.
+# Added for 20 years by swe_gotaland.3 to Sweden's locations in Tiohärad when the trade goes on: the peasants drove
+# their own oxen to their buyers. Merchant capacity scaled down from vanilla's pomor_outpost, as it covers a whole
+# province. No livestock output, since no location in Tiohärad produces livestock.
 swe_oxen_trade = {
 	game_data = {
 		category = location
@@ -726,8 +674,8 @@ swe_oxen_trade = {
 	local_merchant_capacity = 0.1
 }
 
-# Added to skene and bogesund for 50 years by swe_gotaland.4 when the peddlers may trade. The flat merchant capacity
-# of vanilla's pomor_outpost (0.25), a post of peasant traders.
+# Added to skene and bogesund for 50 years by swe_gotaland.4 when the peddlers may trade, removed from skene by
+# swe_towns.8. Merchant capacity from vanilla's pomor_outpost, a post of peasant traders.
 swe_knallar = {
 	game_data = {
 		category = location
@@ -735,8 +683,7 @@ swe_knallar = {
 	local_merchant_capacity = 0.25
 }
 
-# Added to the same locations for 10 years by swe_gotaland.4 when the monopoly is enforced. The unrest of
-# swe_norrland_bailiff and the burgher power of swe_enkoping_ice_ban.
+# Added to the same locations for 10 years by swe_gotaland.4 when the monopoly is enforced.
 swe_town_monopoly_enforced = {
 	game_data = {
 		category = location
@@ -745,8 +692,7 @@ swe_town_monopoly_enforced = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added to enkoping for 15 years by swe_svealand.1 when the ice trade is banned. Smaller than
-# swe_baltic_town_privileges (0.25), since this is one town's old rights confirmed.
+# Added to enkoping for 15 years by swe_svealand.1 when the ice trade is banned: one town's old rights confirmed.
 swe_enkoping_ice_ban = {
 	game_data = {
 		category = location
@@ -754,8 +700,8 @@ swe_enkoping_ice_ban = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added to enkoping for 50 years by swe_svealand.1 when the market stays on the ice. The merchant power of vanilla's
-# market_village (0.1), as in swe_jamtmarknaden: a fair draws traders as a market does.
+# Added to enkoping for 50 years by swe_svealand.1 when the market stays on the ice. Merchant power from vanilla's
+# market_village, since a fair draws traders as a market does.
 swe_enkoping_ice_market = {
 	game_data = {
 		category = location
@@ -763,8 +709,8 @@ swe_enkoping_ice_market = {
 	local_merchant_power = 0.1
 }
 
-# Added to sodertalje for 25 years by swe_svealand.2 when the men dig through. The harbour of vanilla's
-# surveyed_safe_harbour (0.2) and the market access of market_charter (0.1).
+# Added to sodertalje for 25 years by swe_svealand.2 when the men dig through. Harbour from vanilla's
+# surveyed_safe_harbour, market access from market_charter.
 swe_sodertalje_cut = {
 	game_data = {
 		category = location
@@ -773,9 +719,8 @@ swe_sodertalje_cut = {
 	local_market_access = 0.1
 }
 
-# Added to strangnas for 25 years by swe_svealand.3 when the smith comes. The output of swe_tjarkompaniet's lumber
-# (0.1), the migration of swe_gratrask_fishing_rights (0.2), and the building efficiency of nor_rebuilding_oslo (0.2):
-# skilled men to build with. The tools bonus only counts once a tools building stands here.
+# Added to strangnas for 25 years by swe_svealand.3 when the smith comes, bringing skilled men to build with.
+# Building efficiency from vanilla's nor_rebuilding_oslo. The tools bonus needs a tools building.
 swe_rademacher_forges = {
 	game_data = {
 		category = location
@@ -785,9 +730,8 @@ swe_rademacher_forges = {
 	local_build_buildings_efficiency = 0.2
 }
 
-# Added for 10 years by swe_dalarna.1 to Sweden's locations in Dalarna when the bells are taken, in place of rebels.
-# The unrest of vanilla's lack_of_conciliar_justice (0.1), half that of lit_destruction_of_romuva_sites and
-# swe_oxen_ban (0.2); the crown power of fontainebleau_hunting_lodge (0.1).
+# Added for 10 years by swe_dalarna.1 to Sweden's locations in Dalarna when the bells are taken. Unrest from
+# vanilla's lack_of_conciliar_justice.
 swe_klockskatt = {
 	game_data = {
 		category = location
@@ -796,10 +740,9 @@ swe_klockskatt = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to falun for 50 years by swe_dalarna.2 when the miners get their letter, like swe_gratrask_fishing_rights:
-# the privileges still stood in 1736. The migration of vanilla's magdeburg_rights_town_rights (0.2), the
-# enfranchisement of scandinavian_bergslag_privileges (0.05) and the crown power of swe_faxeholm_ruins (-0.1): the
-# miners judge their own disputes. No copper output, which falun_base already covers.
+# Added to falun for 50 years by swe_dalarna.2 when the miners get their letter, whose privileges still stood in
+# 1736. The miners judge their own disputes. Migration from vanilla's magdeburg_rights_town_rights. No copper
+# output, which falun_base already covers.
 swe_kopparberg_charter = {
 	game_data = {
 		category = location
@@ -809,8 +752,8 @@ swe_kopparberg_charter = {
 	local_crown_estate_power = -0.1
 }
 
-# Added to falun for 20 years by swe_dalarna.2 when the Crown keeps the mine under its bailiff alone. The crown power
-# of vanilla's fontainebleau_hunting_lodge (0.1) with its migration reversed, as in swe_olands_djurgard.
+# Added to falun for 20 years by swe_dalarna.2 when the Crown keeps the mine under its bailiff alone. Based on
+# vanilla's fontainebleau_hunting_lodge, with the migration reversed.
 swe_kopparberg_bailiff = {
 	game_data = {
 		category = location
@@ -819,8 +762,8 @@ swe_kopparberg_bailiff = {
 	local_migration_attraction = -0.1
 }
 
-# Added to vadstena for 20 years by swe_ostergotland.1 when the Crown attends Katarina's shrining. The prosperity of
-# vanilla's christian_holy_site (0.001) and the unrest of sufi_shrine (-0.1), without the holy site's max control.
+# Added to vadstena for 20 years by swe_ostergotland.1 when the Crown attends Katarina's shrining. Prosperity from
+# vanilla's christian_holy_site, unrest from sufi_shrine.
 swe_katarina_shrine = {
 	game_data = {
 		category = location
@@ -829,8 +772,8 @@ swe_katarina_shrine = {
 	local_unrest = -0.1
 }
 
-# Added for 20 years by swe_council.2 to the judges' eight stops of 1453-54. The crown power of vanilla's
-# fontainebleau_hunting_lodge (0.1).
+# Added for 20 years by swe_council.2 to the judges' eight stops of 1453-54. Crown power from vanilla's
+# fontainebleau_hunting_lodge.
 swe_rafst = {
 	game_data = {
 		category = location
@@ -838,9 +781,8 @@ swe_rafst = {
 	local_crown_estate_power = 0.1
 }
 
-# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town moves towards the sea. The size of
-# swe_sodertalje_cut: the harbour of vanilla's surveyed_safe_harbour (0.2) and the market access of market_charter
-# (0.1).
+# Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town moves towards the sea. Harbour from
+# vanilla's surveyed_safe_harbour, market access from market_charter.
 swe_town_moved = {
 	game_data = {
 		category = location
@@ -850,7 +792,7 @@ swe_town_moved = {
 }
 
 # Added for 20 years by swe_finland_west.7 and swe_lappmark.8 when a town stays put. swe_town_moved reversed.
-# Vanilla uses negative harbour values only in location templates, but they work here too: market access falls,
+# Vanilla uses negative harbour values only in location templates, but they work here too and lower market access,
 # except where the natural harbour is already 0, as at Björneborg.
 swe_silted_harbour = {
 	game_data = {
@@ -860,9 +802,8 @@ swe_silted_harbour = {
 	local_market_access = -0.1
 }
 
-# Added to visby for 10 years by swe_gotaland.6 when the rural harbours close. The trades per burgher of vanilla's
-# market_charter (0.25), as in swe_kalmar_staple and swe_skipper_staple, and the burgher power of swe_enkoping_ice_ban
-# (0.1). Visby is a town from 1337, so its burghers use it.
+# Added to visby for 10 years by swe_gotaland.6 when the rural harbours close. Trades per burgher from vanilla's
+# market_charter. Visby is a town from 1337, so its burghers use it.
 swe_visby_staple = {
 	game_data = {
 		category = location
@@ -871,8 +812,8 @@ swe_visby_staple = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours close. The maritime
-# presence and sailors of swe_skipper_ban, the same ban on peasant sailing.
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours close. The values
+# of swe_skipper_ban, the same ban on peasant sailing.
 swe_gotland_harbours_closed = {
 	game_data = {
 		category = location
@@ -881,8 +822,8 @@ swe_gotland_harbours_closed = {
 	local_sailors_modifier = -0.25
 }
 
-# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours stay open. The values
-# of swe_peasant_skippers (vanilla's scandinavian_fishing_privileges), the same peasant sailing.
+# Added for 10 years by swe_gotaland.6 to Sweden's other Gotland locations when the rural harbours stay open. The
+# values of swe_peasant_skippers, the same peasant sailing.
 swe_gotland_harbours_open = {
 	game_data = {
 		category = location
@@ -891,9 +832,8 @@ swe_gotland_harbours_open = {
 	local_sailors_modifier = 0.1
 }
 
-# Added to allingsas for 40 years by swe_gotaland.7. The cloth output of vanilla's textile_charter (0.1), the migration
-# of swe_rademacher_forges (0.2) and the burgher power of swe_enkoping_ice_ban (0.1). The cloth bonus only counts once a
-# cloth building stands here.
+# Added to allingsas for 40 years by swe_gotaland.7. Cloth output from vanilla's textile_charter. The cloth bonus
+# only counts once a cloth building stands here.
 swe_alingsas_manufaktur = {
 	game_data = {
 		category = location
@@ -903,9 +843,8 @@ swe_alingsas_manufaktur = {
 	local_burghers_estate_power = 0.1
 }
 
-# Added to konghalla for 19 years by swe_gotaland.8. The market access and merchant capacity of vanilla's
-# italian_culture_rival_wool_trade (0.1, 1), the migration of available_free_land (0.1), and the crown loss of
-# kulm_town_rights (-0.25), since most of the income stayed in private hands.
+# Added to konghalla for 19 years by swe_gotaland.8. Market access and merchant capacity from vanilla's
+# italian_culture_rival_wool_trade. Crown power falls, since most of the income stayed in private hands.
 swe_marstrand_porto_franco = {
 	game_data = {
 		category = location
@@ -916,10 +855,8 @@ swe_marstrand_porto_franco = {
 	local_crown_estate_power = -0.25
 }
 
-# Added to kalmar for good by swe_gotaland.9 when the town moves to Kvarnholmen. The harbour of vanilla's
-# surveyed_safe_harbour (0.2), as in swe_town_moved, and the fort defence of walls_of_vienna and sco_dunbar_castle
-# (0.2), both permanent. Fort defence needs a fort, and Kalmar has a castle from 1337. Permanent because the town never
-# moved back, though its bastions had lost their purpose by the 1820s.
+# Added permanently to kalmar by swe_gotaland.9 when the town moves to Kvarnholmen, since it never moved back. Fort
+# defence from vanilla's walls_of_vienna. It needs a fort, and Kalmar has a castle from 1337.
 swe_kvarnholmen = {
 	game_data = {
 		category = location
@@ -928,8 +865,7 @@ swe_kvarnholmen = {
 	local_defensive = 0.2
 }
 
-# Added to bregne for 50 years by swe_scania.7. The harbour of vanilla's surveyed_safe_harbour (0.2), the ship building
-# of tempest_engineer (0.25) and half the sailors of muslim_sailor_community (0.5).
+# Added to bregne for 50 years by swe_scania.7. Ship building from vanilla's tempest_engineer.
 swe_karlskrona_station = {
 	game_data = {
 		category = location
@@ -939,8 +875,8 @@ swe_karlskrona_station = {
 	local_sailors_modifier = 0.25
 }
 
-# Added to ronneby for 10 years by swe_scania.7 when its trade goes to the new naval town. The migration of
-# swe_silver_road (-0.2): the burghers were ordered to move to Karlskrona.
+# Added to ronneby for 10 years by swe_scania.7 when its trade goes to the new naval town: the burghers were ordered
+# to move to Karlskrona.
 swe_ronneby_privileges_revoked = {
 	game_data = {
 		category = location
@@ -948,9 +884,9 @@ swe_ronneby_privileges_revoked = {
 	local_migration_attraction = -0.2
 }
 
-# Added for 10 years when occupied land pays for the army: by swe_baltic.5 to Courland and Semigallia (Karl XII after
-# 1701), by swe_denmark.1 to Zealand (the brandskat of 1658-60), by swe_lithuania.1 to Lithuania (after Kėdainiai,
-# 1655) and by swe_germany.2 to the Franconian sees (the donations of 1633). Half of vanilla's looted (prosperity decay 0.1, development -0.25).
+# Added for 10 years when occupied land pays for the army: by swe_baltic.5 to Courland and Semigallia (Karl XII
+# after 1701), by swe_denmark.1 to Zealand (the brandskat of 1658-60), by swe_lithuania.1 to Lithuania (after
+# Kėdainiai, 1655) and by swe_germany.2 to the Franconian sees (the donations of 1633). Half of vanilla's looted.
 swe_war_contributions = {
 	game_data = {
 		category = location
@@ -959,8 +895,8 @@ swe_war_contributions = {
 	local_monthly_development_modifier = -0.125
 }
 
-# Added for 50 years by swe_baltic.5 to Windau and Libau (grobina) when the Crown keeps the dukes' low dues. The market
-# access of market_charter (0.1) and the merchant capacity of swe_baltic_town_privileges (0.1).
+# Added for 50 years by swe_baltic.5 to Windau and Libau (grobina) when the Crown keeps the dukes' low dues. Market
+# access from vanilla's market_charter.
 swe_courland_low_dues = {
 	game_data = {
 		category = location
@@ -969,8 +905,8 @@ swe_courland_low_dues = {
 	local_merchant_capacity_modifier = 0.1
 }
 
-# Added for 20 years by swe_norway.2 to Sweden's locations in Finnmark when the Crown's bailiffs collect the tax of the
-# coast, as Karl IX claimed it after 1595. The crown power of swe_riga_licent (0.25), for a tax instead of a toll.
+# Added for 20 years by swe_norway.2 to Sweden's locations in Finnmark when the Crown's bailiffs collect the tax of
+# the coast, as Karl IX claimed it after 1595.
 swe_finnmark_bailiffs = {
 	game_data = {
 		category = location
@@ -978,7 +914,7 @@ swe_finnmark_bailiffs = {
 	local_crown_estate_power = 0.25
 }
 
-# Added for 20 years by swe_norway.2 to Sweden's coastal locations in Finnmark. The pull of swe_lappmark_settlers (0.3),
+# Added for 20 years by swe_norway.2 to Sweden's coastal locations in Finnmark. The pull of swe_lappmark_settlers,
 # on another thinly settled frontier.
 swe_finnmark_settlers = {
 	game_data = {
@@ -988,7 +924,7 @@ swe_finnmark_settlers = {
 }
 
 # Added permanently to uppsala by swe_spoils.1 when the books of a captured library come there, as those of Riga,
-# Braunsberg, Frauenburg, Würzburg, Olomouc and Prague did. The values of vanilla's MLO_library_research, the Pavia
+# Braunsberg, Frauenburg, Würzburg, Olomouc and Prague did. Values from vanilla's MLO_library_research, the Pavia
 # library taken to Milan.
 swe_war_booty_library = {
 	game_data = {
@@ -999,7 +935,7 @@ swe_war_booty_library = {
 }
 
 # Added to narva for 30 years by swe_baltic.6 when the Julfa merchants get their hostel and warehouse there (1687).
-# The values of swe_russian_staple: another trade the Crown drew to its own port.
+# The values of swe_russian_staple, another trade the Crown drew to its own port.
 swe_julfa_factory = {
 	game_data = {
 		category = location
@@ -1009,8 +945,8 @@ swe_julfa_factory = {
 }
 
 # Added for 50 years by swe_lithuania.1 to Sweden's locations in Lithuania when it accepts the terms of Kėdainiai
-# (1655): the lords keep their own law, courts and faith. The values of swe_baltic_privileges, the same bargain with the
-# German knighthoods.
+# (1655): the lords keep their own law, courts and faith. The values of swe_baltic_privileges, the same bargain with
+# the German knighthoods.
 swe_lithuanian_rights = {
 	game_data = {
 		category = location
@@ -1021,10 +957,9 @@ swe_lithuanian_rights = {
 	local_integration_speed = 0.10
 }
 
-# Added for 15 years by swe_council.3 to every fort we own in Sweden and Finland when the Crown sets up its own farms
-# beside the castles (Gustav Vasa's avelsgårdar, 1555-56). The food of vanilla's cultivators_grange_clearing_modifier
-# (mild), and the crown power of fontainebleau_hunting_lodge (0.10) with its migration reversed, as in
-# swe_olands_djurgard: the tenants of the cleared villages were given land in other parishes.
+# Added for 15 years by swe_council.3 to every fort we own in Sweden and Finland when the Crown sets up its own
+# farms beside the castles (Gustav Vasa's avelsgårdar, 1555-56). Based on vanilla's fontainebleau_hunting_lodge,
+# with the migration reversed: the tenants of the cleared villages were given land in other parishes.
 swe_avelsgard = {
 	game_data = {
 		category = location
@@ -1034,10 +969,9 @@ swe_avelsgard = {
 	local_migration_attraction = -0.1
 }
 
-# Added to lodose at game start (tc_on_game_start) and removed by swe_gotaland.11 when the town moves downstream.
-# Lödöse was the realm's only port to the west, at its largest about 1250-1350 (Lödöse museum, rapport 2021:1). The
-# merchant power of vanilla's market_village (0.1) and the merchant capacity of favoring_own_interests (0.5), half of
-# swe_marstrand_porto_franco's. No harbour capacity, as lodose has no natural harbour.
+# Lödöse, the realm's only port to the west, at its largest about 1250-1350 (Lödöse museum, rapport 2021:1). Added
+# to lodose at game start, removed by swe_gotaland.11 when the town moves downstream. Merchant power from vanilla's
+# market_village. No harbour capacity, as lodose has no natural harbour.
 swe_western_gate = {
 	game_data = {
 		category = location
@@ -1046,10 +980,9 @@ swe_western_gate = {
 	local_merchant_capacity = 0.5
 }
 
-# Added permanently to utlandet by swe_gotaland.11 when the town moves to the mouth of the Säveån (1473). The harbour
-# of vanilla's surveyed_safe_harbour (0.2), as in swe_town_moved and swe_kvarnholmen, and the merchant capacity of
-# swe_western_gate, whose trade moved with the burghers. Permanent like swe_kvarnholmen: the town never went back
-# upstream, and Göteborg replaced it on the same tile.
+# Added permanently to utlandet by swe_gotaland.11 when the town moves to the mouth of the Säveån (1473). It never
+# went back upstream, and Göteborg replaced it on the same tile. Harbour from vanilla's surveyed_safe_harbour, and
+# the trade of swe_western_gate, which moved with the burghers.
 swe_nya_lodose = {
 	game_data = {
 		category = location
@@ -1058,9 +991,9 @@ swe_nya_lodose = {
 	local_merchant_capacity = 0.5
 }
 
-# Added to lodose for 20 years by swe_gotaland.11 when the town stays above the toll at Bohus. Half the merchant
-# capacity of swe_western_gate reversed (-0.25): a toll takes a share of the trade rather than closing the river. Flat,
-# since swe_riga_licent's -10% would come to about 0.05 on a rural tile.
+# Added to lodose for 20 years by swe_gotaland.11 when the town stays above the toll at Bohus. A toll takes a share
+# of the trade rather than closing the river. Flat, since a percentage like swe_riga_licent's would come to little
+# on a rural tile.
 swe_bohus_toll = {
 	game_data = {
 		category = location
@@ -1069,7 +1002,7 @@ swe_bohus_toll = {
 }
 
 # Added for 20 years by swe_gotaland.12 to every location we own in Västergötland when the lords of the province are
-# tried and their estates fall to the Crown. The crown power of swe_rafst (0.1).
+# tried and their estates fall to the Crown.
 swe_forfeited_estates = {
 	game_data = {
 		category = location
@@ -1077,9 +1010,9 @@ swe_forfeited_estates = {
 	local_crown_estate_power = 0.1
 }
 
-# Added to skene for 20 years by swe_towns.8 when Borås is founded, in place of swe_knallar there, along with a market
-# (swe_grant_market). 20 years like swe_ostersund_freedoms: the start a new town gets, not its charter. The promotion speed of vanilla's studium_privileges (0.2), so that the new town grows its own
-# burghers, and the migration of swe_marstrand_porto_franco (0.1).
+# Added to skene for 20 years by swe_towns.8 when Borås is founded, in place of swe_knallar there, along with a
+# market (swe_grant_market): the start a new town gets, not its charter. Promotion speed from vanilla's
+# studium_privileges, so the new town grows its own burghers.
 swe_boras_privileges = {
 	game_data = {
 		category = location
@@ -1088,8 +1021,8 @@ swe_boras_privileges = {
 	local_migration_attraction = 0.1
 }
 
-# Added to vaxjo for 50 years by swe_gotaland.13 when the bishop takes the fines for country trade (1342). The clergy
-# power of vanilla's parish_church (0.25).
+# Added to vaxjo for 50 years by swe_gotaland.13 when the bishop takes the fines for country trade (1342). Clergy
+# power from vanilla's parish_church.
 swe_vaxjo_bishops_town = {
 	game_data = {
 		category = location
@@ -1097,8 +1030,8 @@ swe_vaxjo_bishops_town = {
 	local_clergy_estate_power = 0.25
 }
 
-# Added to vaxjo for 50 years by swe_gotaland.13 when the Crown keeps the fines and a bailiff. The crown power of
-# vanilla's ath_a_permanent_capital (0.25), the same size as the bishop's clergy power in swe_vaxjo_bishops_town.
+# Added to vaxjo for 50 years by swe_gotaland.13 when the Crown keeps the fines and a bailiff. Crown power from
+# vanilla's ath_a_permanent_capital.
 swe_vaxjo_bailiff = {
 	game_data = {
 		category = location
@@ -1106,9 +1039,7 @@ swe_vaxjo_bailiff = {
 	local_crown_estate_power = 0.25
 }
 
-# Added to trollaborg for 20 years by swe_gotaland.14 when Värnamo's fair is forbidden (1473). The unrest of
-# swe_town_monopoly_enforced (0.1), the same ban on country trade. Not peasant power, whose loss costs the Crown
-# nothing.
+# Added to trollaborg for 20 years by swe_gotaland.14 when Värnamo's fair is forbidden (1473).
 swe_fair_forbidden = {
 	game_data = {
 		category = location
@@ -1116,9 +1047,8 @@ swe_fair_forbidden = {
 	local_unrest = 0.1
 }
 
-# Added to kalmar for 20 years by swe_gotaland.15 when trade at Pata is forbidden (1527). The burgher power of
-# swe_visby_staple (0.1) and the trades per burgher of vanilla's market_charter (0.25, 00_traditions.txt). Kalmar is a
-# town, so its burghers use it.
+# Added to kalmar for 20 years by swe_gotaland.15 when trade at Pata is forbidden (1527). Trades per burgher from
+# vanilla's market_charter. Kalmar is a town, so its burghers use it.
 swe_kalmar_staple = {
 	game_data = {
 		category = location
@@ -1127,8 +1057,8 @@ swe_kalmar_staple = {
 	local_trades_per_burgher = 0.25
 }
 
-# Added to jonkoping for 50 years by swe_gotaland.16 when Per Brahe is given Visingsborg (1561-69). The estate powers of
-# swe_lithuanian_rights (0.25): a count who collected the Crown's taxes through his own men.
+# Added to jonkoping for 50 years by swe_gotaland.16 when Per Brahe is given Visingsborg (1561-69): a count who
+# collected the Crown's taxes through his own men.
 swe_visingsborg_county = {
 	game_data = {
 		category = location
@@ -1137,10 +1067,9 @@ swe_visingsborg_county = {
 	local_crown_estate_power = -0.25
 }
 
-# Added for 20 years by swe_church.2 to our towns and cities in Svealand, Götaland, Norrland and Finland, when the
-# parishes' old dues are turned to the town schools. The literacy growth of vanilla's studium_privileges town right
-# (0.05), as swe_gymnasium_wiburgense, and half the university's cap for burghers (10): the town schools taught
-# burghers' sons. Pops sit at their caps for most of the game, so without the cap the modifier would often show nothing.
+# Added for 20 years by swe_church.2 to our towns and cities in Svealand, Götaland, Norrland and Finland when the
+# parishes' old dues are turned to the town schools, which taught burghers' sons. Literacy growth from vanilla's
+# studium_privileges. The burgher cap matters because pops sit at their caps for most of the game.
 swe_stadsskola = {
 	game_data = {
 		category = location
@@ -1149,10 +1078,8 @@ swe_stadsskola = {
 	local_burghers_max_literacy = 5
 }
 
-# Added to kalmar for 50 years by swe_gotaland.17 option b: Dominicus Pahr's plans of 1579 and 1584 to fortify the old
-# town in the Italian manner (NDB). The fort defence and length of vanilla's local_fortress (0.1, 50 years), which
-# random_event.74 gives a fort when a fortification expert turns up. Needs a fort; Kalmar has a castle from 1337. Usually
-# ends before swe_kvarnholmen (0.2) arrives with the move to the island.
+# Dominicus Pahr's plans of 1579 and 1584 to fortify the old town in the Italian manner (NDB). Added to kalmar for
+# 50 years by swe_gotaland.17.b. Values from vanilla's local_fortress, which needs a fort; Kalmar has one from 1337.
 swe_kalmar_bastions = {
 	game_data = {
 		category = location
@@ -1160,11 +1087,9 @@ swe_kalmar_bastions = {
 	local_defensive = 0.1
 }
 
-# Added for 20 years to arkhangelsk by swe_russia.3 when we close the mouth of the Northern Dvina to foreign shipping, as
-# Lillienhoff proposed in 1674. Takes away the trade embark efficiency its harbour gives it: vanilla's harbor static
-# modifier adds 1 per point of harbour suitability (location.txt:268), and Arkhangelsk's natural harbour is 0.5
-# (location_templates.txt), which leaves the -0.1 of every location (location.txt:36); a quarter of is_blockaded_by_enemies
-# (-2, location.txt:340). The flat merchant capacity of swe_bohus_toll, pomor_outpost's reversed.
+# Added to arkhangelsk for 20 years by swe_russia.3 when we close the mouth of the Northern Dvina to foreign
+# shipping, as Lillienhoff proposed in 1674. The embark penalty cancels the bonus from its natural harbour of 0.5,
+# as vanilla adds 1 per point of harbour suitability. Merchant capacity from vanilla's pomor_outpost, reversed.
 swe_dvina_closed = {
 	game_data = {
 		category = location
@@ -1173,9 +1098,9 @@ swe_dvina_closed = {
 	local_merchant_capacity = -0.25
 }
 
-# Added for 20 years by swe_russia.3 to whichever of Narva, Nyen and Reval we own when the Dvina is closed: the cargo
-# that sailed from the White Sea comes to the Baltic instead. The flat merchant capacity of pomor_outpost (0.25), which is
-# what swe_dvina_closed takes from Arkhangelsk. Stacks with swe_russian_transit and swe_russian_staple.
+# Added for 20 years by swe_russia.3 to whichever of Narva, Nyen and Reval we own when the Dvina is closed: the
+# cargo that sailed from the White Sea comes to the Baltic instead. The merchant capacity swe_dvina_closed takes
+# from Arkhangelsk. Stacks with swe_russian_transit and swe_russian_staple.
 swe_white_sea_cargo = {
 	game_data = {
 		category = location
@@ -1183,9 +1108,9 @@ swe_white_sea_cargo = {
 	local_merchant_capacity = 0.25
 }
 
-# Added to bremen for 50 years by swe_germany.1 when the city swears to us as its lords, as it did to Karl X Gustav as
-# Duke of Bremen on 6 December 1654 and to the archbishops before him. The estate shift of swe_riga_licent (0.25)
-# without its trade loss: the oath took no toll, and the city kept its council and its law.
+# Added to bremen for 50 years by swe_germany.1 when the city swears to us as its lords, as it did to Karl X Gustav
+# as Duke of Bremen in 1654 and to the archbishops before him. swe_riga_licent's estate shift without its trade
+# loss: the oath took no toll, and the city kept its council and its law.
 swe_bremen_homage = {
 	game_data = {
 		category = location
@@ -1195,11 +1120,9 @@ swe_bremen_homage = {
 }
 
 # Added for 20 years by swe_germany.3 to gestenthorpe, renamed carlsburg in the same option, when Carlsburg is built
-# (1672). 20 years like swe_ostersund_freedoms and swe_boras_privileges: the start a new town gets, not its charter.
-# The harbour of vanilla's staple_port and surveyed_safe_harbour (0.2), as in swe_town_moved; the migration of
-# free_town_charter and birth_of_a_new_city (0.25), since the privileges of 1674 were written to draw settlers of
-# every Christian nation; and the crown loss of kulm_town_rights (-0.25), as in swe_marstrand_porto_franco, since the
-# settlers paid no land tax or toll. No development: the settlers never came.
+# (1672): the start a new town gets, not its charter. The privileges of 1674 were written to draw settlers of every
+# Christian nation, who paid no land tax or toll. Migration from vanilla's free_town_charter. No development, since
+# the settlers never came.
 swe_carlsburg = {
 	game_data = {
 		category = location
@@ -1209,10 +1132,9 @@ swe_carlsburg = {
 	local_crown_estate_power = -0.25
 }
 
-# Added for 20 years by swe_germany.2 to our locations in the sees of Würzburg and Bamberg, except Königshofen, when they
-# are granted as a duchy held of our crown (Bernhard of Saxe-Weimar, June 1633). The estate shift of
-# swe_visingsborg_county and swe_lithuanian_rights (0.25): a lord who takes the taxes through his own men. 20 years, as
-# the donations of 1633 lasted only as long as the armies that held them.
+# Added for 20 years by swe_germany.2 to our locations in the sees of Würzburg and Bamberg, except Königshofen, when
+# they are granted as a duchy held of our crown (Bernhard of Saxe-Weimar, June 1633): a lord who takes the taxes
+# through his own men. The donations of 1633 lasted only as long as the armies that held them.
 swe_franconian_duchy = {
 	game_data = {
 		category = location
@@ -1221,9 +1143,9 @@ swe_franconian_duchy = {
 	local_crown_estate_power = -0.25
 }
 
-# Added for 20 years by swe_germany.2 to the same locations, Königshofen included, when our own officials govern them, as
-# under Gustav II Adolf's mandate of 26 October 1631. The crown power of vanilla's ath_a_permanent_capital (0.25), as in
-# swe_vaxjo_bailiff and swe_viborg_royal_governor, for 20 years instead of 50: an occupation government.
+# Added for 20 years by swe_germany.2 to the same locations, Königshofen included, when our own officials govern
+# them, as under Gustav II Adolf's mandate of 26 October 1631: an occupation government. Crown power from vanilla's
+# ath_a_permanent_capital.
 swe_franconian_government = {
 	game_data = {
 		category = location

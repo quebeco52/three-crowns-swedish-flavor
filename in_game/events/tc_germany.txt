@@ -1,21 +1,12 @@
 ﻿namespace = swe_germany
 
-# Content for German land beyond Pomerania, which Sweden held only in war or as fiefs of the Empire. Neither Bremen,
-# the mouth of the Geeste nor Würzburg changed hands in the two 1.4.7 AI runs (to 1550 and 1619), so these fire for a
-# player who takes the land, whenever that is.
+# Content for German land beyond Pomerania, which Sweden held only in war or as fiefs of the Empire. These fire
+# whenever Sweden owns the land, not by date.
 
-# The council of Bremen. The Linz diploma (1 June 1646) made Bremen a free city of the Empire, and Westphalia (1648) gave
-# Sweden the archbishopric as the duchy of Bremen without saying whether the city went with it (en.wiki Swedish wars on
-# Bremen; Lundqvist, Sveriges krig med staden Bremen, 1893, p. 3). The Stade recess of 28 November 1654 left the
-# question of immediacy for later, and on 6 December the city swore to be "treu und hold" to the king as Duke of Bremen,
-# as it had to the last archbishop (Lundqvist p. 4; en.wiki). After Karl X Gustav's death it did homage to the Emperor
-# instead (Lundqvist p. 5), the regency went to war in 1665, Wrangel failed to take the city, and at Habenhausen in
-# November 1666 Bremen gave up its immediacy and its seat at the Imperial Diet until the end of the century
-# (Niedersächsisches Landesarchiv, NLA ST Rep. 1 Nr. 2316; en.wiki Treaty of Habenhausen). It was never brought into the
-# Swedish duchy (Eichberg, Deutsches Schiffahrtsarchiv 1, 1975: "could successfully resist incorporation"). The advice of
-# 1700 to recognise Bremen as a free city is en.wiki's alone (citing Elmshäuser 2007), so option b rests on the city's
-# self-government instead. Fires whenever we own Bremen while it is a town; swe_germany.3 covers the rival town Sweden
-# built when it held only the mouth of the river.
+# The council of Bremen. Westphalia (1648) gave Sweden the duchy of Bremen without saying whether the city, free since
+# the Linz diploma of 1646, went with it. The city swore homage to the king as duke in 1654 and gave up its immediacy
+# at Habenhausen in 1666 until the end of the century, but was never brought into the duchy (Lundqvist 1893; Eichberg
+# 1975; en.wiki Swedish wars on Bremen). swe_germany.3 covers the rival town Sweden built at the mouth of the river.
 swe_germany.1 = {
 	type = country_event
 	title = swe_germany.1.title
@@ -29,7 +20,7 @@ swe_germany.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes Bremen; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -61,7 +52,6 @@ swe_germany.1 = {
 		location:bremen = {
 			add_location_modifier = { modifier = swe_bremen_homage years = modifier_duration_years_very_long }
 		}
-		# The council's anger stays in the city
 		custom_tooltip = {
 			text = swe_germany.1.a_tt
 			swe_pop_satisfaction_in = { location = location:bremen type = burghers value = pop_satisfaction_weak_penalty }
@@ -88,17 +78,10 @@ swe_germany.1 = {
 	}
 }
 
-# The Franconian sees. Gustav II Adolf's army stormed the Marienberg above Würzburg on 18 October 1631 (Gaukönigshofen,
-# Zeugnisse aus dem Dreißigjährigen Krieg, from the chronicle of the bishops; hmdb.org). On 26 October his mandate to all
-# officials "desz Bisthumms Würtzburg vnd Hertzogthumbs Francken" was posted in Würzburg (Deutsche Digitale Bibliothek,
-# the printed mandate). In the spring of 1633 the army mutinied for its arrears, and Oxenstierna made over to officers
-# and military enterprisers the right to levy contributions and taxes from occupied land; the grants were held of the
-# Swedish crown, and the grantees "tended to exploit their grants ruthlessly" (Roberts, Scandia 48, 1982, pp. 74, 81;
-# ADB on the officers' refusal to serve unpaid). In June 1633 (the 10th in ADB and Geijer, the 20th in NDB) Oxenstierna
-# granted Bernhard of Saxe-Weimar the sees of Würzburg and Bamberg as the Duchy of Franconia, a fief of the Swedish crown
-# (NDB, ADB, Geijer), without the fortresses of Würzburg and Königshofen (NDB only, so Königshofen alone is held back
-# here). After Nördlingen (1634) the duchy could not be held (NDB; Britannica). Fires whenever Sweden owns Würzburg. No
-# vassal is made: the duchy is a modifier on our own locations.
+# The Franconian sees. Gustav II Adolf's army stormed the Marienberg above Würzburg in October 1631. In June 1633, after
+# the army mutinied for its arrears, Oxenstierna granted Bernhard of Saxe-Weimar the sees of Würzburg and Bamberg as the
+# Duchy of Franconia, a fief of the Swedish crown, lost after Nördlingen in 1634 (Roberts; NDB; ADB). NDB alone leaves
+# the fortresses out of the grant, so just Königshofen is held back here. The duchy is a modifier, not a vassal.
 swe_germany.2 = {
 	type = country_event
 	title = swe_germany.2.title
@@ -112,7 +95,7 @@ swe_germany.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes Würzburg; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -181,18 +164,10 @@ swe_germany.2 = {
 	}
 }
 
-# The mouth of the Geeste. Having failed to take Bremen in 1666 (swe_germany.1), Sweden tried to win the quarrel with
-# trade (Eichberg, Deutsches Schiffahrtsarchiv 1, 1975, p. 27; en.wiki): Henrik Horn broke ground for Carlsburg at the
-# mouth of the Geeste on 11 June 1672 (Eichberg p. 25; en.wiki Carlsburg, Weser); the Stockholm government's privileges
-# of 1674 opened it to every Christian nation, free of land tax, tolls and billeting, with the Reformed faith recognised
-# (Eichberg pp. 27-28; en.wiki Treaty of Habenhausen, citing Zickermann 2013 and Worthington 2010); Tessin the Elder
-# drew its public buildings and 300 to 458 house plots (Eichberg p. 36; en.wiki 300-456). The walls were finished with
-# 72 guns, but the settlers didn't come (both). Sick and short of food, the garrison surrendered in the winter of
-# 1675-76 (both; January 1676 is en.wiki's alone); the land came back in 1680, and Karl XI's economies had the works
-# pulled down from 1683 (Eichberg pp. 25, 29, 37; the economies are Eichberg's alone). The 24,000 riksdaler of 1673-75
-# is Eichberg's alone (p. 39), so it stays out of the text. Fires while we own the mouth of the Geeste and Bremen lies
-# outside our realm: a town built to take Bremen's trade makes no sense once Bremen is ours. The Swedish name Karlsburg
-# sits on the carlsburg key, so it shows only once the town is founded.
+# The mouth of the Geeste. Having failed to take Bremen in 1666, Sweden tried to win the quarrel with trade: Henrik Horn
+# broke ground for Carlsburg in 1672, but the settlers didn't come, and Karl XI's economies had the works pulled down
+# from 1683 (Eichberg 1975; en.wiki Carlsburg, Weser). Needs Bremen outside our realm, since the town was built to take
+# its trade. The Swedish name sits on the carlsburg key, so it shows only once the town is founded.
 swe_germany.3 = {
 	type = country_event
 	title = swe_germany.3.title
@@ -206,7 +181,7 @@ swe_germany.3 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 15 # Median about five months after Sweden takes the mouth of the Geeste; 15% so it doesn't hold up the queue
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -234,7 +209,7 @@ swe_germany.3 = {
 		}
 
 		change_gold_effect = { scale = -4 }
-		# Renamed first and the modifier added after, in the same scope, as in swe_towns.8 (tested)
+		# Renamed first and the modifier added after, in the same scope
 		location:gestenthorpe = {
 			rename_location = carlsburg
 			add_location_modifier = { modifier = swe_carlsburg years = 20 }

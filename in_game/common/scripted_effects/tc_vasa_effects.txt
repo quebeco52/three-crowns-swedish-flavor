@@ -54,14 +54,14 @@ swe_select_or_create_gustav_vasa = {
 			religion = root.religion
 			estate = estate_type:nobles_estate
 			female = no
-			# 220-250 total, like vanilla's Birger Jarl (242) and Stefan Dušan (235)
+			# 220-250 total, like vanilla's Birger Jarl and Stefan Dušan
 			adm = { 85 90 }
 			dip = { 60 70 }
 			mil = { 85 90 }
-			# Two ruler traits, like 227 of vanilla's 1337 characters. Lawgiver needs ADM >= 66, which adm 80-90 always meets
+			# Two ruler traits, as is common in vanilla. Lawgiver needs ADM 66, which his adm always meets
 			add_trait = trait:industrious
 			add_trait = trait:lawgiver
-			# Fertility 100 like the historical figures vanilla creates, which is also the cap
+			# Fertility 100, the cap, as vanilla gives the historical figures it creates
 			fertility = 100
 			script = swe_gustav_vasa
 			save_scope_as = swe_gustav_vasa
@@ -127,7 +127,7 @@ swe_select_vasa_candidate = {
 				female = no
 				min_age = 25
 				max_age = 40
-				# 180-240 total: below Gustav's 220-250, well above a typical ruler's 150 or so
+				# Below Gustav's stats, well above a typical ruler's
 				adm = { 60 80 }
 				dip = { 60 80 }
 				mil = { 60 80 }
@@ -141,9 +141,8 @@ swe_select_vasa_candidate = {
 
 # Gustav's wife conceives through the game's own pregnancy, so the child's sex, stats and name are the game's.
 # Only while he rules and has fewer than two living sons, and only with a living wife under vanilla's
-# MAX_PREGNANCY_AGE: it never makes a wife, and no other Vasa gets it. The mod's only nudge towards an heir,
-# since about one ruler in five dies with no living son. Run yearly from tc_yearly_country_pulse.
-# Same effect as vanilla flavor_por.2001.a.
+# MAX_PREGNANCY_AGE; it never makes a wife, and no other Vasa gets it. The mod's only nudge towards an heir.
+# Run yearly from tc_yearly_country_pulse. Same effect as vanilla's flavor_por.2001.a.
 swe_gustav_vasa_sons = {
 	if = {
 		limit = {

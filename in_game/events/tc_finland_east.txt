@@ -1,12 +1,10 @@
 ﻿namespace = swe_finland_east
 
-# Content for inland and eastern Finland. Sweden starts with Viborg and southern Tavastland, but Savolax and
-# Kajanaland have no landed owner in 1337. So .2, .3, .4 and .8 should fire in nearly every game, .7 in any game
-# where Sweden turns Protestant, while .1, .5 and .6 wait for Sweden to own the location and fire at whatever date the
-# land is settled.
+# Inland and eastern Finland. Sweden starts with Viborg and southern Tavastland, but Savolax and Kajanaland have no
+# landed owner in 1337, so the events there wait for Sweden to own the land.
 
-# Olofsborg stands on the Russian side of the Nöteborg line (1475), and about 1,000 Russians tried to move the
-# border posts in 1499. It doesn't build the castle, since the player can already do that by hand.
+# Olofsborg (1475) stands on the Russian side of the Nöteborg line, and about 1,000 Russians tried to move the border
+# posts in 1499. The castle itself is left for the player to build.
 swe_finland_east.1 = {
 	type = country_event
 	title = swe_finland_east.1.title
@@ -20,7 +18,7 @@ swe_finland_east.1 = {
 		tag = SCA
 		from = 1475.1.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_1 (tc_event_pulses.txt). Median about two years once Sweden owns Olofsborg
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_1
 	}
 
 	trigger = {
@@ -64,7 +62,7 @@ swe_finland_east.1 = {
 }
 
 # Gunilla Johansdotter (Bese) held Viborg alone from 1511 and refused to admit the new lord until she got a better
-# fief (SKBL). Same Crown-against-fief choice as .3, but a settlement rather than the end of the fief.
+# fief (SKBL).
 swe_finland_east.2 = {
 	type = country_event
 	title = swe_finland_east.2.title
@@ -78,7 +76,7 @@ swe_finland_east.2 = {
 		tag = SCA
 		from = 1509.1.1
 		to = 1540.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_2 (tc_event_pulses.txt). Median late 1510
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_2
 	}
 
 	trigger = {
@@ -132,9 +130,8 @@ swe_finland_east.2 = {
 	}
 }
 
-# The fief of Viborg ran from 1320 until Gustav Vasa deposed his brother-in-law Johan of Hoya in 1534. Dates from
-# a tagged en.wiki page, with Hoya's part confirmed by sv.wiki. A one-off rather than a start modifier and a recall
-# decision, so nothing has to be cleared later.
+# The fief of Viborg ran from 1320 until Gustav Vasa deposed his brother-in-law Johan of Hoya in 1534 (en.wiki;
+# sv.wiki).
 swe_finland_east.3 = {
 	type = country_event
 	title = swe_finland_east.3.title
@@ -148,7 +145,7 @@ swe_finland_east.3 = {
 		tag = SCA
 		from = 1532.1.1
 		to = 1570.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_3 (tc_event_pulses.txt). Median late 1533
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_3
 	}
 
 	trigger = {
@@ -203,8 +200,7 @@ swe_finland_east.3 = {
 
 # Gustav Vasa's 1542 claim to uninhabited wilderness, with the Häme-Savo boundary judgments of 1415, 1446 and 1452
 # (Matikainen 2022) as background. A migration modifier rather than add_migration, since Sweden may not own this
-# land yet. Skips lakes and foreign-held locations. Same is_ownable and has_owner checks as vanilla. The tax-free years
-# cost gold, and the hunting families' anger stays with the peasants of the claimed land, not the whole estate.
+# land yet. The is_ownable and has_owner checks skip lakes and foreign-held locations.
 swe_finland_east.4 = {
 	type = country_event
 	title = swe_finland_east.4.title
@@ -218,7 +214,7 @@ swe_finland_east.4 = {
 		tag = SCA
 		from = 1540.1.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_4 (tc_event_pulses.txt). Median late 1541
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_4
 	}
 
 	trigger = {
@@ -317,7 +313,7 @@ swe_finland_east.4 = {
 				}
 			}
 		}
-		# The hunting families' anger stays in the land claimed, in place of a country-wide estate penalty
+		# The hunting families' anger stays in the land claimed
 		custom_tooltip = {
 			text = swe_finland_east.4.a_peasants_tt
 			every_owned_location = {
@@ -349,8 +345,8 @@ swe_finland_east.4 = {
 	}
 }
 
-# Johannes Messenius: sentenced to death in July 1616 for conspiring with Sigismund and the Jesuits, then sent to
-# unfinished Kajaneborg in October, where he wrote Scondia Illustrata. Waits for Sweden to own Kajana.
+# Johannes Messenius, sentenced to death in July 1616 for conspiring with Sigismund and the Jesuits, then sent to
+# unfinished Kajaneborg, where he wrote Scondia Illustrata.
 swe_finland_east.5 = {
 	type = country_event
 	title = swe_finland_east.5.title
@@ -364,7 +360,7 @@ swe_finland_east.5 = {
 		tag = SCA
 		from = 1614.1.1
 		to = 1660.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_5 (tc_event_pulses.txt). Median late 1615, or about two years after Sweden takes Kajana
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_5
 	}
 
 	trigger = {
@@ -392,7 +388,7 @@ swe_finland_east.5 = {
 			base = 75
 		}
 
-		# He wrote Scondia Illustrata in prison. No artist, as in flavor_swe.40, so no new character.
+		# No artist, so no new character is made
 		location:kajana = {
 			create_art = {
 				quality = 70
@@ -430,7 +426,7 @@ swe_finland_east.6 = {
 		tag = SCA
 		from = 1709.1.1
 		to = 1740.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_6 (tc_event_pulses.txt). Median late 1710
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_6
 	}
 
 	trigger = {
@@ -474,10 +470,9 @@ swe_finland_east.6 = {
 	}
 }
 
-# The see of Viborg: in 1554 Gustav Vasa divided the diocese of Åbo, which had covered all of Finland, and Paulus
-# Juusten became the first Bishop of Viborg over 33 parishes (sv.wiki Viborgs stift 1554–1723; en.wiki Paulus Juusten).
-# The purpose, rooting the Reformation in eastern Finland, is from Tilli (VSKS Toimite 14). Waits for a Protestant
-# Sweden, so it can fire later than 1554. Option b's reason is a true fact: Åbo had always served the whole country.
+# The see of Viborg. In 1554 Gustav Vasa split the diocese of Åbo, which had covered all of Finland, to root the
+# Reformation in the east, and Paulus Juusten became the first Bishop of Viborg (sv.wiki Viborgs stift; en.wiki Paulus
+# Juusten; Tilli). Waits for a Protestant Sweden, so it can fire later than 1554.
 swe_finland_east.7 = {
 	type = country_event
 	title = swe_finland_east.7.title
@@ -491,7 +486,7 @@ swe_finland_east.7 = {
 		tag = SCA
 		from = 1552.1.1
 		to = 1837.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_7 (tc_event_pulses.txt). Median about 1554, or two years after Sweden turns Protestant
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_7
 	}
 
 	trigger = {
@@ -539,11 +534,9 @@ swe_finland_east.7 = {
 	}
 }
 
-# Gymnasium Wiburgense: proposed by Per Brahe and inaugurated on 10 August 1641, the second in Finland after Åbo
-# (1630). The German burghers kept a school of their own and often complained about the town school to the governor,
-# and in 1670 a lecturer knifed their schoolmaster (all Tilli, VSKS Toimite 14). Their anger stays in Viborg, as pop
-# satisfaction, in place of a country-wide estate penalty. Vanilla's studium_privileges gives the same literacy
-# growth, but only to a city, and Viborg starts as a town.
+# Gymnasium Wiburgense, proposed by Per Brahe and inaugurated on 10 August 1641, the second in Finland after Åbo. The
+# German burghers kept a school of their own and often complained of the town school to the governor (Tilli, VSKS
+# Toimite 14). Literacy from vanilla's studium_privileges, which only a city can have, and Viborg starts as a town.
 swe_finland_east.8 = {
 	type = country_event
 	title = swe_finland_east.8.title
@@ -557,7 +550,7 @@ swe_finland_east.8 = {
 		tag = SCA
 		from = 1639.1.1
 		to = 1837.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_east_8 (tc_event_pulses.txt). Median about 1641
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_east_8
 	}
 
 	trigger = {

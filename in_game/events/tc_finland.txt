@@ -1,9 +1,8 @@
 ﻿namespace = swe_finland
 
-# Finland at Mora. When Håkan Magnusson was elected beside his father Magnus Eriksson in February 1362, men
-# from Finland took part in the royal election at the Stones of Mora for the first time, as one of the
-# lands of the realm. Fires once at that date, or later, as soon as Sweden holds Åbo while it still
-# elects its monarchs. Granting it adds swe_finland_at_mora to Sweden's locations in Finland.
+# Finland at Mora. When Håkan Magnusson was elected beside his father Magnus Eriksson in February 1362, men from
+# Finland took part in the royal election at the Stones of Mora for the first time. Fires at that date, or later as
+# soon as Sweden holds Åbo while it still elects its monarchs.
 swe_finland.1 = {
 	type = country_event
 	title = swe_finland.1.title

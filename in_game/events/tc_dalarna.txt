@@ -1,13 +1,10 @@
 ﻿namespace = swe_dalarna
 
-# Province and territory events for Dalarna. Sweden owns all of it from 1337 except Idre, so these should fire in
-# nearly every game unless it has been lost. Each is one self-contained event, and none spawns rebels.
+# Events for Dalarna. Sweden owns all of it from 1337 except Idre, so these should fire in nearly every game.
 
-# Klockupproret, the bell revolt of 1531-33, over the bell tax voted at the herredagar of Örebro and Uppsala in 1531
-# (sv.wikipedia Klockupproret, citing Holmquist and Starbäck; en.wikipedia Dalecarlian rebellions, from Nordisk
-# familjebok 1906). Floda stands in for Ål and Gagnef. The anger stays in Dalarna, through its peasant pops and a
-# 10-year location modifier, in place of rebels or a country-wide estate penalty. Vanilla's flavor_swe.4 covers the
-# Reformation side and mentions the earlier bell loan of 1527 only in its history text.
+# Klockupproret, the bell revolt of 1531-33, over the bell tax voted at Örebro and Uppsala in 1531 (sv.wiki
+# Klockupproret; en.wiki Dalecarlian rebellions). Floda stands in for Ål and Gagnef. Vanilla's flavor_swe.4 covers
+# the Reformation side.
 swe_dalarna.1 = {
 	type = country_event
 	title = swe_dalarna.1.title
@@ -21,7 +18,7 @@ swe_dalarna.1 = {
 		tag = SCA
 		from = 1529.1.1
 		to = 1545.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_dalarna_1 (tc_event_pulses.txt). Median early 1531
+		monthly_chance = 1 # Mostly fired by tc_pulse_dalarna_1
 	}
 
 	trigger = {
@@ -54,7 +51,7 @@ swe_dalarna.1 = {
 			every_owned_location = {
 				limit = { province_definition = province_definition:dalarna_province }
 				add_location_modifier = { modifier = swe_klockskatt years = 10 }
-				# The anger stays in Dalarna, in place of a country-wide estate penalty
+				# The anger stays in Dalarna
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
 					add_pop_satisfaction = pop_satisfaction_mild_penalty
@@ -85,10 +82,9 @@ swe_dalarna.1 = {
 	}
 }
 
-# The privilege letter of 17 February 1347 from Magnus Eriksson to the copper miners of Kopparberget (sv.wikipedia
-# Kopparberget and Bergmästare; sverigeshistoria.se for the house right, a single source; SGU, Bergsstaten 375 år, for
-# 1736). It pays in people through migration, not in copper output, which falun_base already raises by 400%, nor in a
-# free mine level, which flavor_swe.45 takes away again in the 1680s.
+# Magnus Eriksson's privilege letter of 17 February 1347 to the copper miners of Kopparberget (sv.wiki; SGU;
+# sverigeshistoria.se). It pays in people through migration, not in copper output, which falun_base already raises
+# by 400%.
 swe_dalarna.2 = {
 	type = country_event
 	title = swe_dalarna.2.title
@@ -102,7 +98,7 @@ swe_dalarna.2 = {
 		tag = SCA
 		from = 1345.1.1
 		to = 1400.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_dalarna_2 (tc_event_pulses.txt). Median early 1347
+		monthly_chance = 1 # Mostly fired by tc_pulse_dalarna_2
 	}
 
 	trigger = {

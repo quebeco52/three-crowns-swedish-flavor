@@ -1,7 +1,86 @@
 ﻿l_english:
- # Swedish names for the Baltic and Pomeranian towns. The Swedish administration there used the
- # German names (as vanilla already does for Reval, Dorpat and Pernau). swedish_dialect has no
- # fallback, so without these a Swedish owner sees the modern Estonian, Latvian or Polish name.
+ # Swedish place names (swedish_dialect). The dialect has no fallback, so without an entry a Swedish owner sees
+ # the base name. A place Swedes never named keeps it, since period Swedish mostly kept local names.
+ # Trailing comments give the source that prints the name. Names marked #adapted:, #translated: or #founded: are
+ # ours, as are compass words in province names; S:t and Cap follow the mod's spelling. A province name may be a
+ # town in it, a period region or a colony on the province holding its capital.
+ # Sources:
+ # Acrelius = Beskrifning om de swenska församlingars tilstånd 1759, archive.org/details/beskrifningomdes00acre
+ # Agneta Horn = Agneta Horns lefverne, written 1657, sv.wikisource.org
+ # Ahlén = Bidrag till det ryska krigets historia under Johan III 1869-73, runeberg.org/aaryska
+ # Akiander = Bidrag till kännedom om Ingermanlands stift 1865, runeberg.org/aminkeri
+ # Arkiv = Arkiv till upplysning om svenska krigens historia 1854-61, runeberg.org/arkivkir
+ # Årsberättelse 1822 = archive.org/details/rsberttelseromve1822unse
+ # Biogr. lexicon = Biographiskt lexicon öfver namnkunnige svenska män 1835-57, runeberg.org/biosvman
+ # Bonnier 1937 = archive.org/details/bonnierskonversa08stocuoft
+ # Bovallius 1886 = Resa i Central-Amerika, archive.org/details/resaicentralamer00bova
+ # Bremer 1853 = Hemmen i den Nya verlden, archive.org/details/hemmenidennya01brenrich
+ # Bryant 1850 = Californien, en skildring af landet, archive.org/details/californienensk00bryagoog
+ # Campanius = Campanius Holm, Kort beskrifning om provincien Nya Swerige 1702,
+ #   archive.org/details/kortbeskrifningo00holm
+ # Carlbom = Karl X Gustafs polska krig 1905, runeberg.org/cjlpolska
+ # Carlsson = Coleridge, transl. Carlsson, Sex månader i Westindien 1835,
+ #   archive.org/details/sexmnaderinwest00carlgoog
+ # Corpus iuris 1827 = archive.org/details/corpusiurissueo01swedgoog
+ # Courieren 1821-22 = archive.org/details/courieren_fran_stockholm1821, stockholmska_courieren1822
+ # Cronholm 1876 = Trettioåriga kriget, archive.org/details/trettiorigakrig01crongoog
+ # Dalin = Svea rikes historia 1747, runeberg.org/svearikehi
+ # Djurberg = Geografie för ungdom 1800, archive.org/details/geografiefrungd00djurgoog
+ # Djurberg 1785 = Utförlig geografie, archive.org/details/utfrliggeografi02djurgoog
+ # Encyklopedi 1803 = Angelini, Encyklopedi för barn, archive.org/details/encyklopedifrba00angegoog
+ # Fellman = notes printed 1844, runeberg.org/fjlappmark
+ # Fryxell = Berättelser ur svenska historien 1823-72, runeberg.org/svhistfry
+ # Gezelius = Försök til et biographiskt lexicon 1778-87, runeberg.org/gezbiolex
+ # Gosselman = Resa i Norra Amerika 1835, archive.org/details/resainorraamerik00goss
+ # Götha Runor 1832 = archive.org/details/gotha-runor1832lomberg
+ # Handlingar = Handlingar rörande Skandinaviens historia, runeberg.org/hrsh
+ # Hearne 1798 = Samuel Hearnes Resa, archive.org/details/cihm_17711
+ # Hermes = Hermes Gothicus 1624, sv.wikisource.org
+ # Holmberg = Bohusläns historia 1867, runeberg.org/aehbhob
+ # Kalm = En resa til Norra America 1753, archive.org/details/enresatilnorraam02kalm
+ # Kalm III = vol. 3, 1761, archive.org/details/cihm_35371
+ # Karl XII bref = Konung Karl XII:s egenhändiga bref, ed. 1893, runeberg.org/karl12bref
+ # Kinberg 1885 = archive.org/details/Svenskafoglarna3Sund
+ # Kotzebue 1830 = Resa omkring jorden, archive.org/details/cihm_18340
+ # Laestadius = L. L. Laestadius 1824, runeberg.org/omlappmark
+ # Loskiel = Historiske beskrifning, Swedish ed. 1792, archive.org/details/georghinrichlosk00losk
+ # Lundqvist = Sveriges krig med staden Bremen 1893, runeberg.org/bremen
+ # Matrikel 1754 = archive.org/details/bub_gb_YLkDAAAAYAAJ
+ # Meares 1797 = Tvänne resor, archive.org/details/cihm_36934
+ # Modeen = Lärobok i Rysslands och Polens geografi 1867, runeberg.org/rypogeo
+ # NF = Nordisk familjebok, runeberg.org/<page>.html
+ # Norelius = De svenska luterska församlingarnas och svenskarnas historia i Amerika, vol. 1 1890, vol. 2 1916
+ # Nystad = the 1721 treaty, histdoc.net/nystad/nystad_sv.html
+ # Oedman = Chorographia Bahusiensis 1746, runeberg.org/chorbahus
+ # Olaus Petri = Svenska Krönika, Klemming ed. 1860, sv.wikisource.org
+ # OPT = Ordinari Post Tijdender 1645, sv.wikisource.org
+ # Ossian 1794 = archive.org/details/bib_fict_4103329
+ # PoIT = Post- och Inrikes Tidningar 1821-36, sv.wikisource.org
+ # Pontin 1831 = Anteckningar, archive.org/details/8T2118NORD
+ # PT = Stockholm Post-Tijdender from 1700, sv.wikisource.org
+ # ra.ee = Estonian National Archives map catalogue
+ # Radloff = Beskrifning öfver Åland 1795, runeberg.org/rfwaland
+ # Rein = Kejsaredömet Rysslands statistik 1838, runeberg.org/rgryss
+ # Rosenberg = gazetteer 1882, runeberg.org/rosenberg
+ # Silverstolpe = Geographi och Statistik öfver Sverige och Norrige 1819, runeberg.org/svnogestat
+ # SOF = Svenska ortnamn i Finland 1963, runeberg.org/sveortfin
+ # SpanPort 1809 = Spaniens och Portugalls besittningar uti America, archive.org/details/spaniensochportu00link
+ # Sprengel 1810 = Historia om Förenta Amerikas sjelfständighet, archive.org/details/historiaomfrenta00spre
+ # Statskalender = Finlands statskalender 1812 and 1840, histdoc.net/stats12
+ # Strinnholm 1834 = Svenska folkets historia, archive.org/details/svenskafolketsh00strigoog
+ # sv.wp = Swedish Wikipedia
+ # Svea 1818 = archive.org/details/sveatidskriftfr00unkngoog
+ # Svedelius 1876 = archive.org/details/inledningtilleu00svedgoog
+ # Svedenstjerna 1804 = Resa igenom en del af England och Scotland, archive.org/details/resaigenomendela00sved
+ # Topelius = Finland framstäldt i teckningar 1845, runeberg.org/ztfinland
+ # Traventhal = the 1700 peace, sv.wikisource.org
+ # Troil = Bref rörande en resa til Island 1777, archive.org/details/BREFrorandeenres000397249v0TroiReyk
+ # Unonius 1862 = Minnen, archive.org/details/minnenfrnensju01unonuoft
+ # VS = von Schantz, Canton voyage 1746-49, sv.wikisource.org
+ # Zoologi c.1842 = archive.org/details/arsberattelseomz00lond
+
+ # Baltic and Pomeranian towns. The Swedish administration there used the German names, as vanilla does for
+ # Reval, Dorpat and Pernau.
  # Estonia and Ösel
  kaina.swedish_dialect: "Keinis"
  karksi.swedish_dialect: "Karkus"
@@ -14,7 +93,7 @@
  toolse.swedish_dialect: "Tolsburg"
  valjala.swedish_dialect: "Wolde"
  valka.swedish_dialect: "Walk"
- # Swedish Nyslott, but that is also the Swedish name of Savonlinna (olofsborg), so the German form avoids confusion
+ # German, since Swedish Nyslott is also the name of Savonlinna (olofsborg)
  vasknarva.swedish_dialect: "Neuschloss"
  vastseliina.swedish_dialect: "Neuhausen"
  viljandi.swedish_dialect: "Fellin"
@@ -83,15 +162,6 @@
  salmi.swedish_dialect: "Salmis"
  sauvo.swedish_dialect: "Sagu"
 
- # Attested names, except those marked #adapted:, #translated: or #founded:, which are ours. A place Swedes never named keeps its base name, since period
- # Swedish mostly kept local names. Trailing comments give the source:
- # NF = Nordisk familjebok, runeberg.org/<page>.html. Nystad = the 1721 treaty, histdoc.net/nystad/nystad_sv.html.
- # OPT = Ordinari Post Tijdender 1645. PT = Stockholm Post-Tijdender from 1700. PoIT = Post- och Inrikes Tidningar 1821-36.
- # Hermes = Hermes Gothicus 1624. VS = von Schantz, Canton voyage 1746-49. All five on sv.wikisource.org.
- # Kalm = En resa til Norra America 1753, archive.org/details/enresatilnorraam02kalm. sv.wp = Swedish Wikipedia.
- # Topelius = Finland framstäldt i teckningar 1845, runeberg.org/ztfinland. SOF = Svenska ortnamn i Finland 1963, runeberg.org/sveortfin.
- # Fellman = notes printed 1844, runeberg.org/fjlappmark. Laestadius = L. L. Laestadius 1824, runeberg.org/omlappmark.
- # Dalin = Svea rikes historia 1747, runeberg.org/svearikehi. Rosenberg = gazetteer 1882, runeberg.org/rosenberg.
  # Prussia, which Sweden fought over and partly held in 1626-35
  gniew.swedish_dialect: "Mewe" #NF nfbr/0188
  puck.swedish_dialect: "Putzig" #NF nfcb/0335
@@ -116,14 +186,14 @@
  lidzbark.swedish_dialect: "Heilsberg" #NF nfbk/0146
  frombork.swedish_dialect: "Frauenburg" #NF nfbh/0674
  olsztyn.swedish_dialect: "Allenstein" #NF nfba/0346
- # More of the crown lands and the Novgorod marches
+ # Crown lands and the Novgorod marches
  konevets.swedish_dialect: "Konevits" #NF nfbn/0388
  jekabpils.swedish_dialect: "Jakobstadt" #NF nfbl/0650
- carlsburg.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf; the key swe_germany.3.a founds by renaming gestenthorpe
+ carlsburg.swedish_dialect: "Karlsburg" #NF nfbi/0438, the Swedish fort at Geestendorf; swe_germany.3.a renames gestenthorpe to this key
  opochka.swedish_dialect: "Opotjka" #NF nfbt/0413
  porkhov.swedish_dialect: "Porchov" #NF nfca/0752
  velikiye_luki.swedish_dialect: "Velikija-Luki" #NF nfck/0562
- # Provinces. Vanilla splits Livonia in three, so the compass words are ours and only Livland is attested.
+ # Baltic and Karelian provinces. Vanilla splits Livonia in three, and only Livland is attested.
  korela_province.swedish_dialect: "Kexholms län" #Nystad; NF nfbm/0762
  vyborg_province.swedish_dialect: "Viborgs län" #Nystad Wiborgslähn; NF
  estonia_province.swedish_dialect: "Estland" #Nystad; NF nfbg/0498
@@ -157,7 +227,7 @@
  panyu.swedish_dialect: "Wampo" #VS, the company's anchorage
  dadu.swedish_dialect: "Peking" #VS; PoIT
  beiping.swedish_dialect: "Peking" #as dadu, which flavor_chi renames to this key
- shangyuan.swedish_dialect: "Nanking" #sv.wp; vanilla already has Nanking on nanjing, this key's name after flavor_chi renames it
+ shangyuan.swedish_dialect: "Nanking" #sv.wp; as vanilla's nanjing, which flavor_chi renames to this key
  parangipettai.swedish_dialect: "Porto Novo" #sv.wp, Swedish factory 1733
  maynila.swedish_dialect: "Manilla" #VS
  al_mukha.swedish_dialect: "Mocka" #sv.wp
@@ -174,7 +244,7 @@
  qusqu.swedish_dialect: "Cuzco" #sv.wp
  rimaq.swedish_dialect: "Lima" #Hermes; PoIT
  ciudad_de_los_reyes.swedish_dialect: "Lima" #as rimaq, which flavor_CAS renames to this key
- # At home and in the north: vanilla's typos and non-Swedish forms, in today's spelling
+ # Sweden and the north: vanilla's typos and non-Swedish forms, in today's spelling
  ostergotland_province.swedish_dialect: "Östergötland" #vanilla has the label Östra Götaland
  vastergotland_province.swedish_dialect: "Västergötland" #vanilla has the label Västra Götaland
  bohus_province.swedish_dialect: "Bohuslän" #Dalin Bahuslän; Rosenberg; vanilla has the castle, Båhus
@@ -190,7 +260,7 @@
  paltamo.swedish_dialect: "Paldamo" #Topelius; SOF
  raunala.swedish_dialect: "Rounala" #Schefferus 1674; Sveriges Radio on the churchyard
 
- # More attested names. Each comment gives the source that prints the name.
+ # Location names, by region
  # Denmark, Norway, Iceland, Greenland and the seas
  haderslev.swedish_dialect: "Hadersleben" #OPT; NF nfbj/0526
  aabenraa.swedish_dialect: "Apenrade" #Matrikel 1754; Djurberg 1800; Encyklopedi 1803; Pontin 1831
@@ -475,26 +545,12 @@
  tkaronto.swedish_dialect: "Toronto" #NF nfci/0229
  macassa.swedish_dialect: "Burlington" #Gosselman 1835 p.236
  baawitigong.swedish_dialect: "Sault-Sainte-Marie" #NF nfcd/0454
- # Further names
+ # Green Bay and Lithuania
  boojwiikwedong.swedish_dialect: "Green bay" #NF nfbj/0105
  braslaw.swedish_dialect: "Braslau" #Carlbom 1905
  upyte.swedish_dialect: "Upita" #Carlbom 1905
 
- # Province names, and names with no Swedish source. A province name may be a town in it, a period region or a colony on
- # the province holding its capital. Compass words are ours. Further sources:
- # Silverstolpe = Geographi och Statistik öfver Sverige och Norrige 1819, runeberg.org/svnogestat. Oedman = Chorographia Bahusiensis 1746, runeberg.org/chorbahus.
- # Holmberg = Bohusläns historia 1867, runeberg.org/aehbhob. Radloff = Beskrifning öfver Åland 1795, runeberg.org/rfwaland.
- # Troil = Bref rörande en resa til Island 1777, archive.org/details/BREFrorandeenres000397249v0TroiReyk.
- # Gezelius = Försök til et biographiskt lexicon 1778-87, runeberg.org/gezbiolex. Biogr. lexicon = Biographiskt lexicon öfver namnkunnige svenska män 1835-57, runeberg.org/biosvman.
- # Arkiv = Arkiv till upplysning om svenska krigens historia 1854-61, runeberg.org/arkivkir. Karl XII bref = Konung Karl XII:s egenhändiga bref, ed. 1893, runeberg.org/karl12bref.
- # Agneta Horn = Agneta Horns lefverne, written 1657, sv.wikisource.org. Olaus Petri = Svenska Krönika, Klemming ed. 1860, sv.wikisource.org. Traventhal = the 1700 peace, sv.wikisource.org.
- # Handlingar = Handlingar rörande Skandinaviens historia, runeberg.org/hrsh. Fryxell = Berättelser ur svenska historien 1823-72, runeberg.org/svhistfry.
- # Carlbom = Karl X Gustafs polska krig 1905, runeberg.org/cjlpolska. Lundqvist = Sveriges krig med staden Bremen 1893, runeberg.org/bremen.
- # Akiander = Bidrag till kännedom om Ingermanlands stift 1865, runeberg.org/aminkeri. Ahlén = Bidrag till det ryska krigets historia under Johan III 1869-73, runeberg.org/aaryska.
- # Rein = Kejsaredömet Rysslands statistik 1838, runeberg.org/rgryss. Modeen = Lärobok i Rysslands och Polens geografi 1867, runeberg.org/rypogeo.
- # Djurberg = Geografie för ungdom 1800, archive.org/details/geografiefrungd00djurgoog. Carlsson = Coleridge, transl. Carlsson, Sex månader i Westindien 1835, archive.org/details/sexmnaderinwest00carlgoog.
- # Campanius = Campanius Holm, Kort beskrifning om provincien Nya Swerige 1702, archive.org/details/kortbeskrifningo00holm. Acrelius = Beskrifning om de swenska församlingars tilstånd 1759, archive.org/details/beskrifningomdes00acre.
- # Loskiel = Historiske beskrifning, Swedish ed. 1792, archive.org/details/georghinrichlosk00losk. Gosselman = Resa i Norra Amerika 1835, archive.org/details/resainorraamerik00goss. Kalm III = vol. 3, 1761, archive.org/details/cihm_35371.
+ # Province names, and names with no Swedish source, by region
  # Denmark, Norway, Iceland, Greenland and the seas
  sonderjylland_province.swedish_dialect: "Södra Jutland" #adapted: compass ours; Handlingar Söder Jutland; OPT Jutland
  norrejylland_province.swedish_dialect: "Norra Jutland" #adapted: compass ours; OPT Jutland; NF nfbt/0205 Nord-Jutland
@@ -781,7 +837,7 @@
  jamesie_area_sea_zones_province.swedish_dialect: "James bay" #NF nfbk/0633
  gulf_of_saint_lawrence_sea_zones_province.swedish_dialect: "S:t Lorenzviken" #Djurberg 1800 p.405 S. Lorenz Viken
  bay_of_fundy_province.swedish_dialect: "Fundy bay" #NF nfbi/0068
- # Further names
+ # Russia, Lithuania, Ruthenia, Poland and the Arctic
  knyazhaya_province.swedish_dialect: "Solonski Pätin" #NF nfcb/0383; Fryxell
  derevskaya_province.swedish_dialect: "Derevski Pätin" #adapted: NF Votski, Solonski Pätin
  bezhetskaya_province.swedish_dialect: "Bjezjezki Pätin" #adapted: NF Bjezjezk + NF Solonski Pätin
@@ -818,6 +874,7 @@
  nowy_sacz_province.swedish_dialect: "Sandec" #Carlbom 1905, as location nowy_sacz
  szczyrzyc_province.swedish_dialect: "Wieliczka" #NF nfcl/0166
  impassable_atlantic.swedish_dialect: "Norra ishavet" #NF nfbs/0793 Norra ishafvet
+ # North America
  kanienkehaka_province.swedish_dialect: "Mohakerlandet" #adapted: Kalm I Mohakernas (OCR) + Loskiel Huronerlandet
  onyotaaka_province.swedish_dialect: "Oneiderlandet" #adapted: Kalm, Loskiel Oneider + Huronerlandet
  onondagega_province.swedish_dialect: "Onondagerlandet" #adapted: Kalm, Loskiel Onondager + Huronerlandet
@@ -854,8 +911,7 @@
  atikaki_province.swedish_dialect: "Winipigon" #Djurberg 1800, 1801
  wabash.swedish_dialect: "Wabach" #Loskiel 1792
 
- # The Swedish Gold Coast and other land Sweden held.
- # Statskalender = Finlands statskalender 1812 and 1840, histdoc.net/stats12. ra.ee = Estonian National Archives map catalogue.
+ # Land Sweden held
  # The Swedish Gold Coast, 1650-63
  cabo_corso.swedish_dialect: "Carolusborg" #sv.wp Fort Carolusborg; NF nfba/0169 prints Karlsborg
  anomansah.swedish_dialect: "Elmina" #NF nfbg/0236
@@ -865,23 +921,14 @@
  lieksa.swedish_dialect: "Pielis" #Topelius: Pielis socken, på finska Lieksa
  nurmes.swedish_dialect: "Nurmis" #Statskalender 1812, 1840
  joensuu.swedish_dialect: "Libelits" #Topelius; NF nfbp/0192; Statskalender Liebelitz; town only 1848
- # Livonia. German names, as elsewhere in the Baltic: no Swedish text found for these five
+ # Livonia: German names, as elsewhere in the Baltic, since no Swedish text was found for these five
  saarde.swedish_dialect: "Saara" #adapted: German parish name, ra.ee maps Kirchsp. Saara
  suure_jaani.swedish_dialect: "Gross S:t Johannis" #adapted: German parish name, ra.ee map Gross St. Johannis
  vilaka.swedish_dialect: "Marienhausen" #adapted: vanilla German name, as Rositten
  kraslava.swedish_dialect: "Kreslau" #adapted: vanilla German name, as Rositten
  makonkalns.swedish_dialect: "Wolkenburg" #adapted: vanilla German name, as Rositten
 
- # North Germany, Denmark, England, Scotland and the rest of North America. Every name here is printed in a Swedish text,
- # except that compass words, S:t and Cap follow the mod's spelling. Print after 1837, the game's last year, is allowed,
- # and the year in each comment shows it. Further sources, all on archive.org/details/:
- # Djurberg 1785 = Utförlig geografie, utfrliggeografi02djurgoog. Encyklopedi 1803 = Angelini, Encyklopedi för barn, encyklopedifrba00angegoog. SpanPort 1809 = Spaniens och Portugalls besittningar uti America, spaniensochportu00link.
- # Sprengel 1810 = Historia om Förenta Amerikas sjelfständighet, historiaomfrenta00spre. Svedenstjerna 1804 = Resa igenom en del af England och Scotland, resaigenomendela00sved. Pontin 1831 = Anteckningar, 8T2118NORD.
- # Kotzebue 1830 = Resa omkring jorden, cihm_18340. Meares 1797 = Tvänne resor, cihm_36934. Hearne 1798 = Samuel Hearnes Resa, cihm_17711. Bryant 1850 = Californien, en skildring af landet, californienensk00bryagoog.
- # Courieren 1821-22 = courieren_fran_stockholm1821, stockholmska_courieren1822. Götha Runor 1832 = gotha-runor1832lomberg. Strinnholm 1834 = Svenska folkets historia, svenskafolketsh00strigoog. Matrikel 1754 = bub_gb_YLkDAAAAYAAJ.
- # Ossian 1794 = bib_fict_4103329. Corpus iuris 1827 = corpusiurissueo01swedgoog. Svea 1818 = sveatidskriftfr00unkngoog. Årsberättelse 1822 = rsberttelseromve1822unse. Zoologi c.1842 = arsberattelseomz00lond.
- # Bremer 1853 = Hemmen i den Nya verlden, hemmenidennya01brenrich. Unonius 1862 = Minnen, minnenfrnensju01unonuoft. Cronholm 1876 = Trettioåriga kriget, trettiorigakrig01crongoog. Svedelius 1876 = inledningtilleu00svedgoog.
- # Bovallius 1886 = Resa i Central-Amerika, resaicentralamer00bova. Kinberg 1885 = Svenskafoglarna3Sund. Bonnier 1937 = bonnierskonversa08stocuoft.
+ # Names printed in a Swedish text, each cited with its year; some sources postdate 1837, the game's last year.
  # North Germany and Denmark
  roskilde.swedish_dialect: "Roskild" #Roskilde treaty 1658; Djurberg 1785, 1800; PoIT 1836
  niederrhein_province.swedish_dialect: "Nedre Rhen" #Strinnholm 1834 nedre Rhentrakterna; Cronholm 1876 nedre Rhen
@@ -1015,10 +1062,9 @@
  chuchures.swedish_dialect: "Portobello" #SpanPort 1809; Djurberg 1800; Campanius 1702
  careta.swedish_dialect: "Darien" #Djurberg 1800; SpanPort 1809; Bovallius 1886
  otolum_province.swedish_dialect: "Tabasco" #Djurberg 1800; SpanPort 1809; holds the town, on cupilco
- # Fitted names for North America. Where the alternative was a native word no European knew, these are names the place
- # could have had under a Swedish owner. They aren't printed in a Swedish text unless the comment cites one, and the
- # dates and meanings in the comments are unsourced unless a source is named; 'unconfirmed' marks a doubtful one.
- # Norelius = De svenska luterska församlingarnas och svenskarnas historia i Amerika, vol. 1 1890, vol. 2 1916.
+ # Fitted names for North America: names a place could have had under a Swedish owner, where the alternative was
+ # a native word no European knew. Unless a comment cites a source, the name is not printed in a Swedish text and
+ # its dates and meanings are unsourced; 'unconfirmed' marks a doubtful one.
  # Keewatin
  minitig_province.swedish_dialect: "Lac la Pluie" #adapted: French; fur-trade department and HBC district
  atikwa.swedish_dialect: "Lac des Bois" #adapted: French, Lake of the Woods; La Vérendrye 1730s
@@ -1877,7 +1923,7 @@
  stata_ketux.swedish_dialect: "Grande Coulée" #adapted: French, the great dry gorge; traders by the 1830s
  scqescilni.swedish_dialect: "Fort Spokane" #adapted: NWC and Astor posts on the Spokane, 1810-12
  snt_t_ulix.swedish_dialect: "Furuvallen" #founded: open pine parkland north of Spokane
- # okanagan_province: no Swedish name, as its key's hash collides with Oikoumenē's voyampolka.kra_language (was "Okanaganland")
+ # okanagan_province is left out, as its key's hash collides with Oikoumenē's voyampolka.kra_language
  wenatchi.swedish_dialect: "Lärkdalen" #founded: larch in the Wenatchee Mountains; lumber
  chelan.swedish_dialect: "Stordjupet" #translated: Chelan, given as deep water; a very deep lake
  osoyoos.swedish_dialect: "Fort Okanagan" #adapted: Astor's post, 1811, at the Okanogan's mouth

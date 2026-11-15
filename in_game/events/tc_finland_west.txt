@@ -1,11 +1,10 @@
 ﻿namespace = swe_finland_west
 
-# Content for western Finland: Satakunta, Nyland, Österbotten and Åland. Sweden owns every location these events
-# need from 1337, so they should fire in nearly every game unless the land has been lost.
+# Western Finland: Satakunta, Nyland, Österbotten and Åland. Sweden owns every location these events need from 1337.
 
-# Albrekt's letter of 12 July 1367 ordered a fortress in "Satagundia" taken down as too burdensome, and a new one
-# built in a better place. Some historians read this as Kumo and Korsholm, which is disputed. Modifiers rather than
-# a building, so no free castle.
+# Albrekt's letter of 12 July 1367 ordered a fortress in "Satagundia" taken down as too burdensome and a new one built
+# in a better place; some historians read this as Kumo and Korsholm, which is disputed. Modifiers rather than a
+# building, so no free castle.
 swe_finland_west.1 = {
 	type = country_event
 	title = swe_finland_west.1.title
@@ -19,7 +18,7 @@ swe_finland_west.1 = {
 		tag = SCA
 		from = 1365.1.1
 		to = 1385.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_1 (tc_event_pulses.txt). Median late 1366
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_1
 	}
 
 	trigger = {
@@ -44,7 +43,7 @@ swe_finland_west.1 = {
 			base = 75
 		}
 
-		# A castle pulled down and built again, at the cost of moving a town (swe_finland_west.7)
+		# A castle pulled down and built again
 		change_gold_effect = { scale = -4 }
 		location:bjorneborg = {
 			add_location_modifier = { modifier = swe_satakunta_relieved years = 15 }
@@ -67,7 +66,8 @@ swe_finland_west.1 = {
 }
 
 # The Victual Brothers held Korsholm from 1396 until they surrendered it by 20 April 1399. A former pirate captain,
-# Otte Peccatel, was its bailiff, under the pirates or after the peace (KulturÖsterbotten can't say which). Stands alone from vanilla's Gotland event, flavor_swe_teu.1.
+# Otte Peccatel, was its bailiff, under the pirates or after the peace (KulturÖsterbotten doesn't say which).
+# Independent of vanilla's Gotland event, flavor_swe_teu.1.
 swe_finland_west.2 = {
 	type = country_event
 	title = swe_finland_west.2.title
@@ -81,7 +81,7 @@ swe_finland_west.2 = {
 		tag = SCA
 		from = 1396.1.1
 		to = 1420.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_2 (tc_event_pulses.txt). Median late 1397
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_2
 	}
 
 	trigger = {
@@ -109,7 +109,7 @@ swe_finland_west.2 = {
 			change_prosperity = prosperity_mild_penalty
 			add_location_modifier = { modifier = swe_pirate_bailiff years = 10 }
 		}
-		# His ships come with him. Galleys, as in vanilla's Victual Brothers event (flavor_swe_teu).
+		# His ships come with him, galleys as in vanilla's Victual Brothers event
 		random_owned_location = {
 			limit = {
 				is_port = yes
@@ -135,9 +135,8 @@ swe_finland_west.2 = {
 	}
 }
 
-# David of Ania's rising in Upper Satakunta, autumn 1438, settled at Lempäälä with a pledge of 9 January 1439.
-# The story rests on one Wikipedia page citing DF 2279. Its claim that Karl Knutsson paid David is flagged there
-# as unsupported, so it's left out.
+# David of Ania's rising in Upper Satakunta, autumn 1438, settled at Lempäälä with a pledge of 9 January 1439. The
+# only source is one Wikipedia page citing DF 2279; its unsupported claim that Karl Knutsson paid David is left out.
 swe_finland_west.3 = {
 	type = country_event
 	title = swe_finland_west.3.title
@@ -151,7 +150,7 @@ swe_finland_west.3 = {
 		tag = SCA
 		from = 1436.1.1
 		to = 1470.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_3 (tc_event_pulses.txt). Median late 1437
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_3
 	}
 
 	trigger = {
@@ -200,8 +199,7 @@ swe_finland_west.3 = {
 			every_owned_location = {
 				limit = { province_definition = province_definition:satakunta_province }
 				add_location_modifier = { modifier = swe_satakunta_bailiffs years = 10 }
-				# The anger stays in this region, in place of a country-wide estate penalty. Mild, since the
-				# bailiffs already bring peasant unrest of 0.2.
+				# The anger stays in this region. Mild, since the bailiffs already bring peasant unrest.
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
 					add_pop_satisfaction = pop_satisfaction_mild_penalty
@@ -213,11 +211,8 @@ swe_finland_west.3 = {
 }
 
 # The Club War began at Kyrö on 25 November 1596, and Österbotten's joint complaint of 27 December 1599 asked Duke
-# Karl to keep the nobles out (quoted in Ylikangas's review of Lappalainen's Susimessu). One event rather than a
-# full Club War: the disaster version is still in the backlog. Fiefs followed from 1608 (Jakob De la Gardie, Pedersöre
-# and Nykarleby), most in 1650-52, and Karl XI reclaimed them on 10 December 1674 (K. V. Åkerblom's chronology in Den
-# österbottniska byn, as printed by the Swedish Finn Historical Society). Single source: the 1674 date, six years
-# before the Great Reduction, was doubted in the 2026-11-10 review, but no other source turned up either way.
+# Karl to keep the nobles out (Ylikangas, reviewing Lappalainen's Susimessu). Fiefs followed from 1608, most in
+# 1650-52, and Karl XI reclaimed them on 10 December 1674 (Åkerblom, Den österbottniska byn, the only source for 1674).
 swe_finland_west.4 = {
 	type = country_event
 	title = swe_finland_west.4.title
@@ -231,7 +226,7 @@ swe_finland_west.4 = {
 		tag = SCA
 		from = 1596.1.1
 		to = 1650.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_4 (tc_event_pulses.txt). Median late 1597
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_4
 	}
 
 	trigger = {
@@ -278,7 +273,7 @@ swe_finland_west.4 = {
 			every_owned_location = {
 				limit = { swe_osterbotten_trigger = yes }
 				add_location_modifier = { modifier = swe_osterbotten_fiefs years = 50 }
-				# The anger stays in this region, in place of a country-wide estate penalty
+				# The anger stays in this region
 				every_pop = {
 					limit = { pop_type = pop_type:peasants }
 					add_pop_satisfaction = pop_satisfaction_severe_penalty
@@ -290,12 +285,9 @@ swe_finland_west.4 = {
 	}
 }
 
-# Peasant sailing: limited by the town law of c.1350 and the ordinance of 1614, probably never strictly enforced,
-# and lifted by the decree of 3 December 1765. Locations follow Jutikkala's figures for c.1800: Åland (276 ship
-# part-owners) and the coast from Rimito to Sjundeå (141). Sauvo-Karuna had none, so it's left out. Option b runs
-# 50 years, not to the decree of 1765, so that looking the other way doesn't outlast every other choice in the mod
-# (review 2026-11-10). Option a sends the trade to Åbo for 20 years, so enforcing the law moves trade rather than only
-# destroying it. The quarrel stays on these coasts, in place of country-wide estate changes.
+# Peasant sailing, limited by the town law of c.1350 and the ordinance of 1614, probably never strictly enforced, and
+# lifted on 3 December 1765. The locations follow Jutikkala's ship part-owners for c.1800: Åland and the coast from
+# Rimito to Sjundeå. Option a sends the trade to Åbo, so enforcing the law moves trade rather than only destroying it.
 swe_finland_west.5 = {
 	type = country_event
 	title = swe_finland_west.5.title
@@ -309,7 +301,7 @@ swe_finland_west.5 = {
 		tag = SCA
 		from = 1614.1.1
 		to = 1700.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_5 (tc_event_pulses.txt). Median late 1615
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_5
 	}
 
 	trigger = {
@@ -354,7 +346,7 @@ swe_finland_west.5 = {
 				add_location_modifier = { modifier = swe_skipper_staple years = 20 }
 			}
 		}
-		# The quarrel stays on these coasts, in place of country-wide estate changes
+		# The quarrel stays on these coasts
 		custom_tooltip = {
 			text = swe_finland_west.5.a_tt
 			swe_pop_satisfaction_in = { location = location:abo type = burghers value = pop_satisfaction_mild_bonus }
@@ -399,8 +391,7 @@ swe_finland_west.5 = {
 }
 
 # The ironworks of western Nyland, chartered to spare Sweden's forests: Fiskars 1649, Antskog, Billnäs and Fagervik.
-# Sjundeå stands in for them, so Ekenäs keeps its fish. Iron brings it under swe_bergskollegium's location bonus
-# without a new tier. Same change_raw_material as vanilla's flavor_swe.39.
+# Sjundeå stands in for them, so Ekenäs keeps its fish. Iron also brings it under swe_bergskollegium's location bonus.
 swe_finland_west.6 = {
 	type = country_event
 	title = swe_finland_west.6.title
@@ -414,7 +405,7 @@ swe_finland_west.6 = {
 		tag = SCA
 		from = 1640.1.1
 		to = 1720.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_6 (tc_event_pulses.txt). Median late 1641
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_6
 	}
 
 	trigger = {
@@ -434,7 +425,7 @@ swe_finland_west.6 = {
 		change_gold_effect = { scale = -2 }
 		location:sjundea = {
 			change_raw_material = goods:iron
-			# Finnish ore was poor and soon ran short, so the same cap as Sala in flavor_swe.38
+			# Finnish ore was poor and soon ran short, so workers are capped as at Sala in vanilla's flavor_swe.38
 			if = {
 				limit = { rgo_level > 1 }
 				change_max_raw_material_workers = {
@@ -463,10 +454,9 @@ swe_finland_west.6 = {
 	}
 }
 
-# Duke Johan's charter of 8 March 1558 moved Ulvsby's town rights downriver to Björneborg, because land rise had spoiled
-# the river (en.wikipedia Pori and Ulvila; one page says the burghers could later return). Ulvsby lies inside the bjorneborg
-# location, as in swe_towns.1, so the town moves inside it and nothing is renamed. Björneborg's natural harbour is 0, so
-# market access may do most of the work here. The same modifiers as swe_lappmark.8.
+# Duke Johan's charter of 8 March 1558 moved Ulvsby's town rights downriver to Björneborg, because land rise had
+# spoiled the river (en.wiki Pori, Ulvila). Ulvsby lies inside the bjorneborg location, so nothing is renamed.
+# Björneborg's natural harbour is 0, so market access may do most of the work. Shares its modifiers with swe_lappmark.8.
 swe_finland_west.7 = {
 	type = country_event
 	title = swe_finland_west.7.title
@@ -480,7 +470,7 @@ swe_finland_west.7 = {
 		tag = SCA
 		from = 1556.1.1
 		to = 1600.1.1
-		monthly_chance = 1 # Plus 3% a month from tc_pulse_finland_west_7 (tc_event_pulses.txt). Median late 1557
+		monthly_chance = 1 # Mostly fired by tc_pulse_finland_west_7
 	}
 
 	trigger = {

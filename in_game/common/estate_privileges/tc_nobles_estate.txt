@@ -11,9 +11,8 @@
 		"estate_power(estate_type:crown_estate)" >= 0.5
 	}
 
-	# Balanced against nieszawa_privileges (POL) and cas_fuero_viejo (CAS).
-	# Power is below their 0.5 / 0.4 because Sweden holds this from game start.
-	# Removed for good by swe_vasa.3 (Västerås 1544); after a normal revoke it can be granted again.
+	# Less power than vanilla's nieszawa_privileges, as Sweden holds it from game start. After a normal revoke it
+	# can be granted again.
 	country_modifier = {
 		monthly_towards_decentralization = societal_value_minor_monthly_move
 		global_nobles_estate_power = 0.3

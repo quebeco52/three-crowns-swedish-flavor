@@ -1,17 +1,12 @@
-﻿# The colleges of the Instrument of Government (regeringsform) of 1634, as Swedish bureaucracies.
-# Shaped like D009's Spanish councils (spa_council_of_military_orders_bureaucracy): shown to Sweden
-# once it could hold any bureaucracy (the generic gate), allowed once swe_regeringsform_decision has
-# set swe_regeringsform. That decision also grants one bureaucracy slot (swe_regeringsformen, like
-# Spain's system_of_councils_reform) and installs Kammarkollegium.
-# Each is a generic bureaucracy (generic.txt) with a Swedish twist taken from the college's old policy,
-# not a stronger copy: the generic ones stay open to Sweden beside them.
-# Svea hovrätt, the first college, is vanilla's court_of_appeals (flavor_swe.15). Kanslikollegium, the
-# chancery, is left out. Bergskollegium stays a policy in the mining law (tc_laws.txt), since its
-# effects are limited to mining locations and a bureaucracy's modifiers are country-wide.
+﻿# The colleges of the Instrument of Government (regeringsform) of 1634, as Swedish bureaucracies. Shaped like
+# D009's Spanish councils: shown once Sweden can hold any bureaucracy (the generic gate), allowed once
+# swe_regeringsform_decision has set swe_regeringsform. Each is a generic bureaucracy (generic.txt) with a
+# Swedish twist, not a stronger copy, and the generic ones stay open beside them. Svea hovrätt, the first
+# college, is vanilla's court_of_appeals (flavor_swe.15), and Kanslikollegium is left out. Bergskollegium
+# stays a policy in the mining law (tc_laws.txt), as a bureaucracy's modifiers are country-wide.
 
-# Kammarkollegium: the Chamber College kept the accounts of every crown revenue. Based on
-# board_of_revenue_bureaucracy (credit and less estate enrichment when funded, more enrichment when
-# not); the funded side is the old policy's tax efficiency instead of credit.
+# Kammarkollegium: the Chamber College kept the accounts of every crown revenue. Based on vanilla's
+# board_of_revenue_bureaucracy, with tax efficiency in place of credit when funded.
 swe_kammarkollegium_bureaucracy = {
 	implementation_price = price:implement_bureaucracy_price
 	maintenance_price = price:maintain_bureaucracy_price
@@ -61,12 +56,10 @@ swe_kammarkollegium_bureaucracy = {
 	}
 }
 
-# Krigskollegium: set up as a war court on 5 July 1630, the second college in 1634, named the War
-# College in its regulations of 20 March 1636. It ran the artillery, the fortifications, the
-# commissariat and the army's pay (en.wiki War College). Based on war_council_bureaucracy (army
-# tradition from battles, tactics +0.1, morale -0.1 when unfunded): fortress upkeep (half
-# rural_nobles_authority_policy's 0.4) and army upkeep instead of battle tradition and tactics.
-# No manpower: indelningsverket and allotment_system_policy already give Sweden plenty.
+# Krigskollegium: set up as a war court on 5 July 1630, the second college in 1634, named the War College in
+# its regulations of 1636. It ran the artillery, the fortifications, the commissariat and the army's pay
+# (en.wiki War College). Based on vanilla's war_council_bureaucracy, with fortress and army upkeep in place
+# of battle tradition and tactics.
 swe_krigskollegium_bureaucracy = {
 	implementation_price = price:implement_bureaucracy_price
 	maintenance_price = price:maintain_bureaucracy_price
@@ -116,10 +109,9 @@ swe_krigskollegium_bureaucracy = {
 	}
 }
 
-# Amiralitetskollegium: the Admiralty College ran the fleet and its yards, and carried the armies
-# across the Baltic to Germany and the eastern provinces. Based on admiralty_board_bureaucracy (navy
-# tradition 0.1, naval morale +0.2 when funded, navy upkeep -0.2 when not): half the tradition, and
-# the old policy's disembark speed beside it.
+# Amiralitetskollegium: the Admiralty College ran the fleet and its yards, and carried the armies across the
+# Baltic to Germany and the eastern provinces. Based on vanilla's admiralty_board_bureaucracy, with half the
+# navy tradition and disembark speed added.
 swe_amiralitetskollegium_bureaucracy = {
 	implementation_price = price:implement_bureaucracy_price
 	maintenance_price = price:maintain_bureaucracy_price
@@ -167,10 +159,9 @@ swe_amiralitetskollegium_bureaucracy = {
 	}
 }
 
-# Kommerskollegium: the Board of Trade of 1651 granted the towns their staple rights, set the tolls
-# and oversaw the trading companies; from the age of absolutism (1637), so after its founding.
-# Based on trade_commission_bureaucracy (trade range 0.2, merchant power +0.2 when funded, burghers
-# -0.2 satisfaction when not): the old policy's tariffs, subventions and mercantilism, and half the penalty.
+# Kommerskollegium: the Board of Trade of 1651 granted the towns their staple rights, set the tolls and
+# oversaw the trading companies. Based on vanilla's trade_commission_bureaucracy, with tariffs, subventions
+# and mercantilism, and half its penalty.
 swe_kommerskollegium_bureaucracy = {
 	implementation_price = price:implement_bureaucracy_price
 	maintenance_price = price:maintain_bureaucracy_price
