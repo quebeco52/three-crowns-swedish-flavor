@@ -1,12 +1,11 @@
 ﻿namespace = swe_lappmark
 
-# Content for Västerbotten, the Lappmarks and the Sámi. Sweden starts here with only Umeå, Luleå and the colony
-# at Åsele, and SMI and KVE are pop countries that own no land. So .1 and .3 to .5 only need Luleå or Umeå and
-# should fire in nearly every game. .6 to .8 wait for Sweden to own the locations. .2, the Piteå ting, was removed.
+# Västerbotten, the Lappmarks and the Sámi. Sweden starts here with only Umeå, Luleå and the colony at Åsele, and SMI
+# and KVE are pop countries that own no land. There is no .2.
 
-# Archbishop Hemming sails to Torneå in the mid-1340s. An inquest of 1374 (SDHK 10584) records that he met the
-# Bishop of Åbo at Kompanasund and baptised about 20 Sámi and Karelians in a vat carried into the chapel.
-# Umeå, Luleå and Åsele have Sámi and Kven pops of the old religions, so the conversion counts from the start.
+# Archbishop Hemming sails to Torneå in the mid-1340s. An inquest of 1374 (SDHK 10584) records that he baptised about
+# 20 Sámi and Karelians. Umeå, Luleå and Åsele have Sámi and Kven pops of the old religions, so the conversion counts
+# from the start.
 swe_lappmark.1 = {
 	type = country_event
 	title = swe_lappmark.1.title
@@ -20,7 +19,7 @@ swe_lappmark.1 = {
 		tag = SCA
 		from = 1344.1.1
 		to = 1365.1.1
-		monthly_chance = 3 # Median late 1345
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_1
 	}
 
 	trigger = {
@@ -53,7 +52,7 @@ swe_lappmark.1 = {
 					any_pop = { NOT = { religion = root.religion } }
 				}
 				add_location_modifier = { modifier = swe_uppsala_mission years = 20 }
-				# The inquest of 1374 records about 20 baptised, so a small share at once, and the modifier does the rest
+				# About 20 were baptised, so a small share at once, and the modifier does the rest
 				every_pop = {
 					limit = { NOT = { religion = root.religion } }
 					split_pop = {
@@ -81,10 +80,9 @@ swe_lappmark.1 = {
 	}
 }
 
-# In the 14th century coastal farmers paid the Crown for sole fishing rights at Gråträsk, and settlers followed.
-# The migration pull is on gratesk, which starts with no owner, so it's skipped if a foreign realm holds it. Selling the
-# rights costs the Sámi who fish and sacrifice there. gratesk is usually unowned when this fires (1340-1400), so the
-# anger falls on the Sámi pops of the Västerbotten locations we own, which nearly all have some in 1337.
+# In the 14th century coastal farmers paid the Crown for sole fishing rights at Gråträsk, and settlers followed. The
+# migration pull goes on gratesk, which starts with no owner and is skipped if a foreign realm holds it. gratesk is
+# usually unowned when this fires, so the Sámi anger falls on our Västerbotten locations.
 swe_lappmark.3 = {
 	type = country_event
 	title = swe_lappmark.3.title
@@ -98,7 +96,7 @@ swe_lappmark.3 = {
 		tag = SCA
 		from = 1340.1.1
 		to = 1400.1.1
-		monthly_chance = 2 # About four years
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_3
 	}
 
 	trigger = {
@@ -170,11 +168,9 @@ swe_lappmark.3 = {
 	}
 }
 
-# The mountain Sámi turn from hunting to reindeer herding. By the 1600s and 1700s many had switched entirely,
-# and a register of 1602 already counted each taxpayer's reindeer. Vanilla has no reindeer good, so the herds are
-# a location modifier and the goods stay as they are (swe_reindeer_herds). It lands whichever option is chosen, so
-# both options show it.
-# The tax only touches locations with Sámi pops, so Swedish parishes don't get its unrest.
+# The mountain Sámi turn from hunting to reindeer herding; a register of 1602 already counted each taxpayer's reindeer.
+# Vanilla has no reindeer good, so the herds are a location modifier (swe_reindeer_herds), given by both options. The
+# tax only touches locations with Sámi pops.
 swe_lappmark.4 = {
 	type = country_event
 	title = swe_lappmark.4.title
@@ -188,7 +184,7 @@ swe_lappmark.4 = {
 		tag = SCA
 		from = 1600.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1601
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_4
 	}
 
 	trigger = {
@@ -245,9 +241,9 @@ swe_lappmark.4 = {
 	}
 }
 
-# Sámi schools: Hjort's boys for Uppsala (1606), Nicolaus Andreæ's offer at Piteå (1617), the first books
-# printed in Sámi (1619) and Skytte's school at Lycksele (1632), where teaching soon turned to Swedish. Both
-# options only touch locations with Sámi pops, so Swedish parishes don't get the unrest of swe_forsvenskning.
+# Sámi schools: Hjort's boys for Uppsala (1606), Nicolaus Andreæ's offer at Piteå (1617), the first books printed in
+# Sámi (1619) and Skytte's school at Lycksele (1632), where teaching soon turned to Swedish. Both options only touch
+# locations with Sámi pops.
 swe_lappmark.5 = {
 	type = country_event
 	title = swe_lappmark.5.title
@@ -261,7 +257,7 @@ swe_lappmark.5 = {
 		tag = SCA
 		from = 1615.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1616
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_5
 	}
 
 	trigger = {
@@ -328,10 +324,9 @@ swe_lappmark.5 = {
 	}
 }
 
-# The silver road: Sámi were forced to haul ore and supplies from Nasafjäll to the coast. Vanilla's flavor_swe.39
-# only runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never did
-# (swe_open_silbojock), and .c lets the player refuse it again. It waits for Sweden to own the location, so it fires
-# whenever the land is settled.
+# The silver road: Sámi were forced to haul ore and supplies from Nasafjäll to the coast. Vanilla's flavor_swe.39 only
+# runs 1630-35 and needs Sweden to own Silbojock by then, so this event opens the mine if that one never did, and
+# option c refuses it again.
 swe_lappmark.6 = {
 	type = country_event
 	title = swe_lappmark.6.title
@@ -358,7 +353,7 @@ swe_lappmark.6 = {
 		tag = SCA
 		from = 1635.1.1
 		to = 1750.1.1
-		monthly_chance = 3 # Median about two years once Sweden owns Silbojock
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_6
 	}
 
 	trigger = {
@@ -383,9 +378,9 @@ swe_lappmark.6 = {
 				add_location_modifier = { modifier = swe_silver_road years = 20 }
 			}
 		}
-		# The decree of 1640 moved the Lais and Gran lappbyar from Ume Lappmark and Tuorpon from Lule Lappmark to provide
-		# more carriers. They went to Arjeplog, which may not be ours, so they move to the mine. Per month, so 0.24 from each:
-		# a few lappbyar, not everyone, since by then the game has usually left only a pop or so of Sámi in these lappmarks.
+		# The decree of 1640 moved lappbyar from Ume and Lule Lappmark to Arjeplog as carriers. Arjeplog may not be
+		# ours, so they move to the mine. Small amounts, since these lappmarks usually hold only a pop or so of Sámi
+		# by then.
 		if = {
 			limit = {
 				any_owned_location = { province_definition = province_definition:ume_lappmark_province }
@@ -440,9 +435,8 @@ swe_lappmark.6 = {
 	}
 }
 
-# A town for Torneå: the charter of 12 May 1621 moved it from the Crown's choice of Seittenkari to Suensaari,
-# with the largest trading district in the realm. Both islands fall inside the tornea location, which starts as
-# Kven land, so this waits for Sweden to own it. No rank change, as in swe_towns.
+# A town for Torneå: the charter of 12 May 1621 moved it from the Crown's choice of Seittenkari to Suensaari, with
+# the largest trading district in the realm. Both islands fall inside the tornea location, which starts as Kven land.
 swe_lappmark.7 = {
 	type = country_event
 	title = swe_lappmark.7.title
@@ -456,7 +450,7 @@ swe_lappmark.7 = {
 		tag = SCA
 		from = 1619.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1620
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_7
 	}
 
 	trigger = {
@@ -499,10 +493,9 @@ swe_lappmark.7 = {
 	}
 }
 
-# The land rise moves Luleå (1649, Länsstyrelsen Norrbotten) and Piteå (fire of July 1666, moved by 1668, sv.wikipedia).
-# Piteå Museum's study of the Bothnian towns names land rise as the cause for both. One event for the two, around
-# Luleå's date. Needs both, since the text names both. The same modifiers as
-# swe_finland_west.7, which covers Björneborg, 90 years earlier. No rename, since the town moves inside its location.
+# The land rise moves Luleå (1649, Länsstyrelsen Norrbotten) and Piteå (by 1668, after the fire of 1666, sv.wiki);
+# Piteå Museum names land rise as the cause of both. One event for the two, around Luleå's date, with the modifiers of
+# swe_finland_west.7. It needs both towns, as the text names both. Each moves inside its location, so no rename.
 swe_lappmark.8 = {
 	type = country_event
 	title = swe_lappmark.8.title
@@ -516,7 +509,7 @@ swe_lappmark.8 = {
 		tag = SCA
 		from = 1647.1.1
 		to = 1700.1.1
-		monthly_chance = 3 # Median late 1648
+		monthly_chance = 1 # Mostly fired by tc_pulse_lappmark_8
 	}
 
 	trigger = {

@@ -2,7 +2,6 @@
 # Sword and the North Star. The engine allows one active order per country, so the Seraphim stands for
 # all three. Founded only by swe_stockholm.3 once Riddarholmskyrkan, the order's church, stands;
 # potential = no keeps it out of the Order of Chivalry law, like the Garter and the Jar.
-# Balanced against order_of_the_jar (crown estate power) and order_of_the_garter (character bonuses).
 swe_order_of_the_seraphim = {
 	potential = {
 		always = no

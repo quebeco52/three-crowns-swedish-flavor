@@ -1,17 +1,13 @@
 ﻿namespace = swe_baltic
 
-# The Baltic capitulations. As the Livonian Confederation broke up, its German knighthoods and towns
-# submitted to Sweden on terms: Estonia and Reval in 1561, Riga in 1621, Livonia in the 1620s, Ösel in
-# 1645. Each event fires whenever Sweden owns the chief town while Baltic Germans still live there, not
-# by date. Confirming the privileges speeds integration and slows assimilation, as vanilla's
-# lat_compromise does for the Greeks. Swedish law brings the Crown's judges (swe_swedish_law) and a hearing for the
-# peasants, but no assimilation: Sweden never tried to make Swedes of the Estonians or Latvians.
-# Nobody's culture changes at once. The variables mark the choice for later content.
+# The Baltic capitulations. As the Livonian Confederation broke up, its German knighthoods and towns submitted to
+# Sweden on terms: Estonia and Reval in 1561, Riga in 1621, Livonia in the 1620s, Ösel in 1645. Each event fires when
+# Sweden owns the chief town while Baltic Germans still live there. Confirming the privileges speeds integration and
+# slows assimilation, as vanilla's lat_compromise does.
 
-# Estonia: the knighthoods of Harrien, Wierland and Jerwen and the town of Reval submitted to Erik XIV
-# in 1561, and he confirmed their privileges. Ösel and Wiek (Rotalia) go with it: mainland Wiek was Swedish
-# from the 1580s, and the island of Ösel was Danish from 1559 until Brömsebro (1645), when its knighthood kept
-# the privileges it had held under Denmark.
+# Estonia: the knighthoods of Harrien, Wierland and Jerwen and the town of Reval submitted to Erik XIV in 1561, and he
+# confirmed their privileges. Ösel and Wiek (Rotalia) go with it: mainland Wiek was Swedish from the 1580s, and Ösel's
+# knighthood kept its Danish-era privileges at Brömsebro (1645).
 swe_baltic.1 = {
 	type = country_event
 	title = swe_baltic.1.title
@@ -25,7 +21,7 @@ swe_baltic.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Reval
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -102,10 +98,9 @@ swe_baltic.1 = {
 	}
 }
 
-# Livonia and Riga: Gustav II Adolf took Riga in 1621 and the rest of Livonia in the 1620s, and
-# confirmed the privileges of the city and the Livonian knighthood. From the 1620s the Crown also
-# took the Licent, a toll on the trade of the Baltic ports. Riga, a burghers' town, gets the town's
-# modifier instead of the knighthood's, so that the two crown losses never stack there.
+# Livonia and Riga: Gustav II Adolf took Riga in 1621 and the rest of Livonia in the 1620s, and confirmed the privileges
+# of the city and the Livonian knighthood. From the 1620s the Crown also took the Licent, a toll on the trade of the
+# Baltic ports. Riga gets the town's modifier instead of the knighthood's, so the two never stack there.
 swe_baltic.2 = {
 	type = country_event
 	title = swe_baltic.2.title
@@ -119,7 +114,7 @@ swe_baltic.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Riga
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -192,14 +187,10 @@ swe_baltic.2 = {
 	}
 }
 
-# The Russian staple. Stolbovo (1617) cut Russia off from the Baltic, and Sweden tried to draw Russia's
-# trade with the West through Narva, Nyen and Reval; Narva became the main one. Fires from the age of
-# the Reformation, while Sweden holds one of the three and whoever owns Novgorod has no Baltic port.
-# Whichever of them Sweden holds then get swe_russian_transit, and the chosen staple also gets swe_russian_staple.
-# Both run for 50 years even if Russia returns to the Baltic: a location modifier can't check that later.
-# The prosperity of flavor_tre.5 (the trade port of Kerasous left to prosper). The ports passed over lose the weak step
-# of it, since a staple takes their cargo. Holding only one of the three leaves the event free, as the reward for
-# shutting Russia out.
+# The Russian staple. Stolbovo (1617) cut Russia off from the Baltic, and Sweden tried to draw Russia's trade with the
+# West through Narva, Nyen and Reval; Narva became the main one. Each of the three we hold gets swe_russian_transit and
+# the chosen staple swe_russian_staple. Both last even if Russia returns to the Baltic, since a location modifier can't
+# check that later.
 swe_baltic.4 = {
 	type = country_event
 	title = swe_baltic.4.title
@@ -261,7 +252,7 @@ swe_baltic.4 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Russia loses its last Baltic port
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -400,11 +391,9 @@ swe_baltic.4 = {
 }
 
 # Courland. Sweden took the licent at Windau and Libau under the Truce of Altmark, against dukes who kept their dues
-# low to draw trade (Jakovļeva 2012). Douglas seized Mitau and Duke Jakob in 1658, and Karl XII occupied the duchy in
-# 1701, partly to end the maritime powers' protests at the blockade of its harbours (Rystad, Scandia 1961); its
-# estates paid heavy contributions to his army (Jakovļeva 2022). Its knighthood never capitulated to Sweden, unlike
-# Estonia's and Livonia's, so there are no privileges to confirm. Fires whenever Sweden owns Mitau, Windau or Grobin,
-# and the description says which of them we hold, since the toll options need a harbour.
+# low to draw trade, and Karl XII occupied the duchy in 1701, when its estates paid heavy contributions to his army
+# (Jakovļeva; Rystad). Its knighthood never capitulated to Sweden, so there are no privileges to confirm. The toll
+# options need a harbour, so the description says which of Mitau, Windau and Grobin we hold.
 swe_baltic.5 = {
 	type = country_event
 	title = swe_baltic.5.title
@@ -443,7 +432,7 @@ swe_baltic.5 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes Courland
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -537,12 +526,10 @@ swe_baltic.5 = {
 	}
 }
 
-# Silk from Isfahan. Karl XI sent Ludvig Fabritius to the Shah three times (1679-1700) to draw the Persian silk trade
-# through Russia to Narva. On 27 September 1687 the Crown contracted with the Armenian merchants of New Julfa: two years
-# free of toll, a hostel and warehouse at Narva built with royal support, and transit dues of 2 and 1 per cent
-# (Bakhchinyan, Hokkaido Slavic Research Center; the Armenian foreign ministry's history of Armenian-Swedish ties; en.wiki
-# Ludvig Fabritius, citing Matthee). From the age of absolutism, since New Julfa dates from 1605, while Sweden owns
-# Narva and is at peace with whoever owns Isfahan and Moscow. Can stack with swe_baltic.4's modifiers at Narva.
+# Silk from Isfahan. Karl XI sent Ludvig Fabritius to the Shah to draw the Persian silk trade through Russia to Narva,
+# and in 1687 the Crown contracted with the Armenian merchants of New Julfa: two years free of toll and a hostel and
+# warehouse at Narva (Bakhchinyan; en.wiki Ludvig Fabritius). From the age of absolutism, since New Julfa dates from
+# 1605. Can stack with swe_baltic.4's modifiers at Narva.
 swe_baltic.6 = {
 	type = country_event
 	title = swe_baltic.6.title
@@ -556,7 +543,7 @@ swe_baltic.6 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after the conditions are met
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -582,12 +569,11 @@ swe_baltic.6 = {
 			base = 60
 		}
 
-		# The hostel, and more for the two years free of toll, as the description says
+		# The hostel, and the two years free of toll
 		change_gold_effect = { scale = -2 }
 		location:narva = {
 			add_location_modifier = { modifier = swe_julfa_factory years = 30 }
-			# Burghers don't stay in a rural settlement: a 2026-11-08 test at a rural Narva kept 0.005 of 0.03 after a
-			# month. So the merchants only settle in a town, as swe_gotaland.7 requires for Alingsås.
+			# Burghers added to a rural settlement mostly vanish within a month, so the merchants only settle in a town
 			if = {
 				limit = {
 					OR = {
@@ -619,25 +605,10 @@ swe_baltic.6 = {
 	}
 }
 
-# Dominium maris Baltici. A milestone for the player (AGENTS.md, "Events must actually fire"): it fires when our realm
-# holds the mouths of the five great rivers into the Baltic and no Baltic power outside it has a bigger navy. The navy
-# test is vanilla's flavor_dan.68 (navy_size >= 50, no port on the sea held by a bigger navy), widened from
-# eastern_baltic_sea to the whole Baltic and without its navy tradition of 60. The Sound is left to vanilla's Sound
-# toll, which goes to whoever holds Helsingør (default.map).
-# The phrase is first Swedish in the Dutch-Swedish treaty of The Hague, 5 April 1614, art. VIII ("Dominio Maris
-# Balthici", Dumont V, no. CXXXVII), renewed in 1640 (art. IX, Aitzema, book 20); both also promise free navigation.
-# Gustav II Adolf in the riksråd, December 1628, on "den rättighet och tutel, som Sveriges konungar och krona af
-# hedenhös hafver haft" (Ahnlund 1918, pp. 105-106); to Oxenstierna, 4 December 1629, "fienden Östersiöns herre, och
-# fölljachteligen och wår öfwerman" (Styffe pp. 538-539). Licences in Prussia from 1627 and from Riga to the Neva from
-# 1629 (Küng, Hansische Geschichtsblätter 133, 2015, pp. 148-152); "the whole yield of the licences was devoted to the
-# payment of the armies in Germany" and they were "immediately indispensable to the war-chest" (Roberts, The Swedish
-# Imperial Experience, 1979, pp. 35, 39). 814,000 riksdaler in 1634 (Wendt 1933, via Hvidegaard 2000) is single-source,
-# so not in the text. Karl X Gustav to Dureel, 16 December 1656, on the Dutch treaty of 1640: "ett fundament och en
-# rätt, den oss odisputerlig tillhörde" (Carlbom 1901, pp. 181-182). Roskilde 1658, art. 3, against "främmande
-# fientliga flottor" (Gihl 1913, p. 29; Fridericia 1894, p. 424); the Battle of the Sound, 29 October 1658 (lex.dk);
-# the Concert of The Hague, 11 May 1659, art. II, struck it out (Gihl pp. 147-149), and it lapsed at Copenhagen in 1660
-# (Roberts p. 132). After 1648 Sweden held "the estuary of every major river from the Neva to the Weser, with the single
-# exception of the Vistula" (Roberts p. 101). Notes: .research/milestones-2026-11-10/dominium.md.
+# Dominium maris Baltici, a milestone: our realm holds the mouths of the five great rivers into the Baltic and no Baltic
+# power outside it has a bigger navy. The navy test is vanilla's flavor_dan.68, widened to the whole Baltic and with no
+# navy tradition test. The Sound is left to vanilla's Sound toll at Helsingør. The phrase is first Swedish in the
+# Dutch-Swedish treaty of 1614 (Dumont). Other sources: Roberts, The Swedish Imperial Experience; Küng; Gihl.
 swe_baltic.7 = {
 	type = country_event
 	title = swe_baltic.7.title
@@ -662,7 +633,7 @@ swe_baltic.7 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 10 # Median about seven months after the conditions are met
+		monthly_chance = 10
 	}
 
 	trigger = {
@@ -730,7 +701,7 @@ swe_baltic.7 = {
 
 		add_prestige = prestige_severe_bonus
 		add_navy_tradition = navy_tradition_extreme_bonus
-		# Vanilla's own modifier from flavor_dan.68: naval morale +10%, selling efficiency +2%
+		# Vanilla's own modifier from flavor_dan.68
 		add_country_modifier = {
 			modifier = dan_dominium_maris_baltici
 			years = 10
@@ -759,7 +730,7 @@ swe_baltic.7 = {
 		}
 
 		add_prestige = prestige_mild_bonus
-		# The first yield for the war-chest; the Licent below is the lasting revenue, so the mod's usual lump sum
+		# The first yield for the war-chest; the Licent below is the lasting revenue
 		change_gold_effect = { scale = 4 }
 		# The trade axis exists only from the Age of Reformation (1537), and this can fire earlier
 		if = {

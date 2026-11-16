@@ -1,11 +1,10 @@
 ﻿# Event-only buildings in Stockholm, built like vanilla's kronborg and el_escorial_palace:
 # never buildable by hand, only placed by the mod's on_actions, events and decisions.
 
-# Tre Kronor, the royal castle of Stockholm, as the king's residence and seat of government. Its walls
-# are vanilla's castle in Stockholm, which vanilla already draws as Tre Kronor, so this adds no defence.
-# Placed at game start by tc_on_game_start; burns in swe_stockholm.1 or makes way for
-# swe_stockholm_palace. A smaller sco_palace_of_holyroodhouse: half its crown power, few enough noble
-# jobs for Stockholm's nobles in 1337, and castle-sized upkeep instead of capital_building_maintenance.
+# Tre Kronor, the royal castle of Stockholm, as the king's residence and seat of government. Its walls are
+# vanilla's castle in Stockholm, which vanilla already draws as Tre Kronor, so this adds no defence. Placed at
+# game start by tc_on_game_start; burns in swe_stockholm.1 or makes way for swe_stockholm_palace. A smaller
+# version of vanilla's sco_palace_of_holyroodhouse.
 swe_tre_kronor = {
 	audio_tier = 4
 	is_special = yes

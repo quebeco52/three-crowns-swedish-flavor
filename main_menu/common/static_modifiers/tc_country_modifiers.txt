@@ -1,7 +1,7 @@
 ﻿# Country modifiers, each commented with where it's used and the vanilla modifier it's scaled from.
 
-# Added for good by swe_regeringsform_decision: room for one more college. The same single slot as
-# D009's system_of_councils_reform gives Spain for its councils, and the generic age-4 and age-6 advances.
+# Added for good by swe_regeringsform_decision: room for one more college. The same single slot as D009's
+# system_of_councils_reform.
 swe_regeringsformen = {
 	game_data = {
 		category = country
@@ -10,8 +10,7 @@ swe_regeringsformen = {
 }
 
 # Added for 10 years by swe_church.2 when the best pupils of the schools go to the Crown's chancery and
-# counting-house. Vanilla's talented_mufti (0.05, given for 10 years by muslim_school_events.1): a learned man
-# brought into the central government.
+# counting-house. Vanilla's talented_mufti, a learned man brought into the central government.
 swe_chancery_scholars = {
 	game_data = {
 		category = country
@@ -19,8 +18,8 @@ swe_chancery_scholars = {
 	country_cabinet_efficiency = 0.05
 }
 
-# Added for 10 years by swe_council.6 option b, when the provincial bands go home and the Crown hires companies again.
-# Half of vanilla's mercenary_army_policy (0.2), the same as condottieri_contracts_policy and black_army_policy.
+# Added for 10 years by swe_council.6.b, when the provincial bands go home and the Crown hires companies again.
+# Half of vanilla's mercenary_army_policy.
 swe_hired_companies = {
 	game_data = {
 		category = country
@@ -29,7 +28,7 @@ swe_hired_companies = {
 }
 
 # On SKE for 20 years after swe_scania.8.a, when the Crown confirms the Scanian privileges. Vanilla's pair for a
-# celestial governor (20_middle_kingdom.txt:74-75): loyalty 10, a tenth less tribute.
+# celestial governor (20_middle_kingdom.txt).
 swe_scanian_privileges = {
 	game_data = {
 		category = country
@@ -39,7 +38,7 @@ swe_scanian_privileges = {
 }
 
 # On SKE for 10 years after swe_scania.8.b, while the dues of Skanör and Falsterbo go to the Crown's creditor.
-# The mirror of vanilla's additional_tribute (+0.25 for 10 years); the gold paid out equals it at a 20% payment rate.
+# Vanilla's additional_tribute reversed.
 swe_scanian_pledge = {
 	game_data = {
 		category = country
@@ -48,10 +47,19 @@ swe_scanian_pledge = {
 }
 
 # On SKE for 10 years after swe_scania.8.c, when the Crown's governor rules without confirming the privileges.
-# Half of vanilla's demand_additional_tribute (+0.25, liberty desire 20, opinion -50); the 0.1 is 20_middle_kingdom.txt:997.
+# Scaled down from vanilla's demand_additional_tribute.
 swe_scanian_governor = {
 	game_data = {
 		category = country
 	}
 	payment_to_overlord_modifier = 0.1
+}
+
+# Added for 50 years by swe_ostergotland.3.a, when the Crown opens the house for crippled soldiers at Vadstena (it
+# ran from 1640-41 to 1783). Army tradition decay from vanilla's parl_standing_regiments_mod.
+swe_krigsmanshus = {
+	game_data = {
+		category = country
+	}
+	army_tradition_decay = -0.001
 }

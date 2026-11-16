@@ -1,8 +1,8 @@
 ﻿# Effects shared by events in several regions. Each comment lists the events that use it.
 
-# A market for a location: a market village while it's rural, a marketplace level once it's a town or city, since
-# market villages are rural buildings and marketplaces town ones. Set as a level like vanilla's banking.1, not
-# constructed. Location scope. Used by swe_gotaland.13-15, swe_towns.8 and swe_svealand.1.
+# A market for a location: a market village while it is rural, a marketplace level once it is a town or city,
+# as market villages are rural buildings and marketplaces town ones. Set as a level like vanilla's banking.1,
+# not constructed. Location scope. Used by swe_gotaland.13-15, swe_towns.8 and swe_svealand.1.
 swe_grant_market = {
 	if = {
 		limit = { location_rank = location_rank:rural_settlement }
@@ -21,9 +21,9 @@ swe_grant_market = {
 	}
 }
 
-# Craftsmen ordered into a town: laborers move from one of our locations to another, 0.01 a month for 24 months, about
-# a quarter of a pop. Laborers, since rural locations hold almost no burghers. add_migration's owner is the source's
-# owner, so only from a location we own. Country scope; $from$ and $to$ are locations. Used by swe_gotaland.13 and .15.
+# Craftsmen ordered into a town: laborers move from one of our locations to another, about a quarter of a pop
+# in all. Laborers, since rural locations hold almost no burghers. add_migration's owner is the source's owner,
+# so only from a location we own. Country scope; $from$ and $to$ are locations. Used by swe_gotaland.13 and .15.
 swe_craftsmen_move_in = {
 	if = {
 		limit = { owns = $from$ }

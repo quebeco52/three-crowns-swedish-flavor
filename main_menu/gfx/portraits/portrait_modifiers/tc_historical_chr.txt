@@ -24,10 +24,8 @@ tc_historical_characters_accessories = {
 				template = german_hair
 				accessory = male_hair_short_straight_pomp
 			}
-			# NOT WORKING YET: the beard comes out as a short full beard. With weight base = 500
-			# every character got that same short beard, both with this setup (vanilla's Magellan)
-			# and with Edward III's (mode = add, template = all_beards). Hair colour and hairstyle
-			# from this entry do apply, so only the beard is affected.
+			# Not working yet: the beard comes out as a short full beard, here and with Edward III's
+			# setup (mode = add, template = all_beards). Hair colour and hairstyle do apply.
 			accessory = {
 				mode = replace
 				gene = beards

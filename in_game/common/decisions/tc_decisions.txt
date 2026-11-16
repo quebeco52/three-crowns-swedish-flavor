@@ -1,7 +1,6 @@
-﻿# Bottniska handelstvånget: the trade ordinances of 1614 and 1617 bind the Bothnian towns to
-# Stockholm, and the crown takes the Sámi trade from the Birkarlar (swe_birkarl_rights -> swe_bottniska_handelstvanget).
-# Needs a town on the Bothnian coast, since a staple needs towns to bind. None start as towns,
-# so one has to be built first.
+﻿# Bottniska handelstvånget: the trade ordinances of 1614 and 1617 bind the Bothnian towns to Stockholm, and
+# the Crown takes the Sámi trade from the Birkarlar (swe_birkarl_rights -> swe_bottniska_handelstvanget).
+# Needs a town on the Bothnian coast, and none start as towns.
 swe_bottniska_handelstvanget_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_bottniska_handelstvanget_decision.historical_info
@@ -15,8 +14,7 @@ swe_bottniska_handelstvanget_decision = {
 		NOT = { has_unlocked_estate_privilege_trigger = { type = swe_bottniska_handelstvanget } }
 	}
 
-	# In a custom_tooltip: bare, the game printed the rank check against Stockholm,
-	# so it read as if Stockholm had to be a town
+	# In a custom_tooltip: bare, the rank check prints against Stockholm, as if Stockholm had to be a town
 	allow = {
 		owns = location:stockholm
 		custom_tooltip = {
@@ -58,9 +56,8 @@ swe_bottniska_handelstvanget_decision = {
 	}
 }
 
-# Tjärkompaniet: in 1648 the Tar Company got the sole right to buy and export the tar of
-# Österbotten. Unlocks and grants the burgher privilege swe_tjarkompaniet.
-# Needs a tar kiln in Österbotten: no tar industry, no company.
+# Tjärkompaniet: in 1648 the Tar Company got the sole right to buy and export the tar of Österbotten.
+# Unlocks and grants the burgher privilege swe_tjarkompaniet. Needs a tar kiln in Österbotten.
 swe_tar_company_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_tar_company_decision.historical_info
@@ -109,9 +106,8 @@ swe_tar_company_decision = {
 	}
 }
 
-# Lappmarksplakatet: the edict of 1673 freed settlers in the lappmarks from taxes and military
-# service for 15 years. All five lappmark provinces, for the same 15 years.
-# Needs Bottniska handelstvånget: the Crown has to hold the north before it can settle it.
+# Lappmarksplakatet: the edict of 1673 freed settlers in the lappmarks from taxes and military service for
+# 15 years. Needs Bottniska handelstvånget, as the Crown must hold the north before it can settle it.
 swe_lappmarksplakatet_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_lappmarksplakatet_decision.historical_info
@@ -157,15 +153,14 @@ swe_lappmarksplakatet_decision = {
 				}
 			}
 			change_gold_effect = { scale = -2 }
-			# Fifteen years free of taxes and military service; softens what Bottniska and the Tar Company cost them
 			add_estate_satisfaction = { type = estate_type:peasants_estate value = estate_satisfaction_weak_bonus }
 		}
 	}
 }
 
-# Kyrkolagen: the Church Law of 1686 and its yearly household examinations. Sets swe_kyrkolagen,
-# which turns on the literacy bonus inside swe_uppsala_mote.
-# Needs swedish_absolutism: the law came with Charles XI's absolute monarchy.
+# Kyrkolagen: the Church Law of 1686 and its yearly household examinations. Sets swe_kyrkolagen, which
+# turns on the literacy bonus inside swe_uppsala_mote. Needs swedish_absolutism, as the law came with
+# Karl XI's absolute monarchy.
 swe_kyrkolagen_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_kyrkolagen_decision.historical_info
@@ -250,10 +245,10 @@ swe_bergskollegium_decision = {
 	}
 }
 
-# Landslagen: Magnus Eriksson's national law code of about 1350 replaced the provincial laws.
-# Unlocks and adopts swe_landslag in the legal code law, like swe_bergskollegium_decision.
-# Needs legalism and the seats of the three great provincial laws: Uppsala, Linköping and Skara.
-# Not before age_2_renaissance (1342): Swedish land starts with legalism, so it would be free on day one.
+# Landslagen: Magnus Eriksson's national law code of about 1350 replaced the provincial laws. Unlocks and
+# adopts swe_landslag in the legal code law. Needs legalism and the seats of the three great provincial
+# laws, Uppsala, Linköping and Skara. Not before age_2_renaissance (1342), as Swedish land starts with
+# legalism.
 swe_landslag_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_landslag_decision.historical_info
@@ -313,9 +308,9 @@ swe_rikes_lag_decision = {
 	}
 
 	allow = {
-		# Bare key, as in vanilla decisions: decisions load before laws, so policy:swe_landslag is not valid here
+		# Bare key: decisions load before laws, so policy:swe_landslag is not valid here
 		has_policy = swe_landslag
-		capital = { has_building_with_at_least_one_level = supreme_court }
+		capital ?= { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }
@@ -388,10 +383,9 @@ swe_riddarhusordningen_decision = {
 	}
 }
 
-# Tryckfrihetsförordningen: the Freedom of the Press Act of 1766, passed by the Riksdag over the
-# objections of the clergy. Unlocks and adopts swe_tryckfrihet in the press law.
-# Needs a Riksdag that can pass it without the Crown: a parliament and crown power below 0.5,
-# which always holds under vanilla's swe_age_of_freedom.
+# Tryckfrihetsförordningen: the Freedom of the Press Act of 1766, passed by the Riksdag over the objections
+# of the clergy. Unlocks and adopts swe_tryckfrihet in the press law. Needs a parliament and crown power
+# below 0.5, which always holds under vanilla's swe_age_of_freedom.
 swe_tryckfrihet_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_tryckfrihet_decision.historical_info
@@ -433,10 +427,9 @@ swe_tryckfrihet_decision = {
 	}
 }
 
-# Svenska rådmän: in 1471, after Brunkeberg, the town law's rule that half the councillors be Germans
-# was struck out. Opens once the Swedish burghers of Stockholm outnumber the Germans, so assimilation
-# and migration set the date. Ends swe_tyska_radet in every town at once, as it was one law. The Hansa
-# takes vanilla's swe_denies_hsa, as in flavor_swe.55.
+# Svenska rådmän: in 1471, after Brunkeberg, the town law's rule that half the councillors be Germans was
+# struck out. Opens once the Swedish burghers of Stockholm outnumber the Germans, and ends swe_tyska_radet
+# in every town at once. The Hansa takes vanilla's swe_denies_hsa opinion.
 swe_svenska_radman_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_svenska_radman_decision.historical_info
@@ -460,8 +453,8 @@ swe_svenska_radman_decision = {
 		}
 	}
 
-	# The AI waits until swe_council.1's window (1387-1420) has closed, since that event needs the
-	# German council still in place. Form from vanilla generic_age_decisions.txt
+	# The AI waits until 1420, when swe_council.1's window closes, as that event needs the German council
+	# still in place.
 	ai_will_do = {
 		value = 0
 		add = {
@@ -546,10 +539,10 @@ swe_oland_djurgard_decision = {
 	}
 }
 
-# Stockholms slott: Tessin's palace on the site of Tre Kronor. Opens with the age of absolutism, burned
-# or not, as Tessin was already rebuilding the castle's north wing when it burned (swe_stockholm.1).
-# The capital may not already have a great palace, and the rank and political influence are the same as in
-# vanilla's construct_a_grand_palace_decision. Its market goods check is left out. The fire option stays free.
+# Stockholms slott: Tessin's palace on the site of Tre Kronor. Opens with the age of absolutism whether or
+# not the castle has burned (swe_stockholm.1), as Tessin was already rebuilding its north wing when it
+# burned. Rank and political influence as in vanilla's construct_a_grand_palace_decision, without its
+# market goods check.
 swe_stockholm_palace_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_stockholm_palace_decision.historical_info
@@ -604,13 +597,11 @@ swe_stockholm_palace_decision = {
 }
 
 # Regeringsformen: the Instrument of Government of 1634 put the realm under five colleges, each led by one
-# of the great officers of the realm. Opens the Swedish colleges (tc_bureaucracies.txt) through the
-# swe_regeringsform variable, grants one bureaucracy slot (swe_regeringsformen, like Spain's
-# system_of_councils_reform) and installs Kammarkollegium in it, as the old policy was adopted.
-# Svea hovrätt, the first of the five, is left to vanilla's court_of_appeals (flavor_swe.15). That event adopts
-# the policy itself, in the same law as swe_landslag, so the Rikes lag tier lapses until the player
-# switches back; accepted as it is.
-# Needs a parliament, the bureaucracy law and a supreme court in the capital.
+# of the great officers of the realm. Opens the colleges (tc_bureaucracies.txt) through swe_regeringsform,
+# grants a bureaucracy slot (swe_regeringsformen, like Spain's system_of_councils_reform) and installs
+# Kammarkollegium in it. Svea hovrätt, the first of the five, is left to vanilla's flavor_swe.15, which
+# adopts its court_of_appeals policy in the same law as swe_landslag, so the Rikes lag bonus lapses until
+# the player switches back.
 swe_regeringsform_decision = {
 	decision_category = country_specific_decisions
 	historical_info = swe_regeringsform_decision.historical_info
@@ -633,7 +624,7 @@ swe_regeringsform_decision = {
 			has_advance = generic_bureaucracy_4_advance
 		}
 		modifier:has_a_parliamentary_system = yes
-		capital = { has_building_with_at_least_one_level = supreme_court }
+		capital ?= { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }

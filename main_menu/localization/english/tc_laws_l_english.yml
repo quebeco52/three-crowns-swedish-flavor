@@ -79,3 +79,5 @@
  swe_sekreterare_desc: "Our chancellor is a great lord, but the Crown's letters are drafted, its envoys briefed and its business prepared by secretaries of humble birth who answer to the Crown alone. The lords of the council complain that they hear of our decisions last."
  swe_landskapsfanikor: "Landskapens fänikor"
  swe_landskapsfanikor_desc: "Every ten or twenty men of the countryside give one to standing service, and the men of each province march under their own captain in a company of about five hundred. The next war finds them mustered and drilled."
+ swe_ekregalet: "Ekregalet"
+ swe_ekregalet_desc: "Every oak on the land of the [ShowEstateTypeName('peasants_estate')] and the Church belongs to the Crown and is kept for our shipyards. A farmer who fells one pays a fine, though it stands in his own field. The oaks on noble land remain the nobles' own."

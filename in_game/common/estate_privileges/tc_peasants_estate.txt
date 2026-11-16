@@ -1,9 +1,7 @@
-﻿# Birkarlarätt: the Birkarlar, peasant traders of the Torne, Lule and Pite valleys, held the
-# trade with the Sámi and collected their tax. First recorded in 1328 (Telgebrevet); the
-# monopoly was more custom than law. Gustav Vasa took the tax in 1553, and the town charters
-# of 1621 ended the Birkarlar.
-# Balanced against justicia_de_aragon (area-limited crown power) and pomor_outpost (peasant traders).
-# Sweden holds this from game start, so the country-wide cost is small.
+﻿# Birkarlarätt: the Birkarlar, peasant traders of the Torne, Lule and Pite valleys, held the trade with the
+# Sámi and collected their tax. First recorded in 1328 (Telgebrevet); the monopoly was more custom than law.
+# Gustav Vasa took the tax in 1553, and the town charters of 1621 ended the Birkarlar. Area-limited crown
+# power as in vanilla's justicia_de_aragon.
 swe_birkarl_rights = {
 	estate = peasants_estate
 
@@ -23,9 +21,9 @@ swe_birkarl_rights = {
 		"estate_power(estate_type:crown_estate)" >= 0.5
 	}
 
-	# Only the valleys and lappmarks the Birkarlar traded in. Kemi Lappmark was part of
-	# Torne Lappmark until 1633 and came under birkarl influence in the 16th century. The province list sits in a
-	# custom_tooltip, as in swe_bottniska_handelstvanget, which shares its text, since the privilege tooltip doesn't scroll
+	# Only the valleys and lappmarks the Birkarlar traded in. Kemi Lappmark was part of Torne Lappmark until 1633
+	# and came under birkarl influence in the 16th century. The province list sits in a custom_tooltip, shared
+	# with swe_bottniska_handelstvanget, as the privilege tooltip does not scroll.
 	location_modifier = {
 		potential_trigger = {
 			custom_tooltip = {
@@ -35,7 +33,7 @@ swe_birkarl_rights = {
 		}
 		local_fur_output_modifier = 0.2
 		local_wild_game_output_modifier = 0.2
-		# Half market_charter's 0.1: market access adds flat, and most lappmark tiles sit near 0
+		# Half vanilla's market_charter: market access adds flat, and most lappmark tiles sit near 0
 		local_market_access = 0.05
 		local_crown_estate_power = -0.1
 	}

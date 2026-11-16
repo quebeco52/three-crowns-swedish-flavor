@@ -1,10 +1,8 @@
 ﻿namespace = swe_church
 
-# The Uppsala Synod of 1593 adopts the Augsburg Confession and grants swe_uppsala_mote.
-# Fires under any Lutheran ruler: vanilla's Västerås event (flavor_swe.4) converts the ruler with
-# the country, so a Catholic king like Sigismund almost never happens. When the ruler or heir is
-# not Lutheran, only the description changes.
-# Declining keeps the privilege unlocked for later.
+# The Uppsala Synod of 1593 adopts the Augsburg Confession and grants swe_uppsala_mote. Not tied to a Catholic king
+# like Sigismund, who almost never happens since vanilla's flavor_swe.4 converts the ruler with the country. A
+# non-Lutheran ruler or heir changes only the description.
 swe_church.1 = {
 	type = country_event
 	title = swe_church.1.title
@@ -36,7 +34,7 @@ swe_church.1 = {
 		tag = SCA
 		from = 1591.6.1
 		to = 1700.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median spring 1593, ~98% by 1602
+		monthly_chance = 1 # Mostly fired by tc_pulse_church_1
 	}
 
 	trigger = {
@@ -92,13 +90,10 @@ swe_church.1 = {
 	}
 }
 
-# The schools in the early Reformation. Gustav Vasa's open letter of 1533 says the town schools that once had two
-# hundred pupils or more had barely fifty, and some none (Evertsson, Svensk Teologisk Kvartalskrift 2019, citing GR 1533;
-# Annerstedt 1877, 58). The Crown answered with the parishes' money (St Olof's penny for the Uppsala schoolmaster in
-# 1534, fines for withheld tithe in 1540), took the best pupils for its own offices (GR 1544, the demand on Agricola) and
-# left the rebuilding to the cathedral chapters. So the choice is where the few scholars go: the towns' schools, the
-# Crown's cabinet, or the clergy's goodwill. Fires once vanilla's flavor_swe.4 has made Sweden Lutheran. Option a reaches
-# towns and cities of the old realm only (swe_old_realm_trigger), since rural locations hold almost no burghers.
+# Town schools in the early Reformation. Gustav Vasa's open letter of 1533 says schools that once had two hundred
+# pupils or more had barely fifty (Evertsson 2019; Annerstedt 1877). The Crown paid with the parishes' money, took the
+# best pupils for its own offices and left the rebuilding to the cathedral chapters. Option a reaches only towns and
+# cities of the old realm, since rural locations hold almost no burghers.
 swe_church.2 = {
 	type = country_event
 	title = swe_church.2.title
@@ -112,15 +107,18 @@ swe_church.2 = {
 		tag = SCA
 		from = 1531.1.1
 		to = 1570.1.1 # Late enough for a late Reformation
-		monthly_chance = 3 # Median early 1533
+		monthly_chance = 1 # Mostly fired by tc_pulse_church_2
 	}
 
 	trigger = {
 		has_or_had_tag = SWE
 		religion = religion:lutheran
-		any_owned_location = {
-			swe_old_realm_trigger = yes
-			NOT = { location_rank = location_rank:rural_settlement }
+		custom_tooltip = {
+			text = swe_church.2.town_tt
+			any_owned_location = {
+				swe_old_realm_trigger = yes
+				NOT = { location_rank = location_rank:rural_settlement }
+			}
 		}
 	}
 

@@ -1,10 +1,9 @@
 ﻿namespace = swe_stockholm
 
-# The fire of Tre Kronor. On 7 May 1697 the castle burned while the body of Karl XI lay in state there.
-# Fired by tc_on_ruler_death_delayed, with a 25% chance at each royal death from the age of absolutism,
-# while Stockholm is the capital and Tre Kronor still stands. The fire destroys the residence, not
-# vanilla's castle: Stockholm keeps its fort, and rebuilding it is the player's call. Rebuilding at once
-# starts swe_stockholm_palace; otherwise swe_stockholm_palace_decision stays open.
+# The fire of Tre Kronor, 7 May 1697, while the body of Karl XI lay in state there. Fired by tc_on_ruler_death_delayed,
+# with a 25% chance at each royal death from the age of absolutism. The fire destroys the residence, not vanilla's
+# castle, so Stockholm keeps its fort. Rebuilding at once starts swe_stockholm_palace; otherwise
+# swe_stockholm_palace_decision stays open.
 swe_stockholm.1 = {
 	type = country_event
 	title = swe_stockholm.1.title
@@ -83,11 +82,9 @@ swe_stockholm.1 = {
 	}
 }
 
-# Where the King Rests. Fired by tc_on_ruler_death_delayed one to two months after every royal death,
-# so it follows swe_stockholm.1 when the castle burns. Kings were buried in several churches: Magnus
-# Ladulås and Karl Knutsson in the Greyfriars' church on Riddarholmen, Gustav Vasa and Johan III in
-# Uppsala Cathedral, Karl IX in Strängnäs. From Gustav II Adolf in 1634 nearly every monarch was buried
-# on Riddarholmen. The first burial there starts swe_riddarholmskyrkan.
+# Where the King Rests. Fired by tc_on_ruler_death_delayed one to two months after every royal death, so it follows
+# swe_stockholm.1 when the castle burns. From Gustav II Adolf in 1634 nearly every monarch was buried on Riddarholmen;
+# the first burial there starts swe_riddarholmskyrkan.
 swe_stockholm.2 = {
 	type = country_event
 	title = swe_stockholm.2.title
@@ -116,7 +113,7 @@ swe_stockholm.2 = {
 		previous_ruler = {
 			save_scope_as = swe_dead_ruler
 		}
-		# A second portrait, after the dead monarch's: the successor decides (vanilla's coup_attempt.100 pairs them too)
+		# A second portrait after the dead monarch's, for the successor who decides
 		ruler_or_regent ?= { save_scope_as = target_character }
 	}
 
@@ -172,13 +169,10 @@ swe_stockholm.2 = {
 	}
 }
 
-# Serafimerorden. Fredrik I founded the Order of the Seraphim in 1748; the arms of its knights hang in
-# Riddarholmskyrkan, and its bells ring when one of them is buried. Fires once the church stands
-# (swe_stockholm.2), from about 1650, when Kristina first proposed a real Swedish order in council (Immanuelsorden,
-# 2 August 1650; one source, a Riksdag report of 1919 citing the council minutes). Vanilla's order foundings all have
-# date windows too. Founding it makes swe_order_of_the_seraphim the national order.
-# Balanced against vanilla flavor_plc.6 (White Eagle: the cost and prestige of founding) and
-# flavor_brapru.26 (Black Eagle: the nobles' displeasure when the order is refused).
+# Serafimerorden, founded by Fredrik I in 1748; its knights' arms hang in Riddarholmskyrkan. Fires once the church
+# stands (swe_stockholm.2), from about 1650, when Kristina first proposed a Swedish order in council (Immanuelsorden;
+# the only source is a Riksdag report of 1919 citing the council minutes). Values from vanilla's flavor_plc.6 (White
+# Eagle) and flavor_brapru.26 (Black Eagle).
 swe_stockholm.3 = {
 	type = country_event
 	title = swe_stockholm.3.title
@@ -192,7 +186,7 @@ swe_stockholm.3 = {
 		tag = SCA
 		from = 1648.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years, so about 1650 if the church already stands
+		monthly_chance = 1 # Mostly fired by tc_pulse_stockholm_3
 	}
 
 	trigger = {
@@ -242,9 +236,8 @@ swe_stockholm.3 = {
 	}
 }
 
-# Saint George and the dragon in Storkyrkan, consecrated on New Year's Eve 1489 (SBL, Bernt Notke). The text doesn't
-# assume Brunkeberg happened in this game. The statue names no artist, since Notke's authorship is only attributed,
-# and create_art works without one. The cost matches vanilla's statue events.
+# Saint George and the dragon in Storkyrkan, consecrated on New Year's Eve 1489 (SBL, Bernt Notke). The statue names no
+# artist, since Notke's authorship is only attributed; create_art works without one. Cost from vanilla's statue events.
 swe_stockholm.4 = {
 	type = country_event
 	title = swe_stockholm.4.title
@@ -258,7 +251,7 @@ swe_stockholm.4 = {
 		tag = SCA
 		from = 1487.1.1
 		to = 1520.1.1
-		monthly_chance = 3 # Median late 1488
+		monthly_chance = 1 # Mostly fired by tc_pulse_stockholm_4
 	}
 
 	trigger = {
@@ -304,12 +297,10 @@ swe_stockholm.4 = {
 	}
 }
 
-# Sun dogs over Stockholm on 20 April 1535. Olaus Petri read them as omens of rebellion and overthrow and hung a panel
-# of them in Storkyrkan (SBL, Olaus Petri). The panel's inscription gives the hours, "så nær i från siv in til nio",
-# about seven until nine (sv.wiki Vädersolstavlan). The panel there now is a copy from 1636 or a little before (sv.wiki, citing
-# the 1999 examination), and Gillgren (2009) doubts the link to Olaus, which historical_info says. Any religion, since
-# the text names no faith. The stability cost is a step below vanilla's comet sighting (random_event.1, mild), since
-# only one town saw this sky. The painting names no artist, as the painter is unknown, like swe_stockholm.4's statue.
+# Sun dogs over Stockholm, 20 April 1535. Olaus Petri read them as omens of rebellion and overthrow and hung a panel of
+# them in Storkyrkan (SBL, Olaus Petri), though Gillgren (2009) doubts the link to Olaus. The panel there now is a copy
+# from 1636 or a little before (sv.wiki Vädersolstavlan). The painter is unknown, so the painting names no artist.
+# Stability cost a step below vanilla's comet sighting (random_event.1), since only one town saw this sky.
 swe_stockholm.5 = {
 	type = country_event
 	title = swe_stockholm.5.title
@@ -323,7 +314,7 @@ swe_stockholm.5 = {
 		tag = SCA
 		from = 1533.4.1
 		to = 1550.1.1
-		monthly_chance = 3 # Median around 1535
+		monthly_chance = 1 # Mostly fired by tc_pulse_stockholm_5
 	}
 
 	trigger = {
@@ -369,11 +360,10 @@ swe_stockholm.5 = {
 	}
 }
 
-# The regalia. Erik XIV was crowned at Uppsala on 29 June 1561 with a new crown and orb by Cornelis ver Weiden and a
-# key by Peter Holtswijller, all made in Stockholm (Kungliga slotten); the crown was the first Swedish one closed with
-# arches (Klackenberg 2023). Not tied to Erik: fired by tc_on_new_ruler_regalia one to two months after the first
-# succession from 1544, when the crown became hereditary (swe_vasa.3), to 1650, when Kristina re-worked an old crown
-# rather than order a new one.
+# The regalia. Erik XIV was crowned at Uppsala in 1561 with a new crown, orb and key made in Stockholm (Kungliga
+# slotten); the crown was the first Swedish one closed with arches (Klackenberg 2023). Fired by tc_on_new_ruler_regalia
+# one to two months after the first succession from 1544, when the crown became hereditary (swe_vasa.3), to 1650, when
+# Kristina re-worked an old crown rather than order a new one.
 swe_stockholm.6 = {
 	type = country_event
 	title = swe_stockholm.6.title
@@ -388,7 +378,7 @@ swe_stockholm.6 = {
 		government_type = government_type:monarchy
 		has_ruler = yes
 		owns = location:stockholm
-		# Not if that monarch has already died: the next one is asked instead (vanilla culture_religion_events.2)
+		# If that monarch has already died, the next one is asked instead
 		trigger_if = {
 			limit = { exists = scope:new_ruler }
 			ruler ?= { this = scope:new_ruler }
@@ -433,17 +423,10 @@ swe_stockholm.6 = {
 	}
 }
 
-# The realm's chronicle. Olaus Petri's Swedish chronicle survives in a version ending in 1512 and a fuller one running to
-# 1520, and it attacked the king's government. Gustav I condemned the older version in his indictment of Olaus in 1539,
-# sent him written instructions for a chronicle of the reign in 1541 (Olaus revised his own instead), got hold of the
-# revised text in 1554, two years after Olaus died, and had Johan and Erik trace and seize the copies, with house
-# searches. Over a hundred manuscript copies survive; first printed in Uppsala in 1818 (SBL, Olavus Petri, Westin). The
-# king's chronicle was written by Peder Swart, bishop of Västerås from 1557 (d. 1562), from Gustav's birth to Erik's in
-# 1533, close to the king's own account; first printed 1870 (SBL, Peder Andreæ (Svart), Westin). Both SBL articles are
-# Westin's, so 1554 is effectively single-source. Not tied to Gustav or Olaus: any monarch, any faith. Option a is
-# flavor_sco.19's court chronicle (62, legitimacy and prestige mild) without the prestige, plus a weak clergy cost for the
-# searches; option b is flavor_jap.142's hostile chronicle exactly. swe_stockholm.5 also cites Olaus (the sun dogs and
-# the Örebro sentence), so this text leaves those out.
+# The realm's chronicle. Olaus Petri's Swedish chronicle attacked the king's government; Gustav I condemned it in 1539,
+# got hold of the revised text in 1554 and had the copies seized. The king's own chronicle was by Peder Swart (SBL
+# articles by Westin, the only source for 1554). Not tied to Gustav or Olaus. Option a from vanilla's flavor_sco.19,
+# with a clergy cost for the searches; option b from flavor_jap.142.
 swe_stockholm.7 = {
 	type = country_event
 	title = swe_stockholm.7.title
@@ -457,7 +440,7 @@ swe_stockholm.7 = {
 		tag = SCA
 		from = 1535.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1536
+		monthly_chance = 1 # Mostly fired by tc_pulse_stockholm_7
 	}
 
 	trigger = {

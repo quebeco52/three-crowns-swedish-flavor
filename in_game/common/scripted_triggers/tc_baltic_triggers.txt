@@ -60,10 +60,9 @@ swe_russian_port_trigger = {
 	}
 }
 
-# Russia (as above) exists outside the Swedish realm and has no port on the Baltic, as after
-# Stolbovo (1617). The Gulf of Finland and the Gulf of Riga are part of eastern_baltic_sea; Lake
-# Ladoga is not. Same check as flavor_dan.68 (Dominium Maris Baltici), with the four sea areas of
-# flavor_plc's is_port_on_the_baltic.
+# Russia (as above) exists outside the Swedish realm and has no port on the Baltic, as after Stolbovo (1617).
+# The Gulf of Finland and the Gulf of Riga are part of eastern_baltic_sea; Lake Ladoga is not. Same check as
+# vanilla's flavor_dan.68, over the four sea areas of flavor_plc's is_port_on_the_baltic.
 swe_russia_shut_out_trigger = {
 	OR = {
 		location:novgorod.owner ?= { NOT = { swe_is_swedish_realm_trigger = yes } }

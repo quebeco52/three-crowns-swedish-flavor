@@ -1,11 +1,8 @@
 ﻿namespace = swe_scania
 
-# Försvenskningen: after Roskilde (1658) Sweden first promised Skåneland its own law, then from
-# the 1680s brought in Swedish law, church books and priests. Lund University (1666) trained them.
-# Fires whenever Sweden holds all of Skåneland while Danish culture remains there, not from 1658:
-# in 1337 Skåneland is already a Swedish fiefdom. It speeds up assimilation rather than
-# changing anyone's culture.
-# Balanced against flavor_dan.40 (Denmark's reconquest of Scania, Denmark only, so both never fire).
+# Försvenskningen. After Roskilde (1658) Sweden first promised Skåneland its own law, then from the 1680s brought in
+# Swedish law, church books and priests trained at Lund University (1666). Fires whenever Sweden holds all of
+# Skåneland while Danish culture remains, not from 1658, since in 1337 Skåneland is already a Swedish fiefdom.
 swe_scania.1 = {
 	type = country_event
 	title = swe_scania.1.title
@@ -19,7 +16,7 @@ swe_scania.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden holds all of Skåneland
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -55,8 +52,8 @@ swe_scania.1 = {
 				}
 			}
 		}
-		# Lund, where the new university trained the Swedish priests. Development rather than a
-		# university building, which vanilla can block (clergy_lecture_oaths) or the date may not allow
+		# Lund, where the university trained the priests. Development rather than a university building, which
+		# clergy_lecture_oaths or the date can block
 		location:lund = {
 			change_development = development_mild_bonus
 			change_prosperity = prosperity_mild_bonus
@@ -74,9 +71,8 @@ swe_scania.1 = {
 	}
 }
 
-# The Malmö conspiracy of 1658-59 (Rasmussen, Scandia 70:2, and Malmö stad). Executions per Scandia: Mikkelsen,
-# Jørgensen and Brun, 16 December 1659. Fires on Sweden's own rule, not a subject's, whenever Malmö is still mainly
-# Danish, as with swe_scania.1, so the text doesn't name a date.
+# The Malmö conspiracy of 1658-59 (Rasmussen, Scandia 70:2; Malmö stad). Fires whenever Malmö is ours and still
+# mainly Danish, so the text names no date.
 swe_scania.6 = {
 	type = country_event
 	title = swe_scania.6.title
@@ -90,7 +86,7 @@ swe_scania.6 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden itself owns Malmö
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -140,10 +136,9 @@ swe_scania.6 = {
 	}
 }
 
-# Karlskrona, privileges of 10 August 1680 (Sjöhistoriska museet, rapport 2018:1, citing Hillbom 1979 and Indebetou 1878).
-# Vanilla's Swedish dialect already names bregne Karlskrona, so no rename, and the description avoids that name because
-# the town doesn't exist yet. No forced rank, so the modifier works on a rural location. Laborers move because a rural
-# Ronneby has almost no burghers. The customs freedom given on en.wikipedia isn't in that report, so it's left out.
+# Karlskrona's privileges, 10 August 1680 (Sjöhistoriska museet, rapport 2018:1). Vanilla's Swedish dialect already
+# names bregne Karlskrona; the description avoids the name because the town doesn't exist yet. Laborers move because a
+# rural Ronneby has almost no burghers.
 swe_scania.7 = {
 	type = country_event
 	title = swe_scania.7.title
@@ -157,7 +152,7 @@ swe_scania.7 = {
 		tag = SCA
 		from = 1678.1.1
 		to = 1720.1.1
-		monthly_chance = 3 # Median late 1679
+		monthly_chance = 1 # Mostly fired by tc_pulse_scania_7
 	}
 
 	trigger = {
@@ -199,7 +194,7 @@ swe_scania.7 = {
 			amount = 0.05
 			months = 24
 		}
-		# Ronneby's own people, of whatever kind, since a rural location holds almost no burghers
+		# All of Ronneby's pops, since a rural location holds almost no burghers
 		custom_tooltip = {
 			text = swe_scania.7.a_tt
 			swe_all_pops_satisfaction_in = { location = location:ronneby value = pop_satisfaction_mild_penalty }
@@ -219,15 +214,10 @@ swe_scania.7 = {
 	}
 }
 
-# The Scanian homage. Magnus Eriksson took Skåne in pawn from the counts of Holstein in 1332 for 34,000 marks of silver
-# (SBL, Kumlien). In November 1339 he granted Albrekt of Mecklenburg the revenues of Skanör and Falsterbo as security for
-# money he owed him (SBL's "hertig" is anachronistic: Mecklenburg became a duchy in 1348), and in the summer of 1340 the Scanians swore fealty and had their privileges confirmed (SBL, single
-# source for the oath and the pledge): the letter is dated Helsingborg, 28 June 1340 (Kroman, Den danske rigslovgivning
-# indtil 1400, no. 24). Bengt Algotsson as governor of Skåne is disputed (Nordberg 1995), so option c rests on the
-# letter's "prefectus noster" instead. Fires while the fiefdom SKE is ours, so not after vanilla's flavor_dan_skane_war
-# gives Skåne to the Danish king. Every effect is a country-level one on SKE, which shares our ruler. The numbers follow
-# vanilla's subject levers: a celestial governor's loyalty and tribute (20_middle_kingdom), six months of the subject's
-# income (subject_interaction_events.2) and half of demand_additional_tribute, which vanilla allows only on tributaries.
+# The Scanian homage. Magnus Eriksson took Skåne in pawn from the counts of Holstein in 1332 (SBL, Kumlien). In 1339
+# he pledged the revenues of Skanör and Falsterbo to Albrekt of Mecklenburg, and at Helsingborg on 28 June 1340 the
+# Scanians swore fealty and had their privileges confirmed (SBL; Kroman). Option c rests on the letter's "prefectus
+# noster", since Bengt Algotsson as governor is disputed (Nordberg 1995). Fires while the fiefdom SKE is ours.
 swe_scania.8 = {
 	type = country_event
 	title = swe_scania.8.title
@@ -241,7 +231,8 @@ swe_scania.8 = {
 		tag = SCA
 		from = 1338.1.1
 		to = 1360.12.31
-		monthly_chance = 3 # Median about 1340
+		# High, to fire before flavor_dan_skane_war.1, whose chain can end the fiefdom
+		monthly_chance = 5
 	}
 
 	trigger = {
@@ -281,9 +272,13 @@ swe_scania.8 = {
 			base = 25
 		}
 
-		add_gold = {
-			value = scope:swe_scania.monthly_income_trade_and_tax
-			multiply = 6
+		# Guarded because the Historical Events panel previews options without running immediate
+		if = {
+			limit = { exists = scope:swe_scania }
+			add_gold = {
+				value = scope:swe_scania.monthly_income_trade_and_tax
+				multiply = 6
+			}
 		}
 		scope:swe_scania = {
 			add_country_modifier = { modifier = swe_scanian_pledge years = 10 }

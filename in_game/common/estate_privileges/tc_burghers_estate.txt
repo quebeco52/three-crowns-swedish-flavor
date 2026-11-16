@@ -1,8 +1,8 @@
-﻿# Bottniska handelstvånget: from the trade ordinances of 1614 and 1617 the East and West
-# Bothnian towns could trade abroad only through Stockholm. Abolished in 1765.
-# Replaces swe_birkarl_rights through swe_bottniska_handelstvanget_decision: the Sámi trade goes on at half strength,
-# but the crown takes the tax back from the Birkarlar, so their -0.1 crown power in the lappmarks goes.
-# Nothing on the Bothnian coast itself, which already trades in Stockholm's market (1619 AI save).
+﻿# Bottniska handelstvånget: from the trade ordinances of 1614 and 1617 the East and West Bothnian towns could
+# trade abroad only through Stockholm; abolished in 1765. Replaces swe_birkarl_rights through
+# swe_bottniska_handelstvanget_decision: the Sámi trade goes on at half strength, but the Crown takes the tax
+# back, so the Birkarlar's crown power penalty goes. Nothing on the Bothnian coast itself, which already trades
+# in Stockholm's market.
 swe_bottniska_handelstvanget = {
 	estate = burghers_estate
 
@@ -15,14 +15,14 @@ swe_bottniska_handelstvanget = {
 		NOT = { has_estate_privilege = estate_privilege:swe_birkarl_rights }
 	}
 
-	# Lower than the other Swedish privileges (0.5): the Riksdag abolished the staple in 1765, when the
-	# crown was weak, and revoking a privilege already costs stability
+	# Revocable at lower crown power than the other Swedish privileges, as the Riksdag abolished the staple in
+	# 1765, when the Crown was weak.
 	can_revoke = {
 		"estate_power(estate_type:crown_estate)" >= 0.3
 	}
 
-	# The old birkarl lands (same provinces as swe_birkarl_rights). The province list sits in a custom_tooltip,
-	# because the privilege tooltip doesn't scroll and five provinces print one line each
+	# The old birkarl lands. The province list sits in a custom_tooltip, as the privilege tooltip does not
+	# scroll and five provinces print one line each.
 	location_modifier = {
 		potential_trigger = {
 			custom_tooltip = {
@@ -35,7 +35,7 @@ swe_bottniska_handelstvanget = {
 		local_market_access = 0.05
 	}
 
-	# The staple. Kept small: Stockholm is already the main market of the north
+	# The staple, kept small as Stockholm is already the main market of the north
 	location_modifier = {
 		potential_trigger = {
 			this = location:stockholm
@@ -49,10 +49,9 @@ swe_bottniska_handelstvanget = {
 	}
 }
 
-# Tjärkompaniet: in 1648 a Stockholm company got the sole right to buy and export the tar of Österbotten.
-# It lost the monopoly from 1682 to 1689 and was abolished in 1715. Unlocked and granted by
-# swe_tar_company_decision and hidden until then, as vanilla's manila_galleon_privilege. It was a tier of
-# swe_bottniska_handelstvanget until it moved out, so it no longer sits greyed in that privilege's tooltip.
+# Tjärkompaniet: in 1648 a Stockholm company got the sole right to buy and export the tar of Österbotten. It
+# lost the monopoly from 1682 to 1689 and was abolished in 1715. Unlocked and granted by
+# swe_tar_company_decision and hidden until then, as vanilla's manila_galleon_privilege.
 swe_tjarkompaniet = {
 	estate = burghers_estate
 
@@ -70,10 +69,9 @@ swe_tjarkompaniet = {
 		"estate_power(estate_type:crown_estate)" >= 0.5
 	}
 
-	# Above the single-town scandinavian_tar_privileges (+0.2 tar, with an efficiency penalty)
-	# because Österbotten is thinly settled subpolar forest, and it only pays where tar kilns are built.
-	# Tar kilns stand only on lumber tiles and burn 1.11 lumber per tar, hence the lumber. No
-	# local_tar_establishment_speed: ESTABLISHMENT_SYSTEM_ENABLED = no in 1.4, so it does nothing.
+	# Stronger than vanilla's single-town scandinavian_tar_privileges, as Österbotten is thinly settled forest
+	# and it only pays where tar kilns are built. Tar kilns stand only on lumber tiles and burn lumber, hence
+	# the lumber. No local_tar_establishment_speed: ESTABLISHMENT_SYSTEM_ENABLED = no in 1.4, so it does nothing.
 	location_modifier = {
 		potential_trigger = {
 			custom_tooltip = {

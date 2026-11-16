@@ -1,8 +1,7 @@
-﻿# Uppsala mötes beslut: the Uppsala Synod of 1593 bound the Swedish church to the Augsburg
-# Confession and every future king to uphold it. Granted through swe_church.1. Tiers below: Kyrkolagen
-# (swe_kyrkolagen_decision) and Uppsala's charter (swe_svealand.5).
-# Balanced against clergy_enforced_unity (+0.25 clergy power, +10% conversion of all faiths):
-# less power, and the conversion bonus only works on heretics (same as Castile's advance).
+﻿# Uppsala mötes beslut: the Uppsala Synod of 1593 bound the Swedish church to the Augsburg Confession and every
+# future king to uphold it. Granted through swe_church.1. Tiers below: Kyrkolagen (swe_kyrkolagen_decision) and
+# Uppsala's charter (swe_svealand.5). Based on vanilla's clergy_enforced_unity, with less power and conversion
+# of heretics only.
 swe_uppsala_mote = {
 	estate = clergy_estate
 
@@ -22,13 +21,11 @@ swe_uppsala_mote = {
 		global_heretic_pop_conversion_speed_modifier = 0.1
 	}
 
-	# Kyrkolagen (swe_kyrkolagen_decision): the Church Law of 1686 made every Swede learn to read.
-	# Raises how far commoners' literacy can go rather than how fast literacy grows: the household
-	# examinations reached every home. +3 for the three classes basic_religious_education gives +5, lower
-	# because this takes no policy slot and stacks with any education policy. Its cost is that policy's pull
-	# towards spiritualist, at the tiny rate of education_of_the_clergy: the law bound every subject to the
-	# Augsburg Confession, "endast och allena" (sv.wiki 1686 års kyrkolag). Not global_monthly_literacy:
-	# it shows two decimals, so 0.005 reads +0.00%.
+	# Kyrkolagen (swe_kyrkolagen_decision): the Church Law of 1686 made every Swede learn to read. Its household
+	# examinations reached every home, so it raises commoners' maximum literacy rather than its growth. Below
+	# vanilla's basic_religious_education, as it takes no policy slot and stacks with any education policy. The
+	# drift to spiritualist is the law binding every subject to the Augsburg Confession (sv.wiki 1686 års
+	# kyrkolag). Not global_monthly_literacy, which shows two decimals, so small values read +0.00%.
 	country_modifier = {
 		potential_trigger = {
 			custom_tooltip = {
@@ -42,10 +39,10 @@ swe_uppsala_mote = {
 		monthly_towards_spiritualist = societal_value_tiny_monthly_move
 	}
 
-	# Uppsala's charter (swe_svealand.5): the privileges of 15 March 1595 had the university examine schoolmasters and
-	# keep every school to the same plan, and Sigismund's confirmation of the clergy's privileges in 1594 had bound the
-	# Crown to keep the university (Annerstedt 1877, 88-90). Half of clerical_institutions' clergy +10, lower for the
-	# same reason as Kyrkolagen's: no policy slot, and it stacks. Clergy only; the burghers' schools are swe_church.2's.
+	# Uppsala's charter (swe_svealand.5): the privileges of 15 March 1595 had the university examine schoolmasters
+	# and keep every school to the same plan, and Sigismund's confirmation of the clergy's privileges in 1594 bound
+	# the Crown to keep the university (Annerstedt 1877). Half of vanilla's clerical_institutions, as it takes no
+	# policy slot and stacks. Clergy only; the burghers' schools are swe_church.2's.
 	country_modifier = {
 		potential_trigger = {
 			custom_tooltip = {

@@ -1,13 +1,9 @@
 ﻿namespace = swe_norrland
 
-# Province and territory events for Gästrikland, Hälsingland, Ångermanland and Jämtland.
-# Each is one self-contained event. Their effects stay on the locations named, and none changes a town rank.
+# Events for Gästrikland, Hälsingland, Ångermanland and Jämtland.
 
-# The castle at Faxeholm burns. The Vitalian Brothers built it in 1395/96, the Crown held it by the end of
-# 1398, and the Hälsingar stormed and burned it in 1434. It isn't tied to vanilla's Engelbrekt event
-# (flavor_swe.2), which rarely fires, or to the realm's peasant satisfaction, which says little about one
-# castle and seldom falls below 0.5. Ownership and the date are enough. No castle is built or
-# destroyed, since forts are the player's to build by hand.
+# The castle at Faxeholm burns. The Vitalian Brothers built it in 1395/96, the Crown held it by 1398, and the
+# Hälsingar stormed and burned it in 1434.
 swe_norrland.1 = {
 	type = country_event
 	title = swe_norrland.1.title
@@ -21,7 +17,7 @@ swe_norrland.1 = {
 		tag = SCA
 		from = 1432.1.1
 		to = 1500.1.1
-		monthly_chance = 3 # Median about two years, so about 1434
+		monthly_chance = 1 # Mostly fired by tc_pulse_norrland_1
 	}
 
 	trigger = {
@@ -84,9 +80,9 @@ swe_norrland.1 = {
 	}
 }
 
-# Gustav Vasa gives the fishermen of Gefle the Norrland coast (1557) for every tenth barrel of salted herring.
-# The monopoly lasted until 1766; the modifiers run 50 years, like swe_peasant_skippers, not to that end. Gefle, Hudiksvall and Härnösand are vanilla's fish locations on this coast,
-# so the output modifiers count there. Refusing leaves the coast's fishing as it was, so it changes no output.
+# Gustav Vasa gives the fishermen of Gefle the Norrland coast, 1557, for every tenth barrel of salted herring. The
+# monopoly lasted until 1766; the modifiers run 50 years. Gefle, Hudiksvall and Härnösand are vanilla's fish
+# locations on this coast.
 swe_norrland.2 = {
 	type = country_event
 	title = swe_norrland.2.title
@@ -100,7 +96,7 @@ swe_norrland.2 = {
 		tag = SCA
 		from = 1555.1.1
 		to = 1620.1.1
-		monthly_chance = 3 # Median late 1556
+		monthly_chance = 1 # Mostly fired by tc_pulse_norrland_2
 	}
 
 	trigger = {
@@ -149,10 +145,9 @@ swe_norrland.2 = {
 	}
 }
 
-# Döda fallet: on the night of 6-7 June 1796 the Indalsälven broke through a timber channel and Ragundasjön
-# emptied in about four hours. Both options turn the lakebed into farmland: stone to millet, vanilla's grain
-# for most Swedish farmland. Ragunda starts Norwegian, so this needs Sweden to have taken Jämtland. Option b pays for
-# the flood, so Selånger keeps its prosperity, and takes the lakebed as crown land.
+# Döda fallet, June 1796. The Indalsälven broke through a timber channel and Ragundasjön emptied in about four hours.
+# Both options turn the lakebed into millet, vanilla's grain for most Swedish farmland. Ragunda starts Norwegian, so
+# this needs Jämtland taken. Option b pays for the flood, so Selånger keeps its prosperity.
 swe_norrland.3 = {
 	type = country_event
 	title = swe_norrland.3.title
@@ -166,7 +161,7 @@ swe_norrland.3 = {
 		tag = SCA
 		from = 1794.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median late 1795
+		monthly_chance = 1 # Mostly fired by tc_pulse_norrland_3
 	}
 
 	trigger = {
@@ -228,11 +223,10 @@ swe_norrland.3 = {
 	}
 }
 
-# Hälsingland flax: Olof Broman (1676-1750), school rector of Hudiksvall from 1719 and vicar from 1728 (sv.wiki), is
-# credited with water-powered scutching by Växbo Lin's history page, the only source found for it, and
-# about 1,000 flax barns and mills followed. Flor, in Mo just outside Söderhamn, made damask for Europe's
-# courts. Vanilla has no fiber crops here. Söderala stands in for Flor. Raw material changes follow vanilla's
-# flavor_swe.38 and flavor_swe.44.
+# Hälsingland flax. Olof Broman, rector and later vicar in Hudiksvall, is credited with water-powered scutching
+# (Växbo Lin, the only source), and about 1,000 flax barns and mills followed. Flor, in Mo outside Söderhamn, made
+# damask for Europe's courts; Söderala stands in for it. Vanilla has no fiber crops here; raw material changes
+# follow flavor_swe.38.
 swe_norrland.6 = {
 	type = country_event
 	title = swe_norrland.6.title
@@ -246,7 +240,7 @@ swe_norrland.6 = {
 		tag = SCA
 		from = 1698.1.1
 		to = 1780.1.1
-		monthly_chance = 3 # Median late 1699
+		monthly_chance = 1 # Mostly fired by tc_pulse_norrland_6
 	}
 
 	trigger = {
@@ -291,14 +285,10 @@ swe_norrland.6 = {
 	}
 }
 
-# Carved saints. Haaken Gulleson, painter and workshop leader in Enånger parish, Hälsingland, worked across southern
-# Norrland in the early 16th century (Uppsala University research project; Hälsinglands museum, which says he called
-# himself a painter). He signed six sculptures (en.wiki citing Karlsson 2005, so the text says "several"), among them the
-# Anna själv tredje in Enånger's old church, dated to 1520 (Uppsala University); a signed Madonna is at Forsa (en.wiki).
-# Enånger lies on the hudiksvall/soderala border; Forsa and Njutånger lie clearly in hudiksvall. The parishes paid for
-# their church art, not the Crown, so the free option is the historical one; the levy is the Crown's alternative, sized
-# below swe_dalarna.1 (scale 4 for a mild peasant penalty). Catholic only, and the window opens before the usual
-# Reformation so it fires first. The statue sits below flavor_pol.57's altarpiece (70, a named master, -6).
+# Carved saints. Haaken Gulleson, workshop leader in Enånger, worked across southern Norrland in the early 16th
+# century. His signed works include the Anna själv tredje in Enånger's old church, dated to 1520, and a Madonna at
+# Forsa, in hudiksvall (Uppsala University; Hälsinglands museum; en.wiki). The parishes paid for their church art, so
+# the free option is historical. Catholic only; the window opens before the usual Reformation.
 swe_norrland.7 = {
 	type = country_event
 	title = swe_norrland.7.title
@@ -312,7 +302,7 @@ swe_norrland.7 = {
 		tag = SCA
 		from = 1514.1.1
 		to = 1530.1.1
-		monthly_chance = 3 # Median late 1515
+		monthly_chance = 1 # Mostly fired by tc_pulse_norrland_7
 	}
 
 	trigger = {

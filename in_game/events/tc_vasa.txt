@@ -39,9 +39,8 @@ swe_vasa.1 = {
 	}
 }
 
-# The estates offer the crown to the House of Vasa: Gustav if he can take it, otherwise
-# another Vasa (swe_select_vasa_candidate). Nothing keeps Gustav alive until then.
-# Balanced against vanilla flavor_swe.47 (ruler replaced by a pretender)
+# The estates offer the crown to the House of Vasa, to Gustav if he can take it, otherwise to another Vasa
+# (swe_select_vasa_candidate). Nothing keeps Gustav alive until then.
 swe_vasa.2 = {
 	type = country_event
 	title = swe_vasa.2.title
@@ -91,10 +90,9 @@ swe_vasa.2 = {
 			base = 90
 		}
 
-		# The candidate can hold an older faith if the realm converted after he was made (swe_vasa.1 before
-		# flavor_swe.4), and under vanilla's heir_same_religion his children then can't inherit, so the crown
-		# could leave the house. Converted before the crowning so the heir is valid from the start, directly as in
-		# vanilla french_wars_religion.txt:440: change_religion_for_ruler_and_family needs country = ROOT.
+		# The candidate can hold an older faith if the realm converted after he was made, and under vanilla's
+		# heir_same_religion his children then can't inherit. Converted before the crowning so the heir is valid, and
+		# directly, since change_religion_for_ruler_and_family needs country = ROOT.
 		if = {
 			limit = {
 				scope:swe_vasa_candidate = { religion != root.religion }
@@ -115,8 +113,8 @@ swe_vasa.2 = {
 			custom_tooltip = swe_vasa.2.a.religion_tt
 		}
 		set_new_ruler_with_union_if_senior = { character = scope:swe_vasa_candidate }
-		# Unions start federal, so without an established seniority the effect breaks the union
-		# and every partner gets cb_claim_throne (vanilla unionevents.100), which its own tooltip leaves out
+		# Unions start federal, so without seniority the effect breaks the union and gives every partner
+		# cb_claim_throne (unionevents.100), which its own tooltip leaves out
 		if = {
 			limit = {
 				union ?= {
@@ -148,9 +146,8 @@ swe_vasa.2 = {
 	}
 }
 
-# The Hereditary Union of Västerås ends the elective crown (Konungabalken).
-# Not tied to the Vasa: any Swedish monarch in good standing can ask for it.
-# Balanced against vanilla flavor_swe.13 and flavor_swe.18 (noble privilege revoked)
+# The Hereditary Union of Västerås ends the elective crown (Konungabalken). Not tied to the Vasa, so any Swedish
+# monarch in good standing can ask for it.
 swe_vasa.3 = {
 	type = country_event
 	title = swe_vasa.3.title
@@ -164,7 +161,7 @@ swe_vasa.3 = {
 		tag = SCA
 		from = 1542.1.1
 		to = 1600.1.1
-		monthly_chance = 3 # Median late 1543
+		monthly_chance = 3
 	}
 
 	trigger = {

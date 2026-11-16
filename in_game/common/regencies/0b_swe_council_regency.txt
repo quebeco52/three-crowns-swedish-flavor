@@ -3,7 +3,6 @@
 # 1_nobles_regency.txt and 10_consort_regency.txt, since regencies have no priority key.
 # The regent is the head of the cabinet if one has been promoted, otherwise any councillor, and must pass
 # swe_council_regent_trigger, which bars foreigners. With no eligible councillor a vanilla type takes over.
-# Cabinet efficiency is twice vanilla's cabinet_head_regency (0.05); crown power as iro_assertive_council_of_fifty (-0.1).
 # Not a consort's regency, so vanilla's flavor_swe.16 and .19 can still fire.
 swe_council_regency = {
 	allow = {

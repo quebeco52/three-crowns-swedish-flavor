@@ -23,8 +23,8 @@ swe_baltic_licences = {
 	yearly_decay = 1
 }
 
-# Skåne's opinion of us after swe_scania.8.c, when our governor rules without new charters. Half of vanilla's
-# opinion_demanded_additional_tribute (-50, decay 2), the same as opinion_restrict_nobles.
+# Skåne's opinion of us after swe_scania.8.c, when our governor rules without new charters. Same as vanilla's
+# opinion_restrict_nobles.
 swe_scanian_governor_resented = {
 	value = -25
 	yearly_decay = 2

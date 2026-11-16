@@ -1,14 +1,10 @@
 ﻿namespace = swe_lithuania
 
-# Content for Lithuania, which Sweden held for little more than a year. Fires whenever Sweden owns the land, not by date.
+# Events for Lithuania, which Sweden held for little more than a year. Fires on ownership, not by date.
 
-# The Union of Kėdainiai. On 17 August 1655 Janusz Radziwiłł put the Grand Duchy under Swedish protection, and on 20
-# October at Kėdainiai he and more than a thousand nobles made Karl X Gustav Grand Duke, with De la Gardie negotiating:
-# the Lithuanians kept their statutes, rights and freedom of religion (Meilus, ldkistorija.lt; en.wiki Union of
-# Kėdainiai). Confiscations and taxes followed, the lesser nobility turned, and by 1657 it was over. The tax figure and
-# the promise to the peasants in en.wiki's Swedish Lithuania rest on one source, so the text leaves them out. Fires
-# whenever Sweden owns three locations in Lithuania or Samogitia and Lithuanian lords still hold land there. The text
-# is era- and religion-neutral, since Lithuania stays pagan until 1387.
+# The Union of Kėdainiai, 1655. Janusz Radziwiłł and more than a thousand nobles made Karl X Gustav Grand Duke, and
+# the Lithuanians kept their statutes, rights and freedom of religion; by 1657 it was over (Meilus, ldkistorija.lt;
+# en.wiki). The text is era- and religion-neutral, since Lithuania stays pagan until 1387.
 swe_lithuania.1 = {
 	type = country_event
 	title = swe_lithuania.1.title
@@ -22,7 +18,7 @@ swe_lithuania.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes the land
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -86,7 +82,7 @@ swe_lithuania.1 = {
 					limit = { NOT = { has_location_modifier = swe_war_contributions } }
 					add_location_modifier = { modifier = swe_war_contributions years = 10 }
 				}
-				# The lords' anger stays in Lithuania, in place of a country-wide estate penalty
+				# The lords' anger stays in Lithuania
 				every_pop = {
 					limit = {
 						pop_type = pop_type:nobles

@@ -1,13 +1,11 @@
 ﻿namespace = swe_prussia
 
-# Content for Prussia, which Sweden held only briefly. Fires whenever Sweden owns the land, not by date.
+# Events for Prussia, which Sweden held only briefly. Fires whenever Sweden owns the land, not by date.
 
-# The Prussian licent. Gustav II Adolf landed at Pillau in 1626, and Oxenstierna ran the tolls of Swedish Prussia from
-# Elbing. At Altmark (1629) Sweden kept Elbing, Braunsberg, Pillau and Memel with a share of the shipping tolls of the
-# Prussian ports (Geijer; en.wiki Truce of Altmark, citing Sundberg, who says two thirds), until Stuhmsdorf (1635). At
-# Königsberg (1656) the Elector had to hand over half his port duties, and at Labiau the same year Sweden gave them up
-# (en.wiki Treaty of Labiau, citing Shennan 1995 and Roberts 1988). Fires whenever Sweden owns one of the five ports.
-# The toll is the licent swe_baltic.2 can put on Riga; the freedoms are the Baltic towns' privileges.
+# The Prussian licent. Gustav II Adolf landed at Pillau in 1626. At Altmark (1629) Sweden kept Elbing, Braunsberg,
+# Pillau and Memel with a share of the Prussian ports' tolls until Stuhmsdorf (1635), and at Königsberg (1656) the
+# Elector had to hand over half his port duties, given up at Labiau the same year (Geijer; en.wiki). The toll is the
+# licent swe_baltic.2 can put on Riga; the freedoms are the Baltic towns' privileges.
 swe_prussia.1 = {
 	type = country_event
 	title = swe_prussia.1.title
@@ -21,7 +19,7 @@ swe_prussia.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden takes a Prussian port
+		monthly_chance = 15
 	}
 
 	trigger = {

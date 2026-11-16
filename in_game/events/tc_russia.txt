@@ -1,23 +1,10 @@
 ﻿namespace = swe_russia
 
-# Content for the Russian lands beyond Ingria and Kexholm. Sweden held Novgorod in 1611-17 and never Moscow, so .1 is a
-# milestone for the player (AGENTS.md, "Events must actually fire"): it fires whenever Sweden or a Swedish subject
-# holds each city. .2 fires on whoever holds Novgorod and borders us, so AI games see it; .3 needs Archangel, which only
-# a player takes.
+# Content for the Russian lands beyond Ingria and Kexholm.
 
-# Novgorod and Moscow. Under the Treaty of Vyborg (1609) Vasily Shuisky hired a mercenary corps from Karl IX, paid by
-# Russia, for Kexholm, and De la Gardie entered Moscow with Skopin-Shuisky in March 1610; the mercenaries went over
-# to the Poles at Klushino on 24 June 1610 (SBL, Jakob De la Gardie). De la Gardie stormed Novgorod on 16 July 1611
-# and held it to 1617; Widekindi (1671) has him promise to keep its "ancient religion of the Greek rite" inviolate, St
-# Sophia kept its services, and he demanded 6,000 roubles of Metropolitan Isidor in 1616 (A. A. Selin, Novgorod 1611-17,
-# from RGADA and Riksarkivet). He came home with sables and church bells, which he said he had bought from soldiers who
-# took them "med krigets rätt", and left the doors thought to be Sigtuna's "out of regard for opinion in Novgorod"
-# (SBL); the Novgorod archives are in Riksarkivet. Gustav II Adolf promised Munich safety and its religion for 300,000
-# Reichstaler in 1632; it raised about a third and gave 42 hostages (Altmann 2018). Prague's castle treasures went to
-# Stockholm in 1648 (Uppsala University Library, Codex Argenteus). Karl XII meant, in Piper's words, to make the peace
-# "i själva Moskva" (Åberg, Svensk Tidskrift 1959, after Haintz) and turned south at Tatarsk in September 1708 (SBL,
-# Karl XII). The Kremlin treasury really was looted in 1610-12, but by the Polish-Lithuanian garrison (Kozlyakov), so
-# option a rests on Munich, Prague and Novgorod, not on that. Notes: .research/milestones-2026-11-10/russia.md.
+# Novgorod and Moscow, a milestone: our realm holds both cities. Sweden held Novgorod in 1611-17, where St Sophia kept
+# its services, and never Moscow (SBL, Jakob De la Gardie; Selin). Option a rests on Munich (1632), Prague (1648) and
+# Novgorod, not on the Kremlin treasury, which the Polish-Lithuanian garrison looted in 1610-12 (Kozlyakov).
 swe_russia.1 = {
 	type = country_event
 	title = swe_russia.1.title
@@ -52,7 +39,7 @@ swe_russia.1 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 10 # Median about seven months after our realm holds both cities
+		monthly_chance = 10
 	}
 
 	trigger = {
@@ -91,14 +78,14 @@ swe_russia.1 = {
 				save_scope_as = swe_novgorod_holder
 			}
 		}
-		# The gold of options a and b follows Moscow's own wealth, as vanilla's conquest_mission_events.4 does
+		# The gold of options a and b follows Moscow's own wealth, as in vanilla's conquest_mission_events.4
 		location:moscow = {
 			province = { save_scope_as = swe_moscow_province }
 		}
 	}
 
 	# The treasury to Stockholm, as from Prague in 1648. Vanilla's looting of a conquered capital
-	# (conquest_mission_events.4.a): four times the province's tax base, and mild prosperity loss across it.
+	# (conquest_mission_events.4.a).
 	option = {
 		name = swe_russia.1.a
 		ai_chance = {
@@ -106,9 +93,13 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_extreme_bonus
-		add_gold = {
-			value = scope:swe_moscow_province.province_tax_base
-			multiply = 4
+		# Guarded because the Historical Events panel previews options without running immediate
+		if = {
+			limit = { exists = scope:swe_moscow_province }
+			add_gold = {
+				value = scope:swe_moscow_province.province_tax_base
+				multiply = 4
+			}
 		}
 		custom_tooltip = {
 			text = swe_russia.1.a_prosperity_tt
@@ -143,7 +134,7 @@ swe_russia.1 = {
 		}
 	}
 
-	# A ransom, as Munich paid in 1632. Twice the province's tax base, as conquest_mission_events.4.b.
+	# A ransom, as Munich paid in 1632 (vanilla's conquest_mission_events.4.b)
 	option = {
 		name = swe_russia.1.b
 		ai_chance = {
@@ -151,9 +142,12 @@ swe_russia.1 = {
 		}
 
 		add_prestige = prestige_severe_bonus
-		add_gold = {
-			value = scope:swe_moscow_province.province_tax_base
-			multiply = 2
+		if = {
+			limit = { exists = scope:swe_moscow_province }
+			add_gold = {
+				value = scope:swe_moscow_province.province_tax_base
+				multiply = 2
+			}
 		}
 		custom_tooltip = {
 			text = swe_russia.1.b_tt
@@ -207,20 +201,10 @@ swe_russia.1 = {
 	}
 }
 
-# The governor in Novgorod. After Moscow took Novgorod in 1478, Sweden's business with Russia went through the governor
-# there. Ivan IV would not treat with Gustav I, an elected king, as an equal; Gustav opened talks through Prince Mikhail
-# Glinsky in 1556, and the forty-year truce, sworn on the cross in Novgorod on 2 April 1557, referred Swedish envoys to
-# Novgorod for good (en.wiki Treaty of Novgorod (1557), after de Madariaga 2006 and Heininen & Heikkilä 2002; en.wiki
-# Russo-Swedish War (1554-1557), after Shkvarov 2012 and Eriksson 2007). Johan III's embassy of 1569 under Bishop Paul
-# Juusten was kept three months in Novgorod by a governor who insisted they treat with him, then held at Murom; Johan
-# demanded to treat with the tsar himself, and Ivan answered in 1571 that he should be grateful to deal with the governor
-# (en.wiki Correspondence between John III and Ivan IV, after Ericson 2004 and Larsson 2005). Sweden had a resident of its
-# own in Moscow from March 1631 (Taimre, Tuna 1/2012, p. 6; en.wiki Catharina Stopia), so the window closes then. The
-# opened letter of 1639 is Taimre's alone (p. 9, from the resident's letters). Fires once while a Russian monarchy that
-# rules Novgorod from elsewhere borders us, at peace and with no truce. The truce is SCALED_TRUCE_YEARS (10, 00_defines);
-# the prestige cost is king_in_prussia.5's for accepting a lower rank; refusing costs what a slight costs in
-# random_event.18, the CB for them. No border-raiding option: whose raids began the war of 1554 is unclear, and the
-# player can make war by hand.
+# The governor in Novgorod. After 1478 Sweden dealt with Russia through the governor there: Ivan IV would not treat
+# with Gustav I, an elected king, as an equal, and when Johan III demanded to treat with the tsar himself, Ivan
+# answered in 1571 that he should be grateful to deal with the governor (en.wiki Treaty of Novgorod; Correspondence
+# between John III and Ivan IV). Sweden had a resident in Moscow from 1631 (Taimre), so the window closes then.
 swe_russia.2 = {
 	type = country_event
 	title = swe_russia.2.title
@@ -235,7 +219,7 @@ swe_russia.2 = {
 		tag = SCA
 		from = 1478.1.1
 		to = 1631.3.1
-		monthly_chance = 3 # Median about two years after such a neighbour appears
+		monthly_chance = 1 # Mostly fired by tc_pulse_russia_2
 	}
 
 	trigger = {
@@ -305,18 +289,9 @@ swe_russia.2 = {
 	}
 }
 
-# The Dvina mouth. From 1553 western ships reached Russia up the Northern Dvina, and Archangel (1584) became Russia's
-# gate to western Europe. Sweden wanted that trade through its own ports: Teusina (1595) channelled the foreigners'
-# trade through Viborg and Reval (histdoc.net translation; en.wiki Treaty of Teusina); Philipp Crusius, later von
-# Krusenstjerna, urged it in memoranda from 1643 to 1660 and the customs of 1648 cut the transit duty at Reval, Narva and
-# Nyen (en.wiki after Soom, SBL; Nyström 1937), his memorandum of 1648 proposing to "dismember" the Archangel voyage
-# (Nyström, n. 64). After the embassy of 1673-74 Jochum Lillienhoff told the Board of Trade the only course left was to
-# take Archangel and block its harbour mouth (Nyström §8; single source, so not in the text). In 1701 seven ships under
-# Commodore Carl Henrik von Löwe sailed from Göteborg to destroy the port; pilots taken on the way ran two aground under
-# the new fort of Novodvinsk (de.wiki Angriff auf Archangelsk, after Anderson 1969 and Hoffmann 2010; historyofwar.org).
-# Fires from the age of the Reformation while we own Arkhangelsk and one of Narva, Nyen and Reval, and Russia has no
-# Baltic port (swe_russia_shut_out_trigger, as swe_baltic.4). Closing the bar cuts the trade embark efficiency that
-# Arkhangelsk's harbour gives it; the cargo goes to the Baltic gates (swe_white_sea_cargo). Option b's licent at
+# The Dvina mouth. Archangel (1584) became Russia's gate to western Europe, and Sweden wanted that trade through its own
+# ports (en.wiki Treaty of Teusina; Nyström 1937). In 1701 seven ships under Carl Henrik von Löwe sailed to destroy the
+# port, but two ran aground under the new fort of Novodvinsk (de.wiki Angriff auf Archangelsk). Option b's licent at
 # Archangel is our inference from the Baltic licent, not history.
 swe_russia.3 = {
 	type = country_event
@@ -331,7 +306,7 @@ swe_russia.3 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after we hold the Dvina mouth and a Baltic gate
+		monthly_chance = 15
 	}
 
 	trigger = {

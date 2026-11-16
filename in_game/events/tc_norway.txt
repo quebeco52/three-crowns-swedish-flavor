@@ -1,14 +1,12 @@
 ﻿namespace = swe_norway
 
-# Content for Norwegian land that Sweden takes. Sweden claimed the Arctic coast for a generation and never held it,
-# so this fires whenever Sweden owns the land, not by date.
+# Events for Norway and Norwegian land that Sweden takes. .1 was removed, so the numbering skips it. Sweden claimed
+# the Arctic coast for a generation and never held it, so .2 fires whenever Sweden owns the land, not by date.
 
-# The Arctic coast. Swedish bailiffs and birkarlar taxed the Sámi up to the coast from the mid-1500s. After Teusina (1595)
-# Duke Karl claimed two-thirds of the Sámi tax between Malangen and Varanger, and a Danish inquiry of 1597 found the
-# Sámi paying tax to Sweden from Ofoten to the Varangerfjord (Favorin, Scandia). Karl IX took the title of king of the
-# Lapps in Nordland in 1607 and gave the claim up at Knäred (1613); Karl X Gustav revived it in 1658, his negotiators
-# gave up Nordland and Vardøhus at Roskilde, and he pressed for them in vain afterwards (Odén, Scandia, pp. 88-90). Vardøhus and its ship tolls were Denmark-Norway's, so nothing here charges ships.
-# Settling the coast is the non-historical option. Fires whenever Sweden owns a coastal location in Finnmark.
+# The Arctic coast. Swedish bailiffs and birkarlar taxed the Sámi up to the coast from the mid-1500s. Duke Karl
+# claimed two-thirds of the Sámi tax after Teusina (1595), Karl IX gave the claim up at Knäred (1613), and Karl X
+# Gustav's negotiators gave up Nordland and Vardøhus at Roskilde (Favorin; Odén, Scandia). Settling the coast is the
+# non-historical option.
 swe_norway.2 = {
 	type = country_event
 	title = swe_norway.2.title
@@ -22,7 +20,7 @@ swe_norway.2 = {
 		tag = SCA
 		from = 1337.1.1
 		to = 1837.1.1
-		monthly_chance = 3 # Median about two years after Sweden reaches the coast
+		monthly_chance = 15
 	}
 
 	trigger = {
@@ -82,6 +80,121 @@ swe_norway.2 = {
 					is_coastal = yes
 				}
 				add_location_modifier = { modifier = swe_finnmark_settlers years = 20 }
+			}
+		}
+	}
+}
+
+# The crown of Norway, a milestone: we or our subjects hold Oslo, Bergen and Nidaros and Norway no longer exists, so
+# a Norway kept as our subject fires this once annexed. The options touch only locations we own. Karl Knutsson was crowned in Nidaros Cathedral on 20 November 1449 and gave up Norway at Halmstad in 1450; in
+# 1564 Claude Collart took Trondheim and Steinvikholm; and in 1814 the Convention of Moss left Norway its Eidsvoll
+# constitution and Storting in union with Sweden before Karl XIV Johan was crowned at Nidaros on 7 September 1818
+# (SNL; SBL; Stortinget; Historiska museet).
+swe_norway.3 = {
+	type = country_event
+	title = swe_norway.3.title
+	desc = swe_norway.3.desc
+	outcome = positive
+	historical_info = swe_norway.3.historical_info
+
+	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		capital ?= {
+			OR = {
+				region = region:scandinavian_region
+				region = region:north_german_region
+				region = region:baltic_region
+			}
+		}
+	}
+	dynamic_historical_event = {
+		tag = SWE
+		tag = SCA
+		from = 1337.1.1
+		to = 1837.1.1
+		monthly_chance = 10
+	}
+
+	trigger = {
+		has_or_had_tag = SWE
+		custom_tooltip = {
+			text = swe_norway.3.oslo_tt
+			location:oslo.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_norway.3.bergen_tt
+			location:bergen.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		custom_tooltip = {
+			text = swe_norway.3.nidaros_tt
+			location:nidaros.owner ?= { swe_is_swedish_realm_trigger = yes }
+		}
+		# An annexed country stays in the country list, so check it exists. The custom_tooltip keeps country_exists
+		# from logging a warning for every country when the tooltip is built.
+		custom_tooltip = {
+			text = swe_norway.3.no_norwegian_crown_tt
+			NOT = {
+				any_country = {
+					country_exists = this
+					has_or_had_tag = NOR
+				}
+			}
+		}
+	}
+
+	illustration_tags = {
+		10 = happy
+		10 = interior
+	}
+
+	immediate = {
+		ruler_or_regent ?= { save_scope_as = target_character }
+		event_illustration_estate_effect = { foreground = estate_type:nobles_estate background = estate_type:peasants_estate }
+	}
+
+	# Crowned in Nidaros under Norway's own law, as in 1449 and 1814-18
+	option = {
+		name = swe_norway.3.a
+		historical_option = yes
+		ai_chance = {
+			base = 40
+		}
+
+		change_gold_effect = { scale = -2 }
+		add_prestige = prestige_severe_bonus
+		add_legitimacy = legitimacy_mild_bonus
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_right }
+		custom_tooltip = {
+			text = swe_norway.3.a_tt
+			every_owned_location = {
+				limit = {
+					swe_norway_trigger = yes
+					NOT = { has_location_modifier = swe_norwegian_law }
+				}
+				add_location_modifier = { modifier = swe_norwegian_law years = modifier_duration_years_very_long }
+			}
+		}
+	}
+
+	# Norway as Swedish provinces
+	option = {
+		name = swe_norway.3.b
+		ai_chance = {
+			base = 40
+		}
+
+		add_prestige = prestige_mild_bonus
+		change_societal_value = { type = centralization_vs_decentralization value = societal_value_minor_move_to_left }
+		custom_tooltip = {
+			text = swe_norway.3.b_tt
+			every_owned_location = {
+				limit = {
+					swe_norway_trigger = yes
+					dominant_culture = culture:norwegian
+					NOT = { has_location_modifier = swe_forsvenskning }
+				}
+				add_location_modifier = { modifier = swe_forsvenskning years = 20 }
 			}
 		}
 	}
