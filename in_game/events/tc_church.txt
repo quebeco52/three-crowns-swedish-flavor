@@ -113,9 +113,12 @@ swe_church.2 = {
 	trigger = {
 		has_or_had_tag = SWE
 		religion = religion:lutheran
-		any_owned_location = {
-			swe_old_realm_trigger = yes
-			NOT = { location_rank = location_rank:rural_settlement }
+		custom_tooltip = {
+			text = swe_church.2.town_tt
+			any_owned_location = {
+				swe_old_realm_trigger = yes
+				NOT = { location_rank = location_rank:rural_settlement }
+			}
 		}
 	}
 

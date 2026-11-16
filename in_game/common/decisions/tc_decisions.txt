@@ -310,7 +310,7 @@ swe_rikes_lag_decision = {
 	allow = {
 		# Bare key: decisions load before laws, so policy:swe_landslag is not valid here
 		has_policy = swe_landslag
-		capital = { has_building_with_at_least_one_level = supreme_court }
+		capital ?= { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }
@@ -624,7 +624,7 @@ swe_regeringsform_decision = {
 			has_advance = generic_bureaucracy_4_advance
 		}
 		modifier:has_a_parliamentary_system = yes
-		capital = { has_building_with_at_least_one_level = supreme_court }
+		capital ?= { has_building_with_at_least_one_level = supreme_court }
 	}
 
 	ai_will_do = { value = 100 }

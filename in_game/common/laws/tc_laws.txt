@@ -207,16 +207,15 @@ INJECT:cabinet_laws = {
 	# regiment of 1539-40 his sons kept high-noble chancellors in name but took advice from secretaries of
 	# non-noble birth, until Gustav II Adolf's assurance of 1611 (SBL Conrad von Pyhy; Asker, Hur riket
 	# styrdes; Nilsson, Scandia 1937). The secular twin of vanilla's administrative_clergy_policy, with the
-	# burghers in the clergy's place. Excludes swe_riddarhuset both ways, as the two would stack cabinet
-	# efficiency; swe_riddarhusordningen_decision removes it.
+	# burghers in the clergy's place, so it opens with the break with Rome rather than at a date. Excludes
+	# swe_riddarhuset both ways, as the two would stack cabinet efficiency; swe_riddarhusordningen_decision
+	# removes it.
 	swe_sekreterare = {
 		unique = yes
 		potential = {
 			has_or_had_tag = SWE
 			government_type = government_type:monarchy
-			current_age_or_later = {
-				age = age_4_reformation
-			}
+			is_protestant = yes
 		}
 		allow = {
 			NOT = { has_policy = swe_riddarhuset } # Bare key, as in vanilla laws
@@ -295,8 +294,14 @@ swe_kronans_jord_law = {
 		years = 2
 	}
 
-	# The Crown takes the land back. Crown power is half of vanilla's absolute_rule_policy.
+	# The Crown takes the land back, from age 5 (1655, 1680). Crown power is half of vanilla's
+	# absolute_rule_policy.
 	swe_reduktion = {
+		potential = {
+			current_age_or_later = {
+				age = age_5_absolutism
+			}
+		}
 		country_modifier = {
 			nobles_estate_target_satisfaction = medium_permanent_target_satisfaction_penalty
 			global_nobles_estate_power = -0.15
@@ -346,6 +351,7 @@ INJECT:maritime_law = {
 			global_naval_supplies_output_modifier = 0.1
 			navy_heavy_ship_build_cost_modifier = -0.1
 			peasants_estate_target_satisfaction = -0.025
+			clergy_estate_target_satisfaction = -0.025
 			monthly_towards_naval = societal_value_monthly_move
 		}
 		estate_preferences = {
