@@ -329,3 +329,28 @@ swe_kronans_jord_law = {
 		years = 2
 	}
 }
+
+INJECT:maritime_law = {
+
+	# Ekregalet: by Gustav Vasa's ordinances of 1542 and 1558 the oaks on peasant and church land were the
+	# Crown's, kept for its ships, while noble land was exempt. It eased in 1830 and ended for peasants in 1875
+	# (Linköping kommun, Åldersbestämning av ekar; SLU Epsilon). Open from 1337. Vanilla's navy_audits and
+	# forestry_ordinance in one, shaped like the country policies kilwan_merchant_navy and nav_maritime_code.
+	swe_ekregalet = {
+		unique = yes
+		potential = {
+			has_or_had_tag = SWE
+		}
+		country_modifier = {
+			navy_maintenance_efficiency = 0.1
+			global_naval_supplies_output_modifier = 0.1
+			navy_heavy_ship_build_cost_modifier = -0.1
+			peasants_estate_target_satisfaction = -0.025
+			monthly_towards_naval = societal_value_monthly_move
+		}
+		estate_preferences = {
+			crown_estate
+		}
+		years = 2
+	}
+}
