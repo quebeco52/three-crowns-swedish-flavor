@@ -44,8 +44,8 @@ swe_lappmark_settlers = {
 }
 
 # Added for 20 years by swe_scania.1 (Skåneland), swe_jamtland.1 and .2 (Jämtland and Idre), swe_lappmark.5 (Sámi
-# locations) and swe_denmark.1 (Zealand). Scaled down from vanilla's saints_enforced; crown power from
-# fontainebleau_hunting_lodge.
+# locations), swe_denmark.1 (Zealand) and swe_norway.3.b (Norway). Scaled down from vanilla's saints_enforced; crown
+# power from fontainebleau_hunting_lodge.
 swe_forsvenskning = {
 	game_data = {
 		category = location
@@ -1151,4 +1151,16 @@ swe_franconian_government = {
 		category = location
 	}
 	local_crown_estate_power = 0.25
+}
+
+# Added for 50 years by swe_norway.3 to Sweden's locations in Norway when the Crown leaves the kingdom its own law
+# and assembly, as in 1814. The values of swe_baltic_privileges, with the peasants in the nobles' place.
+swe_norwegian_law = {
+	game_data = {
+		category = location
+	}
+	local_peasants_estate_power = 0.25
+	local_crown_estate_power = -0.25
+	local_pop_assimilation_speed_modifier = -0.25
+	local_integration_speed = 0.10
 }

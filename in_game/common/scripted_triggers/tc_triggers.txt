@@ -160,3 +160,14 @@ swe_franconia_trigger = {
 		this = location:pegnitz
 	}
 }
+
+# Norway, outside Jämtland, which has its own events (swe_jamtland.1 and .2), and Bohuslän, Swedish since 1658.
+# Used by swe_norway.3.
+swe_norway_trigger = {
+	OR = {
+		area = area:syd_norge_area
+		area = area:nord_norge_area
+	}
+	NOT = { province_definition = province_definition:jamtland_province }
+	NOT = { province_definition = province_definition:bohus_province }
+}
